@@ -1,0 +1,33 @@
+name: CASM v0.2 selective-memory tests
+
+on:
+  push:
+    branches:
+      - model/compression-attention-v02-selective-writes
+    paths:
+      - "casm_v01/casm/selective.py"
+      - "casm_v01/tests/test_selective.py"
+      - ".github/workflows/casm-v02-tests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install CPU PyTorch and pytest
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+      - name: Assemble v0.1 base model
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Run v0.2 tests
+        run: PYTHONPATH=casm_v01 pytest -q casm_v01/tests/test_selective.py
