@@ -1,0 +1,89 @@
+name: CASM-R recurrence-only control
+
+on:
+  push:
+    branches:
+      - experiment/casm-r-recurrent-utility
+    paths:
+      - ".github/workflows/casm-r-depth-only.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  train-depth-control:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      PYTHONHASHSEED: "20261101"
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+      - name: Assemble and test
+        run: |
+          cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+          PYTHONPATH=casm_v01 pytest -q casm_v01/tests/test_recurrent_reasoning.py casm_v01/tests/test_data_v2.py
+      - name: Train same-parameter depth control
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.train_recurrent \
+            --tiny \
+            --steps 2000 \
+            --batch-size 8 \
+            --seq-len 289 \
+            --eval-batches 20 \
+            --log-every 100 \
+            --answer-weight 12 \
+            --hard-max-prob 0.5 \
+            --hard-ramp-steps 800 \
+            --seed 20261101 \
+            --models qk-1step,qk-3step \
+            --out casm-r-depth-output
+      - name: Corrected tasks
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.eval_recurrent \
+            casm-r-depth-output/qk-1step.pt \
+            casm-r-depth-output/qk-3step.pt \
+            --mode task --n 120 --seed 20261102 \
+            > casm-r-depth-output/task-eval.txt
+      - name: Structural stress
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.eval_recurrent \
+            casm-r-depth-output/qk-1step.pt \
+            casm-r-depth-output/qk-3step.pt \
+            --mode stress --n 80 --seed 20261103 \
+            > casm-r-depth-output/stress-eval.txt
+      - name: True autoregressive solve rate
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.eval_recurrent \
+            casm-r-depth-output/qk-1step.pt \
+            casm-r-depth-output/qk-3step.pt \
+            --mode freegen --n 30 --seed 20261104 --max-new-tokens 8 \
+            > casm-r-depth-output/free-generate-eval.txt
+      - name: Test-time depth sweep
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.eval_recurrent \
+            casm-r-depth-output/qk-3step.pt \
+            --mode stress --n 50 --seed 20261105 --depths 1,3,5 \
+            > casm-r-depth-output/depth-sweep.txt
+      - name: Upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-r-depth-only-results
+          path: casm_v01/casm-r-depth-output/
+          if-no-files-found: warn
+          retention-days: 90
