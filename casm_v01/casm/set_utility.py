@@ -138,7 +138,8 @@ def set_conditioned_utility_loss(
                 gain_stds.append(std.mean())
 
                 z = centered / std[:, None].clamp_min(1e-6)
-                z = z.masked_fill(~valid, -1e9).clamp(min=-8.0, max=8.0)
+                z = z.clamp(min=-8.0, max=8.0)
+                z = z.masked_fill(~valid, -1e9)
                 target_dist = F.softmax(
                     z / max(float(temperature), 1e-6), dim=-1
                 )
