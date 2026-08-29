@@ -37,7 +37,7 @@ jobs:
           PYTHONPATH=casm_v01 pytest -q \
             casm_v01/tests/test_scoped_data.py \
             casm_v01/tests/test_data_v2.py \
-            casm_v01/tests/test_recurrent.py
+            casm_v01/tests/test_recurrent_reasoning.py
 
       - name: Scoped recurrent smoke train
         run: |
