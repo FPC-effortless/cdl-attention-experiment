@@ -1,0 +1,143 @@
+name: CASM v0.1 multi-seed replication
+
+on:
+  push:
+    branches:
+      - experiment/casm-v01-multiseed
+    paths:
+      - ".github/workflows/casm-v01-multiseed.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  replicate:
+    strategy:
+      fail-fast: false
+      matrix:
+        seed: [20260911, 20260912, 20260913]
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install CPU PyTorch and tests
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+
+      - name: Assemble and test source
+        run: |
+          cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+          PYTHONPATH=casm_v01 pytest -q casm_v01/tests
+
+      - name: Train seed ${{ matrix.seed }}
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.train \
+            --tiny \
+            --steps 800 \
+            --batch-size 8 \
+            --seq-len 193 \
+            --eval-batches 20 \
+            --log-every 200 \
+            --compression-warmup 125 \
+            --gzip-teacher-decay 650 \
+            --gzip-teacher-floor 0.35 \
+            --answer-weight 8 \
+            --hard-max-prob 0.5 \
+            --hard-ramp-steps 500 \
+            --seed ${{ matrix.seed }} \
+            --out casm-output
+
+      - name: Task evaluation
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.eval_tasks \
+            casm-output/local-only.pt \
+            casm-output/qk-memory.pt \
+            casm-output/compression.pt \
+            --n-per-task 50 \
+            --seed $(( ${{ matrix.seed }} + 1 )) \
+            > casm-output/task-eval.txt
+
+      - name: Compression inference ablations
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python - <<'PY'
+          import json, random, torch
+          from pathlib import Path
+          from casm.eval_tasks import load_model, score_example
+          from casm.data import TASKS
+
+          seed = int("${{ matrix.seed }}") + 100001
+          normal = load_model("casm-output/compression.pt")
+          score_off = load_model("casm-output/compression.pt")
+          score_off.router.cfg.use_compression_score = False
+          zero = load_model("casm-output/compression.pt")
+          original = zero.router.retrieve
+          def retrieve_zero(query, memory, valid_mask):
+              retrieved, scores = original(query, memory, valid_mask)
+              return torch.zeros_like(retrieved), scores
+          zero.router.retrieve = retrieve_zero
+
+          rng = random.Random(seed)
+          rows=[]
+          for fn in TASKS:
+              for _ in range(30):
+                  ex=fn(rng, hard=True)
+                  row={"task":fn.__name__}
+                  for name,model in [("normal",normal),("score_off",score_off),("retrieval_zero",zero)]:
+                      s=score_example(model,ex)
+                      row[name+"_nll"]=s["answer_nll"]
+                      row[name+"_acc"]=s["answer_byte_acc"]
+                  rows.append(row)
+          def mean_delta(a,b,key="nll"):
+              vals=[r[f"{a}_{key}"]-r[f"{b}_{key}"] for r in rows]
+              return sum(vals)/len(vals)
+          result={
+              "seed": seed,
+              "n": len(rows),
+              "compression_minus_score_off_nll": mean_delta("normal","score_off"),
+              "compression_minus_retrieval_zero_nll": mean_delta("normal","retrieval_zero"),
+              "compression_minus_score_off_acc": mean_delta("normal","score_off","acc"),
+              "compression_minus_retrieval_zero_acc": mean_delta("normal","retrieval_zero","acc"),
+          }
+          Path("casm-output/inference-ablation.json").write_text(json.dumps(result, indent=2))
+          print(json.dumps(result, indent=2))
+          PY
+
+      - name: Metadata
+        working-directory: casm_v01
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          Path("casm-output/replication-metadata.json").write_text(json.dumps({
+            "seed": int("${{ matrix.seed }}"),
+            "steps": 800,
+            "answer_weight": 8,
+            "hard_max_prob": 0.5,
+            "branch": "experiment/casm-v01-multiseed"
+          }, indent=2))
+          PY
+
+      - name: Upload seed artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-v01-seed-${{ matrix.seed }}
+          path: casm_v01/casm-output/
+          if-no-files-found: warn
+          retention-days: 90
