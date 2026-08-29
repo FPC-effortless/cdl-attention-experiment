@@ -26,6 +26,7 @@ jobs:
         run: |
           python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
           python -m pip install pytest
-      - name: Run scoped-data tests
+      - name: Assemble model and run scoped-data tests
         run: |
+          cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
           PYTHONPATH=casm_v01 pytest -q casm_v01/tests/test_scoped_data.py casm_v01/tests/test_data_v2.py
