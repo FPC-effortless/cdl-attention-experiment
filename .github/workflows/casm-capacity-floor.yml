@@ -1,0 +1,52 @@
+name: CASM single-task capacity floor
+
+on:
+  push:
+    branches:
+      - diagnostic/casm-capacity-floor
+    paths:
+      - "casm_v01/**"
+      - ".github/workflows/casm-capacity-floor.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capacity-floor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      PYTHONHASHSEED: "20261301"
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Assemble
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Train corrected single-task models
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.train_capacity_floor \
+            --steps 1200 --batch-size 12 --seq-len 385 \
+            --answer-weight 12 --hard-max-prob 0.7 --hard-ramp-steps 400 \
+            --log-every 100 --seed 20261301 --out capacity-floor-output
+      - name: True solve-rate capacity test
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.eval_capacity_floor \
+            --state-checkpoint capacity-floor-output/state-only.pt \
+            --graph-checkpoint capacity-floor-output/graph-only.pt \
+            --n 100 --seed 20261302 \
+            > capacity-floor-output/solve-rate.txt
+          cat capacity-floor-output/solve-rate.txt
+      - name: Upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-capacity-floor-results
+          path: capacity-floor-output/
+          retention-days: 60
