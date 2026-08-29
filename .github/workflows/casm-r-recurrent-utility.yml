@@ -1,0 +1,165 @@
+name: CASM-R recurrent-depth utility
+
+on:
+  push:
+    branches:
+      - experiment/casm-r-recurrent-utility
+    paths:
+      - "casm_v01/casm/recurrent_model.py"
+      - "casm_v01/casm/set_utility.py"
+      - "casm_v01/casm/train_recurrent.py"
+      - "casm_v01/casm/eval_recurrent.py"
+      - "casm_v01/tests/test_recurrent_reasoning.py"
+      - ".github/workflows/casm-r-recurrent-utility.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  train-and-evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      PYTHONHASHSEED: "20261101"
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+
+      - name: Assemble model and run regression tests
+        run: |
+          cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+          PYTHONPATH=casm_v01 pytest -q \
+            casm_v01/tests/test_model.py \
+            casm_v01/tests/test_data_v2.py \
+            casm_v01/tests/test_recurrent_reasoning.py
+
+      - name: Short recurrent smoke train
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.train_recurrent \
+            --tiny \
+            --steps 12 \
+            --batch-size 2 \
+            --seq-len 97 \
+            --eval-batches 1 \
+            --log-every 6 \
+            --utility-start 3 \
+            --utility-warmup 3 \
+            --utility-min-std 0 \
+            --seed 20261100 \
+            --out casm-r-smoke
+
+      - name: Train paired recurrent-depth variants
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.train_recurrent \
+            --tiny \
+            --steps 2000 \
+            --batch-size 8 \
+            --seq-len 289 \
+            --eval-batches 20 \
+            --log-every 100 \
+            --answer-weight 12 \
+            --hard-max-prob 0.5 \
+            --hard-ramp-steps 800 \
+            --utility-start 400 \
+            --utility-warmup 400 \
+            --utility-weight 0.10 \
+            --utility-temperature 0.7 \
+            --utility-min-std 0.01 \
+            --seed 20261101 \
+            --out casm-r-output
+
+      - name: Corrected heterogeneous task evaluation
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.eval_recurrent \
+            casm-r-output/qk-1step.pt \
+            casm-r-output/qk-3step.pt \
+            casm-r-output/set-utility-3step.pt \
+            --mode task \
+            --n 120 \
+            --seed 20261102 \
+            > casm-r-output/task-eval.txt
+
+      - name: Long-horizon structural stress
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.eval_recurrent \
+            casm-r-output/qk-1step.pt \
+            casm-r-output/qk-3step.pt \
+            casm-r-output/set-utility-3step.pt \
+            --mode stress \
+            --n 80 \
+            --seed 20261103 \
+            > casm-r-output/stress-eval.txt
+
+      - name: True autoregressive solve-rate probe
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.eval_recurrent \
+            casm-r-output/qk-1step.pt \
+            casm-r-output/qk-3step.pt \
+            casm-r-output/set-utility-3step.pt \
+            --mode freegen \
+            --n 30 \
+            --seed 20261104 \
+            --max-new-tokens 8 \
+            > casm-r-output/free-generate-eval.txt
+
+      - name: Recurrent test-time compute sweep
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.eval_recurrent \
+            casm-r-output/qk-3step.pt \
+            casm-r-output/set-utility-3step.pt \
+            --mode stress \
+            --n 50 \
+            --seed 20261105 \
+            --depths 1,3,5 \
+            > casm-r-output/depth-sweep.txt
+
+      - name: Preserve metadata
+        working-directory: casm_v01
+        run: |
+          python - <<'PY'
+          import json, platform, torch
+          from pathlib import Path
+          meta = {
+              "experiment": "CASM-R-recurrent-depth-set-utility-v0",
+              "seed": 20261101,
+              "steps": 2000,
+              "models": ["qk-1step", "qk-3step", "set-utility-3step"],
+              "parameter_sharing": "same router/value/gate/memory-ffn reused across recurrent steps",
+              "set_utility": "leave-one-memory-out final answer NLL after full recurrent loop",
+              "utility_teacher_training_only": True,
+              "utility_low_contrast_filter": 0.01,
+              "depth_sweep": [1, 3, 5],
+              "torch": torch.__version__,
+              "python": platform.python_version(),
+              "device": "cpu",
+          }
+          Path("casm-r-output/run-metadata.json").write_text(json.dumps(meta, indent=2))
+          PY
+
+      - name: Upload CASM-R results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-r-recurrent-utility-results
+          path: |
+            casm_v01/casm-r-output/
+            casm_v01/casm-r-smoke/
+          if-no-files-found: warn
+          retention-days: 90
