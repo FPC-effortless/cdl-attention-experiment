@@ -1,0 +1,127 @@
+name: CASM-U answer-utility routing
+
+on:
+  push:
+    branches:
+      - experiment/casm-u-answer-utility
+    paths:
+      - "casm_v01/casm/answer_utility.py"
+      - "casm_v01/casm/train_answer_utility.py"
+      - "casm_v01/tests/test_answer_utility.py"
+      - ".github/workflows/casm-u-answer-utility.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  train-and-evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      PYTHONHASHSEED: "20261011"
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+
+      - name: Assemble base model and run tests
+        run: |
+          cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+          PYTHONPATH=casm_v01 pytest -q casm_v01/tests/test_model.py casm_v01/tests/test_corrected_graph.py casm_v01/tests/test_answer_utility.py
+
+      - name: Train paired routing objectives
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.train_answer_utility \
+            --tiny \
+            --steps 1000 \
+            --batch-size 8 \
+            --seq-len 289 \
+            --eval-batches 20 \
+            --log-every 100 \
+            --answer-weight 8 \
+            --hard-max-prob 0.5 \
+            --hard-ramp-steps 600 \
+            --compression-warmup 125 \
+            --gzip-teacher-decay 800 \
+            --gzip-teacher-floor 0.35 \
+            --utility-start 200 \
+            --utility-warmup 250 \
+            --utility-weight 0.15 \
+            --utility-temperature 0.25 \
+            --seed 20261011 \
+            --out casm-u-output
+
+      - name: Corrected heterogeneous task evaluation
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.eval_tasks \
+            casm-u-output/qk-memory.pt \
+            casm-u-output/compression-qk.pt \
+            casm-u-output/answer-utility-qk.pt \
+            --n-per-task 100 \
+            --seed 20261012 \
+            > casm-u-output/task-eval.txt
+
+      - name: Longer-horizon structural stress
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.stress_eval \
+            casm-u-output/qk-memory.pt \
+            casm-u-output/compression-qk.pt \
+            casm-u-output/answer-utility-qk.pt \
+            --n 80 \
+            --seed 20261013 \
+            > casm-u-output/stress-eval.txt
+
+      - name: Autoregressive solve-rate probe
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.free_generate_eval \
+            casm-u-output/qk-memory.pt \
+            casm-u-output/compression-qk.pt \
+            casm-u-output/answer-utility-qk.pt \
+            --n 30 \
+            --seed 20261014 \
+            --max-new-tokens 4 \
+            > casm-u-output/free-generate-eval.txt
+
+      - name: Preserve metadata
+        working-directory: casm_v01
+        run: |
+          python - <<'PY'
+          import json, platform, torch
+          from pathlib import Path
+          meta = {
+              "experiment": "CASM-U-answer-utility-v0",
+              "seed": 20261011,
+              "steps": 1000,
+              "models": ["qk-memory", "compression-qk", "answer-utility-qk"],
+              "teacher": "counterfactual reduction in actual answer-token NLL",
+              "teacher_uses_only_pre_chunk_memory": True,
+              "utility_updates": "Q/K geometry only; counterfactual evaluator detached",
+              "torch": torch.__version__,
+              "python": platform.python_version(),
+              "device": "cpu",
+          }
+          Path("casm-u-output/run-metadata.json").write_text(json.dumps(meta, indent=2))
+          PY
+
+      - name: Upload CASM-U results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-u-answer-utility-results
+          path: casm_v01/casm-u-output/
+          if-no-files-found: warn
+          retention-days: 90
