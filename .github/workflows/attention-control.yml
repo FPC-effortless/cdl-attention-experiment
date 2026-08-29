@@ -1,0 +1,40 @@
+name: Joint attention control
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - app.py
+      - run_attention_control.py
+      - requirements.txt
+      - .github/workflows/attention-control.yml
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install CPU PyTorch
+        run: python -m pip install --upgrade pip && python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Install benchmark dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Run joint-context attention control
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          TOKENIZERS_PARALLELISM: 'false'
+        run: python run_attention_control.py
+      - name: Upload benchmark outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: joint-attention-control-results
+          path: attention-control-output/
+          if-no-files-found: warn
