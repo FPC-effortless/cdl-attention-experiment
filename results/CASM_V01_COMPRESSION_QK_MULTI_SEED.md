@@ -1,92 +1,78 @@
 # CASM v0.1 compression-trained Q/K — multi-seed replication
 
-## Decision
+## Status after benchmark audit
 
-Promote **compression-trained Q/K** to the current CASM routing baseline.
+**The earlier promotion decision is withdrawn.**
 
-Compression-derived predictive utility is used during training to shape ordinary Q/K routing scores. The runtime pairwise compression-score MLP is removed.
+A post-run audit found that the original `graph_reachability` generator always emitted `answer yes`. The apparent multi-seed compression-QK advantage was therefore dominated by a defective task that did not require distinguishing reachable from unreachable graphs.
+
+Compression-QK remains an efficiency-motivated hypothesis, not a validated generally superior router.
 
 ## Runs
 
-Four controlled 800-step seeds are included: the original efficiency experiment (20260901) plus independent replications 20260921, 20260922, and 20260923. Each seed trains three variants from compatible initialization:
+Four controlled 800-step seeds are included: 20260901, 20260921, 20260922, and 20260923. Each seed trains:
 
 - `qk-memory`: ordinary Q/K memory, no compression supervision;
 - `compression-qk`: ordinary Q/K inference with compression-derived training supervision;
 - `compression`: Q/K + pairwise compression-score MLP at inference, with compression supervision.
 
-All variants use the same ~1.347M parameter configuration.
+All use the same ~1.347M-parameter configuration.
 
-## Heterogeneous hard-task answer NLL
+## Original aggregate result
 
 | Seed | Q/K memory | Compression-QK | Full compression |
 |---|---:|---:|---:|
-| 20260901 | 1.68017 | **1.62488** | 1.63477 |
-| 20260921 | 1.73554 | **1.66997** | 1.71296 |
-| 20260922 | 1.68027 | **1.67230** | 1.67577 |
-| 20260923 | 1.72459 | **1.68099** | 1.69780 |
-| **Mean** | **1.70514** | **1.66203** | **1.68032** |
+| 20260901 | 1.68017 | 1.62488 | 1.63477 |
+| 20260921 | 1.73554 | 1.66997 | 1.71296 |
+| 20260922 | 1.68027 | 1.67230 | 1.67577 |
+| 20260923 | 1.72459 | 1.68099 | 1.69780 |
+| Mean | 1.70514 | 1.66203 | 1.68032 |
 
-Compression-QK beats ordinary Q/K on answer NLL in **4/4 seeds**.
+This gave `compression-qk - qk-memory = -0.04311 nats` over the six-task average.
 
-Mean difference:
+## Why that aggregate is not valid evidence of general improvement
 
-`compression-qk - qk-memory = -0.04311 nats`
+Mean per-task NLL difference, compression-QK minus Q/K:
 
-Compression-QK also beats the full runtime compression scorer in **4/4 seeds**.
+| Task | Mean delta NLL |
+|---|---:|
+| graph reachability | **-0.26459** |
+| state tracking | -0.01383 |
+| reverse/copy | +0.00094 |
+| arithmetic | +0.00149 |
+| associative recall | +0.00367 |
+| rule induction | +0.01365 |
 
-Mean difference:
+Because the six tasks are equally weighted, the defective graph task contributes about `-0.26459 / 6 = -0.04410 nats` to the overall mean—essentially the entire reported `-0.04311` advantage.
 
-`compression-qk - compression = -0.01829 nats`
+Excluding graph reachability, the mean compression-QK minus Q/K difference across the other five tasks is:
 
-## Packed-stream hard answer NLL
+`+0.00118 nats`
 
-Mean across four seeds:
+That is effectively a tie/slight regression, not evidence of a general compression-routing advantage.
 
-- Q/K memory: 2.08684
-- **Compression-QK: 2.05783**
-- Full compression: 2.07512
+## Additional audit finding
 
-## Exact correctness
+Free autoregressive generation on balanced reachable/unreachable graphs using the old checkpoints shows that neither model generates `no` correctly on unreachable examples. The old task had never trained that distinction.
 
-Exact teacher-forced answer accuracy is effectively tied in aggregate:
+## Efficiency result still stands as an implementation fact
 
-- Q/K memory: 0.17448
-- Compression-QK: 0.17344
-- Full compression: 0.17448
-
-Therefore the replicated result is currently a **probabilistic/calibration improvement**, not a demonstrated increase in discrete solve rate.
-
-## Per-task mean NLL difference: compression-QK minus Q/K
-
-| Task | Mean delta NLL | Direction |
-|---|---:|---|
-| graph reachability | **-0.26459** | strong improvement |
-| state tracking | **-0.01383** | modest improvement |
-| reverse/copy | +0.00094 | neutral |
-| arithmetic | +0.00149 | neutral |
-| associative recall | +0.00367 | neutral/slight regression |
-| rule induction | +0.01365 | regression |
-
-The present gain is therefore concentrated in structural / stateful routing, especially graph reachability. It is not yet a universal reasoning improvement.
-
-## Efficiency result
-
-From the original paired runtime benchmark (CPU, batch 8 x 192 bytes):
+From the original paired CPU benchmark:
 
 - Q/K memory: ~38.4k tokens/s
-- **Compression-QK: ~39.1k tokens/s**
-- Full compression: ~34.6k tokens/s
+- compression-QK: ~39.1k tokens/s
+- full compression: ~34.6k tokens/s
 
-Absolute CPU timings are implementation-dependent. The architectural conclusion is more robust: the pairwise compression-score MLP is unnecessary at inference; compression supervision can be amortized into ordinary Q/K geometry.
+So if compression-derived supervision eventually proves useful on a correct benchmark, amortizing it into ordinary Q/K geometry remains preferable to retaining the pairwise compression MLP at inference.
 
-## Next experimental gate
+## Corrective action
 
-Do **not** immediately scale parameter count.
+A new branch, `experiment/casm-v02-corrected-curriculum`, now:
 
-Next:
+1. balances graph reachability between reachable and unreachable cases;
+2. validates labels against actual directed reachability;
+3. lengthens training sequences so hard state-tracking cases can enter training;
+4. compares only ordinary Q/K vs compression-trained Q/K;
+5. adds long-horizon state and associative-memory stress tests.
 
-1. longer-horizon structural extrapolation (deeper graphs, longer state histories, more cross-chunk interference);
-2. determine whether the gain persists outside the current graph-heavy regime;
-3. only then revisit selective write/erase memory management.
-
-The first selective-write v0.2 candidate was stable and test-green but underperformed compression-QK in a 100-step paired smoke test, so it remains an unpromoted branch rather than the new baseline.
+No architecture promotion should occur until that corrected experiment completes.
