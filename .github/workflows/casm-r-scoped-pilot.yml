@@ -1,0 +1,59 @@
+name: CASM-R scoped-memory pilot
+
+on:
+  push:
+    branches:
+      - experiment/casm-r-scoped-memory
+    paths:
+      - ".github/workflows/casm-r-scoped-pilot.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONHASHSEED: "20261131"
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Assemble
+        run: |
+          cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Train scoped pilot
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.train_recurrent_scoped \
+            --tiny --steps 600 --batch-size 8 --seq-len 289 --eval-batches 8 \
+            --log-every 100 --answer-weight 12 --hard-max-prob 0.5 \
+            --hard-ramp-steps 300 --seed 20261131 --out scoped-pilot
+      - name: Task evaluation
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.eval_recurrent \
+            scoped-pilot/scoped-qk-1step.pt scoped-pilot/scoped-qk-3step.pt \
+            --mode task --n 50 --seed 20261132 > scoped-pilot/task-eval.txt
+          cat scoped-pilot/task-eval.txt
+      - name: Free generation
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.eval_recurrent \
+            scoped-pilot/scoped-qk-1step.pt scoped-pilot/scoped-qk-3step.pt \
+            --mode freegen --n 30 --max-new-tokens 8 --seed 20261133 \
+            > scoped-pilot/free-generate-eval.txt
+          cat scoped-pilot/free-generate-eval.txt
+      - name: Upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-r-scoped-pilot-results
+          path: scoped-pilot/
+          if-no-files-found: warn
+          retention-days: 30
