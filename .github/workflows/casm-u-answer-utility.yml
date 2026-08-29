@@ -37,7 +37,7 @@ jobs:
       - name: Assemble base model and run tests
         run: |
           cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
-          PYTHONPATH=casm_v01 pytest -q casm_v01/tests/test_model.py casm_v01/tests/test_corrected_graph.py casm_v01/tests/test_answer_utility.py
+          PYTHONPATH=casm_v01 pytest -q casm_v01/tests/test_model.py casm_v01/tests/test_data_v2.py casm_v01/tests/test_answer_utility.py
 
       - name: Train paired routing objectives
         working-directory: casm_v01
