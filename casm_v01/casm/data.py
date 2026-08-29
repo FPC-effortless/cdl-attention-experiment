@@ -114,20 +114,47 @@ def rule_induction(rng: random.Random, hard: bool = False) -> Example:
 
 
 def graph_reachability(rng: random.Random, hard: bool = False) -> Example:
-    nodes = _names(9 if hard else 6)
-    src = nodes[0]
-    dst = nodes[4 if hard else 3]
-    edges = []
-    for i in range(4 if hard else 3):
-        edges.append((nodes[i], nodes[i + 1]))
-    for _ in range(5 if hard else 2):
-        a, b = rng.sample(nodes, 2)
-        if (a, b) not in edges:
-            edges.append((a, b))
-    rng.shuffle(edges)
-    edge_txt = " ".join(f"{a}->{b}" for a, b in edges)
-    text = f"task graph\nedges {edge_txt}\nreachable {src} {dst}\nanswer yes"
-    return Example(text, "graph", "yes")
+    """Balanced reachable/unreachable directed-graph queries.
+
+    The original generator always returned ``yes`` and therefore could not test
+    graph reasoning. This version constructs a guaranteed path for positive
+    examples and two disconnected directed components for negative examples.
+    """
+    nodes = _names(10 if hard else 7)
+    reachable = rng.random() < 0.5
+    edges = set()
+
+    if reachable:
+        src, dst = nodes[0], nodes[-1]
+        middle = nodes[1:-1].copy()
+        rng.shuffle(middle)
+        chain_len = 5 if hard else 3
+        chain = [src] + middle[:chain_len] + [dst]
+        edges.update(zip(chain[:-1], chain[1:]))
+        target_edges = 14 if hard else 8
+        while len(edges) < target_edges:
+            a, b = rng.sample(nodes, 2)
+            edges.add((a, b))
+        answer = "yes"
+    else:
+        cut = len(nodes) // 2
+        left, right = nodes[:cut], nodes[cut:]
+        src, dst = left[0], right[-1]
+        target_edges = 14 if hard else 8
+        attempts = 0
+        while len(edges) < target_edges and attempts < target_edges * 30:
+            comp = left if rng.random() < 0.5 else right
+            if len(comp) >= 2:
+                a, b = rng.sample(comp, 2)
+                edges.add((a, b))
+            attempts += 1
+        answer = "no"
+
+    edge_list = list(edges)
+    rng.shuffle(edge_list)
+    edge_txt = " ".join(f"{a}->{b}" for a, b in edge_list)
+    text = f"task graph\nedges {edge_txt}\nreachable {src} {dst}\nanswer {answer}"
+    return Example(text, "graph", answer)
 
 
 def reverse_copy(rng: random.Random, hard: bool = False) -> Example:
