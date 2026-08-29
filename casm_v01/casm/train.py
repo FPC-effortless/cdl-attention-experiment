@@ -18,6 +18,11 @@ from .model import CASM, CASMConfig
 def build_model(kind: str, cfg: CASMConfig) -> CASM:
     if kind == "compression":
         return CASM(cfg)
+    if kind == "compression-qk":
+        # Compression defines the training geometry, but inference uses only
+        # the normalized Q/K score. This tests whether the expensive runtime
+        # pairwise compression MLP is actually necessary.
+        return CASM(replace(cfg, use_compression_score=False))
     if kind == "qk-memory":
         return CASM(replace(cfg, use_compression_score=False, compression_loss_weight=0.0, compression_predictor_loss_weight=0.0))
     if kind == "local-only":
@@ -68,7 +73,7 @@ def train_one(kind: str, args, base_cfg: CASMConfig, init_state: Dict[str, torch
         use_hard = random.Random(args.seed + step * 65537).random() < hard_prob
         toks, _, answer_mask = make_batch(args.batch_size, args.seq_len, args.seed + step * 104729, hard=use_hard, return_answer_mask=True)
         target_weights = torch.ones_like(toks[:, 1:], dtype=torch.float32) + (args.answer_weight - 1.0) * answer_mask[:, 1:].float()
-        if kind == "compression":
+        if kind in ("compression", "compression-qk"):
             model.cfg.compression_loss_weight = final_compression_weight * min(1.0, step / max(1, args.compression_warmup))
             external = gzip_teacher_distributions(toks, model.cfg.chunk_size, model.cfg.memory_slots, model.cfg.state_slots, args.gzip_temperature)
             decay = max(0.0, 1.0 - step / max(1, args.gzip_teacher_decay))
