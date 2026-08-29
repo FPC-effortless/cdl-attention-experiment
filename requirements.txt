@@ -1,0 +1,4 @@
+transformers==5.15.1
+gradio>=5.49,<7
+pandas>=2.2
+safetensors>=0.6
