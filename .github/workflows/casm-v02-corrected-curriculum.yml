@@ -1,0 +1,88 @@
+name: CASM v0.2 corrected curriculum pilot
+
+on:
+  push:
+    branches:
+      - experiment/casm-v02-corrected-curriculum
+    paths:
+      - "casm_v01/casm/data.py"
+      - "casm_v01/casm/stress_eval.py"
+      - "casm_v01/tests/test_data_v2.py"
+      - ".github/workflows/casm-v02-corrected-curriculum.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  train-and-stress:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+      - name: Assemble model and test corrected curriculum
+        run: |
+          cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+          PYTHONPATH=casm_v01 pytest -q casm_v01/tests/test_model.py casm_v01/tests/test_data_v2.py
+      - name: Train paired corrected-curriculum models
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.train \
+            --tiny \
+            --steps 1000 \
+            --batch-size 8 \
+            --seq-len 289 \
+            --eval-batches 20 \
+            --log-every 200 \
+            --compression-warmup 150 \
+            --gzip-teacher-decay 800 \
+            --gzip-teacher-floor 0.35 \
+            --answer-weight 8 \
+            --hard-max-prob 0.55 \
+            --hard-ramp-steps 600 \
+            --seed 20261011 \
+            --models qk-memory,compression-qk \
+            --out casm-output
+      - name: Corrected heterogeneous task evaluation
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.eval_tasks \
+            casm-output/qk-memory.pt \
+            casm-output/compression-qk.pt \
+            --n-per-task 100 \
+            --seed 20261012 \
+            > casm-output/task-eval.txt
+          cat casm-output/summary.csv
+      - name: Longer-horizon stress evaluation
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.stress_eval \
+            casm-output/qk-memory.pt \
+            casm-output/compression-qk.pt \
+            --n 40 \
+            --seed 20261013 \
+            > casm-output/stress-eval.txt
+          tail -n 120 casm-output/stress-eval.txt
+      - name: Metadata
+        working-directory: casm_v01
+        run: |
+          printf '%s\n' '{"experiment":"corrected-curriculum-v2","seed":20261011,"steps":1000,"seq_len":289,"graph_labels":"balanced yes/no"}' > casm-output/run-metadata.json
+      - name: Upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-v02-corrected-curriculum-results
+          path: casm_v01/casm-output/
+          if-no-files-found: warn
+          retention-days: 90
