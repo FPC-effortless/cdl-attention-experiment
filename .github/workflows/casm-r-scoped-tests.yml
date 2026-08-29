@@ -1,0 +1,31 @@
+name: CASM-R scoped-memory tests
+
+on:
+  push:
+    branches:
+      - experiment/casm-r-scoped-memory
+    paths:
+      - "casm_v01/casm/scoped_data.py"
+      - "casm_v01/tests/test_scoped_data.py"
+      - ".github/workflows/casm-r-scoped-tests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install CPU PyTorch and pytest
+        run: |
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+      - name: Run scoped-data tests
+        run: |
+          PYTHONPATH=casm_v01 pytest -q casm_v01/tests/test_scoped_data.py casm_v01/tests/test_data_v2.py
