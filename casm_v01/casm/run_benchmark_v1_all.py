@@ -16,6 +16,8 @@ from .eval_answer_state import load_model as load_answer_state, pack_examples
 from .eval_recurrent import load_recurrent
 from .eval_tasks import load_model as load_base, score_example
 from .free_generate_eval import greedy_answer
+from .model import CASMConfig
+from .selective import SelectiveCASM
 
 
 def as_gold_example(case: BenchCase) -> Example:
@@ -24,9 +26,20 @@ def as_gold_example(case: BenchCase) -> Example:
     return Example(case.prompt + case.answer, case.task, case.answer)
 
 
+def load_selective(checkpoint: str):
+    ckpt = torch.load(checkpoint, map_location="cpu")
+    cfg = CASMConfig(**ckpt["config"])
+    model = SelectiveCASM(cfg)
+    model.load_state_dict(ckpt["state_dict"])
+    model.eval()
+    return model
+
+
 def load_family(family: str, checkpoint: str):
     if family == "base":
         return load_base(checkpoint)
+    if family == "selective":
+        return load_selective(checkpoint)
     if family == "recurrent":
         return load_recurrent(checkpoint)
     if family == "answer-state":
@@ -115,7 +128,7 @@ def evaluate_checkpoint(family: str, checkpoint: str, suite_name: str, max_new_t
 def main() -> None:
     p = argparse.ArgumentParser(description=f"{VERSION} evaluator with checkpoint-family adapters")
     p.add_argument("checkpoints", nargs="+")
-    p.add_argument("--family", choices=["base", "recurrent", "answer-state"], required=True)
+    p.add_argument("--family", choices=["base", "selective", "recurrent", "answer-state"], required=True)
     p.add_argument("--suite", choices=["dev-core", "dev-ood", "holdout-core", "holdout-ood"], required=True)
     p.add_argument("--max-new-tokens", type=int, default=64)
     p.add_argument("--diagnostics", action="store_true")
