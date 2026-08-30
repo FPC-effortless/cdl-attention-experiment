@@ -1,0 +1,97 @@
+name: Replay CASM directional pilots — CASM-Bench v1
+
+on:
+  push:
+    branches: ["benchmark/unified-harness-v2"]
+    paths: [".github/workflows/replay-casm-bench-v1-pilots.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pilot:
+    name: casm-bench-pilot-${{ matrix.pilot }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        pilot: [scoped, process, deep-answer, answer-state]
+    env:
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install and validate benchmark
+        run: |
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+          cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+          PYTHONPATH=casm_v01 pytest -q casm_v01/tests/test_benchmark_v1.py
+      - name: Train exact historical pilot
+        shell: bash
+        run: |
+          set -euxo pipefail
+          PILOT='${{ matrix.pilot }}'
+          OUT="replay-pilots/$PILOT"
+          mkdir -p "$OUT"
+          case "$PILOT" in
+            scoped)
+              PYTHONPATH=casm_v01 python -m casm.train_recurrent_scoped --tiny \
+                --steps 600 --batch-size 8 --seq-len 289 --eval-batches 8 \
+                --log-every 100 --answer-weight 12 --hard-max-prob 0.5 \
+                --hard-ramp-steps 300 --seed 20261131 --out "$OUT"
+              ;;
+            process)
+              PYTHONPATH=casm_v01 python -m casm.train_process --tiny \
+                --steps 600 --batch-size 8 --seq-len 385 --eval-batches 6 \
+                --answer-weight 12 --hard-max-prob 0.5 --hard-ramp-steps 300 \
+                --process-start 80 --process-warmup 160 --process-weight 0.15 \
+                --log-every 100 --seed 20261211 --out "$OUT"
+              ;;
+            deep-answer)
+              PYTHONPATH=casm_v01 python -m casm.train_deep_answer --tiny \
+                --steps 600 --batch-size 10 --seq-len 385 --eval-batches 6 \
+                --log-every 100 --answer-weight 12 --hard-max-prob 0.5 \
+                --hard-ramp-steps 300 --deep-start 80 --deep-warmup 160 \
+                --deep-weight 0.35 --seed 20261219 --out "$OUT"
+              ;;
+            answer-state)
+              PYTHONPATH=casm_v01 python -m casm.train_answer_state \
+                --steps 600 --batch-size 12 --seq-len 385 --eval-batches 8 \
+                --log-every 50 --hard-max-prob 0.5 --hard-ramp-steps 400 \
+                --seed 20261221 --out "$OUT"
+              ;;
+          esac
+      - name: CASM-Bench v1 DEV-CORE and DEV-OOD
+        shell: bash
+        run: |
+          set -euxo pipefail
+          PILOT='${{ matrix.pilot }}'
+          OUT="replay-pilots/$PILOT"
+          case "$PILOT" in
+            scoped)
+              FAMILY=recurrent; CPS="$OUT/scoped-qk-1step.pt $OUT/scoped-qk-3step.pt" ;;
+            process)
+              FAMILY=recurrent; CPS="$OUT/final-only-3step.pt $OUT/process-3step.pt" ;;
+            deep-answer)
+              FAMILY=recurrent; CPS="$OUT/final-only-3step.pt $OUT/deep-answer-3step.pt" ;;
+            answer-state)
+              FAMILY=answer-state; CPS="$OUT/answer-state-1step.pt $OUT/answer-state-3step.pt" ;;
+          esac
+          PYTHONPATH=casm_v01 python -m casm.run_benchmark_v1_all $CPS \
+            --family "$FAMILY" --suite dev-core --diagnostics --out "$OUT/casm-bench-v1-dev-core.json"
+          PYTHONPATH=casm_v01 python -m casm.run_benchmark_v1_all $CPS \
+            --family "$FAMILY" --suite dev-ood --diagnostics --out "$OUT/casm-bench-v1-dev-ood.json"
+          printf '{"benchmark":"CASM-Bench-v1.0","evidence_tier":"directional-pilot","pilot":"%s"}\n' "$PILOT" > "$OUT/replay-metadata.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: casm-bench-v1-pilot-${{ matrix.pilot }}
+          path: replay-pilots/${{ matrix.pilot }}/
+          if-no-files-found: warn
+          retention-days: 90
