@@ -4,10 +4,10 @@ from casm.benchmark_v1 import (
 )
 
 EXPECTED_DIGESTS = {
-    "dev-core": "807521fc1d75b7c8caaaa37fe101900174c1b6582f67a998eec3d8c935b6ef10",
-    "dev-ood": "b17c114a420b87b5092dc48b2db4df95142f1deaa5bf6b878775650018eb5aa6",
-    "holdout-core": "8039ee89e74b7140b79339287b6fd0cec51ba742012060528fff135bd1a235f1",
-    "holdout-ood": "828a3b445eff31d5648fd8766738adfb862d4782a96a15890e6e4ea8a17e0dab",
+    "dev-core": "a08e78746d3f3f93e05137f701fd7f6c734c5437beccf5ed0d0a2c1dacda5a0a",
+    "dev-ood": "67880ecad3fe300f724a7e27e7b3c873aae44dd09e526b12a998cba0a8fbf52e",
+    "holdout-core": "7af0e22f77d3df17761b124fbb6eb8a19560d94bbe3f898fd321a68ce862666f",
+    "holdout-ood": "627ed850f55cef9af16318120ec54ddb14ec7b9ad620d178a4904265aa13bcef",
 }
 
 
@@ -30,6 +30,8 @@ def test_gold_is_not_in_visible_prompt_and_state_is_complete():
             if x.task == "state":
                 assert "\ninitial " in x.prompt
                 assert x.metadata["verified_final"] == x.answer
+                expected_min = 6 if name.endswith("ood") else 3
+                assert x.metadata["query_updates"] >= expected_min
 
 
 def test_graph_is_exactly_balanced_and_verified():
@@ -65,10 +67,8 @@ def test_graph_counterfactual_pairs_match_except_for_one_edge_swap():
 def test_ood_domains_are_structurally_disjoint():
     core = build_suite("dev-core")
     ood = build_suite("dev-ood")
-
     def vals(rows, task, key):
         return {x.metadata[key] for x in rows if x.task == task}
-
     assert vals(core, "assoc", "n_keys") == {12}
     assert vals(ood, "assoc", "n_keys") == {24}
     assert vals(core, "state", "n_events") == {12}
