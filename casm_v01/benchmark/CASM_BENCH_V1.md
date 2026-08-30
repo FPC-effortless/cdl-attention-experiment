@@ -7,7 +7,7 @@ Status: **frozen after integrity validation**. Any change to cases, seeds, task 
 CASM-Bench v1 is a **mechanism benchmark for small recurrent/memory models**, not a claim of general natural-language intelligence. It measures six capabilities with equal task weight:
 
 1. **Associative retrieval** — retrieve the correct value from a distractor-filled memory set.
-2. **State tracking** — maintain and update explicit world state through a sequence of mutations.
+2. **State tracking** — maintain and update explicit world state through multiple guaranteed mutations of the queried object.
 3. **Algorithmic arithmetic** — execute exact multi-step symbolic computation.
 4. **Rule induction** — infer and continue a latent transformation rule.
 5. **Graph reachability** — perform multi-hop relational reasoning with exact class balance and matched counterfactual positive/negative pairs.
@@ -78,6 +78,7 @@ The following issues were found in earlier CASM evaluations and are explicitly p
 | Graph generator historically always answered `yes` | Graph cases are verifier-checked and **exactly 50/50 yes/no** in every suite. |
 | Positive and negative graphs came from visibly different generator families | Graphs are generated as **matched counterfactual pairs**: same source, destination, node count, edge count, path scaffold and shared distractors. The negative removes one internal path edge and replaces it with one non-path edge; both variants are independently verified. |
 | State generator sampled hidden initial state | Every state prompt explicitly serializes all initial object locations. |
+| State query could require no tracking | The queried object undergoes at least 3 real state changes in CORE and 6 in OOD; no-op moves are forbidden. |
 | Teacher-forced exact treated as solving | Teacher-forced metrics are diagnostic only. Primary is free generation. |
 | Gold answer length used during generation | Forbidden. Fixed termination protocol and cap only. |
 | Different seeds assumed to guarantee separation | Forbidden. HOLDOUT explicitly excludes any DEV prompt hash. |
@@ -102,7 +103,7 @@ Exact-hash checks do not prove absence of structural/template contamination. Tha
 OOD is not merely a new random seed.
 
 - associative: 24 keys vs 12 core;
-- state: 24 updates and larger object/location sets vs 12 core;
+- state: 24 updates, at least 6 queried-object transitions, and larger object/location sets vs 12 updates and at least 3 queried transitions in core;
 - arithmetic: four 3-digit operands and deeper operator patterns vs three 2-digit operands;
 - rule induction: multipliers {4,5} and addends 11–20 vs core multipliers {2,3};
 - graph: 14 nodes and minimum verified path depth 6 vs 10 nodes and minimum path depth 4;
