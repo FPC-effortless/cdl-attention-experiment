@@ -1,0 +1,54 @@
+name: Full-context easy-task calibration
+
+on:
+  push:
+    branches:
+      - diagnostic/full-context-easy-eval
+    paths:
+      - ".github/workflows/full-context-easy-eval.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Assemble
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Download authoritative 600-step baseline
+        run: |
+          mkdir -p checkpoint
+          gh run download 33283900059 \
+            --repo FPC-effortless/cdl-attention-experiment \
+            --name full-context-answer-baseline-results \
+            --dir checkpoint
+      - name: Evaluate easy exact solves
+        run: |
+          mkdir -p easy-eval
+          PYTHONPATH=casm_v01 python -m casm.eval_full_context_baseline \
+            checkpoint/model.pt \
+            --mode task --n 60 --max-new-tokens 20 --seed 20261304 \
+            > easy-eval/task-easy.txt
+          cat easy-eval/task-easy.txt
+      - name: Upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: full-context-easy-eval-results
+          path: easy-eval/
+          if-no-files-found: warn
+          retention-days: 30
