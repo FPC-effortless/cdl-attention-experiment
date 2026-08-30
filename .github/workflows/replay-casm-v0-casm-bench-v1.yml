@@ -1,0 +1,75 @@
+name: Replay exact CASM v0 — CASM-Bench v1
+
+on:
+  push:
+    branches: ["benchmark/unified-harness-v2"]
+    paths: [".github/workflows/replay-casm-v0-casm-bench-v1.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-v0:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    env:
+      PYTHONHASHSEED: "20260829"
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+      - name: Unpack exact historical v0 source
+        run: |
+          rm -rf legacy-v0
+          mkdir legacy-v0
+          unzip -q model/casm-v0-source.zip -d legacy-v0
+          test -f legacy-v0/casm/train.py
+          test -f legacy-v0/casm/model.py
+          PYTHONPATH=legacy-v0 pytest -q legacy-v0/tests
+      - name: Train exact historical v0 protocol
+        run: |
+          PYTHONPATH=legacy-v0 python -m casm.train \
+            --tiny \
+            --steps 600 \
+            --batch-size 8 \
+            --seq-len 97 \
+            --eval-batches 16 \
+            --log-every 100 \
+            --compression-warmup 100 \
+            --gzip-teacher-decay 400 \
+            --gzip-teacher-floor 0.25 \
+            --seed 20260829 \
+            --out legacy-v0/casm-output
+      - name: Import frozen CASM-Bench v1 without modifying legacy model
+        run: |
+          cp casm_v01/casm/benchmark_v1.py legacy-v0/casm/benchmark_v1.py
+          cp casm_v01/casm/run_benchmark_v1_legacy_base.py legacy-v0/casm/run_benchmark_v1_legacy_base.py
+          PYTHONPATH=legacy-v0 python - <<'PY'
+          from casm.benchmark_v1 import VERSION, build_suite, suite_digest
+          assert VERSION == "CASM-Bench-v1.0"
+          print(VERSION, suite_digest(build_suite("dev-core")), suite_digest(build_suite("dev-ood")))
+          PY
+      - name: Evaluate DEV-CORE and DEV-OOD
+        run: |
+          CPS="legacy-v0/casm-output/local-only.pt legacy-v0/casm-output/qk-memory.pt legacy-v0/casm-output/compression.pt"
+          PYTHONPATH=legacy-v0 python -m casm.run_benchmark_v1_legacy_base $CPS \
+            --suite dev-core --diagnostics --out legacy-v0/casm-output/casm-bench-v1-dev-core.json
+          PYTHONPATH=legacy-v0 python -m casm.run_benchmark_v1_legacy_base $CPS \
+            --suite dev-ood --diagnostics --out legacy-v0/casm-output/casm-bench-v1-dev-ood.json
+          printf '%s\n' '{"experiment":"CASM-v0-exact-source","benchmark":"CASM-Bench-v1.0","source_bundle_sha":"e57c217076b78d2140d4388e25ff9d448dd3ca31","seed":20260829,"steps":600,"seq_len":97}' > legacy-v0/casm-output/replay-metadata.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: casm-bench-v1-exact-casm-v0
+          path: legacy-v0/casm-output/
+          if-no-files-found: warn
+          retention-days: 90
