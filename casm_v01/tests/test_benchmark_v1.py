@@ -4,10 +4,10 @@ from casm.benchmark_v1 import (
 )
 
 EXPECTED_DIGESTS = {
-    "dev-core": "c495733cfb3e26098b192a208443206153de9ab32cc0beb9f2e3922946e88d0f",
-    "dev-ood": "539e65af21bba0b6f542037073e3199c89cd6672169c90ea767d2d9be26c4ef5",
-    "holdout-core": "112a45d5c5ddd9a28e1746995980129e2cfce6e549c8a2b0bc19a892554f4eca",
-    "holdout-ood": "a7f9618d1d7c8d03143a7b3368cfee3f3e50559599b1223b20001b8cbe12c91f",
+    "dev-core": "807521fc1d75b7c8caaaa37fe101900174c1b6582f67a998eec3d8c935b6ef10",
+    "dev-ood": "b17c114a420b87b5092dc48b2db4df95142f1deaa5bf6b878775650018eb5aa6",
+    "holdout-core": "8039ee89e74b7140b79339287b6fd0cec51ba742012060528fff135bd1a235f1",
+    "holdout-ood": "828a3b445eff31d5648fd8766738adfb862d4782a96a15890e6e4ea8a17e0dab",
 }
 
 
@@ -41,11 +41,34 @@ def test_graph_is_exactly_balanced_and_verified():
             assert bool(x.metadata["verified_reachable"]) == (x.answer == "yes")
 
 
+def test_graph_counterfactual_pairs_match_except_for_one_edge_swap():
+    for name in EXPECTED_DIGESTS:
+        graph = [x for x in build_suite(name) if x.task == "graph"]
+        pairs = {}
+        for x in graph:
+            pairs.setdefault(x.metadata["pair_id"], {})[x.metadata["variant"]] = x
+        assert len(pairs) * 2 == len(graph)
+        for pair in pairs.values():
+            assert set(pair) == {"positive", "negative"}
+            pos, neg = pair["positive"], pair["negative"]
+            assert pos.answer == "yes" and neg.answer == "no"
+            assert pos.metadata["src"] == neg.metadata["src"]
+            assert pos.metadata["dst"] == neg.metadata["dst"]
+            pe = set(map(tuple, pos.metadata["edges"]))
+            ne = set(map(tuple, neg.metadata["edges"]))
+            assert len(pe) == len(ne)
+            assert len(pe - ne) == 1 and len(ne - pe) == 1
+            minimum = 6 if name.endswith("ood") else 4
+            assert pos.metadata["shortest_path"] >= minimum
+
+
 def test_ood_domains_are_structurally_disjoint():
     core = build_suite("dev-core")
     ood = build_suite("dev-ood")
+
     def vals(rows, task, key):
         return {x.metadata[key] for x in rows if x.task == task}
+
     assert vals(core, "assoc", "n_keys") == {12}
     assert vals(ood, "assoc", "n_keys") == {24}
     assert vals(core, "state", "n_events") == {12}
