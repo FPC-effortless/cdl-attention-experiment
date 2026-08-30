@@ -10,17 +10,17 @@ CASM-Bench v1 is a **mechanism benchmark for small recurrent/memory models**, no
 2. **State tracking** — maintain and update explicit world state through a sequence of mutations.
 3. **Algorithmic arithmetic** — execute exact multi-step symbolic computation.
 4. **Rule induction** — infer and continue a latent transformation rule.
-5. **Graph reachability** — perform multi-hop relational reasoning with exact class balance.
+5. **Graph reachability** — perform multi-hop relational reasoning with exact class balance and matched counterfactual positive/negative pairs.
 6. **Exact sequence transformation** — preserve and manipulate token-level structure via reverse/copy.
 
-These axes were selected because they separately stress memory addressing, persistent state, computation, abstraction, compositional graph reasoning, and exact symbolic manipulation. They remain fixed for CASM-Bench v1.
+These axes separately stress memory addressing, persistent state, computation, abstraction, compositional graph reasoning, and exact symbolic manipulation. They remain fixed for CASM-Bench v1.
 
 ## Suites
 
 ### DEV-CORE
 - 60 fixed unique cases per task; 360 total.
 - Used after **every experimental interaction**.
-- This is the only suite we are allowed to optimize architecture against directly.
+- This is the suite we are allowed to optimize architecture against directly.
 
 ### DEV-OOD
 - 60 fixed unique cases per task; 360 total.
@@ -75,7 +75,8 @@ The following issues were found in earlier CASM evaluations and are explicitly p
 
 | Risk | v1 rule |
 |---|---|
-| Graph generator previously always answered `yes` | Graph cases are verifier-checked and **exactly 50/50 yes/no** in every suite. |
+| Graph generator historically always answered `yes` | Graph cases are verifier-checked and **exactly 50/50 yes/no** in every suite. |
+| Positive and negative graphs came from visibly different generator families | Graphs are generated as **matched counterfactual pairs**: same source, destination, node count, edge count, path scaffold and shared distractors. The negative removes one internal path edge and replaces it with one non-path edge; both variants are independently verified. |
 | State generator sampled hidden initial state | Every state prompt explicitly serializes all initial object locations. |
 | Teacher-forced exact treated as solving | Teacher-forced metrics are diagnostic only. Primary is free generation. |
 | Gold answer length used during generation | Forbidden. Fixed termination protocol and cap only. |
@@ -104,7 +105,7 @@ OOD is not merely a new random seed.
 - state: 24 updates and larger object/location sets vs 12 core;
 - arithmetic: four 3-digit operands and deeper operator patterns vs three 2-digit operands;
 - rule induction: multipliers {4,5} and addends 11–20 vs core multipliers {2,3};
-- graph: 14 nodes / deeper guaranteed path vs 10 nodes;
+- graph: 14 nodes and minimum verified path depth 6 vs 10 nodes and minimum path depth 4;
 - reverse: 28 symbols vs 14.
 
 If future training deliberately includes these OOD domains, CASM-Bench v1 OOD can no longer support an extrapolation claim for that run; the training-domain declaration must state this and a new holdout domain is required.
@@ -116,7 +117,7 @@ Every experimental interaction must state the same scoreboard in this order:
 1. DEV-CORE `NormalizedSolveMacro` and `RawSolveMacro`.
 2. DEV-OOD `NormalizedSolveMacro` and `RawSolveMacro`.
 3. Six per-task raw exact accuracies for CORE and OOD.
-4. Majority/class-collapse diagnostics (especially graph by class).
+4. Majority/class-collapse diagnostics, including graph accuracy by class.
 5. Teacher-forced answer NLL as diagnostic only.
 6. Parameter count, reasoning steps and inference cost.
 7. Relevant causal ablations.
