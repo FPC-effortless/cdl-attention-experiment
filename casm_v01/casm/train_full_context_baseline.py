@@ -10,9 +10,18 @@ from pathlib import Path
 import torch
 import torch.nn.functional as F
 
-from .data import PAD
+from .data import EOS, PAD
 from .full_context_baseline import FullContextTransformer, baseline_config
 from .process_data import make_process_batch
+
+
+def answer_supervision_mask(
+    tokens: torch.Tensor,
+    answer_mask: torch.Tensor,
+) -> torch.Tensor:
+    """Supervise answer bytes plus the terminal EOS target for each row."""
+    targets = tokens[:, 1:]
+    return (answer_mask[:, 1:] | (targets == EOS)) & (targets != PAD)
 
 
 def answer_only_loss(
@@ -23,7 +32,7 @@ def answer_only_loss(
     input_ids = tokens[:, :-1]
     targets = tokens[:, 1:]
     logits = model(input_ids)
-    mask = answer_mask[:, 1:] & (targets != PAD)
+    mask = answer_supervision_mask(tokens, answer_mask)
     tok_nll = F.cross_entropy(
         logits.transpose(1, 2), targets, ignore_index=PAD, reduction="none"
     )
