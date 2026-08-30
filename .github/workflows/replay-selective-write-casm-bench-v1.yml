@@ -1,0 +1,56 @@
+name: Replay selective-write candidate — CASM-Bench v1
+
+on:
+  push:
+    branches: ["benchmark/unified-harness-v2"]
+    paths: [".github/workflows/replay-selective-write-casm-bench-v1.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  selective-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+      PYTHONHASHSEED: "20260921"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install and validate
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+          cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+          PYTHONPATH=casm_v01 pytest -q casm_v01/tests/test_selective.py casm_v01/tests/test_benchmark_v1.py
+      - name: Replay same-initialization 100-step smoke
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.train_selective_replay \
+            --steps 100 --batch-size 8 --seq-len 193 --eval-batches 20 \
+            --seed 20260921 --out selective-replay
+      - name: Evaluate control on DEV
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.run_benchmark_v1_all selective-replay/compression-qk.pt \
+            --family base --suite dev-core --diagnostics --out selective-replay/control-dev-core.json
+          PYTHONPATH=casm_v01 python -m casm.run_benchmark_v1_all selective-replay/compression-qk.pt \
+            --family base --suite dev-ood --diagnostics --out selective-replay/control-dev-ood.json
+      - name: Evaluate selective candidate on DEV
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.run_benchmark_v1_all selective-replay/selective.pt \
+            --family selective --suite dev-core --diagnostics --out selective-replay/selective-dev-core.json
+          PYTHONPATH=casm_v01 python -m casm.run_benchmark_v1_all selective-replay/selective.pt \
+            --family selective --suite dev-ood --diagnostics --out selective-replay/selective-dev-ood.json
+          printf '%s\n' '{"experiment":"selective-write-v0.2-smoke","benchmark":"CASM-Bench-v1.0","evidence_tier":"100-step smoke only","seed":20260921}' > selective-replay/replay-metadata.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: casm-bench-v1-selective-write-smoke
+          path: selective-replay/
+          if-no-files-found: warn
+          retention-days: 90
