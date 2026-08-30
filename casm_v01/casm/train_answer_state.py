@@ -7,7 +7,6 @@ import random
 import time
 from dataclasses import asdict, replace
 from pathlib import Path
-from typing import Dict, List, Tuple
 
 import torch
 import torch.nn.functional as F
@@ -123,6 +122,18 @@ def train_one(kind, args, cfg, init_state):
     return model, history, time.perf_counter() - started
 
 
+def _summary_fieldnames(rows):
+    """Stable union of keys for heterogeneous one-step/three-step summaries."""
+    fields = []
+    seen = set()
+    for row in rows:
+        for key in row:
+            if key not in seen:
+                seen.add(key)
+                fields.append(key)
+    return fields
+
+
 def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument("--out", default="casm-y-output")
@@ -192,7 +203,7 @@ def main() -> None:
         )
 
     with (out_dir / "summary.csv").open("w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=summary[0].keys())
+        w = csv.DictWriter(f, fieldnames=_summary_fieldnames(summary))
         w.writeheader()
         w.writerows(summary)
     (out_dir / "config.json").write_text(json.dumps(asdict(cfg), indent=2))
