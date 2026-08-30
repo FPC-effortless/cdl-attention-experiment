@@ -1,0 +1,75 @@
+name: CASM-Y answer-state pilot
+
+on:
+  push:
+    branches:
+      - experiment/casm-y-answer-state
+    paths:
+      - "casm_v01/**"
+      - ".github/workflows/casm-y-pilot.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      PYTHONHASHSEED: "20261221"
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+      - name: Assemble and test
+        run: |
+          cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+          PYTHONPATH=casm_v01 pytest -q \
+            casm_v01/tests/test_answer_state.py \
+            casm_v01/tests/test_process_supervision.py \
+            casm_v01/tests/test_recurrent_reasoning.py
+      - name: Train 600-step paired pilot
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.train_answer_state \
+            --steps 600 --batch-size 12 --seq-len 385 --eval-batches 8 \
+            --log-every 50 --hard-max-prob 0.5 --hard-ramp-steps 400 \
+            --seed 20261221 --out casm-y-pilot
+      - name: Hard task exact solve rate
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.eval_answer_state \
+            casm-y-pilot/answer-state-1step.pt \
+            casm-y-pilot/answer-state-3step.pt \
+            --mode task --hard --n 40 --seed 20261222 \
+            > casm-y-pilot/task-hard.txt
+          cat casm-y-pilot/task-hard.txt
+      - name: Exact-balanced graph solve rate
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.eval_answer_state \
+            casm-y-pilot/answer-state-1step.pt \
+            casm-y-pilot/answer-state-3step.pt \
+            --mode balanced-graph --n 40 --seed 20261223 \
+            > casm-y-pilot/balanced-graph.txt
+          cat casm-y-pilot/balanced-graph.txt
+      - name: Recurrence depth sweep
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.eval_answer_state \
+            casm-y-pilot/answer-state-3step.pt \
+            --mode depth --n 20 --depths 1,2,3,5 --seed 20261224 \
+            > casm-y-pilot/depth.txt
+          cat casm-y-pilot/depth.txt
+      - name: Upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-y-pilot-results
+          path: casm-y-pilot/
+          if-no-files-found: warn
+          retention-days: 60
