@@ -1,0 +1,106 @@
+name: CASM-Y explicit answer state
+
+on:
+  push:
+    branches:
+      - experiment/casm-y-answer-state
+    paths:
+      - "casm_v01/**"
+      - ".github/workflows/casm-y-answer-state.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  train-and-evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      PYTHONHASHSEED: "20261221"
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+      - name: Assemble and test
+        run: |
+          cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+          PYTHONPATH=casm_v01 pytest -q \
+            casm_v01/tests/test_answer_state.py \
+            casm_v01/tests/test_process_supervision.py \
+            casm_v01/tests/test_recurrent_reasoning.py
+      - name: Smoke train
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.train_answer_state \
+            --steps 12 --batch-size 3 --seq-len 320 --eval-batches 1 \
+            --log-every 6 --hard-max-prob 0.5 --hard-ramp-steps 6 \
+            --seed 20261220 --out casm-y-smoke
+      - name: Train paired one-step and three-step answer-state models
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.train_answer_state \
+            --steps 2000 --batch-size 16 --seq-len 385 --eval-batches 16 \
+            --log-every 100 --hard-max-prob 0.5 --hard-ramp-steps 800 \
+            --seed 20261221 --out casm-y-output
+      - name: Hard task exact solve rate
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.eval_answer_state \
+            casm-y-output/answer-state-1step.pt \
+            casm-y-output/answer-state-3step.pt \
+            --mode task --hard --n 60 --seed 20261222 \
+            > casm-y-output/task-hard.txt
+          cat casm-y-output/task-hard.txt
+      - name: Exact-balanced graph solve rate
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.eval_answer_state \
+            casm-y-output/answer-state-1step.pt \
+            casm-y-output/answer-state-3step.pt \
+            --mode balanced-graph --n 50 --seed 20261223 \
+            > casm-y-output/balanced-graph.txt
+          cat casm-y-output/balanced-graph.txt
+      - name: Long-horizon stress
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.eval_answer_state \
+            casm-y-output/answer-state-1step.pt \
+            casm-y-output/answer-state-3step.pt \
+            --mode stress --n 20 --seed 20261224 \
+            > casm-y-output/stress.txt
+          cat casm-y-output/stress.txt
+      - name: Recurrence depth sweep
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.eval_answer_state \
+            casm-y-output/answer-state-3step.pt \
+            --mode depth --n 30 --depths 1,2,3,5 --seed 20261225 \
+            > casm-y-output/depth.txt
+          cat casm-y-output/depth.txt
+      - name: Preserve experiment contract
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          Path('casm-y-output/run-metadata.json').write_text(json.dumps({
+            'experiment': 'CASM-Y-explicit-answer-state',
+            'seed': 20261221,
+            'steps': 2000,
+            'variants': ['answer-state-1step', 'answer-state-3step'],
+            'parameter_parity': 'same state dict and parameter count; recurrence shares weights',
+            'gold_answer_leakage': 'bytes after answer marker are masked before encoding',
+            'answer_decoding': 'parallel fixed answer slots through tied LM head; EOS terminated',
+            'primary_metric': 'exact answer solve rate',
+            'graph_metric': 'exact-balanced yes/no class accuracy',
+          }, indent=2))
+          PY
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-y-answer-state-results
+          path: casm-y-output/
+          if-no-files-found: warn
+          retention-days: 90
