@@ -1,0 +1,64 @@
+name: Replay CASM v0.2 corrected curriculum — CASM-Bench v1
+
+on:
+  push:
+    branches: ["benchmark/unified-harness-v2"]
+    paths: [".github/workflows/replay-casm-v02-casm-bench-v1.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  corrected-curriculum:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    env:
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+      PYTHONHASHSEED: "20261011"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install and validate
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+          cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+          PYTHONPATH=casm_v01 pytest -q casm_v01/tests/test_model.py casm_v01/tests/test_data_v2.py casm_v01/tests/test_benchmark_v1.py
+      - name: Train exact corrected-curriculum protocol
+        run: |
+          mkdir -p replay-v02
+          PYTHONPATH=casm_v01 python -m casm.train --tiny \
+            --steps 1000 \
+            --batch-size 8 \
+            --seq-len 289 \
+            --eval-batches 20 \
+            --log-every 200 \
+            --compression-warmup 150 \
+            --gzip-teacher-decay 800 \
+            --gzip-teacher-floor 0.35 \
+            --answer-weight 8 \
+            --hard-max-prob 0.55 \
+            --hard-ramp-steps 600 \
+            --seed 20261011 \
+            --models qk-memory,compression-qk \
+            --out replay-v02
+      - name: Evaluate frozen DEV-CORE and DEV-OOD
+        run: |
+          CPS="replay-v02/qk-memory.pt replay-v02/compression-qk.pt"
+          PYTHONPATH=casm_v01 python -m casm.run_benchmark_v1_all $CPS \
+            --family base --suite dev-core --diagnostics --out replay-v02/casm-bench-v1-dev-core.json
+          PYTHONPATH=casm_v01 python -m casm.run_benchmark_v1_all $CPS \
+            --family base --suite dev-ood --diagnostics --out replay-v02/casm-bench-v1-dev-ood.json
+          printf '%s\n' '{"experiment":"corrected-curriculum-v0.2","benchmark":"CASM-Bench-v1.0","seed":20261011,"steps":1000,"seq_len":289,"historical_protocol":"exact"}' > replay-v02/replay-metadata.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: casm-bench-v1-replay-corrected-curriculum-v02
+          path: replay-v02/
+          if-no-files-found: warn
+          retention-days: 90
