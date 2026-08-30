@@ -1,0 +1,35 @@
+name: CASM-Bench v1 Integrity
+
+on:
+  push:
+    branches: ["benchmark/casm-bench-v1"]
+  workflow_dispatch:
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install test dependencies
+        run: python -m pip install --upgrade pip pytest torch
+      - name: Assemble CASM source
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Run benchmark integrity tests
+        working-directory: casm_v01
+        run: PYTHONPATH=. pytest -q tests/test_benchmark_v1.py
+      - name: Verify frozen manifest
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.benchmark_v1 > /tmp/generated_manifest.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          expected = json.loads(Path('benchmark/manifest_v1.json').read_text())
+          actual = json.loads(Path('/tmp/generated_manifest.json').read_text())
+          assert actual == expected, 'CASM-Bench v1 manifest drifted; create a new benchmark version instead of editing v1.0'
+          print('manifest verified')
+          PY
