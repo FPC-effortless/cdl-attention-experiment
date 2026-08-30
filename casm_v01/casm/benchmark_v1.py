@@ -143,13 +143,6 @@ def _shortest_path_len(edges: Sequence[tuple[str, str]], src: str, dst: str) -> 
 
 
 def _graph_pair(rng: random.Random, *, ood: bool, pair_id: int):
-    """Matched reachable/unreachable pair with equal edge count and query.
-
-    The pair shares source/destination, a hidden path scaffold and all distractor
-    edges. The negative removes one internal path edge and replaces it with a
-    verified non-path edge. This makes generator-family shortcuts substantially
-    harder than using disconnected components for all negatives.
-    """
     n_nodes = 14 if ood else 10
     nodes = _names(n_nodes, "n")
     path_edges_n = 8 if ood else 5
@@ -362,11 +355,38 @@ def score_predictions(rows: Sequence[BenchCase], predictions: Mapping[str, str])
             if x.case_id not in predictions:
                 missing += 1
                 continue
-            correct += int(normalize_answer(task, predictions[x.case_id]) == normalize_answer(task, x.answer))
+            pred = normalize_answer(task, predictions[x.case_id])
+            gold = normalize_answer(task, x.answer)
+            correct += int(pred == gold)
         raw = correct / len(task_rows)
         b = baselines[task]
-        per_task[task] = {"raw_exact": raw, "majority_baseline": b, "adjusted_exact": (raw - b) / max(1e-12, 1.0 - b), "correct": correct, "n": len(task_rows), "missing": missing}
-    return {"version": VERSION, "suite": rows[0].suite, "suite_digest": suite_digest(rows), "raw_solve_macro": sum(x["raw_exact"] for x in per_task.values()) / len(TASKS), "normalized_solve_macro": sum(x["adjusted_exact"] for x in per_task.values()) / len(TASKS), "per_task": per_task}
+        adjusted = (raw - b) / max(1e-12, 1.0 - b)
+        by_gold = {}
+        for x in task_rows:
+            gold = normalize_answer(task, x.answer)
+            bucket = by_gold.setdefault(gold, {"correct": 0, "total": 0})
+            bucket["total"] += 1
+            if x.case_id in predictions:
+                bucket["correct"] += int(normalize_answer(task, predictions[x.case_id]) == gold)
+        for bucket in by_gold.values():
+            bucket["accuracy"] = bucket["correct"] / bucket["total"]
+        per_task[task] = {
+            "raw_exact": raw,
+            "majority_baseline": b,
+            "adjusted_exact": adjusted,
+            "correct": correct,
+            "n": len(task_rows),
+            "missing": missing,
+            "by_gold": by_gold,
+        }
+    return {
+        "version": VERSION,
+        "suite": rows[0].suite,
+        "suite_digest": suite_digest(rows),
+        "raw_solve_macro": sum(x["raw_exact"] for x in per_task.values()) / len(TASKS),
+        "normalized_solve_macro": sum(x["adjusted_exact"] for x in per_task.values()) / len(TASKS),
+        "per_task": per_task,
+    }
 
 
 def prompt_hash_from_training_text(text: str) -> str:
@@ -379,7 +399,13 @@ def prompt_hash_from_training_text(text: str) -> str:
 def contamination_report(rows: Sequence[BenchCase], train_prompt_hashes: Iterable[str]) -> dict:
     train = {x.strip() for x in train_prompt_hashes if x.strip()}
     overlaps = [x for x in rows if x.prompt_hash in train]
-    return {"suite": rows[0].suite, "n_cases": len(rows), "n_exact_prompt_overlaps": len(overlaps), "overlap_case_ids": [x.case_id for x in overlaps[:50]], "certified_clean": len(overlaps) == 0}
+    return {
+        "suite": rows[0].suite,
+        "n_cases": len(rows),
+        "n_exact_prompt_overlaps": len(overlaps),
+        "overlap_case_ids": [x.case_id for x in overlaps[:50]],
+        "certified_clean": len(overlaps) == 0,
+    }
 
 
 def manifest() -> dict:
@@ -388,7 +414,12 @@ def manifest() -> dict:
     for name in ("dev-core", "dev-ood", "holdout-core", "holdout-ood"):
         rows = build_suite(name)
         all_rows[name] = rows
-        suites[name] = {"n": len(rows), "n_per_task": len(rows) // len(TASKS), "digest": suite_digest(rows), "majority_baseline": majority_baseline(rows)}
+        suites[name] = {
+            "n": len(rows),
+            "n_per_task": len(rows) // len(TASKS),
+            "digest": suite_digest(rows),
+            "majority_baseline": majority_baseline(rows),
+        }
     names = list(all_rows)
     cross = {}
     for i, a in enumerate(names):
