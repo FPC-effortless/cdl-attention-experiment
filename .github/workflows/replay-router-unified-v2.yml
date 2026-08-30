@@ -1,0 +1,57 @@
+name: Replay router experiments — unified harness v2
+
+on:
+  push:
+    branches:
+      - benchmark/unified-harness-v2
+    paths:
+      - "run_router_harness_v2.py"
+      - "run_stage_a.py"
+      - "run_attention_control.py"
+      - "run_stage_b.py"
+      - "app.py"
+      - ".github/workflows/replay-router-unified-v2.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  router-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      PYTHONHASHSEED: "20260831"
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install CPU PyTorch and dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -r requirements.txt
+
+      - name: Run corrected router replay
+        run: |
+          python run_router_harness_v2.py
+
+      - name: Upload unified router replay
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: replay-router-unified-v2
+          path: |
+            router-harness-v2/
+            benchmark-output/
+            attention-control-output/
+            stage-b-output/
+          if-no-files-found: warn
+          retention-days: 90
