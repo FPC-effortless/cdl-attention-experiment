@@ -9,25 +9,25 @@
   },
   "suites": {
     "dev-core": {
-      "digest": "c495733cfb3e26098b192a208443206153de9ab32cc0beb9f2e3922946e88d0f",
+      "digest": "807521fc1d75b7c8caaaa37fe101900174c1b6582f67a998eec3d8c935b6ef10",
       "majority_baseline": {"arith": 0.05, "assoc": 0.06666666666666667, "graph": 0.5, "reverse": 0.016666666666666666, "rule": 0.016666666666666666, "state": 0.23333333333333334},
       "n": 360,
       "n_per_task": 60
     },
     "dev-ood": {
-      "digest": "539e65af21bba0b6f542037073e3199c89cd6672169c90ea767d2d9be26c4ef5",
+      "digest": "b17c114a420b87b5092dc48b2db4df95142f1deaa5bf6b878775650018eb5aa6",
       "majority_baseline": {"arith": 0.03333333333333333, "assoc": 0.06666666666666667, "graph": 0.5, "reverse": 0.016666666666666666, "rule": 0.016666666666666666, "state": 0.16666666666666666},
       "n": 360,
       "n_per_task": 60
     },
     "holdout-core": {
-      "digest": "112a45d5c5ddd9a28e1746995980129e2cfce6e549c8a2b0bc19a892554f4eca",
+      "digest": "8039ee89e74b7140b79339287b6fd0cec51ba742012060528fff135bd1a235f1",
       "majority_baseline": {"arith": 0.03, "assoc": 0.03, "graph": 0.5, "reverse": 0.005, "rule": 0.005, "state": 0.185},
       "n": 1200,
       "n_per_task": 200
     },
     "holdout-ood": {
-      "digest": "a7f9618d1d7c8d03143a7b3368cfee3f3e50559599b1223b20001b8cbe12c91f",
+      "digest": "828a3b445eff31d5648fd8766738adfb862d4782a96a15890e6e4ea8a17e0dab",
       "majority_baseline": {"arith": 0.01, "assoc": 0.045, "graph": 0.5, "reverse": 0.005, "rule": 0.005, "state": 0.13},
       "n": 1200,
       "n_per_task": 200
