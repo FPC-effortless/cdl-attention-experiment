@@ -1,0 +1,61 @@
+name: CASM-Y whole-answer sequence scoring
+
+on:
+  push:
+    branches:
+      - diagnostic/casm-y-sequence-scoring
+    paths:
+      - "casm_v01/casm/eval_answer_candidates.py"
+      - ".github/workflows/casm-y-sequence-scoring.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PYTHONHASHSEED: "20261226"
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Assemble and syntax check
+        run: |
+          cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+          python -m py_compile casm_v01/casm/eval_answer_candidates.py
+      - name: Download trained CASM-Y pilot checkpoints
+        run: |
+          mkdir -p pilot-checkpoints
+          gh run download 33283454031 \
+            --repo FPC-effortless/cdl-attention-experiment \
+            --name casm-y-pilot-results \
+            --dir pilot-checkpoints
+          ls -lh pilot-checkpoints
+      - name: Score valid whole-answer candidates
+        run: |
+          mkdir -p sequence-scoring
+          PYTHONPATH=casm_v01 python -m casm.eval_answer_candidates \
+            pilot-checkpoints/answer-state-1step.pt \
+            pilot-checkpoints/answer-state-3step.pt \
+            --n 200 --seed 20261226 \
+            > sequence-scoring/result.txt
+          cat sequence-scoring/result.txt
+      - name: Upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-y-sequence-scoring-results
+          path: sequence-scoring/
+          if-no-files-found: warn
+          retention-days: 60
