@@ -10,7 +10,7 @@ import torch.nn.functional as F
 
 from .data import EOS
 from .eval_answer_state import load_model, pack_examples
-from .process_data import exact_balanced_graphs if False else graph_process, state_process
+from .process_data import graph_process, state_process
 
 
 STATE_CANDIDATES = ["bag", "box", "desk", "room", "shelf", "tray"]
