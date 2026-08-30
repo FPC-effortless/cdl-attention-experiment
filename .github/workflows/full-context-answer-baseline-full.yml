@@ -1,0 +1,91 @@
+name: Full-context answer-only baseline 2000
+
+on:
+  push:
+    branches:
+      - diagnostic/full-context-answer-baseline
+    paths:
+      - ".github/workflows/full-context-answer-baseline-full.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  train-and-evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      PYTHONHASHSEED: "20261231"
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+      - name: Assemble and test
+        run: |
+          cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+          PYTHONPATH=casm_v01 pytest -q casm_v01/tests/test_full_context_baseline.py
+      - name: Train 2000-step answer-only baseline
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.train_full_context_baseline \
+            --steps 2000 \
+            --batch-size 8 \
+            --seq-len 385 \
+            --eval-batches 16 \
+            --log-every 100 \
+            --hard-max-prob 0.5 \
+            --hard-ramp-steps 800 \
+            --seed 20261231 \
+            --out full-context-2000
+      - name: True hard-task solve rate
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.eval_full_context_baseline \
+            full-context-2000/model.pt \
+            --mode task --hard --n 60 --max-new-tokens 20 --seed 20261301 \
+            > full-context-2000/task-hard.txt
+          cat full-context-2000/task-hard.txt
+      - name: Exact-balanced graph solve rate
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.eval_full_context_baseline \
+            full-context-2000/model.pt \
+            --mode balanced-graph --n 50 --max-new-tokens 8 --seed 20261302 \
+            > full-context-2000/balanced-graph.txt
+          cat full-context-2000/balanced-graph.txt
+      - name: Long-horizon stress
+        run: |
+          PYTHONPATH=casm_v01 python -m casm.eval_full_context_baseline \
+            full-context-2000/model.pt \
+            --mode stress --n 20 --max-new-tokens 20 --seed 20261303 \
+            > full-context-2000/stress.txt
+          cat full-context-2000/stress.txt
+      - name: Preserve control contract
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          Path('full-context-2000/run-metadata.json').write_text(json.dumps({
+            'experiment': 'full-context-answer-only-baseline-2000',
+            'seed': 20261231,
+            'steps': 2000,
+            'context': 'ordinary full causal prompt; no compressed memory or persistent CASM state',
+            'training_objective': 'answer bytes plus terminal EOS cross entropy only',
+            'gold_answer_leakage': 'generation prompt truncated through literal answer marker before gold answer',
+            'primary_metric': 'true autoregressive exact solve rate',
+            'graph_metric': 'exact-balanced yes/no generation',
+          }, indent=2))
+          PY
+      - name: Upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: full-context-answer-baseline-2000-results
+          path: full-context-2000/
+          if-no-files-found: warn
+          retention-days: 90
