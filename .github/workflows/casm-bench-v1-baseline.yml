@@ -1,0 +1,63 @@
+name: CASM-Bench v1 Baseline
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["benchmark/casm-bench-v1"]
+    paths: [".github/workflows/casm-bench-v1-baseline.yml"]
+
+jobs:
+  baseline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip torch
+      - name: Assemble CASM source
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Download completed CASM-P checkpoint artifact
+        run: |
+          curl -fL --retry 3 -o /tmp/historical.zip \
+            https://api.github.com/repos/FPC-effortless/cdl-attention-experiment/actions/artifacts/9720282503/zip
+          mkdir historical
+          unzip -q /tmp/historical.zip -d historical
+          test -f historical/final-only-3step.pt
+          test -f historical/process-3step.pt
+      - name: Evaluate DEV-CORE
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.run_benchmark_v1 \
+            ../historical/final-only-3step.pt ../historical/process-3step.pt \
+            --suite dev-core --diagnostics --out benchmark-v1-dev-core.json
+      - name: Evaluate DEV-OOD
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.run_benchmark_v1 \
+            ../historical/final-only-3step.pt ../historical/process-3step.pt \
+            --suite dev-ood --diagnostics --out benchmark-v1-dev-ood.json
+      - name: Record baseline metadata
+        run: |
+          printf '%s\n' \
+            '{' \
+            '  "benchmark": "CASM-Bench-v1.0",' \
+            '  "source_training_run": 33269542397,' \
+            '  "source_training_commit": "0680c7b6a6fc2a9434fbcd4ea1b955a0322f65b5",' \
+            '  "historical_training_hashes_available": false,' \
+            '  "contamination_status": "uncertified historical baseline"' \
+            '}' > casm_v01/baseline-metadata.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: casm-bench-v1-first-baseline
+          path: |
+            casm_v01/benchmark-v1-dev-core.json
+            casm_v01/benchmark-v1-dev-ood.json
+            casm_v01/benchmark-v1-dev-core-predictions/
+            casm_v01/benchmark-v1-dev-ood-predictions/
+            casm_v01/baseline-metadata.json
