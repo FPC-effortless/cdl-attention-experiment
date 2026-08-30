@@ -1,0 +1,172 @@
+name: Replay all CASM experiments — CASM-Bench v1
+
+on:
+  push:
+    branches: ["benchmark/unified-harness-v2"]
+    paths:
+      - ".github/workflows/replay-casm-bench-v1.yml"
+      - "casm_v01/casm/benchmark_v1.py"
+      - "casm_v01/casm/run_benchmark_v1_all.py"
+      - "casm_v01/tests/test_benchmark_v1.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    name: casm-bench-${{ matrix.experiment }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        experiment:
+          - base-compression
+          - answer-utility
+          - recurrent
+          - scoped-memory
+          - process-supervision
+          - deep-answer
+          - capacity-floor
+          - answer-state
+    env:
+      PYTHONHASHSEED: "20260831"
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+      - name: Assemble model and validate frozen benchmark
+        run: |
+          cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+          PYTHONPATH=casm_v01 pytest -q casm_v01/tests/test_benchmark_v1.py
+      - name: Train historical intervention from scratch
+        shell: bash
+        run: |
+          set -euxo pipefail
+          EXP='${{ matrix.experiment }}'
+          mkdir -p replay-bench/$EXP
+          case "$EXP" in
+            base-compression)
+              PYTHONPATH=casm_v01 python -m casm.train --tiny \
+                --steps 600 --batch-size 12 --seq-len 129 --eval-batches 8 \
+                --seed 20260829 --models local-only,qk-memory,compression,compression-qk \
+                --out replay-bench/$EXP
+              ;;
+            answer-utility)
+              PYTHONPATH=casm_v01 python -m casm.train_answer_utility --tiny \
+                --steps 1000 --batch-size 8 --seq-len 289 --eval-batches 8 \
+                --seed 20261011 --out replay-bench/$EXP
+              ;;
+            recurrent)
+              PYTHONPATH=casm_v01 python -m casm.train_recurrent --tiny \
+                --steps 2000 --batch-size 8 --seq-len 289 --eval-batches 8 \
+                --seed 20261101 --out replay-bench/$EXP
+              ;;
+            scoped-memory)
+              PYTHONPATH=casm_v01 python -m casm.train_recurrent_scoped --tiny \
+                --steps 2000 --batch-size 16 --seq-len 289 --eval-batches 8 \
+                --seed 20261121 --out replay-bench/$EXP
+              ;;
+            process-supervision)
+              PYTHONPATH=casm_v01 python -m casm.train_process --tiny \
+                --steps 2000 --batch-size 12 --seq-len 385 --eval-batches 8 \
+                --seed 20261201 --out replay-bench/$EXP
+              ;;
+            deep-answer)
+              PYTHONPATH=casm_v01 python -m casm.train_deep_answer --tiny \
+                --steps 2000 --batch-size 12 --seq-len 385 --eval-batches 8 \
+                --seed 20261221 --out replay-bench/$EXP
+              ;;
+            capacity-floor)
+              PYTHONPATH=casm_v01 python -m casm.train_capacity_floor \
+                --steps 1200 --batch-size 12 --seq-len 385 --seed 20261301 \
+                --out replay-bench/$EXP
+              ;;
+            answer-state)
+              PYTHONPATH=casm_v01 python -m casm.train_answer_state \
+                --steps 2000 --batch-size 16 --seq-len 385 --eval-batches 8 \
+                --seed 20261221 --out replay-bench/$EXP
+              ;;
+          esac
+      - name: Evaluate frozen DEV-CORE and DEV-OOD
+        shell: bash
+        run: |
+          set -euxo pipefail
+          EXP='${{ matrix.experiment }}'
+          DIR="replay-bench/$EXP"
+          case "$EXP" in
+            base-compression)
+              FAMILY=base
+              CPS="$DIR/local-only.pt $DIR/qk-memory.pt $DIR/compression.pt $DIR/compression-qk.pt"
+              ;;
+            answer-utility)
+              FAMILY=base
+              CPS="$DIR/qk-memory.pt $DIR/compression-qk.pt $DIR/answer-utility-qk.pt"
+              ;;
+            recurrent)
+              FAMILY=recurrent
+              CPS="$DIR/qk-1step.pt $DIR/qk-3step.pt $DIR/set-utility-3step.pt"
+              ;;
+            scoped-memory)
+              FAMILY=recurrent
+              CPS="$DIR/scoped-qk-1step.pt $DIR/scoped-qk-3step.pt"
+              ;;
+            process-supervision)
+              FAMILY=recurrent
+              CPS="$DIR/final-only-3step.pt $DIR/process-3step.pt"
+              ;;
+            deep-answer)
+              FAMILY=recurrent
+              CPS="$DIR/final-only-3step.pt $DIR/deep-answer-3step.pt"
+              ;;
+            capacity-floor)
+              FAMILY=recurrent
+              CPS="$DIR/state-only.pt $DIR/graph-only.pt"
+              ;;
+            answer-state)
+              FAMILY=answer-state
+              CPS="$DIR/answer-state-1step.pt $DIR/answer-state-3step.pt"
+              ;;
+          esac
+          PYTHONPATH=casm_v01 python -m casm.run_benchmark_v1_all $CPS \
+            --family "$FAMILY" --suite dev-core --diagnostics \
+            --out "$DIR/casm-bench-v1-dev-core.json"
+          PYTHONPATH=casm_v01 python -m casm.run_benchmark_v1_all $CPS \
+            --family "$FAMILY" --suite dev-ood --diagnostics \
+            --out "$DIR/casm-bench-v1-dev-ood.json"
+      - name: Record replay status
+        shell: bash
+        run: |
+          EXP='${{ matrix.experiment }}'
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          exp=os.environ['EXP']
+          p=Path('replay-bench')/exp
+          (p/'casm-bench-replay-metadata.json').write_text(json.dumps({
+              'benchmark':'CASM-Bench-v1.0',
+              'experiment':exp,
+              'training':'fresh replay from historical intervention code',
+              'contamination_status':'DEV evaluation; historical training hash logging unavailable for these replay modules',
+              'github_sha':os.environ.get('GITHUB_SHA'),
+          }, indent=2))
+          PY
+        env:
+          EXP: ${{ matrix.experiment }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: casm-bench-v1-replay-${{ matrix.experiment }}
+          path: replay-bench/${{ matrix.experiment }}/
+          if-no-files-found: warn
+          retention-days: 90
