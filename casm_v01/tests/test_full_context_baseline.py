@@ -1,9 +1,10 @@
 import torch
 
+from casm.data import EOS
 from casm.eval_full_context_baseline import prompt_prefix
 from casm.full_context_baseline import FullContextTransformer, baseline_config
 from casm.process_data import make_process_batch
-from casm.train_full_context_baseline import answer_only_loss
+from casm.train_full_context_baseline import answer_only_loss, answer_supervision_mask
 
 
 def test_baseline_parameter_budget_is_comparable():
@@ -19,6 +20,18 @@ def test_generation_prefix_excludes_gold_answer():
     assert prefix.endswith(b"answer ")
     assert ex.answer.encode("utf-8") not in prefix[-len(ex.answer.encode("utf-8")) :]
     assert len(prefix) < len(ex.text.encode("utf-8"))
+
+
+def test_answer_supervision_includes_terminal_eos():
+    tokens, pex, answer_mask, _ = make_process_batch(
+        4, 320, 222, hard=True, reasoning_steps=3
+    )
+    targets = tokens[:, 1:]
+    mask = answer_supervision_mask(tokens, answer_mask)
+    for bi, item in enumerate(pex):
+        answer_len = len(item.example.answer.encode("utf-8"))
+        assert int(mask[bi].sum()) == answer_len + 1
+        assert bool(((targets[bi] == EOS) & mask[bi]).any())
 
 
 def test_answer_only_loss_reaches_attention_and_embedding():
