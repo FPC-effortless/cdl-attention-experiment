@@ -14,11 +14,16 @@ FIXED_ANSWER_REGISTER = 0
 
 
 class BoundExplicitTransitionModel(nn.Module):
-    """Explicit transition model whose external-register ↔ internal-slot binding is explicit.
+    """Explicit transition model with a probability-preserving register↔slot binding.
 
     External register identities never index internal slots directly. Initial-state placement,
-    source/destination lookup, destination updates, register-position features and output decoding
-    all pass through the same binding matrix.
+    source/destination lookup, destination updates, slot-position features and output decoding all
+    pass through the same binding matrix.
+
+    The learned binding is parameterized as a convex mixture of all 4! permutation matrices. This
+    gives an exactly doubly-stochastic matrix (up to floating-point summation error) for every
+    value of the learned 4x4 score tensor, rather than relying on a finite approximate Sinkhorn
+    iteration count.
     """
 
     def __init__(
@@ -27,20 +32,16 @@ class BoundExplicitTransitionModel(nn.Module):
         *,
         binding_mode: str = "learned_binding",
         binding_temperature: float = 1.0,
-        sinkhorn_iterations: int = 12,
     ):
         super().__init__()
         if binding_mode not in BINDING_MODES:
             raise ValueError(binding_mode)
         if binding_temperature <= 0:
             raise ValueError("binding_temperature must be positive")
-        if sinkhorn_iterations < 1:
-            raise ValueError("sinkhorn_iterations must be >= 1")
 
         self.d_model = int(d_model)
         self.binding_mode = binding_mode
         self.binding_temperature = float(binding_temperature)
-        self.sinkhorn_iterations = int(sinkhorn_iterations)
 
         self.value = nn.Embedding(VALUE_MODULUS, d_model)
         self.slot = nn.Embedding(NUM_REGISTERS, d_model)
@@ -63,10 +64,21 @@ class BoundExplicitTransitionModel(nn.Module):
             nn.Linear(2 * d_model, VALUE_MODULUS),
         )
 
-        # The learned condition starts close to the uninformative doubly-stochastic matrix.
-        # The same parameter exists in every regime so total parameter counts are identical.
+        # The same 16 learned scores used in X6 v0. Near-zero initialization makes the softmax
+        # over the 24 permutation scores close to uniform, which yields a near-1/4 binding.
         self.binding_logits = nn.Parameter(torch.empty(NUM_REGISTERS, NUM_REGISTERS))
         nn.init.normal_(self.binding_logits, mean=0.0, std=0.01)
+
+        permutations = list(itertools.permutations(range(NUM_REGISTERS)))
+        permutation_indices = torch.tensor(permutations, dtype=torch.long)
+        permutation_matrices = torch.zeros(
+            len(permutations), NUM_REGISTERS, NUM_REGISTERS, dtype=torch.float32
+        )
+        rows = torch.arange(NUM_REGISTERS)
+        for i, permutation in enumerate(permutations):
+            permutation_matrices[i, rows, torch.tensor(permutation)] = 1.0
+        self.register_buffer("_permutation_indices", permutation_indices, persistent=False)
+        self.register_buffer("_permutation_matrices", permutation_matrices, persistent=False)
 
     def parameter_count(self) -> int:
         return sum(p.numel() for p in self.parameters())
@@ -74,12 +86,17 @@ class BoundExplicitTransitionModel(nn.Module):
     def trainable_parameter_count(self) -> int:
         return sum(p.numel() for p in self.parameters() if p.requires_grad)
 
-    def sinkhorn_binding(self) -> torch.Tensor:
-        log_matrix = self.binding_logits / self.binding_temperature
-        for _ in range(self.sinkhorn_iterations):
-            log_matrix = log_matrix - torch.logsumexp(log_matrix, dim=1, keepdim=True)
-            log_matrix = log_matrix - torch.logsumexp(log_matrix, dim=0, keepdim=True)
-        return log_matrix.exp()
+    def exact_birkhoff_binding(self) -> torch.Tensor:
+        rows = torch.arange(NUM_REGISTERS, device=self.binding_logits.device)[None, :]
+        selected = self.binding_logits[
+            rows, self._permutation_indices.to(device=self.binding_logits.device)
+        ]
+        scores = selected.sum(dim=1) / self.binding_temperature
+        weights = F.softmax(scores, dim=0)
+        matrices = self._permutation_matrices.to(
+            device=self.binding_logits.device, dtype=self.binding_logits.dtype
+        )
+        return torch.einsum("p,pij->ij", weights, matrices)
 
     @staticmethod
     def _identity(device, dtype) -> torch.Tensor:
@@ -99,7 +116,7 @@ class BoundExplicitTransitionModel(nn.Module):
             return self._identity(self.binding_logits.device, self.binding_logits.dtype)
         if self.binding_mode == "diffuse_binding":
             return self._diffuse(self.binding_logits.device, self.binding_logits.dtype)
-        return self.sinkhorn_binding()
+        return self.exact_birkhoff_binding()
 
     @torch.no_grad()
     def best_permutation(self) -> tuple[torch.Tensor, list[int], float]:
@@ -133,6 +150,8 @@ class BoundExplicitTransitionModel(nn.Module):
         matrix = self.soft_binding()
         safe = matrix.clamp_min(1e-9)
         _, permutation, score = self.best_permutation()
+        row_error = (matrix.sum(dim=1) - 1.0).abs().max()
+        column_error = (matrix.sum(dim=0) - 1.0).abs().max()
         return {
             "matrix": matrix.detach().cpu().tolist(),
             "row_max_mean": float(matrix.max(dim=1).values.mean().detach()),
@@ -140,6 +159,8 @@ class BoundExplicitTransitionModel(nn.Module):
             "row_entropy_mean": float((-(safe * safe.log()).sum(dim=1).mean()).detach()),
             "best_permutation_score": float(score),
             "projected_permutation": permutation,
+            "max_row_sum_error": float(row_error.detach()),
+            "max_column_sum_error": float(column_error.detach()),
         }
 
     def initial_internal_probs(self, initial: torch.Tensor, binding: torch.Tensor) -> torch.Tensor:
@@ -287,7 +308,6 @@ def cloned_binding_models(
             d_model=seed_model.d_model,
             binding_mode=mode,
             binding_temperature=seed_model.binding_temperature,
-            sinkhorn_iterations=seed_model.sinkhorn_iterations,
         )
         model.load_state_dict(state)
         models[mode] = model
