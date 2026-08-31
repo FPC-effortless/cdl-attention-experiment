@@ -1,127 +1,187 @@
 # CASM-X2 results — 2026-08-31
 
-## Status
+## Executive result
 
-CASM-X2 v0 completed three independent seeds under workflow run `33362789144`.
+CASM-X2 now has a qualified positive result after three successive controls removed confounds in the original comparison.
 
-Exact branch head evaluated: `548143910b4497e42e3cbe45983ba8c0ed7faa48`.
+The strongest justified finding is:
 
-Seeds:
+> **For this controlled contextual Markov program world, a stateless learned transition that repeatedly updates an explicit machine state generalizes more cleanly with execution depth than a parameter-matched GRU given the same previous-state access and the same sparse transition features.**
 
-- train `20260841`, eval `20260921`
-- train `20260842`, eval `20260922`
-- train `20260843`, eval `20260923`
+This is not a claim that GRUs or Transformers cannot represent the computation. The feature-matched GRU learns it to 99% IID exactness. The difference appears in repeated execution: its small local error accumulates with depth, while the explicit transition remains exact through depth 96.
 
-The contract suite passed before training. All three training/evaluation jobs passed. Every evaluation suite contained all eight contextual semantic operators.
+## X2 v0 — contextual state machine
 
-## Post-run audit correction
+Workflow run: `33362789144`.
 
-A post-run semantic audit found an important process-information asymmetry that was not called out strongly enough in the original preregistration.
+Exact evaluated head: `548143910b4497e42e3cbe45983ba8c0ed7faa48`.
 
-`SharedTransitionModel.training_loss()` teacher-forces the explicit transition model: after step zero, the model receives `batch.target_states[:, t - 1]` — the **true previous target state** — as the state input for the next transition.
+Three seeds:
 
-The hidden-only GRU and Transformer receive those intermediate states only as prediction targets. They are not fed the true previous target state as the next-step input and must reconstruct the evolving machine state inside their latent computation.
+- `20260841` / eval `20260921`
+- `20260842` / eval `20260922`
+- `20260843` / eval `20260923`
 
-Therefore the v0 comparison does **not** isolate an explicit-state representational bottleneck. It tests a broader intervention that combines:
+The benchmark uses four registers with values `0..15`. The same opaque command family can invoke different semantic operators depending on a context bit computed from the current `state[a]`, `state[b]`, and `state[dst]`. Training uses depths 1–4; held-out command-family bigrams are evaluated through depths 6, 12, 24, 48, and 96.
 
-1. explicit state exposure;
-2. teacher-forced local transition decomposition during training;
-3. recursive predicted-state execution at inference;
-4. a different optimization path from end-to-end latent sequence reconstruction.
+Parameter counts:
 
-This does not invalidate the measured 100% result. It narrows what that result can support. X2 v0 is evidence that the state-exposed transition-learning formulation is an exceptionally strong inductive bias for this world; it is not a clean proof that explicit state representation alone beats an equally informed latent architecture.
+- explicit transition: 246,160
+- hidden-only GRU: 245,848
+- causal Transformer: 242,852
 
-CASM-X2A was added after this audit to equalize true previous-state access between the explicit transition model and a parameter-matched recurrent control.
+Mean final-state exact accuracy:
 
-## Parameter match
-
-- explicit predicted-state transition: **246,160** parameters
-- GRU hidden-state control: **245,848** parameters (`0.9987x` explicit)
-- causal Transformer control: **242,852** parameters (`0.9866x` explicit)
-
-The capacity gate therefore passes cleanly.
-
-## Mean exact final-state accuracy across three seeds
-
-| Suite | Explicit state | GRU | Transformer |
+| Suite | Explicit transition | Hidden-only GRU | Transformer |
 |---|---:|---:|---:|
 | IID depth 4 | **100.00%** | 5.38% | 6.86% |
-| held-out composition depth 6 | **100.00%** | 0.87% | 0.52% |
-| held-out composition depth 12 | **100.00%** | 1.04% | 0.00% |
+| composition depth 6 | **100.00%** | 0.87% | 0.52% |
+| composition depth 12 | **100.00%** | 1.04% | 0.00% |
 | stress depth 24 | **100.00%** | 1.22% | 0.00% |
 | stress depth 48 | **100.00%** | 0.87% | 0.00% |
 | stress depth 96 | **100.00%** | 0.87% | 0.00% |
 
-Mean depth-96 step-state exactness:
+This was a strong mechanism signal but not a clean model-class comparison. Post-run audit found that the explicit transition model was teacher-forced with the true previous state during training, while the hidden-only controls had to reconstruct the evolving state internally.
 
-- explicit state: **100.00%**
-- GRU: **1.85%**
-- Transformer: **0.95%**
+## Hidden-only convergence rescue
 
-Mean depth-96 per-register accuracy:
+Workflow run: `33363140352`.
 
-- explicit state: **100.00%**
-- GRU: **22.91%**
-- Transformer: **11.06%**
+The hidden-only controls alone received a favorable 10,000-step staged curriculum, versus 2,400 steps in X2 v0.
 
-## What the result establishes
+Mean final-state exactness after rescue:
 
-The state-exposed transition architecture learned the contextual local transition rule to effectively exact precision and then recursively executed it without detectable error accumulation from training depths 1–4 through evaluation depth 96.
+| Suite | GRU | Transformer |
+|---|---:|---:|
+| IID depth 4 | 3.04% | 18.84% |
+| composition depth 6 | 1.13% | 0.95% |
+| composition depth 12 | 0.43% | 0.09% |
+| stress depth 24 | 0.61% | 0.09% |
+| stress depth 48 | 0.61% | 0.17% |
+| stress depth 96 | 0.43% | 0.00% |
 
-This is materially stronger than CASM-X v0 because command semantics are state dependent: the same opaque command can require a different operator depending on the current predicted register state. A fixed command-to-operator classifier is therefore insufficient.
+This rules out a modest optimization-step shortage as the sole explanation and supports a large sample/optimization-efficiency advantage for local state-exposed transition learning. It does not resolve the information-access asymmetry.
 
-The result shows a very strong inductive-bias, decomposition, and optimization advantage for learning through explicit typed state in this controlled contextual machine.
+## X2A — equal previous-state access
 
-## Why the strong causal claim is NOT yet accepted
+Workflow run: `33363391113`.
 
-Two independent qualification problems remain.
+A parameter-matched GRU was given the same true previous state during training and its own predicted state during rollout.
 
-First, the preregistered interpretation required the generic controls to learn the IID regime sufficiently well for OOD comparison to be meaningful. That condition failed. At IID depth 4, mean exact final-state accuracy was only 5.38% for GRU and 6.86% for Transformer.
+Mean final-state exactness:
 
-Second, the post-run audit found the teacher-forced previous-state input asymmetry described above. Equal parameter count and equal target supervision do not imply equal intermediate information access.
+| Suite | Explicit transition | State-access GRU |
+|---|---:|---:|
+| IID depth 4 | **100.00%** | 5.12% |
+| composition depth 6 | **100.00%** | 4.17% |
+| composition depth 12 | **100.00%** | 2.69% |
+| stress depth 24 | **100.00%** | 2.52% |
+| stress depth 48 | **100.00%** | 2.34% |
+| stress depth 96 | **100.00%** | 2.26% |
 
-Therefore the current evidence does **not** distinguish cleanly among:
+Audit then found a second material asymmetry. `SharedTransitionModel` receives direct embeddings of `state[a]`, `state[b]`, and `state[dst]` in addition to a whole-state representation and command representation. X2A's GRU received only the compressed whole-state and command representations, so it still had to learn indexed retrieval internally.
 
-1. explicit state exposure;
-2. local transition factorization;
-3. teacher-forced process information;
-4. optimization/sample-efficiency advantages;
-5. an actual representational advantage of explicit state.
+X2A is therefore informative but inconclusive as a model-class comparison.
 
-The result should not be described as proving that a GRU or Transformer cannot represent the algorithm.
+## X2B — feature-matched recurrent control
 
-## Preregistered outcome
+Workflow run: `33363719995`.
 
-The numerical separation easily exceeds the preregistered 10-point OOD margin, but the prerequisite competent-baseline condition is not met and the post-run state-access audit adds a further confound.
+Exact evaluated head: `e9cb4bbf8a537de1ef8d4df8d5d78f5042fb1ceb`.
 
-Verdict:
+Three seeds:
 
-> **Strong positive mechanism signal for state-exposed transition learning; causal representation claim not qualified.**
+- `20260871` / eval `20260951`
+- `20260872` / eval `20260952`
+- `20260873` / eval `20260953`
 
-The falsifier that a matched generic control remains within two points at depth 24/48/96 is not triggered. However, this alone is insufficient because both hidden-only controls underfit the IID task and do not receive the same teacher-forced previous-state input.
+X2B equalizes the decisive transition interface. Both the explicit transition and feature-matched GRU receive:
 
-## Qualification experiments
+- true previous target state during training;
+- own predicted previous state during rollout;
+- whole-state representation;
+- command/argument representation;
+- direct `state[a]`, `state[b]`, and `state[dst]` value embeddings;
+- destination-register embedding;
+- identical destination-value supervision.
 
-Two controls are now required and are kept conceptually separate.
+The GRU additionally retains a latent hidden state.
 
-### Hidden-only convergence rescue
+Parameter counts:
 
-Give the hidden-only controls substantially more favorable optimization while leaving their information interface unchanged. This measures whether the original gap is simply short-run undertraining and quantifies sample-efficiency differences.
+- explicit transition: **246,160**
+- feature-matched GRU: **244,832** (`0.9946x`)
+- state-only GRU reference: **244,400** (`0.9929x`)
 
-### Equal-state-access control
+### Decisive accuracy
 
-Give a parameter-matched recurrent control the same true previous-state input during training as the explicit transition model, then feed both models their own predicted state at rollout. This is the cleaner test of whether the simple explicit transition bottleneck adds value beyond access to an explicit recurrent state.
+| Suite | Explicit transition | Feature-matched GRU | State-only GRU |
+|---|---:|---:|---:|
+| IID depth 4 | **100.00%** | **99.05%** | 6.08% |
+| composition depth 6 | **100.00%** | **97.05%** | 3.21% |
+| composition depth 12 | **100.00%** | **94.36%** | 2.69% |
+| stress depth 24 | **100.00%** | **90.97%** | 2.60% |
+| stress depth 48 | **100.00%** | **89.67%** | 2.78% |
+| stress depth 96 | **100.00%** | **86.98%** | 2.34% |
 
-The equal-state-access comparison takes priority for causal interpretation.
+The feature-matched GRU is a competent baseline. Its IID depth-4 exactness is 99.05%, well above the preregistered 80% competence threshold.
 
-## Architectural consequence
+Its mean step-state exactness declines with depth:
 
-The justified claim at this checkpoint is:
+- depth 4: 99.52%
+- depth 6: 98.50%
+- depth 12: 96.91%
+- depth 24: 94.38%
+- depth 48: 92.74%
+- depth 96: 89.90%
 
-> exposing a compact typed world state and training a local recurrent transition over that state is a highly effective computational inductive bias in this controlled program world.
+Depth-96 final exactness by seed was 87.76%, 86.20%, and 86.98%, showing that the effect is stable across seeds.
 
-It is not yet justified to claim that explicit state representation itself is uniquely necessary, that latent recurrent/Transformer computation is incapable of the algorithm, or that the transition MLP is uniquely responsible.
+### Preregistered criterion
 
-Separate operator banks and verifier reranking remain unsupported defaults from X1.
+X2B preregistered support for a depth-generalization advantage if the feature-matched GRU:
 
-Compression remains orthogonal and should be reintroduced later for state storage, retrieval, and routing rather than used to explain the computational result.
+1. reached at least 80% IID depth-4 exactness; and
+2. remained at least 10 percentage points below explicit transition at depth 48 or 96.
+
+Observed gaps:
+
+- depth 24: 9.03 percentage points
+- depth 48: **10.33 percentage points**
+- depth 96: **13.02 percentage points**
+
+The criterion is met at both decisive long-depth suites.
+
+## Final interpretation
+
+The evidence no longer supports the broad statement that “explicit state beats generic neural networks.” A feature-matched GRU learns the contextual transition almost perfectly at training depth and remains reasonably strong through depth 96.
+
+The supported claim is narrower:
+
+> **When the sufficient computational state is explicit and the relevant sparse fields are directly available, forcing recurrence through that explicit state alone yields cleaner length extrapolation than adding persistent latent recurrent memory.**
+
+In this benchmark, the explicit transition kernel is stateless apart from the world state it updates. The feature-matched GRU carries an additional hidden state. The GRU's small transition error accumulates as execution length grows; the stateless transition kernel remains exact.
+
+This suggests that, for Markovian computation, hidden recurrent state can become an unnecessary second state system whose approximation error or drift harms long-horizon execution.
+
+## What is still not established
+
+CASM-X2 does not establish:
+
+- general reasoning;
+- natural-language planning;
+- autonomous operator discovery;
+- semantic state discovery from raw observations;
+- learning without process supervision;
+- that latent state is always harmful;
+- that explicit state will remain superior when the true sufficient state is unknown or partially observable.
+
+## Next experiment
+
+The next decisive phase should reduce or remove teacher-forced intermediate-state supervision.
+
+The central question becomes:
+
+> Can the explicit computational state be discovered, maintained, and corrected when only weaker signals are available — final outcomes, demonstrations, consistency constraints, or verifier feedback?
+
+That is a more appropriate place to reintroduce verification: not to rerank an already exact learned transition, but to provide credit assignment and repair when intermediate state is latent or only partially supervised.
