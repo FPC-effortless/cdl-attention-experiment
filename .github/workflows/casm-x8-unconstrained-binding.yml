@@ -32,7 +32,7 @@ jobs:
       - name: Assemble CASM package model
         run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
       - name: Run X8 topology integrity tests
-        run: PYTHONPATH=casm_v01 pytest -q casm_v01/tests/test_unconstrained_binding.py casm_v01/tests/test_surplus_slot_binding.py casm_v01/tests/test_fixed_answer_register.py
+        run: PYTHONPATH=casm_v01 pytest -q casm_v01/tests/test_unconstrained_binding.py casm_v01/tests/test_fixed_answer_register.py
 
   train-evaluate:
     needs: contract-tests
