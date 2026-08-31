@@ -1,0 +1,117 @@
+name: CASM-X2 contextual state
+
+on:
+  push:
+    branches:
+      - experiment/casm-x2-contextual-state
+    paths:
+      - "casm_v01/casm/contextual_data.py"
+      - "casm_v01/casm/contextual_baselines.py"
+      - "casm_v01/casm/run_contextual_state.py"
+      - "casm_v01/tests/test_contextual_state.py"
+      - "casm_v01/EXPERIMENT_CASM_X2.md"
+      - ".github/workflows/casm-x2-contextual-state.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+      - name: Assemble CASM package model
+        run: |
+          cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Run CASM-X2 integrity tests
+        run: |
+          PYTHONPATH=casm_v01 pytest -q casm_v01/tests/test_contextual_state.py
+
+  train-evaluate:
+    needs: contract-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - seed: 20260841
+            eval_seed: 20260921
+          - seed: 20260842
+            eval_seed: 20260922
+          - seed: 20260843
+            eval_seed: 20260923
+    env:
+      PYTHONHASHSEED: ${{ matrix.seed }}
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Assemble CASM package model
+        run: |
+          cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Train and evaluate CASM-X2
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.run_contextual_state \
+            --steps 2400 \
+            --batch-size 128 \
+            --train-max-depth 4 \
+            --eval-n 384 \
+            --eval-batch-size 64 \
+            --seed ${{ matrix.seed }} \
+            --eval-seed ${{ matrix.eval_seed }} \
+            --output casm-x2-output/results-${{ matrix.seed }}.json
+      - name: Check integrity and print decisive metrics
+        working-directory: casm_v01
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = next(Path("casm-x2-output").glob("results-*.json"))
+          report = json.loads(path.read_text())
+          print("parameters", report["parameters"])
+          print("parameter_ratio_to_explicit", report["parameter_ratio_to_explicit"])
+          assert 0.95 <= report["parameter_ratio_to_explicit"]["gru"] <= 1.05
+          assert 0.95 <= report["parameter_ratio_to_explicit"]["transformer"] <= 1.05
+          for suite in (
+              "iid_depth_4",
+              "composition_depth_6",
+              "composition_depth_12",
+              "stress_depth_24",
+              "stress_depth_48",
+              "stress_depth_96",
+          ):
+              row = report["evaluation"][suite]
+              print("\n", suite)
+              for model in ("explicit_state", "gru", "transformer"):
+                  metrics = row[model]
+                  print(model, metrics["final_state_exact"], metrics["step_state_exact"])
+                  assert metrics["active_semantics"] == 8.0, (suite, model)
+          print("CASM-X2 integrity PASS")
+          PY
+      - name: Upload CASM-X2 result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-x2-seed-${{ matrix.seed }}
+          path: casm_v01/casm-x2-output/
+          if-no-files-found: error
+          retention-days: 90
