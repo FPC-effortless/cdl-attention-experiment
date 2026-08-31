@@ -1,0 +1,170 @@
+name: CASM-X9 variable-cardinality binding
+
+on:
+  push:
+    branches:
+      - experiment/casm-x9-variable-cardinality
+    paths:
+      - "casm_v01/casm/variable_contextual_data.py"
+      - "casm_v01/casm/variable_cardinality_binding.py"
+      - "casm_v01/casm/run_variable_cardinality.py"
+      - "casm_v01/tests/test_variable_cardinality_binding.py"
+      - "casm_v01/EXPERIMENT_CASM_X9.md"
+      - ".github/workflows/casm-x9-variable-cardinality.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+      - name: Assemble CASM package model
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Run X9 variable-cardinality integrity tests
+        run: PYTHONPATH=casm_v01 pytest -q casm_v01/tests/test_variable_cardinality_binding.py
+
+  train-evaluate:
+    needs: contract-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - seed: 20261021
+            eval_seed: 20261101
+          - seed: 20261022
+            eval_seed: 20261102
+          - seed: 20261023
+            eval_seed: 20261103
+    env:
+      PYTHONHASHSEED: ${{ matrix.seed }}
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Assemble CASM package model
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Train and evaluate variable-cardinality regimes
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.run_variable_cardinality \
+            --steps 10000 \
+            --batch-size 128 \
+            --train-depth 8 \
+            --binding-temperature 1.0 \
+            --eval-n 256 \
+            --eval-batch-size 64 \
+            --seed ${{ matrix.seed }} \
+            --eval-seed ${{ matrix.eval_seed }} \
+            --output casm-x9-output/results-${{ matrix.seed }}.json
+      - name: Validate provenance and print decisive metrics
+        working-directory: casm_v01
+        run: |
+          python - <<'PY'
+          import json
+          import math
+          from pathlib import Path
+
+          path = next(Path("casm-x9-output").glob("results-*.json"))
+          report = json.loads(path.read_text())
+          contract = report["supervision_contract"]
+          assert report["harness_version"] == "casm-x9-variable-cardinality-v0-2026-08-31"
+          assert report["steps"] == 10000
+          assert report["train_depth"] == 8
+          assert report["eval_n"] == 256
+          assert report["binding_temperature"] == 1.0
+          assert report["training_cardinalities"] == [2,3,4]
+          assert report["unseen_cardinalities"] == [5,6]
+          assert report["training_cardinality_counts"] == {"2":3334,"3":3333,"4":3333}
+          assert contract["teacher_forcing"] is False
+          assert contract["semantic_operator_labels"] is False
+          assert contract["intermediate_state_targets"] is False
+          assert contract["hidden_final_targets"] is False
+          assert contract["binding_labels"] is False
+          assert contract["binding_regularizer"] is False
+          assert contract["collision_penalty"] is False
+          assert contract["identity_prior"] is False
+          assert contract["external_id_embedding"] is False
+          assert contract["free_per_variable_binding_rows"] is False
+          assert contract["active_cardinality_is_supplied"] is True
+          assert contract["external_variable_descriptors_are_deterministic"] is True
+          assert contract["candidate_internal_slot_count"] == 8
+          assert contract["shared_generator_dense_injective_constraint"] is False
+          assert contract["shared_generator_dense_hard_evaluation"] == "independent_row_argmax_without_collision_repair"
+          assert len(set(report["parameters"].values())) == 1
+          assert len(set(report["trainable_parameters"].values())) == 1
+          assert all(math.isfinite(v) and v >= 0.0 for v in report["minimum_training_loss"].values())
+
+          for n in range(2,7):
+              initial = report["initial_shared_generator_bindings"][str(n)]
+              final = report["final_shared_generator_bindings"][str(n)]
+              assert initial["row_max_mean"] < 0.18, (n, initial)
+              assert initial["max_row_sum_error"] <= 1e-6, (n, initial)
+              assert abs(initial["total_binding_mass"] - n) <= 1e-5, (n, initial)
+              assert final["max_row_sum_error"] <= 1e-6, (n, final)
+              assert abs(final["total_binding_mass"] - n) <= 1e-5, (n, final)
+              assert len(final["independent_argmax_assignment"]) == n
+              assert final["independent_argmax_collision_count"] == n - final["independent_argmax_unique_slot_count"]
+              for key in ("row_max_mean","row_entropy_mean","max_column_occupancy","min_column_occupancy"):
+                  assert math.isfinite(final[key]), (n, key, final[key])
+
+          for eval_name in ("evaluation", "soft_evaluation"):
+              for n in range(2,7):
+                  print("\n", eval_name, "n", n)
+                  for suite in (
+                      "iid_depth_8",
+                      "composition_depth_12",
+                      "composition_depth_24",
+                      "stress_depth_48",
+                      "stress_depth_96",
+                  ):
+                      row = report[eval_name][str(n)][suite]
+                      print(suite)
+                      for mode in ("canonical_functional","shared_generator_dense","diffuse_dense"):
+                          metrics = row[mode]
+                          for key in (
+                              "final_state_exact",
+                              "step_state_exact",
+                              "register_accuracy",
+                              "answer_final_accuracy",
+                              "answer_step_accuracy",
+                              "hidden_register_accuracy",
+                              "hidden_final_exact",
+                          ):
+                              assert math.isfinite(metrics[key]), (eval_name,n,suite,mode,key,metrics[key])
+                          print(
+                              mode,
+                              "answer", metrics["answer_final_accuracy"],
+                              "step", metrics["step_state_exact"],
+                              "hidden", metrics["hidden_register_accuracy"],
+                          )
+          print("final_bindings", json.dumps(report["final_shared_generator_bindings"], sort_keys=True))
+          PY
+      - name: Upload X9 result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-x9-seed-${{ matrix.seed }}
+          path: casm_v01/casm-x9-output/
+          if-no-files-found: error
+          retention-days: 90
