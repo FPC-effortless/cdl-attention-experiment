@@ -1,0 +1,185 @@
+name: CASM-X9R2 stable optimizer
+
+on:
+  push:
+    branches:
+      - experiment/casm-x9r2-stable-optimizer
+    paths:
+      - "casm_v01/EXPERIMENT_CASM_X9R2.md"
+      - "casm_v01/casm/cardinality_valid_executor.py"
+      - "casm_v01/casm/run_stable_cardinality_executor.py"
+      - "casm_v01/tests/test_cardinality_valid_executor.py"
+      - "casm_v01/tests/test_stable_optimizer.py"
+      - ".github/workflows/casm-x9r2-stable-optimizer.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+      - name: Assemble CASM package model
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Run X9R and X9R2 integrity tests
+        run: |
+          PYTHONPATH=casm_v01 pytest -q \
+            casm_v01/tests/test_cardinality_valid_executor.py \
+            casm_v01/tests/test_stable_optimizer.py
+
+  train-evaluate:
+    needs: contract-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - seed: 20261041
+            eval_seed: 20261121
+          - seed: 20261042
+            eval_seed: 20261122
+          - seed: 20261043
+            eval_seed: 20261123
+    env:
+      PYTHONHASHSEED: ${{ matrix.seed }}
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Assemble CASM package model
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Train and evaluate paired optimizer regimes
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.run_stable_cardinality_executor \
+            --steps 10000 \
+            --batch-size 128 \
+            --train-depth 8 \
+            --weight-decay 0.0001 \
+            --eval-n 256 \
+            --eval-batch-size 64 \
+            --seed ${{ matrix.seed }} \
+            --eval-seed ${{ matrix.eval_seed }} \
+            --output casm-x9r2-output/results-${{ matrix.seed }}.json
+      - name: Validate provenance and print decisive metrics
+        working-directory: casm_v01
+        run: |
+          python - <<'PY'
+          import json
+          import math
+          from pathlib import Path
+
+          path = next(Path("casm-x9r2-output").glob("results-*.json"))
+          report = json.loads(path.read_text())
+          optimizer = report["optimizer_contract"]
+          contract = report["supervision_contract"]
+
+          assert report["harness_version"] == "casm-x9r2-stable-optimizer-v0-2026-08-31"
+          assert report["steps"] == 10000
+          assert report["batch_size"] == 128
+          assert report["train_depth"] == 8
+          assert report["eval_n"] == 256
+          assert report["training_cardinalities"] == [2,3,4]
+          assert report["unseen_cardinalities"] == [5,6]
+          assert report["training_cardinality_counts"] == {"2":3334,"3":3333,"4":3333}
+          assert len(set(report["parameters"].values())) == 1
+          assert len(set(report["trainable_parameters"].values())) == 1
+
+          assert optimizer["optimizer"] == "AdamW"
+          assert optimizer["weight_decay"] == 1e-4
+          assert optimizer["global_gradient_clip_norm"] == 1.0
+          assert optimizer["fixed_lr"] == 2e-3
+          assert optimizer["cosine_lr_max"] == 2e-3
+          assert optimizer["cosine_lr_min"] == 2e-4
+          assert optimizer["cosine_total_steps"] == 10000
+          assert optimizer["cosine_warmup_steps"] == 0
+
+          assert contract["teacher_forcing"] is False
+          assert contract["semantic_operator_labels"] is False
+          assert contract["intermediate_state_targets"] is False
+          assert contract["hidden_final_targets"] is False
+          assert contract["binding_labels"] is False
+          assert contract["binding"] == "deterministic canonical e->slot e"
+          assert contract["absolute_slot_embedding"] is False
+          assert contract["flattened_workspace_transition_input"] is False
+          assert contract["cardinality_feature"] is False
+          assert contract["external_id_feature"] is False
+
+          history = report["training_history"]
+          assert history[0]["step"] == 1
+          assert history[-1]["step"] == 10000
+          assert history[0]["fixed_lr_replication"]["lr"] == 2e-3
+          assert history[-1]["fixed_lr_replication"]["lr"] == 2e-3
+          assert history[0]["cosine_decay_stable"]["lr"] == 2e-3
+          assert history[-1]["cosine_decay_stable"]["lr"] == 2e-4
+          cosine_lrs = [row["cosine_decay_stable"]["lr"] for row in history]
+          assert all(right <= left for left, right in zip(cosine_lrs, cosine_lrs[1:]))
+
+          for values in (
+              report["minimum_training_loss"],
+              report["final_training_loss"],
+              report["maximum_post4000_grad_norm"],
+          ):
+              assert set(values) == {"fixed_lr_replication", "cosine_decay_stable"}
+              assert all(math.isfinite(v) and v >= 0.0 for v in values.values())
+
+          for n in range(2,7):
+              print("\nn", n)
+              for suite in (
+                  "iid_depth_8",
+                  "composition_depth_12",
+                  "composition_depth_24",
+                  "stress_depth_48",
+                  "stress_depth_96",
+              ):
+                  row = report["evaluation"][str(n)][suite]
+                  print(suite)
+                  for mode in ("fixed_lr_replication", "cosine_decay_stable"):
+                      metrics = row[mode]
+                      for key in (
+                          "final_state_exact",
+                          "step_state_exact",
+                          "register_accuracy",
+                          "answer_final_accuracy",
+                          "answer_step_accuracy",
+                          "hidden_register_accuracy",
+                          "hidden_final_exact",
+                      ):
+                          assert math.isfinite(metrics[key]), (n, suite, mode, key, metrics[key])
+                      print(
+                          mode,
+                          "answer", metrics["answer_final_accuracy"],
+                          "step", metrics["step_state_exact"],
+                          "hidden", metrics["hidden_register_accuracy"],
+                      )
+          print("minimum_training_loss", report["minimum_training_loss"])
+          print("final_training_loss", report["final_training_loss"])
+          print("maximum_post4000_grad_norm", report["maximum_post4000_grad_norm"])
+          PY
+      - name: Upload X9R2 result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-x9r2-seed-${{ matrix.seed }}
+          path: casm_v01/casm-x9r2-output/
+          if-no-files-found: error
+          retention-days: 90
