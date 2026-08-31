@@ -119,14 +119,20 @@ class UnconstrainedBindingTransitionModel(nn.Module):
     def exact_injective_binding(self) -> torch.Tensor:
         rows = torch.arange(NUM_EXTERNAL_REGISTERS, device=self.binding_logits.device)[None, :]
         indices = self._assignment_indices.to(device=self.binding_logits.device)
-        selected = self.binding_logits[rows, indices]
+        # Accumulate the 1,680-assignment marginal in float64 so the exact
+        # injective column-capacity contract is not violated by float32
+        # reduction error under highly tied/adversarial scores. Casting the
+        # final marginal back preserves the model's original parameter dtype.
+        logits64 = self.binding_logits.to(torch.float64)
+        selected = logits64[rows, indices]
         scores = selected.sum(dim=1) / self.binding_temperature
         weights = F.softmax(scores, dim=0)
         matrices = self._assignment_matrices.to(
             device=self.binding_logits.device,
-            dtype=self.binding_logits.dtype,
+            dtype=torch.float64,
         )
-        return torch.einsum("p,pej->ej", weights, matrices)
+        matrix64 = torch.einsum("p,pej->ej", weights, matrices)
+        return matrix64.to(dtype=self.binding_logits.dtype)
 
     def dense_binding(self) -> torch.Tensor:
         return F.softmax(self.binding_logits / self.binding_temperature, dim=-1)
