@@ -1,0 +1,208 @@
+name: CASM-X10 coordinated binding
+
+on:
+  push:
+    branches:
+      - experiment/casm-x10-coordinated-binding
+    paths:
+      - "casm_v01/EXPERIMENT_CASM_X10.md"
+      - "casm_v01/casm/coordinated_binding.py"
+      - "casm_v01/casm/run_coordinated_binding.py"
+      - "casm_v01/tests/test_coordinated_binding.py"
+      - ".github/workflows/casm-x10-coordinated-binding.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+      - name: Assemble CASM package model
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Run X10 integrity tests
+        run: |
+          PYTHONPATH=casm_v01 pytest -q \
+            casm_v01/tests/test_cardinality_valid_executor.py \
+            casm_v01/tests/test_stable_optimizer.py \
+            casm_v01/tests/test_coordinated_binding.py
+
+  train-evaluate:
+    needs: contract-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 420
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - seed: 20261051
+            eval_seed: 20261131
+          - seed: 20261052
+            eval_seed: 20261132
+          - seed: 20261053
+            eval_seed: 20261133
+    env:
+      PYTHONHASHSEED: ${{ matrix.seed }}
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Assemble CASM package model
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Train and evaluate X10 binding regimes
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.run_coordinated_binding \
+            --steps 10000 \
+            --batch-size 128 \
+            --train-depth 8 \
+            --weight-decay 0.0001 \
+            --eval-n 256 \
+            --eval-batch-size 64 \
+            --seed ${{ matrix.seed }} \
+            --eval-seed ${{ matrix.eval_seed }} \
+            --output casm-x10-output/results-${{ matrix.seed }}.json
+      - name: Validate provenance and print decisive metrics
+        working-directory: casm_v01
+        run: |
+          python - <<'PY'
+          import json
+          import math
+          from pathlib import Path
+
+          path = next(Path("casm-x10-output").glob("results-*.json"))
+          report = json.loads(path.read_text())
+          modes = (
+              "canonical_functional",
+              "x9_direct_independent",
+              "relational_independent",
+              "relational_coordinated",
+          )
+          learned = modes[1:]
+
+          assert report["harness_version"] == "casm-x10-coordinated-binding-v0-2026-08-31"
+          assert report["steps"] == 10000
+          assert report["batch_size"] == 128
+          assert report["train_depth"] == 8
+          assert report["eval_n"] == 256
+          assert report["training_cardinalities"] == [2,3,4]
+          assert report["unseen_cardinalities"] == [5,6]
+          assert report["training_cardinality_counts"] == {"2":3334,"3":3333,"4":3333}
+          assert set(report["parameters"]) == set(modes)
+          assert set(report["trainable_parameters"]) == set(modes)
+          assert report["parameters"]["relational_independent"] == report["parameters"]["relational_coordinated"]
+          assert report["trainable_parameters"]["relational_independent"] == report["trainable_parameters"]["relational_coordinated"]
+
+          optimizer = report["optimizer_contract"]
+          assert optimizer["optimizer"] == "AdamW"
+          assert optimizer["weight_decay"] == 1e-4
+          assert optimizer["global_gradient_clip_norm"] == 1.0
+          assert optimizer["lr_max"] == 2e-3
+          assert optimizer["lr_min"] == 2e-4
+          assert optimizer["total_steps"] == 10000
+          assert optimizer["warmup_steps"] == 0
+
+          contract = report["supervision_contract"]
+          assert contract["teacher_forcing"] is False
+          assert contract["semantic_operator_labels"] is False
+          assert contract["intermediate_state_targets"] is False
+          assert contract["hidden_final_targets"] is False
+          assert contract["binding_labels"] is False
+          assert contract["collision_penalty"] is False
+          assert contract["injective_constraint"] is False
+          assert contract["matching_or_collision_repair"] is False
+          assert contract["validated_local_equivariant_executor"] is True
+          assert contract["hard_binding_evaluation"] == "independent row argmax without collision repair"
+
+          assert set(report["initial_bindings"]) == set(learned)
+          assert set(report["final_bindings"]) == set(learned)
+          for stage in ("initial_bindings", "final_bindings"):
+              for mode in learned:
+                  for n in range(2,7):
+                      stats = report[stage][mode][str(n)]
+                      for key in (
+                          "row_max_mean",
+                          "row_entropy_mean",
+                          "independent_argmax_unique_slot_count",
+                          "independent_argmax_collision_count",
+                          "max_column_occupancy",
+                          "min_column_occupancy",
+                          "total_binding_mass",
+                      ):
+                          assert key in stats, (stage, mode, n, key)
+                      assert math.isfinite(stats["row_max_mean"])
+                      assert math.isfinite(stats["row_entropy_mean"])
+                      assert abs(stats["total_binding_mass"] - n) <= 1e-4
+
+          for values in (
+              report["minimum_training_loss"],
+              report["final_training_loss"],
+              report["maximum_post4000_grad_norm"],
+          ):
+              assert set(values) == set(modes)
+              assert all(math.isfinite(v) and v >= 0.0 for v in values.values())
+
+          for n in range(2,7):
+              print("\nn", n)
+              for suite in (
+                  "iid_depth_8",
+                  "composition_depth_12",
+                  "composition_depth_24",
+                  "stress_depth_48",
+                  "stress_depth_96",
+              ):
+                  hard = report["evaluation"][str(n)][suite]
+                  soft = report["soft_evaluation"][str(n)][suite]
+                  print(suite)
+                  for mode in modes:
+                      for label, row in (("hard", hard[mode]), ("soft", soft[mode])):
+                          for key in (
+                              "final_state_exact",
+                              "step_state_exact",
+                              "register_accuracy",
+                              "answer_final_accuracy",
+                              "answer_step_accuracy",
+                              "hidden_register_accuracy",
+                              "hidden_final_exact",
+                          ):
+                              assert math.isfinite(row[key]), (n, suite, mode, label, key, row[key])
+                      print(
+                          mode,
+                          "hard_answer", hard[mode]["answer_final_accuracy"],
+                          "hard_step", hard[mode]["step_state_exact"],
+                          "hard_hidden", hard[mode]["hidden_register_accuracy"],
+                          "soft_answer", soft[mode]["answer_final_accuracy"],
+                          "soft_step", soft[mode]["step_state_exact"],
+                          "soft_hidden", soft[mode]["hidden_register_accuracy"],
+                      )
+          print("final_bindings", json.dumps(report["final_bindings"], sort_keys=True))
+          print("minimum_training_loss", report["minimum_training_loss"])
+          print("final_training_loss", report["final_training_loss"])
+          print("maximum_post4000_grad_norm", report["maximum_post4000_grad_norm"])
+          PY
+      - name: Upload X10 result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-x10-seed-${{ matrix.seed }}
+          path: casm_v01/casm-x10-output/
+          if-no-files-found: error
+          retention-days: 90
