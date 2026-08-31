@@ -1,0 +1,55 @@
+name: CASM A4 state-preserved canary
+
+on:
+  push:
+    branches:
+      - benchmark/a4-state-preserved-rerun
+    paths:
+      - "benchmark/**"
+      - ".github/workflows/casm-a4-state-preserved-canary.yml"
+      - "casm_v01/casm/model_part1.py"
+      - "casm_v01/casm/model_part2.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  canary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONHASHSEED: "11"
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install CPU PyTorch and tests
+        run: |
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+      - name: Assemble CASM model
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Benchmark validity tests
+        run: PYTHONPATH=casm_v01:. pytest -q benchmark/test_state_preserved_harness.py
+      - name: State-preserved canary
+        run: |
+          PYTHONPATH=casm_v01:. python benchmark/state_preserved_harness.py \
+            --variants local_only,qk_memory,compression_runtime \
+            --tasks single_key,multi_key,delayed_query,noisy_key,multi_hop \
+            --seeds 11 \
+            --steps 20 \
+            --batch-size 4 \
+            --eval-batches 2 \
+            --output benchmark-output/state-preserved-canary.json
+      - name: Upload canary
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: casm-a4-state-preserved-canary
+          path: benchmark-output/
+          if-no-files-found: warn
+          retention-days: 90
