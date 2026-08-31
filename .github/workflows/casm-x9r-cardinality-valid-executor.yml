@@ -1,0 +1,148 @@
+name: CASM-X9R cardinality-valid executor
+
+on:
+  push:
+    branches:
+      - experiment/casm-x9r-slot-coverage-validity
+    paths:
+      - "casm_v01/casm/cardinality_valid_executor.py"
+      - "casm_v01/casm/run_cardinality_valid_executor.py"
+      - "casm_v01/tests/test_cardinality_valid_executor.py"
+      - "casm_v01/EXPERIMENT_CASM_X9R.md"
+      - ".github/workflows/casm-x9r-cardinality-valid-executor.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+      - name: Assemble CASM package model
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Run X9R executor validity integrity tests
+        run: PYTHONPATH=casm_v01 pytest -q casm_v01/tests/test_cardinality_valid_executor.py
+
+  train-evaluate:
+    needs: contract-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - seed: 20261031
+            eval_seed: 20261111
+          - seed: 20261032
+            eval_seed: 20261112
+          - seed: 20261033
+            eval_seed: 20261113
+    env:
+      PYTHONHASHSEED: ${{ matrix.seed }}
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Assemble CASM package model
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Train and evaluate executor controls
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.run_cardinality_valid_executor \
+            --steps 10000 \
+            --batch-size 128 \
+            --train-depth 8 \
+            --eval-n 256 \
+            --eval-batch-size 64 \
+            --seed ${{ matrix.seed }} \
+            --eval-seed ${{ matrix.eval_seed }} \
+            --output casm-x9r-output/results-${{ matrix.seed }}.json
+      - name: Validate provenance and print decisive metrics
+        working-directory: casm_v01
+        run: |
+          python - <<'PY'
+          import json
+          import math
+          from pathlib import Path
+
+          path = next(Path("casm-x9r-output").glob("results-*.json"))
+          report = json.loads(path.read_text())
+          contract = report["supervision_contract"]
+          assert report["harness_version"] == "casm-x9r-cardinality-valid-executor-v0-2026-08-31"
+          assert report["steps"] == 10000
+          assert report["train_depth"] == 8
+          assert report["eval_n"] == 256
+          assert report["training_cardinalities"] == [2,3,4]
+          assert report["unseen_cardinalities"] == [5,6]
+          assert report["training_cardinality_counts"] == {"2":3334,"3":3333,"4":3333}
+          assert contract["teacher_forcing"] is False
+          assert contract["semantic_operator_labels"] is False
+          assert contract["intermediate_state_targets"] is False
+          assert contract["hidden_final_targets"] is False
+          assert contract["binding_labels"] is False
+          assert contract["binding"] == "deterministic canonical e->slot e"
+          assert contract["local_equivariant_absolute_slot_embedding"] is False
+          assert contract["local_equivariant_flattened_workspace_transition_input"] is False
+          assert contract["local_equivariant_cardinality_feature"] is False
+          assert contract["local_equivariant_external_id_feature"] is False
+          assert contract["local_equivariant_transition_inputs"] == ["opaque_command","value_a","value_b","value_dst"]
+          assert all(math.isfinite(v) and v >= 0.0 for v in report["minimum_training_loss"].values())
+
+          for n in range(2,7):
+              print("\nn", n)
+              for suite in (
+                  "iid_depth_8",
+                  "composition_depth_12",
+                  "composition_depth_24",
+                  "stress_depth_48",
+                  "stress_depth_96",
+              ):
+                  row = report["evaluation"][str(n)][suite]
+                  print(suite)
+                  for mode in ("x9_absolute_slot_control","local_equivariant_control"):
+                      metrics = row[mode]
+                      for key in (
+                          "final_state_exact",
+                          "step_state_exact",
+                          "register_accuracy",
+                          "answer_final_accuracy",
+                          "answer_step_accuracy",
+                          "hidden_register_accuracy",
+                          "hidden_final_exact",
+                      ):
+                          assert math.isfinite(metrics[key]), (n,suite,mode,key,metrics[key])
+                      print(
+                          mode,
+                          "answer", metrics["answer_final_accuracy"],
+                          "step", metrics["step_state_exact"],
+                          "hidden", metrics["hidden_register_accuracy"],
+                      )
+          print("parameters", report["parameters"])
+          print("minimum_training_loss", report["minimum_training_loss"])
+          PY
+      - name: Upload X9R result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-x9r-seed-${{ matrix.seed }}
+          path: casm_v01/casm-x9r-output/
+          if-no-files-found: error
+          retention-days: 90
