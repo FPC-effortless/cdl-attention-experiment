@@ -1,0 +1,84 @@
+name: CASM-X2 generic convergence rescue
+
+on:
+  push:
+    branches:
+      - experiment/casm-x2-contextual-state
+    paths:
+      - "casm_v01/casm/run_contextual_rescue.py"
+      - ".github/workflows/casm-x2-convergence-rescue.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  rescue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - seed: 20260851
+            eval_seed: 20260931
+          - seed: 20260852
+            eval_seed: 20260932
+          - seed: 20260853
+            eval_seed: 20260933
+    env:
+      PYTHONHASHSEED: ${{ matrix.seed }}
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Assemble CASM package model
+        run: |
+          cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Run one-sided generic convergence rescue
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.run_contextual_rescue \
+            --seed ${{ matrix.seed }} \
+            --eval-seed ${{ matrix.eval_seed }} \
+            --output casm-x2-rescue-output/results-${{ matrix.seed }}.json
+      - name: Print rescue verdict inputs
+        working-directory: casm_v01
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = next(Path("casm-x2-rescue-output").glob("results-*.json"))
+          report = json.loads(path.read_text())
+          print("parameters", report["parameters"])
+          print("total_steps", report["total_steps"])
+          print("iid checkpoints")
+          for row in report["iid_checkpoints"]:
+              print(row["step"], "gru", row["gru"]["final_state_exact"], "transformer", row["transformer"]["final_state_exact"])
+          print("final suites")
+          for suite in (
+              "iid_depth_4",
+              "composition_depth_6",
+              "composition_depth_12",
+              "stress_depth_24",
+              "stress_depth_48",
+              "stress_depth_96",
+          ):
+              row = report["evaluation"][suite]
+              print(suite, "gru", row["gru"]["final_state_exact"], "transformer", row["transformer"]["final_state_exact"])
+          PY
+      - name: Upload rescue result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-x2-rescue-seed-${{ matrix.seed }}
+          path: casm_v01/casm-x2-rescue-output/
+          if-no-files-found: error
+          retention-days: 90
