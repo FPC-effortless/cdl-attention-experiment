@@ -13,6 +13,7 @@ from casm.primal_dual_capacity_binding import (
     DUAL_ROUNDS,
     cloned_x16_models,
     primal_dual_binding,
+    projected_dual_update,
 )
 from casm.scarcity_binding import normalized_row_spread
 from casm.variable_cardinality_binding import variable_descriptor
@@ -49,17 +50,21 @@ def test_projected_dual_update_examples():
     logits[:, 0] = 20.0
     initial = F.softmax(logits, dim=-1)
     initial_occupancy = initial.sum(dim=0)
-    expected_first_price = F.relu(initial_occupancy - 1.0)
-    assert float(expected_first_price[0]) > 2.9
-    assert torch.equal(expected_first_price[1:], torch.zeros(7))
+    first = projected_dual_update(torch.zeros(8), initial_occupancy)
+    assert float(first[0]) > 2.9
+    assert torch.equal(first[1:], torch.zeros(7))
 
     # A positive price on an underloaded slot decreases by exactly the occupancy deficit,
     # projected at zero.
     price = torch.tensor([0.8, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
     occupancy = torch.tensor([0.5, 0.95, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0])
-    updated = F.relu(price + occupancy - 1.0)
+    updated = projected_dual_update(price, occupancy)
     assert torch.allclose(updated[:2], torch.tensor([0.3, 0.15]), atol=1e-7, rtol=0.0)
     assert (updated >= 0.0).all()
+
+    # Projection prevents negative prices after a large underload.
+    projected = projected_dual_update(torch.tensor([0.1] + [0.0] * 7), torch.zeros(8))
+    assert torch.equal(projected, torch.zeros(8))
 
 
 def test_priced_allocator_is_row_and_column_permutation_equivariant():
