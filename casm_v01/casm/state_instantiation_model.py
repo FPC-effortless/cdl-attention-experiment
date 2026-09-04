@@ -17,7 +17,7 @@ from .state_instantiation_data import (
 from .variable_cardinality_binding import EMPTY_VALUE, NUM_INTERNAL_VALUES
 
 CONSTRUCTOR_DIM = 64
-MESSAGE_PASSES = 12
+TOPOLOGICAL_PASSES = 1
 STORAGE_LAMBDA = 0.05
 LEARNED_MODES = ("learned_instantiation", "structure_blind_gate")
 X20_MODES = ("canonical_live_mask", "all_records", *LEARNED_MODES)
@@ -43,7 +43,7 @@ def candidate_code(*, device=None, dtype=torch.float32) -> torch.Tensor:
 
 
 class ProgramStateConstructor(nn.Module):
-    """Shared candidate constructor with optional graph-connectivity ablation."""
+    """Shared constructor over explicit temporal candidate-version graph structure."""
 
     def __init__(self, *, structure_blind: bool):
         super().__init__()
@@ -63,51 +63,113 @@ class ProgramStateConstructor(nn.Module):
         )
 
     @staticmethod
-    def _gather(h: torch.Tensor, index: torch.Tensor) -> torch.Tensor:
+    def version_graph_indices(program) -> dict[str, torch.Tensor]:
+        """Build temporal version-node indices from syntax only.
+
+        Local node IDs 0..7 are initial candidate versions. Operation t creates node
+        8+t as the new version of its destination. Source-node IDs are captured before
+        the destructive write, so overwritten versions remain distinct graph nodes.
+        """
+        batch_size = int(program.initial.shape[0])
+        depth = int(program.commands.shape[1])
+        device = program.initial.device
+        current = torch.arange(NUM_CANDIDATES, device=device)[None, :].expand(batch_size, -1).clone()
+        owners = torch.empty(batch_size, NUM_CANDIDATES + depth, device=device, dtype=torch.long)
+        owners[:, :NUM_CANDIDATES] = torch.arange(NUM_CANDIDATES, device=device)[None, :]
+        src_a, src_b = [], []
+        batch = torch.arange(batch_size, device=device)
+        for t in range(depth):
+            a = program.arg_a[:, t]
+            b = program.arg_b[:, t]
+            d = program.dst[:, t]
+            src_a.append(current[batch, a])
+            src_b.append(current[batch, b])
+            new_id = NUM_CANDIDATES + t
+            owners[:, new_id] = d
+            next_current = current.clone()
+            next_current[batch, d] = new_id
+            current = next_current
+        return {
+            "src_a": torch.stack(src_a, dim=1),
+            "src_b": torch.stack(src_b, dim=1),
+            "new_dst": torch.arange(
+                NUM_CANDIDATES, NUM_CANDIDATES + depth, device=device, dtype=torch.long
+            )[None, :].expand(batch_size, -1),
+            "owners": owners,
+            "final_output": current[:, OUTPUT_CANDIDATE],
+        }
+
+    @staticmethod
+    def _gather_nodes(h: torch.Tensor, index: torch.Tensor) -> torch.Tensor:
         batch = torch.arange(h.shape[0], device=h.device)
         return h[batch, index]
 
     @staticmethod
-    def _scatter(h: torch.Tensor, index: torch.Tensor, value: torch.Tensor) -> torch.Tensor:
+    def _scatter_nodes(h: torch.Tensor, index: torch.Tensor, value: torch.Tensor) -> torch.Tensor:
         out = h.clone()
         batch = torch.arange(h.shape[0], device=h.device)
         out[batch, index] = value
         return out
 
-    def forward(self, program) -> torch.Tensor:
+    def _candidate_base(self, *, batch_size: int, device) -> torch.Tensor:
+        codes = candidate_code(device=device, dtype=self.code_proj.weight.dtype)
+        output_flag = torch.zeros(NUM_CANDIDATES, 1, device=device, dtype=codes.dtype)
+        output_flag[OUTPUT_CANDIDATE, 0] = 1.0
+        base = self.code_proj(torch.cat([codes, output_flag], dim=-1))
+        return base[None, :, :].expand(batch_size, -1, -1)
+
+    def _blind_forward(self, program) -> torch.Tensor:
         batch_size = int(program.initial.shape[0])
-        codes = candidate_code(device=program.initial.device, dtype=self.code_proj.weight.dtype)
-        root = torch.zeros(NUM_CANDIDATES, 1, device=codes.device, dtype=codes.dtype)
-        root[OUTPUT_CANDIDATE, 0] = 1.0
-        base = self.code_proj(torch.cat([codes, root], dim=-1))
-        h = base[None, :, :].expand(batch_size, -1, -1).clone()
-
-        # Reverse program propagation. The graph-conditioned treatment propagates
-        # messages from each current destination state to its syntactic predecessors.
-        # The structure-blind ablation runs the same modules/steps but removes operand
-        # connectivity by broadcasting a global mean message to every candidate.
-        depth = int(program.commands.shape[1])
-        for t in range(depth - 1, -1, -1):
-            cmd = self.command(program.commands[:, t])
-            if self.structure_blind:
-                source = h.mean(dim=1)
-                msg = self.message(torch.cat([source, cmd], dim=-1))
-                old = h.reshape(batch_size * NUM_CANDIDATES, CONSTRUCTOR_DIM)
-                expanded = msg[:, None, :].expand(-1, NUM_CANDIDATES, -1).reshape_as(old)
-                h = self.update(expanded, old).reshape(batch_size, NUM_CANDIDATES, CONSTRUCTOR_DIM)
-                continue
-
-            a = program.arg_a[:, t]
-            b = program.arg_b[:, t]
-            dst = program.dst[:, t]
-            h_dst = self._gather(h, dst)
-            msg = self.message(torch.cat([h_dst, cmd], dim=-1))
-            for index in (a, b, dst):
-                old = self._gather(h, index)
-                new = self.update(msg, old)
-                h = self._scatter(h, index, new)
-
+        base = self._candidate_base(batch_size=batch_size, device=program.initial.device)
+        # Frozen structure-blind ablation: supplied candidate/output identity plus aggregate
+        # command-family statistics, but no operand/destination/version connectivity.
+        cmd_mean = self.command(program.commands).mean(dim=1)
+        source = base.mean(dim=1)
+        msg = self.message(torch.cat([source, cmd_mean], dim=-1))
+        old = base.reshape(batch_size * NUM_CANDIDATES, CONSTRUCTOR_DIM)
+        expanded = msg[:, None, :].expand(-1, NUM_CANDIDATES, -1).reshape_as(old)
+        h = self.update(expanded, old).reshape(batch_size, NUM_CANDIDATES, CONSTRUCTOR_DIM)
         return torch.sigmoid(self.gate(h).squeeze(-1))
+
+    def _graph_forward(self, program) -> torch.Tensor:
+        graph = self.version_graph_indices(program)
+        batch_size = int(program.initial.shape[0])
+        depth = int(program.commands.shape[1])
+        owners = graph["owners"]
+        node_count = int(owners.shape[1])
+        codes = candidate_code(device=program.initial.device, dtype=self.code_proj.weight.dtype)
+        node_codes = codes[owners]
+        root_flag = torch.zeros(batch_size, node_count, 1, device=program.initial.device, dtype=node_codes.dtype)
+        batch = torch.arange(batch_size, device=program.initial.device)
+        root_flag[batch, graph["final_output"], 0] = 1.0
+        h = self.code_proj(torch.cat([node_codes, root_flag], dim=-1))
+
+        # One exact reverse-topological graph pass. Operation-state messages are computed
+        # from the post-write destination version plus command identity and sent only to
+        # the source versions that existed before that destructive write.
+        assert TOPOLOGICAL_PASSES == 1
+        for t in range(depth - 1, -1, -1):
+            post_id = graph["new_dst"][:, t]
+            post = self._gather_nodes(h, post_id)
+            cmd = self.command(program.commands[:, t])
+            op_state = self.message(torch.cat([post, cmd], dim=-1))
+            for source_id in (graph["src_a"][:, t], graph["src_b"][:, t]):
+                old = self._gather_nodes(h, source_id)
+                new = self.update(op_state, old)
+                h = self._scatter_nodes(h, source_id, new)
+
+        # Aggregate all temporal versions belonging to each candidate. This is the only
+        # collapse from version-level graph state to the candidate-level existence gate.
+        owner_onehot = F.one_hot(owners, NUM_CANDIDATES).to(dtype=h.dtype)
+        summed = torch.einsum("bnc,bnd->bcd", owner_onehot, h)
+        counts = owner_onehot.sum(dim=1).clamp_min(1.0)
+        candidate_h = summed / counts[:, :, None]
+        return torch.sigmoid(self.gate(candidate_h).squeeze(-1))
+
+    def forward(self, program) -> torch.Tensor:
+        if self.structure_blind:
+            return self._blind_forward(program)
+        return self._graph_forward(program)
 
 
 class GatedStateExecutor(nn.Module):
@@ -239,7 +301,6 @@ def cloned_x20_models(d_model: int = 96) -> dict[str, StateInstantiationModel]:
 
     canonical = StateInstantiationModel(mode="canonical_live_mask", d_model=d_model)
     all_records = StateInstantiationModel(mode="all_records", d_model=d_model)
-    # Match executor initialization across every regime; learned constructors remain absent in controls.
     executor_state = deepcopy(learned.executor.state_dict())
     canonical.executor.load_state_dict(executor_state)
     all_records.executor.load_state_dict(executor_state)
