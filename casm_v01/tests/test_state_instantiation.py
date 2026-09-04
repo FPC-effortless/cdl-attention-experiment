@@ -42,6 +42,16 @@ def test_backward_liveness_is_temporal_and_rooted_at_output():
     assert sum(mask) == 3
 
 
+def test_backward_liveness_drops_overwritten_versions():
+    # t0: candidate 1 is computed from 7; t1 overwrites candidate 1 from 2;
+    # t2 uses the *new* candidate-1 value to produce output 0. Candidate 7's
+    # earlier contribution is therefore dead and must not enter the live set.
+    mask = backward_live_mask([7, 2, 1], [7, 2, 1], [1, 1, 0])
+    assert mask[0] and mask[1] and mask[2]
+    assert not mask[7]
+    assert sum(mask) == 3
+
+
 def test_generator_exact_live_cardinality_and_distractor_mentions():
     for n in (2, 3, 4, 5, 6):
         batch = make_state_instantiation_batch(8, 12, 8000 + n, live_cardinality=n, split="iid")
