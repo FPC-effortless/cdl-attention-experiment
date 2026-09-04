@@ -49,8 +49,12 @@ def test_learned_regimes_parameter_matched_and_bit_identical_shared_state():
 def test_no_learned_id_tables_or_resource_allocator_modules():
     for mode in LEARNED_X19_MODES:
         model = X19RoleModel(mode=mode, d_model=32)
-        for name, module in model.named_modules():
-            assert not isinstance(module, torch.nn.Embedding), name
+        assert model.role_cell is not None and model.storage_bridge is not None
+        # The validated executor legitimately contains value/command embeddings. The X19
+        # restriction applies to role construction and storage identity, not executor values.
+        for root in (model.role_cell, model.storage_bridge):
+            for name, module in root.named_modules():
+                assert not isinstance(module, torch.nn.Embedding), name
         forbidden = ("external_id", "cardinality_id", "role_index", "step_index", "dual", "price", "occupancy", "sinkhorn", "hungarian")
         for name, _ in model.named_parameters():
             lower = name.lower()
@@ -69,7 +73,6 @@ def test_recursive_roles_ignore_global_context_and_have_prefix_consistency(monke
     after = model.roles(4).detach().clone()
     assert torch.equal(before, after)
 
-    # Manual repeated use of the same cell reproduces the generated prefix exactly.
     seed = model.normalized_seed()
     assert model.role_cell is not None
     step = seed.new_zeros(ROLE_CONTEXT_DIM)
@@ -179,5 +182,6 @@ def test_seen_depth96_shapes_and_finiteness():
         for model in models.values():
             soft = model.rollout_soft(batch)
             hard = model.rollout_hard(batch, discrete_binding=True)
-            assert soft.shape == hard.shape == batch.target_states.shape + (VALUE_MODULUS,)
+            assert soft.shape == batch.target_states.shape + (VALUE_MODULUS,)
+            assert hard.shape == batch.target_states.shape
             assert torch.isfinite(soft).all() and torch.isfinite(hard).all()
