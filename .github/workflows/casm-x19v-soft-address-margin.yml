@@ -1,0 +1,128 @@
+name: CASM-X19V soft address margin validation
+
+on:
+  push:
+    branches:
+      - experiment/casm-x19v-soft-address-margin
+    paths:
+      - "casm_v01/EXPERIMENT_CASM_X19V.md"
+      - "casm_v01/casm/soft_address_margin_validation.py"
+      - "casm_v01/casm/run_soft_address_margin_validation.py"
+      - "casm_v01/tests/test_soft_address_margin_validation.py"
+      - ".github/workflows/casm-x19v-soft-address-margin.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+      - name: Assemble CASM package model
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Run X19V integrity tests
+        run: |
+          PYTHONPATH=casm_v01 pytest -q \
+            casm_v01/tests/test_cardinality_valid_executor.py \
+            casm_v01/tests/test_noncontractive_role_dynamics.py \
+            casm_v01/tests/test_soft_address_margin_validation.py
+
+  replay-evaluate:
+    needs: contract-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - seed: 20261161
+            eval_seed: 20261241
+          - seed: 20261162
+            eval_seed: 20261242
+          - seed: 20261163
+            eval_seed: 20261243
+          - seed: 20261164
+            eval_seed: 20261244
+          - seed: 20261165
+            eval_seed: 20261245
+          - seed: 20261166
+            eval_seed: 20261246
+    env:
+      PYTHONHASHSEED: ${{ matrix.seed }}
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Assemble CASM package model
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Replay X19D and evaluate beta64 counterfactual
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.run_soft_address_margin_validation \
+            --steps 10000 \
+            --batch-size 128 \
+            --train-depth 8 \
+            --weight-decay 0.0001 \
+            --eval-n 256 \
+            --eval-batch-size 64 \
+            --seed ${{ matrix.seed }} \
+            --eval-seed ${{ matrix.eval_seed }} \
+            --output casm-x19v-output/results-${{ matrix.seed }}.json
+      - name: Validate provenance and contracts
+        working-directory: casm_v01
+        run: |
+          python - <<'PY'
+          import json, math
+          from pathlib import Path
+          path = next(Path("casm-x19v-output").glob("results-*.json"))
+          r = json.loads(path.read_text())
+          assert r["harness_version"] == "casm-x19v-soft-address-margin-v0-2026-09-04"
+          assert r["steps"] == 10000 and r["batch_size"] == 128 and r["train_depth"] == 8 and r["eval_n"] == 256
+          assert r["training_cardinalities"] == [2,3,4]
+          assert r["unseen_cardinalities"] == [5,6]
+          assert r["training_cardinality_counts"] == {"2":3334,"3":3333,"4":3333}
+          assert r["validation_contract"]["beta16_replay"] == 16.0
+          assert r["validation_contract"]["beta64_counterfactual"] == 64.0
+          assert r["validation_contract"]["counterfactual_created_posttraining_only"] is True
+          assert r["validation_contract"]["no_beta_sweep"] is True
+          assert r["optimizer_contract"]["training_address_beta"] == 16.0
+          assert r["supervision_contract"]["pretraining_unseen_role_generation"] is False
+          assert r["parameters"]["unconstrained_recursive"] == r["parameters"]["orthogonal_recursive"]
+          assert r["trainable_parameters"]["unconstrained_recursive"] == r["trainable_parameters"]["orthogonal_recursive"]
+          for mode, err in r["final_orthogonality_error"].items():
+              assert err <= 1e-5, (mode, err)
+          for mode in r["final_address_beta16"]:
+              for n in range(2,7):
+                  a = r["final_address_beta16"][mode][str(n)]
+                  b = r["final_address_beta64"][mode][str(n)]
+                  assert a["hard_address"] == b["hard_address"]
+                  assert math.isfinite(a["mean_soft_self_address_probability"])
+                  assert math.isfinite(b["mean_soft_self_address_probability"])
+          print("X19V provenance contract PASS")
+          PY
+      - name: Upload X19V result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-x19v-seed-${{ matrix.seed }}
+          path: casm_v01/casm-x19v-output/
+          if-no-files-found: error
+          retention-days: 90
