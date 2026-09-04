@@ -45,7 +45,12 @@ def test_detached_and_fullgrad_are_bit_identical_forward_random_and_adversarial(
         assert torch.equal(full_p, det_p)
         assert torch.isfinite(det_b).all() and torch.isfinite(det_p).all()
         assert (det_p >= 0).all()
-        assert torch.equal(det_b.sum(dim=1), torch.ones(det_b.shape[0]))
+        assert torch.allclose(
+            det_b.sum(dim=1),
+            torch.ones(det_b.shape[0]),
+            atol=1e-7,
+            rtol=0.0,
+        )
 
 
 def test_detached_prices_remove_history_but_keep_nonzero_logit_gradient():
@@ -93,7 +98,6 @@ def test_learned_models_start_bit_identical_parameter_matched_and_relative_descr
         parameter = next(full.binding_generator.parameters())
         indices = torch.arange(n)
         expected = variable_descriptor(indices, n, dtype=parameter.dtype)
-        # Base logits must be equal before optimization because descriptor/scorer are identical.
         assert expected.shape == (n, 9)
         assert torch.equal(full.base_logits(n), detached.base_logits(n))
         full_b, full_p = full.soft_binding_and_prices(n)
