@@ -14,8 +14,11 @@ from casm.state_instantiation_data import (
     training_live_cardinality_for_step,
 )
 from casm.state_instantiation_model import (
+    CONSTRUCTOR_DIM,
     LEARNED_MODES,
     STORAGE_LAMBDA,
+    TOPOLOGICAL_PASSES,
+    ProgramStateConstructor,
     StateInstantiationModel,
     candidate_code,
     cloned_x20_models,
@@ -35,8 +38,20 @@ def _program_with_operands(program: ProgramBatch, *, a=None, b=None, dst=None) -
     )
 
 
+def _tiny_program(a, b, dst) -> ProgramBatch:
+    depth = len(a)
+    return ProgramBatch(
+        initial=torch.zeros(1, NUM_CANDIDATES, dtype=torch.long),
+        commands=torch.zeros(1, depth, dtype=torch.long),
+        semantics=torch.zeros(1, depth, dtype=torch.long),
+        arg_a=torch.tensor([a], dtype=torch.long),
+        arg_b=torch.tensor([b], dtype=torch.long),
+        dst=torch.tensor([dst], dtype=torch.long),
+        target_states=torch.zeros(1, depth, NUM_CANDIDATES, dtype=torch.long),
+    )
+
+
 def test_backward_liveness_is_temporal_and_rooted_at_output():
-    # t0: 1 -> 2, t1: 2 -> 0. Both 1 and 2 are therefore live for final 0.
     mask = backward_live_mask([1, 2], [1, 2], [2, 0])
     assert mask[0] and mask[1] and mask[2]
     assert sum(mask) == 3
@@ -45,24 +60,47 @@ def test_backward_liveness_is_temporal_and_rooted_at_output():
 def test_backward_liveness_drops_overwritten_versions():
     # t0: candidate 1 is computed from 7; t1 overwrites candidate 1 from 2;
     # t2 uses the *new* candidate-1 value to produce output 0. Candidate 7's
-    # earlier contribution is therefore dead and must not enter the live set.
+    # earlier contribution is therefore dead.
     mask = backward_live_mask([7, 2, 1], [7, 2, 1], [1, 1, 0])
     assert mask[0] and mask[1] and mask[2]
     assert not mask[7]
     assert sum(mask) == 3
 
 
-def test_generator_exact_live_cardinality_and_distractor_mentions():
+def test_version_graph_keeps_overwritten_versions_distinct():
+    program = _tiny_program([7, 2, 1], [7, 2, 1], [1, 1, 0])
+    graph = ProgramStateConstructor.version_graph_indices(program)
+    # t0 creates node 8 = old candidate-1 version from candidate 7.
+    # t1 must read initial candidate 2 and creates a *different* candidate-1 node 9.
+    # t2 must read node 9, never node 8, before creating output node 10.
+    assert graph["new_dst"].tolist() == [[8, 9, 10]]
+    assert graph["owners"].tolist()[0][8:] == [1, 1, 0]
+    assert graph["src_a"].tolist() == [[7, 2, 9]]
+    assert graph["src_b"].tolist() == [[7, 2, 9]]
+    assert graph["final_output"].tolist() == [10]
+
+
+def test_constructor_geometry_is_frozen():
+    assert CONSTRUCTOR_DIM == 64
+    assert TOPOLOGICAL_PASSES == 1
+
+
+def test_generator_exact_live_cardinality_every_candidate_mentioned_and_binary_causal_suffix():
     for n in (2, 3, 4, 5, 6):
-        batch = make_state_instantiation_batch(8, 12, 8000 + n, live_cardinality=n, split="iid")
-        assert batch.program.initial.shape == (8, NUM_CANDIDATES)
+        # Depth 96 is included specifically to falsify the old rejection-sampling design.
+        batch = make_state_instantiation_batch(2, 96, 8000 + n, live_cardinality=n, split="composition")
+        assert batch.program.initial.shape == (2, NUM_CANDIDATES)
         assert (batch.live_mask.sum(dim=1) == n).all()
         assert batch.live_mask[:, OUTPUT_CANDIDATE].all()
+        # The constructed causal suffix is family-1/context-bit-0 => semantic subtraction,
+        # which genuinely consumes both source values.
+        assert (batch.program.semantics[:, -(n - 1):] == 2).all()
         for row in range(batch.batch_size):
             live = batch.live_mask[row]
             mentioned = torch.zeros(NUM_CANDIDATES, dtype=torch.bool)
             for field in (batch.program.arg_a[row], batch.program.arg_b[row], batch.program.dst[row]):
                 mentioned[field] = True
+            assert mentioned.all()  # mention/not-mentioned cannot reveal liveness
             assert ((~live) & mentioned).any()
 
 
@@ -93,10 +131,6 @@ def test_learned_pair_parameterization_and_initialization_match():
 def test_no_learned_per_candidate_table_exists():
     model = StateInstantiationModel(mode="learned_instantiation", d_model=32)
     assert model.constructor is not None
-    # Scope the prohibition to the constructor. The inherited validated executor
-    # legitimately has an 8-row operator-command embedding; that is not a
-    # candidate-identity table. Constructor command-family embeddings are also
-    # allowed because they encode supplied command identity rather than candidates.
     for name, p in model.constructor.named_parameters():
         if name.startswith("command."):
             continue
@@ -152,7 +186,7 @@ def test_gated_initial_state_uses_empty_for_absent_record():
     assert probs[0, 2, 5].item() == 1.0
 
 
-def test_soft_gates_are_normalized_existence_probabilities():
+def test_soft_gates_are_finite_existence_probabilities():
     batch = make_state_instantiation_batch(5, 12, 994, live_cardinality=4, split="train")
     for mode in LEARNED_MODES:
         model = StateInstantiationModel(mode=mode, d_model=32)
@@ -163,9 +197,8 @@ def test_soft_gates_are_normalized_existence_probabilities():
 
 
 def test_hard_instantiation_is_raw_half_threshold():
-    model = StateInstantiationModel(mode="all_records", d_model=32)
     gates = torch.tensor([[0.49, 0.50, 0.51, 0.1, 0.9, 0.2, 0.8, 0.3]])
-    hard = (gates >= 0.5)
+    hard = gates >= 0.5
     assert hard.tolist() == [[False, True, True, False, True, False, True, False]]
 
 
@@ -183,7 +216,7 @@ def test_storage_cost_has_downward_gate_gradient():
     gates = torch.tensor([[0.2, 0.8]], requires_grad=True)
     storage = STORAGE_LAMBDA * gates.mean()
     storage.backward()
-    assert (gates.grad > 0).all()  # gradient descent therefore reduces gate values
+    assert (gates.grad > 0).all()
 
 
 def test_answer_loss_reaches_constructor_and_executor():
