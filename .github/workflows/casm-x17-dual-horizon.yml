@@ -1,0 +1,131 @@
+name: CASM-X17 dual horizon
+
+on:
+  push:
+    branches:
+      - experiment/casm-x17-dual-horizon
+    paths:
+      - "casm_v01/EXPERIMENT_CASM_X17.md"
+      - "casm_v01/casm/dual_horizon_binding.py"
+      - "casm_v01/casm/run_dual_horizon_binding.py"
+      - "casm_v01/tests/test_dual_horizon_binding.py"
+      - ".github/workflows/casm-x17-dual-horizon.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+      - name: Assemble CASM package model
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Run X17 integrity tests
+        run: |
+          PYTHONPATH=casm_v01 pytest -q \
+            casm_v01/tests/test_cardinality_valid_executor.py \
+            casm_v01/tests/test_coordinated_binding.py \
+            casm_v01/tests/test_collision_barrier_binding.py \
+            casm_v01/tests/test_primal_dual_capacity_binding.py \
+            casm_v01/tests/test_dual_horizon_binding.py
+
+  train-evaluate:
+    needs: contract-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - seed: 20261121
+            eval_seed: 20261201
+          - seed: 20261122
+            eval_seed: 20261202
+          - seed: 20261123
+            eval_seed: 20261203
+    env:
+      PYTHONHASHSEED: ${{ matrix.seed }}
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Assemble CASM package model
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Train and evaluate X17 horizons
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.run_dual_horizon_binding \
+            --steps 10000 \
+            --batch-size 128 \
+            --train-depth 8 \
+            --weight-decay 0.0001 \
+            --eval-n 256 \
+            --eval-batch-size 64 \
+            --seed ${{ matrix.seed }} \
+            --eval-seed ${{ matrix.eval_seed }} \
+            --output casm-x17-output/results-${{ matrix.seed }}.json
+      - name: Validate provenance and contracts
+        working-directory: casm_v01
+        run: |
+          python - <<'PY'
+          import json, math
+          from pathlib import Path
+          path = next(Path("casm-x17-output").glob("results-*.json"))
+          r = json.loads(path.read_text())
+          assert r["harness_version"] == "casm-x17-dual-horizon-v0-2026-09-04"
+          assert r["steps"] == 10000 and r["batch_size"] == 128 and r["train_depth"] == 8
+          assert r["eval_n"] == 256
+          assert r["training_cardinalities"] == [2,3,4]
+          assert r["unseen_cardinalities"] == [5,6]
+          assert r["training_cardinality_counts"] == {"2":3334,"3":3333,"4":3333}
+          assert r["dual_contract"]["short_rounds"] == 8
+          assert r["dual_contract"]["long_rounds"] == 64
+          assert r["dual_contract"]["eta"] == 1.0
+          assert r["dual_contract"]["hard_injectivity"] is False
+          assert r["dual_contract"]["matching"] is False
+          assert r["dual_contract"]["sinkhorn"] is False
+          assert r["dual_contract"]["collision_repair"] is False
+          assert r["diagnostic_contract"]["source_model"] == "dual_short_8"
+          assert r["diagnostic_contract"]["inference_rounds"] == 64
+          assert r["diagnostic_contract"]["optimizer_steps_after_copy"] == 0
+          assert r["diagnostic_contract"]["created_after_training"] is True
+          assert r["supervision_contract"]["pretraining_unseen_forward"] is False
+          assert set(r["initial_bindings_train_cardinalities_only"]["dual_short_8"]) == {"2","3","4"}
+          assert set(r["initial_bindings_train_cardinalities_only"]["dual_long_64"]) == {"2","3","4"}
+          assert r["parameters"]["dual_short_8"] == r["parameters"]["dual_long_64"]
+          assert r["trainable_parameters"]["dual_short_8"] == r["trainable_parameters"]["dual_long_64"]
+          for values in (r["minimum_answer_loss"], r["minimum_total_loss"], r["final_answer_loss"], r["final_total_loss"], r["maximum_post4000_grad_norm"], r["maximum_training_dual_price"]):
+              assert all(math.isfinite(v) and v >= 0.0 for v in values.values())
+          for mode in ("dual_short_8","dual_long_64","dual_short_eval64"):
+              for n in range(2,7):
+                  s=r["final_bindings"][mode][str(n)]
+                  assert s["dual_rounds"] == (8 if mode=="dual_short_8" else 64)
+                  assert math.isfinite(s["row_max_mean"])
+                  assert math.isfinite(s["max_dual_price"]) and s["max_dual_price"] >= 0.0
+          PY
+      - name: Upload X17 result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-x17-seed-${{ matrix.seed }}
+          path: casm_v01/casm-x17-output/
+          if-no-files-found: error
+          retention-days: 90
