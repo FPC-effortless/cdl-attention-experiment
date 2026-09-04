@@ -26,15 +26,32 @@ class StateInstantiationBatch:
 
 
 def backward_live_mask(arg_a: list[int], arg_b: list[int], dst: list[int]) -> list[bool]:
+    """Return candidate identities with at least one version on the final-output dataflow slice.
+
+    `current_versions` tracks which candidate versions immediately before the currently
+    scanned operation are required by the final output. `ever_live` separately records
+    candidate identities for which any version is on that slice. Keeping these sets
+    separate is essential under destructive writes: an older overwritten version of a
+    destination must not remain live merely because a later version of that candidate
+    was causal.
+    """
     if not (len(arg_a) == len(arg_b) == len(dst)):
         raise ValueError("program field lengths differ")
-    live = {OUTPUT_CANDIDATE}
+    current_versions = {OUTPUT_CANDIDATE}
+    ever_live = {OUTPUT_CANDIDATE}
     for a, b, d in reversed(list(zip(arg_a, arg_b, dst))):
-        if d in live:
-            live.add(int(a))
-            live.add(int(b))
-            live.add(int(d))
-    return [i in live for i in range(NUM_CANDIDATES)]
+        a, b, d = int(a), int(b), int(d)
+        if d not in current_versions:
+            continue
+        # The post-operation version of d is causal. Moving across this write replaces
+        # that version with exactly the source versions consumed by the operation.
+        ever_live.add(d)
+        current_versions.remove(d)
+        current_versions.add(a)
+        current_versions.add(b)
+        ever_live.add(a)
+        ever_live.add(b)
+    return [i in ever_live for i in range(NUM_CANDIDATES)]
 
 
 def _program_mentions_distractor(
