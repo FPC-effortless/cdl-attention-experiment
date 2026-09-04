@@ -1,0 +1,138 @@
+name: CASM-X18R detached dual gradients
+
+on:
+  push:
+    branches:
+      - experiment/casm-x18r-detached-dual-gradients
+    paths:
+      - "casm_v01/EXPERIMENT_CASM_X18R.md"
+      - "casm_v01/casm/detached_dual_binding.py"
+      - "casm_v01/casm/run_detached_dual_binding.py"
+      - "casm_v01/tests/test_detached_dual_binding.py"
+      - ".github/workflows/casm-x18r-detached-dual-gradients.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+      - name: Assemble CASM package model
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Run X18R integrity tests
+        run: |
+          PYTHONPATH=casm_v01 pytest -q \
+            casm_v01/tests/test_cardinality_valid_executor.py \
+            casm_v01/tests/test_coordinated_binding.py \
+            casm_v01/tests/test_collision_barrier_binding.py \
+            casm_v01/tests/test_primal_dual_capacity_binding.py \
+            casm_v01/tests/test_detached_dual_binding.py
+
+  train-evaluate:
+    needs: contract-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - seed: 20261141
+            eval_seed: 20261221
+          - seed: 20261142
+            eval_seed: 20261222
+          - seed: 20261143
+            eval_seed: 20261223
+          - seed: 20261144
+            eval_seed: 20261224
+          - seed: 20261145
+            eval_seed: 20261225
+          - seed: 20261146
+            eval_seed: 20261226
+    env:
+      PYTHONHASHSEED: ${{ matrix.seed }}
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Assemble CASM package model
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Train and evaluate X18R gradient regimes
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.run_detached_dual_binding \
+            --steps 10000 \
+            --batch-size 128 \
+            --train-depth 8 \
+            --weight-decay 0.0001 \
+            --eval-n 256 \
+            --eval-batch-size 64 \
+            --seed ${{ matrix.seed }} \
+            --eval-seed ${{ matrix.eval_seed }} \
+            --output casm-x18r-output/results-${{ matrix.seed }}.json
+      - name: Validate provenance and contracts
+        working-directory: casm_v01
+        run: |
+          python - <<'PY'
+          import json, math
+          from pathlib import Path
+          path = next(Path("casm-x18r-output").glob("results-*.json"))
+          r = json.loads(path.read_text())
+          assert r["harness_version"] == "casm-x18r-detached-dual-gradients-v0-2026-09-04"
+          assert r["steps"] == 10000 and r["batch_size"] == 128 and r["train_depth"] == 8 and r["eval_n"] == 256
+          assert r["training_cardinalities"] == [2,3,4]
+          assert r["evaluation_cardinalities"] == [2,3,4]
+          assert r["unseen_evaluation_permitted"] is False
+          assert r["training_cardinality_counts"] == {"2":3334,"3":3333,"4":3333}
+          assert set(r["evaluation"]) == {"2","3","4"}
+          assert set(r["soft_evaluation"]) == {"2","3","4"}
+          assert r["dual_contract"]["rounds"] == 8 and r["dual_contract"]["eta"] == 1.0
+          assert r["dual_contract"]["forward_values_must_match"] is True
+          assert r["dual_contract"]["detached_final_binding_to_logits_gradient"] is True
+          assert r["dual_contract"]["matching"] is False
+          assert r["dual_contract"]["collision_repair"] is False
+          assert r["parameters"]["dual_fullgrad"] == r["parameters"]["dual_detached_prices"]
+          assert r["trainable_parameters"]["dual_fullgrad"] == r["trainable_parameters"]["dual_detached_prices"]
+          for mode in ("dual_fullgrad", "dual_detached_prices"):
+              assert set(r["initial_bindings"][mode]) == {"2","3","4"}
+              assert set(r["final_bindings"][mode]) == {"2","3","4"}
+              for n in (2,3,4):
+                  s = r["final_bindings"][mode][str(n)]
+                  assert math.isfinite(s["row_max_mean"])
+                  assert s["independent_argmax_collision_count"] == n - s["independent_argmax_unique_slot_count"]
+          assert r["final_bindings"]["dual_fullgrad"]["4"]["price_requires_grad"] is True
+          assert r["final_bindings"]["dual_detached_prices"]["4"]["price_requires_grad"] is False
+          for values in (
+              r["minimum_answer_loss"], r["minimum_total_loss"], r["final_answer_loss"],
+              r["final_total_loss"], r["maximum_grad_norm"],
+              r["maximum_post4000_grad_norm"], r["maximum_training_dual_price"],
+          ):
+              assert all(math.isfinite(v) and v >= 0 for v in values.values())
+          print("X18R provenance contract PASS")
+          PY
+      - name: Upload X18R result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-x18r-seed-${{ matrix.seed }}
+          path: casm_v01/casm-x18r-output/
+          if-no-files-found: error
+          retention-days: 90
