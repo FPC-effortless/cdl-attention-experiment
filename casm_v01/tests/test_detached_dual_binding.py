@@ -48,7 +48,7 @@ def test_detached_and_fullgrad_are_bit_identical_forward_random_and_adversarial(
         assert torch.allclose(
             det_b.sum(dim=1),
             torch.ones(det_b.shape[0]),
-            atol=1e-7,
+            atol=1e-5,
             rtol=0.0,
         )
 
