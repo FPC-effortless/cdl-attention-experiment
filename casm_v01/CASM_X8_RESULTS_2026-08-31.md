@@ -32,6 +32,12 @@ All X8 integrity tests and all three 8,000-step train/evaluate/validator jobs pa
 | `20261012` | `9756867835` | `sha256:50efe0711f3c98229c926df9086a825b418fa53dff244b261cf56f3697afef6f` |
 | `20261013` | `9756748252` | `sha256:338516d970725cbd2c25590dee4ace57362ebeb920763ee9bdd9da40b101e500` |
 
+## Evidence correction — 2026-09-04
+
+A later artifact-level audit found that the original result document and PR body associated the three learned-dense topology rows with the wrong seed labels. The immutable workflow artifact names, IDs, digests and evaluated head above are unchanged; the scientific aggregate result was also unchanged.
+
+This document now uses the **artifact-authoritative seed association**. The correction changes only which seed is paired with which per-seed topology/statistics. It does not change any capability metric, threshold outcome, artifact, training run, or scientific conclusion.
+
 ## Pre-training numerical gate failure
 
 The first X8 integrity run failed **before any training was allowed to start**.
@@ -70,17 +76,17 @@ The `learned_dense` treatment achieved **100% exact capability on every seed and
 | independent argmax unique slots | 4 | **4 on every seed** |
 | independent argmax collisions | 0 | **0 on every seed** |
 | mean row maximum | >=0.90 | **0.980335** |
-| best injective score | >=3.60 / 4 | **3.921340 / 4** |
+| best injective score | >=3.60 / 4 | **3.921341 / 4** |
 
 Training is limited to depth 8. Evaluation includes IID depth 8, held-out family-order composition depth 12 and 24, and stress depth 48 and 96.
 
-## Per-seed learned dense topology
+## Per-seed learned dense topology — artifact-authoritative
 
-| Seed | Independent argmax | Unique slots | Collisions | Row-max mean | Best injective score | Max soft column occupancy |
-|---|---|---:|---:|---:|---:|---:|
-| `20261011` | `[5, 4, 7, 3]` | 4 | 0 | 0.980335 | 3.921340 | 1.001780 |
-| `20261012` | `[3, 2, 0, 1]` | 4 | 0 | 0.983005 | 3.931995 | 1.000189 |
-| `20261013` | `[6, 3, 0, 2]` | 4 | 0 | 0.991078 | 3.964313 | 0.999600 |
+| Seed | Independent argmax | Unique slots | Collisions | Row-max mean | Row entropy mean | Best injective score | Max soft column occupancy |
+|---|---|---:|---:|---:|---:|---:|---:|
+| `20261011` | `[6, 3, 0, 2]` | 4 | 0 | 0.9803352952 | 0.1262331 | 3.92134118 | 1.0000428 |
+| `20261012` | `[5, 4, 7, 3]` | 4 | 0 | 0.9832839370 | 0.1103591 | 3.93313575 | 1.00005126 |
+| `20261013` | `[3, 2, 0, 1]` | 4 | 0 | 0.9820417170 | 0.1177182 | 3.92816687 | 0.99998337 |
 
 The slight soft column occupancies above 1 are allowed in the unconstrained treatment and are handled by the preregistered capacity-normalized transport. The decisive hard topology nevertheless contains zero collisions on every seed without any collision-repair step.
 
@@ -88,7 +94,15 @@ The different slot assignments across seeds are expected gauge freedom: no canon
 
 ## Negative control
 
-The fixed diffuse treatment remains poor at depth 96. Three-seed means are approximately:
+The fixed diffuse treatment remains poor at depth 96. Artifact-authoritative per-seed values are:
+
+| Seed | Answer-final | Step-state exactness | Hidden-register accuracy |
+|---|---:|---:|---:|
+| `20261011` | 15.3646% | 2.4007% | 15.6123% |
+| `20261012` | 6.7708% | 1.3726% | 10.4031% |
+| `20261013` | 8.8542% | 2.8510% | 17.9326% |
+
+Three-seed means are approximately:
 
 - answer-final accuracy: **10.33%**;
 - step-state exactness: **2.21%**;
