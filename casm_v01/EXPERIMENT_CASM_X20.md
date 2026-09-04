@@ -231,3 +231,15 @@ It would not establish:
 ## Successor boundary
 
 If X20 passes strongly, the next experiment should introduce **reuse/merge across repeated or aliased observations** and then lifecycle deletion, rather than returning to role-code generation. Only after state creation/reuse is robust should CASM proceed to learned controller/program induction.
+
+## Frozen result
+
+Result commit: `51e510d63f98d33a2a7f72828ff97ecc74152704`.
+
+Classification: **VALID EXPERIMENT. POSITIVE CONTROL PASS. LEARNED INSTANTIATION SEEN-COMPETENT 3/6. STRONG STATE-INSTANTIATION EXTENSION INELIGIBLE. STRUCTURE-BLIND SEEN-COMPETENT 0/6.**
+
+The three passing learned seeds (`20261174..20261176`) are exactly correct on hard/soft capability, state selection, and record count for every `n=2..6`, including unseen 5/6. The three failing seeds (`20261171..20261173`) suppress distractors to approximately zero and retain near-perfect soft execution, but allow necessary live gates to drift to fractional values that fail the frozen hard `g>=0.5` existence contract.
+
+The dominant boundary is therefore the frozen **continuous soft-gate relaxation**, which admits fractional working-state occupancy while still satisfying answer loss. This is not a robust discrete-instantiation PASS and does not authorize the reuse/merge successor.
+
+See `casm_v01/CASM_X20_RESULTS_2026-09-04.md` for full artifact-level evidence and the preregistered next decision: a narrow straight-through binary-existence repair that changes only the training relaxation.
