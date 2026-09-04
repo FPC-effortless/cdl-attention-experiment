@@ -21,10 +21,23 @@ X20R_LEARNED_MODES = (SOFT_MODE, ST_GRAPH_MODE, ST_BLIND_MODE)
 X20R_MODES = ("canonical_live_mask", "all_records", *X20R_LEARNED_MODES)
 
 
+class _StraightThroughBinary(torch.autograd.Function):
+    """Exact binary forward with identity gradient to the soft gate input."""
+
+    @staticmethod
+    def forward(ctx, g_soft: torch.Tensor) -> torch.Tensor:
+        del ctx
+        return (g_soft >= 0.5).to(dtype=g_soft.dtype)
+
+    @staticmethod
+    def backward(ctx, grad_output: torch.Tensor) -> tuple[torch.Tensor]:
+        del ctx
+        return (grad_output,)
+
+
 def straight_through_binary(g_soft: torch.Tensor) -> torch.Tensor:
     """Binary forward value with identity-through-soft backward path."""
-    g_hard = (g_soft >= 0.5).to(dtype=g_soft.dtype)
-    return g_hard + g_soft - g_soft.detach()
+    return _StraightThroughBinary.apply(g_soft)
 
 
 class X20RStateInstantiationModel(nn.Module):
