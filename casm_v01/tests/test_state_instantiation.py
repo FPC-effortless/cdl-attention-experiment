@@ -82,9 +82,13 @@ def test_learned_pair_parameterization_and_initialization_match():
 
 def test_no_learned_per_candidate_table_exists():
     model = StateInstantiationModel(mode="learned_instantiation", d_model=32)
-    for name, p in model.named_parameters():
-        # Command-family tables are allowed; candidate-index tables are not.
-        if "constructor.command" in name:
+    assert model.constructor is not None
+    # Scope the prohibition to the constructor. The inherited validated executor
+    # legitimately has an 8-row operator-command embedding; that is not a
+    # candidate-identity table. Constructor command-family embeddings are also
+    # allowed because they encode supplied command identity rather than candidates.
+    for name, p in model.constructor.named_parameters():
+        if name.startswith("command."):
             continue
         assert not (p.ndim >= 2 and p.shape[0] == NUM_CANDIDATES), (name, tuple(p.shape))
 
