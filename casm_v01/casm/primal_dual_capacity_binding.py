@@ -28,6 +28,19 @@ X16_MODES = (
 LEARNED_X16_MODES = X16_MODES[1:]
 
 
+def projected_dual_update(
+    prices: torch.Tensor,
+    occupancy: torch.Tensor,
+    *,
+    eta: float = DUAL_ETA,
+) -> torch.Tensor:
+    if prices.shape != (NUM_CANDIDATE_SLOTS,) or occupancy.shape != (NUM_CANDIDATE_SLOTS,):
+        raise ValueError("prices and occupancy must both be length-8 vectors")
+    if eta != DUAL_ETA:
+        raise ValueError(f"X16 freezes eta={DUAL_ETA}")
+    return F.relu(prices + eta * (occupancy - 1.0))
+
+
 def primal_dual_binding(
     base_logits: torch.Tensor,
     *,
@@ -53,7 +66,7 @@ def primal_dual_binding(
         for _ in range(rounds):
             probs = F.softmax(base_logits - prices.unsqueeze(0), dim=-1)
             occupancy = probs.sum(dim=0)
-            prices = F.relu(prices + eta * (occupancy - 1.0))
+            prices = projected_dual_update(prices, occupancy, eta=eta)
     final_probs = F.softmax(base_logits - prices.unsqueeze(0), dim=-1)
     return final_probs, prices
 
