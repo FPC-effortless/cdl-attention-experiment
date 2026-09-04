@@ -20,6 +20,8 @@ Workflow:
 
 The exact-head integrity gate passed and all six train/evaluate/provenance jobs completed successfully.
 
+Frozen result documentation begins at commit `51e510d63f98d33a2a7f72828ff97ecc74152704`; the preregistration/result cross-link was then finalized at `c92105538219c3f861b34d841892c3097aed87b6`.
+
 ## Artifact provenance
 
 | Seed | Artifact ID | SHA-256 digest |
