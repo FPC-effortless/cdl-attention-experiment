@@ -1,0 +1,175 @@
+name: CASM-X15 soft capacity conservation
+
+on:
+  push:
+    branches:
+      - experiment/casm-x15-soft-capacity-conservation
+    paths:
+      - "casm_v01/EXPERIMENT_CASM_X15.md"
+      - "casm_v01/casm/capacity_conservation_binding.py"
+      - "casm_v01/casm/run_capacity_conservation_binding.py"
+      - "casm_v01/tests/test_capacity_conservation_binding.py"
+      - ".github/workflows/casm-x15-soft-capacity-conservation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest
+      - name: Assemble CASM package model
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Run X15 integrity tests
+        run: |
+          PYTHONPATH=casm_v01 pytest -q \
+            casm_v01/tests/test_cardinality_valid_executor.py \
+            casm_v01/tests/test_coordinated_binding.py \
+            casm_v01/tests/test_collision_barrier_binding.py \
+            casm_v01/tests/test_capacity_conservation_binding.py
+
+  train-evaluate:
+    needs: contract-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - seed: 20261101
+            eval_seed: 20261181
+          - seed: 20261102
+            eval_seed: 20261182
+          - seed: 20261103
+            eval_seed: 20261183
+    env:
+      PYTHONHASHSEED: ${{ matrix.seed }}
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Assemble CASM package model
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Train and evaluate X15 capacity regimes
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.run_capacity_conservation_binding \
+            --steps 10000 \
+            --batch-size 128 \
+            --train-depth 8 \
+            --weight-decay 0.0001 \
+            --eval-n 256 \
+            --eval-batch-size 64 \
+            --seed ${{ matrix.seed }} \
+            --eval-seed ${{ matrix.eval_seed }} \
+            --output casm-x15-output/results-${{ matrix.seed }}.json
+      - name: Validate provenance and print decisive metrics
+        working-directory: casm_v01
+        run: |
+          python - <<'PY'
+          import json
+          import math
+          from pathlib import Path
+
+          path = next(Path("casm-x15-output").glob("results-*.json"))
+          report = json.loads(path.read_text())
+          assert report["harness_version"] == "casm-x15-soft-capacity-conservation-v0-2026-09-04"
+          assert report["steps"] == 10000
+          assert report["batch_size"] == 128
+          assert report["train_depth"] == 8
+          assert report["eval_n"] == 256
+          assert report["training_cardinalities"] == [2,3,4]
+          assert report["unseen_cardinalities"] == [5,6]
+          assert report["training_cardinality_counts"] == {"2":3334,"3":3333,"4":3333}
+          assert report["capacity_contract"]["epsilon"] == 0.001
+          assert report["capacity_contract"]["damping"] == 0.5
+          assert report["capacity_contract"]["rounds"] == 8
+          assert report["capacity_contract"]["parameter_free_transform"] is True
+          assert report["capacity_contract"]["hard_injectivity"] is False
+          assert report["capacity_contract"]["matching"] is False
+          assert report["capacity_contract"]["sinkhorn"] is False
+          assert report["capacity_contract"]["hard_masking"] is False
+          assert report["capacity_contract"]["collision_repair"] is False
+          assert report["supervision_contract"]["teacher_forcing"] is False
+          assert report["supervision_contract"]["intermediate_state_targets"] is False
+          assert report["supervision_contract"]["hidden_final_targets"] is False
+          assert report["supervision_contract"]["binding_labels"] is False
+          assert report["supervision_contract"]["pretraining_unseen_forward"] is False
+          assert set(report["initial_bindings_train_cardinalities_only"]["capacity_neutral"]) == {"2","3","4"}
+          assert set(report["initial_bindings_train_cardinalities_only"]["capacity_conserving"]) == {"2","3","4"}
+          assert report["parameters"]["capacity_neutral"] == report["parameters"]["capacity_conserving"]
+          assert report["trainable_parameters"]["capacity_neutral"] == report["trainable_parameters"]["capacity_conserving"]
+
+          for values in (
+              report["minimum_answer_loss"], report["minimum_total_loss"],
+              report["final_answer_loss"], report["final_total_loss"],
+              report["maximum_post4000_grad_norm"],
+          ):
+              assert all(math.isfinite(v) and v >= 0.0 for v in values.values())
+
+          modes = ("canonical_functional", "capacity_neutral", "capacity_conserving")
+          for n in range(2, 7):
+              print("\nn", n)
+              for learned in modes[1:]:
+                  stats = report["final_bindings"][learned][str(n)]
+                  for key in (
+                      "row_max_mean", "normalized_row_spread", "collision_barrier",
+                      "max_other_row_occupancy", "min_remaining_capacity",
+                  ):
+                      assert math.isfinite(stats[key]) and stats[key] >= 0.0
+                  print(
+                      learned,
+                      "assignment", stats["independent_argmax_assignment"],
+                      "unique", stats["independent_argmax_unique_slot_count"],
+                      "collisions", stats["independent_argmax_collision_count"],
+                      "row_max", stats["row_max_mean"],
+                      "min_capacity", stats["min_remaining_capacity"],
+                  )
+              for suite in (
+                  "iid_depth_8", "composition_depth_12", "composition_depth_24",
+                  "stress_depth_48", "stress_depth_96",
+              ):
+                  row = report["evaluation"][str(n)][suite]
+                  soft = report["soft_evaluation"][str(n)][suite]
+                  for mode in modes:
+                      for metrics in (row[mode], soft[mode]):
+                          for key in (
+                              "final_state_exact", "step_state_exact", "register_accuracy",
+                              "answer_final_accuracy", "answer_step_accuracy",
+                              "hidden_register_accuracy", "hidden_final_exact",
+                          ):
+                              assert math.isfinite(metrics[key]), (n, suite, mode, key, metrics[key])
+                      print(
+                          suite, mode,
+                          "hard_answer", row[mode]["answer_final_accuracy"],
+                          "hard_step", row[mode]["step_state_exact"],
+                          "hard_hidden", row[mode]["hidden_register_accuracy"],
+                          "soft_answer", soft[mode]["answer_final_accuracy"],
+                      )
+          PY
+      - name: Upload X15 result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-x15-seed-${{ matrix.seed }}
+          path: casm_v01/casm-x15-output/
+          if-no-files-found: error
+          retention-days: 90
