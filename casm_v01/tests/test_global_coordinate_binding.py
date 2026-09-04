@@ -36,7 +36,6 @@ def test_global_descriptor_is_n_invariant_and_finite():
             values.append(value)
         assert all(torch.equal(values[0], value) for value in values[1:])
 
-    # Wider indices are checked over every cardinality in which they exist.
     for e in range(2, 6):
         values = [global_variable_descriptor(torch.tensor([e]), n) for n in range(e + 1, 7)]
         assert all(torch.equal(values[0], value) for value in values[1:])
@@ -86,8 +85,10 @@ def test_descriptor_frame_is_only_learned_treatment_difference():
     relative = models["relative_descriptor"]
     global_model = models["global_descriptor"]
     assert relative.mode != global_model.mode
-    assert torch.equal(relative.binding_generator.state_dict()["external_proj.0.weight"], global_model.binding_generator.state_dict()["external_proj.0.weight"])
-    # Different deterministic descriptors are allowed to induce different logits.
+    rs = relative.state_dict()
+    gs = global_model.state_dict()
+    assert rs.keys() == gs.keys()
+    assert all(torch.equal(rs[key], gs[key]) for key in rs)
     assert not torch.equal(relative.base_logits(4), global_model.base_logits(4))
 
 
