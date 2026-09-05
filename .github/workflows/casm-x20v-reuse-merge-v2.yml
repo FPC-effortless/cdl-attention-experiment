@@ -1,0 +1,91 @@
+name: CASM-X20V narrow reuse merge v2
+on:
+  push:
+    branches: [experiment/casm-x20v-reuse-merge]
+    paths:
+      - "casm_v01/casm/reuse_merge.py"
+      - "casm_v01/casm/state_instantiation_reuse_merge.py"
+      - "casm_v01/casm/run_state_instantiation_reuse_merge_v2.py"
+      - "casm_v01/tests/test_reuse_merge.py"
+      - "casm_v01/tests/test_state_instantiation_reuse_merge.py"
+      - ".github/workflows/casm-x20v-reuse-merge-v2.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11.16"}
+      - name: Verify ordering and frozen scope
+        run: |
+          git merge-base --is-ancestor 38e776c6e410d55bf62208faa55923533abb90c0 HEAD
+          git merge-base --is-ancestor ac3e53ffc60b660e84b7585836bdea4feefc1963 HEAD
+          git merge-base --is-ancestor 524b372f89e2b3fd554131782c87278c58bf0552 HEAD
+          git diff --exit-code 38e776c6e410d55bf62208faa55923533abb90c0 -- casm_v01/casm/state_instantiation_data.py casm_v01/casm/state_instantiation_model.py casm_v01/casm/state_instantiation_st.py casm_v01/casm/state_instantiation_credit.py casm_v01/casm/state_instantiation_local_credit.py
+      - name: Install pinned environment
+        run: |
+          python -m pip install --upgrade "pip==26.2.1"
+          python -m pip install "torch==2.14.0+cpu" --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install "pytest==9.1.1"
+          python - <<'PY'
+          import platform,torch
+          assert platform.python_version()=="3.11.16"
+          assert torch.__version__=="2.14.0+cpu"
+          PY
+      - name: Run contract tests
+        run: PYTHONPATH=casm_v01 pytest -q casm_v01/tests/test_reuse_merge.py casm_v01/tests/test_state_instantiation_reuse_merge.py
+  scientific:
+    needs: contract
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {seed: 20261221, eval_seed: 20261301}
+          - {seed: 20261222, eval_seed: 20261302}
+          - {seed: 20261223, eval_seed: 20261303}
+          - {seed: 20261224, eval_seed: 20261304}
+          - {seed: 20261225, eval_seed: 20261305}
+          - {seed: 20261226, eval_seed: 20261306}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11.16"}
+      - name: Install pinned environment
+        run: |
+          python -m pip install --upgrade "pip==26.2.1"
+          python -m pip install "torch==2.14.0+cpu" --index-url https://download.pytorch.org/whl/cpu
+      - name: Execute exact preregistered run
+        working-directory: casm_v01
+        run: PYTHONPATH=. python -m casm.run_state_instantiation_reuse_merge_v2 --steps 12000 --batch-size 128 --train-depth 12 --eval-n 256 --seed ${{ matrix.seed }} --eval-seed ${{ matrix.eval_seed }} --output casm-x20v-output/results-${{ matrix.seed }}.json
+      - name: Validate exact-head result contract
+        working-directory: casm_v01
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          r=json.loads(next(Path('casm-x20v-output').glob('results-*.json')).read_text())
+          assert r['git_sha']==os.environ['GITHUB_SHA']
+          assert r['python_version']=='3.11.16' and r['torch_version']=='2.14.0+cpu'
+          assert r['steps']==12000 and r['batch_size']==128 and r['train_depth']==12 and r['eval_n']==256
+          assert r['candidate_count']==8 and r['training_live_cardinalities']==[2,3,4] and r['unseen_live_cardinalities']==[5,6]
+          assert r['training_cardinality_counts']=={'2':4000,'3':4000,'4':4000}
+          assert len(set(r['parameters'].values()))==1 and len(set(r['trainable_parameters'].values()))==1
+          assert r['constructor_contract']['hard_gate_threshold']==0.5
+          assert all(v is False for k,v in r['supervision_contract'].items() if k.endswith('_loss') or k in {'top_k','lookup_table','post_hoc_threshold'})
+          print('X20V exact-head contract PASS')
+          PY
+      - name: Upload fresh seed artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-x20v-v2-seed-${{ matrix.seed }}
+          path: casm_v01/casm-x20v-output/
+          if-no-files-found: error
+          retention-days: 90
