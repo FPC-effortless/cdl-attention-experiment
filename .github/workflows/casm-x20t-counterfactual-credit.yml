@@ -1,0 +1,181 @@
+name: CASM-X20T counterfactual answer credit
+
+on:
+  push:
+    branches:
+      - experiment/casm-x20t-counterfactual-credit
+    paths:
+      - "casm_v01/EXPERIMENT_CASM_X20T.md"
+      - "casm_v01/casm/state_instantiation_credit.py"
+      - "casm_v01/casm/run_state_instantiation_credit.py"
+      - "casm_v01/tests/test_state_instantiation_credit.py"
+      - ".github/workflows/casm-x20t-counterfactual-credit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11.16"
+      - name: Verify frozen X20S base and preregistration ordering
+        run: |
+          git merge-base --is-ancestor 9d4ebc5805f11e7e6e208de006878508111e201e HEAD
+          git merge-base --is-ancestor 9365e9e1ce3242df6305abe9fd816e66298caa64 HEAD
+          git diff --exit-code 9d4ebc5805f11e7e6e208de006878508111e201e -- \
+            casm_v01/casm/state_instantiation_data.py \
+            casm_v01/casm/state_instantiation_model.py \
+            casm_v01/casm/run_state_instantiation.py \
+            casm_v01/casm/state_instantiation_st.py \
+            casm_v01/casm/run_state_instantiation_st.py \
+            casm_v01/casm/state_instantiation_schedule.py \
+            casm_v01/casm/run_state_instantiation_schedule.py \
+            casm_v01/tests/test_state_instantiation.py \
+            casm_v01/tests/test_state_instantiation_st.py \
+            casm_v01/tests/test_state_instantiation_schedule.py
+      - name: Install pinned scientific environment
+        run: |
+          python -m pip install --upgrade "pip==26.2.1"
+          python -m pip install "torch==2.14.0+cpu" --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install "pytest==9.1.1"
+          python - <<'PY'
+          import platform, torch
+          assert platform.python_version() == "3.11.16", platform.python_version()
+          assert torch.__version__ == "2.14.0+cpu", torch.__version__
+          print(platform.python_version(), torch.__version__)
+          PY
+      - name: Assemble CASM package model
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Run inherited and X20T integrity tests
+        run: |
+          PYTHONPATH=casm_v01 pytest -q \
+            casm_v01/tests/test_cardinality_valid_executor.py \
+            casm_v01/tests/test_state_instantiation.py \
+            casm_v01/tests/test_state_instantiation_st.py \
+            casm_v01/tests/test_state_instantiation_schedule.py \
+            casm_v01/tests/test_state_instantiation_credit.py
+
+  train-evaluate:
+    needs: contract-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - seed: 20261201
+            eval_seed: 20261281
+          - seed: 20261202
+            eval_seed: 20261282
+          - seed: 20261203
+            eval_seed: 20261283
+          - seed: 20261204
+            eval_seed: 20261284
+          - seed: 20261205
+            eval_seed: 20261285
+          - seed: 20261206
+            eval_seed: 20261286
+    env:
+      PYTHONHASHSEED: ${{ matrix.seed }}
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11.16"
+      - name: Install pinned scientific environment
+        run: |
+          python -m pip install --upgrade "pip==26.2.1"
+          python -m pip install "torch==2.14.0+cpu" --index-url https://download.pytorch.org/whl/cpu
+          python - <<'PY'
+          import platform, torch
+          assert platform.python_version() == "3.11.16"
+          assert torch.__version__ == "2.14.0+cpu"
+          PY
+      - name: Assemble CASM package model
+        run: cat casm_v01/casm/model_part1.py casm_v01/casm/model_part2.py > casm_v01/casm/model.py
+      - name: Train and evaluate X20T credit regimes
+        working-directory: casm_v01
+        run: |
+          PYTHONPATH=. python -m casm.run_state_instantiation_credit \
+            --steps 12000 \
+            --batch-size 128 \
+            --train-depth 12 \
+            --eval-n 256 \
+            --eval-batch-size 64 \
+            --seed ${{ matrix.seed }} \
+            --eval-seed ${{ matrix.eval_seed }} \
+            --output casm-x20t-output/results-${{ matrix.seed }}.json
+      - name: Validate X20T provenance contract
+        working-directory: casm_v01
+        run: |
+          python - <<'PY'
+          import json, math, os
+          from pathlib import Path
+          p = next(Path("casm-x20t-output").glob("results-*.json"))
+          r = json.loads(p.read_text())
+          assert r["harness_version"] == "casm-x20t-counterfactual-credit-v0-2026-09-05"
+          assert r["git_sha"] == os.environ["GITHUB_SHA"]
+          assert r["python_version"] == "3.11.16"
+          assert r["torch_version"] == "2.14.0+cpu"
+          assert r["steps"] == 12000 and r["batch_size"] == 128 and r["train_depth"] == 12 and r["eval_n"] == 256
+          assert r["candidate_count"] == 8
+          assert r["training_live_cardinalities"] == [2,3,4]
+          assert r["unseen_live_cardinalities"] == [5,6]
+          assert r["training_cardinality_counts"] == {"2":4000,"3":4000,"4":4000}
+          learned = (
+              "hard_only_st",
+              "soft_x20_replication",
+              "soft_credit_hard_storage",
+              "dual_credit_hard_storage",
+              "soft_credit_hard_storage_structure_blind",
+          )
+          assert len({r["parameters"][m] for m in learned}) == 1
+          assert len({r["trainable_parameters"][m] for m in learned}) == 1
+          o = r["objective_contract"]
+          assert o["hard_only_st"] == "A_hard + 0.05*S_hard"
+          assert o["soft_x20_replication"] == "A_soft + 0.05*S_soft"
+          assert o["soft_credit_hard_storage"] == "A_soft + 0.05*S_hard"
+          assert o["dual_credit_hard_storage"] == "0.5*A_hard + 0.5*A_soft + 0.05*S_hard"
+          assert o["soft_credit_hard_storage_structure_blind"] == "A_soft + 0.05*S_hard"
+          assert o["storage_lambda"] == 0.05
+          assert o["same_final_answer_target_for_hard_and_soft"] is True
+          assert o["counterfactual_soft_path_adds_no_labels"] is True
+          c = r["constructor_contract"]
+          assert c["learned_live_mask_input"] is False
+          assert c["learned_active_cardinality_input"] is False
+          assert c["per_candidate_parameter_table"] is False
+          assert c["hard_gate_threshold"] == 0.5
+          assert c["straight_through_forward_binary"] is True
+          assert r["supervision_contract"]["live_mask_loss"] is False
+          assert r["supervision_contract"]["cardinality_loss"] is False
+          assert r["supervision_contract"]["pretraining_unseen_live_cardinality"] is False
+          for mode in learned:
+              assert set(r["initial_gate_stats_train_cardinalities_only"][mode]) == {"2","3","4"}
+          for values in (
+              r["minimum_task_loss"],
+              r["final_task_loss"],
+              r["minimum_soft_answer_loss"],
+              r["minimum_hard_answer_loss"],
+              r["maximum_post4000_grad_norm"],
+          ):
+              assert all(math.isfinite(v) and v >= 0 for v in values.values())
+          print("X20T provenance contract PASS")
+          PY
+      - name: Upload X20T result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-x20t-seed-${{ matrix.seed }}
+          path: casm_v01/casm-x20t-output/
+          if-no-files-found: error
+          retention-days: 90
