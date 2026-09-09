@@ -1,4 +1,5 @@
 name: CASM-X20V narrow reuse merge v2
+# Execution trigger revision; scientific contract and variables unchanged.
 on:
   push:
     branches: [experiment/casm-x20v-reuse-merge]
