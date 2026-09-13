@@ -56,7 +56,6 @@ def _evaluate(nodes: List[Node], edges: List[Edge], assignment: Tuple[int, ...],
     incoming: Dict[int, List[Edge]] = {}
     for edge in edges:
         incoming.setdefault(edge.dst, []).append(edge)
-    values = {i: assignment[pos] for pos, i in enumerate(range(len(assignment) - (len(nodes) - len(assignment))))}
     values = {i: assignment[i] for i, node in enumerate(nodes) if node.op is Op.INPUT}
     for node in nodes:
         if node.op is Op.INPUT:
