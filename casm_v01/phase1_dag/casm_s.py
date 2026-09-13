@@ -85,8 +85,11 @@ class FactorizedRouter(nn.Module):
         self._init_router()
 
     def _init_router(self) -> None:
-        nn.init.normal_(self.q.weight, mean=0.0, std=0.10)
-        nn.init.normal_(self.k.weight, mean=0.0, std=0.10)
+        # Bilinear logits multiply q and k activations.  std=0.40 keeps the
+        # resulting logits in the specified ~0.1--0.3 regime after 1/sqrt(d)
+        # scaling, while preserving a near-0.5 sigmoid operating point at T=2.
+        nn.init.normal_(self.q.weight, mean=0.0, std=0.40)
+        nn.init.normal_(self.k.weight, mean=0.0, std=0.40)
 
     def logits(self, structure: Tensor, edges: Iterable[Edge]) -> Tensor:
         h = self.encoder(structure)
@@ -140,29 +143,40 @@ class CASMExecutor(nn.Module):
     def execute_assignment(self, episode: Episode, gates: Tensor, assignment: Tensor) -> Tensor:
         if gates.shape != (len(episode.candidate_edges),):
             raise ValueError("gate shape must equal candidate edge count")
-        values = torch.zeros(len(episode.nodes), device=assignment.device)
-        values[: len(episode.inputs)] = assignment
+
+        # Keep node values in a Python list rather than writing into a tensor in
+        # place.  Downstream expressions retain their autograd version correctly.
+        values: list[Tensor] = [torch.zeros((), device=assignment.device)
+                                for _ in episode.nodes]
+        for i in range(len(episode.inputs)):
+            values[i] = assignment[i]
+
         alpha = self.alpha()
         for node in episode.nodes:
             if node.op is Op.INPUT:
                 continue
-            port_values = []
+            port_values: list[Tensor] = []
             for port in range(node.arity):
                 indices = [k for k, e in enumerate(episode.candidate_edges)
                            if e.dst == node.index and e.port == port]
-                s = torch.zeros((), device=assignment.device)
-                for k in indices:
-                    e = episode.candidate_edges[k]
-                    s = s + gates[k] * alpha[e.port] * values[e.src]
-                port_values.append(s)
+                terms = [
+                    gates[k] * alpha[episode.candidate_edges[k].port] * values[episode.candidate_edges[k].src]
+                    for k in indices
+                ]
+                port_values.append(torch.stack(terms).sum() if terms else torch.zeros((), device=assignment.device))
+
             if node.op is Op.AND:
-                values[node.index] = port_values[0] * port_values[1]
+                value = port_values[0] * port_values[1]
             elif node.op is Op.OR:
-                values[node.index] = port_values[0] + port_values[1] - port_values[0] * port_values[1]
+                value = port_values[0] + port_values[1] - port_values[0] * port_values[1]
             elif node.op is Op.XOR:
-                values[node.index] = port_values[0] + port_values[1] - 2 * port_values[0] * port_values[1]
+                value = port_values[0] + port_values[1] - 2 * port_values[0] * port_values[1]
             elif node.op is Op.NOT:
-                values[node.index] = 1.0 - port_values[0]
+                value = 1.0 - port_values[0]
+            else:
+                raise ValueError(f"Unsupported op: {node.op}")
+            values[node.index] = value
+
         return values[episode.output]
 
 
