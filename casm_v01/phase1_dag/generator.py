@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from itertools import product
 import random
 from typing import Dict, List, Tuple
 
@@ -55,6 +56,7 @@ def _evaluate(nodes: List[Node], edges: List[Edge], assignment: Tuple[int, ...],
     incoming: Dict[int, List[Edge]] = {}
     for edge in edges:
         incoming.setdefault(edge.dst, []).append(edge)
+    values = {i: assignment[pos] for pos, i in enumerate(range(len(assignment) - (len(nodes) - len(assignment))))}
     values = {i: assignment[i] for i, node in enumerate(nodes) if node.op is Op.INPUT}
     for node in nodes:
         if node.op is Op.INPUT:
@@ -76,7 +78,6 @@ def generate_episode(*, seed: int = 0, n_inputs: int = 2, n_ops: int = 2) -> Epi
     true_edges = _sample_true_edges(nodes, rng)
     candidates = _candidate_edges(nodes)
     rows = []
-    for mask in range(1 << n_inputs):
-        assignment = tuple((mask >> i) & 1 for i in range(n_inputs)) + (0,) * n_ops
+    for assignment in product((0, 1), repeat=n_inputs):
         rows.append(_evaluate(nodes, true_edges, assignment, len(nodes) - 1))
     return Episode(tuple(nodes), tuple(candidates), tuple(true_edges), tuple(range(n_inputs)), len(nodes) - 1, tuple(rows))
