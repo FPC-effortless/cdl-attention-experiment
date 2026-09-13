@@ -60,6 +60,8 @@ def run_suite(*, seeds=SEEDS, n_inputs=2, n_ops=2, max_edges=12) -> dict:
         and summary["copy_mask_executable"] == 0
         and summary["copy_mask_exact"] == 0
         and summary["minimality_checked"] == total
+        and summary["minimal"] == total
+        and summary["unique_minimal"] == total
         and summary["nonoracle_valid_found"] == total
     )
     return summary
