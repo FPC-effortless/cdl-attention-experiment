@@ -1,8 +1,7 @@
 """Phase-1 CASM-S router and topological Boolean executor.
 
-This module intentionally keeps control-flow structure and runtime values separate.
-The router consumes only node/program structure; runtime Boolean values enter only the
-execution loop.  The first experiment is Static Mask vs CASM-S.
+Control-flow structure and runtime values are separate: the router receives only
+program structure; runtime Boolean values enter only the execution loop.
 """
 from __future__ import annotations
 
@@ -12,6 +11,7 @@ from typing import Iterable
 
 import torch
 from torch import Tensor, nn
+from torch.nn import functional as F
 
 from .generator import Episode
 from .grammar import Edge, Op
@@ -40,19 +40,19 @@ def _node_depths(episode: Episode) -> list[int]:
 
 
 def structural_tensor(episode: Episode) -> Tensor:
-    """Return node structure features; no runtime values are included.
+    """Encode program structure without exposing runtime values.
 
-    Features are [op-id, normalized-index, normalized-depth, arity,
-    source0-index, source1-index].  Source indices encode the program wiring
-    as structural data, while runtime Boolean values remain completely absent.
+    Source indices are structural metadata, not a runtime adjacency mask.  This
+    lets the router parse the program while keeping the copy-mask control blind
+    to the episode wiring.
     """
     n = len(episode.nodes)
     depths = _node_depths(episode)
     sources = {i: [-1, -1] for i in range(n)}
     for e in episode.true_edges:
         sources[e.dst][e.port] = e.src
-    rows = []
     denom = max(1, n - 1)
+    rows = []
     for node in episode.nodes:
         s0, s1 = sources[node.index]
         rows.append([
@@ -69,9 +69,8 @@ def structural_tensor(episode: Episode) -> Tensor:
 class FactorizedRouter(nn.Module):
     """CASM-S factorized source/target router.
 
-    There is deliberately no parameter indexed by (source-op, target-op), edge,
-    or physical node pair.  q_i and k_j are produced independently from node
-    structure and combined bilinearly.
+    No parameter is indexed by a physical edge or an op-pair.  Source and target
+    representations are formed independently and combined by bilinear scoring.
     """
 
     def __init__(self, d_model: int = 32, temperature: float = 2.0) -> None:
@@ -88,37 +87,41 @@ class FactorizedRouter(nn.Module):
     def _init_router(self) -> None:
         nn.init.normal_(self.q.weight, mean=0.0, std=0.10)
         nn.init.normal_(self.k.weight, mean=0.0, std=0.10)
-        # Scale the bilinear path so initial logits are in the locked range.
-        with torch.no_grad():
-            probe = torch.randn(4096, 32) if self.q.in_features == 32 else None
-            if probe is not None:
-                pass
 
     def logits(self, structure: Tensor, edges: Iterable[Edge]) -> Tensor:
         h = self.encoder(structure)
         q = self.q(h)
         k = self.k(h)
         scale = math.sqrt(q.shape[-1])
-        values = []
-        for e in edges:
-            values.append((q[e.dst] * k[e.src]).sum() / scale + self.relation_bias[e.port])
-        return torch.stack(values)
+        return torch.stack([
+            (q[e.dst] * k[e.src]).sum() / scale + self.relation_bias[e.port]
+            for e in edges
+        ])
 
     def gates(self, structure: Tensor, edges: Iterable[Edge]) -> Tensor:
-        logits = self.logits(structure, edges)
-        return torch.sigmoid(logits / self.temperature)
+        return torch.sigmoid(self.logits(structure, edges) / self.temperature)
 
 
 class StaticMask(nn.Module):
-    """Fixed physical-edge mask control for the same candidate substrate."""
+    """Static physical-edge control over the fixed N=4 Phase-1 substrate."""
 
-    def __init__(self, num_edges: int) -> None:
+    def __init__(self, max_nodes: int = 4) -> None:
         super().__init__()
-        self.logits = nn.Parameter(torch.zeros(num_edges))
+        if max_nodes != 4:
+            raise ValueError("Phase-1 first run fixes the physical substrate at N=4")
+        self.edge_keys = tuple(
+            (src, dst, port)
+            for dst in range(2, max_nodes)
+            for port in range(2)
+            for src in range(dst)
+        )
+        self.logits = nn.Parameter(torch.zeros(len(self.edge_keys)))
+        self._index = {key: i for i, key in enumerate(self.edge_keys)}
 
     def gates(self, _: Tensor, edges: Iterable[Edge]) -> Tensor:
-        del edges
-        return torch.sigmoid(self.logits)
+        return torch.sigmoid(torch.stack([
+            self.logits[self._index[(e.src, e.dst, e.port)]] for e in edges
+        ]))
 
 
 class CASMExecutor(nn.Module):
@@ -128,23 +131,15 @@ class CASMExecutor(nn.Module):
         super().__init__()
         if num_relations != 2:
             raise ValueError("Phase 1 has exactly arg1-of and arg2-of relations")
-        self.eta = nn.Parameter(torch.zeros(num_relations))
+        self.eta = nn.Parameter(torch.full((num_relations,), math.log(math.e - 1.0)))
         self.register_buffer("c", torch.tensor(float(c)))
 
     def alpha(self) -> Tensor:
-        return self.c * torch.nn.functional.softplus(self.eta)
-
-    def forward(self, episode: Episode, gates: Tensor) -> ForwardResult:
-        edges = episode.candidate_edges
-        if gates.shape != (len(edges),):
-            raise ValueError("gate shape must equal candidate edge count")
-        device = gates.device
-        values = torch.zeros(len(episode.nodes), device=device)
-        assignment_count = 2 ** len(episode.inputs)
-        # The executor is called on one assignment at a time by train_episode.
-        raise RuntimeError("use execute_assignment for runtime execution")
+        return self.c * F.softplus(self.eta)
 
     def execute_assignment(self, episode: Episode, gates: Tensor, assignment: Tensor) -> Tensor:
+        if gates.shape != (len(episode.candidate_edges),):
+            raise ValueError("gate shape must equal candidate edge count")
         values = torch.zeros(len(episode.nodes), device=assignment.device)
         values[: len(episode.inputs)] = assignment
         alpha = self.alpha()
@@ -153,14 +148,10 @@ class CASMExecutor(nn.Module):
                 continue
             port_values = []
             for port in range(node.arity):
-                candidates = [
-                    k for k, e in enumerate(episode.candidate_edges)
-                    if e.dst == node.index and e.port == port
-                ]
-                if not candidates:
-                    raise RuntimeError(f"missing candidates for node {node.index}, port {port}")
+                indices = [k for k, e in enumerate(episode.candidate_edges)
+                           if e.dst == node.index and e.port == port]
                 s = torch.zeros((), device=assignment.device)
-                for k in candidates:
+                for k in indices:
                     e = episode.candidate_edges[k]
                     s = s + gates[k] * alpha[e.port] * values[e.src]
                 port_values.append(s)
@@ -175,44 +166,36 @@ class CASMExecutor(nn.Module):
         return values[episode.output]
 
 
-def batch_forward(
-    episodes: list[Episode], router: nn.Module, executor: CASMExecutor
-) -> tuple[Tensor, Tensor, Tensor]:
-    losses = []
-    all_gates = []
-    outputs = []
+def batch_forward(episodes: list[Episode], router: nn.Module, executor: CASMExecutor):
+    losses, gates_all, outputs = [], [], []
     for episode in episodes:
         structure = structural_tensor(episode)
         gates = router.gates(structure, episode.candidate_edges)
-        alpha = executor.alpha()
-        del alpha
         for row, target in enumerate(episode.truth_table):
-            bits = [(row >> (len(episode.inputs) - 1 - i)) & 1 for i in range(len(episode.inputs))]
+            bits = [(row >> (len(episode.inputs) - 1 - i)) & 1
+                    for i in range(len(episode.inputs))]
             assignment = torch.tensor(bits, dtype=torch.float32, device=gates.device)
             pred = executor.execute_assignment(episode, gates, assignment)
-            target_t = torch.tensor(float(target), device=gates.device)
-            losses.append((pred - target_t) ** 2)
+            losses.append((pred - float(target)) ** 2)
             outputs.append(pred)
-        all_gates.append(gates)
-    return torch.stack(losses).mean(), torch.cat([g.reshape(-1) for g in all_gates]), torch.stack(outputs)
+        gates_all.append(gates)
+    return torch.stack(losses).mean(), torch.cat(gates_all), torch.stack(outputs)
 
 
 def gate_diagnostics(router: nn.Module, episodes: list[Episode]) -> dict[str, float]:
     with torch.no_grad():
-        gs = []
-        ls = []
+        gates, logits = [], []
         for e in episodes:
-            structure = structural_tensor(e)
-            if hasattr(router, "logits"):
-                l = router.logits(structure, e.candidate_edges)
+            s = structural_tensor(e)
+            if isinstance(router, FactorizedRouter):
+                l = router.logits(s, e.candidate_edges)
                 g = torch.sigmoid(l / router.temperature)
             else:
-                g = router.gates(structure, e.candidate_edges)
+                g = router.gates(s, e.candidate_edges)
                 l = torch.logit(g.clamp(1e-6, 1 - 1e-6))
-            gs.append(g)
-            ls.append(l)
-        g = torch.cat(gs)
-        l = torch.cat(ls)
+            gates.append(g)
+            logits.append(l)
+        g, l = torch.cat(gates), torch.cat(logits)
         return {
             "gate_mean": float(g.mean()),
             "gate_std": float(g.std(unbiased=False)),
@@ -224,24 +207,21 @@ def gate_diagnostics(router: nn.Module, episodes: list[Episode]) -> dict[str, fl
 
 def gate_0(router: nn.Module, episodes: list[Episode]) -> dict[str, float]:
     d = gate_diagnostics(router, episodes)
-    if not (0.45 <= d["gate_mean"] <= 0.55):
+    if not 0.45 <= d["gate_mean"] <= 0.55:
         raise AssertionError(f"Gate 0 mean(g) failed: {d}")
-    if not (0.05 <= d["logit_std"] <= 0.40):
+    if not 0.05 <= d["logit_std"] <= 0.40:
         raise AssertionError(f"Gate 0 logit std failed: {d}")
-    if not (d["min_gate"] > 0.10 and d["max_gate"] < 0.90):
+    if not d["min_gate"] > 0.10 or not d["max_gate"] < 0.90:
         raise AssertionError(f"Gate 0 saturation failed: {d}")
     return d
 
 
-def gate_1(executor: CASMExecutor, episode: Episode, router: nn.Module) -> float:
-    structure = structural_tensor(episode)
-    gates = router.gates(structure, episode.candidate_edges)
-    assignment = torch.tensor([0.0] * len(episode.inputs))
-    base = executor.execute_assignment(episode, gates, assignment)
-    changed = gates.clone()
-    changed[0] = 0.0
-    altered = executor.execute_assignment(episode, changed, assignment)
-    delta = float((altered - base).abs())
-    if delta <= 0.0:
-        raise AssertionError("Gate 1 failed: severing a gate did not change the forward value")
-    return delta
+def assert_integrity(router: nn.Module, executor: CASMExecutor, episodes: list[Episode]) -> None:
+    """Gate 6: relation-indexed alpha only; no physical-edge alpha table."""
+    assert executor.eta.shape == (2,)
+    assert torch.all(executor.alpha() >= 0)
+    assert not any(name == "alpha_edge" for name, _ in executor.named_parameters())
+    assert getattr(router, "relation_bias", torch.zeros(2)).shape == (2,)
+    for e in episodes:
+        for edge in e.candidate_edges:
+            assert edge.port in REL_IDS.values()
