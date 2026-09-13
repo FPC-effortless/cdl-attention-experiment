@@ -1,10 +1,10 @@
 """Oracle execution and exhaustive small-domain graph checks."""
 
 from itertools import combinations, product
-from typing import Iterable, List, Sequence, Tuple
+from typing import Iterable, List, Sequence
 
 from .generator import Episode
-from .grammar import Op, Edge
+from .grammar import Edge, Op
 
 
 def _apply(op: Op, values: Sequence[int]) -> int:
@@ -19,13 +19,12 @@ def _apply(op: Op, values: Sequence[int]) -> int:
     raise ValueError(op)
 
 
-def evaluate_episode(episode: Episode, edges: Iterable[Edge] | None = None) -> Tuple[int, ...]:
+def evaluate_episode(episode: Episode, edges: Iterable[Edge] | None = None) -> tuple[int, ...]:
     """Evaluate a complete candidate graph on every Boolean input assignment.
 
-    This oracle is deliberately strict: each operation must receive exactly
-    its declared arity.  It therefore exposes the copy-mask control rather
-    than silently changing the primitive semantics when distractor edges are
-    present.
+    The oracle is deliberately strict: each operation must receive exactly its
+    declared arity. This exposes the copy-mask control rather than silently
+    changing primitive semantics when distractor edges are present.
     """
 
     selected = tuple(episode.true_edges if edges is None else edges)
@@ -65,11 +64,12 @@ def equivalent_to_target(episode: Episode, edges: Iterable[Edge]) -> bool:
 
 
 def exhaustive_minimality(episode: Episode, max_edges: int = 12) -> dict:
-    """Check whether any smaller admissible graph computes the same function.
+    """Exhaustively test smaller and same-size alternative graphs.
 
-    Exhaustive search is intentionally restricted to small episodes.  A
-    positive result proves global minimality within the enumerated candidate
-    substrate; it is not replaced by a local edge-removal heuristic.
+    For small substrates, ``unique_minimal=True`` proves that the oracle graph
+    is the only graph of its edge count-or-less that computes the same Boolean
+    function within the fixed candidate substrate. Larger graphs return an
+    explicit ``checked=False`` result rather than implying a proof.
     """
 
     candidates = tuple(episode.candidate_edges)
@@ -79,22 +79,41 @@ def exhaustive_minimality(episode: Episode, max_edges: int = 12) -> dict:
             "checked": False,
             "reason": f"candidate substrate has {len(candidates)} edges > max_edges={max_edges}",
             "minimal": None,
+            "unique_minimal": None,
             "counterexample": None,
         }
 
     target = episode.truth_table
+    true_set = episode.true_edge_set
     for size in range(target_size):
         for subset in combinations(candidates, size):
-            if equivalent_to_target(episode, subset):
+            if evaluate_safely(episode, subset, target):
                 return {
                     "checked": True,
                     "minimal": False,
+                    "unique_minimal": False,
                     "counterexample": tuple(subset),
                     "searched_sizes": size + 1,
                 }
+
+    same_size_alternative = None
+    for subset in combinations(candidates, target_size):
+        key = frozenset((e.src, e.dst, e.port) for e in subset)
+        if key != true_set and evaluate_safely(episode, subset, target):
+            same_size_alternative = tuple(subset)
+            break
+
     return {
         "checked": True,
         "minimal": True,
-        "counterexample": None,
-        "searched_sizes": target_size,
+        "unique_minimal": same_size_alternative is None,
+        "counterexample": same_size_alternative,
+        "searched_sizes": target_size + 1,
     }
+
+
+def evaluate_safely(episode: Episode, edges: Iterable[Edge], target: tuple[int, ...]) -> bool:
+    try:
+        return evaluate_episode(episode, edges) == target
+    except (KeyError, ValueError):
+        return False
