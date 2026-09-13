@@ -19,6 +19,7 @@ from .grammar import Edge, Op
 OP_IDS = {Op.INPUT: 0, Op.AND: 1, Op.OR: 2, Op.XOR: 3, Op.NOT: 4}
 REL_IDS = {"arg1-of": 0, "arg2-of": 1}
 STRUCTURE_DIM = 7
+INITIAL_LOGIT_GAIN = 7.5
 
 @dataclass
 class ForwardResult:
@@ -43,6 +44,7 @@ class FactorizedRouter(nn.Module):
     def __init__(self, d_model: int = 32, temperature: float = 2.0) -> None:
         super().__init__()
         self.temperature = float(temperature)
+        self.logit_gain = INITIAL_LOGIT_GAIN
         self.encoder = nn.Sequential(nn.Linear(STRUCTURE_DIM, d_model), nn.Tanh(), nn.Linear(d_model, d_model))
         self.q = nn.Linear(d_model, d_model, bias=False)
         self.k = nn.Linear(d_model, d_model, bias=False)
@@ -54,7 +56,11 @@ class FactorizedRouter(nn.Module):
         h = self.encoder(structure)
         q, k = self.q(h), self.k(h)
         scale = math.sqrt(q.shape[-1])
-        return torch.stack([(q[e.dst] * k[e.src]).sum() / scale + self.relation_bias[e.port] for e in edges])
+        return torch.stack([
+            self.logit_gain * (q[e.dst] * k[e.src]).sum() / scale
+            + self.relation_bias[e.port]
+            for e in edges
+        ])
 
     def gates(self, structure: Tensor, edges: Iterable[Edge]) -> Tensor:
         return torch.sigmoid(self.logits(structure, edges) / self.temperature)
