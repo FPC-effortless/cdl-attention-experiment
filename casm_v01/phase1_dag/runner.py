@@ -1,15 +1,11 @@
-"""Phase-1 runner: copy-mask falsification, then Static-vs-CASM-S.
-
-No recurrent spectral-radius machinery is used. Phase 1 is single-pass DAG
-execution; Gate 0 measures finite-depth signal variance instead.
-"""
+"""Phase-1 runner: copy-mask falsification, then Static-vs-CASM-S."""
 from __future__ import annotations
 import argparse,json,random
 import torch
 from .generator import BooleanDAGGenerator
 from .model import CASMS,StaticMask,copy_mask_gates
+from .pairs import rewire_episode
 from .diagnostics import gate0_viability,gate1_causality,gate2_router_gradient,gate3_structural_sensitivity,gate4_counterfactual,gate5_compositional_ood,gate6_integrity,_execute_with_gates
-
 SEED=20260914
 
 def edge_metrics(episodes,gates):
@@ -17,18 +13,14 @@ def edge_metrics(episodes,gates):
     for b,ep in enumerate(episodes):
         truth=ep.true_edge_set; used.append(gates[b,:len(ep.candidate_edges)])
         for k,e in enumerate(ep.candidate_edges):
-            pred=float(gates[b,k])>=.5; real=(e.src,e.dst,e.port) in truth
-            tp+=pred and real; fp+=pred and not real; fn+=(not pred) and real; total+=1
-    all_g=torch.cat(used)
-    return {"precision":tp/max(1,tp+fp),"recall":tp/max(1,tp+fn),"mean_gate":float(all_g.mean()),"candidate_edges":total}
+            pred=float(gates[b,k])>=.5; real=(e.src,e.dst,e.port) in truth; tp+=pred and real; fp+=pred and not real; fn+=(not pred) and real; total+=1
+    all_g=torch.cat(used); return {"precision":tp/max(1,tp+fp),"recall":tp/max(1,tp+fn),"mean_gate":float(all_g.mean()),"candidate_edges":total}
 
 def run_copy_mask_preflight(model,episodes):
     device=next(model.parameters()).device; rows=[]; correct=0
     for ep in episodes:
-        x=torch.tensor(ep.input_values,dtype=torch.float32,device=device); g=copy_mask_gates([ep],device=device)[0]; y=_execute_with_gates(model,ep,x,g)
-        correct+=int((y>=.5).item()==bool(ep.target)); rows.append(g)
-    padded=torch.nn.utils.rnn.pad_sequence(rows,batch_first=True)
-    return {"task_accuracy":correct/len(episodes),**edge_metrics(episodes,padded),"benchmark_discriminative":True,"interpretation":"Oracle wiring control; high performance here does not establish learned routing."}
+        x=torch.tensor(ep.input_values,dtype=torch.float32,device=device); g=copy_mask_gates([ep],device=device)[0]; y=_execute_with_gates(model,ep,x,g); correct+=int((y>=.5).item()==bool(ep.target)); rows.append(g)
+    return {"task_accuracy":correct/len(episodes),**edge_metrics(episodes,torch.nn.utils.rnn.pad_sequence(rows,batch_first=True)),"benchmark_discriminative":True,"interpretation":"Oracle wiring control; high performance here does not establish learned routing."}
 
 def make_batch(episodes,device):
     n=max(len(e.inputs) for e in episodes); return torch.tensor([list(e.input_values)+[0]*(n-len(e.inputs)) for e in episodes],dtype=torch.float32,device=device)
@@ -59,17 +51,16 @@ def filtered_split(gen,train_size,test_size,held_pair=("NOT","XOR")):
 def run(seed=SEED,train_size=128,test_size=64):
     random.seed(seed); torch.manual_seed(seed); gen=BooleanDAGGenerator(max_nodes=10,min_nodes=4,seed=seed); train,test=filtered_split(gen,train_size,test_size); device=torch.device("cuda" if torch.cuda.is_available() else "cpu")
     casm=CASMS(10,32,2.0,seed).to(device); static=StaticMask(10,32,2.0,seed).to(device)
-    # c is a single global gain; Phase 1 calibrates finite-depth propagation,
-    # never a recurrent spectral radius.
     for model in (casm,static): model.c.fill_(.5)
     initial={"casm":gate0_viability(casm,test[:16]),"static":gate0_viability(static,test[:16])}
     if not all(v["pass"] for v in initial.values()): raise RuntimeError(f"Gate 0 failed: {initial}")
+    paired=(train[0],rewire_episode(train[0],seed+1))
     results={"seed":seed,"execution":"single-pass topological DAG","held_out_role_pair":"NOT->XOR","copy_mask_preflight":run_copy_mask_preflight(casm,test[:16]),"initial_gates":initial}
     results["static_train"]=train_model(static,train,test); results["casm_train"]=train_model(casm,train,test)
     x=make_batch(test,device)
     with torch.no_grad(): _,gc,_=casm(test,x); _,gs,_=static(test,x)
     results["routing"]={"casm":edge_metrics(test,gc),"static":edge_metrics(test,gs)}
-    results["gate1_causality"]=gate1_causality(casm,test[0]); results["gate2_router_gradient"]=gate2_router_gradient(casm,train[:16]); results["gate3_structural_sensitivity"]=gate3_structural_sensitivity(casm,train[0],train[1]); results["gate4_counterfactual"]=gate4_counterfactual(casm,test[0])
+    results["gate1_causality"]=gate1_causality(casm,test[0]); results["gate2_router_gradient"]=gate2_router_gradient(casm,train[:16]); results["gate3_structural_sensitivity"]=gate3_structural_sensitivity(casm,*paired); results["gate4_counterfactual"]=gate4_counterfactual(casm,test[0])
     ood=next(ep for ep in test if _has_pair(ep,"NOT","XOR")); results["gate5_compositional_ood"]=gate5_compositional_ood(casm,ood,"NOT","XOR"); results["gate6_integrity"]=gate6_integrity(casm,test[:8]); return results
 
 def main():
