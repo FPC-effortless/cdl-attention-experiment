@@ -1,0 +1,59 @@
+name: CASM Phase 1 Static vs CASM-S
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'casm_v01/phase1_dag/**'
+      - '.github/workflows/casm-phase1-static-vs-casm-s.yml'
+
+jobs:
+  experiment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install PyTorch
+        run: python -m pip install --disable-pip-version-check torch
+      - name: Run five-seed CASM-S training
+        run: |
+          set -euo pipefail
+          mkdir -p phase1-results
+          for seed in 0 1 2 3 4; do
+            python -m casm_v01.phase1_dag.run_phase1 \
+              --seed "$seed" \
+              --steps 300 \
+              --warmup 100 \
+              --train 64 \
+              > "phase1-results/casm-s-seed-${seed}.json"
+          done
+      - name: Validate result files
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          rows = []
+          for p in sorted(Path('phase1-results').glob('casm-s-seed-*.json')):
+              rows.append(json.loads(p.read_text()))
+          assert len(rows) == 5
+          for r in rows:
+              assert r['gate_0']['pass'], r
+              assert r['gate_2_router_grad_sum'] > 0, r
+          print(json.dumps([
+              {
+                  'seed': r['seed'],
+                  'gate0': r['gate_0'],
+                  'routing_after': r['routing_after'],
+                  'task_accuracy': r['task_accuracy'],
+              }
+              for r in rows
+          ], indent=2))
+          PY
+      - name: Upload Phase 1 results
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-phase1-static-vs-casm-s
+          path: phase1-results/

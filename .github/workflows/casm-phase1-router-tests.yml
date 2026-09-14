@@ -1,0 +1,21 @@
+name: CASM Phase 1 router tests
+
+on:
+  pull_request:
+    paths:
+      - 'casm_v01/phase1_dag/**'
+      - 'casm_v01/tests/test_phase1_casm_s.py'
+      - '.github/workflows/casm-phase1-router-tests.yml'
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install PyTorch
+        run: python -m pip install --disable-pip-version-check torch
+      - name: Run CASM-S mechanical tests
+        run: python -m unittest casm_v01.tests.test_phase1_casm_s -v
