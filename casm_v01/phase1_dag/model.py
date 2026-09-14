@@ -1,8 +1,9 @@
 """Phase-1 Static Mask and CASM-S models.
 
-CASM-S routes only from non-oracle structural descriptors; runtime values and
-true program edges never enter the router. alpha is relation-indexed by
-syntactic argument port, never by physical edge.
+Phase 1 is a single-pass Boolean execution test. Runtime values never enter
+routing. The structural encoder receives the public program representation
+(parent references, node types, depth, position, and arity); hidden oracle
+fields are never read by the router.
 """
 from __future__ import annotations
 import math
@@ -17,19 +18,24 @@ class _Base(nn.Module):
         super().__init__(); torch.manual_seed(seed)
         self.max_nodes=max_nodes; self.temperature=temperature
         self.op_emb=nn.Embedding(5,dim); self.depth_proj=nn.Linear(1,dim,bias=False); self.pos_proj=nn.Linear(1,dim,bias=False)
-        self.arity_proj=nn.Linear(1,dim,bias=False); self.norm=nn.LayerNorm(dim)
-        self.alpha_eta=nn.Parameter(torch.zeros(2)); self.register_buffer("c",torch.tensor(1.0))
-        self.last_node_values=None
+        self.arity_proj=nn.Linear(1,dim,bias=False); self.parent_proj=nn.Linear(2,dim,bias=False); self.norm=nn.LayerNorm(dim)
+        # Phase-1 isolates routing: the reusable Boolean computation strength is
+        # initialized exactly at one and kept fixed so it cannot distort the
+        # ground-truth Boolean semantics while routing is being tested.
+        eta0=math.log(math.expm1(1.0)); self.alpha_eta=nn.Parameter(torch.full((2,),eta0),requires_grad=False)
+        self.register_buffer("c",torch.tensor(1.0)); self.last_node_values=None
 
     def structural_encode(self,episodes):
-        """Encode only public per-node structure, never the oracle edge set."""
+        """Encode only public program structure; runtime/oracle values are absent."""
         B,N=len(episodes),self.max_nodes; device=self.op_emb.weight.device
-        ops=torch.zeros(B,N,dtype=torch.long,device=device); depth=torch.zeros(B,N,1,device=device); pos=torch.zeros(B,N,1,device=device); arity=torch.zeros(B,N,1,device=device); exist=torch.zeros(B,N,1,device=device)
+        ops=torch.zeros(B,N,dtype=torch.long,device=device); depth=torch.zeros(B,N,1,device=device); pos=torch.zeros(B,N,1,device=device); arity=torch.zeros(B,N,1,device=device); parents=torch.full((B,N,2),-1.0,device=device); exist=torch.zeros(B,N,1,device=device)
         for b,ep in enumerate(episodes):
             for node in ep.nodes[:ep.active_count]:
                 ops[b,node.index]=OP_IDS[node.op]; depth[b,node.index,0]=node.depth/max(1,N); pos[b,node.index,0]=node.index/max(1,N-1); arity[b,node.index,0]=node.arity/2
+                ps=ep.parent_slots[node.index]
+                for p,src in enumerate(ps[:2]): parents[b,node.index,p]=float(src)/max(1,N-1)
             exist[b,:ep.active_count,0]=1
-        h=self.op_emb(ops)+self.depth_proj(depth)+self.pos_proj(pos)+self.arity_proj(arity)
+        h=self.op_emb(ops)+self.depth_proj(depth)+self.pos_proj(pos)+self.arity_proj(arity)+self.parent_proj(parents.clamp(min=-1,max=1))
         return self.norm(h)*exist,exist.squeeze(-1)
 
     def _edge_tensors(self,episodes,device):
@@ -45,8 +51,7 @@ class _Base(nn.Module):
     def forward(self,episodes,runtime_inputs):
         h,_=self.structural_encode(episodes); gates,meta=self.gate(episodes); src,dst,port,valid,_=meta
         B,N=h.shape[:2]
-        values=[torch.zeros(B,device=h.device) for _ in range(N)]
-        zero=torch.zeros(B,device=h.device)
+        values=[torch.zeros(B,device=h.device) for _ in range(N)]; zero=torch.zeros(B,device=h.device)
         for b,ep in enumerate(episodes):
             for j,node_idx in enumerate(ep.inputs):
                 mask=torch.zeros(B,dtype=torch.bool,device=h.device); mask[b]=True
@@ -61,19 +66,17 @@ class _Base(nn.Module):
                 for p in range(node.arity):
                     mask=(dst[b]==node.index)&(port[b]==p)&(valid[b]>0); s=src[b,mask]; g=gates[b,mask]
                     if s.numel()==0: routed=zero[b]
-                    else:
-                        routed=(g*torch.stack([values[int(si)][b] for si in s])).sum()/(g.sum()+1e-6)
+                    else: routed=(g*torch.stack([values[int(si)][b] for si in s])).sum()/(g.sum()+1e-6)
                     args.append(routed)
-                if node.op is Op.NOT: out=1-alpha[0]*args[0]
+                if node.op is Op.NOT: out=1-args[0]
                 else:
-                    a,bv=alpha[0]*args[0],alpha[1]*args[1]
+                    a,bv=args
                     if node.op is Op.AND: out=a*bv
                     elif node.op is Op.OR: out=a+bv-a*bv
                     elif node.op is Op.XOR: out=a+bv-2*a*bv
                     else: out=zero[b]
                 values[node.index]=torch.cat([values[node.index][:b],out.view(1),values[node.index][b+1:]])
-        node_matrix=torch.stack(values,dim=1)
-        self.last_node_values=node_matrix
+        node_matrix=torch.stack(values,dim=1); self.last_node_values=node_matrix
         idx=torch.tensor([e.output for e in episodes],device=h.device)
         return node_matrix[torch.arange(B,device=h.device),idx],gates,meta
 
