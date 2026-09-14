@@ -23,7 +23,7 @@ def run_copy_mask_preflight(model,episodes):
     device=next(model.parameters()).device; rows=[]; correct=0
     for ep in episodes:
         x=torch.tensor(ep.input_values,dtype=torch.float32,device=device); g=copy_mask_gates([ep],device=device)[0]; y=_execute_with_gates(model,ep,x,g); correct+=int((y>=.5).item()==bool(ep.target)); rows.append(g)
-    return {"task_accuracy":correct/len(episodes),**edge_metrics(episodes,torch.nn.utils.rnn.pad_sequence(rows,batch_first=True)),"benchmark_discriminative":True,"interpretation":"Oracle wiring control; high performance here does not establish learned routing."}
+    return {"task_accuracy":correct/len(episodes),**edge_metrics(episodes,torch.nn.utils.rnn.pad_sequence(rows,batch_first=True)),"oracle_wiring_control":True,"requires_learned_router":True}
 
 def make_batch(episodes,device):
     n=max(len(e.inputs) for e in episodes); return torch.tensor([list(e.input_values)+[0]*(n-len(e.inputs)) for e in episodes],dtype=torch.float32,device=device)
@@ -41,6 +41,10 @@ def train_model(model,train,test,epochs=50,warmup=5,budget_target=None,lr=2e-3,b
 
 def _has_pair(ep,src_op,dst_op): return any(ep.nodes[e.src].op.value==src_op and ep.nodes[e.dst].op.value==dst_op for e in ep.true_edges)
 
+def _has_pair_distractor(ep,src_op,dst_op):
+    matches=[(e.src,e.dst,e.port) in ep.true_edge_set for e in ep.candidate_edges if ep.nodes[e.src].op.value==src_op and ep.nodes[e.dst].op.value==dst_op]
+    return any(matches) and not all(matches)
+
 def filtered_split(gen,train_size,test_size,held_pair=("NOT","XOR")):
     train=[]
     while len(train)<train_size:
@@ -49,7 +53,7 @@ def filtered_split(gen,train_size,test_size,held_pair=("NOT","XOR")):
     test=[]
     while len(test)<test_size:
         ep=gen.sample()
-        if _has_pair(ep,*held_pair): test.append(ep)
+        if _has_pair_distractor(ep,*held_pair): test.append(ep)
     return train,test
 
 def run(seed=SEED,train_size=128,test_size=64):
@@ -62,7 +66,7 @@ def run(seed=SEED,train_size=128,test_size=64):
     x=make_batch(test,device)
     with torch.no_grad(): _,gc,_=casm(test,x); _,gs,_=static(test,x)
     results["routing"]={"casm":edge_metrics(test,gc),"static":edge_metrics(test,gs)}
-    results["gate1_causality"]=gate1_causality(casm,test[0]); results["gate2_router_gradient"]=gate2_router_gradient(casm,train[:16]); results["gate3_structural_sensitivity"]=gate3_structural_sensitivity(casm,*paired); results["gate4_counterfactual"]=gate4_counterfactual(casm,test[0]); ood=next(ep for ep in test if _has_pair(ep,"NOT","XOR")); results["gate5_compositional_ood"]=gate5_compositional_ood(casm,ood,"NOT","XOR"); results["gate6_integrity"]=gate6_integrity(casm,test[:8]); return results
+    results["gate1_causality"]=gate1_causality(casm,test[0]); results["gate2_router_gradient"]=gate2_router_gradient(casm,train[:16]); results["gate3_structural_sensitivity"]=gate3_structural_sensitivity(casm,*paired); results["gate4_counterfactual"]=gate4_counterfactual(casm,test[0]); ood=next(ep for ep in test if _has_pair_distractor(ep,"NOT","XOR")); results["gate5_compositional_ood"]=gate5_compositional_ood(casm,ood,"NOT","XOR"); results["gate6_integrity"]=gate6_integrity(casm,test[:8]); return results
 
 def main():
     p=argparse.ArgumentParser(); p.add_argument("--seed",type=int,default=SEED); p.add_argument("--train-size",type=int,default=128); p.add_argument("--test-size",type=int,default=64); p.add_argument("--output",default="casm_v01/phase1_dag/results.json"); a=p.parse_args(); r=run(a.seed,a.train_size,a.test_size); open(a.output,"w",encoding="utf-8").write(json.dumps(r,indent=2)); print(json.dumps(r,indent=2))
