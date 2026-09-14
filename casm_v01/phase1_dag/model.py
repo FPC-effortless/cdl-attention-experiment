@@ -46,27 +46,44 @@ class _Base(nn.Module):
 
     def forward(self,episodes,runtime_inputs):
         h,_=self.structural_encode(episodes); gates,meta=self.gate(episodes); src,dst,port,valid,_=meta
-        B,N=h.shape[:2]; values=torch.zeros(B,N,device=h.device)
-        alpha=self.c*torch.nn.functional.softplus(self.alpha_eta)
+        B,N=h.shape[:2]
+        # Keep each node value as a separate tensor. In-place writes into a
+        # shared values tensor invalidate autograd's saved views during the
+        # topological sweep; functional node replacement preserves the graph.
+        values=[torch.zeros(B,device=h.device) for _ in range(N)]
         for b,ep in enumerate(episodes):
-            values[b,list(ep.inputs)]=runtime_inputs[b,:len(ep.inputs)]
-            for node in ep.nodes[:ep.active_count]:
+            for j,node_idx in enumerate(ep.inputs):
+                values[node_idx]=values[node_idx].clone()
+                values[node_idx][b]=runtime_inputs[b,j]
+        alpha=self.c*torch.nn.functional.softplus(self.alpha_eta)
+        for node_idx in range(N):
+            nodes=[ep.nodes[node_idx] for ep in episodes if node_idx < ep.active_count and ep.nodes[node_idx].index==node_idx]
+            if not nodes: continue
+            # Episodes have aligned topological slots. Process each episode
+            # separately so variable-size programs retain explicit existence.
+            for b,ep in enumerate(episodes):
+                if node_idx>=ep.active_count: continue
+                node=ep.nodes[node_idx]
                 if node.op is Op.INPUT: continue
                 args=[]
                 for p in range(node.arity):
                     mask=(dst[b]==node.index)&(port[b]==p)&(valid[b]>0); s=src[b,mask]; g=gates[b,mask]
                     if s.numel()==0: routed=torch.tensor(0.5,device=h.device)
-                    else: routed=(g*values[b,s]).sum()/(g.sum()+1e-6)
+                    else:
+                        routed=(g*torch.stack([values[int(si)][b] for si in s])).sum()/(g.sum()+1e-6)
                     args.append(routed)
-                if node.op is Op.NOT: values[b,node.index]=1-alpha[0]*args[0]
+                if node.op is Op.NOT: out=1-alpha[0]*args[0]
                 else:
                     a,bv=alpha[0]*args[0],alpha[1]*args[1]
-                    if node.op is Op.AND: values[b,node.index]=a*bv
-                    elif node.op is Op.OR: values[b,node.index]=a+bv-a*bv
-                    elif node.op is Op.XOR: values[b,node.index]=a+bv-2*a*bv
-        self.last_node_values=values
+                    if node.op is Op.AND: out=a*bv
+                    elif node.op is Op.OR: out=a+bv-a*bv
+                    elif node.op is Op.XOR: out=a+bv-2*a*bv
+                    else: out=torch.tensor(0.0,device=h.device)
+                values[node.index]=torch.stack([values[node.index][q] if q!=b else out for q in range(B)])
+        node_matrix=torch.stack(values,dim=1)
+        self.last_node_values=node_matrix
         idx=torch.tensor([e.output for e in episodes],device=h.device)
-        return values[torch.arange(B,device=h.device),idx],gates,meta
+        return node_matrix[torch.arange(B,device=h.device),idx],gates,meta
 
 class CASMS(_Base):
     def __init__(self,max_nodes=10,dim=32,temperature=2.0,seed=0):
