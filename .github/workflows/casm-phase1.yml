@@ -15,7 +15,10 @@ on:
     paths:
       - "casm_v01/phase1_dag/**"
       - ".github/workflows/casm-phase1.yml"
-      - "requirements.txt"
+  pull_request:
+    paths:
+      - "casm_v01/phase1_dag/**"
+      - ".github/workflows/casm-phase1.yml"
 
 jobs:
   phase1:
@@ -26,14 +29,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install CASM dependencies
-        run: pip install -r requirements.txt
+      - name: Install CASM Phase-1 dependencies
+        run: pip install -r casm_v01/phase1_dag/requirements.txt
       - name: Compile CASM Phase-1 package
         run: python -m compileall -q casm_v01/phase1_dag
       - name: Run unit and invariant tests
         run: pytest -q casm_v01/phase1_dag/test_phase1.py
       - name: Run short Phase-1 experiment
-        run: python -m casm_v01.phase1_dag.runner --train-size 16 --test-size 8 --output /tmp/phase1-results.json
+        run: python -m casm_v01.phase1_dag.runner --train-size "${{ inputs.train_size || '16' }}" --test-size "${{ inputs.test_size || '8' }}" --output /tmp/phase1-results.json
       - name: Publish short-run results
         uses: actions/upload-artifact@v4
         with:
