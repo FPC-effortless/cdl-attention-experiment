@@ -16,6 +16,9 @@ def edge_metrics(episodes,gates):
             pred=float(gates[b,k])>=.5; real=(e.src,e.dst,e.port) in truth; tp+=pred and real; fp+=pred and not real; fn+=(not pred) and real; total+=1
     all_g=torch.cat(used); return {"precision":tp/max(1,tp+fp),"recall":tp/max(1,tp+fn),"mean_gate":float(all_g.mean()),"candidate_edges":total}
 
+def expected_edge_ratio(episodes):
+    candidates=sum(len(ep.candidate_edges) for ep in episodes); true=sum(len(ep.true_edges) for ep in episodes); return true/max(1,candidates)
+
 def run_copy_mask_preflight(model,episodes):
     device=next(model.parameters()).device; rows=[]; correct=0
     for ep in episodes:
@@ -25,24 +28,16 @@ def run_copy_mask_preflight(model,episodes):
 def make_batch(episodes,device):
     n=max(len(e.inputs) for e in episodes); return torch.tensor([list(e.input_values)+[0]*(n-len(e.inputs)) for e in episodes],dtype=torch.float32,device=device)
 
-def calibrate_c(model,episodes,lo=.01,hi=2.0,steps=12):
-    """Bracket-search one global c against finite-depth DAG signal viability."""
-    best=lo
-    for _ in range(steps):
-        mid=(lo+hi)/2; model.c.fill_(mid); check=gate0_viability(model,episodes)
-        if check["pass"]: best=mid; lo=mid
-        else: hi=mid
-    model.c.fill_(best); return {"c":best,"gate0":gate0_viability(model,episodes)}
-
-def train_model(model,train,test,epochs=30,warmup=5,budget_target=.35,lr=2e-3):
-    device=next(model.parameters()).device; opt=torch.optim.AdamW(model.parameters(),lr=lr); history=[]; budget_enabled=False
+def train_model(model,train,test,epochs=50,warmup=5,budget_target=None,lr=2e-3,budget_weight=.05):
+    device=next(model.parameters()).device; opt=torch.optim.AdamW((p for p in model.parameters() if p.requires_grad),lr=lr); history=[]; budget_enabled=False
+    budget_target=expected_edge_ratio(train) if budget_target is None else budget_target
     for epoch in range(epochs):
-        model.train(); y,g,_=model(train,make_batch(train,device)); target=torch.tensor([e.target for e in train],dtype=torch.float32,device=device); task=torch.nn.functional.mse_loss(y,target); budget=(g[g!=0].mean()-budget_target).pow(2)
-        if epoch>=warmup and not budget_enabled: budget_enabled=gate3_structural_sensitivity(model,train[0],train[1])["pass"]
-        loss=task+.05*budget if budget_enabled else task; opt.zero_grad(set_to_none=True); loss.backward(); torch.nn.utils.clip_grad_norm_(model.parameters(),1); opt.step(); history.append({"epoch":epoch+1,"task_loss":float(task),"budget_loss":float(budget),"budget_enabled":budget_enabled})
+        model.train(); y,g,_=model(train,make_batch(train,device)); target=torch.tensor([e.target for e in train],dtype=torch.float32,device=device); task=torch.nn.functional.mse_loss(y,target); valid=g[g!=0]; budget=(valid.mean()-budget_target).pow(2)
+        if epoch>=warmup and not budget_enabled: budget_enabled=gate3_structural_sensitivity(model,train[0],rewire_episode(train[0],SEED+epoch))["pass"]
+        loss=task+budget_weight*budget if budget_enabled else task; opt.zero_grad(set_to_none=True); loss.backward(); torch.nn.utils.clip_grad_norm_(model.parameters(),1); opt.step(); history.append({"epoch":epoch+1,"task_loss":float(task),"budget_loss":float(budget),"budget_target":budget_target,"budget_enabled":budget_enabled})
     model.eval();
     with torch.no_grad(): pred,_,_=model(test,make_batch(test,device))
-    truth=torch.tensor([e.target for e in test],device=device).bool(); return {"test_accuracy":float(((pred>=.5)==truth).float().mean()),"history":history}
+    truth=torch.tensor([e.target for e in test],device=device).bool(); return {"test_accuracy":float(((pred>=.5)==truth).float().mean()),"history":history,"budget_target":budget_target}
 
 def _has_pair(ep,src_op,dst_op): return any(ep.nodes[e.src].op.value==src_op and ep.nodes[e.dst].op.value==dst_op for e in ep.true_edges)
 
@@ -60,9 +55,9 @@ def filtered_split(gen,train_size,test_size,held_pair=("NOT","XOR")):
 def run(seed=SEED,train_size=128,test_size=64):
     random.seed(seed); torch.manual_seed(seed); gen=BooleanDAGGenerator(max_nodes=10,min_nodes=4,seed=seed); train,test=filtered_split(gen,train_size,test_size); device=torch.device("cuda" if torch.cuda.is_available() else "cpu")
     casm=CASMS(10,32,2.0,seed).to(device); static=StaticMask(10,32,2.0,seed).to(device)
-    calibration={"casm":calibrate_c(casm,test[:16]),"static":calibrate_c(static,test[:16])}
+    calibration={"casm":gate0_viability(casm,test[:16]),"static":gate0_viability(static,test[:16])}
     paired=(train[0],rewire_episode(train[0],seed+1))
-    results={"seed":seed,"execution":"single-pass topological DAG","held_out_role_pair":"NOT->XOR","calibration":calibration,"copy_mask_preflight":run_copy_mask_preflight(casm,test[:16])}
+    results={"seed":seed,"execution":"single-pass topological DAG","held_out_role_pair":"NOT->XOR","calibration":calibration,"copy_mask_preflight":run_copy_mask_preflight(casm,test[:16]),"expected_train_edge_ratio":expected_edge_ratio(train)}
     results["static_train"]=train_model(static,train,test); results["casm_train"]=train_model(casm,train,test)
     x=make_batch(test,device)
     with torch.no_grad(): _,gc,_=casm(test,x); _,gs,_=static(test,x)
