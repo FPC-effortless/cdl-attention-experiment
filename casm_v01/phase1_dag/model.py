@@ -19,14 +19,10 @@ class _Base(nn.Module):
         self.max_nodes=max_nodes; self.temperature=temperature
         self.op_emb=nn.Embedding(5,dim); self.depth_proj=nn.Linear(1,dim,bias=False); self.pos_proj=nn.Linear(1,dim,bias=False)
         self.arity_proj=nn.Linear(1,dim,bias=False); self.parent_proj=nn.Linear(2,dim,bias=False); self.norm=nn.LayerNorm(dim)
-        # Phase-1 isolates routing: the reusable Boolean computation strength is
-        # initialized exactly at one and kept fixed so it cannot distort the
-        # ground-truth Boolean semantics while routing is being tested.
         eta0=math.log(math.expm1(1.0)); self.alpha_eta=nn.Parameter(torch.full((2,),eta0),requires_grad=False)
         self.register_buffer("c",torch.tensor(1.0)); self.last_node_values=None
 
     def structural_encode(self,episodes):
-        """Encode only public program structure; runtime/oracle values are absent."""
         B,N=len(episodes),self.max_nodes; device=self.op_emb.weight.device
         ops=torch.zeros(B,N,dtype=torch.long,device=device); depth=torch.zeros(B,N,1,device=device); pos=torch.zeros(B,N,1,device=device); arity=torch.zeros(B,N,1,device=device); parents=torch.full((B,N,2),-1.0,device=device); exist=torch.zeros(B,N,1,device=device)
         for b,ep in enumerate(episodes):
@@ -50,8 +46,7 @@ class _Base(nn.Module):
 
     def forward(self,episodes,runtime_inputs):
         h,_=self.structural_encode(episodes); gates,meta=self.gate(episodes); src,dst,port,valid,_=meta
-        B,N=h.shape[:2]
-        values=[torch.zeros(B,device=h.device) for _ in range(N)]; zero=torch.zeros(B,device=h.device)
+        B,N=h.shape[:2]; values=[torch.zeros(B,device=h.device) for _ in range(N)]; zero=torch.zeros(B,device=h.device)
         for b,ep in enumerate(episodes):
             for j,node_idx in enumerate(ep.inputs):
                 mask=torch.zeros(B,dtype=torch.bool,device=h.device); mask[b]=True
@@ -97,4 +92,11 @@ class StaticMask(_Base):
         logits=self.edge_logits[dst,src,port.clamp(max=1)]; return torch.sigmoid(logits/self.temperature)*valid,(src,dst,port,valid,truth)
 
 def copy_mask_gates(episodes,device=None):
-    device=device or torch.device("cpu"); return [torch.tensor([float((e.src,e.dst,e.port) in ep.true_edge_set) for e in ep.candidate_edges],device=device) for ep in episodes]
+    """Turn on every candidate wire; never consult the hidden oracle.
+
+    This is a benchmark-falsification control. A copy mask that reads
+    ``true_edge_set`` is an oracle executor and cannot establish whether the
+    candidate substrate contains genuine ambiguity.
+    """
+    device=device or torch.device("cpu")
+    return [torch.ones(len(ep.candidate_edges),device=device) for ep in episodes]
