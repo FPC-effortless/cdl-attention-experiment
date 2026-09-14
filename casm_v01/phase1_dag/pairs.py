@@ -18,6 +18,10 @@ def rewire_episode(ep: Episode, seed: int = 0) -> Episode:
         if changed: break
     if not changed: raise ValueError("could not produce structural pair")
     edges=tuple(sorted(edges,key=lambda e:(e.dst,e.port)))
+    parents=list(ep.parent_slots)
+    for node in ep.nodes[:ep.active_count]:
+        if node.op is Op.INPUT: continue
+        parents[node.index]=tuple(e.src for e in sorted((e for e in edges if e.dst==node.index),key=lambda e:e.port))
     vals=ep.input_values; target=BooleanDAGGenerator._eval(ep.nodes,edges,vals,ep.output)
     table={bits:BooleanDAGGenerator._eval(ep.nodes,edges,bits,ep.output) for bits in product((0,1),repeat=len(ep.inputs))}
-    return Episode(ep.nodes,edges,ep.candidate_edges,ep.inputs,ep.output,vals,target,table,ep.active_count)
+    return Episode(ep.nodes,edges,ep.candidate_edges,ep.inputs,ep.output,vals,target,table,ep.active_count,tuple(parents))
