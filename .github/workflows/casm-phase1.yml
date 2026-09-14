@@ -15,6 +15,10 @@ on:
     paths:
       - "casm_v01/phase1_dag/**"
       - ".github/workflows/casm-phase1.yml"
+  pull_request:
+    paths:
+      - "casm_v01/phase1_dag/**"
+      - ".github/workflows/casm-phase1.yml"
 
 jobs:
   phase1:
