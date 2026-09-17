@@ -1,0 +1,61 @@
+name: CASM Phase 1 Static vs CASM-S
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'casm_v01/phase1_dag/**'
+      - 'casm_v01/tests/test_phase1_benchmark_controls.py'
+      - '.github/workflows/casm-phase1-static-vs-casm-s.yml'
+
+jobs:
+  experiment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install PyTorch
+        run: python -m pip install --disable-pip-version-check torch
+      - name: Run paired five-seed experiment
+        run: |
+          set -euo pipefail
+          mkdir -p phase1-results
+          for seed in 0 1 2 3 4; do
+            python -m casm_v01.phase1_dag.run_phase1 \
+              --seed "$seed" \
+              --steps 300 \
+              --warmup 100 \
+              --train 64 \
+              > "phase1-results/seed-${seed}.json"
+          done
+      - name: Validate result files
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          rows = [json.loads(p.read_text()) for p in sorted(Path('phase1-results').glob('seed-*.json'))]
+          assert len(rows) == 5
+          for r in rows:
+              assert r['validity']['ready_for_router'], r
+              assert set(r['models']) == {'static', 'casm_s'}, r
+              assert r['models']['static']['parameter_count'] != r['models']['casm_s']['parameter_count'], r
+              assert r['models']['static']['gate_0']['pass'], r
+              assert r['models']['casm_s']['gate_0']['pass'], r
+              assert r['models']['static']['gradient_sum'] > 0, r
+              assert r['models']['casm_s']['gradient_sum'] > 0, r
+              assert r['gate_3']['pass'], r
+          print(json.dumps([
+              {'seed': r['seed'],
+               'static': r['models']['static']['after'],
+               'casm_s': r['models']['casm_s']['after'],
+               'gate_3': r['gate_3']}
+              for r in rows], indent=2))
+          PY
+      - name: Upload Phase 1 results
+        uses: actions/upload-artifact@v4
+        with:
+          name: casm-phase1-static-vs-casm-s
+          path: phase1-results/
