@@ -1,20 +1,17 @@
-"""Run the minimal Phase-1 Static Mask vs CASM-S experiment.
-
-This is deliberately small and CPU-friendly. It performs the mechanical gates first,
-then a task-only warm-up, then introduces the batch-level activation budget.
-"""
+"""Correct paired Phase-1 Static Mask vs CASM-S experiment runner."""
 from __future__ import annotations
 
 import argparse
 import json
 import random
+from dataclasses import asdict
 
 import torch
 from torch import nn
 
+from .benchmark_preflight import run_suite
 from .casm_s import CASMExecutor, FactorizedRouter, StaticMask, batch_forward, gate_0, assert_integrity, structural_tensor
 from .generator import Episode, generate_episode
-from .oracle import evaluate_episode
 
 
 def seed_all(seed: int) -> None:
@@ -30,25 +27,23 @@ def budget_loss(gates: torch.Tensor, target: float) -> torch.Tensor:
     return (gates.mean() - target).pow(2)
 
 
-def train_model(model: nn.Module, ex: CASMExecutor, train_eps: list[Episode], steps: int,
+def parameter_count(*models: nn.Module) -> int:
+    return sum(p.numel() for m in models for p in m.parameters() if p.requires_grad)
+
+
+def train_model(model: nn.Module, ex: CASMExecutor, train_eps: list[Episode], *, steps: int,
                 warmup: int, rho_star: float, lr: float, budget_weight: float) -> dict:
     params = list(model.parameters()) + list(ex.parameters())
     opt = torch.optim.Adam(params, lr=lr)
-    history = []
     for step in range(steps):
         opt.zero_grad(set_to_none=True)
         task, gates, _ = batch_forward(train_eps, model, ex)
-        loss = task
-        if step >= warmup:
-            loss = loss + budget_weight * budget_loss(gates, rho_star)
+        loss = task + (budget_weight * budget_loss(gates, rho_star) if step >= warmup else 0.0)
         loss.backward()
         nn.utils.clip_grad_norm_(params, 5.0)
         opt.step()
-        if step == 0 or (step + 1) % max(1, steps // 10) == 0:
-            history.append({"step": step + 1, "task_loss": float(task),
-                            "budget_loss": float(budget_loss(gates, rho_star)),
-                            "gate_mean": float(gates.mean())})
-    return {"history": history}
+    return {"task_loss": float(task), "budget_error": float(budget_loss(gates, rho_star)),
+            "gate_mean": float(gates.mean())}
 
 
 def exact_accuracy(model: nn.Module, ex: CASMExecutor, eps: list[Episode]) -> float:
@@ -59,9 +54,9 @@ def exact_accuracy(model: nn.Module, ex: CASMExecutor, eps: list[Episode]) -> fl
             for row, target in enumerate(e.truth_table):
                 bits = [(row >> (len(e.inputs) - 1 - i)) & 1 for i in range(len(e.inputs))]
                 pred = ex.execute_assignment(e, g, torch.tensor(bits, dtype=torch.float32))
-                correct += int((pred.round().item()) == target)
+                correct += int(round(float(pred)) == target)
                 total += 1
-    return correct / total
+    return correct / max(1, total)
 
 
 def routing_pr(model: nn.Module, eps: list[Episode], threshold: float = 0.5) -> dict:
@@ -73,10 +68,33 @@ def routing_pr(model: nn.Module, eps: list[Episode], threshold: float = 0.5) -> 
             for edge, value in zip(e.candidate_edges, g.tolist()):
                 hit = (edge.src, edge.dst, edge.port) in true
                 pred = value >= threshold
-                tp += int(pred and hit)
-                fp += int(pred and not hit)
-                fn += int((not pred) and hit)
+                tp += int(pred and hit); fp += int(pred and not hit); fn += int((not pred) and hit)
     return {"precision": tp / max(1, tp + fp), "recall": tp / max(1, tp + fn)}
+
+
+def structural_pair(eps: list[Episode]) -> tuple[Episode, Episode]:
+    groups = {}
+    for e in eps:
+        key = (len(e.nodes), len(e.inputs), len(e.candidate_edges))
+        groups.setdefault(key, []).append(e)
+    for group in groups.values():
+        for a in group:
+            sig_a = tuple(n.op.value for n in a.nodes)
+            for b in group:
+                sig_b = tuple(n.op.value for n in b.nodes)
+                if sig_a != sig_b:
+                    return a, b
+    raise RuntimeError("could not construct a visible structural-sensitivity pair")
+
+
+def evaluate_model(model: nn.Module, ex: CASMExecutor, train_eps: list[Episode], test_eps: list[Episode]) -> dict:
+    return {
+        "parameter_count": parameter_count(model, ex),
+        "train_accuracy": exact_accuracy(model, ex, train_eps),
+        "test_accuracy": exact_accuracy(model, ex, test_eps),
+        "train_routing": routing_pr(model, train_eps),
+        "test_routing": routing_pr(model, test_eps),
+    }
 
 
 def main() -> None:
@@ -88,36 +106,53 @@ def main() -> None:
     args = ap.parse_args()
     seed_all(args.seed)
 
+    # Benchmark validity is a hard precondition. This is deliberately before model training.
+    validity = run_suite(seeds=range(8), n_inputs=2, n_ops=2, max_edges=12)
+    if not validity["ready_for_router"]:
+        raise RuntimeError("Phase-1 benchmark invalid; refusing to train routers")
+
     train_eps = episodes(args.train, 0)
     test_eps = episodes(32, 1000)
-    router = FactorizedRouter()
-    ex = CASMExecutor()
-    assert_integrity(router, ex, train_eps)
-    gate0 = gate_0(router, train_eps)
-    before = routing_pr(router, train_eps)
+    pair = structural_pair(train_eps)
 
-    # Gate 2: autograd path exists before optimization.
-    task, _, _ = batch_forward(train_eps[:2], router, ex)
-    task.backward()
-    grad_norm = sum(float(p.grad.abs().sum()) for p in router.parameters() if p.grad is not None)
-    if not grad_norm > 0:
-        raise AssertionError("Gate 2 failed: router gradient is zero")
-    router.zero_grad(set_to_none=True)
-    ex.zero_grad(set_to_none=True)
+    models = {
+        "static": (StaticMask(max_nodes=4), CASMExecutor()),
+        "casm_s": (FactorizedRouter(), CASMExecutor()),
+    }
+    result = {"seed": args.seed, "validity": validity, "config": vars(args), "models": {}}
 
-    train_model(router, ex, train_eps, args.steps, args.warmup, 0.40, 2e-3, 0.10)
-    result = {
-        "seed": args.seed,
-        "config": {"steps": args.steps, "warmup": args.warmup, "rho_star": 0.40,
-                    "temperature": router.temperature, "alpha_init": ex.alpha().detach().tolist()},
-        "gate_0": gate0,
-        "gate_2_router_grad_sum": grad_norm,
-        "routing_before": before,
-        "routing_after": routing_pr(router, test_eps),
-        "task_accuracy": {"train": exact_accuracy(router, ex, train_eps),
-                          "test": exact_accuracy(router, ex, test_eps)},
+    for name, (model, ex) in models.items():
+        assert_integrity(model, ex, train_eps)
+        gate0 = gate_0(model, train_eps)
+        # Explicit gradient-path check.
+        task, _, _ = batch_forward(train_eps[:2], model, ex)
+        task.backward()
+        grad_sum = sum(float(p.grad.abs().sum()) for p in model.parameters() if p.grad is not None)
+        if not grad_sum > 0:
+            raise AssertionError(f"{name}: router/model gradient path is zero")
+        model.zero_grad(set_to_none=True); ex.zero_grad(set_to_none=True)
+        before = evaluate_model(model, ex, train_eps, test_eps)
+        train_stats = train_model(model, ex, train_eps, steps=args.steps, warmup=args.warmup,
+                                  rho_star=0.40, lr=2e-3, budget_weight=0.10)
+        after = evaluate_model(model, ex, train_eps, test_eps)
+        result["models"][name] = {"gate_0": gate0, "gradient_sum": grad_sum,
+                                   "before": before, "train": train_stats, "after": after}
+
+    # Gate 3 is evaluated on visible structural composition, not hidden oracle rewiring.
+    router = models["casm_s"][0]
+    ex = models["casm_s"][1]
+    with torch.no_grad():
+        ga = router.gates(structural_tensor(pair[0]), pair[0].candidate_edges)
+        gb = router.gates(structural_tensor(pair[1]), pair[1].candidate_edges)
+    result["gate_3"] = {
+        "pass": float((ga - gb).abs().mean()) > 1e-4,
+        "mean_gate_difference": float((ga - gb).abs().mean()),
+        "signature_a": [n.op.value for n in pair[0].nodes],
+        "signature_b": [n.op.value for n in pair[1].nodes],
     }
     print(json.dumps(result, indent=2, sort_keys=True))
+    if not result["gate_3"]["pass"]:
+        raise SystemExit("Gate 3 failed: CASM-S is not structurally sensitive")
 
 
 if __name__ == "__main__":
