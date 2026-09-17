@@ -1,7 +1,9 @@
 import unittest
+from dataclasses import replace
 
 from casm_v01.phase1_dag.benchmark_preflight import run_suite
 from casm_v01.phase1_dag.controls import nonoracle_valid_control, valid_wirings
+from casm_v01.phase1_dag.diagnostics import copy_mask_report
 from casm_v01.phase1_dag.generator import generate_episode
 
 
@@ -20,6 +22,16 @@ class Phase1BenchmarkControlTests(unittest.TestCase):
             self.assertEqual(len(wiring), len(episode.true_edges))
             for edge in wiring:
                 self.assertLess(edge.src, edge.dst)
+
+    def test_copy_mask_never_reads_oracle_wiring(self):
+        episode = generate_episode(seed=13, n_inputs=2, n_ops=2)
+        altered = replace(episode, true_edges=tuple(reversed(episode.true_edges)))
+        a = copy_mask_report(episode)
+        b = copy_mask_report(altered)
+        self.assertEqual(a, b)
+        self.assertFalse(a["copy_mask_equals_true"])
+        self.assertFalse(a["copy_mask_executable"])
+        self.assertFalse(a["copy_mask_exact"])
 
     def test_preflight_suite_requires_real_selection_problem(self):
         report = run_suite(seeds=range(8), n_inputs=2, n_ops=2, max_edges=12)
