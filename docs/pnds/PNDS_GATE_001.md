@@ -1,7 +1,7 @@
 # PNDS-GATE-001 — Causal Routed Execution, Verification, and Persistent Update
 
 **Protocol:** PNDS-URP v0.1  
-**Status:** PRE-REGISTERED / NOT YET RUN  
+**Status:** STAGE-1 BASELINES IMPLEMENTED / CI RUN PENDING  
 **Purpose:** Directly test the unresolved PNDS gap without introducing recurrence, answer leakage, gold structural labels, or a learned verifier before the routing substrate is measurable.
 
 ## Research question
@@ -150,3 +150,8 @@ Every run must record:
 `repo -> branch -> commit -> PNDS ID -> seed -> config -> artifact -> metrics -> interpretation -> decision`
 
 No result is promoted without this provenance chain.
+
+
+## Stage 1 implementation
+
+The first executable harness is `casm_v01/pnds_gate_001/stage1_baselines.py`. It compares oracle, fixed token-overlap retrieval, and random routing on a hidden synthetic action environment. The router receives only query and candidate state fields; the gold index is retained inside the environment for scoring and is never passed to a routing function. The harness also measures matched action intervention effects. Stage 1 is a baseline/capacity characterization only and cannot establish the PNDS hypothesis.
