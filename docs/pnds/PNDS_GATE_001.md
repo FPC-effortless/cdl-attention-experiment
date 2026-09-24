@@ -1,7 +1,7 @@
 # PNDS-GATE-001 — Causal Routed Execution, Verification, and Persistent Update
 
 **Protocol:** PNDS-URP v0.1  
-**Status:** STAGE-1 BASELINES IMPLEMENTED / CI RUN PENDING  
+**Status:** STAGE-0/1 COMPLETE IN CI; STAGE-2 SMOKE GREEN (NOT EVIDENCE)  
 **Purpose:** Directly test the unresolved PNDS gap without introducing recurrence, answer leakage, gold structural labels, or a learned verifier before the routing substrate is measurable.
 
 ## Research question
@@ -155,3 +155,42 @@ No result is promoted without this provenance chain.
 ## Stage 1 implementation
 
 The first executable harness is `casm_v01/pnds_gate_001/stage1_baselines.py`. It compares oracle, fixed token-overlap retrieval, and random routing on a hidden synthetic action environment. The router receives only query and candidate state fields; the gold index is retained inside the environment for scoring and is never passed to a routing function. The harness also measures matched action intervention effects. Stage 1 is a baseline/capacity characterization only and cannot establish the PNDS hypothesis.
+
+## Stage 0+1+2 — first CI-produced artifacts
+
+**Provenance:** `cdl-attention-experiment` -> `pnds` -> `b2b3268` (package-marker fix `1ea5856` + CI-trigger fix) -> workflow `PNDS-GATE-001 Preflight` -> run `36008057693` (green, 1m38s) -> artifacts `pnds-gate-001-stage1`, `pnds-gate-001-stage2-smoke`.
+
+### Stage 1 baseline artifact (30 episodes, 8 candidates)
+
+| Arm | success | top-1 | MRR | intervention |
+|---|---|---|---|---|
+| oracle | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| static_overlap | 0.1333 | 0.1333 | 0.1333 | -0.0333 |
+| random | 0.0667 | 0.0667 | 0.0667 | -0.1667 |
+
+Interpretation: the environment is solvable (oracle = 1.0) and the chance floor is at ~1/8 (0.125), with `random` slightly below from finite-sample noise. `static_overlap` sits at chance, confirming that opaque candidate keys carry no lexical shortcut to the gold candidate. This is a **capacity/chance characterization**, not PNDS evidence. Success gate items 1 and 2 are not addressed by Stage 1.
+
+### Stage 2 smoke artifact (200 train / 50 held-out test, 8 candidates, dim 8, noise 0.10)
+
+- `test_success_mean` = **0.4600** (chance = 0.1250)
+- `test_intervention_effect_mean` = **0.4400**
+- training success = 0.5450, training intervention = 0.4800
+
+**Status: NOT EVIDENCE.** This is a smoke run (200 training episodes) whose purpose is to prove the pipeline executes and produces an artifact, not to evaluate the router. It is deliberately far below the 2000/300 configuration used for evaluation.
+
+Two controls were run against this artifact before any interpretation:
+
+1. **Position-bias control.** The router selects across all 8 candidate positions with chi-square 4.40 against uniform (df=7, critical value 14.07 at p<0.05), so selection is not explained by candidate position. Per-position success rates range 0.20-0.71 with no position near the oracle ceiling, indicating the router tracks candidate content rather than a positional artifact.
+2. **Intervention consistency.** `intervention_effect == 1` implied `success == 1` in 50/50 rows, and `intervention_effect == -1` implied `success == 0` in 50/50 rows (0 violations). `P(intervention=1)` equals `P(success)` exactly, as expected for the matched-alternative definition; the metric is internally consistent and is not independently measuring anything beyond the success indicator at this stage.
+
+### Known limitations blocking promotion
+
+- **Single seed.** Success gate item 7 requires at least 3 seeds; this run is seed 0 only.
+- **No held-out routing gate.** Success gate item 1 (learned router beats random and fixed-similarity on held-out structures) is not yet evaluated, because no learned-router arm has been compared against `static_overlap` and `random` under the same Stage-1 protocol.
+- **Intervention is not yet causal evidence.** The current `intervention_effect` is a within-episode re-scoring against `(selected+1) % n`, not a `do()` intervention on a persisted structure. It agrees exactly with the success indicator and therefore cannot yet support success-gate item 2.
+- **Persistence untested.** No reset/shuffle/corruption arm has been run; success-gate items 3 and 5 are unaddressed.
+- **No verifier.** Stages 4-5 are unimplemented; `verify_state_update` exists as an interface only.
+
+### Decision
+
+Stage 2 remains at the smoke level. The next scientifically meaningful step is a **held-out routing comparison** of the learned router against the Stage-1 `static_overlap` and `random` arms at the evaluation configuration (2000 train / 300 test), multi-seed, with the position-bias and intervention-consistency controls applied to every artifact. No architectural complexity is added until that comparison passes.
