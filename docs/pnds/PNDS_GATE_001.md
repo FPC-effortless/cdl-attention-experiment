@@ -1,7 +1,7 @@
 # PNDS-GATE-001 — Causal Routed Execution, Verification, and Persistent Update
 
 **Protocol:** PNDS-URP v0.1  
-**Status:** STAGE-0/1 COMPLETE IN CI; STAGE-2 SMOKE GREEN (NOT EVIDENCE)  
+**Status:** STAGE 2b HELD-OUT ROUTING COMPLETE (PARTIAL PASS, MIXED RESULT); STAGES 3-5 OPEN  
 **Purpose:** Directly test the unresolved PNDS gap without introducing recurrence, answer leakage, gold structural labels, or a learned verifier before the routing substrate is measurable.
 
 ## Research question
@@ -194,3 +194,49 @@ Two controls were run against this artifact before any interpretation:
 ### Decision
 
 Stage 2 remains at the smoke level. The next scientifically meaningful step is a **held-out routing comparison** of the learned router against the Stage-1 `static_overlap` and `random` arms at the evaluation configuration (2000 train / 300 test), multi-seed, with the position-bias and intervention-consistency controls applied to every artifact. No architectural complexity is added until that comparison passes.
+
+## Stage 2b — held-out routing comparison (2000 train / 300 held-out test, 5 training seeds)
+
+**Provenance:** `cdl-attention-experiment` -> `pnds` -> `<this commit>` -> `casm_v01/pnds_gate_001/stage2b_heldout.py` + `run_stage2b.py` + `test_stage2b_heldout.py`. Runs executed locally (stdlib-only, sub-second) and reproducible via `python -m casm_v01.pnds_gate_001.run_stage2b --train-episodes 2000 --test-episodes 300 --candidates <N> --seeds 5`. A CI step is added by this commit so the artifact is produced on the runner as well.
+
+### Design correction made before running
+
+The Stage-1 and Stage-2 environments are **not interchangeable**. Stage-1 `make_episode` samples `gold_index` uniformly at random and uses opaque string candidates, so the gold candidate is uncorrelated with any observable feature; a router *cannot* beat chance there. Stage-2 `make_episode` derives `gold_index` from a latent bit-concept that the query and the gold candidate's descriptor both reveal noisily. Comparing a learned router against Stage-1 controls on Stage-1 episodes would therefore be meaningless.
+
+Stage 2b fixes this by evaluating **all four arms on identical Stage-2 episodes**, drawn from the same `make_episode` used for Stage-2 training, with train seeds disjoint from test seeds. The arms differ only in the selector; the environment is shared.
+
+### Result: 5 independent training seeds, identical held-out test episodes
+
+| Candidates | learned | static | random | oracle | Δ(learned−static) | Δ(learned−random) |
+|---|---|---|---|---|---|---|
+| 8 | 0.7107 | 0.7133 | 0.1067 | 1.0000 | **−0.0027 ± 0.0092** | +0.6040 |
+| 16 | 0.5520 | 0.5100 | 0.0600 | 1.0000 | **+0.0420 ± 0.0156** | +0.4920 |
+| 32 | 0.4340 | 0.4200 | 0.0267 | 1.0000 | **+0.0140 ± 0.0043** | +0.4073 |
+
+± values are the standard deviation of the per-training-seed delta (n=5). Because `static` is deterministic, the delta variance is attributable to learned-router training variance alone.
+
+### What passed
+
+- **Learned beats random decisively, at every candidate count** (success gate item 1, random half). The margin is +0.60 / +0.49 / +0.41 as distractor count rises, and random collapses toward chance as expected. This is robust across all 5 seeds.
+- **Content dependence is confirmed.** The learned router is not exploiting position (see the Stage-2 position-bias control) and its converged weight vector is uniformly positive across all 8 bit dimensions (1.84–2.55, bias 3.53), i.e. it independently rediscovered "agreeing bits predict relevance" from outcome feedback alone, with no gold supervision.
+- **Multi-seed replication works** (success gate item 7 partially met for this sub-claim): 5 independent training seeds, with per-seed deltas recorded.
+- **Held-out discipline holds**: train and test seeds are disjoint, verified by a unit test; the router is frozen for evaluation; all arms see identical episodes, verified by a unit test.
+
+### What did not pass
+
+- **Learned does not reliably beat the fixed bit-agreement control** (success gate item 1, static half). At 8 candidates the delta is negative (−0.0027, t = −0.64 across seeds, straddling zero). At 16 it is positive on all 5 seeds (+0.0420, t = 6.03 across training seeds). At 32 it shrinks again (+0.0140). The advantage is therefore **regime-dependent and small**, not a uniform win.
+- The environment's observable signal is nearly exhausted by fixed bit-agreement. At 8 candidates the static scorer alone reaches 0.7133 against an oracle ceiling of 1.0, so roughly 71% of the available headroom is captured without any learning. The learned router converges to a weighted version of the same feature and gains little.
+- **No persistence, intervention, or verification claim is supported** by this stage. Success-gate items 2, 3, and 5 remain unaddressed.
+
+### Interpretation
+
+The honest reading is: **content-dependent routing generalizes and clearly beats chance, but in this environment it does not meaningfully beat a cheap fixed similarity scorer.** The learned router extracts the full available signal; that signal is largely already available for free from bit agreement.
+
+This is a **boundary condition, not a failure of PNDS**: it says the synthetic Stage-2 environment is too easy for the similarity baseline to be discriminating. The useful consequence is that the next experiment must make the relevance signal *non-trivially* structured — e.g. relevance determined by a latent relation among query, candidate, and context rather than by direct feature agreement — rather than adding architectural complexity.
+
+### Decision
+
+- **Promote the Δ(learned−random) result** as the first held-out, multi-seed, no-gold-supervision evidence that outcome-trained routing generalizes. Evidence level E2 (controlled, multi-seed, held-out, but synthetic environment and no causal-intervention component).
+- **Do not promote the Δ(learned−static) result.** It is zero or negative at 8 candidates, positive only at 16, and small everywhere. This does not satisfy success-gate item 1 against the fixed-similarity control.
+- **Do not add persistence, recurrence, a verifier, or contrastive losses.** Per the pre-registered stage order and the asymmetric promotion rule, the response to a partial pass is to diagnose the environment, not to expand the architecture.
+- **Next experiment: make relevance relationally structured**, so that fixed feature-agreement is no longer a near-optimal policy, then re-run the identical four-arm comparison. Only if learned then beats static across regimes does the gate advance to causal intervention (Stage 3).
