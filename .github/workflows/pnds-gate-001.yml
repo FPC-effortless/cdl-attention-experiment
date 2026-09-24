@@ -6,6 +6,7 @@ on:
     paths:
       - "casm_v01/pnds_gate_001/**"
       - "docs/pnds/PNDS_GATE_001.md"
+      - "docs/pnds/PNDS_MASTER_BENCHMARK.md"
       - ".github/workflows/pnds-gate-001.yml"
       - "requirements.txt"
 
@@ -23,7 +24,7 @@ jobs:
       - name: Compile
         run: python -m compileall -q casm_v01/pnds_gate_001
       - name: Unit tests
-        run: pytest -q casm_v01/pnds_gate_001/test_preflight.py casm_v01/pnds_gate_001/test_stage1_baselines.py
+        run: pytest -q casm_v01/pnds_gate_001/test_preflight.py casm_v01/pnds_gate_001/test_stage1_baselines.py casm_v01/pnds_gate_001/test_stage2_bandit.py
       - name: Stage 1 baselines
         run: python -m casm_v01.pnds_gate_001.run_stage1 --episodes 30 --candidates 8 --output pnds_gate_001_stage1.json
       - name: Upload Stage 1 artifact
@@ -31,5 +32,12 @@ jobs:
         with:
           name: pnds-gate-001-stage1
           path: pnds_gate_001_stage1.json
+      - name: Stage 2 outcome-trained router smoke test
+        run: python -m casm_v01.pnds_gate_001.run_stage2 --train-episodes 200 --test-episodes 50 --candidates 8 --output pnds_gate_001_stage2_smoke.json
+      - name: Upload Stage 2 smoke artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pnds-gate-001-stage2-smoke
+          path: pnds_gate_001_stage2_smoke.json
       - name: Direct preflight
         run: python -m casm_v01.pnds_gate_001.preflight
