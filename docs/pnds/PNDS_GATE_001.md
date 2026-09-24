@@ -311,3 +311,74 @@ Stage 2b's boundary condition was that the environment's relevance signal was ne
 - **Promote the Δ(learned−static) and Δ(learned−random) results for Stage 2c** as the first held-out, multi-seed, no-gold-supervision evidence that outcome-trained routing can learn a *relational* relevance rule that a fixed similarity scorer provably cannot express. Evidence level E2.
 - **Do not promote anything to E3.** No causal-intervention, persistence, or verification claim is supported.
 - **Do not add persistence, recurrence, a verifier, or contrastive losses.** Per the asymmetric promotion rule, the response to a decisive pass is to advance to the next pre-registered diagnostic — the causal intervention stage (Stage 3) — not to expand the architecture. Stage 3 must apply the position-bias and intervention-consistency controls used in Stage 2/2b/2c to the new artifacts.
+
+## Stage 3a — weight-lesion test of the Stage 2c learned mechanism (2000 train / 300 held-out test, 5 training seeds)
+
+**Provenance:** `cdl-attention-experiment` -> `pnds` -> `<this commit>` -> `casm_v01/pnds_gate_001/stage3a_lesion.py` + `run_stage3a.py` + `test_stage3a_lesion.py`. Runs executed locally (stdlib-only) and reproduced on CI by the workflow steps added in this commit (`pnds-gate-001.yml`, Stage 3a 8/16/32-candidate steps).
+
+This is a **mechanism-ablation test, not a causal-intervention test.** It asks one question: are the learned weights actually necessary for the learned behaviour? Stage 2c established that the router learns the context-gated relation and that its converged weights form a signed signature of that rule, but a converged weight vector is correlational evidence. This stage damages the weights and measures the behavioural consequence.
+
+### The naive single-block lesion is uninterpretable on this environment
+
+The design trap here is not hypothetical — it was found by measurement, before any lesion code was written. The learned router has two blocks that both encode query agreement:
+
+    gated_j = x_j * [q_j == c_j]     weight ~ +1.4   (the 2c relation feature)
+    qc_j    = [q_j == c_j]           weight ~ -1.6   (total agreement)
+
+and the Stage 2c environment is constructed so the gold candidate deliberately **anti-matches** the query on unmarked positions. The consequence is measurable: an `anti_static` arm that simply picks the *least* query-agreeing candidate scores **0.5567** at 8 candidates on its own, well above chance (0.125).
+
+So the obvious lesion — destroy the gated block, leave the rest — does not isolate the mechanism. It leaves the qc block behind as a functioning anti-agreement scorer, and the apparent lesion effect is confounded with that shortcut. Lesioning the qc block alone is worse: it does not degrade the router at all, it **improves** it, because the qc block is the only component working against the correct rule and the residual interference between the two blocks is the entire source of the learned arm's shortfall from the relation oracle.
+
+Neither single-block lesion can therefore support a claim. The interpretable necessity test is the **joint** lesion, and both single-block lesions are reported alongside it for transparency rather than omitted.
+
+### Result: 5 independent training seeds, identical held-out test episodes
+
+| Candidates | intact | joint | gated_only | qc_only | gated_flip | static | anti_static | random | oracle |
+|---|---|---|---|---|---|---|---|---|---|
+| 8 | 0.8853 | **0.2027** | 0.6053 | **1.0000** | 0.1933 | 0.0000 | 0.5567 | 0.1167 | 1.0000 |
+| 16 | 0.7687 | **0.1227** | 0.3267 | **0.9507** | 0.0580 | 0.0000 | 0.3067 | 0.0900 | 1.0000 |
+| 32 | 0.5027 | **0.0780** | 0.1287 | **0.7567** | 0.0013 | 0.0000 | 0.1333 | 0.0267 | 1.0000 |
+
+Lesion effects (intact minus lesioned), mean +- sd over 5 training seeds:
+
+| Candidates | joint | gated_only | qc_only | gated_flip |
+|---|---|---|---|---|
+| 8 | **+0.6827 +- 0.0277 (t=55.1)** | +0.3180 +- 0.0150 | **-0.1147 +- 0.0077** | **+0.7127 +- 0.0303 (t=52.6)** |
+| 16 | **+0.6467 +- 0.0180 (t=80.6)** | +0.4440 +- 0.0159 | **-0.2193 +- 0.0179** | **+0.7107 +- 0.0128 (t=124.3)** |
+| 32 | **+0.4347 +- 0.0363 (t=26.8)** | +0.3740 +- 0.0355 | **-0.2340 +- 0.0442** | **+0.5013 +- 0.0398 (t=28.2)** |
+
+All 60 per-seed effects have the stated sign; all joint and gated_flip effects are positive on 25/25 seeds.
+
+### The three findings
+
+1. **The joint lesion destroys the behaviour** (success 0.20 / 0.12 / 0.08, all t > 26). Removing both the gated signal and the anti-agreement block collapses the router below the `anti_static` shortcut (0.5567 / 0.3067 / 0.1333) and to within ~0.08 of the random arm. *Neither* the gated feature nor the anti-agreement shortcut alone recovers the behaviour; the learned solution requires the joint {gated, anti-agreement} structure.
+
+2. **`gated_only` is exactly the confound, visible in the data** (0.6053 / 0.3267 / 0.1287 vs `anti_static` 0.5567 / 0.3067 / 0.1333). The gated-only lesion does not measure the mechanism effect. It measures the residual qc block degenerating into the anti-agreement shortcut. This is asserted by a unit test so the confound stays visible rather than being an assertion in prose.
+
+3. **`qc_only` is a negative-lesion and it is the most informative single number in the stage** (0.2027 -> 1.0000 at 8 candidates; intact_minus_qc_only is **negative on 15/15 seeds**). Destroying the anti-agreement block does not damage the router at all; it removes the residual interference that was holding the intact model below the relation oracle. So the two blocks are **not redundant pathways** — they are an antagonistic pair, and the learned arm's shortfall from the oracle (0.115 at 8 candidates) is entirely attributable to that self-imposed interference.
+
+### Method invariants, verified by unit test
+
+- `test_lesion_does_not_mutate_the_intact_router` — the reference router is frozen; applying lesions to it leaves `router.w` byte-identical. Without this the reference is contaminated and the necessity question is void.
+- `test_lesioned_router_is_not_retrained` — a lesioned router is a copy with frozen weights, and evaluating it does not change its weights. Nothing is retrained after lesioning, by construction.
+- `test_joint_lesion_is_the_default_and_is_destructive` — the joint lesion must exist by default and must fall below `anti_static`. If it stops doing so, the necessity claim is void and the test fails.
+- `test_gated_only_lesion_matches_the_anti_static_shortcut` — the confound must be present in the numbers, not merely described. If the diagnosis becomes wrong, this test fails.
+- The 2b/2c methodology tests are mirrored: identical episodes across all nine arms, no gold supervision of any router-derived arm, disjoint train/test seeds, stateless fixed scorers, seed determinism, distinct multi-seed training seeds, and the frozen weight vector recorded in every artifact for provenance.
+
+### What is claimed
+
+- **The learned solution is dependent on the learned weights.** Damaging them destroys the behaviour at every candidate count, robustly across seeds, and the collapse is to near-chance rather than to a benign fallback. This upgrades the Stage 2c finding from "the converged weights *look like* the intended rule" to "those weights are *necessary* for the behaviour", which is the strongest mechanistic claim available without a persistent state.
+
+### What is not claimed
+
+- **This is not a causal-intervention result.** No persistent state `S_t` exists to intervene on; the system is still a bandit. Ablating weights establishes necessity of the mechanism, which is not the same as the PNDS claim that intervening on persisted structure changes downstream outcomes.
+- **This is not evidence about redundancy in general.** The joint lesion establishes that no *remaining* pathway recovers the behaviour under this perturbation. It does not establish that the router could not have learned an equivalent solution by a different route given a different basis; that question is not addressed.
+- **The `qc_only` result is a property of this environment's construction**, not a general property of the learning rule: the anti-match structure of the gold candidate is what makes the anti-agreement block both useful and harmful. It is reported because it explains the learned arm's shortfall, not because it generalises.
+- No persistence, recurrence, verifier, or repair claim is supported. Success-gate items 2, 3, and 5 remain unaddressed.
+
+### Decision
+
+- **Promote the joint-lesion necessity result** as the mechanism-ablation evidence for Stage 2c: the learned weights are necessary for the learned behaviour, and no benign fallback survives their removal. Evidence level E2 (controlled, multi-seed, held-out, no-gold-supervision, synthetic environment, non-causal).
+- **Record the `qc_only` negative-lesion as an environment-specific diagnostic**, not as promoted evidence. It identifies the source of the learned arm's shortfall from the relation oracle as residual interference in the learned representation, which is the concrete quantity a future learning rule or feature basis should be judged against.
+- **Do not promote anything to E3.** Ablation is not intervention.
+- **Do not add persistence, recurrence, a verifier, or contrastive losses.** Per the asymmetric promotion rule, the response to a decisive pass is the next pre-registered diagnostic. That is Stage 3b, the persistent-state intervention, which is the first stage that can address the PNDS loop claim at all — because it is the first stage in which a persistent `S_t` exists to intervene upon.

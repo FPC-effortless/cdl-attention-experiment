@@ -25,7 +25,7 @@ jobs:
       - name: Compile
         run: python -m compileall -q casm_v01/pnds_gate_001
       - name: Unit tests
-        run: pytest -q casm_v01/pnds_gate_001/test_preflight.py casm_v01/pnds_gate_001/test_stage1_baselines.py casm_v01/pnds_gate_001/test_stage2_bandit.py casm_v01/pnds_gate_001/test_stage2b_heldout.py casm_v01/pnds_gate_001/test_stage2c_relational.py
+        run: pytest -q casm_v01/pnds_gate_001/test_preflight.py casm_v01/pnds_gate_001/test_stage1_baselines.py casm_v01/pnds_gate_001/test_stage2_bandit.py casm_v01/pnds_gate_001/test_stage2b_heldout.py casm_v01/pnds_gate_001/test_stage2c_relational.py casm_v01/pnds_gate_001/test_stage3a_lesion.py
       - name: Stage 1 baselines
         run: python -m casm_v01.pnds_gate_001.run_stage1 --episodes 30 --candidates 8 --output pnds_gate_001_stage1.json
       - name: Upload Stage 1 artifact
@@ -62,5 +62,16 @@ jobs:
         with:
           name: pnds-gate-001-stage2c
           path: pnds_gate_001_stage2c_*.json
+      - name: Stage 3a weight lesion (8 candidates, 5 seeds)
+        run: python -m casm_v01.pnds_gate_001.run_stage3a --train-episodes 2000 --test-episodes 300 --candidates 8 --seeds 5 --output pnds_gate_001_stage3a_8cand.json
+      - name: Stage 3a weight lesion (16 candidates, 5 seeds)
+        run: python -m casm_v01.pnds_gate_001.run_stage3a --train-episodes 2000 --test-episodes 300 --candidates 16 --seeds 5 --output pnds_gate_001_stage3a_16cand.json
+      - name: Stage 3a weight lesion (32 candidates, 5 seeds)
+        run: python -m casm_v01.pnds_gate_001.run_stage3a --train-episodes 2000 --test-episodes 300 --candidates 32 --seeds 5 --output pnds_gate_001_stage3a_32cand.json
+      - name: Upload Stage 3a artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: pnds-gate-001-stage3a
+          path: pnds_gate_001_stage3a_*.json
       - name: Direct preflight
         run: python -m casm_v01.pnds_gate_001.preflight
