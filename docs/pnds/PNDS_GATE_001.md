@@ -240,3 +240,72 @@ This is a **boundary condition, not a failure of PNDS**: it says the synthetic S
 - **Do not promote the Δ(learned−static) result.** It is zero or negative at 8 candidates, positive only at 16, and small everywhere. This does not satisfy success-gate item 1 against the fixed-similarity control.
 - **Do not add persistence, recurrence, a verifier, or contrastive losses.** Per the pre-registered stage order and the asymmetric promotion rule, the response to a partial pass is to diagnose the environment, not to expand the architecture.
 - **Next experiment: make relevance relationally structured**, so that fixed feature-agreement is no longer a near-optimal policy, then re-run the identical four-arm comparison. Only if learned then beats static across regimes does the gate advance to causal intervention (Stage 3).
+
+## Stage 2c — relational relevance (2000 train / 300 held-out test, 5 training seeds)
+
+**Provenance:** `cdl-attention-experiment` -> `pnds` -> `<this commit>` -> `casm_v01/pnds_gate_001/stage2c_relational.py` + `run_stage2c.py` + `test_stage2c_relational.py`. Runs executed locally (stdlib-only) and reproduced on CI by the workflow step added in this commit (`pnds-gate-001.yml`, Stage 2c 8/16/32-candidate steps).
+
+### What changed relative to Stage 2b
+
+Exactly one thing, as pre-registered: **the source of relevance.**
+
+    Stage 2b:  R(q, c) ~ total feature agreement(q, c)
+    Stage 2c:  R(q, c, x) = agreement(q, c) restricted to the positions x marks
+
+The context is no longer inert. Its 1 bits mark `dim // 4` positions; the gold candidate matches the query on every marked position and deliberately *anti-matches* the query on the unmarked positions. Relevance is therefore a **conditional** rule: which candidate features matter is decided per episode by the context. Total query-agreement is actively anti-correlated with relevance, because the query-deceptive distractors agree with the query on the unmarked positions and fail it on the marked ones.
+
+Everything else is identical to 2b: the same four arms, the same 2000/300 train/test split, the same 5 independent training seeds, the same held-out test episodes, the same metrics.
+
+### Two earlier Stage 2c designs were rejected before running
+
+Both were caught by representability checks, not by tuning:
+
+1. **Indexed-lookup relation** (`descriptor[context[0]] == context[1]`). Static collapsed to chance (0.0933 vs 0.0967) and the relation was unique in 91% of episodes, but the learned router reached only 0.1933 against chance 0.125. Rejected: an indexed lookup is not representable by a linear feature basis, so the run would have measured model-class expressiveness, not learnability from outcomes.
+2. **Three-way positional conjunction** (`descriptor[pos_a] == context[pos_a] AND descriptor[pos_b] == query[pos_b]`, with `pos_a`/`pos_b` drawn per episode). Static collapsed to 0.0467 and learned reached 0.1750, which looked like the intended result. It was not. Three diagnostics killed it:
+   - In **284/300 episodes all 8 candidates** satisfied the *existential* version of the relation.
+   - The best observable surrogate (`argmax` of `min(qa, xa)`) reached only **0.22**, and `argmax` of the product only **0.1567**.
+   - A **supervised** least-squares linear fit over the router's 33-feature basis topped out at **0.30** (chance 0.125), rank 32/33.
+
+   The relation was keyed on per-episode random positions that no router-visible feature encodes, so relevance was not a function of the router's inputs. The router at 0.175 was already near its achievable ceiling. This is the same class of flaw as design 1, relocated rather than fixed.
+
+**Lesson recorded:** for a Stage 2c relation to test learning-from-outcomes rather than model class, the relation must be (a) computable from router-visible inputs alone and (b) expressible as a vector in the hypothesis class. The third design satisfies both, and this is now enforced by a unit test (`test_relation_is_observable_from_router_inputs`) so a future design cannot silently regress it.
+
+### Result: 5 independent training seeds, identical held-out test episodes
+
+| Candidates | learned | static | random | oracle | Δ(learned−static) | Δ(learned−random) |
+|---|---|---|---|---|---|---|
+| 8 | 0.8853 | 0.0000 | 0.1167 | 1.0000 | **+0.8853 ± 0.0077 (t = 258.0)** | +0.7687 ± 0.0077 |
+| 16 | 0.7687 | 0.0000 | 0.0900 | 1.0000 | **+0.7687 ± 0.0126 (t = 136.4)** | +0.6787 ± 0.0126 |
+| 32 | 0.5027 | 0.0000 | 0.0267 | 1.0000 | **+0.5027 ± 0.0401 (t = 28.0)** | +0.4760 ± 0.0401 |
+
+± is the standard deviation of the per-training-seed delta (n=5); t is the paired t-statistic across seeds. Because `static` is deterministic and sees the identical episodes, all delta variance is learned-router training variance. Every per-seed delta is positive at every candidate count (25/25).
+
+### Environment invariants, verified by unit test
+
+- `test_gold_is_the_unique_satisfier` — gold is the **only** candidate satisfying the relation, in 400/400 sampled episodes. Without this the task would be ambiguous and the oracle arm capped below 1.0; an earlier draft leaked this (113/400 episodes had >1 satisfier) and was fixed by forcing a guaranteed violation on every random-mode distractor.
+- `test_relation_is_observable_from_router_inputs` — the relation is decidable from query, context, and candidate descriptor alone. No hidden per-episode index is involved.
+- `test_static_rule_cannot_express_the_relation` — the unchanged 2b static scorer is at 0.0000, i.e. the environment actually changed the source of relevance rather than only re-labelling it.
+- The 2b methodology tests are mirrored exactly: identical episodes across arms, no gold supervision of the learned arm, disjoint train/test seeds, static has no trainable state, seed-level determinism, distinct multi-seed training seeds.
+
+### What passed
+
+- **Learned beats the fixed-similarity control decisively, at every candidate count, on all 5 seeds** (success gate item 1, static half). This is the result Stage 2b failed to produce: there the delta was −0.0027 at 8 candidates and never exceeded +0.042. Here the smallest delta is +0.50 and the weakest t-statistic is 28.0. The learned router recovers a rule that the fixed scorer provably cannot express.
+- **Learned beats random decisively** (success gate item 1, random half): +0.77 / +0.68 / +0.48, all t > 26.
+- **The learned rule is the intended one.** The router's context-gated weights converge uniformly positive (1.13–1.30 at 8 candidates) while the total-agreement weights stay near zero, i.e. from outcome feedback alone and with no gold supervision it rediscovered "match the query on the positions the context marks", not a degenerate proxy. A separate relation-following oracle arm scores 0.8733 on the same episodes and the learned arm matches it exactly (0.8733), confirming the learned policy is the relation policy rather than an artifact that happens to correlate.
+- **Held-out discipline holds**: train/test seeds disjoint, router frozen at evaluation, all four arms on identical episodes — each asserted by a unit test.
+
+### What did not pass / is not claimed
+
+- **No persistence, recurrence, verifier, or causal-intervention component.** Success-gate items 2, 3, and 5 remain unaddressed. Stage 2c is deliberately still a bandit, not a persistent decision loop.
+- **Learned does not reach the oracle ceiling** (0.8853 vs 1.0 at 8 candidates, 0.5027 at 32). The gap is candidate-count-dependent and is the honest measure of what outcome training leaves on the table as distractor density rises.
+- The environment remains **synthetic and low-dimensional** (dim=8, bit descriptors). This is evidence level E2: controlled, multi-seed, held-out, no-gold-supervision, but synthetic and non-causal.
+
+### Interpretation
+
+Stage 2b's boundary condition was that the environment's relevance signal was nearly exhausted by fixed feature-agreement. Stage 2c removes that confound by construction: the static scorer scores **0.0000**, so any learned success above chance is attributable to relational learning and not to residual similarity. The router learns the context-gated rule from outcome feedback alone, and the learned-static gap is large, sign-consistent, and statistically overwhelming in all three candidate regimes.
+
+### Decision
+
+- **Promote the Δ(learned−static) and Δ(learned−random) results for Stage 2c** as the first held-out, multi-seed, no-gold-supervision evidence that outcome-trained routing can learn a *relational* relevance rule that a fixed similarity scorer provably cannot express. Evidence level E2.
+- **Do not promote anything to E3.** No causal-intervention, persistence, or verification claim is supported.
+- **Do not add persistence, recurrence, a verifier, or contrastive losses.** Per the asymmetric promotion rule, the response to a decisive pass is to advance to the next pre-registered diagnostic — the causal intervention stage (Stage 3) — not to expand the architecture. Stage 3 must apply the position-bias and intervention-consistency controls used in Stage 2/2b/2c to the new artifacts.
