@@ -291,13 +291,15 @@ Both were caught by representability checks, not by tuning:
 
 - **Learned beats the fixed-similarity control decisively, at every candidate count, on all 5 seeds** (success gate item 1, static half). This is the result Stage 2b failed to produce: there the delta was −0.0027 at 8 candidates and never exceeded +0.042. Here the smallest delta is +0.50 and the weakest t-statistic is 28.0. The learned router recovers a rule that the fixed scorer provably cannot express.
 - **Learned beats random decisively** (success gate item 1, random half): +0.77 / +0.68 / +0.48, all t > 26.
-- **The learned rule is the intended one.** The router's context-gated weights converge uniformly positive (1.13–1.30 at 8 candidates) while the total-agreement weights stay near zero, i.e. from outcome feedback alone and with no gold supervision it rediscovered "match the query on the positions the context marks", not a degenerate proxy. A separate relation-following oracle arm scores 0.8733 on the same episodes and the learned arm matches it exactly (0.8733), confirming the learned policy is the relation policy rather than an artifact that happens to correlate.
+- **The learned rule is the intended one.** The router's context-gated weights converge uniformly positive (1.29–1.47 at 8 candidates) while the *total*-agreement weights converge uniformly **negative** (−1.25 to −1.72) and the bias is strongly positive (+4.00). That is a signed signature of exactly the intended rule, learned from outcome feedback alone with no gold supervision: reward agreement on context-marked positions, penalise agreement on unmarked ones, and carry the offset. It did not rediscover the 2b similarity rule; it inverted it.
+  
+  A separate relation-following oracle arm — which knows the relation and selects the unique satisfier — scores **1.0000** on the same held-out episodes, matching the `oracle` arm, because the environment is now unambiguous (gold is the unique satisfier in 400/400 sampled episodes). The learned arm reaches 0.8853, i.e. it recovers most but not all of the available headroom, and the shortfall is the honest measure of what outcome training leaves on the table. This oracle is a *ceiling reference*, not a competitor: the learned arm is not compared against it as a win, and its score should not be read as the learned arm matching the relation.
 - **Held-out discipline holds**: train/test seeds disjoint, router frozen at evaluation, all four arms on identical episodes — each asserted by a unit test.
 
 ### What did not pass / is not claimed
 
 - **No persistence, recurrence, verifier, or causal-intervention component.** Success-gate items 2, 3, and 5 remain unaddressed. Stage 2c is deliberately still a bandit, not a persistent decision loop.
-- **Learned does not reach the oracle ceiling** (0.8853 vs 1.0 at 8 candidates, 0.5027 at 32). The gap is candidate-count-dependent and is the honest measure of what outcome training leaves on the table as distractor density rises.
+- **Learned does not reach the oracle ceiling** (0.8853 vs 1.0 at 8 candidates, 0.5027 at 32). The relation-following oracle is 1.0000 by construction, so the whole 0.115 / 0.497 gap is candidate-count-dependent shortfall in outcome training as distractor density rises, not ambiguity in the task.
 - The environment remains **synthetic and low-dimensional** (dim=8, bit descriptors). This is evidence level E2: controlled, multi-seed, held-out, no-gold-supervision, but synthetic and non-causal.
 
 ### Interpretation
