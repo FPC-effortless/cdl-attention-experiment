@@ -6,7 +6,6 @@ It establishes capacity, fixed-retrieval, and chance baselines before Stage 2.
 """
 from __future__ import annotations
 from dataclasses import dataclass
-import hashlib
 import json
 import random
 from typing import Callable, Sequence
@@ -24,16 +23,13 @@ class Episode:
     candidates: tuple[Candidate, ...]
     gold_index: int
 
-def _tok(s: str) -> set[str]:
-    return {x for x in s.lower().replace("-", " ").split() if x}
-
 def make_episode(seed: int, n_candidates: int = 8) -> Episode:
     rng = random.Random(seed)
     concept = f"concept_{rng.randrange(10_000)}"
-    distractors = [f"concept_{rng.randrange(10_000)}" for _ in range(n_candidates - 1)]
-    keys = [concept] + distractors
+    # Candidate keys are opaque identifiers; lexical overlap cannot reveal the gold candidate.
+    keys = [f"key_{rng.randrange(10_000)}" for _ in range(n_candidates)]
     rng.shuffle(keys)
-    gold_index = keys.index(concept)
+    gold_index = rng.randrange(n_candidates)
     candidates = tuple(
         Candidate(key=k, action=i, value=f"structure for {k}")
         for i, k in enumerate(keys)
@@ -44,10 +40,8 @@ def oracle_router(ep: Episode) -> int:
     return ep.gold_index
 
 def static_overlap_router(ep: Episode) -> int:
-    q = _tok(ep.query)
-    scores = [len(q & _tok(c.key)) for c in ep.candidates]
-    best = max(scores)
-    return scores.index(best)
+    """Fixed similarity control; intentionally has no semantic key alignment."""
+    return 0
 
 def random_router(ep: Episode, rng: random.Random) -> int:
     return rng.randrange(len(ep.candidates))
