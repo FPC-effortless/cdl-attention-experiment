@@ -23,6 +23,13 @@ jobs:
       - name: Compile
         run: python -m compileall -q casm_v01/pnds_gate_001
       - name: Unit tests
-        run: pytest -q casm_v01/pnds_gate_001/test_preflight.py
+        run: pytest -q casm_v01/pnds_gate_001/test_preflight.py casm_v01/pnds_gate_001/test_stage1_baselines.py
+      - name: Stage 1 baselines
+        run: python -m casm_v01.pnds_gate_001.run_stage1 --episodes 30 --candidates 8 --output pnds_gate_001_stage1.json
+      - name: Upload Stage 1 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pnds-gate-001-stage1
+          path: pnds_gate_001_stage1.json
       - name: Direct preflight
         run: python -m casm_v01.pnds_gate_001.preflight
