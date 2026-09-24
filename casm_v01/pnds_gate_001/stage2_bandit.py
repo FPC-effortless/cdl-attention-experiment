@@ -32,19 +32,24 @@ def make_episode(seed: int, n_candidates: int = 8, dim: int = 8, noise: float = 
     rng = random.Random(seed)
     latent = tuple(rng.randrange(2) for _ in range(dim))
     candidates = []
-    gold = rng.randrange(n_candidates)
     for i in range(n_candidates):
-        if i == gold:
-            desc = _flip(rng, latent, noise)
-        else:
-            distractor = tuple(rng.randrange(2) for _ in range(dim))
-            desc = _flip(rng, distractor, noise)
+        # Exactly one candidate is generated from the latent query concept;
+        # distractors come from independent latent concepts. The environment's
+        # hidden gold index is computed from the same latent relation, not sampled
+        # independently. The router never receives the latent concept or gold index.
+        source = latent if i == 0 else tuple(rng.randrange(2) for _ in range(dim))
+        desc = _flip(rng, source, noise)
         candidates.append(Candidate(
             key=f"key_{rng.randrange(1_000_000)}",
             descriptor=desc,
             action=i,
         ))
     query = _flip(rng, latent, noise)
+    # Randomize candidate order only after identifying the structurally correct candidate.
+    gold = 0
+    candidates = list(candidates)
+    rng.shuffle(candidates)
+    gold = next(i for i, c in enumerate(candidates) if c.action == 0)
     return Episode(query=query, candidates=tuple(candidates), gold_index=gold)
 
 class LinearBanditRouter:
@@ -83,7 +88,7 @@ class LinearBanditRouter:
         for j in range(self.dim):
             agreement = 1.0 if ep.query[j] == ep.candidates[selected].descriptor[j] else -1.0
             self.w[j] += self.lr * centered * agreement * (1.0 - probs[selected])
-        self.bias += self.lr * centered
+        self.bias += self.lr * centered * (1.0 - probs[selected])
 
 def environment_success(ep: Episode, selected: int) -> bool:
     return selected == ep.gold_index
