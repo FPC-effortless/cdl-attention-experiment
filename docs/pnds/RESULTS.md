@@ -114,3 +114,30 @@ The main unresolved transition is from a powerful relevance teacher to a cheap, 
 - Current evidence: implementation only. The preflight is a methodological control, not evidence that the PNDS hypothesis is true.
 - Evidence: E1. Decision: DO NOT PROMOTE.
 - Next: run the GATE-001 preflight in CI, then implement the outcome-driven router before adding recurrence or auxiliary losses.
+
+## Mathematical-audit correction — 2026-09-24
+
+The new PNDS mathematical specification changes the interpretation of the existing CDL/CASM results:
+
+- Stage A CDL relevance remains bounded evidence for candidate ranking, not evidence of sublinear serving cost because the teacher evaluates every candidate.
+- Stage B distillation remains INCONCLUSIVE; a cheap router must be evaluated on downstream execution and cost, not only teacher agreement.
+- CASM Phase 1/1.5A results remain routing/execution substrate evidence. The L2 held-out result (0/18) is a failure boundary and must not be obscured by low optimization loss.
+- Path verification, registration, adaptation regularization, state-to-computation intervention, and the Context-Scaling Proof have no completed PNDS result yet.
+- The first Stage-2 synthetic environment was corrected after detecting an independent-gold generation flaw. The pre-correction version is methodologically invalid and not an evidence record.
+
+### PNDS claim-status matrix
+
+| Claim | Current status |
+|---|---|
+| CDL can rank relevant candidates on the bounded Stage-A task | SUPPORTED / bounded |
+| CDL itself provides sublinear routing cost | NOT ESTABLISHED |
+| Cheap Q/K router distilled from CDL solves the routing problem | INCONCLUSIVE |
+| CASM can execute selected structural computation under bounded controls | PARTIALLY_SUPPORTED |
+| Held-out structural routing is solved by the current L2 | FALSIFIED for the tested condition / 0 of 18 |
+| Path-level verification improves over final-only verification | NOT_RUN |
+| Verified-only persistent update improves state integrity | NOT_RUN |
+| PNDS context-scaling proof | NOT_RUN |
+
+### R13/R14 provenance
+
+No R13/R14 identifiers were located in the current CDL/TAC Transformer repository search used for this audit. Do not assign PNDS IDs to those claims until a source artifact, branch, or commit is located. External references may be attached later as provenance without altering the existing ledger entries.
