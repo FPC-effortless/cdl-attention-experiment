@@ -1,0 +1,28 @@
+name: PNDS-GATE-001 Preflight
+
+on:
+  push:
+    branches: [pnds]
+    paths:
+      - "casm_v01/pnds_gate_001/**"
+      - "docs/pnds/PNDS_GATE_001.md"
+      - ".github/workflows/pnds-gate-001.yml"
+      - "requirements.txt"
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Compile
+        run: python -m compileall -q casm_v01/pnds_gate_001
+      - name: Unit tests
+        run: pytest -q casm_v01/pnds_gate_001/test_preflight.py
+      - name: Direct preflight
+        run: python -m casm_v01.pnds_gate_001.preflight
