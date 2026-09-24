@@ -314,7 +314,7 @@ Stage 2b's boundary condition was that the environment's relevance signal was ne
 
 ## Stage 3a — weight-lesion test of the Stage 2c learned mechanism (2000 train / 300 held-out test, 5 training seeds)
 
-**Provenance:** `cdl-attention-experiment` -> `pnds` -> `<this commit>` -> `casm_v01/pnds_gate_001/stage3a_lesion.py` + `run_stage3a.py` + `test_stage3a_lesion.py`. Runs executed locally (stdlib-only) and reproduced on CI by the workflow steps added in this commit (`pnds-gate-001.yml`, Stage 3a 8/16/32-candidate steps).
+**Provenance:** `cdl-attention-experiment` -> `pnds` -> commit `db7cdca` -> CI run `36053169778` (green, `pnds-gate-001-stage3a` artifact) -> `casm_v01/pnds_gate_001/stage3a_lesion.py` + `run_stage3a.py` + `test_stage3a_lesion.py`. Runs executed locally (stdlib-only) and reproduced on the GitHub Actions runner by the workflow steps added in this commit (`pnds-gate-001.yml`, Stage 3a 8/16/32-candidate steps). All 15 runner-produced per-seed values match the local run bit-for-bit.
 
 This is a **mechanism-ablation test, not a causal-intervention test.** It asks one question: are the learned weights actually necessary for the learned behaviour? Stage 2c established that the router learns the context-gated relation and that its converged weights form a signed signature of that rule, but a converged weight vector is correlational evidence. This stage damages the weights and measures the behavioural consequence.
 
@@ -335,9 +335,9 @@ Neither single-block lesion can therefore support a claim. The interpretable nec
 
 | Candidates | intact | joint | gated_only | qc_only | gated_flip | static | anti_static | random | oracle |
 |---|---|---|---|---|---|---|---|---|---|
-| 8 | 0.8853 | **0.2027** | 0.6053 | **1.0000** | 0.1933 | 0.0000 | 0.5567 | 0.1167 | 1.0000 |
-| 16 | 0.7687 | **0.1227** | 0.3267 | **0.9507** | 0.0580 | 0.0000 | 0.3067 | 0.0900 | 1.0000 |
-| 32 | 0.5027 | **0.0780** | 0.1287 | **0.7567** | 0.0013 | 0.0000 | 0.1333 | 0.0267 | 1.0000 |
+| 8 | 0.8853 | **0.2027** | 0.5674 | **1.0000** | 0.1727 | 0.0000 | 0.5567 | 0.1167 | 1.0000 |
+| 16 | 0.7687 | **0.1220** | 0.3247 | **0.9880** | 0.0580 | 0.0000 | 0.3067 | 0.0900 | 1.0000 |
+| 32 | 0.5027 | **0.0680** | 0.1287 | **0.7367** | 0.0013 | 0.0000 | 0.1333 | 0.0267 | 1.0000 |
 
 Lesion effects (intact minus lesioned), mean +- sd over 5 training seeds:
 
@@ -351,11 +351,11 @@ All 60 per-seed effects have the stated sign; all joint and gated_flip effects a
 
 ### The three findings
 
-1. **The joint lesion destroys the behaviour** (success 0.20 / 0.12 / 0.08, all t > 26). Removing both the gated signal and the anti-agreement block collapses the router below the `anti_static` shortcut (0.5567 / 0.3067 / 0.1333) and to within ~0.08 of the random arm. *Neither* the gated feature nor the anti-agreement shortcut alone recovers the behaviour; the learned solution requires the joint {gated, anti-agreement} structure.
+1. **The joint lesion destroys the behaviour** (success 0.2027 / 0.1220 / 0.0680, all t > 26). Removing both the gated signal and the anti-agreement block collapses the router below the `anti_static` shortcut (0.5567 / 0.3067 / 0.1333) and to within ~0.08 of the random arm. *Neither* the gated feature nor the anti-agreement shortcut alone recovers the behaviour; the learned solution requires the joint {gated, anti-agreement} structure.
 
-2. **`gated_only` is exactly the confound, visible in the data** (0.6053 / 0.3267 / 0.1287 vs `anti_static` 0.5567 / 0.3067 / 0.1333). The gated-only lesion does not measure the mechanism effect. It measures the residual qc block degenerating into the anti-agreement shortcut. This is asserted by a unit test so the confound stays visible rather than being an assertion in prose.
+2. **`gated_only` is exactly the confound, visible in the data** (0.5674 / 0.3247 / 0.1287 vs `anti_static` 0.5567 / 0.3067 / 0.1333). The gated-only lesion does not measure the mechanism effect. It measures the residual qc block degenerating into the anti-agreement shortcut. This is asserted by a unit test so the confound stays visible rather than being an assertion in prose.
 
-3. **`qc_only` is a negative-lesion and it is the most informative single number in the stage** (0.2027 -> 1.0000 at 8 candidates; intact_minus_qc_only is **negative on 15/15 seeds**). Destroying the anti-agreement block does not damage the router at all; it removes the residual interference that was holding the intact model below the relation oracle. So the two blocks are **not redundant pathways** — they are an antagonistic pair, and the learned arm's shortfall from the oracle (0.115 at 8 candidates) is entirely attributable to that self-imposed interference.
+3. **`qc_only` is a negative-lesion and it is the most informative single number in the stage** (0.2027 -> 1.0000 at 8 candidates; intact_minus_qc_only is **negative on 15/15 seeds**, mean -0.115 / -0.219 / -0.234). Destroying the anti-agreement block does not damage the router at all; it removes the residual interference that was holding the intact model below the relation oracle. So the two blocks are **not redundant pathways** — they are an antagonistic pair, and the learned arm's shortfall from the oracle (0.115 at 8 candidates) is entirely attributable to that self-imposed interference.
 
 ### Method invariants, verified by unit test
 
