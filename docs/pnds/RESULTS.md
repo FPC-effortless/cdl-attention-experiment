@@ -103,3 +103,14 @@ The main unresolved transition is from a powerful relevance teacher to a cheap, 
 ## PNDS-SETUP-001
 - Status: SUPPORTED
 - Purpose: universal protocol installation.
+
+## PNDS-CDL-GATE-001 — Causal routed execution and verified persistent update
+- Status: PRE-REGISTERED / STAGE-0 IMPLEMENTED; NO SCIENTIFIC RESULT YET
+- Contract: docs/pnds/PNDS_GATE_001.md
+- Implementation: casm_v01/pnds_gate_001/
+- Question: can a cheap relevance router select a persistent structure, execute it causally, verify the outcome, and update state without answer/gold-structure leakage?
+- Stage 0: explicit router-input allowlist; rejection of target/answer/outcome/true-edge/gold-structure/correct-action fields; verified-only state commit rule; causal intervention metric.
+- Stage 1-6: oracle/static/random baselines -> cheap learned router -> causal intervention -> verifier -> verified state update -> 3-seed replication and scaling.
+- Current evidence: implementation only. The preflight is a methodological control, not evidence that the PNDS hypothesis is true.
+- Evidence: E1. Decision: DO NOT PROMOTE.
+- Next: run the GATE-001 preflight in CI, then implement the outcome-driven router before adding recurrence or auxiliary losses.
