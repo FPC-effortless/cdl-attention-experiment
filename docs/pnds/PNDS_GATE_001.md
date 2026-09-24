@@ -243,7 +243,7 @@ This is a **boundary condition, not a failure of PNDS**: it says the synthetic S
 
 ## Stage 2c — relational relevance (2000 train / 300 held-out test, 5 training seeds)
 
-**Provenance:** `cdl-attention-experiment` -> `pnds` -> `<this commit>` -> `casm_v01/pnds_gate_001/stage2c_relational.py` + `run_stage2c.py` + `test_stage2c_relational.py`. Runs executed locally (stdlib-only) and reproduced on CI by the workflow step added in this commit (`pnds-gate-001.yml`, Stage 2c 8/16/32-candidate steps).
+**Provenance:** `cdl-attention-experiment` -> `pnds` -> commit `42f9814` -> CI run `36043770779` (green, `pnds-gate-001-stage2c` artifact) -> `casm_v01/pnds_gate_001/stage2c_relational.py` + `run_stage2c.py` + `test_stage2c_relational.py`. Runs executed locally (stdlib-only) and reproduced on the GitHub Actions runner by the workflow step added in this commit (`pnds-gate-001.yml`, Stage 2c 8/16/32-candidate steps). All 15 runner-produced per-seed values match the local run bit-for-bit.
 
 ### What changed relative to Stage 2b
 
