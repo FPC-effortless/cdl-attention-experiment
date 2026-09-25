@@ -332,14 +332,28 @@ class PersistentStateRouter:
 
     def _features(self, query, descriptor, state: PersistentState) -> list[float]:
         """One dim-length block per possible key; only the state's key block is
-        active. Within the active block, key positions get +agreement and
-        non-key positions get -agreement."""
+        non-zero, the other 69 are exactly zero.
+
+        Amendment 3 (this commit): the committed version of this method ignored
+        ``state.key`` entirely and computed all 70 blocks. That made the feature
+        map a function of (candidate, target) only -- key-BLIND -- and under the
+        exact-T constraint the ideal weights then score
+
+            sum_{K'} (2 a_{K'} - T) = 2 * C(dim-1,k-1) * T - n_keys * T = 0
+
+        for every candidate, a constant. The relation was unrepresentable and
+        every learned-arm number in dd8f63c and b8b873b is retracted by
+        STAGE_3B_AMENDMENT_3.md. The gate below is what the docstring always
+        claimed was here.
+        """
         dim = self.dim
+        feats = [0.0] * (self.n_bias + self.n_keyed)
+        feats[0] = 1.0
+        b = self.key_index[state.key]
+        base = 1 + b * dim
         t = state.target
-        agree = [1.0 if descriptor[j] == t[j] else -1.0 for j in range(dim)]
-        feats = [1.0]
-        for kk in self.all_keys:
-            feats.extend(agree[j] if j in kk else -agree[j] for j in range(dim))
+        for j in range(dim):
+            feats[base + j] = 1.0 if descriptor[j] == t[j] else -1.0
         return feats
 
     def score(self, query, descriptor, state: PersistentState) -> float:
