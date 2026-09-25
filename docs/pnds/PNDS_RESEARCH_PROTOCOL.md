@@ -1,6 +1,6 @@
 # PNDS Universal Research Protocol
 
-**Protocol:** PNDS-URP v0.2  
+**Protocol:** PNDS-URP v0.4  
 **Status:** Active research control document  
 **Purpose:** Provide one uniform research, experiment, evidence, and handoff protocol across the TAC Transformer, TAC-Prime, and CDL Attention research lines.
 
@@ -866,3 +866,78 @@ Adaptation experiments must measure utility against persistent complexity, cost,
 Added controlled adaptation, quarantine/registration, typed authority routing, intermediate verification, and state-to-computation coupling as separately testable PNDS primitives.
 
 Existing experiment records remain governed by their original protocol version and are not retroactively rewritten.
+
+## 34. Mechanism representability gate
+
+**Admissibility condition.** No learned-arm measurement may be interpreted
+until the mechanism under test has been shown to *represent* the relation it is
+being asked to learn.
+
+Every representability check in the earlier protocol was an **arm**: a control
+that reads the target relation directly. An arm never passes through the learned
+feature map, so it returns a perfect score whether or not the mechanism could
+express anything:
+
+\[
+\text{oracle success} \;\not\Rightarrow\; \text{learned-map representability}
+\]
+
+A perfect oracle therefore conceals a broken basis indefinitely. This is not
+hypothetical: a key-blind feature map in `cdl-attention-experiment` at
+`dd8f63c` scored the analytically ideal weights at exactly 0 for every candidate
+— a constant, in its own null space — while the `true_key` oracle arm
+simultaneously reported 1.0000 for four consecutive commits. The negative
+result that followed was invalid, and so was every diagnostic built on it.
+
+### The required probe
+
+Before interpreting learning results, and in the same run:
+
+1. Construct the **analytically ideal weights** for the mechanism's own feature
+   map, from the registered design.
+2. Score gold and the best distractor on held-out episodes **through the actual
+   feature map**.
+3. Assert gold beats the best distractor on a majority of episodes.
+
+\[
+\boxed{
+\text{analytically ideal weights}
+\;\rightarrow\;
+\text{actual feature map}
+\;\rightarrow\;
+\text{gold separation}
+}
+\]
+
+The probe must be shown to **fail** on any prior defective map, or it guards
+nothing. It is a negative control, not a formality.
+
+### Why this is stronger than a unit test
+
+This changes the **admissibility condition** for interpreting an experiment, not
+merely the test suite. A result measured without the gate passing is
+**INADMISSIBLE**, not merely weak. It cannot be cited as evidence in either
+direction — neither for nor against the hypothesis — because the mechanism may
+have been structurally incapable of the claim under test.
+
+This matters most for negative results. A failure of acquisition is only
+interpretable once representability is established; otherwise the experiment may
+be measuring an impossible learning problem and recording it as a finding about
+the substrate.
+
+### Scope
+
+Applies to any experiment whose claim depends on a learned mechanism expressing
+a target relation: routing, retrieval, structural selection, verification,
+repair, and state update. Does not apply to arms that read the relation by
+construction, nor to environment-level invariants, which are properties of the
+generator.
+
+### v0.4 — 2026-09-25
+
+Added the mechanism representability gate (§34) as an admissibility condition,
+following its discovery as the cause of the invalid Stage 3b negative result
+(`dd8f63c`, retracted by `STAGE_3B_AMENDMENT_3.md` at `f989430`).
+
+Existing experiment records remain governed by their original protocol version
+and are not retroactively rewritten.
