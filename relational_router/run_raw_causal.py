@@ -15,7 +15,7 @@ from pathlib import Path
 import torch
 
 from .attention_raw import train_attention
-from .raw_causal import CausalRoleIndexer, generate, train_model, tokenize
+from .raw_causal import ALIASES, CausalRoleIndexer, generate, train_model, tokenize
 from .symbolic_raw import SymbolicRawIndex
 
 
@@ -116,8 +116,7 @@ def run(*, seeds=(21,22,23), lengths=(6,32,128), trials=32,
             test_cases = [generate(40_000_000 + seed * 1_000_000 + n * 1000 + i,
                                    n_facts=n, split="test") for i in range(trials)]
             if any((x.fact_alias, x.question_alias) not in
-                   {(aliases[2], aliases[3]) for aliases in
-                    __import__("relational_router.raw_causal", fromlist=["ALIASES"]).ALIASES.values()}
+                   {(aliases[2], aliases[3]) for aliases in ALIASES.values()}
                    for x in test_cases):
                 raise AssertionError("TEST alias split was violated")
             arms = {
@@ -137,8 +136,21 @@ def run(*, seeds=(21,22,23), lengths=(6,32,128), trials=32,
             generate(91_000_000 + seed*1_000+i, 16, split="test", new_entity=True)
             for i in range(trials)
         ]
+        unknown = [
+            x.text[:-(len(x.question_alias) + 2)] + " unknownverb ?"
+            for x in renamed
+        ]
+        unknown_results = {
+            "learned_false_positive_rate": sum(router.route(t)["token_index"] is not None
+                                               for t in unknown)/len(unknown),
+            "symbolic_false_positive_rate": sum(symbolic.route(t)["token_index"] is not None
+                                                for t in unknown)/len(unknown),
+            "attention_forced_answer_rate": sum(baseline.route(t)["token_index"] is not None
+                                                for t in unknown)/len(unknown),
+        }
         report.setdefault("challenge", []).append({
             "seed": seed,
+            "unknown_relation": unknown_results,
             "late_conflicting_update": {
                 "learned": evaluate_arm(router, challenges),
                 "symbolic": evaluate_arm(symbolic, challenges),
