@@ -1,0 +1,33 @@
+name: LRR-002A Union-Find Control
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "relational_router/symbolic_control.py"
+      - "relational_router/test_symbolic_control.py"
+      - ".github/workflows/lrr-002a-symbolic.yml"
+
+jobs:
+  control:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install CPU dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install --index-url https://download.pytorch.org/whl/cpu torch
+          pip install "pytest>=8,<9" numpy
+      - name: Run symbolic control invariants
+        run: python -m pytest -q relational_router/test_symbolic_control.py
+      - name: Run complete post-result control
+        run: python -m relational_router.symbolic_control --output /tmp/lrr-002a.json
+      - name: Store diagnostic control results
+        uses: actions/upload-artifact@v4
+        with:
+          name: lrr-002a-symbolic-control
+          path: /tmp/lrr-002a.json
