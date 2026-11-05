@@ -1,0 +1,49 @@
+name: LRR-002 Outcome-Learned Relation Codes
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "relational_router/outcome_*.py"
+      - "relational_router/test_outcome_coder.py"
+      - "relational_router/EXPERIMENT_LRR002.md"
+      - ".github/workflows/lrr-002.yml"
+  pull_request:
+    paths:
+      - "relational_router/outcome_*.py"
+      - "relational_router/test_outcome_coder.py"
+      - "relational_router/EXPERIMENT_LRR002.md"
+      - ".github/workflows/lrr-002.yml"
+
+jobs:
+  pair-credit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install CPU-only testing dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install --index-url https://download.pytorch.org/whl/cpu torch
+          pip install "pytest>=8,<9" numpy
+      - name: Compile
+        run: python -m compileall -q relational_router
+      - name: Test pair supervision and causal retrieval
+        run: python -m pytest -q relational_router/test_router.py relational_router/test_outcome_coder.py
+      - name: Confirmatory paired-outcome experiment
+        run: |
+          python -m relational_router.outcome_benchmark \
+            --seeds 101,102,103,104,105,106 \
+            --lengths 8,64,256,1024 --trials 32 --steps 800 \
+            --codes 6 --balance-weight 0.5 \
+            --output /tmp/lrr-002.json
+      - name: Upload unfiltered results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lrr-002-confirmatory-all-seeds
+          path: /tmp/lrr-002.json
+          if-no-files-found: warn
