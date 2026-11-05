@@ -1,0 +1,42 @@
+name: LRR-003 Raw Causal Addressing
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/lrr-003.yml"
+
+jobs:
+  raw-causal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install CPU-only research dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install --index-url https://download.pytorch.org/whl/cpu torch
+          pip install "pytest>=8,<9" numpy
+      - name: Syntax and test gates
+        run: |
+          python -m compileall -q relational_router
+          python -m pytest -q relational_router/test_raw_causal.py
+      - name: Confirmatory train/test matrix, all seeds and ablations
+        run: |
+          python -m relational_router.run_raw_causal \
+            --seeds 21,22,23 --lengths 6,32,128 \
+            --trials 32 --steps 700 --batch-size 48 \
+            --output /tmp/lrr003-results.json \
+            --checkpoint-dir /tmp/lrr003-checkpoints
+      - name: Retain complete results and both model checkpoints
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lrr-003-confirmatory-and-checkpoints
+          path: |
+            /tmp/lrr003-results.json
+            /tmp/lrr003-checkpoints/*.pt
+          if-no-files-found: warn
