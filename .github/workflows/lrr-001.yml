@@ -1,0 +1,43 @@
+name: LRR-001 Causal Relational Token Index
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "relational_router/**"
+      - ".github/workflows/lrr-001.yml"
+  pull_request:
+    paths:
+      - "relational_router/**"
+      - ".github/workflows/lrr-001.yml"
+
+jobs:
+  lrr-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install minimal test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install --index-url https://download.pytorch.org/whl/cpu torch
+          pip install "pytest>=8,<9"
+      - name: Compile source
+        run: python -m compileall -q relational_router
+      - name: Run causal and anti-leakage tests
+        run: python -m pytest -q relational_router/test_router.py
+      - name: Run controlled scaling benchmark
+        run: |
+          python -m relational_router.benchmark --lengths 8,64,256,1024 \
+            --trials 64 --seed 17 --steps 120 --k 1 \
+            --output /tmp/lrr-001.json
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lrr-001-structured-results
+          path: /tmp/lrr-001.json
+          if-no-files-found: warn
