@@ -4,7 +4,7 @@ Uses the very same training documents and *answer strings* as the neural
 model. It receives a grammar-aware clause parser, but no family-ID labels.
 """
 from __future__ import annotations
-from collections import defaultdict
+import random
 
 from .raw_causal import tokenize, generate
 
@@ -66,8 +66,7 @@ class SymbolicRawIndex:
             for i in range(batch_size):
                 example = generate(
                     seed * 10_000_000 + step * 1_000 + i,
-                    n_facts=5 + (0 if False else __import__("random").Random(
-                        seed + step * 1_000 + i).randint(0, 3)),
+                    n_facts=random.Random(seed + step * 1_000 + i).randint(5, 8),
                     split="train")
                 self.observe_training(example.text, example.answer)
 
