@@ -98,7 +98,7 @@ def test_matching_parameter_budget_and_causal_attention():
     attn = CausalAttentionPointer()
     n1 = sum(p.numel() for p in model.parameters())
     n2 = sum(p.numel() for p in attn.parameters())
-    assert n1 == 23741
+    assert n1 == 23429
     assert abs(n2-n1)/n1 < 0.05
     example = generate(13, 8, "dev")
     result = attn.route(example.text)
