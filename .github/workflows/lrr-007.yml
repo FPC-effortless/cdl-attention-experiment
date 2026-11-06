@@ -1,0 +1,51 @@
+name: LRR-007 Dual Relational Credit
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/lrr-007.yml"
+      - "relational_router/EXPERIMENT_LRR007.md"
+      - "relational_router/lrr007_dual_credit.py"
+      - "relational_router/run_lrr007.py"
+      - "relational_router/test_lrr007.py"
+
+permissions:
+  contents: read
+
+jobs:
+  three-arm-five-seed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install bounded CPU-only test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch
+          python -m pip install 'pytest>=8,<9' numpy
+      - name: Syntax, split integrity and objective-gradient tests
+        run: |
+          python -m compileall -q relational_router
+          python -m pytest -q relational_router/test_lrr007.py
+      - name: Execute frozen experiment without cherry-picked seeds
+        run: |
+          python -m relational_router.run_lrr007 \
+            --seeds 51,52,53,54,55 \
+            --lengths 7,32,128 \
+            --steps 500 --triples 16 \
+            --trials 64 \
+            --output /tmp/lrr007-results.json \
+            --checkpoints /tmp/lrr007-checkpoints
+      - name: Preserve raw results and all fifteen checkpoints
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lrr-007-three-arm-five-seed-frozen
+          path: |
+            /tmp/lrr007-results.json
+            /tmp/lrr007-checkpoints/*.pt
+          if-no-files-found: warn
