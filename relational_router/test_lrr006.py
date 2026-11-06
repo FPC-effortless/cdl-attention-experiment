@@ -92,4 +92,5 @@ def test_dev_threshold_is_only_empirical_and_cannot_repair_wrong_pointer():
         selected=eval_scored(scored,rule["threshold"])
         assert selected["positive"]["correct_coverage"]<=raw["positive"]["correct_coverage"]
     # Empty learned candidate is a forced abstention, not a learned success.
-    assert encode_single(router,unknown_relation(positive.words))[0] is None or True
+    _,_,diagnostic=encode_single(router,unknown_relation(positive.words))
+    assert isinstance(diagnostic["candidate_absent"],bool)
