@@ -1,0 +1,26 @@
+name: LRR-005 Delayed Chunked Causal Parity Gate
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/lrr-005-cache.yml"
+      - "relational_router/lrr005_cache.py"
+      - "relational_router/test_lrr005_cache.py"
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install CPU-only torch and pytest
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch
+          python -m pip install 'pytest>=8,<9'
+      - name: Test chunk consistency and query immutability
+        run: |
+          python -m compileall -q relational_router
+          python -m pytest -q relational_router/test_lrr005_cache.py

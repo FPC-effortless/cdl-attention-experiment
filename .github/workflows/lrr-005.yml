@@ -1,0 +1,44 @@
+name: LRR-005 Causal Role Register Confirmatory
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/lrr-005.yml"
+      - "relational_router/lrr005_register.py"
+      - "relational_router/run_lrr005.py"
+      - "relational_router/test_lrr005.py"
+      - "relational_router/EXPERIMENT_LRR005.md"
+jobs:
+  controlled-experiment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: CPU-only PyTorch and testing dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch
+          python -m pip install 'pytest>=8,<9' numpy
+      - name: Compile and anti-leakage/causality tests
+        run: |
+          python -m compileall -q relational_router
+          python -m pytest -q relational_router/test_lrr005.py
+      - name: Run immutable 5-seed experimental matrix
+        run: |
+          python -m relational_router.run_lrr005 \
+            --seeds 41,42,43,44,45 --lengths 7,32,128 \
+            --trials 64 --steps 500 \
+            --output /tmp/lrr005-results.json \
+            --checkpoints /tmp/lrr005-weights
+      - name: Upload all results, including failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lrr-005-five-seed-register-credit
+          path: |
+            /tmp/lrr005-results.json
+            /tmp/lrr005-weights/*.pt
+          if-no-files-found: warn
