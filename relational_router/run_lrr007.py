@@ -192,10 +192,8 @@ def run(*, seeds=(51,52,53,54,55), facts=(7,32,128),
                            Path(checkpoint_dir)/f"lrr007_{arm}_seed{seed}.pt")
             for n in facts:
                 for layout in ("regular","shift","novel_fillers"):
-                    result=evaluate(model,symbolic,seed=seed,n=n,
-                                    facts=n,layout=layout,trials=trials) if False else evaluate(
-                                        model,symbolic,seed=seed,
-                                        facts=n,layout=layout,trials=trials)
+                    result=evaluate(model,symbolic,seed=seed,
+                                    facts=n,layout=layout,trials=trials)
                     report["results"].append({
                         "arm":arm,"seed":seed,"facts":n,
                         "layout":layout,"outcomes":result
