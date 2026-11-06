@@ -35,7 +35,8 @@ def test_pair_splits_and_counterfactual_negatives_are_explicit(split,pair):
     for seed in range(20):
         e=make_example(4_000_000+seed,7,split=split)
         words=FAMILIES[e.family]
-        assert (words.index(e.fact_alias),words.index(e.question_alias))==pair
+        gold_fact=next(fact for fact in e.facts if fact[-1]==e.answer)
+        assert (words.index(gold_fact[2]),words.index(e.question_alias))==pair
         neg=known_absent(e.words,e.answer,e.subject)
         assert neg[e.answer]==e.words[e.answer]
         assert neg[e.answer-2] != e.subject
@@ -71,8 +72,9 @@ def test_hard_inference_pointer_independent_of_energy_and_no_future():
     if chosen is not None:
         assert 0<=chosen<len(case.words)-1
         head=EnergySelector(40)
-        a=float(head(features.unsqueeze(0))[0])
-        b=float(head(features.unsqueeze(0))[0])
+        with torch.no_grad():
+            a=float(head(features.unsqueeze(0))[0])
+            b=float(head(features.unsqueeze(0))[0])
         assert a==b
         assert chosen==router.route(case.words)[0]
 
