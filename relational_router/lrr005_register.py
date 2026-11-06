@@ -195,8 +195,8 @@ class CausalRoleRegister(nn.Module):
         ce = F.cross_entropy(scores, targets)
         regularizer = .018 * (g * valid[:, :, None]).mean()
         pos = g[rows, answer.clamp_min(0), 2].clamp_min(1e-9)
-        pos_penalty = (-torch.log(pos) * (answer >= 0).float()).sum() / max(1, int((answer >= 0).sum()))
-        loss = ce + regularizer + .06 * F.softplus(pos_penalty)
+        pos_penalty = (F.softplus(-torch.log(pos)) * (answer >= 0).float()).sum() / max(1, int((answer >= 0).sum()))
+        loss = ce + regularizer + .06 * pos_penalty
         local = torch.tensor(0., device=x.device)
         if credit and pairs:
             pair_idx = torch.tensor(pairs, dtype=torch.long)
