@@ -1,0 +1,19 @@
+{
+  "experiment": "LRR-010",
+  "protocol_commit": "04ed88d4f7635f576ceeec9dcb84ee9fd79eac3f",
+  "selected_lambda": 0.1,
+  "selection_rule": "Among nonzero lambdas: max qualified DEV seeds, min semantic-collapse DEV seeds, max unfamiliar DEV recall, max regular DEV recall, min lambda.",
+  "pilot_model_seeds": [10901, 10902, 10903],
+  "pilot_bank_seeds": [20901, 20902, 20903],
+  "updates_per_fit": 1000,
+  "pilot_fits": 12,
+  "test_evaluations": 0,
+  "selected_utc": "2026-11-06T05:36:07.991140+00:00",
+  "options": [
+    {"lambda": 0.0, "qualified": 2, "collapsed": 1, "mean_unfamiliar_dev": 0.9114583333333334, "mean_regular_dev": 0.9114583333333334},
+    {"lambda": 0.02, "qualified": 1, "collapsed": 2, "mean_unfamiliar_dev": 0.7317708333333334, "mean_regular_dev": 0.734375},
+    {"lambda": 0.1, "qualified": 2, "collapsed": 0, "mean_unfamiliar_dev": 0.8776041666666666, "mean_regular_dev": 0.875},
+    {"lambda": 0.3, "qualified": 0, "collapsed": 0, "mean_unfamiliar_dev": 0.8072916666666666, "mean_regular_dev": 0.7890625}
+  ],
+  "interpretation": "DEV pilot selection only, no superiority claim; zero-lambda reference has highest mean DEV recall. Confirmation will retain all 20 new paired tuples and compare the locked nonzero coefficient against the zero-lambda baseline. No reset, EMA, temperature or architecture intervention is added."
+}
