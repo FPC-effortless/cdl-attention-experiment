@@ -203,8 +203,8 @@ def run(*, seeds=(41,42,43,44,45), lengths=(7,32,128),
             if checkpoint_dir:
                 torch.save(model.state_dict(),Path(checkpoint_dir)/f"lrr005_{arm}_{seed}.pt")
             for length in lengths:
-                outcome = evaluate_one(model,symbol,seed=seed+50_000,length=length,trials=trials) if False else evaluate_one(
-                    model,symbol,seed=seed+50_000,n=length,trials=trials)
+                outcome = evaluate_one(
+                    model, symbol, seed=seed + 50_000, n=length, trials=trials)
                 output["results"].append({"arm":arm,"seed":seed,"facts":length,"outcomes":outcome})
     primary = [x for x in output["results"] if x["facts"] == 32]
     def select(arm):
