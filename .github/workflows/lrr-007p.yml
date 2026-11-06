@@ -1,0 +1,53 @@
+name: LRR-007P Posthoc Filler Lexical Perturbations
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/lrr-007p.yml"
+      - "relational_router/lrr007_filler_probe.py"
+      - "relational_router/test_lrr007_filler_probe.py"
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  same-position:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install CPU-only dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch
+          python -m pip install 'pytest>=8,<9' numpy
+      - name: Verify independent hard-index execution parity
+        run: |
+          python -m compileall -q relational_router
+          python -m pytest -q relational_router/test_lrr007_filler_probe.py
+      - name: Load frozen scientific checkpoint artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: lrr-007-three-arm-five-seed-frozen
+          run-id: 42147749136
+          repository: FPC-effortless/cdl-attention-experiment
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: /tmp/lrr007-original
+      - name: Run position-preserving lexical counterfactuals
+        run: |
+          python -m relational_router.lrr007_filler_probe \
+            --checkpoints /tmp/lrr007-original/lrr007-checkpoints \
+            --original-results /tmp/lrr007-original/lrr007-results.json \
+            --output /tmp/lrr007p.json
+      - name: Preserve all post-result diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lrr-007p-lexical-invariance-diagnostics
+          path: /tmp/lrr007p.json
+          if-no-files-found: warn
