@@ -1,0 +1,43 @@
+# LRR-012 — separating conflicting stored records rather than adding agreement
+
+Woyengi Intelligence Labs, 2026-11-06. PROSPECTIVE protocol, committed before any new fit. Parent is draft PR #47, exact head 837d89ebcf1bbcdb487d195a47a0ce591669b9e0. Do not change any parent source or frozen result. Bounded local CPU execution, draft publication only: no merge, paid GPU or deployment.
+
+## Question and hypothesis
+LRR-011 achieved perfect hard query/correct-write code equality in its two added-loss arms, yet incompatible records shared the same key and overwrote each other. Test whether an explicit different-record separation loss targets this failure more effectively than merely strengthening the already-existing different-query separation. This is application of supervised contrastive repulsion, not invention of contrastive learning or a demonstrated language-model attention replacement. Related primary background: Khosla et al., Supervised Contrastive Learning, NeurIPS 2020/arXiv:2004.11362; neither paper code nor its experimental results are imported.
+
+## Model, supervision and controlled arms
+Unmodified 4,748-parameter InvariantRegister/CausalRoleRegister and original hard inference. Let q_a and q_n be relation registers before the final markers for two questions on IDENTICAL history/entity with different labeled latest-value positions. Let w_a and w_n be the pre-write relation registers at those existing gold answer positions. Define D(p,r)=-log(1-min(dot(p,r),1-1e-6)), averaged across the same 16 question triplets per update.
+
+A control: inherited interleaved two-sided L_base with no extra entropy, confidence or binding term.
+B query separation strength control: L_base +0.2 D(q_a,q_n). The base already contains coefficient0.2 on this query term; B raises its total coefficient to0.4.
+C record separation PRIMARY: L_base +0.2 D(w_a,w_n). The base query term remains0.2. This directly discourages the two labeled incompatible stored records from using the same relation code.
+
+Same number of supervised pairs and coefficient in B/C; magnitudes and gradients need not be equal. The correct-write indices are the ANSWER labels already available to the base loss. No canonical relation-family ID, new role label, value-only write mask, oracle address or learned reject gate enters forward or runtime. The generator does know which same-entity relations have different answers; that inherited semantic supervision privilege is explicit. Latest-record target consistency is validated so an outdated value or duplicate key is not mislabeled as an incompatible relation.
+
+No added positive alignment/confidence, no codebook reset/EMA, annealing, adaptive schedule, parameter change or extra training data. Coefficient0.2 fixed before all fits to match existing relational weight; NO pilot or TEST-driven tuning. Neither arm implies an algebraic guarantee of uniqueness at the learned optimum or under distribution shift. Hard inference avoids global query-to-history scoring; TRAIN still uses dense compatibility.
+
+## Matched execution and partitions
+20 fresh paired tuples: model seeds13001–13020, bank seeds23001–23020; 3 arms/tuple,60 confirmation fits. Each uses the SAME initialization, 500-bank batches, all labels and generator-filler perturbation tensors, interleaved clean/augmented event order and continuous AdamW trajectory settings (lr.004, clipping2). 1,000 updates/model,500 clean+500 augmented events,48,000 question-view exposures/model from4,000 unique histories/bank. Arm execution order rotates by tuple, one PyTorch thread/worker, up to3 workers. No weak-seed deletion, retry, extension or fit selection.
+
+Inherited LRR-008/009/010 TRAIN alias exclusions, TEST(1,3) and DEV(2,1) remain; all words appear in other permitted train contexts. This is replication on a known finite scaffold, not novel semantic families. Exact entity-surface copying,8 provided code slots, restricted grammar, existing answer-index labels, generator-known filler masks and shared UNK remain. Do not tune tokenizer or syntax in this experiment.
+
+DEV:128 regular and128 unfamiliar-in-vocabulary histories, plus128 independent semantic histories balanced4 families x4 aliases x8. Observe updates0/100/250/500/750/1000 without stopping or selecting; save model+AdamW at0/250/500/750/1000. No learned-model TEST until ALL60 fits finish. Preserve nonfinite/fatal runs as instrument failures without replacing them.
+
+TEST:64 fresh source histories/tuple at H=7,32,128, each with regular, familiar-permutation, unfamiliar-in-vocabulary PRIMARY, OOV fillers, and added familiar-filler positions. Shared source histories/transformations across arms. Seed formula610000000000+model_seed*1000000+H*1000+case is disjoint from TRAIN/DEV/prior TEST. At H32 log raw false reads on familiar entity/predicate with no supporting record and one unknown predicate. Validate absent support; these are descriptive safety populations, not an untrained abstention gate or LM per-position read estimate. Grammar-aware supplied-predicate-lexicon symbolic reference trained on the same answer labels.
+
+## Endpoints and diagnostic definitions
+Primary: ALL-20-tuple paired C−A exact-token retrieval at H32 unfamiliar-in-vocabulary fillers. Statistical unit=model/data-bank tuple, not histories/views or conditions. No cherry-picking successful runs.
+
+Secondary: B−A (extra query strength) and C−B (location of additional repulsion). Semantic collapse: inherited balanced DEV cross-true-family same-valid-hard-code rate>=10%. Missing keys separately. Severe starvation: effective hard codes<2 or largest share>=.90. Qualification>=90% regular DEV. Report collapse frequency, effective hard codes, family fragmentation, missing keys, same-record query/write agreement, distinct-record collisions, gold admission, non-value writes, exact wrong-address/overwrite/no-candidate counts and raw false reads. Conditional qualified/noncollapsed accuracy is post-treatment-selected/descriptive only.
+
+Additional prespecified mechanisms: soft agreement of the two labeled WRITE states, same history/entity distinct-record hard-code collision rate, query/write hard relation equality versus entity equality, TRAIN-like dense soft-pointer accuracy. At updates1/100/500/1000 log all-parameter norm/cosine of base vs query-negative and base vs record-negative gradients BEFORE the actual update. Diagnostics must not alter random streams, labels, optimizer counters or clipping. Report measured costs including auxiliary diagnostics, no model-efficiency claim.
+
+## Statistics and prospective decision
+50,000 paired tuple-bootstrap draws; exact two-sided sign-flip over2^20 sign assignments with paired exchangeability/symmetry limitation stated. Primary C−A, secondary B−A/C−B Holm adjustment. Report every tuple, wins/ties/losses and full effect distribution. Paired collapse discordances via exact McNemar; each arm's rate with Wilson95%. No optional stopping or test-guided coefficient changes.
+
+Adopt C at this setting only if: primary mean improvement>=3pp AND paired-bootstrap lower95% bound>0; no additional semantically collapsed runs relative to A; known-absent false reads deteriorate<=5pp; H32 OOV recall deteriorates<=5pp. Absolute 'three fewer collapses' is NOT used because the control may have fewer than three. A record-location-specific advantage additionally requires C−B>=3pp and adjusted secondary p<.05. If the control is already near ceiling, declare insufficient headroom/evidence rather than relax gates. A successful result remains a controlled retrieval-training result, not general language addressing.
+
+## Verification and evidence
+Commit protocol before fitting; freeze exact local source/hash manifest. Validate zero-weight all-parameter loss/gradient parity to inherited base, B's exact extra query term, C's correct pre-write positions and pair grouping across both views, analytical overlap penalty behavior, no false-negative target duplicates, original runtime parity and unchanged parameters. All new source bytes locked before fits; publishing during local execution allowed only byte-identical with recorded source hash.
+
+Preserve all60 models and optimizer trajectories/milestones, raw per-case TEST/DEV/negative/binding/gradient records, timings, initialization/input/noise/event identities and source pins. Separate same-investigator audit regenerates10,000 bank batches, recalculates every aggregate and primary statistic, validates checkpoints/step counters, replays original sequential runtime, and spot-recomputes gradient metrics. No external independent review, agent-head execution or independent optimizer replication claimed. No follow-on fitting after TEST within this protocol.
