@@ -1,0 +1,41 @@
+{
+  "source_archive_sha256": "a38d031f2b9a88ec9cbcbcf6956e0a520f828d346aa920e84f25f0fa721c210f",
+  "source_manifest_verified_files": 41,
+  "mapping": {
+    "relational_composition/fast_inference.py": "relational_composition/fast_inference.py",
+    "relational_composition/train_hierarchical.py": "relational_composition/train_hierarchical.py",
+    "relational_composition/math_spec.py": "relational_composition/math_spec.py",
+    "relational_composition/hierarchical_index.py": "relational_composition/hierarchical_index.py",
+    "relational_composition/program_runtime.py": "relational_composition/program_runtime.py",
+    "relational_composition/expressive_model.py": "relational_composition/expressive_model.py",
+    "relational_composition/design_selection.py": "relational_composition/design_selection.py",
+    "relational_composition/train_targeted.py": "relational_composition/train_targeted.py",
+    "relational_composition/generation.py": "relational_composition/generation.py",
+    "relational_composition/hierarchical_model.py": "relational_composition/hierarchical_model.py",
+    "tests/test_streaming.py": "tests/inference/test_streaming.py",
+    "tests/test_program_runtime.py": "tests/inference/test_program_runtime.py",
+    "tests/test_training.py": "tests/inference/test_training.py",
+    "tests/test_expressive_model.py": "tests/inference/test_expressive_model.py",
+    "tests/test_hierarchical_model.py": "tests/inference/test_hierarchical_model.py",
+    "tests/test_hierarchical_training.py": "tests/inference/test_hierarchical_training.py",
+    "tests/test_generation.py": "tests/inference/test_generation.py",
+    "tests/test_hierarchical_index.py": "tests/inference/test_hierarchical_index.py",
+    "tests/test_design_selection.py": "tests/inference/test_design_selection.py",
+    "tests/test_math_spec.py": "tests/inference/test_math_spec.py",
+    "lean/Relational/Programs.lean": "formal/relational/lean/Relational/Programs.lean",
+    "lean/Relational/Basic.lean": "formal/relational/lean/Relational/Basic.lean",
+    "lean/Relational/Paged.lean": "formal/relational/lean/Relational/Paged.lean",
+    "lakefile.lean": "formal/relational/lakefile.lean",
+    "lean-toolchain": "formal/relational/lean-toolchain",
+    "benchmark_inference_mode.py": "experiments/inference_v4/benchmark_inference_mode.py",
+    "benchmark_paired.py": "experiments/inference_v4/benchmark_paired.py",
+    "benchmark_v4.py": "experiments/inference_v4/benchmark_v4.py",
+    "stress_v4.py": "experiments/inference_v4/stress_v4.py"
+  },
+  "excluded_core": [
+    "relational_composition/model.py",
+    "relational_composition/index.py",
+    "relational_composition/__init__.py"
+  ],
+  "reason": "Preserve LRC-001/002 model and diagnostic interfaces."
+}

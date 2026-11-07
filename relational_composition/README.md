@@ -50,8 +50,8 @@ path. `memory="disabled"` and `memory="shuffled"` are inference controls. The
 shuffled control rotates retrieved identities within the earlier prefix, retaining
 the same gather count. At a one-record prefix this necessarily has no effect.
 
-This version prioritizes inspectable correctness. It has Python CPU indexes,
-host transfers, no optimized decoding cache, no natural corpus result, and no
+The original LRC-001 path prioritizes inspectable correctness. It has Python CPU indexes,
+host transfers, no incremental decoding cache, no natural corpus result, and no
 attention/SSM performance baseline. Appending records prevents destruction but
 does not guarantee the relevant occurrence falls inside the read cap.
 
@@ -70,3 +70,26 @@ python -m unittest discover -s relational_composition -t . -p 'test_*.py' -v
 `oracle_operands` is exclusively a capacity diagnostic: it already resolves the
 supporting relation chain and must never be reported as learned routing. The
 original LRC-001 source and result are preserved on `research/relational-composition-v01`.
+
+## V3/V4 inference integration
+
+The separate inference paths add cached evaluation of LRC-001 (`StreamingInference`),
+dependent two-hop reads (`SerialMultiHopLM`), and historical page selection
+(`PagedMultiHopLM`). See the [integration review](../results/inference-v4-review/REVIEW.md)
+for provenance, fixes, fresh measurements, limitations, and publication status.
+V3 remains the faster reference path; V4 remains experimental. Neither is
+qualified by learned multi-hop accuracy. The 12:1 inference/training cost
+preference applies only after competence and expressivity requirements pass.
+
+```bash
+python -m pip install -r relational_composition/requirements-inference.txt
+python -m unittest discover -s tests/inference -p 'test_*.py' -v
+python -m experiments.inference_v4.benchmark_paired --repeats 8 --output /tmp/lrc-paired.json
+python -m experiments.inference_v4.stress_v4 --output /tmp/lrc-stress.json
+```
+
+The original supplied reports remain in `results/inference-v4-import/`; fresh
+integration measurements are in `results/inference-v4-review/`. Their runtime
+versions differ. Lean sources are under `formal/relational/`; kernel verification
+is pending. From that directory, a working pinned Lean installation should run
+`lake build Relational.Basic Relational.Paged Relational.Programs`.
