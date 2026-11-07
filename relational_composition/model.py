@@ -78,7 +78,8 @@ class RelationalLM(nn.Module):
         self.lm_head = nn.Linear(config.width, config.vocab)
 
     def forward(self, tokens, *, sample=False, replay=None, overrides=None, noise=None,
-                memory: Literal["normal", "disabled", "shuffled"] = "normal"):
+                memory: Literal["normal", "disabled", "shuffled"] = "normal",
+                oracle_operands=None):
         """Each row is ONE document, right padded. No cross-document state.
 
         Replay freezes discrete actions, not retrieved identities: interventions
@@ -86,6 +87,8 @@ class RelationalLM(nn.Module):
         are for training interventions/integrity tests, never evaluation routing.
         Shuffled control corrupts retrieved identity by a causal prefix rotation;
         it uses the same number of feature gathers and never reads future values.
+        oracle_operands is an explicitly privileged diagnostic, NEVER learned
+        routing evidence. Its shape is [layer, document, time, operand].
         """
         if tokens.ndim != 2 or tokens.shape[1] == 0:
             raise ValueError("expected a nonempty [document, time] token tensor")
@@ -96,10 +99,22 @@ class RelationalLM(nn.Module):
             raise ValueError("padding must be a suffix; use one document per row")
         c = self.config
         b, n = tokens.shape
+        if oracle_operands is not None:
+            if memory != "normal":
+                raise ValueError("oracle and memory corruption controls cannot be combined")
+            if oracle_operands.shape != (c.layers, b, n, 2) or oracle_operands.dtype != torch.long:
+                raise ValueError("invalid oracle operand shape or dtype")
+            if (oracle_operands < -1).any() or (oracle_operands >= torch.arange(n, device=tokens.device)[None, None, :, None]).any():
+                raise ValueError("oracle operands must be null or strictly earlier")
+            for layer_ids in oracle_operands:
+                rows = torch.arange(b, device=tokens.device)[:, None, None]
+                if ((layer_ids >= 0) & ~valid[rows, layer_ids.clamp_min(0)]).any():
+                    raise ValueError("oracle cannot read padding")
         decisions, policies, reference_trace, operand_trace = {}, {}, [], []
         used_noise = {}
         metrics = dict(writes=0, reads=0, candidates=0, omitted=0, null_reads=0,
-                       reference_dereferences=0, operator_executions=0)
+                       reference_dereferences=0, operator_executions=0,
+                       oracle_operand_reads=0)
         overrides = overrides or {}
 
         def choose(layer, name, logits):
@@ -171,6 +186,9 @@ class RelationalLM(nn.Module):
                             operand_ids[row, t, k] = identity
                         else:
                             metrics["null_reads"] += 1
+            if oracle_operands is not None:
+                operand_ids = torch.where(valid.unsqueeze(-1), oracle_operands[ell], -1)
+                metrics["oracle_operand_reads"] += int((operand_ids >= 0).sum())
             left = dereference(h, operand_ids[:, :, 0])
             right = dereference(h, operand_ids[:, :, 1])
             transform = layer.relation(tr)
