@@ -13,11 +13,13 @@ from .model import language_loss
 
 
 def counterfactual_step(model, optimizer, x, y, *, seed, credit_weight=1.0,
-                        decision_key=None):
+                        decision_key=None, forward_kwargs=None, loss_mask=None):
     model.train()
     optimizer.zero_grad(set_to_none=True)
-    base = model(x, sample=True)
-    nll = language_loss(base, y)
+    forward_kwargs = forward_kwargs or {}
+    targets = y if loss_mask is None else torch.where(loss_mask, y, 0)
+    base = model(x, sample=True, **forward_kwargs)
+    nll = language_loss(base, targets)
     rng = random.Random(seed)
     keys = [k for k, logits in base.policies.items() if logits.shape[-1] > 1]
     policy_loss = nll.new_zeros(())
@@ -37,8 +39,8 @@ def counterfactual_step(model, optimizer, x, y, *, seed, credit_weight=1.0,
         changed = action_tensor.clone()
         changed[coord] = alternative
         with torch.no_grad():
-            counter = model(x, sample=True, noise=base.noise, overrides={key: changed})
-            alternative_nll = language_loss(counter, y)
+            counter = model(x, sample=True, noise=base.noise, overrides={key: changed}, **forward_kwargs)
+            alternative_nll = language_loss(counter, targets)
         advantage = (nll.detach() - alternative_nll).clamp(-1.0, 1.0)
         logp = logits.log_softmax(-1)
         # Better base loss => negative advantage => increase base log-probability.
