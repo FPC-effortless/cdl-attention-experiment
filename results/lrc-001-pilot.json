@@ -1,0 +1,6744 @@
+{
+  "status": "ENGINEERING_PILOT_NOT_CONFIRMATORY",
+  "source_sha256": {
+    "__init__.py": "1218e2ae53bfc7ac83343eb9b82c67c0cb894009dc2892dd18ce8a5408c4fcc3",
+    "data.py": "388cd9c21ed25b711835576ca17d38793f539bb411f21be9e81e84f88503c911",
+    "index.py": "5374011ec65bec72e5124712ac2996f1b2131126dfa1f5b689d6b9a25161caa7",
+    "model.py": "8a35dd7834928cfc2a56b879b5a45b58dd4623a3348c8a697c7cab7a0be399cd",
+    "run.py": "ac65bfa399431e94bead50f8a46eb9f9dba24a71670cf4f12179e088741c5e7e",
+    "test_composition.py": "09db238a72f8d42d1381928771ea43bba928b1bdce1f39d7afe7d19439358b45",
+    "train.py": "b25b97345fff8cd52ef5ab61653f20d424a37f122045f1f4d68e986c6746d163"
+  },
+  "torch": "2.15.0+cpu",
+  "python": "3.12.14",
+  "device": "cpu",
+  "threads": 1,
+  "settings": {
+    "output": "/workspace/scratch/10bf443e0dab/lrc-pilot-final",
+    "steps": 20,
+    "seeds": [
+      101,
+      102,
+      103
+    ],
+    "batch_size": 2,
+    "eval_examples": 8,
+    "width": 24,
+    "variants": [
+      "coupled",
+      "independent",
+      "no_reference"
+    ],
+    "resume": null
+  },
+  "results": [
+    {
+      "seed": 101,
+      "variant": "coupled",
+      "config": {
+        "vocab": 257,
+        "width": 24,
+        "layers": 2,
+        "relations": 4,
+        "addresses": 8,
+        "candidates": 2,
+        "local_kernel": 5,
+        "variant": "coupled"
+      },
+      "parameters": 33061,
+      "initial_dev": {
+        "nll": 5.691324710845947,
+        "answer_nll": 5.333256244659424,
+        "teacher_forced_answer_exact": 0.0,
+        "final_query_fact_end_hits": 0,
+        "examples": 8,
+        "metrics": {
+          "writes": 2508,
+          "reads": 5016,
+          "candidates": 5127,
+          "omitted": 14325,
+          "null_reads": 3232,
+          "reference_dereferences": 146,
+          "operator_executions": 2508
+        }
+      },
+      "dev": {
+        "iid": {
+          "nll": 3.51371169090271,
+          "answer_nll": 3.636556625366211,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 3658,
+            "omitted": 12836,
+            "null_reads": 3793,
+            "reference_dereferences": 69,
+            "operator_executions": 2508
+          }
+        },
+        "names": {
+          "nll": 3.617615222930908,
+          "answer_nll": 4.05751371383667,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2504,
+            "reads": 5008,
+            "candidates": 3684,
+            "omitted": 13248,
+            "null_reads": 3757,
+            "reference_dereferences": 63,
+            "operator_executions": 2504
+          }
+        },
+        "composition": {
+          "nll": 3.5076935291290283,
+          "answer_nll": 3.6136136054992676,
+          "teacher_forced_answer_exact": 0.125,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2512,
+            "reads": 5024,
+            "candidates": 3616,
+            "omitted": 12806,
+            "null_reads": 3805,
+            "reference_dereferences": 68,
+            "operator_executions": 2512
+          }
+        },
+        "paraphrase": {
+          "nll": 3.6416585445404053,
+          "answer_nll": 3.5595192909240723,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2652,
+            "reads": 5304,
+            "candidates": 4080,
+            "omitted": 14106,
+            "null_reads": 3938,
+            "reference_dereferences": 67,
+            "operator_executions": 2652
+          }
+        },
+        "updates": {
+          "nll": 3.5391416549682617,
+          "answer_nll": 3.5678787231445312,
+          "teacher_forced_answer_exact": 0.25,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2804,
+            "reads": 5608,
+            "candidates": 4260,
+            "omitted": 16945,
+            "null_reads": 4176,
+            "reference_dereferences": 93,
+            "operator_executions": 2804
+          }
+        },
+        "older": {
+          "nll": 3.6514720916748047,
+          "answer_nll": 3.644526481628418,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 3108,
+            "reads": 6216,
+            "candidates": 5093,
+            "omitted": 20661,
+            "null_reads": 4542,
+            "reference_dereferences": 98,
+            "operator_executions": 3108
+          }
+        }
+      },
+      "controls": {
+        "disabled": {
+          "nll": 3.504157304763794,
+          "answer_nll": 3.6305971145629883,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 3640,
+            "omitted": 14332,
+            "null_reads": 5016,
+            "reference_dereferences": 0,
+            "operator_executions": 2508
+          }
+        },
+        "shuffled": {
+          "nll": 3.5141441822052,
+          "answer_nll": 3.640078544616699,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 3681,
+            "omitted": 13061,
+            "null_reads": 3775,
+            "reference_dereferences": 77,
+            "operator_executions": 2508
+          }
+        }
+      },
+      "train_seconds_this_invocation": 0.43299136500013446,
+      "evaluation_seconds": 0.12212642200006485,
+      "training_forward_passes": 40,
+      "training_cost": {
+        "writes": 25152,
+        "reads": 50304,
+        "candidates": 69015,
+        "omitted": 54180,
+        "null_reads": 28034,
+        "reference_dereferences": 2578,
+        "operator_executions": 25152
+      },
+      "nonzero_intervention_effects": 12,
+      "checkpoint_sha256": "11e854114748ba5a8c915da5b18915f8fee9d14d938682277e75b2ca86ca5a06",
+      "trace": [
+        {
+          "nll": 5.7130961418151855,
+          "policy_loss": -0.0,
+          "gradient_norm": 1.2540143728256226,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3460,
+            "omitted": 2772,
+            "null_reads": 1322,
+            "reference_dereferences": 124,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "continuation"
+          ],
+          "coordinate": [
+            0,
+            19
+          ],
+          "chosen": 1,
+          "alternative": 3,
+          "alternative_nll": 5.7130961418151855
+        },
+        {
+          "nll": 5.556084156036377,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2422020435333252,
+          "cost": {
+            "writes": 1248,
+            "reads": 2496,
+            "candidates": 3462,
+            "omitted": 2594,
+            "null_reads": 1314,
+            "reference_dereferences": 144,
+            "operator_executions": 1248
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "continuation"
+          ],
+          "coordinate": [
+            0,
+            125
+          ],
+          "chosen": 2,
+          "alternative": 0,
+          "alternative_nll": 5.556084156036377
+        },
+        {
+          "nll": 5.4386677742004395,
+          "policy_loss": 0.00022602414537686855,
+          "gradient_norm": 1.2118796110153198,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3470,
+            "omitted": 2580,
+            "null_reads": 1406,
+            "reference_dereferences": 120,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0002593994140625,
+          "decision": [
+            0,
+            "rank"
+          ],
+          "coordinate": [
+            1,
+            60,
+            1
+          ],
+          "chosen": 1,
+          "alternative": 0,
+          "alternative_nll": 5.438408374786377
+        },
+        {
+          "nll": 5.291655540466309,
+          "policy_loss": -0.00018991323304362595,
+          "gradient_norm": 1.2202259302139282,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3614,
+            "omitted": 2642,
+            "null_reads": 1323,
+            "reference_dereferences": 140,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.00014925003051757812,
+          "decision": [
+            0,
+            "rank"
+          ],
+          "coordinate": [
+            0,
+            133,
+            1
+          ],
+          "chosen": 1,
+          "alternative": 2,
+          "alternative_nll": 5.291804790496826
+        },
+        {
+          "nll": 5.182806015014648,
+          "policy_loss": -9.128720557782799e-05,
+          "gradient_norm": 1.2129857540130615,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3516,
+            "omitted": 2720,
+            "null_reads": 1374,
+            "reference_dereferences": 134,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0003685951232910156,
+          "decision": [
+            1,
+            "rank"
+          ],
+          "coordinate": [
+            0,
+            107,
+            0
+          ],
+          "chosen": 1,
+          "alternative": 0,
+          "alternative_nll": 5.182437419891357
+        },
+        {
+          "nll": 5.0610480308532715,
+          "policy_loss": 0.0003082631155848503,
+          "gradient_norm": 1.2221052646636963,
+          "cost": {
+            "writes": 1248,
+            "reads": 2496,
+            "candidates": 3412,
+            "omitted": 2403,
+            "null_reads": 1420,
+            "reference_dereferences": 124,
+            "operator_executions": 1248
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0003094673156738281,
+          "decision": [
+            1,
+            "write_address"
+          ],
+          "coordinate": [
+            0,
+            74
+          ],
+          "chosen": 2,
+          "alternative": 1,
+          "alternative_nll": 5.060738563537598
+        },
+        {
+          "nll": 4.942594051361084,
+          "policy_loss": -7.309231023100438e-06,
+          "gradient_norm": 1.2128574848175049,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3363,
+            "omitted": 2797,
+            "null_reads": 1428,
+            "reference_dereferences": 114,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -1.0013580322265625e-05,
+          "decision": [
+            1,
+            "write_relation"
+          ],
+          "coordinate": [
+            1,
+            24
+          ],
+          "chosen": 2,
+          "alternative": 1,
+          "alternative_nll": 4.942604064941406
+        },
+        {
+          "nll": 4.786648273468018,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2146199941635132,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3333,
+            "omitted": 2572,
+            "null_reads": 1376,
+            "reference_dereferences": 126,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "query"
+          ],
+          "coordinate": [
+            1,
+            49,
+            1
+          ],
+          "chosen": 4,
+          "alternative": 3,
+          "alternative_nll": 4.786648273468018
+        },
+        {
+          "nll": 4.770514965057373,
+          "policy_loss": 0.0006366089219227433,
+          "gradient_norm": 1.2360740900039673,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3490,
+            "omitted": 2833,
+            "null_reads": 1482,
+            "reference_dereferences": 116,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.00047588348388671875,
+          "decision": [
+            1,
+            "query"
+          ],
+          "coordinate": [
+            0,
+            104,
+            0
+          ],
+          "chosen": 7,
+          "alternative": 4,
+          "alternative_nll": 4.77099084854126
+        },
+        {
+          "nll": 4.56895112991333,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2682076692581177,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3517,
+            "omitted": 2667,
+            "null_reads": 1358,
+            "reference_dereferences": 112,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            2
+          ],
+          "chosen": 3,
+          "alternative": 0,
+          "alternative_nll": 4.56895112991333
+        },
+        {
+          "nll": 4.517450332641602,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2576621770858765,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3516,
+            "omitted": 2736,
+            "null_reads": 1414,
+            "reference_dereferences": 118,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "continuation"
+          ],
+          "coordinate": [
+            1,
+            43
+          ],
+          "chosen": 0,
+          "alternative": 3,
+          "alternative_nll": 4.517450332641602
+        },
+        {
+          "nll": 4.365146636962891,
+          "policy_loss": -0.0002590427757240832,
+          "gradient_norm": 1.259876012802124,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3417,
+            "omitted": 2770,
+            "null_reads": 1414,
+            "reference_dereferences": 138,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.0003032684326171875,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            50
+          ],
+          "chosen": 2,
+          "alternative": 0,
+          "alternative_nll": 4.365449905395508
+        },
+        {
+          "nll": 4.272590160369873,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2734546661376953,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3430,
+            "omitted": 2702,
+            "null_reads": 1460,
+            "reference_dereferences": 130,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "query"
+          ],
+          "coordinate": [
+            1,
+            84,
+            0
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 4.272590160369873
+        },
+        {
+          "nll": 4.142507553100586,
+          "policy_loss": -0.0,
+          "gradient_norm": 1.2859121561050415,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3422,
+            "omitted": 2658,
+            "null_reads": 1404,
+            "reference_dereferences": 152,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "continuation"
+          ],
+          "coordinate": [
+            1,
+            42
+          ],
+          "chosen": 0,
+          "alternative": 3,
+          "alternative_nll": 4.142507553100586
+        },
+        {
+          "nll": 4.06760835647583,
+          "policy_loss": -0.0019332693191245198,
+          "gradient_norm": 1.3191322088241577,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3441,
+            "omitted": 2792,
+            "null_reads": 1397,
+            "reference_dereferences": 126,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.002140522003173828,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            90
+          ],
+          "chosen": 2,
+          "alternative": 3,
+          "alternative_nll": 4.069748878479004
+        },
+        {
+          "nll": 3.957784414291382,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2879317998886108,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3410,
+            "omitted": 2761,
+            "null_reads": 1438,
+            "reference_dereferences": 128,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            1,
+            108
+          ],
+          "chosen": 2,
+          "alternative": 1,
+          "alternative_nll": 3.957784414291382
+        },
+        {
+          "nll": 3.9198861122131348,
+          "policy_loss": -0.00013074801245238632,
+          "gradient_norm": 1.2988195419311523,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3436,
+            "omitted": 2784,
+            "null_reads": 1447,
+            "reference_dereferences": 136,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.0003077983856201172,
+          "decision": [
+            1,
+            "rank"
+          ],
+          "coordinate": [
+            0,
+            38,
+            1
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 3.920193910598755
+        },
+        {
+          "nll": 3.8185482025146484,
+          "policy_loss": 3.0879305995767936e-05,
+          "gradient_norm": 1.3125616312026978,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3368,
+            "omitted": 2704,
+            "null_reads": 1474,
+            "reference_dereferences": 112,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 9.703636169433594e-05,
+          "decision": [
+            1,
+            "write_address"
+          ],
+          "coordinate": [
+            1,
+            34
+          ],
+          "chosen": 6,
+          "alternative": 1,
+          "alternative_nll": 3.818451166152954
+        },
+        {
+          "nll": 3.6757631301879883,
+          "policy_loss": -4.1166091250488535e-05,
+          "gradient_norm": 1.3146471977233887,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3399,
+            "omitted": 2985,
+            "null_reads": 1430,
+            "reference_dereferences": 144,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -4.410743713378906e-05,
+          "decision": [
+            0,
+            "write_address"
+          ],
+          "coordinate": [
+            1,
+            68
+          ],
+          "chosen": 0,
+          "alternative": 3,
+          "alternative_nll": 3.675807237625122
+        },
+        {
+          "nll": 3.6182544231414795,
+          "policy_loss": 0.0005403991672210395,
+          "gradient_norm": 1.3325709104537964,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3539,
+            "omitted": 2708,
+            "null_reads": 1353,
+            "reference_dereferences": 140,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0001850128173828125,
+          "decision": [
+            1,
+            "write_address"
+          ],
+          "coordinate": [
+            1,
+            42
+          ],
+          "chosen": 4,
+          "alternative": 7,
+          "alternative_nll": 3.6180694103240967
+        }
+      ]
+    },
+    {
+      "seed": 101,
+      "variant": "independent",
+      "config": {
+        "vocab": 257,
+        "width": 24,
+        "layers": 2,
+        "relations": 4,
+        "addresses": 8,
+        "candidates": 2,
+        "local_kernel": 5,
+        "variant": "independent"
+      },
+      "parameters": 33061,
+      "initial_dev": {
+        "nll": 5.698617935180664,
+        "answer_nll": 5.339666843414307,
+        "teacher_forced_answer_exact": 0.0,
+        "final_query_fact_end_hits": 0,
+        "examples": 8,
+        "metrics": {
+          "writes": 2508,
+          "reads": 5016,
+          "candidates": 4818,
+          "omitted": 14388,
+          "null_reads": 3551,
+          "reference_dereferences": 126,
+          "operator_executions": 2508
+        }
+      },
+      "dev": {
+        "iid": {
+          "nll": 3.5138306617736816,
+          "answer_nll": 3.6225781440734863,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 3348,
+            "omitted": 14274,
+            "null_reads": 3875,
+            "reference_dereferences": 55,
+            "operator_executions": 2508
+          }
+        },
+        "names": {
+          "nll": 3.6180341243743896,
+          "answer_nll": 4.0557756423950195,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2504,
+            "reads": 5008,
+            "candidates": 3366,
+            "omitted": 13980,
+            "null_reads": 3824,
+            "reference_dereferences": 38,
+            "operator_executions": 2504
+          }
+        },
+        "composition": {
+          "nll": 3.5080676078796387,
+          "answer_nll": 3.6083855628967285,
+          "teacher_forced_answer_exact": 0.125,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2512,
+            "reads": 5024,
+            "candidates": 3340,
+            "omitted": 14621,
+            "null_reads": 3865,
+            "reference_dereferences": 43,
+            "operator_executions": 2512
+          }
+        },
+        "paraphrase": {
+          "nll": 3.654784679412842,
+          "answer_nll": 3.573586940765381,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2652,
+            "reads": 5304,
+            "candidates": 3530,
+            "omitted": 16003,
+            "null_reads": 4089,
+            "reference_dereferences": 48,
+            "operator_executions": 2652
+          }
+        },
+        "updates": {
+          "nll": 3.5411911010742188,
+          "answer_nll": 3.5758605003356934,
+          "teacher_forced_answer_exact": 0.25,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2804,
+            "reads": 5608,
+            "candidates": 3933,
+            "omitted": 19384,
+            "null_reads": 4247,
+            "reference_dereferences": 72,
+            "operator_executions": 2804
+          }
+        },
+        "older": {
+          "nll": 3.660256862640381,
+          "answer_nll": 3.6225781440734863,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 3108,
+            "reads": 6216,
+            "candidates": 4623,
+            "omitted": 24866,
+            "null_reads": 4598,
+            "reference_dereferences": 84,
+            "operator_executions": 3108
+          }
+        }
+      },
+      "controls": {
+        "disabled": {
+          "nll": 3.5172393321990967,
+          "answer_nll": 3.63193941116333,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 3344,
+            "omitted": 14293,
+            "null_reads": 5016,
+            "reference_dereferences": 0,
+            "operator_executions": 2508
+          }
+        },
+        "shuffled": {
+          "nll": 3.521265983581543,
+          "answer_nll": 3.6182990074157715,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 3382,
+            "omitted": 14463,
+            "null_reads": 3849,
+            "reference_dereferences": 56,
+            "operator_executions": 2508
+          }
+        }
+      },
+      "train_seconds_this_invocation": 0.2801360430000841,
+      "evaluation_seconds": 0.11657366000008551,
+      "training_forward_passes": 40,
+      "training_cost": {
+        "writes": 25152,
+        "reads": 50304,
+        "candidates": 68314,
+        "omitted": 56060,
+        "null_reads": 28682,
+        "reference_dereferences": 2589,
+        "operator_executions": 25152
+      },
+      "nonzero_intervention_effects": 14,
+      "checkpoint_sha256": "18dba4443aade93e3c55b0d98d9530be90e863fffc1f91842e3c8d3baa2cc981",
+      "trace": [
+        {
+          "nll": 5.715363502502441,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.259803295135498,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3380,
+            "omitted": 2794,
+            "null_reads": 1474,
+            "reference_dereferences": 114,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "query"
+          ],
+          "coordinate": [
+            0,
+            19,
+            1
+          ],
+          "chosen": 0,
+          "alternative": 5,
+          "alternative_nll": 5.715363502502441
+        },
+        {
+          "nll": 5.562441349029541,
+          "policy_loss": 8.478371455566958e-06,
+          "gradient_norm": 1.241136074066162,
+          "cost": {
+            "writes": 1248,
+            "reads": 2496,
+            "candidates": 3371,
+            "omitted": 2918,
+            "null_reads": 1488,
+            "reference_dereferences": 118,
+            "operator_executions": 1248
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -1.8596649169921875e-05,
+          "decision": [
+            1,
+            "query"
+          ],
+          "coordinate": [
+            0,
+            125,
+            0
+          ],
+          "chosen": 7,
+          "alternative": 0,
+          "alternative_nll": 5.562459945678711
+        },
+        {
+          "nll": 5.444749355316162,
+          "policy_loss": -0.0,
+          "gradient_norm": 1.2110331058502197,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3477,
+            "omitted": 2682,
+            "null_reads": 1422,
+            "reference_dereferences": 142,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "query"
+          ],
+          "coordinate": [
+            1,
+            60,
+            1
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 5.444749355316162
+        },
+        {
+          "nll": 5.295529842376709,
+          "policy_loss": 5.932326166657731e-05,
+          "gradient_norm": 1.2154572010040283,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3336,
+            "omitted": 2882,
+            "null_reads": 1458,
+            "reference_dereferences": 114,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.0001735687255859375,
+          "decision": [
+            0,
+            "query"
+          ],
+          "coordinate": [
+            0,
+            133,
+            1
+          ],
+          "chosen": 7,
+          "alternative": 2,
+          "alternative_nll": 5.295703411102295
+        },
+        {
+          "nll": 5.20087194442749,
+          "policy_loss": -1.2830659215978812e-05,
+          "gradient_norm": 1.2128733396530151,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3350,
+            "omitted": 2746,
+            "null_reads": 1478,
+            "reference_dereferences": 132,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 9.775161743164062e-05,
+          "decision": [
+            1,
+            "transform_relation"
+          ],
+          "coordinate": [
+            0,
+            107
+          ],
+          "chosen": 1,
+          "alternative": 0,
+          "alternative_nll": 5.200774192810059
+        },
+        {
+          "nll": 5.058341979980469,
+          "policy_loss": -0.00014139950508251786,
+          "gradient_norm": 1.218752384185791,
+          "cost": {
+            "writes": 1248,
+            "reads": 2496,
+            "candidates": 3544,
+            "omitted": 2695,
+            "null_reads": 1336,
+            "reference_dereferences": 166,
+            "operator_executions": 1248
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00023221969604492188,
+          "decision": [
+            1,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            74
+          ],
+          "chosen": 1,
+          "alternative": 0,
+          "alternative_nll": 5.058109760284424
+        },
+        {
+          "nll": 4.937206268310547,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2191916704177856,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3396,
+            "omitted": 2826,
+            "null_reads": 1368,
+            "reference_dereferences": 138,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "continuation"
+          ],
+          "coordinate": [
+            1,
+            24
+          ],
+          "chosen": 0,
+          "alternative": 2,
+          "alternative_nll": 4.937206268310547
+        },
+        {
+          "nll": 4.788968563079834,
+          "policy_loss": -0.0003228262939956039,
+          "gradient_norm": 1.2126668691635132,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3410,
+            "omitted": 2740,
+            "null_reads": 1452,
+            "reference_dereferences": 120,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.0005078315734863281,
+          "decision": [
+            0,
+            "transform_relation"
+          ],
+          "coordinate": [
+            1,
+            49
+          ],
+          "chosen": 3,
+          "alternative": 1,
+          "alternative_nll": 4.78947639465332
+        },
+        {
+          "nll": 4.781390190124512,
+          "policy_loss": 2.9043956601526588e-05,
+          "gradient_norm": 1.2422473430633545,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3327,
+            "omitted": 2690,
+            "null_reads": 1415,
+            "reference_dereferences": 136,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 7.963180541992188e-05,
+          "decision": [
+            1,
+            "read_relation"
+          ],
+          "coordinate": [
+            0,
+            104
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 4.781310558319092
+        },
+        {
+          "nll": 4.575756072998047,
+          "policy_loss": -0.0,
+          "gradient_norm": 1.2617442607879639,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3380,
+            "omitted": 2904,
+            "null_reads": 1456,
+            "reference_dereferences": 120,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "continuation"
+          ],
+          "coordinate": [
+            0,
+            2
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 4.575756072998047
+        },
+        {
+          "nll": 4.515966892242432,
+          "policy_loss": -0.00031891182879917324,
+          "gradient_norm": 1.2590253353118896,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3444,
+            "omitted": 2854,
+            "null_reads": 1437,
+            "reference_dereferences": 130,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.0002951622009277344,
+          "decision": [
+            0,
+            "rank"
+          ],
+          "coordinate": [
+            1,
+            43,
+            0
+          ],
+          "chosen": 2,
+          "alternative": 0,
+          "alternative_nll": 4.516262054443359
+        },
+        {
+          "nll": 4.372134685516357,
+          "policy_loss": 0.00019393196271266788,
+          "gradient_norm": 1.2550792694091797,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3454,
+            "omitted": 2811,
+            "null_reads": 1445,
+            "reference_dereferences": 111,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0004467964172363281,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            50
+          ],
+          "chosen": 1,
+          "alternative": 0,
+          "alternative_nll": 4.371687889099121
+        },
+        {
+          "nll": 4.264042377471924,
+          "policy_loss": 1.961659472726751e-05,
+          "gradient_norm": 1.2732161283493042,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3362,
+            "omitted": 2580,
+            "null_reads": 1434,
+            "reference_dereferences": 140,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -2.47955322265625e-05,
+          "decision": [
+            0,
+            "transform_relation"
+          ],
+          "coordinate": [
+            1,
+            84
+          ],
+          "chosen": 1,
+          "alternative": 0,
+          "alternative_nll": 4.26406717300415
+        },
+        {
+          "nll": 4.124952793121338,
+          "policy_loss": -0.0,
+          "gradient_norm": 1.2923935651779175,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3363,
+            "omitted": 2978,
+            "null_reads": 1454,
+            "reference_dereferences": 130,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "query"
+          ],
+          "coordinate": [
+            1,
+            42,
+            1
+          ],
+          "chosen": 5,
+          "alternative": 2,
+          "alternative_nll": 4.124952793121338
+        },
+        {
+          "nll": 4.072603702545166,
+          "policy_loss": 0.00041036983020603657,
+          "gradient_norm": 1.3068994283676147,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3375,
+            "omitted": 2815,
+            "null_reads": 1432,
+            "reference_dereferences": 128,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00023031234741210938,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            90
+          ],
+          "chosen": 1,
+          "alternative": 3,
+          "alternative_nll": 4.072373390197754
+        },
+        {
+          "nll": 3.951388120651245,
+          "policy_loss": 2.6009040084318258e-05,
+          "gradient_norm": 1.2959632873535156,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3502,
+            "omitted": 2921,
+            "null_reads": 1404,
+            "reference_dereferences": 132,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00010466575622558594,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            1,
+            108
+          ],
+          "chosen": 3,
+          "alternative": 1,
+          "alternative_nll": 3.9512834548950195
+        },
+        {
+          "nll": 3.9075982570648193,
+          "policy_loss": 1.9462970158201642e-05,
+          "gradient_norm": 1.3082058429718018,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3422,
+            "omitted": 2828,
+            "null_reads": 1486,
+            "reference_dereferences": 120,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -7.271766662597656e-05,
+          "decision": [
+            1,
+            "transform_relation"
+          ],
+          "coordinate": [
+            0,
+            38
+          ],
+          "chosen": 1,
+          "alternative": 2,
+          "alternative_nll": 3.9076709747314453
+        },
+        {
+          "nll": 3.8092381954193115,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.311537265777588,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3343,
+            "omitted": 2903,
+            "null_reads": 1452,
+            "reference_dereferences": 130,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "write_relation"
+          ],
+          "coordinate": [
+            1,
+            34
+          ],
+          "chosen": 3,
+          "alternative": 0,
+          "alternative_nll": 3.8092381954193115
+        },
+        {
+          "nll": 3.6766231060028076,
+          "policy_loss": 0.0003053115215152502,
+          "gradient_norm": 1.3137905597686768,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3520,
+            "omitted": 2869,
+            "null_reads": 1402,
+            "reference_dereferences": 124,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0003256797790527344,
+          "decision": [
+            0,
+            "write_address"
+          ],
+          "coordinate": [
+            1,
+            68
+          ],
+          "chosen": 0,
+          "alternative": 3,
+          "alternative_nll": 3.676297426223755
+        },
+        {
+          "nll": 3.600825071334839,
+          "policy_loss": -0.00017088529421016574,
+          "gradient_norm": 1.3450778722763062,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3558,
+            "omitted": 2624,
+            "null_reads": 1389,
+            "reference_dereferences": 144,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.0002956390380859375,
+          "decision": [
+            1,
+            "write_relation"
+          ],
+          "coordinate": [
+            1,
+            42
+          ],
+          "chosen": 2,
+          "alternative": 3,
+          "alternative_nll": 3.601120710372925
+        }
+      ]
+    },
+    {
+      "seed": 101,
+      "variant": "no_reference",
+      "config": {
+        "vocab": 257,
+        "width": 24,
+        "layers": 2,
+        "relations": 4,
+        "addresses": 8,
+        "candidates": 2,
+        "local_kernel": 5,
+        "variant": "no_reference"
+      },
+      "parameters": 33061,
+      "initial_dev": {
+        "nll": 5.694952487945557,
+        "answer_nll": 5.333256244659424,
+        "teacher_forced_answer_exact": 0.0,
+        "final_query_fact_end_hits": 0,
+        "examples": 8,
+        "metrics": {
+          "writes": 2508,
+          "reads": 5016,
+          "candidates": 5166,
+          "omitted": 14379,
+          "null_reads": 3163,
+          "reference_dereferences": 0,
+          "operator_executions": 2508
+        }
+      },
+      "dev": {
+        "iid": {
+          "nll": 3.5130138397216797,
+          "answer_nll": 3.6373391151428223,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 3847,
+            "omitted": 13297,
+            "null_reads": 3737,
+            "reference_dereferences": 0,
+            "operator_executions": 2508
+          }
+        },
+        "names": {
+          "nll": 3.618779182434082,
+          "answer_nll": 4.060790538787842,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2504,
+            "reads": 5008,
+            "candidates": 3861,
+            "omitted": 13789,
+            "null_reads": 3709,
+            "reference_dereferences": 0,
+            "operator_executions": 2504
+          }
+        },
+        "composition": {
+          "nll": 3.507504940032959,
+          "answer_nll": 3.615176200866699,
+          "teacher_forced_answer_exact": 0.125,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2512,
+            "reads": 5024,
+            "candidates": 3799,
+            "omitted": 13135,
+            "null_reads": 3760,
+            "reference_dereferences": 0,
+            "operator_executions": 2512
+          }
+        },
+        "paraphrase": {
+          "nll": 3.6402058601379395,
+          "answer_nll": 3.559603452682495,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2652,
+            "reads": 5304,
+            "candidates": 4298,
+            "omitted": 14263,
+            "null_reads": 3872,
+            "reference_dereferences": 0,
+            "operator_executions": 2652
+          }
+        },
+        "updates": {
+          "nll": 3.5385682582855225,
+          "answer_nll": 3.569221258163452,
+          "teacher_forced_answer_exact": 0.25,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2804,
+            "reads": 5608,
+            "candidates": 4462,
+            "omitted": 17326,
+            "null_reads": 4120,
+            "reference_dereferences": 0,
+            "operator_executions": 2804
+          }
+        },
+        "older": {
+          "nll": 3.6509816646575928,
+          "answer_nll": 3.645657539367676,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 3108,
+            "reads": 6216,
+            "candidates": 5276,
+            "omitted": 21248,
+            "null_reads": 4484,
+            "reference_dereferences": 0,
+            "operator_executions": 3108
+          }
+        }
+      },
+      "controls": {
+        "disabled": {
+          "nll": 3.5035367012023926,
+          "answer_nll": 3.6327245235443115,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 3829,
+            "omitted": 14507,
+            "null_reads": 5016,
+            "reference_dereferences": 0,
+            "operator_executions": 2508
+          }
+        },
+        "shuffled": {
+          "nll": 3.511725664138794,
+          "answer_nll": 3.643148183822632,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 3874,
+            "omitted": 13603,
+            "null_reads": 3726,
+            "reference_dereferences": 0,
+            "operator_executions": 2508
+          }
+        }
+      },
+      "train_seconds_this_invocation": 0.2931767619998027,
+      "evaluation_seconds": 0.12064362999990408,
+      "training_forward_passes": 40,
+      "training_cost": {
+        "writes": 25152,
+        "reads": 50304,
+        "candidates": 69058,
+        "omitted": 54241,
+        "null_reads": 28067,
+        "reference_dereferences": 0,
+        "operator_executions": 25152
+      },
+      "nonzero_intervention_effects": 12,
+      "checkpoint_sha256": "55916615fc746f8d796688340e1f4fd37721153f8817a3f8f587f11080d5843c",
+      "trace": [
+        {
+          "nll": 5.713064670562744,
+          "policy_loss": -0.0,
+          "gradient_norm": 1.2545744180679321,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3464,
+            "omitted": 2770,
+            "null_reads": 1328,
+            "reference_dereferences": 0,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "continuation"
+          ],
+          "coordinate": [
+            0,
+            19
+          ],
+          "chosen": 1,
+          "alternative": 3,
+          "alternative_nll": 5.713064670562744
+        },
+        {
+          "nll": 5.556025981903076,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2420657873153687,
+          "cost": {
+            "writes": 1248,
+            "reads": 2496,
+            "candidates": 3468,
+            "omitted": 2590,
+            "null_reads": 1316,
+            "reference_dereferences": 0,
+            "operator_executions": 1248
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "continuation"
+          ],
+          "coordinate": [
+            0,
+            125
+          ],
+          "chosen": 2,
+          "alternative": 0,
+          "alternative_nll": 5.556025981903076
+        },
+        {
+          "nll": 5.439321041107178,
+          "policy_loss": 0.0002252152335131541,
+          "gradient_norm": 1.2121161222457886,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3460,
+            "omitted": 2628,
+            "null_reads": 1416,
+            "reference_dereferences": 0,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00025844573974609375,
+          "decision": [
+            0,
+            "rank"
+          ],
+          "coordinate": [
+            1,
+            60,
+            1
+          ],
+          "chosen": 1,
+          "alternative": 0,
+          "alternative_nll": 5.439062595367432
+        },
+        {
+          "nll": 5.291104793548584,
+          "policy_loss": -0.000190415172255598,
+          "gradient_norm": 1.2197787761688232,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3592,
+            "omitted": 2664,
+            "null_reads": 1333,
+            "reference_dereferences": 0,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.00014972686767578125,
+          "decision": [
+            0,
+            "rank"
+          ],
+          "coordinate": [
+            0,
+            133,
+            1
+          ],
+          "chosen": 1,
+          "alternative": 2,
+          "alternative_nll": 5.29125452041626
+        },
+        {
+          "nll": 5.184657096862793,
+          "policy_loss": -8.311531564686447e-05,
+          "gradient_norm": 1.2125366926193237,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3498,
+            "omitted": 2676,
+            "null_reads": 1388,
+            "reference_dereferences": 0,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0003342628479003906,
+          "decision": [
+            1,
+            "rank"
+          ],
+          "coordinate": [
+            0,
+            107,
+            0
+          ],
+          "chosen": 1,
+          "alternative": 0,
+          "alternative_nll": 5.184322834014893
+        },
+        {
+          "nll": 5.060273170471191,
+          "policy_loss": 0.000312580494210124,
+          "gradient_norm": 1.2214505672454834,
+          "cost": {
+            "writes": 1248,
+            "reads": 2496,
+            "candidates": 3426,
+            "omitted": 2435,
+            "null_reads": 1406,
+            "reference_dereferences": 0,
+            "operator_executions": 1248
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0003132820129394531,
+          "decision": [
+            1,
+            "write_address"
+          ],
+          "coordinate": [
+            0,
+            74
+          ],
+          "chosen": 2,
+          "alternative": 1,
+          "alternative_nll": 5.059959888458252
+        },
+        {
+          "nll": 4.942928314208984,
+          "policy_loss": -2.9940036256448366e-05,
+          "gradient_norm": 1.2129042148590088,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3373,
+            "omitted": 2748,
+            "null_reads": 1434,
+            "reference_dereferences": 0,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -4.100799560546875e-05,
+          "decision": [
+            1,
+            "write_relation"
+          ],
+          "coordinate": [
+            1,
+            24
+          ],
+          "chosen": 2,
+          "alternative": 1,
+          "alternative_nll": 4.94296932220459
+        },
+        {
+          "nll": 4.785440921783447,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2143982648849487,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3319,
+            "omitted": 2560,
+            "null_reads": 1364,
+            "reference_dereferences": 0,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "query"
+          ],
+          "coordinate": [
+            1,
+            49,
+            1
+          ],
+          "chosen": 4,
+          "alternative": 3,
+          "alternative_nll": 4.785440921783447
+        },
+        {
+          "nll": 4.769260883331299,
+          "policy_loss": 0.0006460426957346499,
+          "gradient_norm": 1.237263798713684,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3512,
+            "omitted": 2840,
+            "null_reads": 1478,
+            "reference_dereferences": 0,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.0004830360412597656,
+          "decision": [
+            1,
+            "query"
+          ],
+          "coordinate": [
+            0,
+            104,
+            0
+          ],
+          "chosen": 7,
+          "alternative": 4,
+          "alternative_nll": 4.769743919372559
+        },
+        {
+          "nll": 4.572240352630615,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.268837571144104,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3525,
+            "omitted": 2684,
+            "null_reads": 1364,
+            "reference_dereferences": 0,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            2
+          ],
+          "chosen": 3,
+          "alternative": 0,
+          "alternative_nll": 4.572240352630615
+        },
+        {
+          "nll": 4.517290115356445,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2575864791870117,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3516,
+            "omitted": 2696,
+            "null_reads": 1412,
+            "reference_dereferences": 0,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "continuation"
+          ],
+          "coordinate": [
+            1,
+            43
+          ],
+          "chosen": 0,
+          "alternative": 3,
+          "alternative_nll": 4.517290115356445
+        },
+        {
+          "nll": 4.363614082336426,
+          "policy_loss": -0.00025350903160870075,
+          "gradient_norm": 1.25919771194458,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3427,
+            "omitted": 2790,
+            "null_reads": 1416,
+            "reference_dereferences": 0,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.00029659271240234375,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            50
+          ],
+          "chosen": 2,
+          "alternative": 0,
+          "alternative_nll": 4.363910675048828
+        },
+        {
+          "nll": 4.273067474365234,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2736293077468872,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3452,
+            "omitted": 2700,
+            "null_reads": 1448,
+            "reference_dereferences": 0,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "query"
+          ],
+          "coordinate": [
+            1,
+            84,
+            0
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 4.273067474365234
+        },
+        {
+          "nll": 4.144298076629639,
+          "policy_loss": -0.0,
+          "gradient_norm": 1.2862499952316284,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3446,
+            "omitted": 2738,
+            "null_reads": 1390,
+            "reference_dereferences": 0,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "continuation"
+          ],
+          "coordinate": [
+            1,
+            42
+          ],
+          "chosen": 0,
+          "alternative": 3,
+          "alternative_nll": 4.144298076629639
+        },
+        {
+          "nll": 4.067040920257568,
+          "policy_loss": -0.0014270807150751352,
+          "gradient_norm": 1.3203821182250977,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3460,
+            "omitted": 2774,
+            "null_reads": 1378,
+            "reference_dereferences": 0,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.0015811920166015625,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            90
+          ],
+          "chosen": 2,
+          "alternative": 3,
+          "alternative_nll": 4.06862211227417
+        },
+        {
+          "nll": 3.957458972930908,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.288357138633728,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3404,
+            "omitted": 2731,
+            "null_reads": 1454,
+            "reference_dereferences": 0,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            1,
+            108
+          ],
+          "chosen": 2,
+          "alternative": 1,
+          "alternative_nll": 3.957458972930908
+        },
+        {
+          "nll": 3.919001817703247,
+          "policy_loss": -0.0001256961259059608,
+          "gradient_norm": 1.2986856698989868,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3424,
+            "omitted": 2828,
+            "null_reads": 1467,
+            "reference_dereferences": 0,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.00029659271240234375,
+          "decision": [
+            1,
+            "rank"
+          ],
+          "coordinate": [
+            0,
+            38,
+            1
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 3.9192984104156494
+        },
+        {
+          "nll": 3.818849563598633,
+          "policy_loss": 3.766078589251265e-05,
+          "gradient_norm": 1.312303066253662,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3378,
+            "omitted": 2725,
+            "null_reads": 1482,
+            "reference_dereferences": 0,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00011897087097167969,
+          "decision": [
+            1,
+            "write_address"
+          ],
+          "coordinate": [
+            1,
+            34
+          ],
+          "chosen": 6,
+          "alternative": 1,
+          "alternative_nll": 3.818730592727661
+        },
+        {
+          "nll": 3.6759238243103027,
+          "policy_loss": -4.03992053179536e-05,
+          "gradient_norm": 1.313986897468567,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3401,
+            "omitted": 2975,
+            "null_reads": 1432,
+            "reference_dereferences": 0,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -4.363059997558594e-05,
+          "decision": [
+            0,
+            "write_address"
+          ],
+          "coordinate": [
+            1,
+            68
+          ],
+          "chosen": 0,
+          "alternative": 3,
+          "alternative_nll": 3.6759674549102783
+        },
+        {
+          "nll": 3.6176648139953613,
+          "policy_loss": 0.0006884729955345392,
+          "gradient_norm": 1.332405686378479,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3513,
+            "omitted": 2689,
+            "null_reads": 1361,
+            "reference_dereferences": 0,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00023627281188964844,
+          "decision": [
+            1,
+            "write_address"
+          ],
+          "coordinate": [
+            1,
+            42
+          ],
+          "chosen": 4,
+          "alternative": 7,
+          "alternative_nll": 3.6174285411834717
+        }
+      ]
+    },
+    {
+      "seed": 102,
+      "variant": "coupled",
+      "config": {
+        "vocab": 257,
+        "width": 24,
+        "layers": 2,
+        "relations": 4,
+        "addresses": 8,
+        "candidates": 2,
+        "local_kernel": 5,
+        "variant": "coupled"
+      },
+      "parameters": 33061,
+      "initial_dev": {
+        "nll": 5.63834285736084,
+        "answer_nll": 5.694138050079346,
+        "teacher_forced_answer_exact": 0.0,
+        "final_query_fact_end_hits": 0,
+        "examples": 8,
+        "metrics": {
+          "writes": 2508,
+          "reads": 5016,
+          "candidates": 3241,
+          "omitted": 6384,
+          "null_reads": 3900,
+          "reference_dereferences": 22,
+          "operator_executions": 2508
+        }
+      },
+      "dev": {
+        "iid": {
+          "nll": 3.545546770095825,
+          "answer_nll": 3.8517751693725586,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 3019,
+            "omitted": 5600,
+            "null_reads": 3970,
+            "reference_dereferences": 29,
+            "operator_executions": 2508
+          }
+        },
+        "names": {
+          "nll": 3.6997482776641846,
+          "answer_nll": 4.450886249542236,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2504,
+            "reads": 5008,
+            "candidates": 2905,
+            "omitted": 6079,
+            "null_reads": 3986,
+            "reference_dereferences": 26,
+            "operator_executions": 2504
+          }
+        },
+        "composition": {
+          "nll": 3.544245719909668,
+          "answer_nll": 3.751129388809204,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2512,
+            "reads": 5024,
+            "candidates": 3218,
+            "omitted": 5547,
+            "null_reads": 3922,
+            "reference_dereferences": 22,
+            "operator_executions": 2512
+          }
+        },
+        "paraphrase": {
+          "nll": 3.713935375213623,
+          "answer_nll": 3.842862129211426,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2652,
+            "reads": 5304,
+            "candidates": 3133,
+            "omitted": 5087,
+            "null_reads": 4255,
+            "reference_dereferences": 42,
+            "operator_executions": 2652
+          }
+        },
+        "updates": {
+          "nll": 3.5700042247772217,
+          "answer_nll": 3.887403964996338,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2804,
+            "reads": 5608,
+            "candidates": 3516,
+            "omitted": 7060,
+            "null_reads": 4397,
+            "reference_dereferences": 42,
+            "operator_executions": 2804
+          }
+        },
+        "older": {
+          "nll": 3.7229185104370117,
+          "answer_nll": 3.85499906539917,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 3108,
+            "reads": 6216,
+            "candidates": 4072,
+            "omitted": 8769,
+            "null_reads": 4811,
+            "reference_dereferences": 52,
+            "operator_executions": 3108
+          }
+        }
+      },
+      "controls": {
+        "disabled": {
+          "nll": 3.548823118209839,
+          "answer_nll": 3.8531126976013184,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 3094,
+            "omitted": 5781,
+            "null_reads": 5016,
+            "reference_dereferences": 0,
+            "operator_executions": 2508
+          }
+        },
+        "shuffled": {
+          "nll": 3.5434067249298096,
+          "answer_nll": 3.8433244228363037,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 3026,
+            "omitted": 5699,
+            "null_reads": 3959,
+            "reference_dereferences": 40,
+            "operator_executions": 2508
+          }
+        }
+      },
+      "train_seconds_this_invocation": 0.34697452199998224,
+      "evaluation_seconds": 0.12905264899995927,
+      "training_forward_passes": 40,
+      "training_cost": {
+        "writes": 25184,
+        "reads": 50368,
+        "candidates": 68925,
+        "omitted": 53265,
+        "null_reads": 26426,
+        "reference_dereferences": 2358,
+        "operator_executions": 25184
+      },
+      "nonzero_intervention_effects": 13,
+      "checkpoint_sha256": "ba22f196ca478938ab0c4a79ae563c97653618db838c617e1910237f4f033b71",
+      "trace": [
+        {
+          "nll": 5.6423773765563965,
+          "policy_loss": -7.124691364879254e-06,
+          "gradient_norm": 1.2385327816009521,
+          "cost": {
+            "writes": 1248,
+            "reads": 2496,
+            "candidates": 3382,
+            "omitted": 2964,
+            "null_reads": 1298,
+            "reference_dereferences": 90,
+            "operator_executions": 1248
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 4.1484832763671875e-05,
+          "decision": [
+            1,
+            "relation"
+          ],
+          "coordinate": [
+            0,
+            33
+          ],
+          "chosen": 1,
+          "alternative": 3,
+          "alternative_nll": 5.642335891723633
+        },
+        {
+          "nll": 5.454647064208984,
+          "policy_loss": 0.00011244961206102744,
+          "gradient_norm": 1.213239312171936,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3402,
+            "omitted": 2649,
+            "null_reads": 1272,
+            "reference_dereferences": 124,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0005068778991699219,
+          "decision": [
+            1,
+            "relation"
+          ],
+          "coordinate": [
+            1,
+            62
+          ],
+          "chosen": 3,
+          "alternative": 0,
+          "alternative_nll": 5.4541401863098145
+        },
+        {
+          "nll": 5.369638442993164,
+          "policy_loss": 2.9316792279132642e-05,
+          "gradient_norm": 1.2439240217208862,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3406,
+            "omitted": 2640,
+            "null_reads": 1307,
+            "reference_dereferences": 135,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00045299530029296875,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            40
+          ],
+          "chosen": 1,
+          "alternative": 2,
+          "alternative_nll": 5.369185447692871
+        },
+        {
+          "nll": 5.229343414306641,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2125285863876343,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3324,
+            "omitted": 2838,
+            "null_reads": 1326,
+            "reference_dereferences": 108,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "continuation"
+          ],
+          "coordinate": [
+            1,
+            28
+          ],
+          "chosen": 2,
+          "alternative": 0,
+          "alternative_nll": 5.229343414306641
+        },
+        {
+          "nll": 5.100209712982178,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2229825258255005,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3534,
+            "omitted": 2686,
+            "null_reads": 1294,
+            "reference_dereferences": 114,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "continuation"
+          ],
+          "coordinate": [
+            0,
+            125
+          ],
+          "chosen": 1,
+          "alternative": 2,
+          "alternative_nll": 5.100209712982178
+        },
+        {
+          "nll": 4.981748580932617,
+          "policy_loss": 9.215849422616884e-05,
+          "gradient_norm": 1.2073153257369995,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3566,
+            "omitted": 2498,
+            "null_reads": 1232,
+            "reference_dereferences": 112,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00010919570922851562,
+          "decision": [
+            1,
+            "write_address"
+          ],
+          "coordinate": [
+            0,
+            70
+          ],
+          "chosen": 7,
+          "alternative": 6,
+          "alternative_nll": 4.981639385223389
+        },
+        {
+          "nll": 4.93287467956543,
+          "policy_loss": 6.082347226765705e-06,
+          "gradient_norm": 1.2243257761001587,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3496,
+            "omitted": 2459,
+            "null_reads": 1353,
+            "reference_dereferences": 124,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 3.7670135498046875e-05,
+          "decision": [
+            0,
+            "relation"
+          ],
+          "coordinate": [
+            0,
+            134
+          ],
+          "chosen": 3,
+          "alternative": 2,
+          "alternative_nll": 4.932837009429932
+        },
+        {
+          "nll": 4.717851638793945,
+          "policy_loss": -2.2830039597465657e-05,
+          "gradient_norm": 1.2590937614440918,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3478,
+            "omitted": 2628,
+            "null_reads": 1293,
+            "reference_dereferences": 126,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -1.2874603271484375e-05,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            1,
+            61
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 4.717864513397217
+        },
+        {
+          "nll": 4.633296966552734,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.250047206878662,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3456,
+            "omitted": 2622,
+            "null_reads": 1358,
+            "reference_dereferences": 126,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "query"
+          ],
+          "coordinate": [
+            1,
+            81,
+            1
+          ],
+          "chosen": 7,
+          "alternative": 4,
+          "alternative_nll": 4.633296966552734
+        },
+        {
+          "nll": 4.558008670806885,
+          "policy_loss": 0.0003495427663438022,
+          "gradient_norm": 1.2514851093292236,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3539,
+            "omitted": 2729,
+            "null_reads": 1297,
+            "reference_dereferences": 117,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.0011315345764160156,
+          "decision": [
+            0,
+            "write_address"
+          ],
+          "coordinate": [
+            0,
+            7
+          ],
+          "chosen": 3,
+          "alternative": 4,
+          "alternative_nll": 4.559140205383301
+        },
+        {
+          "nll": 4.455288410186768,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2483618259429932,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3370,
+            "omitted": 2544,
+            "null_reads": 1326,
+            "reference_dereferences": 102,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "continuation"
+          ],
+          "coordinate": [
+            1,
+            67
+          ],
+          "chosen": 0,
+          "alternative": 2,
+          "alternative_nll": 4.455288410186768
+        },
+        {
+          "nll": 4.3817315101623535,
+          "policy_loss": 0.00016419474559370428,
+          "gradient_norm": 1.2845245599746704,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3514,
+            "omitted": 2769,
+            "null_reads": 1335,
+            "reference_dereferences": 123,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00019788742065429688,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            60
+          ],
+          "chosen": 1,
+          "alternative": 0,
+          "alternative_nll": 4.381533622741699
+        },
+        {
+          "nll": 4.23833703994751,
+          "policy_loss": 0.00013359583681449294,
+          "gradient_norm": 1.3050118684768677,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3486,
+            "omitted": 2702,
+            "null_reads": 1302,
+            "reference_dereferences": 126,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00061798095703125,
+          "decision": [
+            1,
+            "write_address"
+          ],
+          "coordinate": [
+            0,
+            54
+          ],
+          "chosen": 7,
+          "alternative": 4,
+          "alternative_nll": 4.2377190589904785
+        },
+        {
+          "nll": 4.173181056976318,
+          "policy_loss": -0.0,
+          "gradient_norm": 1.3005661964416504,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3399,
+            "omitted": 2668,
+            "null_reads": 1334,
+            "reference_dereferences": 126,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "write_relation"
+          ],
+          "coordinate": [
+            1,
+            71
+          ],
+          "chosen": 2,
+          "alternative": 1,
+          "alternative_nll": 4.173181056976318
+        },
+        {
+          "nll": 4.110395908355713,
+          "policy_loss": -0.0,
+          "gradient_norm": 1.3209953308105469,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3420,
+            "omitted": 2646,
+            "null_reads": 1380,
+            "reference_dereferences": 108,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "rank"
+          ],
+          "coordinate": [
+            1,
+            9,
+            0
+          ],
+          "chosen": 0,
+          "alternative": 2,
+          "alternative_nll": 4.110395908355713
+        },
+        {
+          "nll": 3.978083372116089,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.33866286277771,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3248,
+            "omitted": 2656,
+            "null_reads": 1368,
+            "reference_dereferences": 132,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            88
+          ],
+          "chosen": 3,
+          "alternative": 1,
+          "alternative_nll": 3.978083372116089
+        },
+        {
+          "nll": 3.913309335708618,
+          "policy_loss": -2.4241315259132534e-05,
+          "gradient_norm": 1.3310507535934448,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3467,
+            "omitted": 2684,
+            "null_reads": 1334,
+            "reference_dereferences": 98,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -4.863739013671875e-05,
+          "decision": [
+            0,
+            "write_address"
+          ],
+          "coordinate": [
+            1,
+            12
+          ],
+          "chosen": 7,
+          "alternative": 4,
+          "alternative_nll": 3.913357973098755
+        },
+        {
+          "nll": 3.828258991241455,
+          "policy_loss": 4.812728730030358e-05,
+          "gradient_norm": 1.3445980548858643,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3448,
+            "omitted": 2537,
+            "null_reads": 1314,
+            "reference_dereferences": 131,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.00022864341735839844,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            123
+          ],
+          "chosen": 2,
+          "alternative": 3,
+          "alternative_nll": 3.8284876346588135
+        },
+        {
+          "nll": 3.7817022800445557,
+          "policy_loss": 5.5680418881820515e-05,
+          "gradient_norm": 1.337794303894043,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3556,
+            "omitted": 2824,
+            "null_reads": 1318,
+            "reference_dereferences": 112,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00010418891906738281,
+          "decision": [
+            1,
+            "rank"
+          ],
+          "coordinate": [
+            1,
+            108,
+            1
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 3.7815980911254883
+        },
+        {
+          "nll": 3.650665283203125,
+          "policy_loss": -4.209461985738017e-05,
+          "gradient_norm": 1.364235758781433,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3434,
+            "omitted": 2522,
+            "null_reads": 1385,
+            "reference_dereferences": 124,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0002079010009765625,
+          "decision": [
+            1,
+            "rank"
+          ],
+          "coordinate": [
+            0,
+            60,
+            1
+          ],
+          "chosen": 2,
+          "alternative": 1,
+          "alternative_nll": 3.6504573822021484
+        }
+      ]
+    },
+    {
+      "seed": 102,
+      "variant": "independent",
+      "config": {
+        "vocab": 257,
+        "width": 24,
+        "layers": 2,
+        "relations": 4,
+        "addresses": 8,
+        "candidates": 2,
+        "local_kernel": 5,
+        "variant": "independent"
+      },
+      "parameters": 33061,
+      "initial_dev": {
+        "nll": 5.637325763702393,
+        "answer_nll": 5.729486465454102,
+        "teacher_forced_answer_exact": 0.0,
+        "final_query_fact_end_hits": 0,
+        "examples": 8,
+        "metrics": {
+          "writes": 2508,
+          "reads": 5016,
+          "candidates": 2794,
+          "omitted": 3861,
+          "null_reads": 4056,
+          "reference_dereferences": 51,
+          "operator_executions": 2508
+        }
+      },
+      "dev": {
+        "iid": {
+          "nll": 3.54337215423584,
+          "answer_nll": 3.849930763244629,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 2977,
+            "omitted": 3873,
+            "null_reads": 3948,
+            "reference_dereferences": 20,
+            "operator_executions": 2508
+          }
+        },
+        "names": {
+          "nll": 3.699810266494751,
+          "answer_nll": 4.452066898345947,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2504,
+            "reads": 5008,
+            "candidates": 2815,
+            "omitted": 4162,
+            "null_reads": 4000,
+            "reference_dereferences": 12,
+            "operator_executions": 2504
+          }
+        },
+        "composition": {
+          "nll": 3.543203115463257,
+          "answer_nll": 3.7278835773468018,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2512,
+            "reads": 5024,
+            "candidates": 3034,
+            "omitted": 3937,
+            "null_reads": 3929,
+            "reference_dereferences": 11,
+            "operator_executions": 2512
+          }
+        },
+        "paraphrase": {
+          "nll": 3.704819679260254,
+          "answer_nll": 3.825939655303955,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2652,
+            "reads": 5304,
+            "candidates": 3146,
+            "omitted": 4371,
+            "null_reads": 4195,
+            "reference_dereferences": 20,
+            "operator_executions": 2652
+          }
+        },
+        "updates": {
+          "nll": 3.57000470161438,
+          "answer_nll": 3.905107259750366,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2804,
+            "reads": 5608,
+            "candidates": 3470,
+            "omitted": 5258,
+            "null_reads": 4384,
+            "reference_dereferences": 20,
+            "operator_executions": 2804
+          }
+        },
+        "older": {
+          "nll": 3.719712972640991,
+          "answer_nll": 3.851346731185913,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 3108,
+            "reads": 6216,
+            "candidates": 4104,
+            "omitted": 6873,
+            "null_reads": 4751,
+            "reference_dereferences": 26,
+            "operator_executions": 3108
+          }
+        }
+      },
+      "controls": {
+        "disabled": {
+          "nll": 3.5425469875335693,
+          "answer_nll": 3.821784496307373,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 2978,
+            "omitted": 4039,
+            "null_reads": 5016,
+            "reference_dereferences": 0,
+            "operator_executions": 2508
+          }
+        },
+        "shuffled": {
+          "nll": 3.5425095558166504,
+          "answer_nll": 3.8137104511260986,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 2953,
+            "omitted": 4013,
+            "null_reads": 3953,
+            "reference_dereferences": 47,
+            "operator_executions": 2508
+          }
+        }
+      },
+      "train_seconds_this_invocation": 0.3405882740000834,
+      "evaluation_seconds": 0.13266744199995628,
+      "training_forward_passes": 40,
+      "training_cost": {
+        "writes": 25184,
+        "reads": 50368,
+        "candidates": 68772,
+        "omitted": 53974,
+        "null_reads": 26671,
+        "reference_dereferences": 2275,
+        "operator_executions": 25184
+      },
+      "nonzero_intervention_effects": 19,
+      "checkpoint_sha256": "88ba9db90053e16f80aabc0a738226b338b48db77b17f03a417edd4276bbeb8b",
+      "trace": [
+        {
+          "nll": 5.640716552734375,
+          "policy_loss": -0.00032735985587351024,
+          "gradient_norm": 1.2331058979034424,
+          "cost": {
+            "writes": 1248,
+            "reads": 2496,
+            "candidates": 3524,
+            "omitted": 2634,
+            "null_reads": 1278,
+            "reference_dereferences": 116,
+            "operator_executions": 1248
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.000308990478515625,
+          "decision": [
+            1,
+            "write_address"
+          ],
+          "coordinate": [
+            0,
+            33
+          ],
+          "chosen": 6,
+          "alternative": 5,
+          "alternative_nll": 5.641025543212891
+        },
+        {
+          "nll": 5.454172611236572,
+          "policy_loss": 2.4356118956347927e-05,
+          "gradient_norm": 1.2196017503738403,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3324,
+            "omitted": 2714,
+            "null_reads": 1358,
+            "reference_dereferences": 116,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.0001811981201171875,
+          "decision": [
+            1,
+            "write_address"
+          ],
+          "coordinate": [
+            1,
+            62
+          ],
+          "chosen": 6,
+          "alternative": 1,
+          "alternative_nll": 5.4543538093566895
+        },
+        {
+          "nll": 5.3801469802856445,
+          "policy_loss": -8.961708226706833e-05,
+          "gradient_norm": 1.2448670864105225,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3333,
+            "omitted": 2785,
+            "null_reads": 1357,
+            "reference_dereferences": 136,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0002808570861816406,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            40
+          ],
+          "chosen": 3,
+          "alternative": 1,
+          "alternative_nll": 5.379866123199463
+        },
+        {
+          "nll": 5.221469879150391,
+          "policy_loss": 6.9082552727195434e-06,
+          "gradient_norm": 1.2158081531524658,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3536,
+            "omitted": 2782,
+            "null_reads": 1315,
+            "reference_dereferences": 110,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 6.628036499023438e-05,
+          "decision": [
+            1,
+            "rank"
+          ],
+          "coordinate": [
+            1,
+            28,
+            0
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 5.2214035987854
+        },
+        {
+          "nll": 5.090463161468506,
+          "policy_loss": 0.0005872179754078388,
+          "gradient_norm": 1.2268805503845215,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3483,
+            "omitted": 2840,
+            "null_reads": 1345,
+            "reference_dereferences": 123,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0003719329833984375,
+          "decision": [
+            0,
+            "rank"
+          ],
+          "coordinate": [
+            0,
+            125,
+            1
+          ],
+          "chosen": 2,
+          "alternative": 0,
+          "alternative_nll": 5.090091228485107
+        },
+        {
+          "nll": 4.978865623474121,
+          "policy_loss": 0.0004611553449649364,
+          "gradient_norm": 1.2143796682357788,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3434,
+            "omitted": 2788,
+            "null_reads": 1386,
+            "reference_dereferences": 96,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0003204345703125,
+          "decision": [
+            1,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            70
+          ],
+          "chosen": 0,
+          "alternative": 2,
+          "alternative_nll": 4.978545188903809
+        },
+        {
+          "nll": 4.9269232749938965,
+          "policy_loss": 7.730676588835195e-05,
+          "gradient_norm": 1.2255563735961914,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3539,
+            "omitted": 2669,
+            "null_reads": 1296,
+            "reference_dereferences": 110,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0002913475036621094,
+          "decision": [
+            0,
+            "read_relation"
+          ],
+          "coordinate": [
+            0,
+            134
+          ],
+          "chosen": 0,
+          "alternative": 3,
+          "alternative_nll": 4.926631927490234
+        },
+        {
+          "nll": 4.718177795410156,
+          "policy_loss": -0.0013348625507205725,
+          "gradient_norm": 1.2591441869735718,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3542,
+            "omitted": 2636,
+            "null_reads": 1298,
+            "reference_dereferences": 108,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.0007472038269042969,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            1,
+            61
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 4.7189249992370605
+        },
+        {
+          "nll": 4.6305317878723145,
+          "policy_loss": -5.768976916442625e-05,
+          "gradient_norm": 1.2530583143234253,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3442,
+            "omitted": 2742,
+            "null_reads": 1354,
+            "reference_dereferences": 100,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00021791458129882812,
+          "decision": [
+            0,
+            "transform_relation"
+          ],
+          "coordinate": [
+            1,
+            81
+          ],
+          "chosen": 2,
+          "alternative": 3,
+          "alternative_nll": 4.630313873291016
+        },
+        {
+          "nll": 4.544508457183838,
+          "policy_loss": 0.0002985085593536496,
+          "gradient_norm": 1.2560553550720215,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3411,
+            "omitted": 2720,
+            "null_reads": 1324,
+            "reference_dereferences": 131,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.00024890899658203125,
+          "decision": [
+            0,
+            "write_address"
+          ],
+          "coordinate": [
+            0,
+            7
+          ],
+          "chosen": 1,
+          "alternative": 4,
+          "alternative_nll": 4.54475736618042
+        },
+        {
+          "nll": 4.447701930999756,
+          "policy_loss": 6.222209049155936e-05,
+          "gradient_norm": 1.2572993040084839,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3362,
+            "omitted": 2408,
+            "null_reads": 1365,
+            "reference_dereferences": 122,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -7.390975952148438e-05,
+          "decision": [
+            0,
+            "rank"
+          ],
+          "coordinate": [
+            1,
+            67,
+            1
+          ],
+          "chosen": 2,
+          "alternative": 0,
+          "alternative_nll": 4.447775840759277
+        },
+        {
+          "nll": 4.375485897064209,
+          "policy_loss": -0.00015662197256460786,
+          "gradient_norm": 1.289291262626648,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3348,
+            "omitted": 2614,
+            "null_reads": 1366,
+            "reference_dereferences": 104,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00019073486328125,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            60
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 4.375295162200928
+        },
+        {
+          "nll": 4.238670825958252,
+          "policy_loss": 3.979881148552522e-05,
+          "gradient_norm": 1.3052585124969482,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3352,
+            "omitted": 2696,
+            "null_reads": 1359,
+            "reference_dereferences": 128,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00012826919555664062,
+          "decision": [
+            1,
+            "rank"
+          ],
+          "coordinate": [
+            1,
+            93,
+            0
+          ],
+          "chosen": 2,
+          "alternative": 0,
+          "alternative_nll": 4.238542556762695
+        },
+        {
+          "nll": 4.162236213684082,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.3005098104476929,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3402,
+            "omitted": 2814,
+            "null_reads": 1368,
+            "reference_dereferences": 111,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "continuation"
+          ],
+          "coordinate": [
+            1,
+            71
+          ],
+          "chosen": 3,
+          "alternative": 1,
+          "alternative_nll": 4.162236213684082
+        },
+        {
+          "nll": 4.0989580154418945,
+          "policy_loss": -4.4704262109007686e-05,
+          "gradient_norm": 1.3272329568862915,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3524,
+            "omitted": 2654,
+            "null_reads": 1258,
+            "reference_dereferences": 138,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -4.4345855712890625e-05,
+          "decision": [
+            1,
+            "transform_relation"
+          ],
+          "coordinate": [
+            1,
+            9
+          ],
+          "chosen": 3,
+          "alternative": 0,
+          "alternative_nll": 4.099002361297607
+        },
+        {
+          "nll": 3.965099573135376,
+          "policy_loss": 3.641207149485126e-05,
+          "gradient_norm": 1.350436806678772,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3488,
+            "omitted": 2496,
+            "null_reads": 1280,
+            "reference_dereferences": 104,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 6.151199340820312e-05,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            88
+          ],
+          "chosen": 3,
+          "alternative": 1,
+          "alternative_nll": 3.9650380611419678
+        },
+        {
+          "nll": 3.918466806411743,
+          "policy_loss": -0.00038144225254654884,
+          "gradient_norm": 1.336223840713501,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3420,
+            "omitted": 2819,
+            "null_reads": 1346,
+            "reference_dereferences": 100,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.00024056434631347656,
+          "decision": [
+            0,
+            "write_address"
+          ],
+          "coordinate": [
+            1,
+            12
+          ],
+          "chosen": 5,
+          "alternative": 4,
+          "alternative_nll": 3.9187073707580566
+        },
+        {
+          "nll": 3.8244035243988037,
+          "policy_loss": 6.101677718106657e-05,
+          "gradient_norm": 1.34108304977417,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3506,
+            "omitted": 2683,
+            "null_reads": 1322,
+            "reference_dereferences": 130,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.0002760887145996094,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            123
+          ],
+          "chosen": 2,
+          "alternative": 3,
+          "alternative_nll": 3.8246796131134033
+        },
+        {
+          "nll": 3.7756900787353516,
+          "policy_loss": 5.570816938416101e-05,
+          "gradient_norm": 1.3445528745651245,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3498,
+            "omitted": 2578,
+            "null_reads": 1328,
+            "reference_dereferences": 110,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -5.626678466796875e-05,
+          "decision": [
+            1,
+            "transform_relation"
+          ],
+          "coordinate": [
+            1,
+            108
+          ],
+          "chosen": 2,
+          "alternative": 1,
+          "alternative_nll": 3.7757463455200195
+        },
+        {
+          "nll": 3.654680013656616,
+          "policy_loss": 7.654155524505768e-06,
+          "gradient_norm": 1.362499475479126,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3304,
+            "omitted": 2902,
+            "null_reads": 1368,
+            "reference_dereferences": 82,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.0002377033233642578,
+          "decision": [
+            1,
+            "transform_relation"
+          ],
+          "coordinate": [
+            0,
+            60
+          ],
+          "chosen": 0,
+          "alternative": 3,
+          "alternative_nll": 3.6549177169799805
+        }
+      ]
+    },
+    {
+      "seed": 102,
+      "variant": "no_reference",
+      "config": {
+        "vocab": 257,
+        "width": 24,
+        "layers": 2,
+        "relations": 4,
+        "addresses": 8,
+        "candidates": 2,
+        "local_kernel": 5,
+        "variant": "no_reference"
+      },
+      "parameters": 33061,
+      "initial_dev": {
+        "nll": 5.6388773918151855,
+        "answer_nll": 5.694138050079346,
+        "teacher_forced_answer_exact": 0.0,
+        "final_query_fact_end_hits": 0,
+        "examples": 8,
+        "metrics": {
+          "writes": 2508,
+          "reads": 5016,
+          "candidates": 3239,
+          "omitted": 6383,
+          "null_reads": 3900,
+          "reference_dereferences": 0,
+          "operator_executions": 2508
+        }
+      },
+      "dev": {
+        "iid": {
+          "nll": 3.545628309249878,
+          "answer_nll": 3.8545913696289062,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 3014,
+            "omitted": 5598,
+            "null_reads": 3955,
+            "reference_dereferences": 0,
+            "operator_executions": 2508
+          }
+        },
+        "names": {
+          "nll": 3.7002432346343994,
+          "answer_nll": 4.4503045082092285,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2504,
+            "reads": 5008,
+            "candidates": 2930,
+            "omitted": 6029,
+            "null_reads": 3983,
+            "reference_dereferences": 0,
+            "operator_executions": 2504
+          }
+        },
+        "composition": {
+          "nll": 3.544658660888672,
+          "answer_nll": 3.7474255561828613,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2512,
+            "reads": 5024,
+            "candidates": 3226,
+            "omitted": 5544,
+            "null_reads": 3897,
+            "reference_dereferences": 0,
+            "operator_executions": 2512
+          }
+        },
+        "paraphrase": {
+          "nll": 3.7140002250671387,
+          "answer_nll": 3.845311403274536,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2652,
+            "reads": 5304,
+            "candidates": 3121,
+            "omitted": 5214,
+            "null_reads": 4234,
+            "reference_dereferences": 0,
+            "operator_executions": 2652
+          }
+        },
+        "updates": {
+          "nll": 3.5704658031463623,
+          "answer_nll": 3.8856282234191895,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2804,
+            "reads": 5608,
+            "candidates": 3487,
+            "omitted": 7047,
+            "null_reads": 4390,
+            "reference_dereferences": 0,
+            "operator_executions": 2804
+          }
+        },
+        "older": {
+          "nll": 3.723304510116577,
+          "answer_nll": 3.8542356491088867,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 3108,
+            "reads": 6216,
+            "candidates": 4055,
+            "omitted": 8737,
+            "null_reads": 4799,
+            "reference_dereferences": 0,
+            "operator_executions": 3108
+          }
+        }
+      },
+      "controls": {
+        "disabled": {
+          "nll": 3.5482802391052246,
+          "answer_nll": 3.852116346359253,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 3050,
+            "omitted": 5800,
+            "null_reads": 5016,
+            "reference_dereferences": 0,
+            "operator_executions": 2508
+          }
+        },
+        "shuffled": {
+          "nll": 3.5436058044433594,
+          "answer_nll": 3.84263277053833,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 3013,
+            "omitted": 5667,
+            "null_reads": 3951,
+            "reference_dereferences": 0,
+            "operator_executions": 2508
+          }
+        }
+      },
+      "train_seconds_this_invocation": 0.3312078480000764,
+      "evaluation_seconds": 0.1293831630000568,
+      "training_forward_passes": 40,
+      "training_cost": {
+        "writes": 25184,
+        "reads": 50368,
+        "candidates": 68964,
+        "omitted": 53256,
+        "null_reads": 26385,
+        "reference_dereferences": 0,
+        "operator_executions": 25184
+      },
+      "nonzero_intervention_effects": 14,
+      "checkpoint_sha256": "555fa853aadab21a370c37f14e709c9435a617fa238825d4c72c37579a36daa8",
+      "trace": [
+        {
+          "nll": 5.642603397369385,
+          "policy_loss": -7.288477718248032e-06,
+          "gradient_norm": 1.238826870918274,
+          "cost": {
+            "writes": 1248,
+            "reads": 2496,
+            "candidates": 3366,
+            "omitted": 2934,
+            "null_reads": 1298,
+            "reference_dereferences": 0,
+            "operator_executions": 1248
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 4.2438507080078125e-05,
+          "decision": [
+            1,
+            "relation"
+          ],
+          "coordinate": [
+            0,
+            33
+          ],
+          "chosen": 1,
+          "alternative": 3,
+          "alternative_nll": 5.642560958862305
+        },
+        {
+          "nll": 5.454945087432861,
+          "policy_loss": -1.5931564121274278e-05,
+          "gradient_norm": 1.2130191326141357,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3394,
+            "omitted": 2649,
+            "null_reads": 1284,
+            "reference_dereferences": 0,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 7.677078247070312e-05,
+          "decision": [
+            1,
+            "relation"
+          ],
+          "coordinate": [
+            1,
+            62
+          ],
+          "chosen": 3,
+          "alternative": 0,
+          "alternative_nll": 5.454868316650391
+        },
+        {
+          "nll": 5.369581699371338,
+          "policy_loss": 1.817762677092105e-05,
+          "gradient_norm": 1.244857668876648,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3424,
+            "omitted": 2620,
+            "null_reads": 1293,
+            "reference_dereferences": 0,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00028228759765625,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            40
+          ],
+          "chosen": 1,
+          "alternative": 2,
+          "alternative_nll": 5.369299411773682
+        },
+        {
+          "nll": 5.229377746582031,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2118663787841797,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3330,
+            "omitted": 2872,
+            "null_reads": 1328,
+            "reference_dereferences": 0,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "continuation"
+          ],
+          "coordinate": [
+            1,
+            28
+          ],
+          "chosen": 2,
+          "alternative": 0,
+          "alternative_nll": 5.229377746582031
+        },
+        {
+          "nll": 5.09890079498291,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2231240272521973,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3534,
+            "omitted": 2698,
+            "null_reads": 1288,
+            "reference_dereferences": 0,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "continuation"
+          ],
+          "coordinate": [
+            0,
+            125
+          ],
+          "chosen": 1,
+          "alternative": 2,
+          "alternative_nll": 5.09890079498291
+        },
+        {
+          "nll": 4.982074737548828,
+          "policy_loss": 9.251666779164225e-05,
+          "gradient_norm": 1.2069953680038452,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3574,
+            "omitted": 2534,
+            "null_reads": 1230,
+            "reference_dereferences": 0,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00010967254638671875,
+          "decision": [
+            1,
+            "write_address"
+          ],
+          "coordinate": [
+            0,
+            70
+          ],
+          "chosen": 7,
+          "alternative": 6,
+          "alternative_nll": 4.981965065002441
+        },
+        {
+          "nll": 4.932433605194092,
+          "policy_loss": 5.491363481269218e-06,
+          "gradient_norm": 1.2237389087677002,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3506,
+            "omitted": 2457,
+            "null_reads": 1353,
+            "reference_dereferences": 0,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 3.3855438232421875e-05,
+          "decision": [
+            0,
+            "relation"
+          ],
+          "coordinate": [
+            0,
+            134
+          ],
+          "chosen": 3,
+          "alternative": 2,
+          "alternative_nll": 4.932399749755859
+        },
+        {
+          "nll": 4.7183613777160645,
+          "policy_loss": -1.9460705516394228e-05,
+          "gradient_norm": 1.257764458656311,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3480,
+            "omitted": 2628,
+            "null_reads": 1295,
+            "reference_dereferences": 0,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -1.0967254638671875e-05,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            1,
+            61
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 4.718372344970703
+        },
+        {
+          "nll": 4.633586883544922,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.250157117843628,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3450,
+            "omitted": 2608,
+            "null_reads": 1346,
+            "reference_dereferences": 0,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "query"
+          ],
+          "coordinate": [
+            1,
+            81,
+            1
+          ],
+          "chosen": 7,
+          "alternative": 4,
+          "alternative_nll": 4.633586883544922
+        },
+        {
+          "nll": 4.55805778503418,
+          "policy_loss": 0.00033581850584596395,
+          "gradient_norm": 1.2513068914413452,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3563,
+            "omitted": 2751,
+            "null_reads": 1286,
+            "reference_dereferences": 0,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.0010843276977539062,
+          "decision": [
+            0,
+            "write_address"
+          ],
+          "coordinate": [
+            0,
+            7
+          ],
+          "chosen": 3,
+          "alternative": 4,
+          "alternative_nll": 4.559142112731934
+        },
+        {
+          "nll": 4.456742763519287,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2485334873199463,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3378,
+            "omitted": 2508,
+            "null_reads": 1318,
+            "reference_dereferences": 0,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "continuation"
+          ],
+          "coordinate": [
+            1,
+            67
+          ],
+          "chosen": 0,
+          "alternative": 2,
+          "alternative_nll": 4.456742763519287
+        },
+        {
+          "nll": 4.379432201385498,
+          "policy_loss": 0.0002694053400773555,
+          "gradient_norm": 1.2840511798858643,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3502,
+            "omitted": 2732,
+            "null_reads": 1342,
+            "reference_dereferences": 0,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.000324249267578125,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            60
+          ],
+          "chosen": 1,
+          "alternative": 0,
+          "alternative_nll": 4.37910795211792
+        },
+        {
+          "nll": 4.236169338226318,
+          "policy_loss": 0.00013080898497719318,
+          "gradient_norm": 1.3048384189605713,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3474,
+            "omitted": 2745,
+            "null_reads": 1308,
+            "reference_dereferences": 0,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0006265640258789062,
+          "decision": [
+            1,
+            "write_address"
+          ],
+          "coordinate": [
+            0,
+            54
+          ],
+          "chosen": 7,
+          "alternative": 4,
+          "alternative_nll": 4.2355427742004395
+        },
+        {
+          "nll": 4.174503326416016,
+          "policy_loss": 0.00032223010202869773,
+          "gradient_norm": 1.3008029460906982,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3402,
+            "omitted": 2678,
+            "null_reads": 1329,
+            "reference_dereferences": 0,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.00038814544677734375,
+          "decision": [
+            1,
+            "write_relation"
+          ],
+          "coordinate": [
+            1,
+            71
+          ],
+          "chosen": 2,
+          "alternative": 1,
+          "alternative_nll": 4.174891471862793
+        },
+        {
+          "nll": 4.110921382904053,
+          "policy_loss": -0.0,
+          "gradient_norm": 1.3217464685440063,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3416,
+            "omitted": 2614,
+            "null_reads": 1380,
+            "reference_dereferences": 0,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "rank"
+          ],
+          "coordinate": [
+            1,
+            9,
+            0
+          ],
+          "chosen": 0,
+          "alternative": 2,
+          "alternative_nll": 4.110921382904053
+        },
+        {
+          "nll": 3.9795963764190674,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.3383294343948364,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3250,
+            "omitted": 2704,
+            "null_reads": 1362,
+            "reference_dereferences": 0,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            88
+          ],
+          "chosen": 3,
+          "alternative": 1,
+          "alternative_nll": 3.9795963764190674
+        },
+        {
+          "nll": 3.914541482925415,
+          "policy_loss": -4.737768540508114e-05,
+          "gradient_norm": 1.3314008712768555,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3461,
+            "omitted": 2651,
+            "null_reads": 1342,
+            "reference_dereferences": 0,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -9.512901306152344e-05,
+          "decision": [
+            0,
+            "write_address"
+          ],
+          "coordinate": [
+            1,
+            12
+          ],
+          "chosen": 7,
+          "alternative": 4,
+          "alternative_nll": 3.9146366119384766
+        },
+        {
+          "nll": 3.8264434337615967,
+          "policy_loss": 4.4563636038219556e-05,
+          "gradient_norm": 1.3436048030853271,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3442,
+            "omitted": 2521,
+            "null_reads": 1312,
+            "reference_dereferences": 0,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.00021195411682128906,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            123
+          ],
+          "chosen": 2,
+          "alternative": 3,
+          "alternative_nll": 3.826655387878418
+        },
+        {
+          "nll": 3.781049966812134,
+          "policy_loss": 3.207191184628755e-05,
+          "gradient_norm": 1.3362432718276978,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3566,
+            "omitted": 2858,
+            "null_reads": 1318,
+            "reference_dereferences": 0,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 6.008148193359375e-05,
+          "decision": [
+            1,
+            "rank"
+          ],
+          "coordinate": [
+            1,
+            108,
+            1
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 3.7809898853302
+        },
+        {
+          "nll": 3.6544811725616455,
+          "policy_loss": -4.34064568253234e-05,
+          "gradient_norm": 1.3626534938812256,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3452,
+            "omitted": 2494,
+            "null_reads": 1373,
+            "reference_dereferences": 0,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00021338462829589844,
+          "decision": [
+            1,
+            "rank"
+          ],
+          "coordinate": [
+            0,
+            60,
+            1
+          ],
+          "chosen": 2,
+          "alternative": 1,
+          "alternative_nll": 3.6542677879333496
+        }
+      ]
+    },
+    {
+      "seed": 103,
+      "variant": "coupled",
+      "config": {
+        "vocab": 257,
+        "width": 24,
+        "layers": 2,
+        "relations": 4,
+        "addresses": 8,
+        "candidates": 2,
+        "local_kernel": 5,
+        "variant": "coupled"
+      },
+      "parameters": 33061,
+      "initial_dev": {
+        "nll": 5.81186056137085,
+        "answer_nll": 5.8716511726379395,
+        "teacher_forced_answer_exact": 0.0,
+        "final_query_fact_end_hits": 0,
+        "examples": 8,
+        "metrics": {
+          "writes": 2508,
+          "reads": 5016,
+          "candidates": 4652,
+          "omitted": 18028,
+          "null_reads": 3612,
+          "reference_dereferences": 230,
+          "operator_executions": 2508
+        }
+      },
+      "dev": {
+        "iid": {
+          "nll": 3.5572218894958496,
+          "answer_nll": 4.174420356750488,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 5711,
+            "omitted": 40960,
+            "null_reads": 3712,
+            "reference_dereferences": 296,
+            "operator_executions": 2508
+          }
+        },
+        "names": {
+          "nll": 3.7300877571105957,
+          "answer_nll": 4.656792163848877,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2504,
+            "reads": 5008,
+            "candidates": 5555,
+            "omitted": 36784,
+            "null_reads": 3645,
+            "reference_dereferences": 301,
+            "operator_executions": 2504
+          }
+        },
+        "composition": {
+          "nll": 3.5585153102874756,
+          "answer_nll": 3.978367328643799,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2512,
+            "reads": 5024,
+            "candidates": 5704,
+            "omitted": 41781,
+            "null_reads": 3710,
+            "reference_dereferences": 285,
+            "operator_executions": 2512
+          }
+        },
+        "paraphrase": {
+          "nll": 3.639744997024536,
+          "answer_nll": 4.0861334800720215,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2652,
+            "reads": 5304,
+            "candidates": 6108,
+            "omitted": 45166,
+            "null_reads": 3913,
+            "reference_dereferences": 315,
+            "operator_executions": 2652
+          }
+        },
+        "updates": {
+          "nll": 3.5754222869873047,
+          "answer_nll": 3.939115047454834,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2804,
+            "reads": 5608,
+            "candidates": 6405,
+            "omitted": 51835,
+            "null_reads": 4158,
+            "reference_dereferences": 322,
+            "operator_executions": 2804
+          }
+        },
+        "older": {
+          "nll": 3.6837081909179688,
+          "answer_nll": 4.174420356750488,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 3108,
+            "reads": 6216,
+            "candidates": 7152,
+            "omitted": 62688,
+            "null_reads": 4598,
+            "reference_dereferences": 371,
+            "operator_executions": 3108
+          }
+        }
+      },
+      "controls": {
+        "disabled": {
+          "nll": 3.5546376705169678,
+          "answer_nll": 4.168785572052002,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 5884,
+            "omitted": 36776,
+            "null_reads": 5016,
+            "reference_dereferences": 0,
+            "operator_executions": 2508
+          }
+        },
+        "shuffled": {
+          "nll": 3.562168598175049,
+          "answer_nll": 4.1566972732543945,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 5688,
+            "omitted": 38491,
+            "null_reads": 3676,
+            "reference_dereferences": 277,
+            "operator_executions": 2508
+          }
+        }
+      },
+      "train_seconds_this_invocation": 0.33304748899990955,
+      "evaluation_seconds": 0.13570917799984272,
+      "training_forward_passes": 40,
+      "training_cost": {
+        "writes": 25136,
+        "reads": 50272,
+        "candidates": 68897,
+        "omitted": 61660,
+        "null_reads": 27226,
+        "reference_dereferences": 3118,
+        "operator_executions": 25136
+      },
+      "nonzero_intervention_effects": 13,
+      "checkpoint_sha256": "6442f1ea66fbd68653e39909400722880e40292785a6f7a9d756a59a4b43abc1",
+      "trace": [
+        {
+          "nll": 5.813709259033203,
+          "policy_loss": -2.8267491870792583e-05,
+          "gradient_norm": 1.2418797016143799,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3474,
+            "omitted": 2803,
+            "null_reads": 1300,
+            "reference_dereferences": 158,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -7.534027099609375e-05,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            120
+          ],
+          "chosen": 3,
+          "alternative": 0,
+          "alternative_nll": 5.813784599304199
+        },
+        {
+          "nll": 5.69094705581665,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2471332550048828,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3500,
+            "omitted": 2732,
+            "null_reads": 1324,
+            "reference_dereferences": 190,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            1,
+            154
+          ],
+          "chosen": 3,
+          "alternative": 2,
+          "alternative_nll": 5.69094705581665
+        },
+        {
+          "nll": 5.538614749908447,
+          "policy_loss": 5.9458190662553534e-05,
+          "gradient_norm": 1.2505974769592285,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3488,
+            "omitted": 2748,
+            "null_reads": 1275,
+            "reference_dereferences": 142,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.00024271011352539062,
+          "decision": [
+            0,
+            "rank"
+          ],
+          "coordinate": [
+            0,
+            116,
+            0
+          ],
+          "chosen": 2,
+          "alternative": 1,
+          "alternative_nll": 5.538857460021973
+        },
+        {
+          "nll": 5.4425530433654785,
+          "policy_loss": 2.1254541934467852e-05,
+          "gradient_norm": 1.2474490404129028,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3394,
+            "omitted": 3196,
+            "null_reads": 1341,
+            "reference_dereferences": 140,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.00014972686767578125,
+          "decision": [
+            1,
+            "rank"
+          ],
+          "coordinate": [
+            1,
+            74,
+            1
+          ],
+          "chosen": 2,
+          "alternative": 0,
+          "alternative_nll": 5.442702770233154
+        },
+        {
+          "nll": 5.298129558563232,
+          "policy_loss": -1.7054668205673806e-05,
+          "gradient_norm": 1.295268177986145,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3592,
+            "omitted": 2847,
+            "null_reads": 1323,
+            "reference_dereferences": 158,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00015544891357421875,
+          "decision": [
+            0,
+            "query"
+          ],
+          "coordinate": [
+            1,
+            72,
+            1
+          ],
+          "chosen": 3,
+          "alternative": 1,
+          "alternative_nll": 5.297974109649658
+        },
+        {
+          "nll": 5.170391082763672,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2788394689559937,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3478,
+            "omitted": 2910,
+            "null_reads": 1360,
+            "reference_dereferences": 130,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "continuation"
+          ],
+          "coordinate": [
+            0,
+            66
+          ],
+          "chosen": 3,
+          "alternative": 1,
+          "alternative_nll": 5.170391082763672
+        },
+        {
+          "nll": 5.021596908569336,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2883965969085693,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3486,
+            "omitted": 3007,
+            "null_reads": 1354,
+            "reference_dereferences": 151,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "continuation"
+          ],
+          "coordinate": [
+            1,
+            56
+          ],
+          "chosen": 1,
+          "alternative": 3,
+          "alternative_nll": 5.021596908569336
+        },
+        {
+          "nll": 4.8621697425842285,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2941832542419434,
+          "cost": {
+            "writes": 1248,
+            "reads": 2496,
+            "candidates": 3410,
+            "omitted": 2610,
+            "null_reads": 1318,
+            "reference_dereferences": 168,
+            "operator_executions": 1248
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "continuation"
+          ],
+          "coordinate": [
+            1,
+            132
+          ],
+          "chosen": 2,
+          "alternative": 0,
+          "alternative_nll": 4.8621697425842285
+        },
+        {
+          "nll": 4.757047176361084,
+          "policy_loss": -8.001114110811614e-06,
+          "gradient_norm": 1.3185524940490723,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3403,
+            "omitted": 3205,
+            "null_reads": 1344,
+            "reference_dereferences": 176,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 6.532669067382812e-05,
+          "decision": [
+            1,
+            "relation"
+          ],
+          "coordinate": [
+            1,
+            96
+          ],
+          "chosen": 2,
+          "alternative": 1,
+          "alternative_nll": 4.75698184967041
+        },
+        {
+          "nll": 4.690572738647461,
+          "policy_loss": 0.00020994692749809474,
+          "gradient_norm": 1.2831239700317383,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3468,
+            "omitted": 2909,
+            "null_reads": 1370,
+            "reference_dereferences": 200,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.000316619873046875,
+          "decision": [
+            1,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            68
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 4.690256118774414
+        },
+        {
+          "nll": 4.523025989532471,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.3236167430877686,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3492,
+            "omitted": 3528,
+            "null_reads": 1370,
+            "reference_dereferences": 138,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            133
+          ],
+          "chosen": 1,
+          "alternative": 2,
+          "alternative_nll": 4.523025989532471
+        },
+        {
+          "nll": 4.412211894989014,
+          "policy_loss": 5.3246254537953064e-05,
+          "gradient_norm": 1.297484278678894,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3508,
+            "omitted": 3228,
+            "null_reads": 1332,
+            "reference_dereferences": 188,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00019311904907226562,
+          "decision": [
+            0,
+            "query"
+          ],
+          "coordinate": [
+            0,
+            136,
+            1
+          ],
+          "chosen": 3,
+          "alternative": 7,
+          "alternative_nll": 4.412018775939941
+        },
+        {
+          "nll": 4.30117130279541,
+          "policy_loss": 6.856513937236741e-05,
+          "gradient_norm": 1.3375805616378784,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3398,
+            "omitted": 3496,
+            "null_reads": 1398,
+            "reference_dereferences": 142,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 8.296966552734375e-05,
+          "decision": [
+            0,
+            "rank"
+          ],
+          "coordinate": [
+            0,
+            85,
+            0
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 4.301088333129883
+        },
+        {
+          "nll": 4.1931376457214355,
+          "policy_loss": 7.565374107798561e-05,
+          "gradient_norm": 1.3493534326553345,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3477,
+            "omitted": 3195,
+            "null_reads": 1384,
+            "reference_dereferences": 128,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 6.532669067382812e-05,
+          "decision": [
+            0,
+            "query"
+          ],
+          "coordinate": [
+            1,
+            77,
+            1
+          ],
+          "chosen": 0,
+          "alternative": 3,
+          "alternative_nll": 4.193072319030762
+        },
+        {
+          "nll": 4.079890727996826,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.364499568939209,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3468,
+            "omitted": 2994,
+            "null_reads": 1338,
+            "reference_dereferences": 164,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "write_relation"
+          ],
+          "coordinate": [
+            1,
+            105
+          ],
+          "chosen": 2,
+          "alternative": 1,
+          "alternative_nll": 4.079890727996826
+        },
+        {
+          "nll": 4.018631935119629,
+          "policy_loss": -0.00032468826975673437,
+          "gradient_norm": 1.3360075950622559,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3355,
+            "omitted": 3305,
+            "null_reads": 1426,
+            "reference_dereferences": 138,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.0002899169921875,
+          "decision": [
+            1,
+            "write_relation"
+          ],
+          "coordinate": [
+            1,
+            27
+          ],
+          "chosen": 0,
+          "alternative": 2,
+          "alternative_nll": 4.018921852111816
+        },
+        {
+          "nll": 3.928544044494629,
+          "policy_loss": -6.853206286905333e-06,
+          "gradient_norm": 1.3076168298721313,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3325,
+            "omitted": 2894,
+            "null_reads": 1420,
+            "reference_dereferences": 148,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 5.412101745605469e-05,
+          "decision": [
+            1,
+            "query"
+          ],
+          "coordinate": [
+            1,
+            101,
+            1
+          ],
+          "chosen": 1,
+          "alternative": 2,
+          "alternative_nll": 3.928489923477173
+        },
+        {
+          "nll": 3.813750743865967,
+          "policy_loss": 0.0010057422332465649,
+          "gradient_norm": 1.34898841381073,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3317,
+            "omitted": 3169,
+            "null_reads": 1452,
+            "reference_dereferences": 146,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0011532306671142578,
+          "decision": [
+            0,
+            "relation"
+          ],
+          "coordinate": [
+            0,
+            16
+          ],
+          "chosen": 0,
+          "alternative": 2,
+          "alternative_nll": 3.8125975131988525
+        },
+        {
+          "nll": 3.7685585021972656,
+          "policy_loss": 0.00012329398305155337,
+          "gradient_norm": 1.3641222715377808,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3336,
+            "omitted": 3476,
+            "null_reads": 1441,
+            "reference_dereferences": 157,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0001659393310546875,
+          "decision": [
+            0,
+            "rank"
+          ],
+          "coordinate": [
+            0,
+            25,
+            0
+          ],
+          "chosen": 0,
+          "alternative": 2,
+          "alternative_nll": 3.768392562866211
+        },
+        {
+          "nll": 3.648557186126709,
+          "policy_loss": -0.0,
+          "gradient_norm": 1.3354887962341309,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3528,
+            "omitted": 3408,
+            "null_reads": 1356,
+            "reference_dereferences": 156,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "continuation"
+          ],
+          "coordinate": [
+            1,
+            116
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 3.648557186126709
+        }
+      ]
+    },
+    {
+      "seed": 103,
+      "variant": "independent",
+      "config": {
+        "vocab": 257,
+        "width": 24,
+        "layers": 2,
+        "relations": 4,
+        "addresses": 8,
+        "candidates": 2,
+        "local_kernel": 5,
+        "variant": "independent"
+      },
+      "parameters": 33061,
+      "initial_dev": {
+        "nll": 5.813608169555664,
+        "answer_nll": 5.931757926940918,
+        "teacher_forced_answer_exact": 0.0,
+        "final_query_fact_end_hits": 0,
+        "examples": 8,
+        "metrics": {
+          "writes": 2508,
+          "reads": 5016,
+          "candidates": 4717,
+          "omitted": 16414,
+          "null_reads": 3495,
+          "reference_dereferences": 215,
+          "operator_executions": 2508
+        }
+      },
+      "dev": {
+        "iid": {
+          "nll": 3.5561375617980957,
+          "answer_nll": 4.143935680389404,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 4791,
+            "omitted": 31796,
+            "null_reads": 3604,
+            "reference_dereferences": 254,
+            "operator_executions": 2508
+          }
+        },
+        "names": {
+          "nll": 3.7426769733428955,
+          "answer_nll": 4.626250743865967,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2504,
+            "reads": 5008,
+            "candidates": 4805,
+            "omitted": 32301,
+            "null_reads": 3532,
+            "reference_dereferences": 284,
+            "operator_executions": 2504
+          }
+        },
+        "composition": {
+          "nll": 3.55365252494812,
+          "answer_nll": 3.953961133956909,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2512,
+            "reads": 5024,
+            "candidates": 4723,
+            "omitted": 31413,
+            "null_reads": 3617,
+            "reference_dereferences": 259,
+            "operator_executions": 2512
+          }
+        },
+        "paraphrase": {
+          "nll": 3.6392641067504883,
+          "answer_nll": 4.082496643066406,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2652,
+            "reads": 5304,
+            "candidates": 5070,
+            "omitted": 32610,
+            "null_reads": 3768,
+            "reference_dereferences": 248,
+            "operator_executions": 2652
+          }
+        },
+        "updates": {
+          "nll": 3.576310873031616,
+          "answer_nll": 3.9251012802124023,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2804,
+            "reads": 5608,
+            "candidates": 5383,
+            "omitted": 40385,
+            "null_reads": 4033,
+            "reference_dereferences": 278,
+            "operator_executions": 2804
+          }
+        },
+        "older": {
+          "nll": 3.685481548309326,
+          "answer_nll": 4.143935680389404,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 3108,
+            "reads": 6216,
+            "candidates": 6128,
+            "omitted": 49850,
+            "null_reads": 4391,
+            "reference_dereferences": 323,
+            "operator_executions": 3108
+          }
+        }
+      },
+      "controls": {
+        "disabled": {
+          "nll": 3.549987316131592,
+          "answer_nll": 4.136098384857178,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 4684,
+            "omitted": 23562,
+            "null_reads": 5016,
+            "reference_dereferences": 0,
+            "operator_executions": 2508
+          }
+        },
+        "shuffled": {
+          "nll": 3.565546989440918,
+          "answer_nll": 4.128785610198975,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 4772,
+            "omitted": 30373,
+            "null_reads": 3533,
+            "reference_dereferences": 303,
+            "operator_executions": 2508
+          }
+        }
+      },
+      "train_seconds_this_invocation": 0.3202611550000256,
+      "evaluation_seconds": 0.15755425399993328,
+      "training_forward_passes": 40,
+      "training_cost": {
+        "writes": 25136,
+        "reads": 50272,
+        "candidates": 68509,
+        "omitted": 60565,
+        "null_reads": 26929,
+        "reference_dereferences": 2818,
+        "operator_executions": 25136
+      },
+      "nonzero_intervention_effects": 15,
+      "checkpoint_sha256": "c972c3e8d92dfce147b5bfd711d2e4663843f9ae5ef9823f0bedd7efe556bb83",
+      "trace": [
+        {
+          "nll": 5.815676689147949,
+          "policy_loss": 8.247666846727952e-05,
+          "gradient_norm": 1.2412625551223755,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3506,
+            "omitted": 3033,
+            "null_reads": 1354,
+            "reference_dereferences": 122,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00021982192993164062,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            120
+          ],
+          "chosen": 3,
+          "alternative": 0,
+          "alternative_nll": 5.815456867218018
+        },
+        {
+          "nll": 5.690320014953613,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2480586767196655,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3428,
+            "omitted": 2906,
+            "null_reads": 1344,
+            "reference_dereferences": 148,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            1,
+            154
+          ],
+          "chosen": 3,
+          "alternative": 2,
+          "alternative_nll": 5.690320014953613
+        },
+        {
+          "nll": 5.531078815460205,
+          "policy_loss": -1.0446315172885079e-06,
+          "gradient_norm": 1.246806025505066,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3456,
+            "omitted": 2967,
+            "null_reads": 1346,
+            "reference_dereferences": 144,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -4.673004150390625e-05,
+          "decision": [
+            0,
+            "query"
+          ],
+          "coordinate": [
+            0,
+            116,
+            0
+          ],
+          "chosen": 2,
+          "alternative": 6,
+          "alternative_nll": 5.531125545501709
+        },
+        {
+          "nll": 5.447400093078613,
+          "policy_loss": -0.00012753378541674465,
+          "gradient_norm": 1.2494052648544312,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3336,
+            "omitted": 2632,
+            "null_reads": 1382,
+            "reference_dereferences": 146,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0002627372741699219,
+          "decision": [
+            1,
+            "transform_relation"
+          ],
+          "coordinate": [
+            1,
+            74
+          ],
+          "chosen": 2,
+          "alternative": 1,
+          "alternative_nll": 5.447137355804443
+        },
+        {
+          "nll": 5.295594215393066,
+          "policy_loss": 0.00010690322233131155,
+          "gradient_norm": 1.2908363342285156,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3504,
+            "omitted": 3020,
+            "null_reads": 1326,
+            "reference_dereferences": 146,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.0003008842468261719,
+          "decision": [
+            0,
+            "transform_relation"
+          ],
+          "coordinate": [
+            1,
+            72
+          ],
+          "chosen": 1,
+          "alternative": 2,
+          "alternative_nll": 5.295895099639893
+        },
+        {
+          "nll": 5.164975643157959,
+          "policy_loss": -0.0,
+          "gradient_norm": 1.2758393287658691,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3523,
+            "omitted": 3110,
+            "null_reads": 1336,
+            "reference_dereferences": 152,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "query"
+          ],
+          "coordinate": [
+            0,
+            66,
+            1
+          ],
+          "chosen": 5,
+          "alternative": 1,
+          "alternative_nll": 5.164975643157959
+        },
+        {
+          "nll": 5.028505802154541,
+          "policy_loss": -0.0004446898237802088,
+          "gradient_norm": 1.292330026626587,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3464,
+            "omitted": 2672,
+            "null_reads": 1307,
+            "reference_dereferences": 156,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00042247772216796875,
+          "decision": [
+            0,
+            "rank"
+          ],
+          "coordinate": [
+            1,
+            56,
+            0
+          ],
+          "chosen": 2,
+          "alternative": 0,
+          "alternative_nll": 5.028083324432373
+        },
+        {
+          "nll": 4.880842208862305,
+          "policy_loss": -6.898281571920961e-05,
+          "gradient_norm": 1.2889355421066284,
+          "cost": {
+            "writes": 1248,
+            "reads": 2496,
+            "candidates": 3214,
+            "omitted": 2984,
+            "null_reads": 1410,
+            "reference_dereferences": 114,
+            "operator_executions": 1248
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -6.341934204101562e-05,
+          "decision": [
+            1,
+            "query"
+          ],
+          "coordinate": [
+            1,
+            132,
+            0
+          ],
+          "chosen": 2,
+          "alternative": 6,
+          "alternative_nll": 4.880905628204346
+        },
+        {
+          "nll": 4.7678303718566895,
+          "policy_loss": -0.0,
+          "gradient_norm": 1.3041443824768066,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3397,
+            "omitted": 2793,
+            "null_reads": 1324,
+            "reference_dereferences": 146,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "write_address"
+          ],
+          "coordinate": [
+            1,
+            96
+          ],
+          "chosen": 2,
+          "alternative": 3,
+          "alternative_nll": 4.7678303718566895
+        },
+        {
+          "nll": 4.688291549682617,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2889368534088135,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3454,
+            "omitted": 2868,
+            "null_reads": 1294,
+            "reference_dereferences": 130,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "continuation"
+          ],
+          "coordinate": [
+            0,
+            68
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 4.688291549682617
+        },
+        {
+          "nll": 4.536251544952393,
+          "policy_loss": 0.00029093879857100546,
+          "gradient_norm": 1.321541428565979,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3382,
+            "omitted": 2988,
+            "null_reads": 1374,
+            "reference_dereferences": 151,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0003509521484375,
+          "decision": [
+            0,
+            "continuation"
+          ],
+          "coordinate": [
+            0,
+            133
+          ],
+          "chosen": 0,
+          "alternative": 2,
+          "alternative_nll": 4.535900592803955
+        },
+        {
+          "nll": 4.404325008392334,
+          "policy_loss": 1.2024675015709363e-05,
+          "gradient_norm": 1.303712010383606,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3536,
+            "omitted": 3050,
+            "null_reads": 1264,
+            "reference_dereferences": 144,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.000156402587890625,
+          "decision": [
+            0,
+            "transform_relation"
+          ],
+          "coordinate": [
+            0,
+            136
+          ],
+          "chosen": 0,
+          "alternative": 2,
+          "alternative_nll": 4.404168605804443
+        },
+        {
+          "nll": 4.295376300811768,
+          "policy_loss": 1.0489532542123925e-05,
+          "gradient_norm": 1.3356274366378784,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3439,
+            "omitted": 3323,
+            "null_reads": 1354,
+            "reference_dereferences": 142,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 1.71661376953125e-05,
+          "decision": [
+            0,
+            "query"
+          ],
+          "coordinate": [
+            0,
+            85,
+            0
+          ],
+          "chosen": 3,
+          "alternative": 0,
+          "alternative_nll": 4.295359134674072
+        },
+        {
+          "nll": 4.2011494636535645,
+          "policy_loss": 1.9765830074902624e-05,
+          "gradient_norm": 1.3469135761260986,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3414,
+            "omitted": 2948,
+            "null_reads": 1352,
+            "reference_dereferences": 138,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -6.67572021484375e-05,
+          "decision": [
+            0,
+            "transform_relation"
+          ],
+          "coordinate": [
+            1,
+            77
+          ],
+          "chosen": 0,
+          "alternative": 2,
+          "alternative_nll": 4.201216220855713
+        },
+        {
+          "nll": 4.075294494628906,
+          "policy_loss": 0.00017481202667113394,
+          "gradient_norm": 1.368626356124878,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3520,
+            "omitted": 3232,
+            "null_reads": 1330,
+            "reference_dereferences": 131,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.0004725456237792969,
+          "decision": [
+            0,
+            "continuation"
+          ],
+          "coordinate": [
+            1,
+            105
+          ],
+          "chosen": 0,
+          "alternative": 2,
+          "alternative_nll": 4.0757670402526855
+        },
+        {
+          "nll": 4.021334648132324,
+          "policy_loss": -0.0,
+          "gradient_norm": 1.3364413976669312,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3354,
+            "omitted": 3052,
+            "null_reads": 1396,
+            "reference_dereferences": 124,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "rank"
+          ],
+          "coordinate": [
+            1,
+            65,
+            1
+          ],
+          "chosen": 2,
+          "alternative": 1,
+          "alternative_nll": 4.021334648132324
+        },
+        {
+          "nll": 3.9372472763061523,
+          "policy_loss": -4.729094507638365e-05,
+          "gradient_norm": 1.3084568977355957,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3516,
+            "omitted": 2904,
+            "null_reads": 1326,
+            "reference_dereferences": 134,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -4.4345855712890625e-05,
+          "decision": [
+            1,
+            "rank"
+          ],
+          "coordinate": [
+            1,
+            101,
+            1
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 3.9372916221618652
+        },
+        {
+          "nll": 3.80856990814209,
+          "policy_loss": 9.442379450774752e-06,
+          "gradient_norm": 1.3452672958374023,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3296,
+            "omitted": 3402,
+            "null_reads": 1393,
+            "reference_dereferences": 140,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 7.987022399902344e-05,
+          "decision": [
+            0,
+            "read_relation"
+          ],
+          "coordinate": [
+            0,
+            16
+          ],
+          "chosen": 3,
+          "alternative": 1,
+          "alternative_nll": 3.808490037918091
+        },
+        {
+          "nll": 3.7695868015289307,
+          "policy_loss": 6.302724068518728e-05,
+          "gradient_norm": 1.3607476949691772,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3352,
+            "omitted": 3359,
+            "null_reads": 1389,
+            "reference_dereferences": 136,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00022268295288085938,
+          "decision": [
+            0,
+            "query"
+          ],
+          "coordinate": [
+            0,
+            25,
+            0
+          ],
+          "chosen": 4,
+          "alternative": 2,
+          "alternative_nll": 3.76936411857605
+        },
+        {
+          "nll": 3.645955801010132,
+          "policy_loss": 1.0471778296050616e-05,
+          "gradient_norm": 1.3348143100738525,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3418,
+            "omitted": 3322,
+            "null_reads": 1328,
+            "reference_dereferences": 174,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 3.147125244140625e-05,
+          "decision": [
+            0,
+            "rank"
+          ],
+          "coordinate": [
+            1,
+            116,
+            0
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 3.6459243297576904
+        }
+      ]
+    },
+    {
+      "seed": 103,
+      "variant": "no_reference",
+      "config": {
+        "vocab": 257,
+        "width": 24,
+        "layers": 2,
+        "relations": 4,
+        "addresses": 8,
+        "candidates": 2,
+        "local_kernel": 5,
+        "variant": "no_reference"
+      },
+      "parameters": 33061,
+      "initial_dev": {
+        "nll": 5.810290813446045,
+        "answer_nll": 5.8716511726379395,
+        "teacher_forced_answer_exact": 0.0,
+        "final_query_fact_end_hits": 0,
+        "examples": 8,
+        "metrics": {
+          "writes": 2508,
+          "reads": 5016,
+          "candidates": 4715,
+          "omitted": 19292,
+          "null_reads": 3619,
+          "reference_dereferences": 0,
+          "operator_executions": 2508
+        }
+      },
+      "dev": {
+        "iid": {
+          "nll": 3.5560710430145264,
+          "answer_nll": 4.171008110046387,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 6012,
+            "omitted": 41313,
+            "null_reads": 3793,
+            "reference_dereferences": 0,
+            "operator_executions": 2508
+          }
+        },
+        "names": {
+          "nll": 3.728695869445801,
+          "answer_nll": 4.656320571899414,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2504,
+            "reads": 5008,
+            "candidates": 5861,
+            "omitted": 37036,
+            "null_reads": 3735,
+            "reference_dereferences": 0,
+            "operator_executions": 2504
+          }
+        },
+        "composition": {
+          "nll": 3.557034492492676,
+          "answer_nll": 3.9749491214752197,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2512,
+            "reads": 5024,
+            "candidates": 5956,
+            "omitted": 41878,
+            "null_reads": 3802,
+            "reference_dereferences": 0,
+            "operator_executions": 2512
+          }
+        },
+        "paraphrase": {
+          "nll": 3.6401381492614746,
+          "answer_nll": 4.08754301071167,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2652,
+            "reads": 5304,
+            "candidates": 6378,
+            "omitted": 44242,
+            "null_reads": 3994,
+            "reference_dereferences": 0,
+            "operator_executions": 2652
+          }
+        },
+        "updates": {
+          "nll": 3.5740983486175537,
+          "answer_nll": 3.9367563724517822,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2804,
+            "reads": 5608,
+            "candidates": 6722,
+            "omitted": 52289,
+            "null_reads": 4245,
+            "reference_dereferences": 0,
+            "operator_executions": 2804
+          }
+        },
+        "older": {
+          "nll": 3.681246519088745,
+          "answer_nll": 4.171008110046387,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 3108,
+            "reads": 6216,
+            "candidates": 7603,
+            "omitted": 65013,
+            "null_reads": 4691,
+            "reference_dereferences": 0,
+            "operator_executions": 3108
+          }
+        }
+      },
+      "controls": {
+        "disabled": {
+          "nll": 3.552504539489746,
+          "answer_nll": 4.166337966918945,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 5820,
+            "omitted": 37471,
+            "null_reads": 5016,
+            "reference_dereferences": 0,
+            "operator_executions": 2508
+          }
+        },
+        "shuffled": {
+          "nll": 3.5575003623962402,
+          "answer_nll": 4.148291110992432,
+          "teacher_forced_answer_exact": 0.0,
+          "final_query_fact_end_hits": 0,
+          "examples": 8,
+          "metrics": {
+            "writes": 2508,
+            "reads": 5016,
+            "candidates": 5967,
+            "omitted": 39689,
+            "null_reads": 3760,
+            "reference_dereferences": 0,
+            "operator_executions": 2508
+          }
+        }
+      },
+      "train_seconds_this_invocation": 0.33746313599999667,
+      "evaluation_seconds": 0.13976370900013535,
+      "training_forward_passes": 40,
+      "training_cost": {
+        "writes": 25136,
+        "reads": 50272,
+        "candidates": 69023,
+        "omitted": 61541,
+        "null_reads": 27171,
+        "reference_dereferences": 0,
+        "operator_executions": 25136
+      },
+      "nonzero_intervention_effects": 15,
+      "checkpoint_sha256": "6dfac05cc73b253a9d9b411140d3409d4aa87b70a8afc61484ba0e4c1e96498a",
+      "trace": [
+        {
+          "nll": 5.812315940856934,
+          "policy_loss": -2.8267491870792583e-05,
+          "gradient_norm": 1.2424836158752441,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3474,
+            "omitted": 2855,
+            "null_reads": 1302,
+            "reference_dereferences": 0,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -7.534027099609375e-05,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            120
+          ],
+          "chosen": 3,
+          "alternative": 0,
+          "alternative_nll": 5.81239128112793
+        },
+        {
+          "nll": 5.689846515655518,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2469340562820435,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3504,
+            "omitted": 2762,
+            "null_reads": 1330,
+            "reference_dereferences": 0,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "write_relation"
+          ],
+          "coordinate": [
+            1,
+            154
+          ],
+          "chosen": 3,
+          "alternative": 2,
+          "alternative_nll": 5.689846515655518
+        },
+        {
+          "nll": 5.537193775177002,
+          "policy_loss": 5.93877412029542e-05,
+          "gradient_norm": 1.251298427581787,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3492,
+            "omitted": 2742,
+            "null_reads": 1279,
+            "reference_dereferences": 0,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.00024175643920898438,
+          "decision": [
+            0,
+            "rank"
+          ],
+          "coordinate": [
+            0,
+            116,
+            0
+          ],
+          "chosen": 2,
+          "alternative": 1,
+          "alternative_nll": 5.537435531616211
+        },
+        {
+          "nll": 5.442991256713867,
+          "policy_loss": 8.40644133859314e-06,
+          "gradient_norm": 1.2479392290115356,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3388,
+            "omitted": 3128,
+            "null_reads": 1349,
+            "reference_dereferences": 0,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.00015497207641601562,
+          "decision": [
+            1,
+            "rank"
+          ],
+          "coordinate": [
+            1,
+            74,
+            1
+          ],
+          "chosen": 2,
+          "alternative": 0,
+          "alternative_nll": 5.443146228790283
+        },
+        {
+          "nll": 5.298732757568359,
+          "policy_loss": -7.447537882399047e-06,
+          "gradient_norm": 1.2950892448425293,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3594,
+            "omitted": 2839,
+            "null_reads": 1324,
+            "reference_dereferences": 0,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 6.723403930664062e-05,
+          "decision": [
+            0,
+            "query"
+          ],
+          "coordinate": [
+            1,
+            72,
+            1
+          ],
+          "chosen": 3,
+          "alternative": 1,
+          "alternative_nll": 5.298665523529053
+        },
+        {
+          "nll": 5.168076992034912,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2798752784729004,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3478,
+            "omitted": 2920,
+            "null_reads": 1368,
+            "reference_dereferences": 0,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "continuation"
+          ],
+          "coordinate": [
+            0,
+            66
+          ],
+          "chosen": 1,
+          "alternative": 2,
+          "alternative_nll": 5.168076992034912
+        },
+        {
+          "nll": 5.018511772155762,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.287739634513855,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3482,
+            "omitted": 2972,
+            "null_reads": 1352,
+            "reference_dereferences": 0,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "continuation"
+          ],
+          "coordinate": [
+            1,
+            56
+          ],
+          "chosen": 1,
+          "alternative": 3,
+          "alternative_nll": 5.018511772155762
+        },
+        {
+          "nll": 4.861433982849121,
+          "policy_loss": 0.0,
+          "gradient_norm": 1.2936761379241943,
+          "cost": {
+            "writes": 1248,
+            "reads": 2496,
+            "candidates": 3400,
+            "omitted": 2660,
+            "null_reads": 1326,
+            "reference_dereferences": 0,
+            "operator_executions": 1248
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            1,
+            "continuation"
+          ],
+          "coordinate": [
+            1,
+            132
+          ],
+          "chosen": 2,
+          "alternative": 0,
+          "alternative_nll": 4.861433982849121
+        },
+        {
+          "nll": 4.757428169250488,
+          "policy_loss": 0.0001253604277735576,
+          "gradient_norm": 1.3184325695037842,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3401,
+            "omitted": 3145,
+            "null_reads": 1346,
+            "reference_dereferences": 0,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.000476837158203125,
+          "decision": [
+            1,
+            "relation"
+          ],
+          "coordinate": [
+            1,
+            96
+          ],
+          "chosen": 2,
+          "alternative": 1,
+          "alternative_nll": 4.757905006408691
+        },
+        {
+          "nll": 4.690780162811279,
+          "policy_loss": 0.0002385849948041141,
+          "gradient_norm": 1.281206727027893,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3466,
+            "omitted": 2831,
+            "null_reads": 1372,
+            "reference_dereferences": 0,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00035572052001953125,
+          "decision": [
+            1,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            68
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 4.69042444229126
+        },
+        {
+          "nll": 4.5271315574646,
+          "policy_loss": -5.3637163546227384e-06,
+          "gradient_norm": 1.322200894355774,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3494,
+            "omitted": 3542,
+            "null_reads": 1372,
+            "reference_dereferences": 0,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -2.6702880859375e-05,
+          "decision": [
+            1,
+            "write_relation"
+          ],
+          "coordinate": [
+            0,
+            133
+          ],
+          "chosen": 1,
+          "alternative": 2,
+          "alternative_nll": 4.527158260345459
+        },
+        {
+          "nll": 4.411698818206787,
+          "policy_loss": 5.52719684492331e-05,
+          "gradient_norm": 1.297558307647705,
+          "cost": {
+            "writes": 1260,
+            "reads": 2520,
+            "candidates": 3470,
+            "omitted": 3126,
+            "null_reads": 1342,
+            "reference_dereferences": 0,
+            "operator_executions": 1260
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00019884109497070312,
+          "decision": [
+            0,
+            "query"
+          ],
+          "coordinate": [
+            0,
+            136,
+            1
+          ],
+          "chosen": 3,
+          "alternative": 7,
+          "alternative_nll": 4.411499977111816
+        },
+        {
+          "nll": 4.300318241119385,
+          "policy_loss": 6.767984450561926e-05,
+          "gradient_norm": 1.3360650539398193,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3404,
+            "omitted": 3526,
+            "null_reads": 1390,
+            "reference_dereferences": 0,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 8.20159912109375e-05,
+          "decision": [
+            0,
+            "rank"
+          ],
+          "coordinate": [
+            0,
+            85,
+            0
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 4.300236225128174
+        },
+        {
+          "nll": 4.193981170654297,
+          "policy_loss": 7.678550173295662e-05,
+          "gradient_norm": 1.3499566316604614,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3511,
+            "omitted": 3229,
+            "null_reads": 1380,
+            "reference_dereferences": 0,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 6.628036499023438e-05,
+          "decision": [
+            0,
+            "query"
+          ],
+          "coordinate": [
+            1,
+            77,
+            1
+          ],
+          "chosen": 0,
+          "alternative": 3,
+          "alternative_nll": 4.193914890289307
+        },
+        {
+          "nll": 4.078107833862305,
+          "policy_loss": -0.00013227602175902575,
+          "gradient_norm": 1.3651854991912842,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3460,
+            "omitted": 2953,
+            "null_reads": 1324,
+            "reference_dereferences": 0,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -7.486343383789062e-05,
+          "decision": [
+            1,
+            "write_relation"
+          ],
+          "coordinate": [
+            1,
+            105
+          ],
+          "chosen": 2,
+          "alternative": 1,
+          "alternative_nll": 4.078182697296143
+        },
+        {
+          "nll": 4.015223503112793,
+          "policy_loss": -0.00032194366212934256,
+          "gradient_norm": 1.3385909795761108,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3361,
+            "omitted": 3366,
+            "null_reads": 1416,
+            "reference_dereferences": 0,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": -0.0002827644348144531,
+          "decision": [
+            1,
+            "write_relation"
+          ],
+          "coordinate": [
+            1,
+            27
+          ],
+          "chosen": 0,
+          "alternative": 2,
+          "alternative_nll": 4.015506267547607
+        },
+        {
+          "nll": 3.929802894592285,
+          "policy_loss": -7.465984708687756e-06,
+          "gradient_norm": 1.3061187267303467,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3373,
+            "omitted": 2978,
+            "null_reads": 1412,
+            "reference_dereferences": 0,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 5.888938903808594e-05,
+          "decision": [
+            1,
+            "query"
+          ],
+          "coordinate": [
+            1,
+            101,
+            1
+          ],
+          "chosen": 1,
+          "alternative": 2,
+          "alternative_nll": 3.929744005203247
+        },
+        {
+          "nll": 3.8148419857025146,
+          "policy_loss": 0.0009799364488571882,
+          "gradient_norm": 1.3473929166793823,
+          "cost": {
+            "writes": 1252,
+            "reads": 2504,
+            "candidates": 3339,
+            "omitted": 3143,
+            "null_reads": 1438,
+            "reference_dereferences": 0,
+            "operator_executions": 1252
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0011217594146728516,
+          "decision": [
+            0,
+            "relation"
+          ],
+          "coordinate": [
+            0,
+            16
+          ],
+          "chosen": 0,
+          "alternative": 2,
+          "alternative_nll": 3.813720226287842
+        },
+        {
+          "nll": 3.769584894180298,
+          "policy_loss": 0.00012170753325335681,
+          "gradient_norm": 1.3641126155853271,
+          "cost": {
+            "writes": 1256,
+            "reads": 2512,
+            "candidates": 3384,
+            "omitted": 3474,
+            "null_reads": 1421,
+            "reference_dereferences": 0,
+            "operator_executions": 1256
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0001647472381591797,
+          "decision": [
+            0,
+            "rank"
+          ],
+          "coordinate": [
+            0,
+            25,
+            0
+          ],
+          "chosen": 0,
+          "alternative": 2,
+          "alternative_nll": 3.7694201469421387
+        },
+        {
+          "nll": 3.6472885608673096,
+          "policy_loss": -0.0,
+          "gradient_norm": 1.3352800607681274,
+          "cost": {
+            "writes": 1264,
+            "reads": 2528,
+            "candidates": 3548,
+            "omitted": 3350,
+            "null_reads": 1328,
+            "reference_dereferences": 0,
+            "operator_executions": 1264
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "continuation"
+          ],
+          "coordinate": [
+            1,
+            116
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 3.6472885608673096
+        }
+      ]
+    }
+  ]
+}
