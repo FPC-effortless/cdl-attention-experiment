@@ -1,0 +1,79 @@
+{
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.15.0+cpu",
+    "threads": 1
+  },
+  "architecture": "V4 page-addressed, untrained, width=24, layers=2, cap=2, page_bits=20",
+  "long_output": {
+    "prompt_tokens": 128,
+    "generated_tokens": 16384,
+    "decode_seconds": 12.9411,
+    "token_steps_per_second": 1266.04,
+    "checkpoints": [
+      {
+        "length": 1,
+        "max_abs_error": 4.76837158203125e-07,
+        "argmax_equal": true
+      },
+      {
+        "length": 32,
+        "max_abs_error": 4.76837158203125e-07,
+        "argmax_equal": true
+      },
+      {
+        "length": 128,
+        "max_abs_error": 4.76837158203125e-07,
+        "argmax_equal": true
+      },
+      {
+        "length": 512,
+        "max_abs_error": 4.76837158203125e-07,
+        "argmax_equal": true
+      },
+      {
+        "length": 2048,
+        "max_abs_error": 2.980232238769531e-07,
+        "argmax_equal": true
+      },
+      {
+        "length": 4096,
+        "max_abs_error": 2.980232238769531e-07,
+        "argmax_equal": true
+      },
+      {
+        "length": 8192,
+        "max_abs_error": 2.980232238769531e-07,
+        "argmax_equal": true
+      },
+      {
+        "length": 16384,
+        "max_abs_error": 2.980232238769531e-07,
+        "argmax_equal": true
+      }
+    ],
+    "state_capacity": 32768,
+    "index_operations": {
+      "writes": 33024,
+      "reads": 66048,
+      "candidates": 82379,
+      "omitted": 98728,
+      "null_reads": 65911,
+      "reference_dereferences": 10,
+      "operator_executions": 33024,
+      "older_page_reads": 16447,
+      "invalid_page_reads": 14,
+      "active_page_bit_decisions": 32958
+    }
+  },
+  "long_prompt": {
+    "prompt_tokens": 65536,
+    "generated_tokens": 512,
+    "prefill_seconds": 3.2502,
+    "decode_seconds": 0.4384,
+    "decode_tokens_per_second": 1167.8,
+    "state_capacity": 131072,
+    "state_allocated_mib": 24.0,
+    "indexed_writes": 132096
+  }
+}

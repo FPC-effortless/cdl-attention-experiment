@@ -1,0 +1,41 @@
+{
+  "python": "3.13.5",
+  "torch": "2.10.0+cpu",
+  "thread_count": 1,
+  "median_repeats": 5,
+  "source": "V4 engineering benchmark, untrained",
+  "cases": [
+    {
+      "architecture": "v3",
+      "mode": "no_grad",
+      "prompt": 512,
+      "output": 512,
+      "prefill_ms": 16.426,
+      "decode_ms": 384.495
+    },
+    {
+      "architecture": "v3",
+      "mode": "inference_mode",
+      "prompt": 512,
+      "output": 512,
+      "prefill_ms": 13.194,
+      "decode_ms": 361.917
+    },
+    {
+      "architecture": "v4",
+      "mode": "no_grad",
+      "prompt": 512,
+      "output": 512,
+      "prefill_ms": 28.691,
+      "decode_ms": 408.428
+    },
+    {
+      "architecture": "v4",
+      "mode": "inference_mode",
+      "prompt": 512,
+      "output": 512,
+      "prefill_ms": 22.842,
+      "decode_ms": 386.6
+    }
+  ]
+}
