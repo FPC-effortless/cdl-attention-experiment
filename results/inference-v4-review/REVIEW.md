@@ -34,8 +34,13 @@ integration therefore need their own provenance.
   rather than silently accepting NaN or infinity.
 - Page-bit decoding rejects fractional/string digits rather than truncating them.
 
-The local CI workflow now includes inference tests and their path triggers.
-Remote CI has not run on these integration changes.
+The CI workflow includes inference tests and their path triggers. The first remote
+run exposed an undeclared NumPy dependency in the imported mathematical/program
+modules: all 27 original tests passed, but three inference test modules failed to
+import. NumPy was preinstalled locally. The integration now declares the locally
+tested NumPy 2.3.5 version in `requirements-inference.txt` and installs it in CI.
+The failure remains visible in workflow run 42415078770; consult PR #51 for the
+latest rerun. No test was skipped or weakened to resolve the failure.
 
 ## Checks actually executed
 

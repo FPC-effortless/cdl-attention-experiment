@@ -1,0 +1,2 @@
+# Additional dependency for V3/V4 materialized relation programs and math checks.
+numpy==2.3.5

@@ -82,6 +82,7 @@ qualified by learned multi-hop accuracy. The 12:1 inference/training cost
 preference applies only after competence and expressivity requirements pass.
 
 ```bash
+python -m pip install -r relational_composition/requirements-inference.txt
 python -m unittest discover -s tests/inference -p 'test_*.py' -v
 python -m experiments.inference_v4.benchmark_paired --repeats 8 --output /tmp/lrc-paired.json
 python -m experiments.inference_v4.stress_v4 --output /tmp/lrc-stress.json
