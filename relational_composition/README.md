@@ -54,3 +54,19 @@ This version prioritizes inspectable correctness. It has Python CPU indexes,
 host transfers, no optimized decoding cache, no natural corpus result, and no
 attention/SSM performance baseline. Appending records prevents destruction but
 does not guarantee the relevant occurrence falls inside the read cap.
+
+## LRC-002 information diagnostics
+
+The follow-up [protocol](EXPERIMENT_LRC002.md) adds trained local controls,
+explicitly privileged oracle endpoint access, answer-only diagnostic losses and
+an independent random-answer control. It reports answer bits and free-running
+two-byte generation separately from whole-text loss. Run the frozen matrix with:
+
+```bash
+python -m relational_composition.run_information --output /tmp/lrc002-evidence
+python -m unittest discover -s relational_composition -t . -p 'test_*.py' -v
+```
+
+`oracle_operands` is exclusively a capacity diagnostic: it already resolves the
+supporting relation chain and must never be reported as learned routing. The
+original LRC-001 source and result are preserved on `research/relational-composition-v01`.

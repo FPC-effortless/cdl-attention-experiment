@@ -1,0 +1,887 @@
+{
+  "status": "PREREGISTERED_DIAGNOSTIC_NOT_ARCHITECTURE_QUALIFICATION",
+  "source_sha256": {
+    "__init__.py": "1218e2ae53bfc7ac83343eb9b82c67c0cb894009dc2892dd18ce8a5408c4fcc3",
+    "data.py": "388cd9c21ed25b711835576ca17d38793f539bb411f21be9e81e84f88503c911",
+    "index.py": "5374011ec65bec72e5124712ac2996f1b2131126dfa1f5b689d6b9a25161caa7",
+    "information.py": "c75c35d28bbfe02c9517d3fde378d7a781825805bf147b6bd5f6ba782681f47c",
+    "model.py": "f4768b60ae6c9625bba0e0ee44c9dde4a5bc850167d0bd7e9af009684b7b15d8",
+    "run.py": "ac65bfa399431e94bead50f8a46eb9f9dba24a71670cf4f12179e088741c5e7e",
+    "run_information.py": "09eb93f0ef345240ea26f590d20f6d71400c7f80d9604bd2b53a56386f3d7c6e",
+    "test_composition.py": "09db238a72f8d42d1381928771ea43bba928b1bdce1f39d7afe7d19439358b45",
+    "test_information.py": "6b81a0daae6b3a571813a47a21fd762f7ee1d3dec5862abaf9ae6fd7f0abc8f7",
+    "train.py": "8c445ca154f56cef6357985f49d077027602c9ad174cb78684069866ec3e462a"
+  },
+  "protocol_sha256": "9876f07b1803b67fde03f861089c874c9d2abf621b0b9229f7ae218a544c4243",
+  "git_head": "d298a9a45aea02e3da86f270acfc6c060eddb615",
+  "torch": "2.15.0+cpu",
+  "python": "3.12.14",
+  "config": {
+    "vocab": 257,
+    "width": 24,
+    "layers": 2,
+    "relations": 4,
+    "addresses": 8,
+    "candidates": 2,
+    "local_kernel": 5,
+    "variant": "coupled"
+  },
+  "seeds": [
+    201,
+    202,
+    203
+  ],
+  "steps": 400,
+  "batch_size": 4,
+  "learning_rate": 0.002,
+  "random_answer_entropy_bits": 4.321928094887363,
+  "random_answer_chance": 0.05,
+  "phase": "complete",
+  "results": [
+    {
+      "seed": 201,
+      "arm": "learned_lm",
+      "parameters": 33061,
+      "train_seconds": 11.210140483000032,
+      "first_objective": 5.723116397857666,
+      "last_objective": 0.46692466735839844,
+      "forward_passes": 800,
+      "train_cost": {
+        "writes": 1004852,
+        "reads": 2009704,
+        "candidates": 2714341,
+        "omitted": 2141863,
+        "null_reads": 1093927,
+        "reference_dereferences": 112245,
+        "operator_executions": 1004852,
+        "oracle_operand_reads": 0
+      },
+      "nonzero_credit": 267,
+      "checkpoint": "learned_lm-201.pt",
+      "checkpoint_sha256": "6d679021d31059d6a302a4b5cd6b057f451e763939babda8564d69315088118d",
+      "held_out": {
+        "iid": {
+          "examples": 64,
+          "answer_bits": 4.435095459222794,
+          "memory_gain_bits": 0.03678898513317108,
+          "text_nll": 0.45639790454879403,
+          "generated_accuracy": 0.0625,
+          "teacher_forced_accuracy": 0.0625
+        },
+        "composition": {
+          "examples": 64,
+          "answer_bits": 4.342274457216263,
+          "memory_gain_bits": 0.005216110497713089,
+          "text_nll": 0.4805636112578213,
+          "generated_accuracy": 0.140625,
+          "teacher_forced_accuracy": 0.140625
+        },
+        "names": {
+          "examples": 64,
+          "answer_bits": 14.023907244205475,
+          "memory_gain_bits": 0.035544201731681824,
+          "text_nll": 1.2394721116870642,
+          "generated_accuracy": 0.0,
+          "teacher_forced_accuracy": 0.0
+        }
+      },
+      "evaluation_seconds": 1.5622639220000565
+    },
+    {
+      "seed": 201,
+      "arm": "local_lm",
+      "parameters": 33061,
+      "train_seconds": 8.266469628999857,
+      "first_objective": 5.720569133758545,
+      "last_objective": 0.4731689393520355,
+      "forward_passes": 800,
+      "train_cost": {
+        "writes": 1004852,
+        "reads": 2009704,
+        "candidates": 2723742,
+        "omitted": 2141474,
+        "null_reads": 2009704,
+        "reference_dereferences": 0,
+        "operator_executions": 1004852,
+        "oracle_operand_reads": 0
+      },
+      "nonzero_credit": 55,
+      "checkpoint": "local_lm-201.pt",
+      "checkpoint_sha256": "865936160ab30e4542073a8682e1cd18be421e65d5449d22fd3ee9f157dfc5ca",
+      "held_out": {
+        "iid": {
+          "examples": 64,
+          "answer_bits": 4.448749992996454,
+          "memory_gain_bits": 0.0,
+          "text_nll": 0.47472720593214035,
+          "generated_accuracy": 0.015625,
+          "teacher_forced_accuracy": 0.015625
+        },
+        "composition": {
+          "examples": 64,
+          "answer_bits": 4.372865356504917,
+          "memory_gain_bits": 0.0,
+          "text_nll": 0.48939699260517955,
+          "generated_accuracy": 0.09375,
+          "teacher_forced_accuracy": 0.09375
+        },
+        "names": {
+          "examples": 64,
+          "answer_bits": 13.92635940015316,
+          "memory_gain_bits": 0.0,
+          "text_nll": 1.2470985054969788,
+          "generated_accuracy": 0.0,
+          "teacher_forced_accuracy": 0.0
+        }
+      },
+      "evaluation_seconds": 1.2518224809996354
+    },
+    {
+      "seed": 201,
+      "arm": "oracle_lm",
+      "parameters": 33061,
+      "train_seconds": 11.692844126000182,
+      "first_objective": 5.720703601837158,
+      "last_objective": 0.45442166924476624,
+      "forward_passes": 800,
+      "train_cost": {
+        "writes": 1004852,
+        "reads": 2009704,
+        "candidates": 2723179,
+        "omitted": 2140795,
+        "null_reads": 1088899,
+        "reference_dereferences": 6076,
+        "operator_executions": 1004852,
+        "oracle_operand_reads": 38400
+      },
+      "nonzero_credit": 55,
+      "checkpoint": "oracle_lm-201.pt",
+      "checkpoint_sha256": "005ab9fe968c1253f7e87079a0db6a5c77f7b847b376f7264089b1df6e1ff499",
+      "held_out": {
+        "iid": {
+          "examples": 64,
+          "answer_bits": 2.1179586404468864,
+          "memory_gain_bits": 5.039630064973608,
+          "text_nll": 0.4636099920608103,
+          "generated_accuracy": 0.546875,
+          "teacher_forced_accuracy": 0.546875
+        },
+        "composition": {
+          "examples": 64,
+          "answer_bits": 1.6879078191705048,
+          "memory_gain_bits": 5.421104382257909,
+          "text_nll": 0.4781905198469758,
+          "generated_accuracy": 0.671875,
+          "teacher_forced_accuracy": 0.671875
+        },
+        "names": {
+          "examples": 64,
+          "answer_bits": 11.269920289516449,
+          "memory_gain_bits": 3.5644258558750153,
+          "text_nll": 1.24134505353868,
+          "generated_accuracy": 0.0,
+          "teacher_forced_accuracy": 0.0
+        }
+      },
+      "evaluation_seconds": 1.8053011259999039
+    },
+    {
+      "seed": 201,
+      "arm": "oracle_answer",
+      "parameters": 33061,
+      "train_seconds": 11.383915804000026,
+      "first_objective": 5.9062676429748535,
+      "last_objective": 0.03028760477900505,
+      "forward_passes": 800,
+      "train_cost": {
+        "writes": 1004852,
+        "reads": 2009704,
+        "candidates": 2718334,
+        "omitted": 2127603,
+        "null_reads": 1105506,
+        "reference_dereferences": 3904,
+        "operator_executions": 1004852,
+        "oracle_operand_reads": 38400
+      },
+      "nonzero_credit": 3,
+      "checkpoint": "oracle_answer-201.pt",
+      "checkpoint_sha256": "f9f2878e36417aaff49bf680258217284db59781233037b1ab627e691c0853e7",
+      "held_out": {
+        "iid": {
+          "examples": 64,
+          "answer_bits": 0.09725756327679846,
+          "memory_gain_bits": 7.327293973983615,
+          "text_nll": 6.25761479139328,
+          "generated_accuracy": 1.0,
+          "teacher_forced_accuracy": 1.0
+        },
+        "composition": {
+          "examples": 64,
+          "answer_bits": 0.08854269219591515,
+          "memory_gain_bits": 7.560258368430368,
+          "text_nll": 6.249590270221233,
+          "generated_accuracy": 1.0,
+          "teacher_forced_accuracy": 1.0
+        },
+        "names": {
+          "examples": 64,
+          "answer_bits": 14.029695212841034,
+          "memory_gain_bits": -0.8202372938394547,
+          "text_nll": 6.798043422400951,
+          "generated_accuracy": 0.0,
+          "teacher_forced_accuracy": 0.0
+        }
+      },
+      "evaluation_seconds": 1.466139125999689
+    },
+    {
+      "seed": 201,
+      "arm": "local_answer",
+      "parameters": 33061,
+      "train_seconds": 8.643325175999962,
+      "first_objective": 5.924699783325195,
+      "last_objective": 1.431288242340088,
+      "forward_passes": 800,
+      "train_cost": {
+        "writes": 1004852,
+        "reads": 2009704,
+        "candidates": 2655981,
+        "omitted": 2184805,
+        "null_reads": 2009704,
+        "reference_dereferences": 0,
+        "operator_executions": 1004852,
+        "oracle_operand_reads": 0
+      },
+      "nonzero_credit": 1,
+      "checkpoint": "local_answer-201.pt",
+      "checkpoint_sha256": "6c5bdc22fbfdc062cf19af9ba4bddb867f4049a65043a0eea6c10968048d86d8",
+      "held_out": {
+        "iid": {
+          "examples": 64,
+          "answer_bits": 4.349739216268063,
+          "memory_gain_bits": 0.0,
+          "text_nll": 5.443982057273388,
+          "generated_accuracy": 0.09375,
+          "teacher_forced_accuracy": 0.09375
+        },
+        "composition": {
+          "examples": 64,
+          "answer_bits": 4.256306447088718,
+          "memory_gain_bits": 0.0,
+          "text_nll": 5.437083996832371,
+          "generated_accuracy": 0.140625,
+          "teacher_forced_accuracy": 0.140625
+        },
+        "names": {
+          "examples": 64,
+          "answer_bits": 14.748168170452118,
+          "memory_gain_bits": 0.0,
+          "text_nll": 6.288664296269417,
+          "generated_accuracy": 0.0,
+          "teacher_forced_accuracy": 0.0
+        }
+      },
+      "evaluation_seconds": 1.3856619759999376
+    },
+    {
+      "seed": 201,
+      "arm": "oracle_random_answer",
+      "parameters": 33061,
+      "train_seconds": 11.572856152999975,
+      "first_objective": 5.82318115234375,
+      "last_objective": 1.6196215152740479,
+      "forward_passes": 800,
+      "train_cost": {
+        "writes": 1004852,
+        "reads": 2009704,
+        "candidates": 2728655,
+        "omitted": 2135388,
+        "null_reads": 1084138,
+        "reference_dereferences": 4506,
+        "operator_executions": 1004852,
+        "oracle_operand_reads": 38400
+      },
+      "nonzero_credit": 3,
+      "checkpoint": "oracle_random_answer-201.pt",
+      "checkpoint_sha256": "6446df964ac03e127c86c7a62fcd84f275d39bb0dfd5c6786c9954787b026c04",
+      "held_out": {
+        "iid": {
+          "examples": 64,
+          "answer_bits": 4.4454506151378155,
+          "memory_gain_bits": 0.20745908841490746,
+          "text_nll": 5.042294159531593,
+          "generated_accuracy": 0.046875,
+          "teacher_forced_accuracy": 0.046875
+        }
+      },
+      "evaluation_seconds": 0.4396272360004332
+    },
+    {
+      "seed": 202,
+      "arm": "learned_lm",
+      "parameters": 33061,
+      "train_seconds": 11.295695496999997,
+      "first_objective": 5.847540378570557,
+      "last_objective": 0.47377392649650574,
+      "forward_passes": 800,
+      "train_cost": {
+        "writes": 1004580,
+        "reads": 2009160,
+        "candidates": 2720447,
+        "omitted": 2118438,
+        "null_reads": 1100105,
+        "reference_dereferences": 126711,
+        "operator_executions": 1004580,
+        "oracle_operand_reads": 0
+      },
+      "nonzero_credit": 255,
+      "checkpoint": "learned_lm-202.pt",
+      "checkpoint_sha256": "d8bebd40dbc1cd8e451f12ad206bb3ff7d9ad39d26b47bb9de189080fba4692e",
+      "held_out": {
+        "iid": {
+          "examples": 64,
+          "answer_bits": 4.410014845430851,
+          "memory_gain_bits": 0.0030026137828826904,
+          "text_nll": 0.45637705083936453,
+          "generated_accuracy": 0.046875,
+          "teacher_forced_accuracy": 0.046875
+        },
+        "composition": {
+          "examples": 64,
+          "answer_bits": 4.466189119964838,
+          "memory_gain_bits": 0.04319195821881294,
+          "text_nll": 0.46478332579135895,
+          "generated_accuracy": 0.03125,
+          "teacher_forced_accuracy": 0.03125
+        },
+        "names": {
+          "examples": 64,
+          "answer_bits": 14.984016865491867,
+          "memory_gain_bits": 0.06594504415988922,
+          "text_nll": 1.2908856719732285,
+          "generated_accuracy": 0.0,
+          "teacher_forced_accuracy": 0.0
+        }
+      },
+      "evaluation_seconds": 1.6493183389998194
+    },
+    {
+      "seed": 202,
+      "arm": "local_lm",
+      "parameters": 33061,
+      "train_seconds": 7.992681214000186,
+      "first_objective": 5.8486647605896,
+      "last_objective": 0.4872876703739166,
+      "forward_passes": 800,
+      "train_cost": {
+        "writes": 1004580,
+        "reads": 2009160,
+        "candidates": 2735327,
+        "omitted": 2123259,
+        "null_reads": 2009160,
+        "reference_dereferences": 0,
+        "operator_executions": 1004580,
+        "oracle_operand_reads": 0
+      },
+      "nonzero_credit": 58,
+      "checkpoint": "local_lm-202.pt",
+      "checkpoint_sha256": "369bf8bfcd19e5d088f8063a6620b67ac0ce11bb7778b7ee4e7f9cbbbe4ca241",
+      "held_out": {
+        "iid": {
+          "examples": 64,
+          "answer_bits": 4.437448661774397,
+          "memory_gain_bits": 0.0,
+          "text_nll": 0.4768044897355139,
+          "generated_accuracy": 0.046875,
+          "teacher_forced_accuracy": 0.046875
+        },
+        "composition": {
+          "examples": 64,
+          "answer_bits": 4.517275117337704,
+          "memory_gain_bits": 0.0,
+          "text_nll": 0.4863473423756659,
+          "generated_accuracy": 0.03125,
+          "teacher_forced_accuracy": 0.03125
+        },
+        "names": {
+          "examples": 64,
+          "answer_bits": 15.180531278252602,
+          "memory_gain_bits": 0.0,
+          "text_nll": 1.3192166704684496,
+          "generated_accuracy": 0.0,
+          "teacher_forced_accuracy": 0.0
+        }
+      },
+      "evaluation_seconds": 1.3269746869996197
+    },
+    {
+      "seed": 202,
+      "arm": "oracle_lm",
+      "parameters": 33061,
+      "train_seconds": 11.075953949999985,
+      "first_objective": 5.848778247833252,
+      "last_objective": 0.4784254729747772,
+      "forward_passes": 800,
+      "train_cost": {
+        "writes": 1004580,
+        "reads": 2009160,
+        "candidates": 2732007,
+        "omitted": 2116018,
+        "null_reads": 1118305,
+        "reference_dereferences": 4797,
+        "operator_executions": 1004580,
+        "oracle_operand_reads": 38400
+      },
+      "nonzero_credit": 57,
+      "checkpoint": "oracle_lm-202.pt",
+      "checkpoint_sha256": "0479ceda7606bc5bb7e82444b98a84f9fc48eb24e477536aa321e5e5c1e9754f",
+      "held_out": {
+        "iid": {
+          "examples": 64,
+          "answer_bits": 1.9574664991814643,
+          "memory_gain_bits": 4.582578821806237,
+          "text_nll": 0.46461752336472273,
+          "generated_accuracy": 0.625,
+          "teacher_forced_accuracy": 0.625
+        },
+        "composition": {
+          "examples": 64,
+          "answer_bits": 1.7001126338727772,
+          "memory_gain_bits": 4.809193083550781,
+          "text_nll": 0.4740742309950292,
+          "generated_accuracy": 0.71875,
+          "teacher_forced_accuracy": 0.71875
+        },
+        "names": {
+          "examples": 64,
+          "answer_bits": 12.992323257029057,
+          "memory_gain_bits": 2.7602987736463547,
+          "text_nll": 1.3105372916907072,
+          "generated_accuracy": 0.0,
+          "teacher_forced_accuracy": 0.0
+        }
+      },
+      "evaluation_seconds": 1.5979083209999771
+    },
+    {
+      "seed": 202,
+      "arm": "oracle_answer",
+      "parameters": 33061,
+      "train_seconds": 12.412015005000285,
+      "first_objective": 6.4434943199157715,
+      "last_objective": 0.023835178464651108,
+      "forward_passes": 800,
+      "train_cost": {
+        "writes": 1004580,
+        "reads": 2009160,
+        "candidates": 2758693,
+        "omitted": 2089206,
+        "null_reads": 1090385,
+        "reference_dereferences": 5531,
+        "operator_executions": 1004580,
+        "oracle_operand_reads": 38400
+      },
+      "nonzero_credit": 1,
+      "checkpoint": "oracle_answer-202.pt",
+      "checkpoint_sha256": "f7e42d9c205dce3e00c5e554110e3bbcb878e23c6255340469a51ace89da0d5e",
+      "held_out": {
+        "iid": {
+          "examples": 64,
+          "answer_bits": 0.07740766114147846,
+          "memory_gain_bits": 7.238700489731855,
+          "text_nll": 6.63883987814188,
+          "generated_accuracy": 1.0,
+          "teacher_forced_accuracy": 1.0
+        },
+        "composition": {
+          "examples": 64,
+          "answer_bits": 0.06904642948939,
+          "memory_gain_bits": 7.300072150173946,
+          "text_nll": 6.650544449687004,
+          "generated_accuracy": 1.0,
+          "teacher_forced_accuracy": 1.0
+        },
+        "names": {
+          "examples": 64,
+          "answer_bits": 13.866930708289146,
+          "memory_gain_bits": 0.1649160534143448,
+          "text_nll": 7.443843759596348,
+          "generated_accuracy": 0.0,
+          "teacher_forced_accuracy": 0.0
+        }
+      },
+      "evaluation_seconds": 1.773445511999853
+    },
+    {
+      "seed": 202,
+      "arm": "local_answer",
+      "parameters": 33061,
+      "train_seconds": 8.63312264399974,
+      "first_objective": 6.415176868438721,
+      "last_objective": 1.4332830905914307,
+      "forward_passes": 800,
+      "train_cost": {
+        "writes": 1004580,
+        "reads": 2009160,
+        "candidates": 2688793,
+        "omitted": 2102474,
+        "null_reads": 2009160,
+        "reference_dereferences": 0,
+        "operator_executions": 1004580,
+        "oracle_operand_reads": 0
+      },
+      "nonzero_credit": 1,
+      "checkpoint": "local_answer-202.pt",
+      "checkpoint_sha256": "aaca031509ad72740d38dc68380089806e6759d0dc02e8ed8e2af946cf5d23f2",
+      "held_out": {
+        "iid": {
+          "examples": 64,
+          "answer_bits": 4.454026948660612,
+          "memory_gain_bits": 0.0,
+          "text_nll": 5.470215797424316,
+          "generated_accuracy": 0.015625,
+          "teacher_forced_accuracy": 0.015625
+        },
+        "composition": {
+          "examples": 64,
+          "answer_bits": 4.366928894072771,
+          "memory_gain_bits": 0.0,
+          "text_nll": 5.469429738819599,
+          "generated_accuracy": 0.09375,
+          "teacher_forced_accuracy": 0.09375
+        },
+        "names": {
+          "examples": 64,
+          "answer_bits": 15.167870253324509,
+          "memory_gain_bits": 0.0,
+          "text_nll": 6.341707557439804,
+          "generated_accuracy": 0.0,
+          "teacher_forced_accuracy": 0.0
+        }
+      },
+      "evaluation_seconds": 1.2284066329998495
+    },
+    {
+      "seed": 202,
+      "arm": "oracle_random_answer",
+      "parameters": 33061,
+      "train_seconds": 11.116766602000098,
+      "first_objective": 6.024313926696777,
+      "last_objective": 1.5943210124969482,
+      "forward_passes": 800,
+      "train_cost": {
+        "writes": 1004580,
+        "reads": 2009160,
+        "candidates": 2760356,
+        "omitted": 2143763,
+        "null_reads": 1087879,
+        "reference_dereferences": 5059,
+        "operator_executions": 1004580,
+        "oracle_operand_reads": 38400
+      },
+      "nonzero_credit": 1,
+      "checkpoint": "oracle_random_answer-202.pt",
+      "checkpoint_sha256": "e0e3702dce6c0c83f05b42550eb0931119a2603e060a087003d3a25242d04f9d",
+      "held_out": {
+        "iid": {
+          "examples": 64,
+          "answer_bits": 4.370705850422382,
+          "memory_gain_bits": 0.11604024469852448,
+          "text_nll": 5.057372152805328,
+          "generated_accuracy": 0.03125,
+          "teacher_forced_accuracy": 0.03125
+        }
+      },
+      "evaluation_seconds": 0.5581460210000841
+    },
+    {
+      "seed": 203,
+      "arm": "learned_lm",
+      "parameters": 33061,
+      "train_seconds": 10.586607978999837,
+      "first_objective": 5.7777323722839355,
+      "last_objective": 0.48252835869789124,
+      "forward_passes": 800,
+      "train_cost": {
+        "writes": 1004712,
+        "reads": 2009424,
+        "candidates": 2729732,
+        "omitted": 2143369,
+        "null_reads": 1117506,
+        "reference_dereferences": 99759,
+        "operator_executions": 1004712,
+        "oracle_operand_reads": 0
+      },
+      "nonzero_credit": 266,
+      "checkpoint": "learned_lm-203.pt",
+      "checkpoint_sha256": "e7e6df0cbc91c39f04adae2fb2601ab76da10538b5a81fb95a82825f7afc7e4e",
+      "held_out": {
+        "iid": {
+          "examples": 64,
+          "answer_bits": 4.37261064723134,
+          "memory_gain_bits": -0.002900887280702591,
+          "text_nll": 0.4737674458883703,
+          "generated_accuracy": 0.078125,
+          "teacher_forced_accuracy": 0.078125
+        },
+        "composition": {
+          "examples": 64,
+          "answer_bits": 4.257499501109123,
+          "memory_gain_bits": -0.008677024394273758,
+          "text_nll": 0.4921824214980006,
+          "generated_accuracy": 0.03125,
+          "teacher_forced_accuracy": 0.03125
+        },
+        "names": {
+          "examples": 64,
+          "answer_bits": 14.382379680871964,
+          "memory_gain_bits": 0.004144564270973206,
+          "text_nll": 1.272994238883257,
+          "generated_accuracy": 0.0,
+          "teacher_forced_accuracy": 0.0
+        }
+      },
+      "evaluation_seconds": 1.5972282620000442
+    },
+    {
+      "seed": 203,
+      "arm": "local_lm",
+      "parameters": 33061,
+      "train_seconds": 7.909838587000195,
+      "first_objective": 5.773468971252441,
+      "last_objective": 0.47968101501464844,
+      "forward_passes": 800,
+      "train_cost": {
+        "writes": 1004712,
+        "reads": 2009424,
+        "candidates": 2739303,
+        "omitted": 2160426,
+        "null_reads": 2009424,
+        "reference_dereferences": 0,
+        "operator_executions": 1004712,
+        "oracle_operand_reads": 0
+      },
+      "nonzero_credit": 56,
+      "checkpoint": "local_lm-203.pt",
+      "checkpoint_sha256": "3541a52d18485923c045f005d985c2da560b50c1c1d489dc7b7b2e8f3dfdd6ca",
+      "held_out": {
+        "iid": {
+          "examples": 64,
+          "answer_bits": 4.377624295651913,
+          "memory_gain_bits": 0.0,
+          "text_nll": 0.47393316589295864,
+          "generated_accuracy": 0.09375,
+          "teacher_forced_accuracy": 0.09375
+        },
+        "composition": {
+          "examples": 64,
+          "answer_bits": 4.290177721530199,
+          "memory_gain_bits": 0.0,
+          "text_nll": 0.48761422000825405,
+          "generated_accuracy": 0.140625,
+          "teacher_forced_accuracy": 0.140625
+        },
+        "names": {
+          "examples": 64,
+          "answer_bits": 14.443376556038857,
+          "memory_gain_bits": 0.0,
+          "text_nll": 1.2760268542915583,
+          "generated_accuracy": 0.0,
+          "teacher_forced_accuracy": 0.0
+        }
+      },
+      "evaluation_seconds": 1.2414907759998641
+    },
+    {
+      "seed": 203,
+      "arm": "oracle_lm",
+      "parameters": 33061,
+      "train_seconds": 10.845380923999983,
+      "first_objective": 5.773805141448975,
+      "last_objective": 0.4702949821949005,
+      "forward_passes": 800,
+      "train_cost": {
+        "writes": 1004712,
+        "reads": 2009424,
+        "candidates": 2736590,
+        "omitted": 2150052,
+        "null_reads": 1119631,
+        "reference_dereferences": 4186,
+        "operator_executions": 1004712,
+        "oracle_operand_reads": 38400
+      },
+      "nonzero_credit": 57,
+      "checkpoint": "oracle_lm-203.pt",
+      "checkpoint_sha256": "4d093619ed7477f51b954b61a9048c9e287725d4d888bd27ed6108c2e058988f",
+      "held_out": {
+        "iid": {
+          "examples": 64,
+          "answer_bits": 2.4308466762304306,
+          "memory_gain_bits": 3.588840529322624,
+          "text_nll": 0.46533013274893165,
+          "generated_accuracy": 0.59375,
+          "teacher_forced_accuracy": 0.59375
+        },
+        "composition": {
+          "examples": 64,
+          "answer_bits": 2.170341596007347,
+          "memory_gain_bits": 3.4905947353690863,
+          "text_nll": 0.48030005767941475,
+          "generated_accuracy": 0.640625,
+          "teacher_forced_accuracy": 0.640625
+        },
+        "names": {
+          "examples": 64,
+          "answer_bits": 14.053810462355614,
+          "memory_gain_bits": 1.3192041963338852,
+          "text_nll": 1.2792438846081495,
+          "generated_accuracy": 0.0,
+          "teacher_forced_accuracy": 0.0
+        }
+      },
+      "evaluation_seconds": 1.5380236940000032
+    },
+    {
+      "seed": 203,
+      "arm": "oracle_answer",
+      "parameters": 33061,
+      "train_seconds": 11.401672009999857,
+      "first_objective": 5.607994556427002,
+      "last_objective": 0.019856978207826614,
+      "forward_passes": 800,
+      "train_cost": {
+        "writes": 1004712,
+        "reads": 2009424,
+        "candidates": 2729978,
+        "omitted": 2103311,
+        "null_reads": 1101448,
+        "reference_dereferences": 4334,
+        "operator_executions": 1004712,
+        "oracle_operand_reads": 38400
+      },
+      "nonzero_credit": 1,
+      "checkpoint": "oracle_answer-203.pt",
+      "checkpoint_sha256": "e13889ef307e1eb44bf2108a92bdac690df8ab3572c85ee8e508159e0f85000f",
+      "held_out": {
+        "iid": {
+          "examples": 64,
+          "answer_bits": 0.06008808147453237,
+          "memory_gain_bits": 6.623579017628799,
+          "text_nll": 5.880638137459755,
+          "generated_accuracy": 1.0,
+          "teacher_forced_accuracy": 1.0
+        },
+        "composition": {
+          "examples": 64,
+          "answer_bits": 0.05418768037634436,
+          "memory_gain_bits": 6.844918166505522,
+          "text_nll": 5.875709690153599,
+          "generated_accuracy": 1.0,
+          "teacher_forced_accuracy": 1.0
+        },
+        "names": {
+          "examples": 64,
+          "answer_bits": 13.91807334125042,
+          "memory_gain_bits": -0.6486963331699371,
+          "text_nll": 6.624309286475182,
+          "generated_accuracy": 0.0,
+          "teacher_forced_accuracy": 0.0
+        }
+      },
+      "evaluation_seconds": 1.8562671419999788
+    },
+    {
+      "seed": 203,
+      "arm": "local_answer",
+      "parameters": 33061,
+      "train_seconds": 9.276454823000222,
+      "first_objective": 5.6208391189575195,
+      "last_objective": 1.5479944944381714,
+      "forward_passes": 800,
+      "train_cost": {
+        "writes": 1004712,
+        "reads": 2009424,
+        "candidates": 2741739,
+        "omitted": 2162163,
+        "null_reads": 2009424,
+        "reference_dereferences": 0,
+        "operator_executions": 1004712,
+        "oracle_operand_reads": 0
+      },
+      "nonzero_credit": 1,
+      "checkpoint": "local_answer-203.pt",
+      "checkpoint_sha256": "52c1f84ea4786b2a1ccdbd1f691fac92dadbcef432663f7ed1647da9f1e457fe",
+      "held_out": {
+        "iid": {
+          "examples": 64,
+          "answer_bits": 4.53404675796628,
+          "memory_gain_bits": 0.0,
+          "text_nll": 5.627021744847298,
+          "generated_accuracy": 0.015625,
+          "teacher_forced_accuracy": 0.015625
+        },
+        "composition": {
+          "examples": 64,
+          "answer_bits": 4.416622921824455,
+          "memory_gain_bits": 0.0,
+          "text_nll": 5.625641472637653,
+          "generated_accuracy": 0.09375,
+          "teacher_forced_accuracy": 0.09375
+        },
+        "names": {
+          "examples": 64,
+          "answer_bits": 15.302931666374207,
+          "memory_gain_bits": 0.0,
+          "text_nll": 6.514040403068066,
+          "generated_accuracy": 0.0,
+          "teacher_forced_accuracy": 0.0
+        }
+      },
+      "evaluation_seconds": 1.2288717950000319
+    },
+    {
+      "seed": 203,
+      "arm": "oracle_random_answer",
+      "parameters": 33061,
+      "train_seconds": 11.584120038000037,
+      "first_objective": 5.981019973754883,
+      "last_objective": 1.4437979459762573,
+      "forward_passes": 800,
+      "train_cost": {
+        "writes": 1004712,
+        "reads": 2009424,
+        "candidates": 2750087,
+        "omitted": 2148429,
+        "null_reads": 1096646,
+        "reference_dereferences": 4170,
+        "operator_executions": 1004712,
+        "oracle_operand_reads": 38400
+      },
+      "nonzero_credit": 1,
+      "checkpoint": "oracle_random_answer-203.pt",
+      "checkpoint_sha256": "7c361999a6b0f727be5682565f57bab8f5eb8ce8c60e157af39420db38921ae2",
+      "held_out": {
+        "iid": {
+          "examples": 64,
+          "answer_bits": 4.467424798756838,
+          "memory_gain_bits": 0.1595088541507721,
+          "text_nll": 4.972731575369835,
+          "generated_accuracy": 0.03125,
+          "teacher_forced_accuracy": 0.03125
+        }
+      },
+      "evaluation_seconds": 0.47907084600001326
+    }
+  ],
+  "gates": {
+    "oracle_decoder_competence": true,
+    "random_label_leakage_alarm": false,
+    "architecture_qualified": false
+  },
+  "raw_manifest_sha256": "a53f7844dfcbaab919dd21eaf48d81ee6b8dfa4856c44dcecfc3de6c2c83d1f6",
+  "raw_manifest_file": "lrc-002-evidence.json.gz",
+  "checkpoint_archive": {
+    "filename": "LRC002_Checkpoints_20261107.zip",
+    "sha256": "8363e6ec40b5192fab5b148ae5950e14fcf7b679f5cb2ed47fb49be65d7d62e6"
+  }
+}
