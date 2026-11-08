@@ -1,0 +1,1241 @@
+{
+  "schema_version": 1,
+  "experiment": "LRC Tiny Shakespeare all implemented language paths, 2026-11-08",
+  "inventory_date": "2026-11-08",
+  "scope": "Source inventory and origin verification; this file contains no training or benchmark outcomes.",
+  "repository": {
+    "url": "https://github.com/FPC-effortless/cdl-attention-experiment",
+    "base_commit": "b50e1615e16410b06af34081e83762460c0f9de3",
+    "working_branch": "research/lrc-tinyshakespeare-all-20261108"
+  },
+  "public_stages": [
+    {
+      "stage": "LRC-001",
+      "pr": 49,
+      "branch": "research/relational-composition-v01",
+      "commit": "d73e7f903fe35b629f090825178c7de42e02a6b8"
+    },
+    {
+      "stage": "LRC-002",
+      "pr": 50,
+      "branch": "research/lrc-information-diagnostics-v02",
+      "commit": "474fba0059deb6f2f054401231d8317e5a896da5",
+      "difference": "Adds explicit privileged oracle_operands diagnostics and loss controls; normal forward unchanged."
+    },
+    {
+      "stage": "V3/V4 integration",
+      "pr": 51,
+      "branch": "research/lrc-v4-integration-review",
+      "commit": "b50e1615e16410b06af34081e83762460c0f9de3"
+    }
+  ],
+  "archived_sources": {
+    "backbone": {
+      "observed_local_directory": "/workspace/scratch/b5966009d7f5/lrc_late_downloads/lrc_backbone_001_full_research_bundle/lrc_backbone_001"
+    },
+    "credit_prose": {
+      "observed_local_directory": "/workspace/scratch/b5966009d7f5/lrc_late_downloads/lrc_credit_transfer_research_bundle/lrc_credit_transfer_prose"
+    },
+    "pointer_ladder": {
+      "observed_local_directory": "/workspace/scratch/b5966009d7f5/lrc_late_downloads/lrc_pointer_ladder_diagnostics/lrc_pointer_ladder"
+    },
+    "utility": {
+      "observed_local_directory": "/workspace/scratch/b5966009d7f5/lrc_late_downloads/lrc_utility_gate_research_bundle/lrc_utility_gate_001"
+    }
+  },
+  "canonical_modules": [
+    {
+      "path": "relational_composition/__init__.py",
+      "sha256": "1218e2ae53bfc7ac83343eb9b82c67c0cb894009dc2892dd18ce8a5408c4fcc3",
+      "bytes": 158,
+      "ast_sha256": "11898bf64aad9e7534305bc91b4da6988e7541bddb4e479b41690cc2f6c127a8",
+      "git_blob_sha1": "4356647ac003aa2f3ac8c2bcb9149f8fdd46c525"
+    },
+    {
+      "path": "relational_composition/expressive_model.py",
+      "sha256": "65690fee6d38ad288d0a1f5898803c65beb38805b032c75eeaef792cebfdad36",
+      "bytes": 12074,
+      "ast_sha256": "c2d64376bedc465c39db684aa1ceb12325a01a935e973fea9d49098e982b3545",
+      "git_blob_sha1": "9ecd070dc216fc351298f3e76d3002c69ae34aa9"
+    },
+    {
+      "path": "relational_composition/fast_inference.py",
+      "sha256": "7a7d4d437f8f309bc6040a89b0e8fd3e6cf201fbfc2ac00de814ca4355953fa3",
+      "bytes": 13240,
+      "ast_sha256": "ecf48934691b122bc9a120a52800f55401b9efcc41a362750918a64121df8ee9",
+      "git_blob_sha1": "74f5e123f6b4baad7e4bc35d0a155d4ef7366b30"
+    },
+    {
+      "path": "relational_composition/hierarchical_index.py",
+      "sha256": "76755d8ce31343d95f8c7e9c5a6d7aa3a6ba9eaaa33722c2b86887d533c62b1e",
+      "bytes": 4730,
+      "ast_sha256": "4ef10324e31aaf88ee67e5678fc0fb0cc3691310fc2504c2adb21d5949b62cbf",
+      "git_blob_sha1": "374c0381c14f9cb30e83996993f12df3160246b2"
+    },
+    {
+      "path": "relational_composition/hierarchical_model.py",
+      "sha256": "6a2001039a7da3be882e55b9189dfb16e45063524b52ba32e95391890c53ff26",
+      "bytes": 13604,
+      "ast_sha256": "a8c3fa5567a736bb02529e1052ecba65c5411ce4c2c580947b832f42510a9cae",
+      "git_blob_sha1": "bf027be3eca0d011c90ca804b09c90bf94e4b3c6"
+    },
+    {
+      "path": "relational_composition/index.py",
+      "sha256": "5374011ec65bec72e5124712ac2996f1b2131126dfa1f5b689d6b9a25161caa7",
+      "bytes": 1423,
+      "ast_sha256": "83eebfe43b943a0593c449a974d8038f0eb25229ac6dcc46a150d1917810d9aa",
+      "git_blob_sha1": "e8d47cd7071b3e1fe294a91fe0e5fb79b831d878"
+    },
+    {
+      "path": "relational_composition/model.py",
+      "sha256": "f4768b60ae6c9625bba0e0ee44c9dde4a5bc850167d0bd7e9af009684b7b15d8",
+      "bytes": 10811,
+      "ast_sha256": "91940aae8fd85bb96b1a1fc0705e6359780ab6c3448b7741024711aa6fcddeb3",
+      "git_blob_sha1": "57e64fcf15dc32c120822a38b1bb91260fa69f9a"
+    },
+    {
+      "path": "relational_composition/train.py",
+      "sha256": "8c445ca154f56cef6357985f49d077027602c9ad174cb78684069866ec3e462a",
+      "bytes": 3050,
+      "ast_sha256": "efad33ff64da08f93bdf6773a9597573ecb804c5819245ce39b60bc6cffa5d00",
+      "git_blob_sha1": "1e940674590300bfafac1c8fd826b563c97b4196"
+    },
+    {
+      "path": "relational_composition/train_hierarchical.py",
+      "sha256": "eaea9d256a254358cd13deceb39d2a27790155fe0a31cbe0f096e173fb678841",
+      "bytes": 5496,
+      "ast_sha256": "942bd42221c0dec6d123c84f0599abf1ceffa43d81b6c7c4c857fc379857477d",
+      "git_blob_sha1": "2442cdd7031501c189ff250681eb7c0f7a27cf11"
+    }
+  ],
+  "archive_to_canonical_comparison": [
+    {
+      "archive": "backbone",
+      "archived_source": {
+        "path": "relational_composition/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "ast_sha256": "3543b4693a36a1098850b8bc928887694ed59a6deb7d3dfd0339de01f55a77b6"
+      },
+      "canonical_source": {
+        "path": "relational_composition/__init__.py",
+        "sha256": "1218e2ae53bfc7ac83343eb9b82c67c0cb894009dc2892dd18ce8a5408c4fcc3",
+        "bytes": 158,
+        "ast_sha256": "11898bf64aad9e7534305bc91b4da6988e7541bddb4e479b41690cc2f6c127a8"
+      },
+      "byte_identical": false,
+      "python_ast_identical": false,
+      "classification": "package_exports_only"
+    },
+    {
+      "archive": "backbone",
+      "archived_source": {
+        "path": "relational_composition/expressive_model.py",
+        "sha256": "96b411970386e53ca07669d8c3ad31d156b77ba09f96d3d732f6fba9c92d82b7",
+        "bytes": 12075,
+        "ast_sha256": "c2d64376bedc465c39db684aa1ceb12325a01a935e973fea9d49098e982b3545"
+      },
+      "canonical_source": {
+        "path": "relational_composition/expressive_model.py",
+        "sha256": "65690fee6d38ad288d0a1f5898803c65beb38805b032c75eeaef792cebfdad36",
+        "bytes": 12074,
+        "ast_sha256": "c2d64376bedc465c39db684aa1ceb12325a01a935e973fea9d49098e982b3545"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "backbone",
+      "archived_source": {
+        "path": "relational_composition/fast_inference.py",
+        "sha256": "a06ddc1d9bc27b49bbc41bccaf71c800a7053840270f127cd26ea593a8cd0f7c",
+        "bytes": 13241,
+        "ast_sha256": "ecf48934691b122bc9a120a52800f55401b9efcc41a362750918a64121df8ee9"
+      },
+      "canonical_source": {
+        "path": "relational_composition/fast_inference.py",
+        "sha256": "7a7d4d437f8f309bc6040a89b0e8fd3e6cf201fbfc2ac00de814ca4355953fa3",
+        "bytes": 13240,
+        "ast_sha256": "ecf48934691b122bc9a120a52800f55401b9efcc41a362750918a64121df8ee9"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "backbone",
+      "archived_source": {
+        "path": "relational_composition/hierarchical_index.py",
+        "sha256": "baaf96b6a6b54662fd67e48324f1f3f75a9310fa0c203db152ce5203bcb873d2",
+        "bytes": 4731,
+        "ast_sha256": "4ef10324e31aaf88ee67e5678fc0fb0cc3691310fc2504c2adb21d5949b62cbf"
+      },
+      "canonical_source": {
+        "path": "relational_composition/hierarchical_index.py",
+        "sha256": "76755d8ce31343d95f8c7e9c5a6d7aa3a6ba9eaaa33722c2b86887d533c62b1e",
+        "bytes": 4730,
+        "ast_sha256": "4ef10324e31aaf88ee67e5678fc0fb0cc3691310fc2504c2adb21d5949b62cbf"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "backbone",
+      "archived_source": {
+        "path": "relational_composition/hierarchical_model.py",
+        "sha256": "47675971077b8bf983d86c7a408c31035f347ae1950eaf25e119a4accf5c7171",
+        "bytes": 13605,
+        "ast_sha256": "a8c3fa5567a736bb02529e1052ecba65c5411ce4c2c580947b832f42510a9cae"
+      },
+      "canonical_source": {
+        "path": "relational_composition/hierarchical_model.py",
+        "sha256": "6a2001039a7da3be882e55b9189dfb16e45063524b52ba32e95391890c53ff26",
+        "bytes": 13604,
+        "ast_sha256": "a8c3fa5567a736bb02529e1052ecba65c5411ce4c2c580947b832f42510a9cae"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "backbone",
+      "archived_source": {
+        "path": "relational_composition/index.py",
+        "sha256": "01825eaf7b26069e1040fd17ca0018e336b7b80de05c5abb135961b7e2588b0c",
+        "bytes": 1424,
+        "ast_sha256": "83eebfe43b943a0593c449a974d8038f0eb25229ac6dcc46a150d1917810d9aa"
+      },
+      "canonical_source": {
+        "path": "relational_composition/index.py",
+        "sha256": "5374011ec65bec72e5124712ac2996f1b2131126dfa1f5b689d6b9a25161caa7",
+        "bytes": 1423,
+        "ast_sha256": "83eebfe43b943a0593c449a974d8038f0eb25229ac6dcc46a150d1917810d9aa"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "backbone",
+      "archived_source": {
+        "path": "relational_composition/model.py",
+        "sha256": "3d35ba59940012d28c2377bca8047ff73108659a9d5f0b051604b119e7e88c4b",
+        "bytes": 10812,
+        "ast_sha256": "91940aae8fd85bb96b1a1fc0705e6359780ab6c3448b7741024711aa6fcddeb3"
+      },
+      "canonical_source": {
+        "path": "relational_composition/model.py",
+        "sha256": "f4768b60ae6c9625bba0e0ee44c9dde4a5bc850167d0bd7e9af009684b7b15d8",
+        "bytes": 10811,
+        "ast_sha256": "91940aae8fd85bb96b1a1fc0705e6359780ab6c3448b7741024711aa6fcddeb3"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "backbone",
+      "archived_source": {
+        "path": "relational_composition/train_hierarchical.py",
+        "sha256": "0b3ab17e458a866a1551b98dea3dd93bc67c124c73a4894fbf1204f7bf6959d4",
+        "bytes": 5497,
+        "ast_sha256": "942bd42221c0dec6d123c84f0599abf1ceffa43d81b6c7c4c857fc379857477d"
+      },
+      "canonical_source": {
+        "path": "relational_composition/train_hierarchical.py",
+        "sha256": "eaea9d256a254358cd13deceb39d2a27790155fe0a31cbe0f096e173fb678841",
+        "bytes": 5496,
+        "ast_sha256": "942bd42221c0dec6d123c84f0599abf1ceffa43d81b6c7c4c857fc379857477d"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "credit_prose",
+      "archived_source": {
+        "path": "relational_composition/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "ast_sha256": "3543b4693a36a1098850b8bc928887694ed59a6deb7d3dfd0339de01f55a77b6"
+      },
+      "canonical_source": {
+        "path": "relational_composition/__init__.py",
+        "sha256": "1218e2ae53bfc7ac83343eb9b82c67c0cb894009dc2892dd18ce8a5408c4fcc3",
+        "bytes": 158,
+        "ast_sha256": "11898bf64aad9e7534305bc91b4da6988e7541bddb4e479b41690cc2f6c127a8"
+      },
+      "byte_identical": false,
+      "python_ast_identical": false,
+      "classification": "package_exports_only"
+    },
+    {
+      "archive": "credit_prose",
+      "archived_source": {
+        "path": "relational_composition/expressive_model.py",
+        "sha256": "96b411970386e53ca07669d8c3ad31d156b77ba09f96d3d732f6fba9c92d82b7",
+        "bytes": 12075,
+        "ast_sha256": "c2d64376bedc465c39db684aa1ceb12325a01a935e973fea9d49098e982b3545"
+      },
+      "canonical_source": {
+        "path": "relational_composition/expressive_model.py",
+        "sha256": "65690fee6d38ad288d0a1f5898803c65beb38805b032c75eeaef792cebfdad36",
+        "bytes": 12074,
+        "ast_sha256": "c2d64376bedc465c39db684aa1ceb12325a01a935e973fea9d49098e982b3545"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "credit_prose",
+      "archived_source": {
+        "path": "relational_composition/fast_inference.py",
+        "sha256": "a06ddc1d9bc27b49bbc41bccaf71c800a7053840270f127cd26ea593a8cd0f7c",
+        "bytes": 13241,
+        "ast_sha256": "ecf48934691b122bc9a120a52800f55401b9efcc41a362750918a64121df8ee9"
+      },
+      "canonical_source": {
+        "path": "relational_composition/fast_inference.py",
+        "sha256": "7a7d4d437f8f309bc6040a89b0e8fd3e6cf201fbfc2ac00de814ca4355953fa3",
+        "bytes": 13240,
+        "ast_sha256": "ecf48934691b122bc9a120a52800f55401b9efcc41a362750918a64121df8ee9"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "credit_prose",
+      "archived_source": {
+        "path": "relational_composition/hierarchical_index.py",
+        "sha256": "baaf96b6a6b54662fd67e48324f1f3f75a9310fa0c203db152ce5203bcb873d2",
+        "bytes": 4731,
+        "ast_sha256": "4ef10324e31aaf88ee67e5678fc0fb0cc3691310fc2504c2adb21d5949b62cbf"
+      },
+      "canonical_source": {
+        "path": "relational_composition/hierarchical_index.py",
+        "sha256": "76755d8ce31343d95f8c7e9c5a6d7aa3a6ba9eaaa33722c2b86887d533c62b1e",
+        "bytes": 4730,
+        "ast_sha256": "4ef10324e31aaf88ee67e5678fc0fb0cc3691310fc2504c2adb21d5949b62cbf"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "credit_prose",
+      "archived_source": {
+        "path": "relational_composition/hierarchical_model.py",
+        "sha256": "47675971077b8bf983d86c7a408c31035f347ae1950eaf25e119a4accf5c7171",
+        "bytes": 13605,
+        "ast_sha256": "a8c3fa5567a736bb02529e1052ecba65c5411ce4c2c580947b832f42510a9cae"
+      },
+      "canonical_source": {
+        "path": "relational_composition/hierarchical_model.py",
+        "sha256": "6a2001039a7da3be882e55b9189dfb16e45063524b52ba32e95391890c53ff26",
+        "bytes": 13604,
+        "ast_sha256": "a8c3fa5567a736bb02529e1052ecba65c5411ce4c2c580947b832f42510a9cae"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "credit_prose",
+      "archived_source": {
+        "path": "relational_composition/index.py",
+        "sha256": "01825eaf7b26069e1040fd17ca0018e336b7b80de05c5abb135961b7e2588b0c",
+        "bytes": 1424,
+        "ast_sha256": "83eebfe43b943a0593c449a974d8038f0eb25229ac6dcc46a150d1917810d9aa"
+      },
+      "canonical_source": {
+        "path": "relational_composition/index.py",
+        "sha256": "5374011ec65bec72e5124712ac2996f1b2131126dfa1f5b689d6b9a25161caa7",
+        "bytes": 1423,
+        "ast_sha256": "83eebfe43b943a0593c449a974d8038f0eb25229ac6dcc46a150d1917810d9aa"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "credit_prose",
+      "archived_source": {
+        "path": "relational_composition/model.py",
+        "sha256": "3d35ba59940012d28c2377bca8047ff73108659a9d5f0b051604b119e7e88c4b",
+        "bytes": 10812,
+        "ast_sha256": "91940aae8fd85bb96b1a1fc0705e6359780ab6c3448b7741024711aa6fcddeb3"
+      },
+      "canonical_source": {
+        "path": "relational_composition/model.py",
+        "sha256": "f4768b60ae6c9625bba0e0ee44c9dde4a5bc850167d0bd7e9af009684b7b15d8",
+        "bytes": 10811,
+        "ast_sha256": "91940aae8fd85bb96b1a1fc0705e6359780ab6c3448b7741024711aa6fcddeb3"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "credit_prose",
+      "archived_source": {
+        "path": "relational_composition/train_hierarchical.py",
+        "sha256": "0b3ab17e458a866a1551b98dea3dd93bc67c124c73a4894fbf1204f7bf6959d4",
+        "bytes": 5497,
+        "ast_sha256": "942bd42221c0dec6d123c84f0599abf1ceffa43d81b6c7c4c857fc379857477d"
+      },
+      "canonical_source": {
+        "path": "relational_composition/train_hierarchical.py",
+        "sha256": "eaea9d256a254358cd13deceb39d2a27790155fe0a31cbe0f096e173fb678841",
+        "bytes": 5496,
+        "ast_sha256": "942bd42221c0dec6d123c84f0599abf1ceffa43d81b6c7c4c857fc379857477d"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "pointer_ladder",
+      "archived_source": {
+        "path": "relational_composition/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "ast_sha256": "3543b4693a36a1098850b8bc928887694ed59a6deb7d3dfd0339de01f55a77b6"
+      },
+      "canonical_source": {
+        "path": "relational_composition/__init__.py",
+        "sha256": "1218e2ae53bfc7ac83343eb9b82c67c0cb894009dc2892dd18ce8a5408c4fcc3",
+        "bytes": 158,
+        "ast_sha256": "11898bf64aad9e7534305bc91b4da6988e7541bddb4e479b41690cc2f6c127a8"
+      },
+      "byte_identical": false,
+      "python_ast_identical": false,
+      "classification": "package_exports_only"
+    },
+    {
+      "archive": "pointer_ladder",
+      "archived_source": {
+        "path": "relational_composition/expressive_model.py",
+        "sha256": "96b411970386e53ca07669d8c3ad31d156b77ba09f96d3d732f6fba9c92d82b7",
+        "bytes": 12075,
+        "ast_sha256": "c2d64376bedc465c39db684aa1ceb12325a01a935e973fea9d49098e982b3545"
+      },
+      "canonical_source": {
+        "path": "relational_composition/expressive_model.py",
+        "sha256": "65690fee6d38ad288d0a1f5898803c65beb38805b032c75eeaef792cebfdad36",
+        "bytes": 12074,
+        "ast_sha256": "c2d64376bedc465c39db684aa1ceb12325a01a935e973fea9d49098e982b3545"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "pointer_ladder",
+      "archived_source": {
+        "path": "relational_composition/fast_inference.py",
+        "sha256": "a06ddc1d9bc27b49bbc41bccaf71c800a7053840270f127cd26ea593a8cd0f7c",
+        "bytes": 13241,
+        "ast_sha256": "ecf48934691b122bc9a120a52800f55401b9efcc41a362750918a64121df8ee9"
+      },
+      "canonical_source": {
+        "path": "relational_composition/fast_inference.py",
+        "sha256": "7a7d4d437f8f309bc6040a89b0e8fd3e6cf201fbfc2ac00de814ca4355953fa3",
+        "bytes": 13240,
+        "ast_sha256": "ecf48934691b122bc9a120a52800f55401b9efcc41a362750918a64121df8ee9"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "pointer_ladder",
+      "archived_source": {
+        "path": "relational_composition/hierarchical_index.py",
+        "sha256": "baaf96b6a6b54662fd67e48324f1f3f75a9310fa0c203db152ce5203bcb873d2",
+        "bytes": 4731,
+        "ast_sha256": "4ef10324e31aaf88ee67e5678fc0fb0cc3691310fc2504c2adb21d5949b62cbf"
+      },
+      "canonical_source": {
+        "path": "relational_composition/hierarchical_index.py",
+        "sha256": "76755d8ce31343d95f8c7e9c5a6d7aa3a6ba9eaaa33722c2b86887d533c62b1e",
+        "bytes": 4730,
+        "ast_sha256": "4ef10324e31aaf88ee67e5678fc0fb0cc3691310fc2504c2adb21d5949b62cbf"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "pointer_ladder",
+      "archived_source": {
+        "path": "relational_composition/hierarchical_model.py",
+        "sha256": "275ee975564723a2a5978dc4ca23e6a89df4336c3f982ec5fbe3221f3cf14b63",
+        "bytes": 14629,
+        "ast_sha256": "b58570b48478b7c51593f6a185c147da5392df6a1e7e93bde20e23c83e6460e7"
+      },
+      "canonical_source": {
+        "path": "relational_composition/hierarchical_model.py",
+        "sha256": "6a2001039a7da3be882e55b9189dfb16e45063524b52ba32e95391890c53ff26",
+        "bytes": 13604,
+        "ast_sha256": "a8c3fa5567a736bb02529e1052ecba65c5411ce4c2c580947b832f42510a9cae"
+      },
+      "byte_identical": false,
+      "python_ast_identical": false,
+      "classification": "diagnostic_semantics_change"
+    },
+    {
+      "archive": "pointer_ladder",
+      "archived_source": {
+        "path": "relational_composition/index.py",
+        "sha256": "01825eaf7b26069e1040fd17ca0018e336b7b80de05c5abb135961b7e2588b0c",
+        "bytes": 1424,
+        "ast_sha256": "83eebfe43b943a0593c449a974d8038f0eb25229ac6dcc46a150d1917810d9aa"
+      },
+      "canonical_source": {
+        "path": "relational_composition/index.py",
+        "sha256": "5374011ec65bec72e5124712ac2996f1b2131126dfa1f5b689d6b9a25161caa7",
+        "bytes": 1423,
+        "ast_sha256": "83eebfe43b943a0593c449a974d8038f0eb25229ac6dcc46a150d1917810d9aa"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "pointer_ladder",
+      "archived_source": {
+        "path": "relational_composition/model.py",
+        "sha256": "3d35ba59940012d28c2377bca8047ff73108659a9d5f0b051604b119e7e88c4b",
+        "bytes": 10812,
+        "ast_sha256": "91940aae8fd85bb96b1a1fc0705e6359780ab6c3448b7741024711aa6fcddeb3"
+      },
+      "canonical_source": {
+        "path": "relational_composition/model.py",
+        "sha256": "f4768b60ae6c9625bba0e0ee44c9dde4a5bc850167d0bd7e9af009684b7b15d8",
+        "bytes": 10811,
+        "ast_sha256": "91940aae8fd85bb96b1a1fc0705e6359780ab6c3448b7741024711aa6fcddeb3"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "pointer_ladder",
+      "archived_source": {
+        "path": "relational_composition/original_v4.py",
+        "sha256": "47675971077b8bf983d86c7a408c31035f347ae1950eaf25e119a4accf5c7171",
+        "bytes": 13605,
+        "ast_sha256": "a8c3fa5567a736bb02529e1052ecba65c5411ce4c2c580947b832f42510a9cae"
+      },
+      "classification": "archive_only",
+      "canonical_path": null
+    },
+    {
+      "archive": "pointer_ladder",
+      "archived_source": {
+        "path": "relational_composition/train_hierarchical.py",
+        "sha256": "0b3ab17e458a866a1551b98dea3dd93bc67c124c73a4894fbf1204f7bf6959d4",
+        "bytes": 5497,
+        "ast_sha256": "942bd42221c0dec6d123c84f0599abf1ceffa43d81b6c7c4c857fc379857477d"
+      },
+      "canonical_source": {
+        "path": "relational_composition/train_hierarchical.py",
+        "sha256": "eaea9d256a254358cd13deceb39d2a27790155fe0a31cbe0f096e173fb678841",
+        "bytes": 5496,
+        "ast_sha256": "942bd42221c0dec6d123c84f0599abf1ceffa43d81b6c7c4c857fc379857477d"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "utility",
+      "archived_source": {
+        "path": "base/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "ast_sha256": "3543b4693a36a1098850b8bc928887694ed59a6deb7d3dfd0339de01f55a77b6"
+      },
+      "canonical_source": {
+        "path": "relational_composition/__init__.py",
+        "sha256": "1218e2ae53bfc7ac83343eb9b82c67c0cb894009dc2892dd18ce8a5408c4fcc3",
+        "bytes": 158,
+        "ast_sha256": "11898bf64aad9e7534305bc91b4da6988e7541bddb4e479b41690cc2f6c127a8"
+      },
+      "byte_identical": false,
+      "python_ast_identical": false,
+      "classification": "package_exports_only"
+    },
+    {
+      "archive": "utility",
+      "archived_source": {
+        "path": "base/expressive_model.py",
+        "sha256": "96b411970386e53ca07669d8c3ad31d156b77ba09f96d3d732f6fba9c92d82b7",
+        "bytes": 12075,
+        "ast_sha256": "c2d64376bedc465c39db684aa1ceb12325a01a935e973fea9d49098e982b3545"
+      },
+      "canonical_source": {
+        "path": "relational_composition/expressive_model.py",
+        "sha256": "65690fee6d38ad288d0a1f5898803c65beb38805b032c75eeaef792cebfdad36",
+        "bytes": 12074,
+        "ast_sha256": "c2d64376bedc465c39db684aa1ceb12325a01a935e973fea9d49098e982b3545"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "utility",
+      "archived_source": {
+        "path": "base/fast_inference.py",
+        "sha256": "a06ddc1d9bc27b49bbc41bccaf71c800a7053840270f127cd26ea593a8cd0f7c",
+        "bytes": 13241,
+        "ast_sha256": "ecf48934691b122bc9a120a52800f55401b9efcc41a362750918a64121df8ee9"
+      },
+      "canonical_source": {
+        "path": "relational_composition/fast_inference.py",
+        "sha256": "7a7d4d437f8f309bc6040a89b0e8fd3e6cf201fbfc2ac00de814ca4355953fa3",
+        "bytes": 13240,
+        "ast_sha256": "ecf48934691b122bc9a120a52800f55401b9efcc41a362750918a64121df8ee9"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "utility",
+      "archived_source": {
+        "path": "base/hierarchical_index.py",
+        "sha256": "baaf96b6a6b54662fd67e48324f1f3f75a9310fa0c203db152ce5203bcb873d2",
+        "bytes": 4731,
+        "ast_sha256": "4ef10324e31aaf88ee67e5678fc0fb0cc3691310fc2504c2adb21d5949b62cbf"
+      },
+      "canonical_source": {
+        "path": "relational_composition/hierarchical_index.py",
+        "sha256": "76755d8ce31343d95f8c7e9c5a6d7aa3a6ba9eaaa33722c2b86887d533c62b1e",
+        "bytes": 4730,
+        "ast_sha256": "4ef10324e31aaf88ee67e5678fc0fb0cc3691310fc2504c2adb21d5949b62cbf"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "utility",
+      "archived_source": {
+        "path": "base/hierarchical_model.py",
+        "sha256": "47675971077b8bf983d86c7a408c31035f347ae1950eaf25e119a4accf5c7171",
+        "bytes": 13605,
+        "ast_sha256": "a8c3fa5567a736bb02529e1052ecba65c5411ce4c2c580947b832f42510a9cae"
+      },
+      "canonical_source": {
+        "path": "relational_composition/hierarchical_model.py",
+        "sha256": "6a2001039a7da3be882e55b9189dfb16e45063524b52ba32e95391890c53ff26",
+        "bytes": 13604,
+        "ast_sha256": "a8c3fa5567a736bb02529e1052ecba65c5411ce4c2c580947b832f42510a9cae"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "utility",
+      "archived_source": {
+        "path": "base/index.py",
+        "sha256": "01825eaf7b26069e1040fd17ca0018e336b7b80de05c5abb135961b7e2588b0c",
+        "bytes": 1424,
+        "ast_sha256": "83eebfe43b943a0593c449a974d8038f0eb25229ac6dcc46a150d1917810d9aa"
+      },
+      "canonical_source": {
+        "path": "relational_composition/index.py",
+        "sha256": "5374011ec65bec72e5124712ac2996f1b2131126dfa1f5b689d6b9a25161caa7",
+        "bytes": 1423,
+        "ast_sha256": "83eebfe43b943a0593c449a974d8038f0eb25229ac6dcc46a150d1917810d9aa"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "utility",
+      "archived_source": {
+        "path": "base/model.py",
+        "sha256": "3d35ba59940012d28c2377bca8047ff73108659a9d5f0b051604b119e7e88c4b",
+        "bytes": 10812,
+        "ast_sha256": "91940aae8fd85bb96b1a1fc0705e6359780ab6c3448b7741024711aa6fcddeb3"
+      },
+      "canonical_source": {
+        "path": "relational_composition/model.py",
+        "sha256": "f4768b60ae6c9625bba0e0ee44c9dde4a5bc850167d0bd7e9af009684b7b15d8",
+        "bytes": 10811,
+        "ast_sha256": "91940aae8fd85bb96b1a1fc0705e6359780ab6c3448b7741024711aa6fcddeb3"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    },
+    {
+      "archive": "utility",
+      "archived_source": {
+        "path": "base/train_hierarchical.py",
+        "sha256": "0b3ab17e458a866a1551b98dea3dd93bc67c124c73a4894fbf1204f7bf6959d4",
+        "bytes": 5497,
+        "ast_sha256": "942bd42221c0dec6d123c84f0599abf1ceffa43d81b6c7c4c857fc379857477d"
+      },
+      "canonical_source": {
+        "path": "relational_composition/train_hierarchical.py",
+        "sha256": "eaea9d256a254358cd13deceb39d2a27790155fe0a31cbe0f096e173fb678841",
+        "bytes": 5496,
+        "ast_sha256": "942bd42221c0dec6d123c84f0599abf1ceffa43d81b6c7c4c857fc379857477d"
+      },
+      "byte_identical": false,
+      "python_ast_identical": true,
+      "classification": "trailing_whitespace_only"
+    }
+  ],
+  "copied_recipe_and_reference_sources": [
+    {
+      "archive": "backbone",
+      "original": {
+        "path": "models.py",
+        "sha256": "d132807604bc81ec6c2cb5a73e9b087e1691127826e270c859e55a5a95b3a558",
+        "bytes": 8826,
+        "ast_sha256": "f9cabfd18a0b59de1464c681bf8af6026ad82e79383ce8e17be9c0a0aea94a95"
+      },
+      "experiment_copy": {
+        "path": "vendor/backbone_models.py",
+        "sha256": "d132807604bc81ec6c2cb5a73e9b087e1691127826e270c859e55a5a95b3a558",
+        "bytes": 8826,
+        "ast_sha256": "f9cabfd18a0b59de1464c681bf8af6026ad82e79383ce8e17be9c0a0aea94a95"
+      },
+      "byte_identical": true
+    },
+    {
+      "archive": "credit_prose",
+      "original": {
+        "path": "auxiliary.py",
+        "sha256": "0673763c3dc47cef2c36c8fa5cebf32e74dc5d50cbc99083c58bb4a17b7e3e5a",
+        "bytes": 2714,
+        "ast_sha256": "6e2f092864f035ce50a6e778b5fa8a56c69a5b88f2b93792b3f7f3b4568b67b6"
+      },
+      "experiment_copy": {
+        "path": "vendor/auxiliary.py",
+        "sha256": "0673763c3dc47cef2c36c8fa5cebf32e74dc5d50cbc99083c58bb4a17b7e3e5a",
+        "bytes": 2714,
+        "ast_sha256": "6e2f092864f035ce50a6e778b5fa8a56c69a5b88f2b93792b3f7f3b4568b67b6"
+      },
+      "byte_identical": true
+    },
+    {
+      "archive": "credit_prose",
+      "original": {
+        "path": "train_aux.py",
+        "sha256": "2f65d8d4d628d8c25b8f240a7cd75114ff4d83d93c310a9d16d7a0f9d30a012f",
+        "bytes": 5630,
+        "ast_sha256": "f7716709375673b8b28b0d01d4f64e555cb573586470fb12eb3c219a5ca94feb"
+      },
+      "experiment_copy": {
+        "path": "vendor/train_aux.py",
+        "sha256": "2f65d8d4d628d8c25b8f240a7cd75114ff4d83d93c310a9d16d7a0f9d30a012f",
+        "bytes": 5630,
+        "ast_sha256": "f7716709375673b8b28b0d01d4f64e555cb573586470fb12eb3c219a5ca94feb"
+      },
+      "byte_identical": true
+    },
+    {
+      "archive": "utility",
+      "original": {
+        "path": "gated_model.py",
+        "sha256": "84827eba73c5e0937c490cc30a5c2edf4292e2683d123cc0965eb91ce6ad11ef",
+        "bytes": 18872,
+        "ast_sha256": "bf73744c5c78a9b159e04a5ae347f668e93cc4e42b7c381dec9fd34fe3622120"
+      },
+      "experiment_copy": {
+        "path": "vendor/utility/gated_model.py",
+        "sha256": "84827eba73c5e0937c490cc30a5c2edf4292e2683d123cc0965eb91ce6ad11ef",
+        "bytes": 18872,
+        "ast_sha256": "bf73744c5c78a9b159e04a5ae347f668e93cc4e42b7c381dec9fd34fe3622120"
+      },
+      "byte_identical": true
+    }
+  ],
+  "copied_base_sources": [
+    {
+      "archive": "backbone",
+      "original": {
+        "path": "relational_composition/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "ast_sha256": "3543b4693a36a1098850b8bc928887694ed59a6deb7d3dfd0339de01f55a77b6"
+      },
+      "experiment_copy": {
+        "path": "vendor/relational_composition/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "ast_sha256": "3543b4693a36a1098850b8bc928887694ed59a6deb7d3dfd0339de01f55a77b6"
+      },
+      "byte_identical": true
+    },
+    {
+      "archive": "backbone",
+      "original": {
+        "path": "relational_composition/expressive_model.py",
+        "sha256": "96b411970386e53ca07669d8c3ad31d156b77ba09f96d3d732f6fba9c92d82b7",
+        "bytes": 12075,
+        "ast_sha256": "c2d64376bedc465c39db684aa1ceb12325a01a935e973fea9d49098e982b3545"
+      },
+      "experiment_copy": {
+        "path": "vendor/relational_composition/expressive_model.py",
+        "sha256": "96b411970386e53ca07669d8c3ad31d156b77ba09f96d3d732f6fba9c92d82b7",
+        "bytes": 12075,
+        "ast_sha256": "c2d64376bedc465c39db684aa1ceb12325a01a935e973fea9d49098e982b3545"
+      },
+      "byte_identical": true
+    },
+    {
+      "archive": "backbone",
+      "original": {
+        "path": "relational_composition/fast_inference.py",
+        "sha256": "a06ddc1d9bc27b49bbc41bccaf71c800a7053840270f127cd26ea593a8cd0f7c",
+        "bytes": 13241,
+        "ast_sha256": "ecf48934691b122bc9a120a52800f55401b9efcc41a362750918a64121df8ee9"
+      },
+      "experiment_copy": {
+        "path": "vendor/relational_composition/fast_inference.py",
+        "sha256": "a06ddc1d9bc27b49bbc41bccaf71c800a7053840270f127cd26ea593a8cd0f7c",
+        "bytes": 13241,
+        "ast_sha256": "ecf48934691b122bc9a120a52800f55401b9efcc41a362750918a64121df8ee9"
+      },
+      "byte_identical": true
+    },
+    {
+      "archive": "backbone",
+      "original": {
+        "path": "relational_composition/hierarchical_index.py",
+        "sha256": "baaf96b6a6b54662fd67e48324f1f3f75a9310fa0c203db152ce5203bcb873d2",
+        "bytes": 4731,
+        "ast_sha256": "4ef10324e31aaf88ee67e5678fc0fb0cc3691310fc2504c2adb21d5949b62cbf"
+      },
+      "experiment_copy": {
+        "path": "vendor/relational_composition/hierarchical_index.py",
+        "sha256": "baaf96b6a6b54662fd67e48324f1f3f75a9310fa0c203db152ce5203bcb873d2",
+        "bytes": 4731,
+        "ast_sha256": "4ef10324e31aaf88ee67e5678fc0fb0cc3691310fc2504c2adb21d5949b62cbf"
+      },
+      "byte_identical": true
+    },
+    {
+      "archive": "backbone",
+      "original": {
+        "path": "relational_composition/hierarchical_model.py",
+        "sha256": "47675971077b8bf983d86c7a408c31035f347ae1950eaf25e119a4accf5c7171",
+        "bytes": 13605,
+        "ast_sha256": "a8c3fa5567a736bb02529e1052ecba65c5411ce4c2c580947b832f42510a9cae"
+      },
+      "experiment_copy": {
+        "path": "vendor/relational_composition/hierarchical_model.py",
+        "sha256": "47675971077b8bf983d86c7a408c31035f347ae1950eaf25e119a4accf5c7171",
+        "bytes": 13605,
+        "ast_sha256": "a8c3fa5567a736bb02529e1052ecba65c5411ce4c2c580947b832f42510a9cae"
+      },
+      "byte_identical": true
+    },
+    {
+      "archive": "backbone",
+      "original": {
+        "path": "relational_composition/index.py",
+        "sha256": "01825eaf7b26069e1040fd17ca0018e336b7b80de05c5abb135961b7e2588b0c",
+        "bytes": 1424,
+        "ast_sha256": "83eebfe43b943a0593c449a974d8038f0eb25229ac6dcc46a150d1917810d9aa"
+      },
+      "experiment_copy": {
+        "path": "vendor/relational_composition/index.py",
+        "sha256": "01825eaf7b26069e1040fd17ca0018e336b7b80de05c5abb135961b7e2588b0c",
+        "bytes": 1424,
+        "ast_sha256": "83eebfe43b943a0593c449a974d8038f0eb25229ac6dcc46a150d1917810d9aa"
+      },
+      "byte_identical": true
+    },
+    {
+      "archive": "backbone",
+      "original": {
+        "path": "relational_composition/model.py",
+        "sha256": "3d35ba59940012d28c2377bca8047ff73108659a9d5f0b051604b119e7e88c4b",
+        "bytes": 10812,
+        "ast_sha256": "91940aae8fd85bb96b1a1fc0705e6359780ab6c3448b7741024711aa6fcddeb3"
+      },
+      "experiment_copy": {
+        "path": "vendor/relational_composition/model.py",
+        "sha256": "3d35ba59940012d28c2377bca8047ff73108659a9d5f0b051604b119e7e88c4b",
+        "bytes": 10812,
+        "ast_sha256": "91940aae8fd85bb96b1a1fc0705e6359780ab6c3448b7741024711aa6fcddeb3"
+      },
+      "byte_identical": true
+    },
+    {
+      "archive": "public_repository",
+      "original": {
+        "path": "relational_composition/train.py",
+        "sha256": "8c445ca154f56cef6357985f49d077027602c9ad174cb78684069866ec3e462a",
+        "bytes": 3050,
+        "ast_sha256": "efad33ff64da08f93bdf6773a9597573ecb804c5819245ce39b60bc6cffa5d00"
+      },
+      "experiment_copy": {
+        "path": "vendor/relational_composition/train.py",
+        "sha256": "8c445ca154f56cef6357985f49d077027602c9ad174cb78684069866ec3e462a",
+        "bytes": 3050,
+        "ast_sha256": "efad33ff64da08f93bdf6773a9597573ecb804c5819245ce39b60bc6cffa5d00"
+      },
+      "byte_identical": true
+    },
+    {
+      "archive": "backbone",
+      "original": {
+        "path": "relational_composition/train_hierarchical.py",
+        "sha256": "0b3ab17e458a866a1551b98dea3dd93bc67c124c73a4894fbf1204f7bf6959d4",
+        "bytes": 5497,
+        "ast_sha256": "942bd42221c0dec6d123c84f0599abf1ceffa43d81b6c7c4c857fc379857477d"
+      },
+      "experiment_copy": {
+        "path": "vendor/relational_composition/train_hierarchical.py",
+        "sha256": "0b3ab17e458a866a1551b98dea3dd93bc67c124c73a4894fbf1204f7bf6959d4",
+        "bytes": 5497,
+        "ast_sha256": "942bd42221c0dec6d123c84f0599abf1ceffa43d81b6c7c4c857fc379857477d"
+      },
+      "byte_identical": true
+    },
+    {
+      "archive": "utility",
+      "original": {
+        "path": "base/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "ast_sha256": "3543b4693a36a1098850b8bc928887694ed59a6deb7d3dfd0339de01f55a77b6"
+      },
+      "experiment_copy": {
+        "path": "vendor/utility/base/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "ast_sha256": "3543b4693a36a1098850b8bc928887694ed59a6deb7d3dfd0339de01f55a77b6"
+      },
+      "byte_identical": true
+    },
+    {
+      "archive": "utility",
+      "original": {
+        "path": "base/expressive_model.py",
+        "sha256": "96b411970386e53ca07669d8c3ad31d156b77ba09f96d3d732f6fba9c92d82b7",
+        "bytes": 12075,
+        "ast_sha256": "c2d64376bedc465c39db684aa1ceb12325a01a935e973fea9d49098e982b3545"
+      },
+      "experiment_copy": {
+        "path": "vendor/utility/base/expressive_model.py",
+        "sha256": "96b411970386e53ca07669d8c3ad31d156b77ba09f96d3d732f6fba9c92d82b7",
+        "bytes": 12075,
+        "ast_sha256": "c2d64376bedc465c39db684aa1ceb12325a01a935e973fea9d49098e982b3545"
+      },
+      "byte_identical": true
+    },
+    {
+      "archive": "utility",
+      "original": {
+        "path": "base/fast_inference.py",
+        "sha256": "a06ddc1d9bc27b49bbc41bccaf71c800a7053840270f127cd26ea593a8cd0f7c",
+        "bytes": 13241,
+        "ast_sha256": "ecf48934691b122bc9a120a52800f55401b9efcc41a362750918a64121df8ee9"
+      },
+      "experiment_copy": {
+        "path": "vendor/utility/base/fast_inference.py",
+        "sha256": "a06ddc1d9bc27b49bbc41bccaf71c800a7053840270f127cd26ea593a8cd0f7c",
+        "bytes": 13241,
+        "ast_sha256": "ecf48934691b122bc9a120a52800f55401b9efcc41a362750918a64121df8ee9"
+      },
+      "byte_identical": true
+    },
+    {
+      "archive": "utility",
+      "original": {
+        "path": "base/hierarchical_index.py",
+        "sha256": "baaf96b6a6b54662fd67e48324f1f3f75a9310fa0c203db152ce5203bcb873d2",
+        "bytes": 4731,
+        "ast_sha256": "4ef10324e31aaf88ee67e5678fc0fb0cc3691310fc2504c2adb21d5949b62cbf"
+      },
+      "experiment_copy": {
+        "path": "vendor/utility/base/hierarchical_index.py",
+        "sha256": "baaf96b6a6b54662fd67e48324f1f3f75a9310fa0c203db152ce5203bcb873d2",
+        "bytes": 4731,
+        "ast_sha256": "4ef10324e31aaf88ee67e5678fc0fb0cc3691310fc2504c2adb21d5949b62cbf"
+      },
+      "byte_identical": true
+    },
+    {
+      "archive": "utility",
+      "original": {
+        "path": "base/hierarchical_model.py",
+        "sha256": "47675971077b8bf983d86c7a408c31035f347ae1950eaf25e119a4accf5c7171",
+        "bytes": 13605,
+        "ast_sha256": "a8c3fa5567a736bb02529e1052ecba65c5411ce4c2c580947b832f42510a9cae"
+      },
+      "experiment_copy": {
+        "path": "vendor/utility/base/hierarchical_model.py",
+        "sha256": "47675971077b8bf983d86c7a408c31035f347ae1950eaf25e119a4accf5c7171",
+        "bytes": 13605,
+        "ast_sha256": "a8c3fa5567a736bb02529e1052ecba65c5411ce4c2c580947b832f42510a9cae"
+      },
+      "byte_identical": true
+    },
+    {
+      "archive": "utility",
+      "original": {
+        "path": "base/index.py",
+        "sha256": "01825eaf7b26069e1040fd17ca0018e336b7b80de05c5abb135961b7e2588b0c",
+        "bytes": 1424,
+        "ast_sha256": "83eebfe43b943a0593c449a974d8038f0eb25229ac6dcc46a150d1917810d9aa"
+      },
+      "experiment_copy": {
+        "path": "vendor/utility/base/index.py",
+        "sha256": "01825eaf7b26069e1040fd17ca0018e336b7b80de05c5abb135961b7e2588b0c",
+        "bytes": 1424,
+        "ast_sha256": "83eebfe43b943a0593c449a974d8038f0eb25229ac6dcc46a150d1917810d9aa"
+      },
+      "byte_identical": true
+    },
+    {
+      "archive": "utility",
+      "original": {
+        "path": "base/model.py",
+        "sha256": "3d35ba59940012d28c2377bca8047ff73108659a9d5f0b051604b119e7e88c4b",
+        "bytes": 10812,
+        "ast_sha256": "91940aae8fd85bb96b1a1fc0705e6359780ab6c3448b7741024711aa6fcddeb3"
+      },
+      "experiment_copy": {
+        "path": "vendor/utility/base/model.py",
+        "sha256": "3d35ba59940012d28c2377bca8047ff73108659a9d5f0b051604b119e7e88c4b",
+        "bytes": 10812,
+        "ast_sha256": "91940aae8fd85bb96b1a1fc0705e6359780ab6c3448b7741024711aa6fcddeb3"
+      },
+      "byte_identical": true
+    },
+    {
+      "archive": "utility",
+      "original": {
+        "path": "base/train_hierarchical.py",
+        "sha256": "0b3ab17e458a866a1551b98dea3dd93bc67c124c73a4894fbf1204f7bf6959d4",
+        "bytes": 5497,
+        "ast_sha256": "942bd42221c0dec6d123c84f0599abf1ceffa43d81b6c7c4c857fc379857477d"
+      },
+      "experiment_copy": {
+        "path": "vendor/utility/base/train_hierarchical.py",
+        "sha256": "0b3ab17e458a866a1551b98dea3dd93bc67c124c73a4894fbf1204f7bf6959d4",
+        "bytes": 5497,
+        "ast_sha256": "942bd42221c0dec6d123c84f0599abf1ceffa43d81b6c7c4c857fc379857477d"
+      },
+      "byte_identical": true
+    }
+  ],
+  "comparison_conclusion": {
+    "backbone_prose_utility_modules": "All substantive model/index/trainer module ASTs equal public #51. Differences are one trailing blank line and empty archive package initializers versus public exports.",
+    "pointer_variant": "hierarchical_model.py adds query_only=True, a categorical token14/token13 query mask and optional oracle candidate pools. Excluded from raw-text benchmark.",
+    "review_fixes": "The per-document focused_positions training fix is already present in public #51 and all archived train_hierarchical copies; no additional semantic fix found between them.",
+    "canonical_selection": "Retain public #51 semantic behavior and exact late bundle recipe implementations; no pointer-ladder oracle/query-only module."
+  },
+  "planned_backbone_coverage": [
+    {
+      "inventory_label": "v1_coupled",
+      "category": "architecture",
+      "implementation": "RelationalLM",
+      "width": 30,
+      "page_bits": null,
+      "allocated_parameters": 43939,
+      "variant_or_recipe": "coupled",
+      "notes": "Parameter counts are allocations; disabled heads may be inactive. Labels are inventory labels; runner configuration is authoritative."
+    },
+    {
+      "inventory_label": "v1_independent",
+      "category": "architecture",
+      "implementation": "RelationalLM",
+      "width": 30,
+      "page_bits": null,
+      "allocated_parameters": 43939,
+      "variant_or_recipe": "independent",
+      "notes": "Parameter counts are allocations; disabled heads may be inactive. Labels are inventory labels; runner configuration is authoritative."
+    },
+    {
+      "inventory_label": "v1_no_reference",
+      "category": "ablation",
+      "implementation": "RelationalLM",
+      "width": 30,
+      "page_bits": null,
+      "allocated_parameters": 43939,
+      "variant_or_recipe": "no_reference",
+      "notes": "Parameter counts are allocations; disabled heads may be inactive. Labels are inventory labels; runner configuration is authoritative."
+    },
+    {
+      "inventory_label": "v3",
+      "category": "architecture",
+      "implementation": "SerialMultiHopLM",
+      "width": 26,
+      "page_bits": null,
+      "allocated_parameters": 42139,
+      "variant_or_recipe": "coupled",
+      "notes": "Parameter counts are allocations; disabled heads may be inactive. Labels are inventory labels; runner configuration is authoritative."
+    },
+    {
+      "inventory_label": "v4_p16",
+      "category": "configuration",
+      "implementation": "PagedMultiHopLM",
+      "width": 22,
+      "page_bits": 16,
+      "allocated_parameters": 42967,
+      "variant_or_recipe": "coupled",
+      "notes": "Parameter counts are allocations; disabled heads may be inactive. Labels are inventory labels; runner configuration is authoritative."
+    },
+    {
+      "inventory_label": "v4_p8",
+      "category": "configuration",
+      "implementation": "PagedMultiHopLM",
+      "width": 24,
+      "page_bits": 8,
+      "allocated_parameters": 42877,
+      "variant_or_recipe": "coupled",
+      "notes": "Parameter counts are allocations; disabled heads may be inactive. Labels are inventory labels; runner configuration is authoritative."
+    },
+    {
+      "inventory_label": "lrc_local",
+      "category": "ablated_backbone",
+      "implementation": "Model(lrc_local)",
+      "width": 24,
+      "page_bits": 8,
+      "allocated_parameters": 42882,
+      "variant_or_recipe": "memory_disabled",
+      "notes": "Parameter counts are allocations; disabled heads may be inactive. Labels are inventory labels; runner configuration is authoritative."
+    },
+    {
+      "inventory_label": "lrc_cache",
+      "category": "cache_extension",
+      "implementation": "Model(lrc_cache)",
+      "width": 24,
+      "page_bits": 8,
+      "allocated_parameters": 42882,
+      "variant_or_recipe": "memory_disabled_plus_lexical_cache",
+      "notes": "Parameter counts are allocations; disabled heads may be inactive. Labels are inventory labels; runner configuration is authoritative."
+    },
+    {
+      "inventory_label": "v4_lexical_address",
+      "category": "training_recipe",
+      "implementation": "PagedMultiHopLM",
+      "width": 24,
+      "page_bits": 8,
+      "allocated_parameters": 42877,
+      "variant_or_recipe": "lexical_address",
+      "notes": "Parameter counts are allocations; disabled heads may be inactive. Labels are inventory labels; runner configuration is authoritative."
+    },
+    {
+      "inventory_label": "v4_lexical_address_slot",
+      "category": "training_recipe",
+      "implementation": "PagedMultiHopLM",
+      "width": 24,
+      "page_bits": 8,
+      "allocated_parameters": 42877,
+      "variant_or_recipe": "lexical_address_slot",
+      "notes": "Parameter counts are allocations; disabled heads may be inactive. Labels are inventory labels; runner configuration is authoritative."
+    },
+    {
+      "inventory_label": "v4_shuffled_lexical_address_slot",
+      "category": "training_control",
+      "implementation": "PagedMultiHopLM",
+      "width": 24,
+      "page_bits": 8,
+      "allocated_parameters": 42877,
+      "variant_or_recipe": "shuffled_lexical_address_slot",
+      "notes": "Parameter counts are allocations; disabled heads may be inactive. Labels are inventory labels; runner configuration is authoritative."
+    },
+    {
+      "inventory_label": "gru",
+      "category": "reference",
+      "implementation": "Model(gru)",
+      "width": null,
+      "page_bits": null,
+      "allocated_parameters": 43082,
+      "variant_or_recipe": "one_layer_embedding24_hidden68",
+      "notes": "Parameter counts are allocations; disabled heads may be inactive. Labels are inventory labels; runner configuration is authoritative."
+    },
+    {
+      "inventory_label": "gru_cache",
+      "category": "reference",
+      "implementation": "Model(gru_cache)",
+      "width": null,
+      "page_bits": null,
+      "allocated_parameters": 43082,
+      "variant_or_recipe": "same_gru_plus_lexical_cache",
+      "notes": "Parameter counts are allocations; disabled heads may be inactive. Labels are inventory labels; runner configuration is authoritative."
+    },
+    {
+      "inventory_label": "transformer",
+      "category": "reference",
+      "implementation": "Model(transformer)",
+      "width": 36,
+      "page_bits": null,
+      "allocated_parameters": 43133,
+      "variant_or_recipe": "two_layers_three_heads_window128",
+      "notes": "Parameter counts are allocations; disabled heads may be inactive. Labels are inventory labels; runner configuration is authoritative."
+    }
+  ],
+  "posttraining_coverage": {
+    "implementation": "gated_model.GatedMultiHopLM",
+    "base_arm": "v4_p8",
+    "recipes": [
+      "utility",
+      "shuffled",
+      "random"
+    ],
+    "allocated_parameters": 42977,
+    "trainable_gate_parameters": 50,
+    "extra_allocated_gate_parameters": 100,
+    "gate_settings": "Layer0 fixed ON; train final gate only; frozen new Shakespeare backbone.",
+    "controls": [
+      "full_v4",
+      "last_layer_off",
+      "all_memory_off"
+    ],
+    "budget_note": "Additional gate/teacher training is separately charged; these are not equal-budget fresh backbone fits."
+  },
+  "diagnostic_only_stages": [
+    "LRC-002 supplied endpoints and answer-focused templated lookup",
+    "Fixed-bucket page-selection pilot",
+    "Pointer-ladder oracle-pool and query-only scaffolds",
+    "Controlled categorical entity/version credit transfer; raw-prose adaptation included separately",
+    "VersionedProgramEngine exact known-map executor",
+    "Lean operational specifications and capacity audits",
+    "Cache confirmation and long-context repeats: already-covered model implementations",
+    "NumPy inference adapter: same model weights/semantics; not a separately trained language version"
+  ],
+  "prior_language_corpus_warning": "Earlier backbone BPB numbers are Sherlock Holmes, not Tiny Shakespeare. No Tiny Shakespeare benchmark was found in inspected LRC bundles.",
+  "historical_configuration_warning": "This is a new approximately43k allocation-matched training comparison, not replay of historical checkpoints or fixed historical widths. V4p16 d22 and V4p8 d24 differ in width as well as page head capacity; their contrast does not isolate page_bits.",
+  "parameter_count_verification": {
+    "method": "Fresh constructor instantiation and sum(p.numel()) over parameters; no optimizer steps or fitting.",
+    "torch_version": "2.5.1+cpu",
+    "counts": {
+      "v1_coupled": 43939,
+      "v1_independent": 43939,
+      "v1_no_reference": 43939,
+      "v3": 42139,
+      "v4_p8": 42877,
+      "v4_p16": 42967,
+      "lrc_local": 42882,
+      "lrc_cache": 42882,
+      "gru": 43082,
+      "gru_cache": 43082,
+      "transformer": 43133,
+      "v4_lexical_address": 42877,
+      "v4_lexical_address_slot": 42877,
+      "v4_shuffled_lexical_address_slot": 42877,
+      "utility_allocation": 42977,
+      "utility_final_head": 50
+    }
+  }
+}

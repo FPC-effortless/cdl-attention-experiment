@@ -1,0 +1,903 @@
+{
+  "torch_version": "2.5.1+cpu",
+  "arms": [
+    {
+      "arm": "v1_coupled",
+      "parameters": 43939,
+      "parity": {
+        "future_prefix_max_error": 0.0,
+        "document_retry_max_error": 0.0,
+        "stream_max_error": 9.5367431640625e-07,
+        "stream_argmax_equal": true,
+        "prefill_max_error": 9.5367431640625e-07,
+        "prefill_argmax_equal": true,
+        "reset_max_error": 0.0,
+        "retained_state_bytes": 78836,
+        "length": 160,
+        "prefill_at": 143,
+        "input": "fixed_repeated_alphabet"
+      },
+      "training": {
+        "receipt": {
+          "nll": 5.577426910400391,
+          "policy_loss": -0.0,
+          "gradient_norm": 2.5254874229431152,
+          "cost": {
+            "writes": 768,
+            "reads": 1536,
+            "candidates": 942,
+            "omitted": 100,
+            "null_reads": 1238,
+            "reference_dereferences": 48,
+            "operator_executions": 768,
+            "oracle_operand_reads": 0
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "rank"
+          ],
+          "coordinate": [
+            2,
+            26,
+            0
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 5.577426910400391,
+          "loss": 5.577426910400391
+        },
+        "changed_parameter_tensors": 21,
+        "changed_route_parameter_tensors": [],
+        "route_gradient_abs_sums": {
+          "layers.0.rank.weight": 0.0,
+          "layers.0.rank.bias": 0.0
+        }
+      }
+    },
+    {
+      "arm": "v1_independent",
+      "parameters": 43939,
+      "parity": {
+        "future_prefix_max_error": 0.0,
+        "document_retry_max_error": 0.0,
+        "stream_max_error": 9.5367431640625e-07,
+        "stream_argmax_equal": true,
+        "prefill_max_error": 9.5367431640625e-07,
+        "prefill_argmax_equal": true,
+        "reset_max_error": 0.0,
+        "retained_state_bytes": 78412,
+        "length": 160,
+        "prefill_at": 143,
+        "input": "fixed_repeated_alphabet"
+      },
+      "training": {
+        "receipt": {
+          "nll": 5.5908427238464355,
+          "policy_loss": -2.325982450201991e-06,
+          "gradient_norm": 2.532564163208008,
+          "cost": {
+            "writes": 768,
+            "reads": 1536,
+            "candidates": 988,
+            "omitted": 102,
+            "null_reads": 1223,
+            "reference_dereferences": 44,
+            "operator_executions": 768,
+            "oracle_operand_reads": 0
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.00019359588623046875,
+          "decision": [
+            0,
+            "query"
+          ],
+          "coordinate": [
+            2,
+            26,
+            0
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 5.590649127960205,
+          "loss": 5.5908427238464355
+        },
+        "changed_parameter_tensors": 23,
+        "changed_route_parameter_tensors": [
+          "layers.0.query.weight",
+          "layers.0.query.bias"
+        ],
+        "route_gradient_abs_sums": {
+          "layers.0.query.weight": 0.007154915016144514,
+          "layers.0.query.bias": 0.000152885215356946
+        }
+      }
+    },
+    {
+      "arm": "v1_no_reference",
+      "parameters": 43939,
+      "parity": {
+        "future_prefix_max_error": 0.0,
+        "document_retry_max_error": 0.0,
+        "stream_max_error": 9.5367431640625e-07,
+        "stream_argmax_equal": true,
+        "prefill_max_error": 9.5367431640625e-07,
+        "prefill_argmax_equal": true,
+        "reset_max_error": 0.0,
+        "retained_state_bytes": 78468,
+        "length": 160,
+        "prefill_at": 143,
+        "input": "fixed_repeated_alphabet"
+      },
+      "training": {
+        "receipt": {
+          "nll": 5.578672885894775,
+          "policy_loss": -0.0,
+          "gradient_norm": 2.525843858718872,
+          "cost": {
+            "writes": 768,
+            "reads": 1536,
+            "candidates": 942,
+            "omitted": 98,
+            "null_reads": 1242,
+            "reference_dereferences": 0,
+            "operator_executions": 768,
+            "oracle_operand_reads": 0
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 0.0,
+          "decision": [
+            0,
+            "rank"
+          ],
+          "coordinate": [
+            2,
+            26,
+            0
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_nll": 5.578672885894775,
+          "loss": 5.578672885894775
+        },
+        "changed_parameter_tensors": 21,
+        "changed_route_parameter_tensors": [],
+        "route_gradient_abs_sums": {
+          "layers.0.rank.weight": 0.0,
+          "layers.0.rank.bias": 0.0
+        }
+      }
+    },
+    {
+      "arm": "v3",
+      "parameters": 42139,
+      "parity": {
+        "future_prefix_max_error": 0.0,
+        "document_retry_max_error": 0.0,
+        "stream_max_error": 9.5367431640625e-07,
+        "stream_argmax_equal": true,
+        "prefill_max_error": 9.5367431640625e-07,
+        "prefill_argmax_equal": true,
+        "reset_max_error": 0.0,
+        "retained_state_bytes": 69743,
+        "length": 160,
+        "prefill_at": 143,
+        "input": "fixed_repeated_alphabet"
+      },
+      "training": {
+        "receipt": {
+          "nll": 5.972942352294922,
+          "policy_loss": 7.662807547603734e-06,
+          "gradient_norm": 2.391464948654175,
+          "cost": {
+            "writes": 768,
+            "reads": 1536,
+            "candidates": 1006,
+            "omitted": 114,
+            "null_reads": 1222,
+            "reference_dereferences": 56,
+            "operator_executions": 768
+          },
+          "forward_passes": 2,
+          "interventions": 1,
+          "advantage": 5.5789947509765625e-05,
+          "decision": [
+            1,
+            "write_address"
+          ],
+          "coordinate": [
+            2,
+            26
+          ],
+          "chosen": 6,
+          "alternative": 7,
+          "alternative_nll": 5.972886562347412,
+          "loss": 5.972942352294922
+        },
+        "changed_parameter_tensors": 23,
+        "changed_route_parameter_tensors": [
+          "layers.1.write_address.weight",
+          "layers.1.write_address.bias"
+        ],
+        "route_gradient_abs_sums": {
+          "layers.1.write_address.weight": 0.0008902263944037259,
+          "layers.1.write_address.bias": 4.66575293103233e-05
+        }
+      }
+    },
+    {
+      "arm": "v4_p16",
+      "parameters": 42967,
+      "parity": {
+        "future_prefix_max_error": 0.0,
+        "document_retry_max_error": 0.0,
+        "stream_max_error": 9.5367431640625e-07,
+        "stream_argmax_equal": true,
+        "prefill_max_error": 9.5367431640625e-07,
+        "prefill_argmax_equal": true,
+        "reset_max_error": 0.0,
+        "retained_state_bytes": 61721,
+        "length": 160,
+        "prefill_at": 143,
+        "input": "fixed_repeated_alphabet"
+      },
+      "training": {
+        "receipt": {
+          "loss": 5.325522422790527,
+          "policy_loss": -4.834417632082477e-05,
+          "field": "(1, 'page_second')",
+          "interventions": 1,
+          "advantage": 0.00014543533325195312,
+          "binary_conditional": true,
+          "coordinate": [
+            0,
+            47,
+            0
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_loss": 5.325376987457275,
+          "gradient_norm": 2.1491072177886963,
+          "forward_passes": 2
+        },
+        "changed_parameter_tensors": 23,
+        "changed_route_parameter_tensors": [
+          "layers.1.page_second.weight",
+          "layers.1.page_second.bias"
+        ],
+        "route_gradient_abs_sums": {
+          "layers.1.page_second.weight": 0.0010826836805790663,
+          "layers.1.page_second.bias": 3.0034861993044615e-05
+        }
+      }
+    },
+    {
+      "arm": "v4",
+      "parameters": 42877,
+      "parity": {
+        "future_prefix_max_error": 0.0,
+        "document_retry_max_error": 0.0,
+        "stream_max_error": 9.5367431640625e-07,
+        "stream_argmax_equal": true,
+        "prefill_max_error": 9.5367431640625e-07,
+        "prefill_argmax_equal": true,
+        "reset_max_error": 0.0,
+        "retained_state_bytes": 67273,
+        "length": 160,
+        "prefill_at": 143,
+        "input": "fixed_repeated_alphabet"
+      },
+      "training": {
+        "receipt": {
+          "loss": 5.72027063369751,
+          "policy_loss": -6.208311970112845e-05,
+          "field": "(1, 'page_second')",
+          "interventions": 1,
+          "advantage": 0.00013780593872070312,
+          "binary_conditional": true,
+          "coordinate": [
+            3,
+            38,
+            1
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_loss": 5.720132827758789,
+          "gradient_norm": 2.2849435806274414,
+          "forward_passes": 2
+        },
+        "changed_parameter_tensors": 23,
+        "changed_route_parameter_tensors": [
+          "layers.1.page_second.weight",
+          "layers.1.page_second.bias"
+        ],
+        "route_gradient_abs_sums": {
+          "layers.1.page_second.weight": 0.0012919050641357899,
+          "layers.1.page_second.bias": 2.9859787900932133e-05
+        }
+      }
+    },
+    {
+      "arm": "lrc_local",
+      "parameters": 42882,
+      "parity": {
+        "future_prefix_max_error": 0.0,
+        "document_retry_max_error": 0.0,
+        "stream_max_error": 9.5367431640625e-07,
+        "stream_argmax_equal": true,
+        "prefill_max_error": 9.5367431640625e-07,
+        "prefill_argmax_equal": true,
+        "reset_max_error": 0.0,
+        "retained_state_bytes": 1336,
+        "length": 160,
+        "prefill_at": 143,
+        "input": "fixed_repeated_alphabet"
+      },
+      "training": {
+        "receipt": {
+          "loss": 5.722637176513672,
+          "policy_loss": 0.0,
+          "field": "(1, 'page_second')",
+          "interventions": 1,
+          "advantage": 0.0,
+          "binary_conditional": true,
+          "coordinate": [
+            1,
+            38,
+            0
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_loss": 5.722637176513672,
+          "gradient_norm": 2.2824292182922363,
+          "forward_passes": 2
+        },
+        "changed_parameter_tensors": 21,
+        "changed_route_parameter_tensors": [],
+        "route_gradient_abs_sums": {
+          "base.layers.1.page_second.weight": 0.0,
+          "base.layers.1.page_second.bias": 0.0
+        }
+      }
+    },
+    {
+      "arm": "lrc_cache",
+      "parameters": 42882,
+      "parity": {
+        "future_prefix_max_error": 0.0,
+        "document_retry_max_error": 0.0,
+        "stream_max_error": 1.430511474609375e-06,
+        "stream_argmax_equal": true,
+        "prefill_max_error": 9.5367431640625e-07,
+        "prefill_argmax_equal": true,
+        "reset_max_error": 0.0,
+        "retained_state_bytes": 107847,
+        "length": 160,
+        "prefill_at": 143,
+        "input": "fixed_repeated_alphabet"
+      },
+      "training": {
+        "receipt": {
+          "loss": 2.770343065261841,
+          "policy_loss": 0.0,
+          "field": "(1, 'page_second')",
+          "interventions": 1,
+          "advantage": 0.0,
+          "binary_conditional": true,
+          "coordinate": [
+            1,
+            38,
+            0
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_loss": 2.770343065261841,
+          "gradient_norm": 1.2839215993881226,
+          "forward_passes": 2
+        },
+        "changed_parameter_tensors": 23,
+        "changed_route_parameter_tensors": [],
+        "route_gradient_abs_sums": {
+          "base.layers.1.page_second.weight": 0.0,
+          "base.layers.1.page_second.bias": 0.0
+        }
+      }
+    },
+    {
+      "arm": "v4_lexical",
+      "parameters": 42877,
+      "parity": {
+        "future_prefix_max_error": 0.0,
+        "document_retry_max_error": 0.0,
+        "stream_max_error": 9.5367431640625e-07,
+        "stream_argmax_equal": true,
+        "prefill_max_error": 9.5367431640625e-07,
+        "prefill_argmax_equal": true,
+        "reset_max_error": 0.0,
+        "retained_state_bytes": 67257,
+        "length": 160,
+        "prefill_at": 143,
+        "input": "fixed_repeated_alphabet"
+      },
+      "training": {
+        "receipt": {
+          "loss": 5.72027063369751,
+          "policy_loss": -6.208311970112845e-05,
+          "field": "(1, 'page_second')",
+          "interventions": 1,
+          "advantage": 0.00013780593872070312,
+          "binary_conditional": true,
+          "coordinate": [
+            3,
+            38,
+            1
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_loss": 5.720132827758789,
+          "address_aux": 1.8690589666366577,
+          "selection_aux": 0.0,
+          "teacher_positions": 0,
+          "gradient_norm": 2.2858176231384277,
+          "forward_passes": 2
+        },
+        "changed_parameter_tensors": 43,
+        "changed_route_parameter_tensors": [
+          "layers.0.write_relation.weight",
+          "layers.0.write_relation.bias",
+          "layers.0.write_address.weight",
+          "layers.0.write_address.bias",
+          "layers.0.route.weight",
+          "layers.0.route.bias",
+          "layers.0.query_first.weight",
+          "layers.0.query_first.bias",
+          "layers.0.query_second.weight",
+          "layers.0.query_second.bias",
+          "layers.1.write_relation.weight",
+          "layers.1.write_relation.bias",
+          "layers.1.write_address.weight",
+          "layers.1.write_address.bias",
+          "layers.1.route.weight",
+          "layers.1.route.bias",
+          "layers.1.query_first.weight",
+          "layers.1.query_first.bias",
+          "layers.1.query_second.weight",
+          "layers.1.query_second.bias",
+          "layers.1.page_second.weight",
+          "layers.1.page_second.bias"
+        ],
+        "route_gradient_abs_sums": {
+          "layers.0.write_relation.weight": 0.03933512419462204,
+          "layers.0.write_relation.bias": 0.005298230331391096,
+          "layers.0.write_address.weight": 0.06770765781402588,
+          "layers.0.write_address.bias": 0.0006346453446894884,
+          "layers.0.route.weight": 0.08082517981529236,
+          "layers.0.route.bias": 0.011913730762898922,
+          "layers.0.query_first.weight": 0.09184814244508743,
+          "layers.0.query_first.bias": 0.0010860887123271823,
+          "layers.0.query_second.weight": 0.10177674889564514,
+          "layers.0.query_second.bias": 0.0008274964638985693,
+          "layers.1.write_relation.weight": 0.034905172884464264,
+          "layers.1.write_relation.bias": 0.004886697046458721,
+          "layers.1.write_address.weight": 0.07179265469312668,
+          "layers.1.write_address.bias": 0.0011151620419695973,
+          "layers.1.route.weight": 0.07998654246330261,
+          "layers.1.route.bias": 0.011105135083198547,
+          "layers.1.query_first.weight": 0.09465017914772034,
+          "layers.1.query_first.bias": 0.0010438957251608372,
+          "layers.1.query_second.weight": 0.09706450998783112,
+          "layers.1.query_second.bias": 0.0013016769662499428,
+          "layers.1.page_second.weight": 0.0012914109975099564,
+          "layers.1.page_second.bias": 2.9848370104446076e-05
+        }
+      }
+    },
+    {
+      "arm": "v4_lexical_slot",
+      "parameters": 42877,
+      "parity": {
+        "future_prefix_max_error": 0.0,
+        "document_retry_max_error": 0.0,
+        "stream_max_error": 9.5367431640625e-07,
+        "stream_argmax_equal": true,
+        "prefill_max_error": 9.5367431640625e-07,
+        "prefill_argmax_equal": true,
+        "reset_max_error": 0.0,
+        "retained_state_bytes": 67257,
+        "length": 160,
+        "prefill_at": 143,
+        "input": "fixed_repeated_alphabet"
+      },
+      "training": {
+        "receipt": {
+          "loss": 5.72027063369751,
+          "policy_loss": -6.208311970112845e-05,
+          "field": "(1, 'page_second')",
+          "interventions": 1,
+          "advantage": 0.00013780593872070312,
+          "binary_conditional": true,
+          "coordinate": [
+            3,
+            38,
+            1
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_loss": 5.720132827758789,
+          "address_aux": 1.8690589666366577,
+          "selection_aux": 0.964567244052887,
+          "teacher_positions": 328,
+          "gradient_norm": 2.2863199710845947,
+          "forward_passes": 2
+        },
+        "changed_parameter_tensors": 57,
+        "changed_route_parameter_tensors": [
+          "layers.0.write_relation.weight",
+          "layers.0.write_relation.bias",
+          "layers.0.write_address.weight",
+          "layers.0.write_address.bias",
+          "layers.0.route.weight",
+          "layers.0.route.bias",
+          "layers.0.query_first.weight",
+          "layers.0.query_first.bias",
+          "layers.0.rank_first.weight",
+          "layers.0.rank_first.bias",
+          "layers.0.query_second.weight",
+          "layers.0.query_second.bias",
+          "layers.0.rank_second.weight",
+          "layers.0.rank_second.bias",
+          "layers.0.page_first.weight",
+          "layers.0.page_first.bias",
+          "layers.0.page_second.weight",
+          "layers.0.page_second.bias",
+          "layers.1.write_relation.weight",
+          "layers.1.write_relation.bias",
+          "layers.1.write_address.weight",
+          "layers.1.write_address.bias",
+          "layers.1.route.weight",
+          "layers.1.route.bias",
+          "layers.1.query_first.weight",
+          "layers.1.query_first.bias",
+          "layers.1.rank_first.weight",
+          "layers.1.rank_first.bias",
+          "layers.1.query_second.weight",
+          "layers.1.query_second.bias",
+          "layers.1.rank_second.weight",
+          "layers.1.rank_second.bias",
+          "layers.1.page_first.weight",
+          "layers.1.page_first.bias",
+          "layers.1.page_second.weight",
+          "layers.1.page_second.bias"
+        ],
+        "route_gradient_abs_sums": {
+          "layers.0.write_relation.weight": 0.03932648152112961,
+          "layers.0.write_relation.bias": 0.005297066643834114,
+          "layers.0.write_address.weight": 0.06769278645515442,
+          "layers.0.write_address.bias": 0.0006345058791339397,
+          "layers.0.route.weight": 0.08080743253231049,
+          "layers.0.route.bias": 0.011911113746464252,
+          "layers.0.query_first.weight": 0.09182797372341156,
+          "layers.0.query_first.bias": 0.0010858499445021152,
+          "layers.0.rank_first.weight": 0.09621632099151611,
+          "layers.0.rank_first.bias": 0.006700377911329269,
+          "layers.0.query_second.weight": 0.10175438225269318,
+          "layers.0.query_second.bias": 0.0008273146231658757,
+          "layers.0.rank_second.weight": 0.09920074045658112,
+          "layers.0.rank_second.bias": 0.006010828539729118,
+          "layers.0.page_first.weight": 0.08303680270910263,
+          "layers.0.page_first.bias": 0.0056691523641347885,
+          "layers.0.page_second.weight": 0.09103062748908997,
+          "layers.0.page_second.bias": 0.005552169866859913,
+          "layers.1.write_relation.weight": 0.03489750251173973,
+          "layers.1.write_relation.bias": 0.004885623697191477,
+          "layers.1.write_address.weight": 0.07177688926458359,
+          "layers.1.write_address.bias": 0.0011149171041324735,
+          "layers.1.route.weight": 0.07996896654367447,
+          "layers.1.route.bias": 0.01110269408673048,
+          "layers.1.query_first.weight": 0.09462937712669373,
+          "layers.1.query_first.bias": 0.0010436663869768381,
+          "layers.1.rank_first.weight": 0.09788762032985687,
+          "layers.1.rank_first.bias": 0.005746674723923206,
+          "layers.1.query_second.weight": 0.09704320132732391,
+          "layers.1.query_second.bias": 0.001301390933804214,
+          "layers.1.rank_second.weight": 0.11566626280546188,
+          "layers.1.rank_second.bias": 0.005896889138966799,
+          "layers.1.page_first.weight": 0.0870419591665268,
+          "layers.1.page_first.bias": 0.00521048391237855,
+          "layers.1.page_second.weight": 0.1048271432518959,
+          "layers.1.page_second.bias": 0.005337585229426622
+        }
+      }
+    },
+    {
+      "arm": "v4_shuffled",
+      "parameters": 42877,
+      "parity": {
+        "future_prefix_max_error": 0.0,
+        "document_retry_max_error": 0.0,
+        "stream_max_error": 9.5367431640625e-07,
+        "stream_argmax_equal": true,
+        "prefill_max_error": 9.5367431640625e-07,
+        "prefill_argmax_equal": true,
+        "reset_max_error": 0.0,
+        "retained_state_bytes": 67257,
+        "length": 160,
+        "prefill_at": 143,
+        "input": "fixed_repeated_alphabet"
+      },
+      "training": {
+        "receipt": {
+          "loss": 5.72027063369751,
+          "policy_loss": -6.208311970112845e-05,
+          "field": "(1, 'page_second')",
+          "interventions": 1,
+          "advantage": 0.00013780593872070312,
+          "binary_conditional": true,
+          "coordinate": [
+            3,
+            38,
+            1
+          ],
+          "chosen": 0,
+          "alternative": 1,
+          "alternative_loss": 5.720132827758789,
+          "address_aux": 1.8840618133544922,
+          "selection_aux": 0.9613266587257385,
+          "teacher_positions": 328,
+          "gradient_norm": 2.2870185375213623,
+          "forward_passes": 2
+        },
+        "changed_parameter_tensors": 57,
+        "changed_route_parameter_tensors": [
+          "layers.0.write_relation.weight",
+          "layers.0.write_relation.bias",
+          "layers.0.write_address.weight",
+          "layers.0.write_address.bias",
+          "layers.0.route.weight",
+          "layers.0.route.bias",
+          "layers.0.query_first.weight",
+          "layers.0.query_first.bias",
+          "layers.0.rank_first.weight",
+          "layers.0.rank_first.bias",
+          "layers.0.query_second.weight",
+          "layers.0.query_second.bias",
+          "layers.0.rank_second.weight",
+          "layers.0.rank_second.bias",
+          "layers.0.page_first.weight",
+          "layers.0.page_first.bias",
+          "layers.0.page_second.weight",
+          "layers.0.page_second.bias",
+          "layers.1.write_relation.weight",
+          "layers.1.write_relation.bias",
+          "layers.1.write_address.weight",
+          "layers.1.write_address.bias",
+          "layers.1.route.weight",
+          "layers.1.route.bias",
+          "layers.1.query_first.weight",
+          "layers.1.query_first.bias",
+          "layers.1.rank_first.weight",
+          "layers.1.rank_first.bias",
+          "layers.1.query_second.weight",
+          "layers.1.query_second.bias",
+          "layers.1.rank_second.weight",
+          "layers.1.rank_second.bias",
+          "layers.1.page_first.weight",
+          "layers.1.page_first.bias",
+          "layers.1.page_second.weight",
+          "layers.1.page_second.bias"
+        ],
+        "route_gradient_abs_sums": {
+          "layers.0.write_relation.weight": 0.03931447118520737,
+          "layers.0.write_relation.bias": 0.005295448005199432,
+          "layers.0.write_address.weight": 0.05804585665464401,
+          "layers.0.write_address.bias": 0.0006343120476230979,
+          "layers.0.route.weight": 0.08078274130821228,
+          "layers.0.route.bias": 0.011907474137842655,
+          "layers.0.query_first.weight": 0.07574627548456192,
+          "layers.0.query_first.bias": 0.0010855181608349085,
+          "layers.0.rank_first.weight": 0.09713125228881836,
+          "layers.0.rank_first.bias": 0.006698331329971552,
+          "layers.0.query_second.weight": 0.08030975610017776,
+          "layers.0.query_second.bias": 0.0008270620019175112,
+          "layers.0.rank_second.weight": 0.09859243035316467,
+          "layers.0.rank_second.bias": 0.006008992902934551,
+          "layers.0.page_first.weight": 0.0830114409327507,
+          "layers.0.page_first.bias": 0.005667421501129866,
+          "layers.0.page_second.weight": 0.09100282192230225,
+          "layers.0.page_second.bias": 0.005550473928451538,
+          "layers.1.write_relation.weight": 0.03488684445619583,
+          "layers.1.write_relation.bias": 0.0048841312527656555,
+          "layers.1.write_address.weight": 0.05422540754079819,
+          "layers.1.write_address.bias": 0.0011145764729008079,
+          "layers.1.route.weight": 0.07994454354047775,
+          "layers.1.route.bias": 0.011099303141236305,
+          "layers.1.query_first.weight": 0.07952626794576645,
+          "layers.1.query_first.bias": 0.0010433475254103541,
+          "layers.1.rank_first.weight": 0.10314051061868668,
+          "layers.1.rank_first.bias": 0.0057449196465313435,
+          "layers.1.query_second.weight": 0.08323156833648682,
+          "layers.1.query_second.bias": 0.0013009934918954968,
+          "layers.1.rank_second.weight": 0.11688269674777985,
+          "layers.1.rank_second.bias": 0.0058950879611074924,
+          "layers.1.page_first.weight": 0.08699096739292145,
+          "layers.1.page_first.bias": 0.005208892282098532,
+          "layers.1.page_second.weight": 0.10472065210342407,
+          "layers.1.page_second.bias": 0.005335954483598471
+        }
+      }
+    },
+    {
+      "arm": "gru",
+      "parameters": 43082,
+      "parity": {
+        "future_prefix_max_error": 0.0,
+        "document_retry_max_error": 0.0,
+        "stream_max_error": 9.5367431640625e-07,
+        "stream_argmax_equal": true,
+        "prefill_max_error": 4.76837158203125e-07,
+        "prefill_argmax_equal": true,
+        "reset_max_error": 0.0,
+        "retained_state_bytes": 1336,
+        "length": 160,
+        "prefill_at": 143,
+        "input": "fixed_repeated_alphabet"
+      },
+      "training": {
+        "receipt": {
+          "loss": 5.610690593719482,
+          "gradient_norm": 0.9164001941680908,
+          "forward_passes": 1,
+          "interventions": 0
+        },
+        "changed_parameter_tensors": 7,
+        "changed_route_parameter_tensors": [],
+        "route_gradient_abs_sums": {}
+      }
+    },
+    {
+      "arm": "gru_cache",
+      "parameters": 43082,
+      "parity": {
+        "future_prefix_max_error": 0.0,
+        "document_retry_max_error": 0.0,
+        "stream_max_error": 9.5367431640625e-07,
+        "stream_argmax_equal": true,
+        "prefill_max_error": 9.5367431640625e-07,
+        "prefill_argmax_equal": true,
+        "reset_max_error": 0.0,
+        "retained_state_bytes": 107751,
+        "length": 160,
+        "prefill_at": 143,
+        "input": "fixed_repeated_alphabet"
+      },
+      "training": {
+        "receipt": {
+          "loss": 2.75900936126709,
+          "gradient_norm": 1.2193937301635742,
+          "forward_passes": 1,
+          "interventions": 0
+        },
+        "changed_parameter_tensors": 9,
+        "changed_route_parameter_tensors": [],
+        "route_gradient_abs_sums": {}
+      }
+    },
+    {
+      "arm": "transformer",
+      "parameters": 43133,
+      "parity": {
+        "future_prefix_max_error": 0.0,
+        "document_retry_max_error": 0.0,
+        "stream_max_error": 9.5367431640625e-07,
+        "stream_argmax_equal": true,
+        "prefill_max_error": 9.5367431640625e-07,
+        "prefill_argmax_equal": true,
+        "reset_max_error": 0.0,
+        "retained_state_bytes": 75664,
+        "length": 160,
+        "prefill_at": 143,
+        "input": "fixed_repeated_alphabet"
+      },
+      "training": {
+        "receipt": {
+          "loss": 5.484323024749756,
+          "gradient_norm": 2.4216742515563965,
+          "forward_passes": 1,
+          "interventions": 0
+        },
+        "changed_parameter_tensors": 18,
+        "changed_route_parameter_tensors": [],
+        "route_gradient_abs_sums": {}
+      }
+    }
+  ],
+  "utility": [
+    {
+      "variant": "utility",
+      "parity": {
+        "future_prefix_max_error": 0.0,
+        "document_retry_max_error": 0.0,
+        "stream_max_error": 9.5367431640625e-07,
+        "stream_argmax_equal": true,
+        "prefill_max_error": 9.5367431640625e-07,
+        "prefill_argmax_equal": true,
+        "reset_max_error": 0.0,
+        "retained_state_bytes": 66665,
+        "length": 160,
+        "prefill_at": 143,
+        "input": "fixed_repeated_alphabet"
+      }
+    },
+    {
+      "variant": "always_on",
+      "parity": {
+        "future_prefix_max_error": 0.0,
+        "document_retry_max_error": 0.0,
+        "stream_max_error": 9.5367431640625e-07,
+        "stream_argmax_equal": true,
+        "prefill_max_error": 9.5367431640625e-07,
+        "prefill_argmax_equal": true,
+        "reset_max_error": 0.0,
+        "retained_state_bytes": 66445,
+        "length": 160,
+        "prefill_at": 143,
+        "input": "fixed_repeated_alphabet"
+      }
+    },
+    {
+      "variant": "last_off",
+      "parity": {
+        "future_prefix_max_error": 0.0,
+        "document_retry_max_error": 0.0,
+        "stream_max_error": 9.5367431640625e-07,
+        "stream_argmax_equal": true,
+        "prefill_max_error": 9.5367431640625e-07,
+        "prefill_argmax_equal": true,
+        "reset_max_error": 0.0,
+        "retained_state_bytes": 66297,
+        "length": 160,
+        "prefill_at": 143,
+        "input": "fixed_repeated_alphabet"
+      }
+    },
+    {
+      "variant": "always_off",
+      "parity": {
+        "future_prefix_max_error": 0.0,
+        "document_retry_max_error": 0.0,
+        "stream_max_error": 9.5367431640625e-07,
+        "stream_argmax_equal": true,
+        "prefill_max_error": 9.5367431640625e-07,
+        "prefill_argmax_equal": true,
+        "reset_max_error": 0.0,
+        "retained_state_bytes": 1112,
+        "length": 160,
+        "prefill_at": 143,
+        "input": "fixed_repeated_alphabet"
+      }
+    }
+  ],
+  "lexical_teachers": {
+    "gold_prior_continuations": [
+      [
+        -1,
+        -1,
+        1,
+        -1,
+        3,
+        2,
+        5,
+        4
+      ]
+    ],
+    "strictly_past": true,
+    "prefix_teacher_parity": true,
+    "cache_only_observed_tokens": true
+  },
+  "seconds": 5.440543009999601,
+  "passed": true
+}

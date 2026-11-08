@@ -1,0 +1,285 @@
+{
+  "protocol_note": "Parameter-matched benchmark configurations; 257 IDs (256 raw bytes plus padding), no tokenizer parameters. Allocated weights are not active compute.",
+  "reference_parameters": 42877,
+  "backbone_arms": [
+    {
+      "arm": "v1_coupled",
+      "allocated_parameters": 43939,
+      "requires_grad_parameters": 43939,
+      "model_class": "RelationalLM",
+      "source_path": "vendor/relational_composition/model.py",
+      "source_sha256": "3d35ba59940012d28c2377bca8047ff73108659a9d5f0b051604b119e7e88c4b",
+      "forward_passes_per_update": 2,
+      "configuration": {
+        "vocab": 257,
+        "width": 30,
+        "layers": 2,
+        "relations": 4,
+        "addresses": 8,
+        "candidates": 2,
+        "local_kernel": 3,
+        "variant": "coupled"
+      }
+    },
+    {
+      "arm": "v1_independent",
+      "allocated_parameters": 43939,
+      "requires_grad_parameters": 43939,
+      "model_class": "RelationalLM",
+      "source_path": "vendor/relational_composition/model.py",
+      "source_sha256": "3d35ba59940012d28c2377bca8047ff73108659a9d5f0b051604b119e7e88c4b",
+      "forward_passes_per_update": 2,
+      "configuration": {
+        "vocab": 257,
+        "width": 30,
+        "layers": 2,
+        "relations": 4,
+        "addresses": 8,
+        "candidates": 2,
+        "local_kernel": 3,
+        "variant": "independent"
+      }
+    },
+    {
+      "arm": "v1_no_reference",
+      "allocated_parameters": 43939,
+      "requires_grad_parameters": 43939,
+      "model_class": "RelationalLM",
+      "source_path": "vendor/relational_composition/model.py",
+      "source_sha256": "3d35ba59940012d28c2377bca8047ff73108659a9d5f0b051604b119e7e88c4b",
+      "forward_passes_per_update": 2,
+      "configuration": {
+        "vocab": 257,
+        "width": 30,
+        "layers": 2,
+        "relations": 4,
+        "addresses": 8,
+        "candidates": 2,
+        "local_kernel": 3,
+        "variant": "no_reference"
+      }
+    },
+    {
+      "arm": "v3",
+      "allocated_parameters": 42139,
+      "requires_grad_parameters": 42139,
+      "model_class": "SerialMultiHopLM",
+      "source_path": "vendor/relational_composition/expressive_model.py",
+      "source_sha256": "96b411970386e53ca07669d8c3ad31d156b77ba09f96d3d732f6fba9c92d82b7",
+      "forward_passes_per_update": 2,
+      "configuration": {
+        "vocab": 257,
+        "width": 26,
+        "layers": 2,
+        "relations": 4,
+        "addresses": 8,
+        "candidates": 2,
+        "local_kernel": 3,
+        "variant": "coupled"
+      }
+    },
+    {
+      "arm": "v4_p16",
+      "allocated_parameters": 42967,
+      "requires_grad_parameters": 42967,
+      "model_class": "PagedMultiHopLM",
+      "source_path": "vendor/relational_composition/hierarchical_model.py",
+      "source_sha256": "47675971077b8bf983d86c7a408c31035f347ae1950eaf25e119a4accf5c7171",
+      "forward_passes_per_update": 2,
+      "configuration": {
+        "vocab": 257,
+        "width": 22,
+        "layers": 2,
+        "relations": 4,
+        "addresses": 8,
+        "candidates": 2,
+        "local_kernel": 3,
+        "variant": "coupled"
+      },
+      "page_bits": 16
+    },
+    {
+      "arm": "v4",
+      "allocated_parameters": 42877,
+      "requires_grad_parameters": 42877,
+      "model_class": "PagedMultiHopLM",
+      "source_path": "vendor/relational_composition/hierarchical_model.py",
+      "source_sha256": "47675971077b8bf983d86c7a408c31035f347ae1950eaf25e119a4accf5c7171",
+      "forward_passes_per_update": 2,
+      "configuration": {
+        "vocab": 257,
+        "width": 24,
+        "layers": 2,
+        "relations": 4,
+        "addresses": 8,
+        "candidates": 2,
+        "local_kernel": 3,
+        "variant": "coupled"
+      },
+      "page_bits": 8
+    },
+    {
+      "arm": "lrc_local",
+      "allocated_parameters": 42882,
+      "requires_grad_parameters": 42882,
+      "model_class": "PagedMultiHopLM",
+      "source_path": "vendor/relational_composition/hierarchical_model.py",
+      "source_sha256": "47675971077b8bf983d86c7a408c31035f347ae1950eaf25e119a4accf5c7171",
+      "forward_passes_per_update": 2,
+      "configuration": {
+        "vocab": 257,
+        "width": 24,
+        "layers": 2,
+        "relations": 4,
+        "addresses": 8,
+        "candidates": 2,
+        "local_kernel": 3,
+        "variant": "coupled"
+      },
+      "page_bits": 8,
+      "allocation_caveat": "Neural read/query/writer/page weights retained in allocation but neural memory is disabled at execution; route/composer still executes.",
+      "inactive_admission_parameters": 5
+    },
+    {
+      "arm": "lrc_cache",
+      "allocated_parameters": 42882,
+      "requires_grad_parameters": 42882,
+      "model_class": "PagedMultiHopLM",
+      "source_path": "vendor/relational_composition/hierarchical_model.py",
+      "source_sha256": "47675971077b8bf983d86c7a408c31035f347ae1950eaf25e119a4accf5c7171",
+      "forward_passes_per_update": 2,
+      "configuration": {
+        "vocab": 257,
+        "width": 24,
+        "layers": 2,
+        "relations": 4,
+        "addresses": 8,
+        "candidates": 2,
+        "local_kernel": 3,
+        "variant": "coupled"
+      },
+      "page_bits": 8,
+      "allocation_caveat": "Neural read/query/writer/page weights retained in allocation but neural memory is disabled at execution; route/composer still executes."
+    },
+    {
+      "arm": "v4_lexical",
+      "allocated_parameters": 42877,
+      "requires_grad_parameters": 42877,
+      "model_class": "PagedMultiHopLM",
+      "source_path": "vendor/relational_composition/hierarchical_model.py",
+      "source_sha256": "47675971077b8bf983d86c7a408c31035f347ae1950eaf25e119a4accf5c7171",
+      "forward_passes_per_update": 2,
+      "configuration": {
+        "vocab": 257,
+        "width": 24,
+        "layers": 2,
+        "relations": 4,
+        "addresses": 8,
+        "candidates": 2,
+        "local_kernel": 3,
+        "variant": "coupled"
+      },
+      "page_bits": 8
+    },
+    {
+      "arm": "v4_lexical_slot",
+      "allocated_parameters": 42877,
+      "requires_grad_parameters": 42877,
+      "model_class": "PagedMultiHopLM",
+      "source_path": "vendor/relational_composition/hierarchical_model.py",
+      "source_sha256": "47675971077b8bf983d86c7a408c31035f347ae1950eaf25e119a4accf5c7171",
+      "forward_passes_per_update": 2,
+      "configuration": {
+        "vocab": 257,
+        "width": 24,
+        "layers": 2,
+        "relations": 4,
+        "addresses": 8,
+        "candidates": 2,
+        "local_kernel": 3,
+        "variant": "coupled"
+      },
+      "page_bits": 8
+    },
+    {
+      "arm": "v4_shuffled",
+      "allocated_parameters": 42877,
+      "requires_grad_parameters": 42877,
+      "model_class": "PagedMultiHopLM",
+      "source_path": "vendor/relational_composition/hierarchical_model.py",
+      "source_sha256": "47675971077b8bf983d86c7a408c31035f347ae1950eaf25e119a4accf5c7171",
+      "forward_passes_per_update": 2,
+      "configuration": {
+        "vocab": 257,
+        "width": 24,
+        "layers": 2,
+        "relations": 4,
+        "addresses": 8,
+        "candidates": 2,
+        "local_kernel": 3,
+        "variant": "coupled"
+      },
+      "page_bits": 8
+    },
+    {
+      "arm": "gru",
+      "allocated_parameters": 43082,
+      "requires_grad_parameters": 43082,
+      "model_class": "GRU",
+      "source_path": "vendor/backbone_models.py",
+      "source_sha256": "d132807604bc81ec6c2cb5a73e9b087e1691127826e270c859e55a5a95b3a558",
+      "forward_passes_per_update": 1,
+      "configuration": {
+        "vocab": 257,
+        "embedding_width": 24,
+        "hidden_width": 68,
+        "layers": 1
+      },
+      "inactive_admission_parameters": 5
+    },
+    {
+      "arm": "gru_cache",
+      "allocated_parameters": 43082,
+      "requires_grad_parameters": 43082,
+      "model_class": "GRU",
+      "source_path": "vendor/backbone_models.py",
+      "source_sha256": "d132807604bc81ec6c2cb5a73e9b087e1691127826e270c859e55a5a95b3a558",
+      "forward_passes_per_update": 1,
+      "configuration": {
+        "vocab": 257,
+        "embedding_width": 24,
+        "hidden_width": 68,
+        "layers": 1
+      }
+    },
+    {
+      "arm": "transformer",
+      "allocated_parameters": 43133,
+      "requires_grad_parameters": 43133,
+      "model_class": "Transformer",
+      "source_path": "vendor/backbone_models.py",
+      "source_sha256": "d132807604bc81ec6c2cb5a73e9b087e1691127826e270c859e55a5a95b3a558",
+      "forward_passes_per_update": 1,
+      "configuration": {
+        "vocab": 257,
+        "width": 36,
+        "layers": 2,
+        "heads": 3,
+        "head_dim": 12,
+        "feedforward_width": 64,
+        "attention_window": 128,
+        "norm": "RMSNorm",
+        "positional_encoding": "RoPE"
+      }
+    }
+  ],
+  "utility": {
+    "base_parameters": 42877,
+    "allocated_parameters": 42977,
+    "additional_allocated_parameters": 100,
+    "posttraining_fitted_parameters": 50,
+    "first_gate": "fixed ON",
+    "source_path": "vendor/utility/gated_model.py",
+    "source_sha256": "84827eba73c5e0937c490cc30a5c2edf4292e2683d123cc0965eb91ce6ad11ef"
+  }
+}

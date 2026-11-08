@@ -1,0 +1,41 @@
+{
+  "reviewer": "independent_protocol_review",
+  "torch_version": "2.5.1+cpu",
+  "data_and_budget": {
+    "corpus_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+    "split_bytes": {
+      "train": 1003854,
+      "dev": 55770,
+      "test": 55770
+    },
+    "strict_train_only_shifted_windows": true,
+    "paired_sampling_reproduced_for_all_seeds": true,
+    "backbone_target_exposures": 1048576,
+    "utility_extra_target_exposures": 307200,
+    "utility_teacher_forwards": 1200
+  },
+  "synthetic_target_accounting": {
+    "128": {
+      "targets": 55769,
+      "blocks": 436,
+      "last_block_targets": 89,
+      "every_target_exactly_once_in_order": true
+    },
+    "512": {
+      "targets": 55769,
+      "blocks": 109,
+      "last_block_targets": 473,
+      "every_target_exactly_once_in_order": true
+    }
+  },
+  "utility_semantics": {
+    "full_on_matches_original_v4_exactly": true,
+    "full_off_matches_original_memory_disabled_exactly": true,
+    "on_off_mixed_share_identical_pre_last_layer_features": true,
+    "mixed_gate_selects_exact_per_position_branch_logits": true,
+    "teacher_features_independent_of_next_byte_targets": true,
+    "frozen_backbone_unchanged_after_head_update": true,
+    "head_fitted_parameters": 50
+  },
+  "passed": true
+}

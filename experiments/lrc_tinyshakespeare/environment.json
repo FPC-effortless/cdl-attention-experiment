@@ -1,0 +1,11 @@
+{
+  "python": "3.12.14",
+  "torch": "2.5.1+cpu",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "cuda": false,
+  "cpu_threads_per_worker": 1,
+  "available_cpus": 9,
+  "cpu_model": "INTEL(R) XEON(R) PLATINUM 8573C",
+  "cpu_quota": "800000 100000",
+  "memory_limit": "8589934592"
+}

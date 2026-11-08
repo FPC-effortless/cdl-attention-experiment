@@ -1,0 +1,16 @@
+{
+  "v1_coupled": 43939,
+  "v1_independent": 43939,
+  "v1_no_reference": 43939,
+  "v3": 42139,
+  "v4_p16": 42967,
+  "v4": 42877,
+  "lrc_local": 42882,
+  "lrc_cache": 42882,
+  "v4_lexical": 42877,
+  "v4_lexical_slot": 42877,
+  "v4_shuffled": 42877,
+  "gru": 43082,
+  "gru_cache": 43082,
+  "transformer": 43133
+}

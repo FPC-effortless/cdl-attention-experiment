@@ -1,0 +1,4 @@
+artifacts/checkpoints/
+artifacts/worker_console/
+__pycache__/
+*.tmp
