@@ -1,7 +1,8 @@
-/-! Concrete positive witnesses complement safety-only statements. -/
 import Relational.Paged
 import Relational.Programs
 import Relational.Mixture
+
+/-! Concrete positive witnesses complement safety-only statements. -/
 
 namespace Relational
 

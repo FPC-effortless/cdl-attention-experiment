@@ -1,3 +1,5 @@
+import Relational.Basic
+
 /-!
 LRC-V4: a total denotational specification for paged causal history.
 
@@ -5,10 +7,9 @@ This file is intentionally independent of neural training. In particular,
 reachability of a prior record by an ordinal page address DOES NOT imply that
 an inference policy can learn its correct address from language.
 
-NOTE: Lean toolchain is not installed in the present environment. Statements
-are formalization candidates; they have not been kernel-checked here.
+Kernel and semantic mutation results are tracked by the pinned CI audit.
+See the mathematical review for limitations of these statements.
 -/
-import Relational.Basic
 
 namespace Relational
 

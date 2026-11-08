@@ -1,10 +1,11 @@
+import Std
+
 /-!
 Exact finite-mass mixture contract, added for the mathematical review.
 This is not a verification of an unavailable floating-point byte-cache model.
 Natural masses and nonnegative integer weights represent rational probabilities
 after division by the positive common denominator (a + b) * mass.
 -/
-import Std
 
 namespace Relational
 

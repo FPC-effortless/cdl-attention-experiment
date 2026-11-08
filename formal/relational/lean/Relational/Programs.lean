@@ -1,9 +1,10 @@
+import Relational.Basic
+
 /-!
 LRC-V4: a typed algebra for parallel composition of fully materialized
 relation functions. These results assert semantics only, not latency.
-Toolchain verification is pending.
+Verification status is recorded in the pinned CI audit outputs.
 -/
-import Relational.Basic
 
 namespace Relational
 
