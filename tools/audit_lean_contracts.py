@@ -90,8 +90,10 @@ def main():
                 ok, logs = compile_sources(args.lean, directory)
                 failure = logs[-1]['output']
                 expected = any(s in failure for s in ('type mismatch', 'unsolved goals',
-                                                       "tactic 'decide'", 'application type mismatch'))
-                killed = not ok and expected
+                                                       "tactic 'decide'", 'application type mismatch',
+                                                       'omega could not prove the goal'))
+                expected_module = 'Audit' if name == 'page_offset' else module
+                killed = not ok and expected and logs[-1]['module'] == expected_module
                 report['mutations'].append(dict(name=name, killed=killed, logs=logs))
                 print(json.dumps(dict(mutation=name, killed=killed,
                                       failing_module=logs[-1]['module'])), flush=True)
