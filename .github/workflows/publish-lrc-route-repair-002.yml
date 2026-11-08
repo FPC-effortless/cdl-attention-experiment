@@ -1,0 +1,61 @@
+name: Publish recovered LRC repair originals
+
+on:
+  push:
+    branches:
+      - ops/publish-lrc-route-repair-002-20261108
+    paths:
+      - .github/workflows/publish-lrc-route-repair-002.yml
+      - artifacts/lrc-route-repair-002-publication/**
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-lrc-route-repair-002-originals
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.repository == 'FPC-effortless/cdl-attention-experiment' && github.ref == 'refs/heads/ops/publish-lrc-route-repair-002-20261108'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out publication payload
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Verify and publish the original branches
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 artifacts/lrc-route-repair-002-publication/publish.py --publish
+      - name: Publish downloadable frozen evidence
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          repository=FPC-effortless/cdl-attention-experiment
+          handoff_sha=566ba9933a35cf88a55f830891d8d6e33d6ca524
+          release_tag=lrc-route-repair-002-20261108
+          gh auth setup-git --hostname github.com
+          git fetch --no-tags origin "$handoff_sha"
+          test "$(git rev-parse FETCH_HEAD)" = "$handoff_sha"
+          asset_dir="$RUNNER_TEMP/lrc-route-repair-002-release"
+          mkdir -p "$asset_dir"
+          for name in LRC_ROUTE_REPAIR_002_Checkpoints_and_Evidence_20261108.zip LRC_ROUTE_REPAIR_002_Code.patch lrc_vb001_matched_comparison.zip SHA256SUMS restore.py requirements-restore.txt README.md; do
+            git show "$handoff_sha:artifacts/lrc-route-repair-002/$name" > "$asset_dir/$name"
+          done
+          (cd "$asset_dir" && sha256sum -c SHA256SUMS)
+          tag_sha=$(git ls-remote --tags origin "refs/tags/$release_tag" | cut -f1)
+          if [ -z "$tag_sha" ]; then
+            git push --force-with-lease="refs/tags/$release_tag:" origin "$handoff_sha:refs/tags/$release_tag"
+          else
+            test "$tag_sha" = "$handoff_sha"
+          fi
+          test "$(git ls-remote --tags origin "refs/tags/$release_tag" | cut -f1)" = "$handoff_sha"
+          gh release create "$release_tag" "$asset_dir"/* \
+            --repo "$repository" --target "$handoff_sha" --verify-tag --prerelease --latest=false \
+            --title "LRC-ROUTE-REPAIR-002: frozen repair and evidence" \
+            --notes-file artifacts/lrc-route-repair-002-publication/RELEASE_NOTES.md

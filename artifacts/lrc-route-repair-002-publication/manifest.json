@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "repository": "FPC-effortless/cdl-attention-experiment",
+  "bundle": {
+    "bytes": 12694786,
+    "sha256": "4c6d0d2ce2a4a38a8248bd1923781164f1c43f317b676d39146f8009b27c622c",
+    "parts": [
+      {
+        "name": "recovered-originals.bundle.part000",
+        "bytes": 1048576,
+        "sha256": "38d2fed1edc7cd886d4dd478a879c83368604b60d1009c44ddeb1e9d82d76264"
+      },
+      {
+        "name": "recovered-originals.bundle.part001",
+        "bytes": 1048576,
+        "sha256": "b6f897313f30ebe4e9a45004d2e26ac78564f9c0035578468a63c4cd30e5b51d"
+      },
+      {
+        "name": "recovered-originals.bundle.part002",
+        "bytes": 1048576,
+        "sha256": "295e14f4db05be0bfeb2fd3dcd24dff9673a9242954ed1322e22a8be7b34eccc"
+      },
+      {
+        "name": "recovered-originals.bundle.part003",
+        "bytes": 1048576,
+        "sha256": "23b14b221f64f2a73729e944fb1b4293aa5eebf9d963ddf0b91fd72b56cebe4d"
+      },
+      {
+        "name": "recovered-originals.bundle.part004",
+        "bytes": 1048576,
+        "sha256": "6f178a9ec12f9f59b05edaca02b5ba9c3a095e8c20523518b6bfc1f4590d160c"
+      },
+      {
+        "name": "recovered-originals.bundle.part005",
+        "bytes": 1048576,
+        "sha256": "0c20c601849524316077212e87dafb3579b1195dff4c61657e817aa74f68a929"
+      },
+      {
+        "name": "recovered-originals.bundle.part006",
+        "bytes": 1048576,
+        "sha256": "7846a64e975b62a7af319e00f0fe173c0fd0cf36f14ea702801ce5c67d8b90ef"
+      },
+      {
+        "name": "recovered-originals.bundle.part007",
+        "bytes": 1048576,
+        "sha256": "0119bacdfab6958dc0943678f9d59189cd166ffc1a244afed1c8e25b121f5e3e"
+      },
+      {
+        "name": "recovered-originals.bundle.part008",
+        "bytes": 1048576,
+        "sha256": "40b5a58b7420f8db1206b5ae7eb84cf3921255d9f2aaf579e83ab985c8a7c61f"
+      },
+      {
+        "name": "recovered-originals.bundle.part009",
+        "bytes": 1048576,
+        "sha256": "fe014d4fab03065cd57fa06501aa2cdbad8fc8f09ac83840f72b507a8e4cb301"
+      },
+      {
+        "name": "recovered-originals.bundle.part010",
+        "bytes": 1048576,
+        "sha256": "67a9de50865756bee477dca656619cb5a074bd5042e0b62ddf661b32c4e931ac"
+      },
+      {
+        "name": "recovered-originals.bundle.part011",
+        "bytes": 1048576,
+        "sha256": "ae4f4862fc25b8da48c9a24648a81d870803bb2b1f1bb3b383723ae8bc652afb"
+      },
+      {
+        "name": "recovered-originals.bundle.part012",
+        "bytes": 111874,
+        "sha256": "1e7f6fb17d7a22afe58e69c06bfdee92bd32f8bad09a8467f28e8a89d2377bf1"
+      }
+    ]
+  },
+  "prerequisites": [
+    "b50e1615e16410b06af34081e83762460c0f9de3",
+    "c26ff92b8ecec74045bd2393cdaf956c99a0d9d5"
+  ],
+  "refs": {
+    "refs/heads/research/lrc-route-repair-002-20261108": "3f71af6eb53827eb7eb3c74e10964f70e8e84460",
+    "refs/heads/research/lrc-route-repair-002-handoff-20261108": "566ba9933a35cf88a55f830891d8d6e33d6ca524"
+  },
+  "artifacts": {
+    "LRC_ROUTE_REPAIR_002_Checkpoints_and_Evidence_20261108.zip": {
+      "bytes": 5489762,
+      "sha256": "06ad6c3d1e6647fa4912ec8631ca7367e5e4c775420f3573c1a024ea5f50daf6"
+    },
+    "LRC_ROUTE_REPAIR_002_Code.patch": {
+      "bytes": 184354,
+      "sha256": "1b25a4582994ec947fc7b2407470efe546640c744747d7a34a32f3e2d18a71eb"
+    },
+    "lrc_vb001_matched_comparison.zip": {
+      "bytes": 7358645,
+      "sha256": "20196fc1c54a7fcfc177d977883728fe5e07edccb6491a8b8e8921c5e4efe3f5"
+    }
+  }
+}
