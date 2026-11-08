@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "kind": "mechanical fixtures, NOT learned neural evaluation",
+  "same_bucket_cases": [
+    {
+      "order": [
+        "A",
+        "B"
+      ],
+      "query": "A",
+      "candidate_admitted": true,
+      "blind_correct": false,
+      "verified_correct": true
+    },
+    {
+      "order": [
+        "A",
+        "B"
+      ],
+      "query": "B",
+      "candidate_admitted": true,
+      "blind_correct": true,
+      "verified_correct": true
+    },
+    {
+      "order": [
+        "B",
+        "A"
+      ],
+      "query": "A",
+      "candidate_admitted": true,
+      "blind_correct": true,
+      "verified_correct": true
+    },
+    {
+      "order": [
+        "B",
+        "A"
+      ],
+      "query": "B",
+      "candidate_admitted": true,
+      "blind_correct": false,
+      "verified_correct": true
+    }
+  ],
+  "paging_checks": 630,
+  "mixture_normalization": true,
+  "wrong_weight_mutation_detected": true,
+  "ngram_orders": [
+    3,
+    4,
+    6
+  ],
+  "ngram_causality_checks": true,
+  "reported_number_derivations": {
+    "conditional_answer_given_hit_bounds": [
+      0.6039510818438382,
+      0.6492108288909794
+    ],
+    "random_slot_success_with_no_miss_recovery": 0.47835,
+    "implied_seen_byte_fraction": 0.7865168539325843
+  }
+}
