@@ -1,0 +1,43 @@
+{
+  "config": {
+    "seeds": [
+      301,
+      302,
+      303
+    ],
+    "steps": 2000,
+    "batch": 32,
+    "train_groups": 2048,
+    "test_groups": 256,
+    "lr": 0.002,
+    "support_weight": 1.0,
+    "train_seed": 71001,
+    "iid_seed": 71002,
+    "heldout_seed": 71003,
+    "width_transformer": 32,
+    "width_memnet": 51,
+    "width_query": 32
+  },
+  "arms": [
+    "transformer_answer",
+    "transformer_support",
+    "memnet_answer",
+    "memnet_support",
+    "query_only"
+  ],
+  "source_sha256": "3abbbe86ceeefb6ff0a0b7cdd734cf23da4b5e3ad73be2ab94b6dd7a58e82be4",
+  "git_commit": "f3287dbc5692968aef4463aece041d21b8e074e9",
+  "torch": "2.15.0+cpu",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "threads": 1,
+  "train_sha256": "8cd4f0dc7ed824954e0b342c17d50e1d014654a0b84902852353e03498ce69c2",
+  "parameters": {
+    "transformer_answer": 19076,
+    "transformer_support": 19076,
+    "memnet_answer": 19129,
+    "memnet_support": 19129,
+    "query_only": 3620
+  },
+  "started_utc": "2026-11-08T08:17:34Z"
+}

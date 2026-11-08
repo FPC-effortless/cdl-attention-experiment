@@ -1,0 +1,9 @@
+{
+  "checkpoint_count": 15,
+  "optimizer_steps": 30000,
+  "exact_replayed_model_split_conditions": 90,
+  "source_sha256": "3abbbe86ceeefb6ff0a0b7cdd734cf23da4b5e3ad73be2ab94b6dd7a58e82be4",
+  "data_hashes_verified": true,
+  "minibatch_hashes_verified": true,
+  "memory_off_exact_chance": true
+}
