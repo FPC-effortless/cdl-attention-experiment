@@ -24,7 +24,7 @@ def compile_sources(lean, directory):
     for name in MODULES + ('Axioms',):
         source = directory / 'Relational' / (name + '.lean')
         run = subprocess.run([lean, '-o', str(source.with_suffix('.olean')), str(source)],
-                             env=env, text=True, capture_output=True, timeout=90)
+                             cwd=directory, env=env, text=True, capture_output=True, timeout=90)
         logs.append(dict(module=name, exit_code=run.returncode,
                          output=run.stdout + run.stderr))
         if run.returncode:
@@ -60,6 +60,7 @@ def main():
             ok, logs = compile_sources(args.lean, base)
             report['baseline'] = dict(passed=ok, logs=logs)
             if not ok:
+                print(logs[-1]['output'], flush=True)
                 raise RuntimeError('baseline compilation failed; mutations not attempted')
             axiom_text = logs[-1]['output']
             requested = re.findall(r'#print axioms (\S+)',
@@ -92,7 +93,10 @@ def main():
                                                        "tactic 'decide'", 'application type mismatch'))
                 killed = not ok and expected
                 report['mutations'].append(dict(name=name, killed=killed, logs=logs))
+                print(json.dumps(dict(mutation=name, killed=killed,
+                                      failing_module=logs[-1]['module'])), flush=True)
                 if not killed:
+                    print(failure, flush=True)
                     raise RuntimeError('mutation survived or failed for an unrecognized reason')
         report['status'] = 'PASS'
     except (OSError, RuntimeError, subprocess.TimeoutExpired) as error:

@@ -1,0 +1,23 @@
+{
+  "source_sha256": {
+    "formal/relational/lean/Relational/Programs.lean": "259cd509ffc8fa5f05e679c9fac3553789f6cf56e3eb2cdd90ce03c764923b0e",
+    "formal/relational/lean/Relational/Paged.lean": "ae670ff9ce7f316775f858d223e92928c33152477b09b11c7cb61c3a38c8ea5d",
+    "formal/relational/lean/Relational/Audit.lean": "03f7a4535469d6b141ce5aa2d64dd1441005c4d90d2e3a855064b901385a136d",
+    "formal/relational/lean/Relational/Basic.lean": "0af4ed4110d7a6ee581e27735a80e39b6075271d60e3d9919feca756b52e82b1",
+    "formal/relational/lean/Relational/Mixture.lean": "11b89dfd372a588e070caec031ec90c21e822f24efbdb95f87d6e5be079fc630"
+  },
+  "mutations": [],
+  "compiler": "Lean (version 4.15.0, x86_64-unknown-linux-gnu, commit 11651562caae, Release)\n",
+  "baseline": {
+    "passed": false,
+    "logs": [
+      {
+        "module": "Basic",
+        "exit_code": 1,
+        "output": "input file '/tmp/lrc-lean-audit-329n7rhc/baseline/Relational/Basic.lean' must be contained in root directory (/home/runner/work/cdl-attention-experiment/cdl-attention-experiment/)\n"
+      }
+    ]
+  },
+  "status": "BLOCKED_OR_FAILED",
+  "error": "baseline compilation failed; mutations not attempted"
+}
