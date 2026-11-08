@@ -206,6 +206,9 @@ def load(arm, seed):
         raise RuntimeError("checkpoint changed")
     ckpt = torch.load(path, map_location="cpu", weights_only=True)
     if arm in GATES:
+        parent = json.loads(receipt_path("v4", seed).read_text())
+        if ckpt["backbone_sha256"] != parent["checkpoint_sha256"]:
+            raise RuntimeError("gate checkpoint belongs to a different V4 backbone")
         base = load("v4", seed)
         m = build_gated_model(base, variant=arm, gate_state=ckpt["gate"])
     else:
@@ -296,6 +299,7 @@ def fit_gates(seed):
     for a, h in heads.items():
         path = checkpoint_path(a, seed)
         torch.save({"gate": h.state_dict(), "optimizer": opts[a].state_dict(),
+                    "torch_rng": torch.get_rng_state(), "batch_rng": rng.getstate(),
                     "arm": a, "seed": seed, "updates": GATE_STEPS,
                     "backbone_arm": "v4", "backbone_sha256": parent["checkpoint_sha256"],
                     "protocol_sha256": protocol_sha}, path)
