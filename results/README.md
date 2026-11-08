@@ -19,3 +19,7 @@ Do not overwrite earlier runs when changing the benchmark. Preserve them so tuni
 ## LRC language benchmark
 
 - [LRC-TS-001 — all recovered LRC language variants on Tiny Shakespeare](lrc-ts-001-2026-11-08.md): 42 backbone fits plus nine utility heads; three paired seeds; complete held-out evaluation, CPU efficiency, memory ablations, independent audit, and separate NumPy runtime supplement. Completed 8 November 2026; publication pending approval.
+
+## LRC retrieval diagnosis
+
+- [LRC-DIAG-001 — person-key collapse and a failed training repair](lrc-diag-001-2026-11-08.md): original-checkpoint oracle, collision and permutation diagnostics; nine fresh repair/control fits; new bridge-switch counterfactuals; independent audits. The correct-first auxiliary does not repair collapsed location addresses. Completed 8 November 2026; local review record.
