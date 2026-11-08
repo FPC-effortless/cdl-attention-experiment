@@ -2,7 +2,7 @@
 
 ## Review scope and status
 
-This document records prospective review conditions for the sentence-based LRC route repair on branch `research/lrc-route-repair-002-20261108`. It is not a capability result. The new model, frozen protocol and completed evidence will be reviewed separately as they become available. The reviewer owns this document and `audit.py`; implementation and training belong to the other experiment authors.
+This document records the prospective conditions, pre-freeze production review, and completed independent audit for the sentence-based LRC route repair on branch `research/lrc-route-repair-002-20261108`. The reviewer owns this document and `audit.py`; implementation and training belong to the other experiment authors. The completed evidence is reported at the end, separately from the prospective checks.
 
 The local `AGENTS.md` and `fpc-universal` research workflow were read. The recovered original sentence adapter and `lrc_diagnosis_001/mechanism/MECHANISM_DIAGNOSIS.md` were inspected. No original source or result was changed.
 
@@ -64,11 +64,80 @@ The no-scan claim concerns the prepared-memory query phase. Building the memory 
 ## Review record
 
 - Prospective checklist issued to the implementation author and index author before the repair implementation was present in this directory.
-- Candidate design received: width-32 sentence encoder; normalized learned writer and first/second reader MLPs; 1,600 steps of continuous support metric learning; a 16-centroid spherical codebook fitted to unique TRAIN record strings with five inertia-selected restarts; 400 reader-distillation steps with frozen encoder/writer; two code probes and at most two candidates per probe; a value-only answer decoder trained from detached labeled final-support representations. Exact production source and frozen protocol remain pending.
+- Candidate design received: width-32 sentence encoder; normalized learned writer and first/second reader MLPs; 1,600 steps of continuous support metric learning; a 16-centroid spherical codebook fitted to unique TRAIN record strings with five inertia-selected restarts; 400 reader-distillation steps with frozen encoder/writer; two code probes and at most two candidates per probe; a value-only answer decoder trained from detached labeled final-support representations. Production integration was still pending at this initial design review; its subsequent review is below.
 - Design assessment: defensible as a new LRC-derived sentence-routing variant. This changes the training method, discretization, coherent first-hop training input and answer decoder as well as the two original defects. Without a frozen factorial ablation the causal attribution is to the combined recipe. No claim that it is a minimal patch or an architecturally novel result is justified.
 - Runtime accounting: two probes times two candidates means at most four scored records per hop, twice the archived maximum of two. Comparing the query with 16 fixed centroids is codebook work independent of history length; it must not be confused with scanning all history records. K-means time belongs in training cost.
 - Shuffled-control condition raised: the joint support-pair shuffle must apply consistently wherever support indices affect training. If correct final-support values are intentionally retained for the answer decoder while routing labels are shuffled, that alternative must be stated explicitly and its detached gradient boundary verified; it is not an entirely shuffled-support arm.
 - Index author reports 15 structural tests, including forbidden-iteration wrappers for million-entry overflow buckets and 100,000 distinct-code dictionaries. Independent code inspection confirms that overflow returns no candidates after checking bucket length, and lookup uses one dictionary `get`. These checks do not by themselves establish that the neural resolver scores only the returned candidates.
 - Auditor parser qualification executed on 8 IID TRAIN-schema examples, 8 already designated DEV held-out examples, and 8 bridge qualification examples. Exact labels/templates and tensor digest parity passed; deliberately corrupted answer labels were rejected for all three kinds. No fresh TEST tensors were generated or read.
-- Complete cohort and fresh TEST evidence: pending.
-- Independent postfit audit: pending.
+- Complete cohort and fresh TEST evidence: completed after the production review below.
+- Independent postfit audit: passed; results and limits are recorded below.
+
+## Production review before confirmation
+
+The production `model.py`, `train.py`, `run.py`, `index.py` and prospective `PROTOCOL.md` were inspected. Ordinary inference accepts records and question only. It computes fixed-codebook scores, retrieves bounded posting lists, deduplicates addresses/candidates and scores only the gathered candidate keys. Exact score ties fail closed. The first retrieved value determines the second query; a missing first record now aborts the chain. The answer head uses only the actual final selected value.
+
+The review found a concrete Stage-B clipping bug: frozen encoder/writer parameters retained their last Stage-A gradients, and clipping all router parameters included those stale gradients. Production now clears the frozen gradients and clips only the active parameters. The original DEV key-probe source/results remain preserved as executed; the corrected full model was separately qualified on DEV seed 84112. The implementation author reports 100% answer and both-support scores on all three DEV sets, 100% on the paired-collision stress, 34.375% for the content-blind ordinal collision ablation, and 100% with one probe. These are development observations, not the fresh confirmation cohort.
+
+The final protocol declares 12 fixed fits across four arms and seeds 901–903; 1,600 key-learning plus 400 reader-distillation steps; 12,900 total repair parameters with 512 codebook buffer values; two optimizer calls per minibatch; joint support shuffling in every teacher/target use; original-LRC and MemNet references; five fresh TEST sets generated after fit closure; and explicit answer, quartet, joint-support, overflow, candidate-bound, permutation and shuffled-control screens. Source hashing covers the imported original Python package as well as the new scientific source. Receipts preserve both key optimizer phases, RNG state, exact minibatch digests and closed update-log hashes.
+
+The reviewer independently reran the 15 index tests successfully. The index/model author and root report all 29 structural tests passing, including instrumented candidate matrix operations in a 10,008-record history, content swaps, exact ties, permutations and null-chain aborts. These structural results establish the access contract under their fixtures, not learned task quality or large-memory recall.
+
+No blocking review finding remained before the frozen confirmation launch. The independent postfit auditor was implemented without opening the fresh TEST artifacts. Its planned scope was source/output/fit hashes, all 24,000 minibatch rows, optimizer schedules, tensor labels, quartet edits, input overlap, all 90 result cells, per-read bucket accounting, key diagnostics, declared gates and 16 native replay examples per cell. Audit success and scientific gate success remain separate fields.
+
+## Completed independent audit
+
+**Integrity passed. All six frozen repair quality/mechanism screens passed. The repaired model still loses the measured CPU cost comparison to MemNet.**
+
+The audit ran only after all 12 fits, fresh scoring, and isolated timing had finished. It did not fit a model, generate another evaluation cohort, select a checkpoint, change the runtime probe count, or retime any model. The scientific freeze was local commit `6c3976e`. Evidence is in `/workspace/scratch/3f2444385d54/lrc_route_repair_002/confirmation/independent_audit.json`.
+
+The following were independently checked:
+
+- Source hashes include the new scientific source and all imported original-package Python files. Checkpoint hashes, closure/evaluation ordering, embedded and external receipts, optimizer/RNG states, exact shared minibatch streams, and all 24,000 finite update-log rows agree.
+- All five 1,024-example TEST sets have exact valid templates, unique distinct gold support records, correct answers, and the declared single-token quartet edits. There is no exact input overlap with TRAIN or between the five TEST sets. Quartet members remain dependent examples.
+- All 90 score cells and 92,160 saved predictions reconcile with the saved tensors. The six frozen screens independently recompute to PASS.
+- Every saved repair read was checked by independently rebuilding its discrete bucket membership. Returned/inspected counts, probes, bucket sizes, overflow counts, null chains, ties and selected-ID eligibility agree with the claimed bounded access contract.
+- Direct native replay used 16 examples per cell, spread over four full quartets across each set: 1,440 examples in 90 cells. Every discrete field matched exactly, including answers, selected support IDs, write/read codes and counters. Maximum per-example loss difference was `1.1920928955078125e-7`.
+- The cost auditor reconciled all 270 recorded block means, nine median timing summaries, 8,640 measured complete calls, training-time ratios and weighted cost values. This verifies arithmetic and recorded scope; it is not an independent hardware replication.
+
+### Fresh quality and mechanism findings
+
+Repair and MemNet both achieved 100% answer accuracy, 100% perfect answer quartets, and 100% both-support accuracy in every one of the 15 seed-by-primary-split cells. The repaired model therefore fixes the measured sentence-task behavior without outperforming the conventional reference on quality.
+
+| Arm | Mean answer accuracy over six withheld cells | Mean both-support accuracy over six withheld cells |
+|---|---:|---:|
+| Repair | 100.0000% | 100.0000% |
+| MemNet | 100.0000% | 100.0000% |
+| Fresh original LRC control | 40.3809% | 8.1380% |
+| Repair with shuffled support pairs | 34.3424% | 1.9206% |
+
+Every repaired story used exactly 16 hard codes. For both partnership and location facts, every era had four distinct person keys; the measured person-pair collision rate was zero. The relevant writer key remained unchanged across every location-payload quartet and every partnership-bridge quartet. These findings hold in all 15 primary cells. Normal inference scored exactly two candidate records per hop, with no overflow or ties.
+
+All six reversal checks preserved answer predictions, mapped support occurrences and record-aligned writer keys. Under the deliberately paired-code collisions, content-aware resolution retained 100% answers, both supports and perfect quartets for every seed, with at most four candidate scores per hop. Replacing only that collision decision by the declared content-blind lowest-occurrence selector reduced bridge answer accuracy to 34.2773%, 40.0391% and 30.4688% (mean 34.9284%). This is a controlled selector stress test, not a retraining ablation of every architectural ingredient.
+
+The fixed one-probe diagnostic also scored 100% on the bridge set in all three seeds. It remains a diagnostic: selecting that faster runtime after TEST and presenting it as the frozen primary configuration would be test-driven selection.
+
+The newly fitted original controls had mean location-code counts between 1.0 and 1.5 per era across seed/split cells. The exact single-location-code collapse in every era was established for the archived checkpoints; it must not be incorrectly attributed to all newly fitted controls.
+
+### Cost findings and decision boundary
+
+| Seed | Repair complete call | MemNet complete call | Repair / MemNet | Repair full fit | MemNet full fit | Weighted cost J |
+|---|---:|---:|---:|---:|---:|---:|
+| 901 | 0.565311 ms | 0.214150 ms | 2.6398× | 9.4538 s | 8.8656 s | +11.7126 |
+| 902 | 0.608827 ms | 0.207866 ms | 2.9289× | 8.6518 s | 8.8992 s | +12.8675 |
+| 903 | 0.566014 ms | 0.209577 ms | 2.7008× | 9.1228 s | 9.6187 s | +11.8694 |
+
+The reported inference values are medians of 30 complete-call block means for each model/seed. Repair is faster and more accurate than the fresh original LRC control, but matches MemNet quality while taking approximately 2.64–2.93 times its complete-call CPU latency. Training costs are similar. Positive J in all three seeds means the repaired model loses the declared inference-weighted cost comparison against MemNet.
+
+The supported conclusion is a successful combined architectural/training repair of this finite sentence-routing task. Remaining limits include the fixed known vocabulary/templates, 16-record workload, 16-code capacity, doubled maximum candidate budget, dense and teacher-supported training, differing parameter counts, three fit seeds, and lack of an ingredient-by-ingredient training ablation. There is no demonstrated Tiny Shakespeare gain, new-entity generalization, long-memory recall, broad language-model capability, or cost superiority over the conventional baseline.
+
+### Evidence hashes
+
+| Artifact | SHA-256 |
+|---|---|
+| Prefit manifest | `47f79043bd4736ab09371795d30b72d8da8507a8459b0249009f66bebb34ff4c` |
+| Fit closure | `fd44625cf7514615c6204aad4de2d1d33db52f2e3796c25220fbdd700b41b7dc` |
+| Scoring completion | `b551c3c1c479e9785e87b8649ec7e65d5e970d2756df7ec3b06c832c645318e6` |
+| Result table | `8ea961c5ce0a980e2bfa02052a30e2f2fc5a2bf18a5569e3946e43a3baa4410f` |
+| CPU benchmark | `8999b50e39197c89518bb608799c3b17f3991685639e4857312dcecffba68d42` |
+| Independent audit | `aeb895e77bf0e872b47c73c276a1c1649b42346dd1ceac2c66a8a06eff5a503f` |

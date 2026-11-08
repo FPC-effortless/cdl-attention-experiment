@@ -23,3 +23,4 @@ Do not overwrite earlier runs when changing the benchmark. Preserve them so tuni
 ## LRC retrieval diagnosis
 
 - [LRC-DIAG-001 — person-key collapse and a failed training repair](lrc-diag-001-2026-11-08.md): original-checkpoint oracle, collision and permutation diagnostics; nine fresh repair/control fits; new bridge-switch counterfactuals; independent audits. The correct-first auxiliary does not repair collapsed location addresses. Completed 8 November 2026; local review record.
+- [LRC-ROUTE-REPAIR-002 — repaired identity keys and content-aware collisions](lrc-route-repair-002-2026-11-08.md): learned fine keys, shared address codebook, and bounded content-based selection. Repair reaches 100% answers and both supports across three seeds and five fresh splits, including partner switches; MemNet remains faster. Twelve fits, 29 structural tests, and independent audit of 92,160 predictions. Completed 8 November 2026; local review record.
