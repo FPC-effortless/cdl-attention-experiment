@@ -1,11 +1,12 @@
+import Std
+
 /-!
 LRC-003: a dependency-light Lean 4 specification of indexed causal reads
 and compositional functional graph programs.
 
-Important: the source has NOT been checked by the Lean kernel in this environment
-because Lean/Lake is not installed. It requires `lake env lean ...` in CI.
+Kernel verification is tracked by the pinned Lean contract audit in CI.
+See tools/audit_lean_contracts.py and the mathematical review for its scope.
 -/
-import Std
 
 namespace Relational
 
