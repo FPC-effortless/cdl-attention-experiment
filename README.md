@@ -13,6 +13,14 @@ pinned: false
 
 A falsification-first experiment for the hypothesis that relevance can be defined by conditional description length rather than only learned Q/K compatibility.
 
+## LRC repair handoff
+
+The completed sentence-level LRC repair is available with its frozen checkpoints,
+evidence, source patch, original dependency archive, and checksum-verified restore
+instructions: [LRC-ROUTE-REPAIR-002 downloads and setup](artifacts/lrc-route-repair-002/README.md).
+The [repair report](results/lrc-route-repair-002-2026-11-08.md) records the capability
+result and the remaining latency disadvantage against MemNet.
+
 ## Model
 
 `HuggingFaceTB/SmolLM2-135M`
