@@ -53,7 +53,23 @@ class PagedMultiHopLM(SerialMultiHopLM):
         valid = tokens != 0
         if ((~valid[:,:-1]) & valid[:,1:]).any():
             raise ValueError('padding must be a suffix')
+        cfg = self.config
+        h = self.embedding(tokens)
+        h = self.local_norm(h + F.gelu(self.local(F.pad(
+            h.transpose(1,2), (cfg.local_kernel-1,0))).transpose(1,2)))
+        h = h * valid.unsqueeze(-1)
+        return self._forward_states(tokens, h, valid, sample=sample, replay=replay,
+                                    overrides=overrides, noise=noise, memory=memory)
+
+    def _forward_states(self, tokens, h, valid, *, sample=False, replay=None,
+                        overrides=None, noise=None, memory='normal'):
+        """Execute the unchanged paged circuit on caller-encoded occurrences.
+
+        Protected adapter seam: callers must validate states and causal record
+        boundaries. The public token forward and cached decoder are unchanged.
+        """
         batch, n = tokens.shape
+        valid_rows = valid.detach().cpu().tolist()
         cfg = self.config
         overrides = overrides or {}
         policies, decisions, used_noise = {}, {}, {}
@@ -96,7 +112,7 @@ class PagedMultiHopLM(SerialMultiHopLM):
             for row in range(batch):
                 ix = indexes[row]
                 for t in range(n):
-                    if not bool(valid[row,t]):
+                    if not valid_rows[row][t]:
                         continue
                     pages = ix.page_count(relations[row][t],addresses[row][t],t)
                     width = min(self.page_bits, (pages-1).bit_length()) if pages else 0
@@ -119,10 +135,6 @@ class PagedMultiHopLM(SerialMultiHopLM):
             active_bits[key] = bits_mask
             return result
 
-        h = self.embedding(tokens)
-        h = self.local_norm(h + F.gelu(self.local(F.pad(
-            h.transpose(1,2), (cfg.local_kernel-1,0))).transpose(1,2)))
-        h = h * valid.unsqueeze(-1)
         refs = torch.full_like(tokens,-1)
         for ell,layer in enumerate(self.layers):
             anchor = dereference(h,refs)
@@ -142,7 +154,7 @@ class PagedMultiHopLM(SerialMultiHopLM):
             indexes = [PagedCausalIndex(cfg.candidates) for _ in range(batch)]
             for row in range(batch):
                 for t in range(n):
-                    if bool(valid[row,t]):
+                    if valid_rows[row][t]:
                         indexes[row].append(t,wr_cpu[row][t],wa_cpu[row][t])
                         metrics['writes'] += 1
             j1 = read_postings(indexes,r1,a1,k1,p1,key=(ell,'page_first'))
