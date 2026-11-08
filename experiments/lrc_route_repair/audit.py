@@ -12,6 +12,7 @@ import hashlib
 import json
 import math
 from pathlib import Path
+import statistics
 import sys
 
 import torch
@@ -302,6 +303,54 @@ def _replay_rows(example_count: int, requested: int) -> torch.Tensor:
     return (group_ids[:, None] * 4 + torch.arange(4)[None]).flatten()
 
 
+def audit_timing(output: Path, closed: dict, complete: dict) -> dict:
+    """Recompute saved timing summaries without perturbing or repeating timing."""
+    path = output / "benchmark.json"
+    if not path.exists():
+        return {"status": "not_available", "timing_or_cost_claim_verified": False}
+    timing = json.loads(path.read_text())
+    assert timing["complete_sha256"] == sha256(output / "complete.json")
+    assert timing["finished_unix"] >= complete["completed_unix"]
+    assert timing["threads"] == 1 and timing["warmups"] == timing["calls_per_block"] == 32
+    assert timing["blocks"] == 30 and timing["clock"] == "perf_counter_ns"
+    assert timing["panel"] == "first32 TRAIN examples"
+    assert timing["scope"] == "complete batch1 calls including record encoding and index construction"
+    assert timing["fitted_checkpoints_verified"] is True
+    fits = {(row["arm"], row["seed"]): row for row in closed["receipts"]}
+    stored = {(row["arm"], row["seed"]): row for row in timing["results"]}
+    arms = ("repair", "original_lrc", "memnet")
+    seeds = (901, 902, 903)
+    assert len(stored) == len(timing["results"]) == 9
+    assert set(stored) == {(arm, seed) for arm in arms for seed in seeds}
+    assert set(timing["raw_block_means_ms"]) == {str(seed) for seed in seeds}
+    recomputed = []
+    for seed in seeds:
+        blocks = timing["raw_block_means_ms"][str(seed)]
+        assert set(blocks) == set(arms)
+        for values in blocks.values():
+            assert len(values) == 30 and all(math.isfinite(value) and value > 0 for value in values)
+        baseline_i = statistics.median(blocks["memnet"])
+        baseline_t = fits["memnet", seed]["fit_seconds"]
+        for arm in arms:
+            inference, training = statistics.median(blocks[arm]), fits[arm, seed]["fit_seconds"]
+            result = {"arm": arm, "seed": seed, "complete_call_ms": inference,
+                      "fit_seconds": training, "inference_ratio_to_memnet": inference / baseline_i,
+                      "training_ratio_to_memnet": training / baseline_t,
+                      "J": 12 * math.log(inference / baseline_i) + math.log(training / baseline_t)}
+            for key, value in result.items():
+                actual = stored[arm, seed][key]
+                if isinstance(value, float):
+                    assert math.isclose(actual, value, rel_tol=0, abs_tol=1e-12), (arm, seed, key)
+                else:
+                    assert actual == value
+            recomputed.append(result)
+    return {"status": "passed", "benchmark_sha256": sha256(path),
+            "block_means_reconciled": 270, "timed_complete_calls": 8640,
+            "summary_cells": 9, "scope": timing["scope"], "results": recomputed,
+            "timings_repeated_by_auditor": False,
+            "limitation": "Arithmetic and recorded scope verified; this is not an independent hardware replication."}
+
+
 @torch.inference_mode()
 def _native_prediction(model, arm: str, data: dict, mode: str) -> dict:
     """Direct native calls; never invoke the experiment evaluator/summarizer."""
@@ -548,6 +597,7 @@ def run_audit(output: Path, *, source: Path, replay_examples: int = 16) -> dict:
                         assert torch.equal(actual[field].cpu(), expected[field][indices]), ("native replay mismatch", key, field)
                 replay_audits.append({"cell": key, "indices": indices.tolist(), "examples": len(indices),
                                       "maximum_loss_error": error, "all_discrete_fields_exact": True})
+    timing_audit = audit_timing(output, closed, complete)
     return {"status": "passed", "meaning": "Integrity and replay passed; scientific gates are reported separately.",
             "audit_source_sha256": sha256(Path(__file__)),
             "prefit_manifest_sha256": sha256(output / "prefit_manifest.json"),
@@ -560,6 +610,7 @@ def run_audit(output: Path, *, source: Path, replay_examples: int = 16) -> dict:
                 + sum(len(p["pred"]) for p in permutations.values()),
             "route_telemetry": telemetry, "key_diagnostics": key_diagnostics,
             "permutations": permutation_audits, "gates": gates,
+            "timing_audit": timing_audit,
             "repair_minus_shuffled_withheld": label_gain,
             "native_replay_cells": len(replay_audits),
             "native_replay_examples": sum(row["examples"] for row in replay_audits),
