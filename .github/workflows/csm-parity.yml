@@ -1,0 +1,21 @@
+name: CSM parity and checkpoint replay
+on:
+  push:
+    branches: ['research/csm-parity-002-20261109']
+  pull_request:
+    paths: ['research/csm_parity_002/**', '.github/workflows/csm-parity.yml']
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r research/csm_parity_002/requirements-lock.txt --index-url https://download.pytorch.org/whl/cpu
+      - run: python research/csm_parity_002/verify_parity.py
+      - run: python research/csm_parity_002/verify_regulated.py
+      - run: python research/csm_parity_002/replay.py

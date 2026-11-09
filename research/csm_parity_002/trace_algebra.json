@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "arithmetic": "exact fractions",
+  "associativity_triples": 3375,
+  "closed_form_and_impulse_checks": 120,
+  "scan_trials": 109,
+  "scanned_state_vectors": 1397,
+  "checks": [
+    "identity",
+    "chronological_noncommutativity",
+    "associativity",
+    "closed_form",
+    "impulse_response",
+    "serial_scan_equality",
+    "padding_identity",
+    "reset_forgets_prior_state",
+    "chunk_equivalence",
+    "reset_padding_rejected",
+    "bounded_states",
+    "candidate_coefficient_approximations"
+  ],
+  "accounting": {
+    "base_parameters": 18294,
+    "regulated_parameters": 19074,
+    "base_nominal_macs": 18560,
+    "regulated_nominal_macs": 19328,
+    "base_dense_state_bytes_fp32": 1568,
+    "regulated_dense_state_bytes_fp32": 1616
+  },
+  "limitations": [
+    "Finite executable checks are not formal verification.",
+    "No FP32 numerical parity or throughput is measured.",
+    "No language, retrieval, or controller benefit is established."
+  ]
+}
