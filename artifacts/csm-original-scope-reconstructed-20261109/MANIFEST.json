@@ -1,0 +1,38 @@
+{
+  "scope": "reconstructed original CSM only",
+  "excluded": "CSM-ADDRESS-002 and 12 later checkpoints",
+  "missing_consolidation": "168d44d",
+  "exact_consolidation_reproduced": false,
+  "foundation_commit": "a89ae4e516627b1b5030374df97a2a9a9b6f19c6",
+  "graph_commit": "0e667ffd17f6904097a38be37455c2c4350b65a0",
+  "checkpoint_count": 30,
+  "raw_evidence_count": 242,
+  "restore_paths": 422,
+  "files": {
+    "CSM-FOUNDATION-001-review.zip.part1": {
+      "bytes": 7500000,
+      "sha256": "933e2bf0fb2262b6e5397f80ff0f3aa212446fd5b483ba83937b46b7cb8ae055"
+    },
+    "assemble.py": {
+      "bytes": 645,
+      "sha256": "fe18f85bb1f038da73bd15e6808e17ffb68824a75f20242f52bad9a3f9725ce7"
+    },
+    "restore.py": {
+      "bytes": 6359,
+      "sha256": "1716007ea5b30eac27a3efccde9c14c2010199b3784f89af1e9f54186c985f92"
+    },
+    "README.md": {
+      "bytes": 2801,
+      "sha256": "26a72f9ac21f2e3e23ff7188bb8d0561f22a76e9e63620ea34797fa16b93bbfc"
+    },
+    "CSM-GRAPH-001-verified-project.zip": {
+      "bytes": 4864191,
+      "sha256": "9b1f30ca4a6008d4ecb9c0f7c7e6ab46e89d53107c75985467152e1c9f9ac32d"
+    },
+    "CSM-FOUNDATION-001-review.zip.part2": {
+      "bytes": 6534393,
+      "sha256": "72ad22fc79ece972c025425fcd3e79108f01346e7dd6774c0a123eb49ab994af"
+    }
+  },
+  "foundation_archive_reassembled_sha256": "ac8291f94c04a4d73e395f5eba005b8ea5773813e2829cd86514ced605c1233f"
+}
