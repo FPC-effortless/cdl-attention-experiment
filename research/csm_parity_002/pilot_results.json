@@ -1,0 +1,95 @@
+{
+  "rows": [
+    {
+      "seed": 11,
+      "variant": "instant",
+      "parameters": 34479,
+      "dev_nll": 4.073210717877373,
+      "trace_reset_nll": 4.073210717877373,
+      "replay_nll": 4.073210717877373,
+      "train_seconds": 6.294347777999974,
+      "checkpoint_sha256": "8900b70f2e211875b7a0dd637ea8487325cf9bb65f5e137e60700ebef76e00e6"
+    },
+    {
+      "seed": 11,
+      "variant": "single",
+      "parameters": 34479,
+      "dev_nll": 4.089806649833918,
+      "trace_reset_nll": 4.0734821448568255,
+      "replay_nll": 4.089806649833918,
+      "train_seconds": 5.879023556999982,
+      "checkpoint_sha256": "ac4d415335ae2f4a2cdd81ae48f9b2c0d87531e25ece0415b6f583414a67c6ef"
+    },
+    {
+      "seed": 11,
+      "variant": "multi",
+      "parameters": 34479,
+      "dev_nll": 4.10303686815314,
+      "trace_reset_nll": 4.083632345777005,
+      "replay_nll": 4.10303686815314,
+      "train_seconds": 5.8750680370000055,
+      "checkpoint_sha256": "5af28b51ec291b97fc5442f77ae1a0f7cb3127445198da81bd0fb6215a22702b"
+    },
+    {
+      "seed": 23,
+      "variant": "instant",
+      "parameters": 34479,
+      "dev_nll": 4.260989628266543,
+      "trace_reset_nll": 4.260989628266543,
+      "replay_nll": 4.260989628266543,
+      "train_seconds": 5.554467407999937,
+      "checkpoint_sha256": "27871ca9680f1d60174d24f26c21a20ba13d4b1cb6452b348ee67dd4fe0075ae"
+    },
+    {
+      "seed": 23,
+      "variant": "single",
+      "parameters": 34479,
+      "dev_nll": 4.28983626072295,
+      "trace_reset_nll": 4.2519712070934474,
+      "replay_nll": 4.28983626072295,
+      "train_seconds": 6.047989762000043,
+      "checkpoint_sha256": "53292553299dfc7a7abc88552cfcad529ef0af71e2fe18a9d56348cdc906dc24"
+    },
+    {
+      "seed": 23,
+      "variant": "multi",
+      "parameters": 34479,
+      "dev_nll": 4.258060552412644,
+      "trace_reset_nll": 4.259455327875912,
+      "replay_nll": 4.258060552412644,
+      "train_seconds": 5.585345241000027,
+      "checkpoint_sha256": "a8bfcb08bf7c4adcb97aa586dd117b9575b48e45d585a8b49d74b82796b37ed1"
+    },
+    {
+      "seed": 37,
+      "variant": "instant",
+      "parameters": 34479,
+      "dev_nll": 4.12398385303095,
+      "trace_reset_nll": 4.12398385303095,
+      "replay_nll": 4.12398385303095,
+      "train_seconds": 6.288529014999995,
+      "checkpoint_sha256": "4140bfc6ded2c452e8e96db771f3a721f74373f593c9dde5dc1b7d2b9ffed57f"
+    },
+    {
+      "seed": 37,
+      "variant": "single",
+      "parameters": 34479,
+      "dev_nll": 4.120379043510184,
+      "trace_reset_nll": 4.120326711097732,
+      "replay_nll": 4.120379043510184,
+      "train_seconds": 6.336544297000046,
+      "checkpoint_sha256": "c25822f8742ea1e48d934acb52cfdd72807f3c5b0754410a1028f1687653c1e4"
+    },
+    {
+      "seed": 37,
+      "variant": "multi",
+      "parameters": 34479,
+      "dev_nll": 4.128040445037186,
+      "trace_reset_nll": 4.130885983584449,
+      "replay_nll": 4.128040445037186,
+      "train_seconds": 6.937575190000075,
+      "checkpoint_sha256": "4747c9e5c653ae45cd6d16560c3b8be7b11d50afa9976f0a62fb436a0fe6ef58"
+    }
+  ],
+  "scope": "Exploratory exposed-dev pilot; 32 updates, truncated gradients at 64; no test access or superiority claim"
+}

@@ -1,0 +1,201 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "variant": "instant",
+      "mode": "rewrite",
+      "seed": 0,
+      "max_abs_error": 3.885780586188048e-16,
+      "steps": 96
+    },
+    {
+      "variant": "instant",
+      "mode": "rewrite",
+      "seed": 1,
+      "max_abs_error": 3.434752482434078e-16,
+      "steps": 96
+    },
+    {
+      "variant": "instant",
+      "mode": "rewrite",
+      "seed": 2,
+      "max_abs_error": 3.3306690738754696e-16,
+      "steps": 96
+    },
+    {
+      "variant": "instant",
+      "mode": "ring_write",
+      "seed": 0,
+      "max_abs_error": 3.885780586188048e-16,
+      "steps": 96
+    },
+    {
+      "variant": "instant",
+      "mode": "ring_write",
+      "seed": 1,
+      "max_abs_error": 3.434752482434078e-16,
+      "steps": 96
+    },
+    {
+      "variant": "instant",
+      "mode": "ring_write",
+      "seed": 2,
+      "max_abs_error": 3.3306690738754696e-16,
+      "steps": 96
+    },
+    {
+      "variant": "instant",
+      "mode": "no_links",
+      "seed": 0,
+      "max_abs_error": 3.885780586188048e-16,
+      "steps": 96
+    },
+    {
+      "variant": "instant",
+      "mode": "no_links",
+      "seed": 1,
+      "max_abs_error": 3.434752482434078e-16,
+      "steps": 96
+    },
+    {
+      "variant": "instant",
+      "mode": "no_links",
+      "seed": 2,
+      "max_abs_error": 3.3306690738754696e-16,
+      "steps": 96
+    },
+    {
+      "variant": "single",
+      "mode": "rewrite",
+      "seed": 0,
+      "max_abs_error": 3.3306690738754696e-16,
+      "steps": 96
+    },
+    {
+      "variant": "single",
+      "mode": "rewrite",
+      "seed": 1,
+      "max_abs_error": 3.3306690738754696e-16,
+      "steps": 96
+    },
+    {
+      "variant": "single",
+      "mode": "rewrite",
+      "seed": 2,
+      "max_abs_error": 3.3306690738754696e-16,
+      "steps": 96
+    },
+    {
+      "variant": "single",
+      "mode": "ring_write",
+      "seed": 0,
+      "max_abs_error": 3.3306690738754696e-16,
+      "steps": 96
+    },
+    {
+      "variant": "single",
+      "mode": "ring_write",
+      "seed": 1,
+      "max_abs_error": 2.914335439641036e-16,
+      "steps": 96
+    },
+    {
+      "variant": "single",
+      "mode": "ring_write",
+      "seed": 2,
+      "max_abs_error": 2.7755575615628914e-16,
+      "steps": 96
+    },
+    {
+      "variant": "single",
+      "mode": "no_links",
+      "seed": 0,
+      "max_abs_error": 3.3306690738754696e-16,
+      "steps": 96
+    },
+    {
+      "variant": "single",
+      "mode": "no_links",
+      "seed": 1,
+      "max_abs_error": 2.498001805406602e-16,
+      "steps": 96
+    },
+    {
+      "variant": "single",
+      "mode": "no_links",
+      "seed": 2,
+      "max_abs_error": 2.7755575615628914e-16,
+      "steps": 96
+    },
+    {
+      "variant": "multi",
+      "mode": "rewrite",
+      "seed": 0,
+      "max_abs_error": 2.7755575615628914e-16,
+      "steps": 96
+    },
+    {
+      "variant": "multi",
+      "mode": "rewrite",
+      "seed": 1,
+      "max_abs_error": 3.0531133177191805e-16,
+      "steps": 96
+    },
+    {
+      "variant": "multi",
+      "mode": "rewrite",
+      "seed": 2,
+      "max_abs_error": 2.7755575615628914e-16,
+      "steps": 96
+    },
+    {
+      "variant": "multi",
+      "mode": "ring_write",
+      "seed": 0,
+      "max_abs_error": 2.7755575615628914e-16,
+      "steps": 96
+    },
+    {
+      "variant": "multi",
+      "mode": "ring_write",
+      "seed": 1,
+      "max_abs_error": 3.3306690738754696e-16,
+      "steps": 96
+    },
+    {
+      "variant": "multi",
+      "mode": "ring_write",
+      "seed": 2,
+      "max_abs_error": 2.636779683484747e-16,
+      "steps": 96
+    },
+    {
+      "variant": "multi",
+      "mode": "no_links",
+      "seed": 0,
+      "max_abs_error": 2.7755575615628914e-16,
+      "steps": 96
+    },
+    {
+      "variant": "multi",
+      "mode": "no_links",
+      "seed": 1,
+      "max_abs_error": 3.191891195797325e-16,
+      "steps": 96
+    },
+    {
+      "variant": "multi",
+      "mode": "no_links",
+      "seed": 2,
+      "max_abs_error": 3.3306690738754696e-16,
+      "steps": 96
+    }
+  ],
+  "gradient_norms": {
+    "driver.weight": 0.0003389968915807489,
+    "driver.bias": 0.0002466006370419663,
+    "injection.weight": 0.00028169048654169275
+  },
+  "zero_injection_driver_gradient_zero": true,
+  "scope": "FP64 regulated forward fixtures; connectivity only, no estimator correctness or quality claim"
+}

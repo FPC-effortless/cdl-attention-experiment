@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "kind": "finite deterministic engineering fixtures",
+  "training_runs": 0,
+  "claims_excluded": [
+    "language quality",
+    "learning convergence",
+    "PyTorch refinement",
+    "runtime speedup",
+    "formal proof of floating arithmetic"
+  ],
+  "checks": {
+    "zero_injection_sequences": 18,
+    "bounded_steps": 5184,
+    "prefix_checks": 54,
+    "frame_checks": 5184,
+    "padding_checks": 54,
+    "reset_checks": 54,
+    "independent_batch_checks": 54
+  },
+  "largest_abs_record": 0.7270138740008684,
+  "largest_abs_trace": 0.8541688789428153,
+  "nonfinite_input_rejected": true,
+  "actual_allocated_parameters": 19074,
+  "accounting": {
+    "base_parameters": 18294,
+    "added_parameters": 780,
+    "candidate_parameters": 19074,
+    "base_dense_nominal_macs": 18560,
+    "added_dense_nominal_macs": 768,
+    "candidate_dense_nominal_macs": 19328,
+    "base_dense_cache_fp32_bytes": 1568,
+    "added_trace_fp32_bytes": 48,
+    "candidate_dense_cache_fp32_bytes": 1616,
+    "note": "Dense-source accounting; reference uses indexed links and float64. Excludes elementwise arithmetic, memory traffic, backward, allocator, and position integer."
+  },
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "source_sha256": {
+    "reference.py": "42c3f9f15e72cc8d4e64a94e46a22d37f683954450dfe919b6da5b5dbdb02923",
+    "verify_reference.py": "cc029b5ec4526a415d3fbb5d23730b642993d0d4441fa177bfd9f8cdee99105c"
+  }
+}

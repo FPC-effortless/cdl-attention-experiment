@@ -1,0 +1,331 @@
+{
+  "status": "passed",
+  "scope": "Differentiable regulator and tanh controller path only; no hard-routing or full-model backward claim.",
+  "dtype": "numpy.float64",
+  "numpy_version": "2.3.5",
+  "seed": 20261109,
+  "central_difference_epsilon": 1e-06,
+  "absolute_tolerance": 5e-08,
+  "relative_tolerance": 1e-06,
+  "loss": "0.5 * sum over valid tokens of ||u_t - target_t||^2",
+  "equations": [
+    "s_t = tanh(B f_t + b)",
+    "r_t = lambda*r_previous + (1-lambda)*s_t",
+    "u_t = tanh(A f_t + U r_t)",
+    "bar_z_t = (u_t-target_t)*(1-u_t^2)",
+    "bar_r_t = future_carry + U^T bar_z_t",
+    "bar_driver_t = (1-s_t^2)*(1-lambda)*bar_r_t",
+    "grad_B += outer(bar_driver_t, f_t); grad_b += bar_driver_t",
+    "grad_U += outer(bar_z_t, r_t)",
+    "future_carry = lambda*bar_r_t unless reset, where it is zero; padding leaves carry unchanged"
+  ],
+  "cases": [
+    {
+      "name": "continuous_sequence",
+      "passed": true,
+      "loss": 2.431843378749953,
+      "valid": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "reset_before_valid_token": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "decays": [
+        0.7788007830714049,
+        0.9692332344763441
+      ],
+      "leading_reset": false,
+      "initial_gradient_exactly_zero": false,
+      "parameters": {
+        "B": {
+          "shape": [
+            2,
+            3
+          ],
+          "passed": true,
+          "max_absolute_error": 2.3808738314201605e-10,
+          "max_scaled_error": 1.490862735006205e-10,
+          "analytic_l2_norm": 0.4991716893486775,
+          "numerical_l2_norm": 0.4991716896679506
+        },
+        "b": {
+          "shape": [
+            2
+          ],
+          "passed": true,
+          "max_absolute_error": 4.85994300358783e-11,
+          "max_scaled_error": 3.789838034170595e-11,
+          "analytic_l2_norm": 0.8226553226535992,
+          "numerical_l2_norm": 0.822655322707753
+        },
+        "U": {
+          "shape": [
+            3,
+            2
+          ],
+          "passed": true,
+          "max_absolute_error": 1.9457702116199016e-10,
+          "max_scaled_error": 1.1964142186434142e-10,
+          "analytic_l2_norm": 1.3504461984526204,
+          "numerical_l2_norm": 1.3504461983795808
+        },
+        "initial": {
+          "shape": [
+            2
+          ],
+          "passed": true,
+          "max_absolute_error": 2.714698466022014e-10,
+          "max_scaled_error": 9.201888585339017e-11,
+          "analytic_l2_norm": 1.0690495607662842,
+          "numerical_l2_norm": 1.0690495609829702
+        }
+      }
+    },
+    {
+      "name": "padding_and_midsequence_reset",
+      "passed": true,
+      "loss": 2.288800310530475,
+      "valid": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        false,
+        true
+      ],
+      "reset_before_valid_token": [
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      "decays": [
+        0.7788007830714049,
+        0.9692332344763441
+      ],
+      "leading_reset": false,
+      "initial_gradient_exactly_zero": false,
+      "parameters": {
+        "B": {
+          "shape": [
+            2,
+            3
+          ],
+          "passed": true,
+          "max_absolute_error": 1.2230572110638604e-10,
+          "max_scaled_error": 1.0525768162249836e-10,
+          "analytic_l2_norm": 0.3822902348684909,
+          "numerical_l2_norm": 0.3822902348505764
+        },
+        "b": {
+          "shape": [
+            2
+          ],
+          "passed": true,
+          "max_absolute_error": 1.888057488130812e-10,
+          "max_scaled_error": 1.7084262902946393e-10,
+          "analytic_l2_norm": 0.3860355810733093,
+          "numerical_l2_norm": 0.3860355809756747
+        },
+        "U": {
+          "shape": [
+            3,
+            2
+          ],
+          "passed": true,
+          "max_absolute_error": 2.1381292569788712e-10,
+          "max_scaled_error": 2.024787090592555e-10,
+          "analytic_l2_norm": 0.6709611637521172,
+          "numerical_l2_norm": 0.6709611639128679
+        },
+        "initial": {
+          "shape": [
+            2
+          ],
+          "passed": true,
+          "max_absolute_error": 1.8073043756006157e-10,
+          "max_scaled_error": 1.6096586474797725e-10,
+          "analytic_l2_norm": 0.15346521993690024,
+          "numerical_l2_norm": 0.15346521986116027
+        }
+      }
+    },
+    {
+      "name": "leading_reset_and_padding",
+      "passed": true,
+      "loss": 2.033872074816614,
+      "valid": [
+        false,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "reset_before_valid_token": [
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "decays": [
+        0.7788007830714049,
+        0.9692332344763441
+      ],
+      "leading_reset": true,
+      "initial_gradient_exactly_zero": true,
+      "parameters": {
+        "B": {
+          "shape": [
+            2,
+            3
+          ],
+          "passed": true,
+          "max_absolute_error": 3.291167893770819e-10,
+          "max_scaled_error": 2.92516495756021e-10,
+          "analytic_l2_norm": 0.19543240932058725,
+          "numerical_l2_norm": 0.19543240901955283
+        },
+        "b": {
+          "shape": [
+            2
+          ],
+          "passed": true,
+          "max_absolute_error": 9.759287822319607e-11,
+          "max_scaled_error": 7.892672393174696e-11,
+          "analytic_l2_norm": 0.5057321573810478,
+          "numerical_l2_norm": 0.5057321574929694
+        },
+        "U": {
+          "shape": [
+            3,
+            2
+          ],
+          "passed": true,
+          "max_absolute_error": 1.8168210685898245e-10,
+          "max_scaled_error": 1.7422480658230888e-10,
+          "analytic_l2_norm": 0.2344208891742956,
+          "numerical_l2_norm": 0.23442088919401416
+        },
+        "initial": {
+          "shape": [
+            2
+          ],
+          "passed": true,
+          "max_absolute_error": 0.0,
+          "max_scaled_error": 0.0,
+          "analytic_l2_norm": 0.0,
+          "numerical_l2_norm": 0.0
+        }
+      }
+    },
+    {
+      "name": "immediate_trace_with_reset",
+      "passed": true,
+      "loss": 3.0167275698089258,
+      "valid": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "reset_before_valid_token": [
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      "decays": [
+        0.0,
+        0.0
+      ],
+      "leading_reset": false,
+      "initial_gradient_exactly_zero": true,
+      "parameters": {
+        "B": {
+          "shape": [
+            2,
+            3
+          ],
+          "passed": true,
+          "max_absolute_error": 2.996599635096686e-10,
+          "max_scaled_error": 1.8120372463315915e-10,
+          "analytic_l2_norm": 1.7024056311053728,
+          "numerical_l2_norm": 1.7024056313450469
+        },
+        "b": {
+          "shape": [
+            2
+          ],
+          "passed": true,
+          "max_absolute_error": 5.490767840399258e-10,
+          "max_scaled_error": 1.3067534641060948e-10,
+          "analytic_l2_norm": 1.937527888582414,
+          "numerical_l2_norm": 1.9375278881486098
+        },
+        "U": {
+          "shape": [
+            3,
+            2
+          ],
+          "passed": true,
+          "max_absolute_error": 2.4103452567203476e-10,
+          "max_scaled_error": 1.5774904079513772e-10,
+          "analytic_l2_norm": 1.5266567018260502,
+          "numerical_l2_norm": 1.5266567016464625
+        },
+        "initial": {
+          "shape": [
+            2
+          ],
+          "passed": true,
+          "max_absolute_error": 0.0,
+          "max_scaled_error": 0.0,
+          "analytic_l2_norm": 0.0,
+          "numerical_l2_norm": 0.0
+        }
+      }
+    }
+  ],
+  "reference_review": {
+    "passed": true,
+    "instantiated_base_parameters": 18294,
+    "instantiated_regulated_parameters": 19074,
+    "seeded_base_parameters_equal": true,
+    "declared_dense_nominal_macs": 19328,
+    "declared_dense_cache_fp32_bytes": 1616,
+    "scope": "Parameter arrays independently counted; dense MAC/cache formulas are declarations, not measured indexed runtime costs."
+  },
+  "limitations": [
+    "Finite-difference agreement at these finite float64 cases is not a formal all-input proof.",
+    "Lambda is fixed; no derivative with respect to decay parameters is checked.",
+    "Feature inputs and A are held fixed; the recurrent main CSM is outside this check.",
+    "No training result, FP32 backward equivalence, surrogate estimator, throughput or quality claim is established."
+  ]
+}
