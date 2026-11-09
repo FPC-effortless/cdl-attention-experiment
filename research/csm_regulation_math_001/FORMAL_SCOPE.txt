@@ -1,0 +1,102 @@
+CSM REGULATION: FORMAL SOURCE SCOPE
+
+Compiler status
+---------------
+CSMRegulation.lean uses import Std only. It was compiler-checked on 2026-11-09
+using Lean 4.19.0 (x86_64-unknown-linux-gnu, commit 6caaee842e94, Release) with
+--trust=0. The exact final command is recorded below. Exit code: 0. Diagnostics:
+none. Output: CSMRegulation.olean. The parent task's receipt/audit is separate.
+
+No proof holes, added axioms, native_decide calls, Mathlib dependencies, or
+external proof shortcuts are used in the source. This successful compiler check
+does not expand the mathematical or implementation scope described below.
+
+Candidate being analyzed
+------------------------
+The initial ablation retains the original CSM transition, query/readout,
+cursor, and link semantics. Its only intended numerical change is an exogenous
+regulatory trace and injection into the existing update proposal:
+
+  r_plus = lambda * r + (1 - lambda) * tanh(B f + b)
+  u = tanh(C [f, V(cursor)] + U_r r_plus)
+
+This source does not introduce a query bypass, an action language, microsteps,
+record generation counters, slot-reuse semantics, or altered cursor/link rules.
+Those are deferred semantic questions, not features of this ablation.
+
+What the structural source states
+---------------------------------
+1. A selected payload write returns its supplied value at the selected slot.
+2. Unselected payload slots are unchanged by that isolated write.
+3. A generic surrounding state frame is unchanged by that isolated write.
+4. An explicitly disabled optional operation is the identity.
+5. Exogenous trace updates have no direct core-state argument, conditional on
+   identical prepared causal token features (including identical token history).
+6. If neutral regulatory injection equals the original CSM transition, disabling
+   regulation produces exactly the baseline CORE trajectory. Unused augmented
+   traces may still evolve, so this is not equality of complete augmented state.
+7. A pure single-input transition rolled left to right has prefix causality:
+   modifying a future suffix cannot change the state after the common prefix.
+8. Independent batch lanes project to their separate single-lane rollouts.
+9. Payload commits to distinct destinations commute when both proposal values
+   are frozen from one immutable common snapshot.
+10. Chronological affine-pair composition represents functional composition and
+    is associative, assuming the explicitly supplied multiplication associativity,
+    left-distributivity, and addition associativity laws. These laws are theorem
+    parameters, not project axioms. The concrete real-number instance is not
+    formalized here, and floating-point arithmetic is not exactly associative.
+
+Critical qualifications
+------------------------
+The candidate's real-valued tanh, sigmoid, lambda constraints, norm bounds,
+Jacobian bounds, contraction conditions, and numerical roundoff are not encoded
+here. They remain separate analytical statements and implementation checks.
+
+The regulatedStep abstraction fixes dependency order and gives coreStep the
+original CSM state, prepared causal token features, and new trace. It does not verify that a
+particular Python, tensor, GPU, or Lean implementation of coreStep reproduces
+the historical CSM equations. That correspondence must be checked separately.
+
+In the exogenous regulation section, Input denotes prepared causal features f_t,
+not necessarily a bare current-token embedding. The original feature frontend
+uses the preceding two input embeddings, which its implementation stores in core
+history. Exogenous trace independence is conditional on equal prepared features
+and token history, with the same reset boundary (zero history for this candidate).
+It does not assert independence under arbitrary changes to those history fields.
+
+Disabled regulation proves equality of core trajectories. Equality of outputs
+also requires the same readout function depending only on identical core states
+and prepared features. No independent output-equivalence theorem is claimed.
+
+Prefix causality assumes the supplied input at each step contains only permitted
+present/past information. The type of a pure function cannot establish that an
+upstream feature builder, training label, or feedback generator did not leak
+future information.
+
+Independent batching assumes separate complete state per lane. Shared mutable
+regulators, cross-lane normalization, shared cursor updates, or inter-lane
+communication fall outside this theorem.
+
+The commutation theorem is about fixed payload commits, not recomputation of
+state-dependent routes or proposals after another write. Distinct destinations
+alone do not justify parallel execution of arbitrary CSM transitions. The source
+does not claim associative-scan parallelization of a general learned recurrence.
+
+The no-op/frame theorems concern the operations they define. They do not assert
+that rejecting a content write stops independent regulator updates or that an
+original CSM query leaves every field unchanged.
+
+Nothing here proves semantic correctness of an answer, better correction,
+intelligence, generalization, improved perplexity, computational advantage, or
+safe learning dynamics. Those require appropriate empirical or additional
+mathematical evidence.
+
+Compiler-check command
+----------------------
+Working directory: /workspace/scratch/a52fc6e7c6e3/csm_math_001
+
+  /tmp/csm-lean-explicit-path /tmp/lean-4.19.0-linux/bin/lean --trust=0 -o CSMRegulation.olean CSMRegulation.lean
+
+The explicit-path launcher uses the installed official Lean 4.19.0 shared
+compiler/kernel. Its environment workaround and provenance are documented by
+the parent task. Compiler success is established by execution, not source review.

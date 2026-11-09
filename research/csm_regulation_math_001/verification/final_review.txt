@@ -1,0 +1,24 @@
+Final independent consistency review, 2026-11-09
+
+Four specification corrections were requested and incorporated:
+
+1. The identity Delta r_t = Lambda^t Delta r_0 applies within reset-free
+   segments of observed tokens. A shared reset makes the difference zero;
+   padding does not advance the exponent. The upper bound survives shared
+   resets, while the reset-free equality must not be applied across them.
+
+2. The weighted joint contraction norm requires c > 0 in addition to
+   c >= K_r rho/(Q-rho), including the K_r=0 case.
+
+3. The training-derivative section now preserves the original controller base
+   preactivation C[f; V(cursor)], including its bias. It explicitly identifies
+   the standalone gradient checker's simplified, frozen A*f base input.
+
+4. The route-margin bound uses xi for the complete routing input, including
+   relevant record values. It does not confuse that input with the token-only
+   driver s or imply that a driver bound alone constrains route changes.
+
+The reviewer found no inconsistent hard-forward transition in reference.py.
+The scan, cost and empirical-claim boundaries were accepted as appropriately
+limited. This is a recorded review, not a proof of the implementation or a
+claim that no further defects exist.

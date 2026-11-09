@@ -1,0 +1,23 @@
+'CSMRegulation.overwrite_selected' depends on axioms: [propext]
+'CSMRegulation.overwrite_frame' depends on axioms: [propext]
+'CSMRegulation.overwrite_same' depends on axioms: [propext, Quot.sound]
+'CSMRegulation.snapshotCommit_selected' depends on axioms: [propext]
+'CSMRegulation.snapshotCommit_frame' depends on axioms: [propext]
+'CSMRegulation.overwrite_commute' depends on axioms: [propext, Quot.sound]
+'CSMRegulation.fixed_snapshot_disjoint_commits' depends on axioms: [propext, Quot.sound]
+'CSMRegulation.framedOverwrite_preserves_rest' does not depend on any axioms
+'CSMRegulation.framedOverwrite_frame' depends on axioms: [propext]
+'CSMRegulation.optionalUpdate_disabled' does not depend on any axioms
+'CSMRegulation.optionalUpdate_enabled' does not depend on any axioms
+'CSMRegulation.rollout_append' does not depend on any axioms
+'CSMRegulation.rolloutPrefix_append_length' does not depend on any axioms
+'CSMRegulation.causal_prefix_noninterference' depends on axioms: [propext]
+'CSMRegulation.regulatedStep_trace_projection' does not depend on any axioms
+'CSMRegulation.exogenous_trace_core_independence' does not depend on any axioms
+'CSMRegulation.disabled_regulation_core_step' does not depend on any axioms
+'CSMRegulation.disabled_regulation_core_rollout' does not depend on any axioms
+'CSMRegulation.batchStep_projection' does not depend on any axioms
+'CSMRegulation.batch_lane_independence' does not depend on any axioms
+'CSMRegulation.batch_rollout_projection' does not depend on any axioms
+'CSMRegulation.chronologicalCompose_eval' depends on axioms: [propext]
+'CSMRegulation.chronologicalCompose_assoc' depends on axioms: [propext]

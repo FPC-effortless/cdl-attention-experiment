@@ -1,0 +1,18 @@
+Development corrections before final verification, 2026-11-09
+
+1. The authored Lean source initially used the reserved identifier `prefix` as
+   a binder. Lean rejected it. It was renamed and the unchanged theorem
+   statements compiled successfully.
+2. The first declared-theorem audit script matched the word `theorem` inside
+   prose comments, generating three nonexistent names (`about`, `below`,
+   `parameters`). Lean rejected those audit commands. Anchoring the extraction
+   to declaration lines fixes the audit; no proof was weakened to pass it.
+3. The first toolchain tar extraction attempted to preserve foreign archive
+   ownership and exited with ownership warnings. It was repeated successfully
+   with --no-same-owner. No permission or sandbox setting was changed.
+4. The independent trace-algebra helper initially made padding dominate a reset
+   flag; the main reference rejected that invalid pair. Both now reject
+   reset+padding and the aligned tests were rerun. This is a boundary-contract
+   repair before final verification, not an empirical model improvement.
+5. The first PDF build exposed an overlong commit identifier. The body now uses
+   the short identifier and the complete provenance retains the full commit.

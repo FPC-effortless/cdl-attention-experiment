@@ -1,0 +1,167 @@
+INDEPENDENT MATHEMATICAL REVIEW: CSM-MATH-001
+2026-11-09
+
+Candidate reviewed
+------------------
+The previous-two-token caches hold input embeddings, not CSM outputs:
+  f_t = tanh(F[h_minus_t, h_t, e_t] + existing frontend bias)
+  s_t = tanh(B f_t + b_s)
+  r_t = lambda * r_(t-1) + (1-lambda) * s_t
+  u_t = tanh(C[f_t, V(cursor_t)] + existing controller bias + U_r r_t).
+Products in the trace recurrence are coordinatewise. The controller's old bias
+is retained; U_r introduces no second controller bias. B is m-by-d, b_s is m,
+and U_r is d-by-m. The trace updates once per observed token and remains fixed
+during any internal controller microsteps. Advancing it once per microstep
+would make the effective token decay lambda^H, changing the hypothesis.
+
+For d=32 and m=12, use three groups of four channels. The fixed multi-timescale
+schedule is tau=(4,32,256) observed tokens, lambda=exp(-1/tau). Immediate and
+single-timescale controls have the identical 12-channel projection/readout:
+lambda=0 and lambda=exp(-1/32), respectively. The original model is a separate,
+smaller baseline. This bank is mathematically a diagonal state-space subsystem;
+it is not itself a new non-recurrent computation primitive.
+
+Kernel, timescale and boundedness
+--------------------------------
+For each coordinate and fixed lambda in [0,1], after t valid events without a
+reset:
+  r_t = lambda^t r_0 + (1-lambda) sum_(i=1)^t lambda^(t-i) s_i.
+A unit input impulse has response (1-lambda) lambda^k at age k. For 0<lambda<1,
+the e-fold time is tau=-1/log(lambda), and the half-life is tau*log(2), not tau.
+Lambda=0 retains only the current feature; lambda=1 freezes the initial state
+and admits no new input. A large tau gives a small initial impulse amplitude,
+approximately 1/tau. Long retention does not imply precise retrieval.
+
+Since tanh bounds every s coordinate by 1 and document reset is zero, every
+trace coordinate remains in [-1,1] in exact arithmetic. More generally, a
+scalar coordinate stays within the convex hull of its initial value and all
+subsequent inputs. This remains true for varying or feedback-generated lambda
+provided 0<=lambda<=1 and signals remain bounded. It proves a property of the
+trace only; it does not bound the main CSM state or establish useful memory.
+
+Affine scan and its limit
+------------------------
+Represent an event by (a,b), acting as T(r)=a*r+b. Chronological composition is:
+  (a1,b1) then (a2,b2) = (a2*a1, a2*b1+b2).
+Both bracketings of three events give:
+  (a3*a2*a1, a3*a2*b1 + a3*b2 + b3).
+Thus this operation is associative, has identity (1,0), and generally is not
+commutative. An inclusive prefix scan yields r_t=A_t*r_0+B_t. A work-efficient
+tree scan has O(Nm) arithmetic work and O(log N) parallel span at fixed m.
+
+Here f_t uses only e_(t-2), e_(t-1), e_t, so f_t and s_t can be precomputed
+causally across a teacher-forced sequence. The regulator can therefore scan.
+The cursor and main CSM state still have their original causal dependencies:
+this does not prove parallel scan or logarithmic depth for the whole model.
+If the candidate signal or decay later uses previous controller/model outputs,
+those coefficients cannot be generated before resolving that feedback. A scan
+of coefficients obtained after sequential execution does not remove that cost.
+Associativity of arbitrary function composition alone does not provide a cheap,
+fixed-size representation of composed nonlinear state-dependent operators.
+
+Real arithmetic equality does not imply bitwise FP32 equality: a tree scan
+reassociates products and sums. Numerical parity requires tolerances tested
+against sequence length, input scale, dtype and decay. Long timescales can lose
+small updates to rounding. The attached Fraction checker isolates the algebra;
+it neither evaluates FP32 kernels nor proves their stability or speed.
+
+Padding, reset and causal alignment
+----------------------------------
+Let v be a valid-token flag, z a reset-before-token flag, and r_init the reset
+state. One event has:
+  a = (1-v) + v*(1-z)*lambda
+  b = v*(z*lambda*r_init + (1-lambda)*s).
+For the candidate r_init=0. Padding (v=0) is exactly identity: it advances
+neither state nor the decay clock. Both the algebra checker and reference.py
+reject reset on padding as an invalid input; the caller must attach document
+reset to the first valid token. A valid reset
+sets a=0, cutting dependence and gradients to the preceding document. The two
+embedding caches, cursor and all other persistent CSM state must also reset;
+resetting only r would leave cross-document contamination elsewhere.
+
+If r_t includes x_t, it may help predict x_(t+1); predicting x_t must use the
+prefix ending at t-1. Future-token loss is allowed to train parameters by
+backpropagation, but the unobserved target/error cannot be a forward controller
+input. Teacher forcing does not license a future-token trace input.
+
+Gradients and parameter matching
+-------------------------------
+With fixed lambda, dr_t/dr_(t-k)=lambda^k and
+dr_t/ds_(t-k)=(1-lambda)*lambda^k. These express both retention and the small
+write amplitude of slow channels. Detaching r between arbitrary chunks changes
+the training objective through truncated backpropagation; declare it and use
+the same truncation policy for all arms. Resets cut cross-document derivatives.
+
+For the smooth subgraph u_t=tanh(A*f_t+U*r_t) and loss
+0.5*sum_valid ||u_t-target_t||^2, reverse mode uses:
+  bar_z_t = (u_t-target_t)*(1-u_t^2)
+  bar_r_t = future_carry + U^T*bar_z_t
+  bar_driver_t = (1-s_t^2)*(1-lambda)*bar_r_t
+  grad_B += bar_driver_t*f_t^T; grad_b += bar_driver_t
+  grad_U += bar_z_t*r_t^T.
+The carry to the preceding state is lambda*bar_r_t on an ordinary valid token,
+zero on reset, and unchanged on padding (which has no loss). The final carry
+is the gradient of the initial trace state. No hard-routing derivative follows
+from these equations. verify_trace_gradients.py checks B,b,U and initial state
+against central differences in four float64 cases, with continuous sequences,
+padding, interior/leading resets and immediate traces. All 16 coordinates in
+each case passed; maximum absolute error was 4.038687023699694e-10. The JSON
+record is verification/trace_gradients.json. This is finite numerical checking,
+not a formal proof or a full-model training validation.
+
+Holding m=12 fixed gives all three regulated arms exactly the same B, b_s and
+U_r shapes, cache width and nominal dense MAC count. Giving every timescale a
+full 12-channel copy would increase capacity and invalidate this comparison.
+Fixed decays add zero trainable parameters. A future learned J-decay bank has
+J parameters versus one for a learned shared decay; report this difference.
+
+Accounting independently evaluated
+----------------------------------
+Use S=8, d=32, O=4, h=64, V=19. The supplied original graph formulas are:
+  P = 2Vd+V+5d^2+4Sd+3S+2Od+O+5dh+h+10d+7 = 18,294.
+  MAC = 5d^2+8Sd+2Od+5dh+dV+S^2+7d = 18,560.
+  Dense persistent float count = Sd+S^2+S+2d = 392 = 1,568 FP32 bytes.
+The independent additions are:
+  delta P = md+m+dm = 2dm+m = 780.
+  delta nominal dense MAC = md+dm = 768.
+  delta persistent FP32 state = m floats = 48 bytes.
+Therefore the regulated model has 19,074 parameters, 19,328 nominal dense MACs,
+and 404 persistent floats / 1,616 FP32 bytes per stream for this graph.
+
+These are declared graph counts, not measured latency or total process memory.
+The MAC figure excludes tanh, gating, elementwise recurrence, normalization,
+indexing, comparisons and framework overhead. The cache count excludes weights,
+training activations/gradients/optimizer state, temporary candidate states,
+allocator padding and metadata. Dense trace projection costs O(dm), not O(m).
+Full trace materialization in training can require O(Nm) additional activations;
+streaming inference needs only m persistent trace scalars. Batch size and layer
+replication multiply the corresponding cache counts.
+
+Dense addressing of S slots remains at least O(S*d_address) per routing pass,
+plus selection and gathers; choosing a small number of destinations after a
+dense score pass does not make address selection constant in S. If the main
+controller runs H microsteps, its routing/operators/verification incur their
+H-dependent cost. The candidate computes the trace once, outside those steps.
+If that controller is called H times, hoist U_r*r_t out of the microstep loop
+and reuse it to retain the 2dm addition. Recomputing that product inside every
+step would instead add dm*(1+H) dense MACs per observed token.
+Finite, fixed state and step budgets give costs independent of history length;
+allowing S or H to grow with history removes that claim.
+
+Verification scope and remaining falsifiers
+------------------------------------------
+trace_algebra.py checks identity, chronological order, associativity on a
+finite rational set, closed-form kernels and impulse response, serial versus
+balanced scan, padding/reset behavior, chunk continuation, bounded states, and
+the supplied parameter/MAC/cache arithmetic. It also checks the candidate
+decays as exact rationals of their binary64 approximations; this is not an
+exact representation of exp(-1/tau). Its fixed random seed makes cases repeatable.
+Passing it is executable evidence, not a machine-checked proof for all inputs.
+
+Remaining implementation checks: (1) streamed/chunked/teacher-forced parity
+including document boundaries and padding; (2) suffix changes cannot affect
+prefix outputs; (3) FP32 scan/serial outputs and gradients agree within declared
+tolerances; (4) repeated equal decay groups collapse exactly to the shared-decay
+control when weights match; (5) all declared persistent caches are measured;
+(6) real-language quality and end-to-end inference benefit beat the matched
+single-timescale and immediate controls. No result here establishes (6).

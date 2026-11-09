@@ -1,0 +1,40 @@
+{
+  "project": "CSM-MATH-001",
+  "date": "2026-11-09",
+  "scope": "Mathematical specification, indexed NumPy reference, structural Lean verification; zero training runs.",
+  "baseline": {
+    "repository": "https://github.com/FPC-effortless/cdl-attention-experiment",
+    "branch": "research/csm-recovered-address-002-20261109",
+    "commit": "3edc4f1a541a3221390e4c0a21fe0c12004f1ca5",
+    "artifacts": [
+      {
+        "path": "artifacts/csm-original-scope-reconstructed-20261109/CSM-GRAPH-001-verified-project.zip",
+        "sha256": "9b1f30ca4a6008d4ecb9c0f7c7e6ab46e89d53107c75985467152e1c9f9ac32d"
+      },
+      {
+        "path": "artifacts/csm-address-002-recovered-20261109/CSM-ADDRESS-002-results.md",
+        "sha256": "62ab3cf871f3079dc27f815e85c168e3b2e04b97a70e3a3293b1504044c441cf"
+      }
+    ]
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "lean": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+    "lean_trust_level": 0
+  },
+  "lean_distribution": {
+    "url": "https://github.com/leanprover/lean4/releases/download/v4.19.0/lean-4.19.0-linux.tar.zst",
+    "sha256": "6fe3ce97a58f44e2b3567d455b994eacec5bfe9ae7774f2a573444480ba813fe",
+    "signature_verified_separately": false,
+    "adapted_explicit_application_path_launcher": true
+  },
+  "report": {
+    "filename": "CSM-Mathematical-Engineering.pdf",
+    "sha256": "f9715d7927bf13f367d1dcfe275b2d9fa77b848ed44c7f84511f415776cb9d0c",
+    "source": "specification.tex"
+  },
+  "training_runs": 0,
+  "formal_scope": "23 declared structural theorems; affine algebra under explicit hypotheses; no formal real-analysis or floating-point-refinement claim.",
+  "numerical_scope": "Finite float64 fixtures and smooth-subgraph finite differences; exact Fraction trace checks; no archived-PyTorch parity or model-quality claim."
+}

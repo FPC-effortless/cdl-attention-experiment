@@ -1,0 +1,228 @@
+{
+  "schema": "csm-math-001-independent-stability-v1",
+  "status": "passed",
+  "random_seed": 20261109,
+  "python_version": "3.12.14",
+  "numpy_version": "2.3.5",
+  "check_count": 14,
+  "passed_count": 14,
+  "scope": "Deterministic synthetic algebra verification and bounded counterexamples, not trained-model evaluation.",
+  "excluded_claims": [
+    "No training or language-quality result.",
+    "No speed benchmark or whole-sequence parallelism guarantee.",
+    "No global CSM contraction or stability certificate.",
+    "No unbounded linear recurrence used as evidence against the bounded-proposal model.",
+    "Numerical tests corroborate; they do not replace analytic proofs."
+  ],
+  "checks": [
+    {
+      "name": "token_only_regulator_and_controller_coordinate_bounds",
+      "passed": true,
+      "synthetic_steps": 2048,
+      "regulator_dimensions": 12,
+      "lambda_values": [
+        0.7071067811865476,
+        0.9785720620877001
+      ],
+      "max_absolute_regulator": 0.993299792605305,
+      "max_absolute_controller": 0.9999999999999044,
+      "scope": "Numerical corroboration of convex/tanh bounds; no contraction claim for controller."
+    },
+    {
+      "name": "exogenous_trace_exact_initial_condition_forgetting",
+      "passed": true,
+      "steps": 128,
+      "max_absolute_identity_error": 1.1102230246251565e-16,
+      "observed_delta_max": 0.06672778830445356,
+      "predicted_delta_max": 0.06672778830445344,
+      "scope": "Identical token inputs; regulator only."
+    },
+    {
+      "name": "convex_value_bound_and_protected_rows",
+      "passed": true,
+      "synthetic_updates": 6000,
+      "coordinate_radius": 3,
+      "max_absolute_value": 2.999989715908952,
+      "inactive_row_max_change": 0.0,
+      "scope": "Conditional on bounded proposals and gains in [0,1]."
+    },
+    {
+      "name": "state_dependent_gate_bounded_noncontractive_counterexample",
+      "passed": true,
+      "analytic_derivative_at_zero": 2.5,
+      "finite_difference_derivative_at_zero": 2.4999999999886224,
+      "incorrectly_dropped_gate_term_derivative": 0.5,
+      "input_pair": [
+        0,
+        0.01
+      ],
+      "output_pair": [
+        0.5,
+        0.5247894467540261
+      ],
+      "distance_amplification": 2.4789446754026057,
+      "sampled_output_min": -0.999329299739067,
+      "sampled_output_max": 1.0,
+      "scope": "Disproves a general contraction claim; not a trained-model instability measurement."
+    },
+    {
+      "name": "bounded_proposal_repelling_equilibrium_counterexample",
+      "passed": true,
+      "analytic_derivative_at_zero": 2.0,
+      "finite_difference_derivative_at_zero": 1.9999999999955,
+      "sampled_output_min": -0.9975273768433652,
+      "sampled_output_max": 0.9975273768433652,
+      "scope": "Bounded nonlinear proposal family only; explicitly not an unbounded recurrence or actual-model result."
+    },
+    {
+      "name": "complete_gate_and_proposal_jacobian_formula",
+      "passed": true,
+      "analytic_jacobian": [
+        [
+          0.6396007186413394,
+          -0.1334940421939933
+        ],
+        [
+          0.07076878194625427,
+          0.6457849005470906
+        ]
+      ],
+      "finite_difference_jacobian": [
+        [
+          0.6396007186382224,
+          -0.1334940421954256
+        ],
+        [
+          0.07076878194567371,
+          0.6457849005409022
+        ]
+      ],
+      "max_absolute_error": 6.1883831392606226e-12
+    },
+    {
+      "name": "sufficient_weighted_norm_stability_constructed_subsystem",
+      "passed": true,
+      "q_w": 0.6,
+      "rho": 0.9,
+      "regulator_to_write_lipschitz": 0.05,
+      "chosen_Q": 0.95,
+      "chosen_c": 1.0,
+      "sufficient_minimum_c": 0.9000000000000014,
+      "maximum_sampled_weighted_distance_ratio": 0.9443523432809717,
+      "synthetic_pairs": 6000,
+      "scope": "An explicit subsystem satisfying assumptions; does not certify CSM parameter norms."
+    },
+    {
+      "name": "untouched_record_prevents_strict_global_contraction",
+      "passed": true,
+      "jacobian": [
+        [
+          0.5000000000005,
+          0.5000000000005
+        ],
+        [
+          0.0,
+          1.000000000001
+        ]
+      ],
+      "eigenvalues": [
+        0.5000000000005,
+        1.000000000001
+      ],
+      "spectral_norm": 1.144122805636513,
+      "scope": "Identity record coordinate gives an eigenvalue of one."
+    },
+    {
+      "name": "hard_route_boundary_bounded_discontinuity_counterexample",
+      "passed": true,
+      "input_pair": [
+        [
+          0.001,
+          0.0
+        ],
+        [
+          -0.001,
+          0.0
+        ]
+      ],
+      "output_pair": [
+        [
+          0.5005,
+          0.0
+        ],
+        [
+          -0.001,
+          0.5
+        ]
+      ],
+      "input_max_norm_distance": 0.002,
+      "output_max_norm_distance": 0.5015,
+      "distance_amplification": 250.74999999999997,
+      "scope": "Crosses a decision boundary; does not contradict fixed-route local bounds."
+    },
+    {
+      "name": "argmax_margin_sufficient_radius",
+      "passed": true,
+      "logits": [
+        2.0,
+        -1.0,
+        0.1
+      ],
+      "winner": 0,
+      "margin": 1.9,
+      "per_logit_euclidean_lipschitz": 2.0,
+      "sufficient_strict_radius": 0.475,
+      "maximum_sampled_perturbation": 0.47015467006277833,
+      "synthetic_perturbations": 6000,
+      "scope": "Numerical corroboration of the analytic one-step margin theorem."
+    },
+    {
+      "name": "disjoint_write_destinations_with_read_dependencies_do_not_commute",
+      "passed": true,
+      "initial": [
+        0.0,
+        1.0
+      ],
+      "a_then_b": [
+        0.5,
+        0.75
+      ],
+      "b_then_a": [
+        0.25,
+        0.5
+      ],
+      "original_snapshot_simultaneous": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "same_destination_affine_write_order_formula",
+      "passed": true,
+      "observed_difference": -0.252,
+      "analytic_difference": -0.252
+    },
+    {
+      "name": "finite_sigmoid_write_residual_is_not_exact_vector_set",
+      "passed": true,
+      "gain": 0.5,
+      "first_write_value": 0.5,
+      "target": 1.0,
+      "writes": 20,
+      "observed_residual": 9.5367431640625e-07,
+      "predicted_residual": 9.5367431640625e-07,
+      "scope": "Vector semantics only; does not imply a discrete-class recall error."
+    },
+    {
+      "name": "token_half_life_and_declared_zero_initialization",
+      "passed": true,
+      "half_life_tokens": 32,
+      "lambda_value": 0.9785720620877001,
+      "constant_input": 1,
+      "initial_trace": 0,
+      "trace_after_one_token": 0.02142793791229991,
+      "trace_after_32_tokens": 0.5000000000000007,
+      "scope": "Cold-start trace is not an unbiased stationary-mean estimator."
+    }
+  ]
+}

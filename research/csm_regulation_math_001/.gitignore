@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.olean
+*.ilean
+*.aux
+*.log
+*.out
+*.toc
+*.pdf
+verification/lean_build/
+!verification/axioms.log

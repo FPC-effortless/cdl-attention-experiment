@@ -1,0 +1,114 @@
+{
+  "status": "PASS",
+  "compiler": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+  "trust_level": 0,
+  "declared_theorems_audited": 23,
+  "theorems": [
+    "overwrite_selected",
+    "overwrite_frame",
+    "overwrite_same",
+    "snapshotCommit_selected",
+    "snapshotCommit_frame",
+    "overwrite_commute",
+    "fixed_snapshot_disjoint_commits",
+    "framedOverwrite_preserves_rest",
+    "framedOverwrite_frame",
+    "optionalUpdate_disabled",
+    "optionalUpdate_enabled",
+    "rollout_append",
+    "rolloutPrefix_append_length",
+    "causal_prefix_noninterference",
+    "regulatedStep_trace_projection",
+    "exogenous_trace_core_independence",
+    "disabled_regulation_core_step",
+    "disabled_regulation_core_rollout",
+    "batchStep_projection",
+    "batch_lane_independence",
+    "batch_rollout_projection",
+    "chronologicalCompose_eval",
+    "chronologicalCompose_assoc"
+  ],
+  "axiom_dependencies": [
+    "Quot.sound",
+    "propext"
+  ],
+  "negative_controls": [
+    {
+      "name": "false_arithmetic",
+      "rejected": true
+    },
+    {
+      "name": "unjustified_equality",
+      "rejected": true
+    }
+  ],
+  "hashes": {
+    "CSMRegulation.lean": "c9b8702761346ff0d4c04b0f1a3215e8d08d10f6f85ac23c7caa5f0f2059518d",
+    "verify_lean.py": "d9e218682c4c75116d15b2de55be22f17a22ed25093d2447f6ff96a471b53a54",
+    "official_lean_executable": "92c3d35b5bfaa5e0fea413a775d504cf46cd95e1345df61c2274f76779e7e023",
+    "official_shared_library": "2ab605c74c78f9ba4431a7b5305a4b28a9071d8a826f223eb14fe5530f78e14d",
+    "explicit_path_launcher": "6b6ad56b3ee4216f3e4bbbcb130b485b7ba5b08ada2d7fc74719bdcbfe738b89",
+    "explicit_path_launcher_source": "fbc0ff4634578b6d0c5b997ad831c61d564b93911447b9557ce6c64512415532",
+    "official_distribution_archive": "6fe3ce97a58f44e2b3567d455b994eacec5bfe9ae7774f2a573444480ba813fe"
+  },
+  "adapted_application_path_launcher": true,
+  "scope": "Structural pure-transition and conditional affine-algebra theorems. No formal proof of real-valued stability, IEEE refinement, training or model quality.",
+  "commands": [
+    {
+      "command": [
+        "/tmp/csm-lean-explicit-path",
+        "/tmp/lean-4.19.0-linux/bin/lean",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/csm-lean-explicit-path",
+        "/tmp/lean-4.19.0-linux/bin/lean",
+        "--trust=0",
+        "-o",
+        "/workspace/scratch/a52fc6e7c6e3/csm_math_001/verification/lean_build/CSMRegulation.olean",
+        "/workspace/scratch/a52fc6e7c6e3/csm_math_001/CSMRegulation.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/csm-lean-explicit-path",
+        "/tmp/lean-4.19.0-linux/bin/lean",
+        "--trust=0",
+        "/workspace/scratch/a52fc6e7c6e3/csm_math_001/verification/lean_build/Audit.lean"
+      ],
+      "returncode": 0,
+      "stdout": "'CSMRegulation.overwrite_selected' depends on axioms: [propext]\n'CSMRegulation.overwrite_frame' depends on axioms: [propext]\n'CSMRegulation.overwrite_same' depends on axioms: [propext, Quot.sound]\n'CSMRegulation.snapshotCommit_selected' depends on axioms: [propext]\n'CSMRegulation.snapshotCommit_frame' depends on axioms: [propext]\n'CSMRegulation.overwrite_commute' depends on axioms: [propext, Quot.sound]\n'CSMRegulation.fixed_snapshot_disjoint_commits' depends on axioms: [propext, Quot.sound]\n'CSMRegulation.framedOverwrite_preserves_rest' does not depend on any axioms\n'CSMRegulation.framedOverwrite_frame' depends on axioms: [propext]\n'CSMRegulation.optionalUpdate_disabled' does not depend on any axioms\n'CSMRegulation.optionalUpdate_enabled' does not depend on any axioms\n'CSMRegulation.rollout_append' does not depend on any axioms\n'CSMRegulation.rolloutPrefix_append_length' does not depend on any axioms\n'CSMRegulation.causal_prefix_noninterference' depends on axioms: [propext]\n'CSMRegulation.regulatedStep_trace_projection' does not depend on any axioms\n'CSMRegulation.exogenous_trace_core_independence' does not depend on any axioms\n'CSMRegulation.disabled_regulation_core_step' does not depend on any axioms\n'CSMRegulation.disabled_regulation_core_rollout' does not depend on any axioms\n'CSMRegulation.batchStep_projection' does not depend on any axioms\n'CSMRegulation.batch_lane_independence' does not depend on any axioms\n'CSMRegulation.batch_rollout_projection' does not depend on any axioms\n'CSMRegulation.chronologicalCompose_eval' depends on axioms: [propext]\n'CSMRegulation.chronologicalCompose_assoc' depends on axioms: [propext]\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/csm-lean-explicit-path",
+        "/tmp/lean-4.19.0-linux/bin/lean",
+        "--trust=0",
+        "/workspace/scratch/a52fc6e7c6e3/csm_math_001/verification/lean_build/false_arithmetic.lean"
+      ],
+      "returncode": 1,
+      "stdout": "/workspace/scratch/a52fc6e7c6e3/csm_math_001/verification/lean_build/false_arithmetic.lean:2:30: error: tactic 'decide' proved that the proposition\n  0 = 1\nis false\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/csm-lean-explicit-path",
+        "/tmp/lean-4.19.0-linux/bin/lean",
+        "--trust=0",
+        "/workspace/scratch/a52fc6e7c6e3/csm_math_001/verification/lean_build/unjustified_equality.lean"
+      ],
+      "returncode": 1,
+      "stdout": "/workspace/scratch/a52fc6e7c6e3/csm_math_001/verification/lean_build/unjustified_equality.lean:2:34: error: tactic 'rfl' failed, the left-hand side\n  a\nis not definitionally equal to the right-hand side\n  b\na b : Nat\n\u22a2 a = b\n",
+      "stderr": ""
+    }
+  ]
+}

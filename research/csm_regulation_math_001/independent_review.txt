@@ -1,0 +1,287 @@
+CSM-MATH-001 — Independent mathematical review
+Scope: proposed token-driven regulator; algebraic verification only
+Date: 2026-11-09
+
+VERDICT
+
+The proposed narrow extension has a provably bounded, contractive regulator
+when token inputs are held identical. The bounded controller activation does
+not imply that the recurrent CSM record update is contractive or stable.
+Useful guarantees are conditional record invariance, regulator forgetting,
+local route robustness, and explicitly assumed local update stability. No
+language-model quality, training success, biological fidelity, novelty, or
+wall-clock improvement is established by this review.
+
+The numerical companion verifies these formulas and exhibits bounded
+counterexamples. It does not execute or evaluate a trained CSM checkpoint.
+An unbounded linear recurrence is NOT evidence of instability of this
+bounded-proposal architecture; that argument is explicitly rejected here.
+
+1. FROZEN CANDIDATE AND INDEXING
+
+Let V in R^(S x d) be the record table. Links, cursor, token history and
+position retain their original CSM definitions. Let r in R^12 be the added
+regulator. Its features f_t are functions only of observed token information,
+with no model-generated feedback, record-dependent features, hysteresis or
+additional microsteps in the initial candidate. With frozen parameters,
+
+  h_t    = tanh(B f_t + b),
+  r_t    = Lambda r_(t-1) + (I - Lambda) h_t,
+  u_t    = tanh(C [f_t; V_(t-1)(c)] + U_r r_t).
+
+Lambda is diagonal and fixed for the initial study, with 0 <= lambda_j < 1.
+The original CSM heads consume u_t and their original inputs. The existing
+read, operation, destination, admission, proposal and write definitions are
+otherwise unchanged. A selected admitted write has effective gain
+
+  a_t = epsilon sigmoid(g_t),     0 < epsilon <= 1,
+  V_t(d) = (1 - a_t) V_(t-1)(d) + a_t z_t.
+
+Other records remain unchanged. If a separate admission variable is present,
+include it in the effective gain. A hard rejected write has a_t = 0. A soft
+admission probability introduces an additional derivative term and must not
+be omitted from stability calculations.
+
+After processing x_t, the readout predicts x_(t+1). No feature, regulator
+input or controller target may use x_(t+1) at that prediction. Causality
+follows by induction when every component consumes only its declared
+current input and previous state. This is a specification-level statement,
+not a verification of an uninspected implementation.
+
+2. REGULATOR BOUND AND FORGETTING: VALID UNCONDITIONAL RESULTS
+
+For finite real inputs, every coordinate of h_t lies in [-1,1]. If
+|r_(0,j)| <= R_j with R_j >= 1, then |r_(t,j)| <= R_j for every t.
+Proof: r_(t,j) is a convex combination of r_(t-1,j) and h_(t,j).
+
+For two initial regulators exposed to the same token feature sequence,
+
+  r_t - r'_t = Lambda^t (r_0 - r'_0),
+  ||r_t - r'_t||_infinity <= rho^t ||r_0 - r'_0||_infinity,
+  rho = max_j lambda_j < 1.
+
+This is contraction of the exogenous regulator. The derivative with respect
+to record values is zero because the proposed h_t has no record dependence.
+The same claim would generally be invalid after adding feedback computed
+from predictions or actions: causal feedback is still endogenous feedback.
+
+If the feature sequences differ, the exact coordinate relation is
+
+  delta r_(t,j) = lambda_j^t delta r_(0,j)
+    + (1-lambda_j) sum_(k=1)^t lambda_j^(t-k) delta h_(k,j).
+
+Consequently its absolute value is bounded by the corresponding sum of
+absolute values. In particular, a persistent feature perturbation bounded
+by eta_j contributes at most (1-lambda_j^t) eta_j. Separate this forced
+response from the identical-input contraction claim.
+
+3. CONTROLLER BOUND DOES NOT CONTROL ITS GAIN
+
+Every coordinate of u_t lies in [-1,1]. Nevertheless, a large C or U_r can
+produce large local sensitivity. For a fixed cursor and fixed f_t,
+
+  D_V u_t = D_tanh C_V E_c,
+  D_r(previous) u_t = D_tanh U_r Lambda,
+
+where E_c selects the cursor record and the diagonal D_tanh has entries
+between zero and one. Thus, for example,
+
+  ||D_V u_t||_2 <= ||C_V||_2,
+  ||D_r(previous) u_t||_2 <= ||U_r||_2 rho.
+
+Bounded activations alone give no useful upper bound below one for these
+sensitivities. The original read/proposal heads may introduce further
+dependencies and must be included in the complete derivative.
+
+4. VALUE INVARIANCE: CONDITIONAL ON A BOUNDED PROPOSAL
+
+Let K be any convex set. If all initial records lie in K, every selected
+proposal z_t lies in K, and 0 <= a_t <= 1, then every record remains in K.
+Proof: an updated record is a convex combination of two members of K;
+unselected records are unchanged. Induction completes the proof.
+
+For K = [-R,R]^d this gives a coordinate bound. For a norm ball it gives a
+norm bound. A tanh-bounded controller does not by itself establish bounded
+z_t: the actual proposal function must be checked separately. Epsilon > 1
+also invalidates the convex-combination argument in general.
+
+This bounds V and the regulator under the stated assumptions, not literally
+every component of the complete state. An unrestricted position counter
+grows without bound. Valid cursor and link ranges require their own typed
+invariants. Finite floating-point safety also requires excluding NaNs and
+infinities; real-number proofs alone do not establish that property.
+
+5. THE GATE JACOBIAN TERM CANNOT BE DROPPED
+
+Fix all discrete choices in a neighborhood. Flatten V into v and let P=E_d
+select the written record w=Pv. Define
+
+  F(v,r) = v + P^T a(v,r) [z(v,r) - Pv].
+
+The exact record Jacobian is
+
+  D_v F = I + P^T { a(D_v z-P) + (z-Pv)(gradient_v a)^T }.
+
+The regulator derivative is
+
+  D_r F = P^T { a D_r z + (z-Pv)(gradient_r a)^T }.
+
+The r derivative here can refer either to the updated regulator or the
+previous regulator; use the corresponding chain factor Lambda consistently.
+For fixed epsilon and no other differentiable admission factor,
+
+  gradient a = epsilon sigmoid(g)(1-sigmoid(g)) gradient g.
+
+These are ordinary local derivatives only while the cursor, links, selected
+operation, destination and hard admission choices remain unchanged. A soft
+admission factor adds its product-rule term.
+
+Bounded gate counterexample:
+  z=1, epsilon=1, a(v)=sigmoid(8v),
+  F(v)=(1-a(v))v+a(v),  v in [-1,1].
+
+The interval is invariant, yet F'(0)=1/2+8/4=2.5. Inputs 0 and 0.01 map to
+0.5 and 0.5247894467540261, expanding their distance by 2.4789446754.
+Dropping the gate derivative incorrectly predicts derivative 0.5 at zero.
+This example disproves nonexpansivity; it does not imply that this particular
+constant-target system diverges or that a trained CSM has those weights.
+
+A separate bounded-proposal example distinguishes boundedness from local
+equilibrium stability:
+  F(v)=0.5v+0.5 tanh(3v).
+The interval [-1,1] is invariant, zero is a fixed point, and F'(0)=2, so zero
+is a repelling equilibrium. This is a constructed member of the bounded
+update family, not a measurement of the actual CSM candidate. No unbounded
+proposal z=kv is used as a counterexample to the bounded architecture.
+
+6. SUFFICIENT LOCAL STABILITY CRITERION
+
+Consider one active record w and updated regulator q, with all other read
+records treated as identical external inputs. Assume a fixed route on a
+convex domain. Let
+
+  G(w,q)=(1-a(w,q))w+a(w,q)z(w,q).
+
+Suppose throughout that domain:
+  a >= a_min > 0, a <= 1;
+  ||D_w z|| <= L_z < 1;
+  ||gradient_w a||_dual <= L_a;
+  ||z-w|| <= D.
+
+For a vector norm and its induced operator/dual norms,
+
+  ||D_w G|| <= 1-a+a L_z+D L_a
+             <= q_w := 1-a_min(1-L_z)+D L_a.
+
+Thus q_w < 1 is a sufficient contraction condition in w for a fixed q.
+For the sigmoid gate, L_a <= epsilon L_g/4 when
+||gradient_w g||_dual <= L_g. This is sufficient, not necessary. It does
+not certify the actual weights without measuring or proving these bounds.
+
+If additionally ||D_q G|| <= K_r and the exogenous regulator contracts with
+rho<1, then identical token inputs give the comparison inequalities
+
+  ||delta w_next|| <= q_w ||delta w|| + K_r rho ||delta r||,
+  ||delta r_next|| <= rho ||delta r||.
+
+Choose any Q with max(q_w,rho)<Q<1 and c>0 satisfying
+  c >= K_r rho/(Q-rho).
+Then N(delta w,delta r)=||delta w||+c||delta r|| contracts by at most Q.
+Proof: substitute the two inequalities and bound the coefficients by Q and
+Qc. This proves stability for the stated active-record subsystem and fixed
+route. It is not a strict-contraction theorem for the complete record bank.
+
+The general complete-state Jacobian has the block form
+  [[D_v F, D_r F], [0, Lambda]],
+because the regulator is exogenous. Every untouched continuous record gives
+an identity block in D_v F after rearranging coordinates. Therefore, for
+S>1 with at least one untouched record, the local Jacobian has eigenvalue 1
+and cannot be a strict contraction in any induced norm. Bounded persistent
+memory need not be a globally forgetting system; this is not itself a flaw.
+
+7. HARD ROUTE AND THRESHOLD MARGINS
+
+Suppose routing logits s_i are each L-Lipschitz in a common state/input norm.
+At a point with unique winner k and positive margin
+  gamma = min_(i!=k) (s_k-s_i),
+every perturbation delta with ||delta|| < gamma/(2L) preserves k (for L>0).
+Proof: each logit changes by at most L||delta||, so each difference remains
+positive. If L=0, logits are locally constant. This is a one-step guarantee;
+repeated execution requires margins and perturbation bounds at every step.
+
+For a hard scalar threshold ell > theta, a margin m=|ell-theta| and an
+L_ell-Lipschitz logit preserve the decision for ||delta||<m/L_ell. For a
+sigmoid probability threshold p, theta=log(p/(1-p)).
+
+Away from ties, a hard-routed update can have a smooth local branch. There
+is generally no global Lipschitz guarantee across branch boundaries unless
+the branch outputs agree there. For example, write target 1 with gain 0.5
+to record 1 when v1>=0 and record 2 otherwise. States (0.001,0) and
+(-0.001,0) differ by 0.002 in maximum norm, but their successors differ by
+0.5015. A straight-through training estimator would not alter this forward
+discontinuity.
+
+8. EXACT OVERWRITE IS A SEMANTIC CONTRACT
+
+For a fixed target z, one update gives
+  v_next-z=(1-a)(v-z).
+With finite sigmoid logit and epsilon<=1, a<1; an unequal previous vector is
+not overwritten exactly. This is a mathematical qualification of the SET
+name, not a contradiction of 100% discrete recall in a classification test.
+The decoded class can be correct while the underlying vector retains a
+residual of its previous value.
+
+For repeated writes toward the same z,
+  e_n = product_(k=0)^(n-1)(1-a_k) e_0.
+If every a_k>=a_min>0 then ||e_n||<=(1-a_min)^n ||e_0||. If gains vanish
+too quickly, convergence to the exact target is not assured. At a=0.5,
+an initial error of 1 requires 20 writes to fall below 10^-6. If exact SET
+is needed, specify a separate hard assignment or explicit numerical error
+contract; do not silently reinterpret the current implementation.
+
+9. DISJOINT DESTINATIONS ARE INSUFFICIENT FOR PARALLEL INDEPENDENCE
+
+Starting with (A,B)=(0,1), consider
+  U: A <- 0.5 A + 0.5 B,
+  W: B <- 0.5 B + 0.5 A.
+U then W gives (0.5,0.75); W then U gives (0.25,0.5); evaluating both
+proposals from the original snapshot gives (0.5,0.5). The destinations are
+disjoint, but each write changes the other's read input.
+
+Sufficient conditions for commuting isolated operations are disjoint write
+sets, no cross read/write dependencies, and no shared control dependencies.
+They must also leave the other's routing/admission decisions unchanged.
+For two same-destination affine writes with fixed gains a,b and fixed
+targets z1,z2, the difference between the two orders is ab(z2-z1), so they
+also generally do not commute.
+
+The exogenous regulator is an affine recurrence and can be composed in a
+parallel scan. This does not remove the original CSM controller's dependence
+on the prior updated record. Algebraic associativity of general transition
+functions alone does not provide a compact efficient whole-model scan.
+
+10. TIME UNITS AND INITIALIZATION
+
+The initial model should define time in tokens. A half-life H_j tokens gives
+lambda_j=2^(-1/H_j). An alternative relaxation time tau_j gives
+lambda_j=exp(-1/tau_j). Physical elapsed-time decay would need
+lambda_j(t)=exp(-delta_t/tau_j); it is a different model and can make behavior
+depend on serving pauses. Padding should not advance a token clock.
+
+With r_0=0 and constant h=mu, r_t=(I-Lambda^t)mu. A slow trace is therefore
+small during a short prefix. That is the specified cold-start behavior,
+not proof that the trace estimates a stationary mean without bias. Warming
+with the first observation or bias correction changes the model and must
+be declared. Resets and session carry-over must follow the same boundaries
+in training and evaluation. These choices can affect measured behavior even
+when every algebraic bound in this review holds.
+
+DELIVERED CHECKS
+
+verify_stability.py produces verification/stability.json using deterministic
+synthetic values. It checks finite-difference derivatives, convex bounds,
+regulator forgetting, route margins, noncommuting writes, exact-overwrite
+residuals, and one explicitly constructed subsystem satisfying the sufficient
+stability criterion. Random/grid checks are numerical corroboration, not
+formal proof. No trained checkpoint, dataset, language accuracy, speed
+benchmark or Lean compilation is claimed by this independent review.
