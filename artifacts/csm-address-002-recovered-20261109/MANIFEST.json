@@ -1,0 +1,38 @@
+{
+  "scope": "Recovered CSM ADDRESS-002 and unchanged original research archive",
+  "source_archive": "CSM-Research-Update-20261109.zip",
+  "source_archive_bytes": 24409036,
+  "source_archive_sha256": "e4a3d3e39e6e8aa3e6f4f3c6c76b705dacf310be4adb8fc82f068712e678b9f2",
+  "source_archive_files": 305,
+  "manifest_verified_files": 303,
+  "recorded_source_commit": "1e658d61bed7e629be99524d87a6c7a1bdc8b358",
+  "recorded_preregistration_commit": "5bf17652ae478e7975217a30f85cc7d418eec3dc",
+  "exact_source_git_commit_recovered": false,
+  "original_checkpoint_count": 30,
+  "new_checkpoint_count": 12,
+  "new_address_file_count": 148,
+  "original_raw_evidence_count": 242,
+  "base_commit": "1bb6e10084cb06a9b600c2d055bfd54a9ae4ee0d",
+  "parts": [
+    {
+      "path": "CSM-Research-Update-20261109.zip.part1",
+      "bytes": 7500000,
+      "sha256": "9ae539a33b6c12f1f3bdf025ddea797d0af6396bd35dbb9e8f252c7ed4243fd8"
+    },
+    {
+      "path": "CSM-Research-Update-20261109.zip.part2",
+      "bytes": 7500000,
+      "sha256": "7ce4bef2f06fe0e212bdfc8ad25234fe61fef70856f1c8970d1674afea7f4df7"
+    },
+    {
+      "path": "CSM-Research-Update-20261109.zip.part3",
+      "bytes": 7500000,
+      "sha256": "19d2b3e2e8add1eca16bade9ec152ed3b6768cf3b8d1e3c38c278a10e69402ee"
+    },
+    {
+      "path": "CSM-Research-Update-20261109.zip.part4",
+      "bytes": 1909036,
+      "sha256": "b943476f239a56b95e58b9bebf4f69695ddceecef97beba8fa4c4fa9181be0fc"
+    }
+  ]
+}
