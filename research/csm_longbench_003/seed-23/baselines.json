@@ -1,0 +1,6 @@
+{
+  "unigram_nll": 3.353359798695931,
+  "bigram_nll": 2.4993262405919126,
+  "fitted_targets": 262144,
+  "scope": "same sampled targets; not equal parameter or compute budgets"
+}

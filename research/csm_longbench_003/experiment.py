@@ -70,11 +70,23 @@ def train(seed,arms=ARMS,updates=256,smoke=False):
  out=HERE/('smoke' if smoke else f'seed-{seed}');out.mkdir(exist_ok=True)
  (out/'baselines.json').write_text(json.dumps(baselines(train_data,starts,dev),indent=2))
  for arm in arms:
+  if (out/f'{arm}-result.json').exists() and not smoke:
+   print(json.dumps(dict(seed=seed,arm=arm,status='already completed')),flush=True);continue
   torch.manual_seed(seed);m=model(arm);opt=torch.optim.AdamW(m.parameters(),lr=.001,weight_decay=.01)
   initial=hashlib.sha256(b''.join(p.detach().numpy().tobytes() for p in m.parameters())).hexdigest()
   curves=[dict(update=0,dev=evaluate(m,dev,512,details=False))];train_seconds=0.;losses=[]
-  state=None
-  for update in range(updates):
+  state=None;resume_at=0;prior_telemetry_complete=True
+  checkpoint=out/f'{arm}-latest.pt'
+  if checkpoint.exists() and not smoke:
+   ck=torch.load(checkpoint,weights_only=True)
+   assert ck['seed']==seed and ck['arm']==arm and torch.equal(ck['starts'],starts)
+   resume_at=ck['update'];assert resume_at%8==0
+   m.load_state_dict(ck['model']);opt.load_state_dict(ck['optimizer']);torch.set_rng_state(ck['rng'])
+   curves=json.loads((out/f'{arm}-curve.json').read_text())
+   prior_telemetry_complete='train_seconds' in ck
+   train_seconds=ck.get('train_seconds',0.);losses=ck.get('losses',[None]*resume_at)
+   print(json.dumps(dict(seed=seed,arm=arm,resume_at=resume_at,prior_telemetry_complete=prior_telemetry_complete)),flush=True)
+  for update in range(resume_at,updates):
    if update%8==0:
     episode=update//8;data=torch.stack([train_data[int(s):int(s)+2049] for s in starts[episode]])
     state=m.init_state(4,'cpu')
@@ -91,12 +103,12 @@ def train(seed,arms=ARMS,updates=256,smoke=False):
    if update+1 in (32,64,128,256) or update+1==updates:
     row=dict(update=update+1,train_nll=total,preclip_gradient_norm=grad,trace_group_gradient_norms=gn,dev=evaluate(m,dev,512,details=False));curves.append(row)
     print(json.dumps(dict(seed=seed,arm=arm,update=update+1,train_nll=total,dev_nll=row['dev']['nll'])),flush=True)
-    torch.save(dict(model=m.state_dict(),optimizer=opt.state_dict(),rng=torch.get_rng_state(),state=state_dict(state),starts=starts,dev_starts=devstarts,seed=seed,arm=arm,update=update+1),out/f'{arm}-latest.pt')
+    torch.save(dict(model=m.state_dict(),optimizer=opt.state_dict(),rng=torch.get_rng_state(),state=state_dict(state),starts=starts,dev_starts=devstarts,seed=seed,arm=arm,update=update+1,train_seconds=train_seconds,losses=losses),out/f'{arm}-latest.pt')
     (out/f'{arm}-curve.json').write_text(json.dumps(curves,indent=2))
   length=64 if smoke else 2048
   evals={k:evaluate(m,dev,length,k) for k in ('none','trace_reset','trace_swap','record_reset')}
   first=torch.stack([train_data[int(s):int(s)+2049] for s in starts[0]])
-  result=dict(seed=seed,arm=arm,parameters=sum(p.numel() for p in m.parameters()),initial_parameters_sha256=initial,training_updates=updates,training_targets=updates*1024,train_seconds=train_seconds,training_tokens_per_second=updates*1024/train_seconds,train_nll_curve=losses,train_first_episode=evaluate(m,first,length,details=False),evaluation=evals,process_peak_rss_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,torch=torch.__version__,python=platform.python_version(),checkpoint_sha256=hashlib.sha256((out/f'{arm}-latest.pt').read_bytes()).hexdigest(),schedule_sha256=hashlib.sha256(starts.numpy().tobytes()).hexdigest(),corpus_sha256=SHA,protocol_sha256=hashlib.sha256((HERE/'PROTOCOL.md').read_bytes()).hexdigest())
+  result=dict(seed=seed,arm=arm,parameters=sum(p.numel() for p in m.parameters()),initial_parameters_sha256=initial,training_updates=updates,training_targets=updates*1024,resume_at=resume_at,prior_telemetry_complete=prior_telemetry_complete,train_seconds=train_seconds if prior_telemetry_complete else None,measured_segment_seconds=train_seconds,training_tokens_per_second=updates*1024/train_seconds if prior_telemetry_complete else None,train_nll_curve=losses,train_first_episode=evaluate(m,first,length,details=False),evaluation=evals,process_peak_rss_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,torch=torch.__version__,python=platform.python_version(),checkpoint_sha256=hashlib.sha256((out/f'{arm}-latest.pt').read_bytes()).hexdigest(),schedule_sha256=hashlib.sha256(starts.numpy().tobytes()).hexdigest(),corpus_sha256=SHA,protocol_sha256=hashlib.sha256((HERE/'PROTOCOL.md').read_bytes()).hexdigest())
   (out/f'{arm}-result.json').write_text(json.dumps(result,indent=2))
   print(json.dumps(dict(seed=seed,arm=arm,final_dev_nll=evals['none']['nll'])),flush=True)
 

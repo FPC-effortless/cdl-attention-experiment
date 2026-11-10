@@ -19,3 +19,9 @@ jobs:
       - run: python research/csm_parity_002/verify_parity.py
       - run: python research/csm_parity_002/verify_regulated.py
       - run: python research/csm_parity_002/replay.py
+      - name: Verify long-run artifact hashes
+        working-directory: research/csm_longbench_003
+        run: sha256sum -c manifest.sha256
+      - run: python research/csm_longbench_003/test_contracts.py
+      - run: python research/csm_longbench_003/test_resume.py
+      - run: python research/csm_longbench_003/replay_and_benchmark.py

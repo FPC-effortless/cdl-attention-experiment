@@ -1,0 +1,153 @@
+{
+  "status": "PASS",
+  "replays": 12,
+  "rows": [
+    {
+      "seed": 11,
+      "arm": "instant",
+      "expected_nll": 3.3732873981207376,
+      "replay_nll": 3.3732873984954495,
+      "absolute_error": 3.7471181713044643e-10,
+      "max_excerpt_error": 3.3760443329811096e-09,
+      "step_median_us": 297.13800000000003,
+      "step_p95_us": 442.34999999999997,
+      "retained_tensor_bytes": 1616,
+      "inference_calls": 1280
+    },
+    {
+      "seed": 11,
+      "arm": "single",
+      "expected_nll": 3.3914809707930544,
+      "replay_nll": 3.3914809707930544,
+      "absolute_error": 0.0,
+      "max_excerpt_error": 0.0,
+      "step_median_us": 302.27099999999996,
+      "step_p95_us": 472.3581999999999,
+      "retained_tensor_bytes": 1616,
+      "inference_calls": 1280
+    },
+    {
+      "seed": 11,
+      "arm": "multi",
+      "expected_nll": 3.3709130451570672,
+      "replay_nll": 3.3709130451570672,
+      "absolute_error": 0.0,
+      "max_excerpt_error": 0.0,
+      "step_median_us": 287.69899999999996,
+      "step_p95_us": 469.57554999999996,
+      "retained_tensor_bytes": 1616,
+      "inference_calls": 1280
+    },
+    {
+      "seed": 11,
+      "arm": "multi_tb64",
+      "expected_nll": 3.3123891621689836,
+      "replay_nll": 3.3123891621689836,
+      "absolute_error": 0.0,
+      "max_excerpt_error": 0.0,
+      "step_median_us": 284.033,
+      "step_p95_us": 423.89095,
+      "retained_tensor_bytes": 1616,
+      "inference_calls": 1280
+    },
+    {
+      "seed": 23,
+      "arm": "instant",
+      "expected_nll": 3.3471980107715353,
+      "replay_nll": 3.347198011528235,
+      "absolute_error": 7.566995918750763e-10,
+      "max_excerpt_error": 4.773028194904327e-09,
+      "step_median_us": 280.34749999999997,
+      "step_p95_us": 412.654,
+      "retained_tensor_bytes": 1616,
+      "inference_calls": 1280
+    },
+    {
+      "seed": 23,
+      "arm": "single",
+      "expected_nll": 3.3608467368103447,
+      "replay_nll": 3.3608467368103447,
+      "absolute_error": 0.0,
+      "max_excerpt_error": 0.0,
+      "step_median_us": 284.003,
+      "step_p95_us": 398.487,
+      "retained_tensor_bytes": 1616,
+      "inference_calls": 1280
+    },
+    {
+      "seed": 23,
+      "arm": "multi",
+      "expected_nll": 3.371231432327477,
+      "replay_nll": 3.371231432327477,
+      "absolute_error": 0.0,
+      "max_excerpt_error": 0.0,
+      "step_median_us": 280.428,
+      "step_p95_us": 374.2475999999999,
+      "retained_tensor_bytes": 1616,
+      "inference_calls": 1280
+    },
+    {
+      "seed": 23,
+      "arm": "multi_tb64",
+      "expected_nll": 3.371696563612204,
+      "replay_nll": 3.371696563612204,
+      "absolute_error": 0.0,
+      "max_excerpt_error": 0.0,
+      "step_median_us": 287.539,
+      "step_p95_us": 424.39599999999996,
+      "retained_tensor_bytes": 1616,
+      "inference_calls": 1280
+    },
+    {
+      "seed": 37,
+      "arm": "instant",
+      "expected_nll": 3.3739724872830266,
+      "replay_nll": 3.3739724878250854,
+      "absolute_error": 5.420588422566652e-10,
+      "max_excerpt_error": 4.132743924856186e-09,
+      "step_median_us": 280.764,
+      "step_p95_us": 369.7088499999998,
+      "retained_tensor_bytes": 1616,
+      "inference_calls": 1280
+    },
+    {
+      "seed": 37,
+      "arm": "single",
+      "expected_nll": 3.332891345347889,
+      "replay_nll": 3.332891345347889,
+      "absolute_error": 0.0,
+      "max_excerpt_error": 0.0,
+      "step_median_us": 277.969,
+      "step_p95_us": 350.50849999999997,
+      "retained_tensor_bytes": 1616,
+      "inference_calls": 1280
+    },
+    {
+      "seed": 37,
+      "arm": "multi",
+      "expected_nll": 3.2975987314493977,
+      "replay_nll": 3.2975987314493977,
+      "absolute_error": 0.0,
+      "max_excerpt_error": 0.0,
+      "step_median_us": 278.986,
+      "step_p95_us": 361.12234999999976,
+      "retained_tensor_bytes": 1616,
+      "inference_calls": 1280
+    },
+    {
+      "seed": 37,
+      "arm": "multi_tb64",
+      "expected_nll": 3.2672411555940926,
+      "replay_nll": 3.2672411555940926,
+      "absolute_error": 0.0,
+      "max_excerpt_error": 0.0,
+      "step_median_us": 281.1645,
+      "step_p95_us": 347.2055999999999,
+      "retained_tensor_bytes": 1616,
+      "inference_calls": 1280
+    }
+  ],
+  "torch": "2.15.0+cpu",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "timing_scope": "single-thread eager batch1 supplied-token steps; five256-token blocks after100 warmups; not optimized deployment or generated-text benchmark"
+}
