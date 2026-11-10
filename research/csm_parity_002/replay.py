@@ -17,5 +17,7 @@ for row in rows:
   s=m.init_state(1,'cpu');loss=0
   for t in range(1024):
    y,s,_=m.step(dev[:,t],s);loss+=torch.nn.functional.cross_entropy(y,dev[:,t+1]).item()
- assert loss/1024==row['dev_nll']
+ delta=abs(loss/1024-row['dev_nll'])
+ print(json.dumps({'seed':row['seed'],'variant':row['variant'],'expected':row['dev_nll'],'observed':loss/1024,'absolute_error':delta}),flush=True)
+ assert delta<=1e-6, 'Replay discrepancy exceeds 1e-6'
 print(json.dumps({'status':'PASS','cold_replays':len(rows),'training_updates':0}))

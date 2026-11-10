@@ -1,9 +1,9 @@
 name: CSM parity and checkpoint replay
 on:
   push:
-    branches: ['research/csm-parity-002-20261109']
+    branches: ['research/csm-parity-002-20261109', 'research/csm-longbench-003-20261109']
   pull_request:
-    paths: ['research/csm_parity_002/**', '.github/workflows/csm-parity.yml']
+    paths: ['research/csm_parity_002/**', 'research/csm_longbench_003/**', '.github/workflows/csm-parity.yml']
 permissions:
   contents: read
 jobs:
@@ -19,3 +19,9 @@ jobs:
       - run: python research/csm_parity_002/verify_parity.py
       - run: python research/csm_parity_002/verify_regulated.py
       - run: python research/csm_parity_002/replay.py
+      - name: Verify long-run artifact hashes
+        working-directory: research/csm_longbench_003
+        run: sha256sum -c manifest.sha256
+      - run: python research/csm_longbench_003/test_contracts.py
+      - run: python research/csm_longbench_003/test_resume.py
+      - run: python research/csm_longbench_003/replay_and_benchmark.py

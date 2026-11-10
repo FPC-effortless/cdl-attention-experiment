@@ -1,0 +1,18 @@
+{
+  "run_id": 42706014500,
+  "commit": "8c064a478bc15ead5ac8539ddc80364209093334",
+  "status": "success",
+  "prior_failure_run_id": 42704982599,
+  "prior_failure_detail": "Exact-equality assertion failed without logging numerical delta; root cause unconfirmed.",
+  "replay_lines": [
+    "2026-11-09T21:49:31.2121637Z {\"seed\": 11, \"variant\": \"instant\", \"expected\": 4.073210717877373, \"observed\": 4.073210717877373, \"absolute_error\": 0.0}",
+    "2026-11-09T21:49:31.9455160Z {\"seed\": 11, \"variant\": \"single\", \"expected\": 4.089806649833918, \"observed\": 4.089806649833918, \"absolute_error\": 0.0}",
+    "2026-11-09T21:49:32.6751462Z {\"seed\": 11, \"variant\": \"multi\", \"expected\": 4.10303686815314, \"observed\": 4.10303686815314, \"absolute_error\": 0.0}",
+    "2026-11-09T21:49:33.4058496Z {\"seed\": 23, \"variant\": \"instant\", \"expected\": 4.260989628266543, \"observed\": 4.260989628266543, \"absolute_error\": 0.0}",
+    "2026-11-09T21:49:34.1341628Z {\"seed\": 23, \"variant\": \"single\", \"expected\": 4.28983626072295, \"observed\": 4.28983626072295, \"absolute_error\": 0.0}",
+    "2026-11-09T21:49:34.8666166Z {\"seed\": 23, \"variant\": \"multi\", \"expected\": 4.258060552412644, \"observed\": 4.258060552412644, \"absolute_error\": 0.0}",
+    "2026-11-09T21:49:35.5985718Z {\"seed\": 37, \"variant\": \"instant\", \"expected\": 4.12398385303095, \"observed\": 4.12398385303095, \"absolute_error\": 0.0}",
+    "2026-11-09T21:49:36.3423992Z {\"seed\": 37, \"variant\": \"single\", \"expected\": 4.120379043510184, \"observed\": 4.120379043510184, \"absolute_error\": 0.0}",
+    "2026-11-09T21:49:37.0714310Z {\"seed\": 37, \"variant\": \"multi\", \"expected\": 4.128040445037186, \"observed\": 4.128040445037186, \"absolute_error\": 0.0}"
+  ]
+}
