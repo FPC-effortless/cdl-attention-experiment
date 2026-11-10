@@ -1,0 +1,22 @@
+name: CSM collapse diagnostics replay
+on:
+  push:
+    branches: ['research/csm-collapse-004-20261110']
+  pull_request:
+    paths: ['research/csm_collapse_004/**', '.github/workflows/csm-collapse.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r research/csm_parity_002/requirements-lock.txt --index-url https://download.pytorch.org/whl/cpu
+      - run: sha256sum -c manifest.sha256
+        working-directory: research/csm_collapse_004
+      - run: python research/csm_collapse_004/test_contracts.py
+      - run: python research/csm_collapse_004/replay.py

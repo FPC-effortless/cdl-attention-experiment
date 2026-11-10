@@ -1,0 +1,1037 @@
+{
+  "scope": "Frozen model; authentic first128 training targets; zero optimizer updates",
+  "rows": [
+    {
+      "seed": 11,
+      "arm": "instant",
+      "checkpoint_sha256": "4ab69495e6e009a7a8baad3bc0facf1e67c65ccb590111c387245c141ef60e33",
+      "score": {
+        "nll": 3.401186943054199,
+        "accuracy": 0.125,
+        "space_share": 0.9921875,
+        "distinct_top1": 2,
+        "targets": 128
+      },
+      "audit": {
+        "activations": {
+          "frontend": {
+            "rms": 0.9248505234718323,
+            "mean_coordinate_std": 0.8114067912101746,
+            "abs_above_3": 0.0,
+            "abs_above_095": 0.315185546875
+          },
+          "controller": {
+            "rms": 0.9604465365409851,
+            "mean_coordinate_std": 0.5436437726020813,
+            "abs_above_3": 0.0,
+            "abs_above_095": 0.347900390625
+          },
+          "proposal_hidden": {
+            "rms": 2.3239448070526123,
+            "mean_coordinate_std": 0.48668229579925537,
+            "abs_above_3": 0.047119140625,
+            "abs_above_095": 0.9381103515625
+          },
+          "proposal": {
+            "rms": 3.1941018104553223,
+            "mean_coordinate_std": 0.4418497681617737,
+            "abs_above_3": 0.84814453125,
+            "abs_above_095": 0.978515625
+          },
+          "readout": {
+            "rms": 0.9470217823982239,
+            "mean_coordinate_std": 0.15534302592277527,
+            "abs_above_3": 0.0,
+            "abs_above_095": 0.78076171875
+          }
+        },
+        "gradients": {
+          "core.operator_embedding": {
+            "norm": 0.025343140587210655,
+            "zero_fraction": 0.5
+          },
+          "core.embedding.weight": {
+            "norm": 0.03151055797934532,
+            "zero_fraction": 0.875
+          },
+          "core.frontend.weight": {
+            "norm": 0.10414431244134903,
+            "zero_fraction": 0.0
+          },
+          "core.frontend.bias": {
+            "norm": 0.028852712363004684,
+            "zero_fraction": 0.0
+          },
+          "core.controller.weight": {
+            "norm": 0.06492441892623901,
+            "zero_fraction": 0.0
+          },
+          "core.controller.bias": {
+            "norm": 0.01749931462109089,
+            "zero_fraction": 0.0
+          },
+          "core.first_address.weight": {
+            "norm": 0.0021597512532025576,
+            "zero_fraction": 0.0
+          },
+          "core.first_address.bias": {
+            "norm": 0.001233125221915543,
+            "zero_fraction": 0.0
+          },
+          "core.second_address.weight": {
+            "norm": 0.00029976622317917645,
+            "zero_fraction": 0.0
+          },
+          "core.second_address.bias": {
+            "norm": 6.270590529311448e-05,
+            "zero_fraction": 0.0
+          },
+          "core.destination.weight": {
+            "norm": 0.09254710376262665,
+            "zero_fraction": 0.0
+          },
+          "core.destination.bias": {
+            "norm": 0.033782895654439926,
+            "zero_fraction": 0.0
+          },
+          "core.use_link.weight": {
+            "norm": 0.0002617945137899369,
+            "zero_fraction": 0.0
+          },
+          "core.use_link.bias": {
+            "norm": 9.929102816386148e-05,
+            "zero_fraction": 0.0
+          },
+          "core.link_edit.weight": {
+            "norm": 0.0,
+            "zero_fraction": 1.0
+          },
+          "core.link_edit.bias": {
+            "norm": 0.0,
+            "zero_fraction": 1.0
+          },
+          "core.operator.weight": {
+            "norm": 0.0036620229948312044,
+            "zero_fraction": 0.0
+          },
+          "core.operator.bias": {
+            "norm": 0.0014775743475183845,
+            "zero_fraction": 0.0
+          },
+          "core.transform.0.weight": {
+            "norm": 0.022800909355282784,
+            "zero_fraction": 0.0
+          },
+          "core.transform.0.bias": {
+            "norm": 0.014781666919589043,
+            "zero_fraction": 0.0
+          },
+          "core.transform.2.weight": {
+            "norm": 0.009452776052057743,
+            "zero_fraction": 0.0
+          },
+          "core.transform.2.bias": {
+            "norm": 0.007162568159401417,
+            "zero_fraction": 0.0
+          },
+          "core.write_gate.weight": {
+            "norm": 0.04338991641998291,
+            "zero_fraction": 0.0
+          },
+          "core.write_gate.bias": {
+            "norm": 0.021279050037264824,
+            "zero_fraction": 0.0
+          },
+          "core.value_edit.weight": {
+            "norm": 0.023624606430530548,
+            "zero_fraction": 0.0
+          },
+          "core.value_edit.bias": {
+            "norm": 0.011568819172680378,
+            "zero_fraction": 0.0
+          },
+          "core.output.weight": {
+            "norm": 0.5190545916557312,
+            "zero_fraction": 0.0
+          },
+          "core.output.bias": {
+            "norm": 0.0979488268494606,
+            "zero_fraction": 0.0
+          },
+          "driver.weight": {
+            "norm": 0.01729993335902691,
+            "zero_fraction": 0.0
+          },
+          "driver.bias": {
+            "norm": 0.010780137032270432,
+            "zero_fraction": 0.0
+          },
+          "injection.weight": {
+            "norm": 0.017645634710788727,
+            "zero_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "seed": 11,
+      "arm": "multi_tb64",
+      "checkpoint_sha256": "c6c731d4029eb2ba6c98e3b9c49e4998b4d652a832ca3698e13adfc81448b561",
+      "score": {
+        "nll": 3.366140842437744,
+        "accuracy": 0.125,
+        "space_share": 0.9921875,
+        "distinct_top1": 2,
+        "targets": 128
+      },
+      "audit": {
+        "activations": {
+          "frontend": {
+            "rms": 1.0090608596801758,
+            "mean_coordinate_std": 0.9101330637931824,
+            "abs_above_3": 0.00634765625,
+            "abs_above_095": 0.33056640625
+          },
+          "controller": {
+            "rms": 1.4527629613876343,
+            "mean_coordinate_std": 0.6422739028930664,
+            "abs_above_3": 0.031494140625,
+            "abs_above_095": 0.585205078125
+          },
+          "proposal_hidden": {
+            "rms": 1.7831835746765137,
+            "mean_coordinate_std": 0.7530593872070312,
+            "abs_above_3": 0.0126953125,
+            "abs_above_095": 0.74365234375
+          },
+          "proposal": {
+            "rms": 2.668541193008423,
+            "mean_coordinate_std": 0.9081796407699585,
+            "abs_above_3": 0.41552734375,
+            "abs_above_095": 0.904052734375
+          },
+          "readout": {
+            "rms": 0.9076191782951355,
+            "mean_coordinate_std": 0.18486173450946808,
+            "abs_above_3": 0.0,
+            "abs_above_095": 0.617431640625
+          }
+        },
+        "gradients": {
+          "core.operator_embedding": {
+            "norm": 0.03810174763202667,
+            "zero_fraction": 0.5
+          },
+          "core.embedding.weight": {
+            "norm": 0.04477604851126671,
+            "zero_fraction": 0.875
+          },
+          "core.frontend.weight": {
+            "norm": 0.15009699761867523,
+            "zero_fraction": 0.0
+          },
+          "core.frontend.bias": {
+            "norm": 0.03903288394212723,
+            "zero_fraction": 0.0
+          },
+          "core.controller.weight": {
+            "norm": 0.6682199835777283,
+            "zero_fraction": 0.0
+          },
+          "core.controller.bias": {
+            "norm": 0.12837564945220947,
+            "zero_fraction": 0.0
+          },
+          "core.first_address.weight": {
+            "norm": 0.06880392134189606,
+            "zero_fraction": 0.0
+          },
+          "core.first_address.bias": {
+            "norm": 0.015349646098911762,
+            "zero_fraction": 0.0
+          },
+          "core.second_address.weight": {
+            "norm": 0.04123987257480621,
+            "zero_fraction": 0.0
+          },
+          "core.second_address.bias": {
+            "norm": 0.009182260371744633,
+            "zero_fraction": 0.0
+          },
+          "core.destination.weight": {
+            "norm": 1.9751803874969482,
+            "zero_fraction": 0.0
+          },
+          "core.destination.bias": {
+            "norm": 0.4960229694843292,
+            "zero_fraction": 0.0
+          },
+          "core.use_link.weight": {
+            "norm": 0.07212046533823013,
+            "zero_fraction": 0.0
+          },
+          "core.use_link.bias": {
+            "norm": 0.01596180908381939,
+            "zero_fraction": 0.0
+          },
+          "core.link_edit.weight": {
+            "norm": 0.0,
+            "zero_fraction": 1.0
+          },
+          "core.link_edit.bias": {
+            "norm": 0.0,
+            "zero_fraction": 1.0
+          },
+          "core.operator.weight": {
+            "norm": 0.007233816664665937,
+            "zero_fraction": 0.0
+          },
+          "core.operator.bias": {
+            "norm": 0.0023372990544885397,
+            "zero_fraction": 0.0
+          },
+          "core.transform.0.weight": {
+            "norm": 0.09287568926811218,
+            "zero_fraction": 0.0
+          },
+          "core.transform.0.bias": {
+            "norm": 0.02308746986091137,
+            "zero_fraction": 0.0
+          },
+          "core.transform.2.weight": {
+            "norm": 0.07552143186330795,
+            "zero_fraction": 0.0
+          },
+          "core.transform.2.bias": {
+            "norm": 0.018095092847943306,
+            "zero_fraction": 0.0
+          },
+          "core.write_gate.weight": {
+            "norm": 0.029530290514230728,
+            "zero_fraction": 0.0
+          },
+          "core.write_gate.bias": {
+            "norm": 0.017744487151503563,
+            "zero_fraction": 0.0
+          },
+          "core.value_edit.weight": {
+            "norm": 0.010532017797231674,
+            "zero_fraction": 0.0
+          },
+          "core.value_edit.bias": {
+            "norm": 0.0071656107902526855,
+            "zero_fraction": 0.0
+          },
+          "core.output.weight": {
+            "norm": 0.5019692778587341,
+            "zero_fraction": 0.0
+          },
+          "core.output.bias": {
+            "norm": 0.09757516533136368,
+            "zero_fraction": 0.0
+          },
+          "driver.weight": {
+            "norm": 0.04466702789068222,
+            "zero_fraction": 0.0
+          },
+          "driver.bias": {
+            "norm": 0.031240131705999374,
+            "zero_fraction": 0.0
+          },
+          "injection.weight": {
+            "norm": 0.07221293449401855,
+            "zero_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "arm": "instant",
+      "checkpoint_sha256": "3e896eb61fc6cf3738c7970cfca68d7bbb924e455efbb00913e929f83b5b0383",
+      "score": {
+        "nll": 3.4683969020843506,
+        "accuracy": 0.125,
+        "space_share": 0.953125,
+        "distinct_top1": 4,
+        "targets": 128
+      },
+      "audit": {
+        "activations": {
+          "frontend": {
+            "rms": 0.8544934391975403,
+            "mean_coordinate_std": 0.7830685377120972,
+            "abs_above_3": 0.00048828125,
+            "abs_above_095": 0.2734375
+          },
+          "controller": {
+            "rms": 0.7952553033828735,
+            "mean_coordinate_std": 0.5312601923942566,
+            "abs_above_3": 0.0,
+            "abs_above_095": 0.252685546875
+          },
+          "proposal_hidden": {
+            "rms": 1.7280564308166504,
+            "mean_coordinate_std": 0.5928528308868408,
+            "abs_above_3": 0.016845703125,
+            "abs_above_095": 0.7352294921875
+          },
+          "proposal": {
+            "rms": 2.4591434001922607,
+            "mean_coordinate_std": 0.6377841830253601,
+            "abs_above_3": 0.123291015625,
+            "abs_above_095": 0.943115234375
+          },
+          "readout": {
+            "rms": 0.8924102783203125,
+            "mean_coordinate_std": 0.24527031183242798,
+            "abs_above_3": 0.0,
+            "abs_above_095": 0.64404296875
+          }
+        },
+        "gradients": {
+          "core.operator_embedding": {
+            "norm": 0.037177857011556625,
+            "zero_fraction": 0.5
+          },
+          "core.embedding.weight": {
+            "norm": 0.03722526878118515,
+            "zero_fraction": 0.875
+          },
+          "core.frontend.weight": {
+            "norm": 0.1712663173675537,
+            "zero_fraction": 0.0
+          },
+          "core.frontend.bias": {
+            "norm": 0.032170288264751434,
+            "zero_fraction": 0.0
+          },
+          "core.controller.weight": {
+            "norm": 0.23053911328315735,
+            "zero_fraction": 0.0
+          },
+          "core.controller.bias": {
+            "norm": 0.04634777083992958,
+            "zero_fraction": 0.0
+          },
+          "core.first_address.weight": {
+            "norm": 0.021457340568304062,
+            "zero_fraction": 0.0
+          },
+          "core.first_address.bias": {
+            "norm": 0.005218774080276489,
+            "zero_fraction": 0.0
+          },
+          "core.second_address.weight": {
+            "norm": 0.011364809237420559,
+            "zero_fraction": 0.0
+          },
+          "core.second_address.bias": {
+            "norm": 0.0023642058949917555,
+            "zero_fraction": 0.0
+          },
+          "core.destination.weight": {
+            "norm": 0.4166465103626251,
+            "zero_fraction": 0.0
+          },
+          "core.destination.bias": {
+            "norm": 0.1286502331495285,
+            "zero_fraction": 0.0
+          },
+          "core.use_link.weight": {
+            "norm": 0.020121600478887558,
+            "zero_fraction": 0.0
+          },
+          "core.use_link.bias": {
+            "norm": 0.004431359935551882,
+            "zero_fraction": 0.0
+          },
+          "core.link_edit.weight": {
+            "norm": 0.0,
+            "zero_fraction": 1.0
+          },
+          "core.link_edit.bias": {
+            "norm": 0.0,
+            "zero_fraction": 1.0
+          },
+          "core.operator.weight": {
+            "norm": 0.005161313805729151,
+            "zero_fraction": 0.0
+          },
+          "core.operator.bias": {
+            "norm": 0.0012706113047897816,
+            "zero_fraction": 0.0
+          },
+          "core.transform.0.weight": {
+            "norm": 0.061182186007499695,
+            "zero_fraction": 0.0
+          },
+          "core.transform.0.bias": {
+            "norm": 0.01902209408581257,
+            "zero_fraction": 0.0
+          },
+          "core.transform.2.weight": {
+            "norm": 0.05162695050239563,
+            "zero_fraction": 0.0
+          },
+          "core.transform.2.bias": {
+            "norm": 0.01375032588839531,
+            "zero_fraction": 0.0
+          },
+          "core.write_gate.weight": {
+            "norm": 0.15466518700122833,
+            "zero_fraction": 0.0
+          },
+          "core.write_gate.bias": {
+            "norm": 0.0546380877494812,
+            "zero_fraction": 0.0
+          },
+          "core.value_edit.weight": {
+            "norm": 0.0643472671508789,
+            "zero_fraction": 0.0
+          },
+          "core.value_edit.bias": {
+            "norm": 0.03116072341799736,
+            "zero_fraction": 0.0
+          },
+          "core.output.weight": {
+            "norm": 0.4837360978126526,
+            "zero_fraction": 0.0
+          },
+          "core.output.bias": {
+            "norm": 0.10311096906661987,
+            "zero_fraction": 0.0
+          },
+          "driver.weight": {
+            "norm": 0.047919705510139465,
+            "zero_fraction": 0.0
+          },
+          "driver.bias": {
+            "norm": 0.019467957317829132,
+            "zero_fraction": 0.0
+          },
+          "injection.weight": {
+            "norm": 0.060739535838365555,
+            "zero_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "arm": "multi_tb64",
+      "checkpoint_sha256": "8873e9c495f1a6dfed21cfb9d11655e745ea94dd1dde33da4102b2175a06bb93",
+      "score": {
+        "nll": 3.423361301422119,
+        "accuracy": 0.125,
+        "space_share": 0.9921875,
+        "distinct_top1": 2,
+        "targets": 128
+      },
+      "audit": {
+        "activations": {
+          "frontend": {
+            "rms": 0.9107688069343567,
+            "mean_coordinate_std": 0.7470692992210388,
+            "abs_above_3": 0.001708984375,
+            "abs_above_095": 0.29052734375
+          },
+          "controller": {
+            "rms": 1.3103607892990112,
+            "mean_coordinate_std": 0.49000072479248047,
+            "abs_above_3": 0.00439453125,
+            "abs_above_095": 0.579833984375
+          },
+          "proposal_hidden": {
+            "rms": 1.7659683227539062,
+            "mean_coordinate_std": 0.4010891616344452,
+            "abs_above_3": 0.0052490234375,
+            "abs_above_095": 0.8240966796875
+          },
+          "proposal": {
+            "rms": 2.8369333744049072,
+            "mean_coordinate_std": 0.3988801836967468,
+            "abs_above_3": 0.299072265625,
+            "abs_above_095": 0.989990234375
+          },
+          "readout": {
+            "rms": 0.9147414565086365,
+            "mean_coordinate_std": 0.18961983919143677,
+            "abs_above_3": 0.0,
+            "abs_above_095": 0.654541015625
+          }
+        },
+        "gradients": {
+          "core.operator_embedding": {
+            "norm": 0.026020631194114685,
+            "zero_fraction": 0.75
+          },
+          "core.embedding.weight": {
+            "norm": 0.018884139135479927,
+            "zero_fraction": 0.875
+          },
+          "core.frontend.weight": {
+            "norm": 0.08667867630720139,
+            "zero_fraction": 0.0
+          },
+          "core.frontend.bias": {
+            "norm": 0.0237970519810915,
+            "zero_fraction": 0.0
+          },
+          "core.controller.weight": {
+            "norm": 0.21135520935058594,
+            "zero_fraction": 0.0
+          },
+          "core.controller.bias": {
+            "norm": 0.04419911652803421,
+            "zero_fraction": 0.0
+          },
+          "core.first_address.weight": {
+            "norm": 0.002314334036782384,
+            "zero_fraction": 0.0
+          },
+          "core.first_address.bias": {
+            "norm": 0.001120734610594809,
+            "zero_fraction": 0.0
+          },
+          "core.second_address.weight": {
+            "norm": 0.002373086754232645,
+            "zero_fraction": 0.0
+          },
+          "core.second_address.bias": {
+            "norm": 0.0011144581949338317,
+            "zero_fraction": 0.0
+          },
+          "core.destination.weight": {
+            "norm": 0.5846703052520752,
+            "zero_fraction": 0.0
+          },
+          "core.destination.bias": {
+            "norm": 0.14260613918304443,
+            "zero_fraction": 0.0
+          },
+          "core.use_link.weight": {
+            "norm": 0.00032575707882642746,
+            "zero_fraction": 0.0
+          },
+          "core.use_link.bias": {
+            "norm": 0.00013998629583511502,
+            "zero_fraction": 0.0
+          },
+          "core.link_edit.weight": {
+            "norm": 0.0,
+            "zero_fraction": 1.0
+          },
+          "core.link_edit.bias": {
+            "norm": 0.0,
+            "zero_fraction": 1.0
+          },
+          "core.operator.weight": {
+            "norm": 0.007316558621823788,
+            "zero_fraction": 0.0
+          },
+          "core.operator.bias": {
+            "norm": 0.002306500216946006,
+            "zero_fraction": 0.0
+          },
+          "core.transform.0.weight": {
+            "norm": 0.023486727848649025,
+            "zero_fraction": 0.0
+          },
+          "core.transform.0.bias": {
+            "norm": 0.008516345173120499,
+            "zero_fraction": 0.0
+          },
+          "core.transform.2.weight": {
+            "norm": 0.013489843346178532,
+            "zero_fraction": 0.0
+          },
+          "core.transform.2.bias": {
+            "norm": 0.005219435319304466,
+            "zero_fraction": 0.0
+          },
+          "core.write_gate.weight": {
+            "norm": 0.1825445145368576,
+            "zero_fraction": 0.0
+          },
+          "core.write_gate.bias": {
+            "norm": 0.053774405270814896,
+            "zero_fraction": 0.0
+          },
+          "core.value_edit.weight": {
+            "norm": 0.05942230671644211,
+            "zero_fraction": 0.0
+          },
+          "core.value_edit.bias": {
+            "norm": 0.0191175639629364,
+            "zero_fraction": 0.0
+          },
+          "core.output.weight": {
+            "norm": 0.5288007259368896,
+            "zero_fraction": 0.0
+          },
+          "core.output.bias": {
+            "norm": 0.09993334859609604,
+            "zero_fraction": 0.0
+          },
+          "driver.weight": {
+            "norm": 0.02884519472718239,
+            "zero_fraction": 0.0
+          },
+          "driver.bias": {
+            "norm": 0.014164465479552746,
+            "zero_fraction": 0.0
+          },
+          "injection.weight": {
+            "norm": 0.025174744427204132,
+            "zero_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "seed": 37,
+      "arm": "instant",
+      "checkpoint_sha256": "6e061f13c7e1510d401f18deec71d10dc8ca6f41f1b65bace5412753fb1ac2f8",
+      "score": {
+        "nll": 3.419373035430908,
+        "accuracy": 0.125,
+        "space_share": 0.984375,
+        "distinct_top1": 2,
+        "targets": 128
+      },
+      "audit": {
+        "activations": {
+          "frontend": {
+            "rms": 0.9686994552612305,
+            "mean_coordinate_std": 0.7219454050064087,
+            "abs_above_3": 0.000244140625,
+            "abs_above_095": 0.345703125
+          },
+          "controller": {
+            "rms": 1.241138219833374,
+            "mean_coordinate_std": 0.3809257447719574,
+            "abs_above_3": 0.0,
+            "abs_above_095": 0.56396484375
+          },
+          "proposal_hidden": {
+            "rms": 0.7815074324607849,
+            "mean_coordinate_std": 0.37696194648742676,
+            "abs_above_3": 0.0,
+            "abs_above_095": 0.255126953125
+          },
+          "proposal": {
+            "rms": 1.870954990386963,
+            "mean_coordinate_std": 0.7473615407943726,
+            "abs_above_3": 0.015380859375,
+            "abs_above_095": 0.8212890625
+          },
+          "readout": {
+            "rms": 0.8516088128089905,
+            "mean_coordinate_std": 0.1768702268600464,
+            "abs_above_3": 0.0,
+            "abs_above_095": 0.3671875
+          }
+        },
+        "gradients": {
+          "core.operator_embedding": {
+            "norm": 0.11779695004224777,
+            "zero_fraction": 0.5
+          },
+          "core.embedding.weight": {
+            "norm": 0.046324051916599274,
+            "zero_fraction": 0.875
+          },
+          "core.frontend.weight": {
+            "norm": 0.2638413906097412,
+            "zero_fraction": 0.0
+          },
+          "core.frontend.bias": {
+            "norm": 0.08510008454322815,
+            "zero_fraction": 0.0
+          },
+          "core.controller.weight": {
+            "norm": 0.916059136390686,
+            "zero_fraction": 0.0
+          },
+          "core.controller.bias": {
+            "norm": 0.19300171732902527,
+            "zero_fraction": 0.0
+          },
+          "core.first_address.weight": {
+            "norm": 0.08764495700597763,
+            "zero_fraction": 0.0
+          },
+          "core.first_address.bias": {
+            "norm": 0.02076094225049019,
+            "zero_fraction": 0.0
+          },
+          "core.second_address.weight": {
+            "norm": 0.0662219375371933,
+            "zero_fraction": 0.0
+          },
+          "core.second_address.bias": {
+            "norm": 0.015191040001809597,
+            "zero_fraction": 0.0
+          },
+          "core.destination.weight": {
+            "norm": 3.716442823410034,
+            "zero_fraction": 0.0
+          },
+          "core.destination.bias": {
+            "norm": 0.8620923757553101,
+            "zero_fraction": 0.0
+          },
+          "core.use_link.weight": {
+            "norm": 0.03808797150850296,
+            "zero_fraction": 0.0
+          },
+          "core.use_link.bias": {
+            "norm": 0.00829897727817297,
+            "zero_fraction": 0.0
+          },
+          "core.link_edit.weight": {
+            "norm": 0.0,
+            "zero_fraction": 1.0
+          },
+          "core.link_edit.bias": {
+            "norm": 0.0,
+            "zero_fraction": 1.0
+          },
+          "core.operator.weight": {
+            "norm": 0.01641049236059189,
+            "zero_fraction": 0.0
+          },
+          "core.operator.bias": {
+            "norm": 0.0043699233792722225,
+            "zero_fraction": 0.0
+          },
+          "core.transform.0.weight": {
+            "norm": 0.12937232851982117,
+            "zero_fraction": 0.25
+          },
+          "core.transform.0.bias": {
+            "norm": 0.0506741963326931,
+            "zero_fraction": 0.0
+          },
+          "core.transform.2.weight": {
+            "norm": 0.07914584130048752,
+            "zero_fraction": 0.0
+          },
+          "core.transform.2.bias": {
+            "norm": 0.03375694528222084,
+            "zero_fraction": 0.0
+          },
+          "core.write_gate.weight": {
+            "norm": 0.0757179856300354,
+            "zero_fraction": 0.0
+          },
+          "core.write_gate.bias": {
+            "norm": 0.01906203106045723,
+            "zero_fraction": 0.0
+          },
+          "core.value_edit.weight": {
+            "norm": 0.034263405948877335,
+            "zero_fraction": 0.0
+          },
+          "core.value_edit.bias": {
+            "norm": 0.008411659859120846,
+            "zero_fraction": 0.0
+          },
+          "core.output.weight": {
+            "norm": 0.4706783592700958,
+            "zero_fraction": 0.0
+          },
+          "core.output.bias": {
+            "norm": 0.10029087215662003,
+            "zero_fraction": 0.0
+          },
+          "driver.weight": {
+            "norm": 0.18043845891952515,
+            "zero_fraction": 0.0
+          },
+          "driver.bias": {
+            "norm": 0.07665231078863144,
+            "zero_fraction": 0.0
+          },
+          "injection.weight": {
+            "norm": 0.3268146216869354,
+            "zero_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "seed": 37,
+      "arm": "multi_tb64",
+      "checkpoint_sha256": "052693e86072d1944a385bc00ea4c94de5802f2a8f7f0c5d18bb4d4b62490ed9",
+      "score": {
+        "nll": 3.3756606578826904,
+        "accuracy": 0.1328125,
+        "space_share": 0.9765625,
+        "distinct_top1": 4,
+        "targets": 128
+      },
+      "audit": {
+        "activations": {
+          "frontend": {
+            "rms": 0.9702135920524597,
+            "mean_coordinate_std": 0.7596269845962524,
+            "abs_above_3": 0.000244140625,
+            "abs_above_095": 0.359375
+          },
+          "controller": {
+            "rms": 1.537387490272522,
+            "mean_coordinate_std": 0.6971407532691956,
+            "abs_above_3": 0.007080078125,
+            "abs_above_095": 0.673828125
+          },
+          "proposal_hidden": {
+            "rms": 1.953524112701416,
+            "mean_coordinate_std": 0.5533849596977234,
+            "abs_above_3": 0.0162353515625,
+            "abs_above_095": 0.8787841796875
+          },
+          "proposal": {
+            "rms": 2.804461717605591,
+            "mean_coordinate_std": 0.6124167442321777,
+            "abs_above_3": 0.3798828125,
+            "abs_above_095": 0.958740234375
+          },
+          "readout": {
+            "rms": 0.9425904750823975,
+            "mean_coordinate_std": 0.22281743586063385,
+            "abs_above_3": 0.0,
+            "abs_above_095": 0.8544921875
+          }
+        },
+        "gradients": {
+          "core.operator_embedding": {
+            "norm": 0.018925007432699203,
+            "zero_fraction": 0.25
+          },
+          "core.embedding.weight": {
+            "norm": 0.06045372039079666,
+            "zero_fraction": 0.875
+          },
+          "core.frontend.weight": {
+            "norm": 0.18458279967308044,
+            "zero_fraction": 0.0
+          },
+          "core.frontend.bias": {
+            "norm": 0.03643404319882393,
+            "zero_fraction": 0.0
+          },
+          "core.controller.weight": {
+            "norm": 0.14148756861686707,
+            "zero_fraction": 0.0
+          },
+          "core.controller.bias": {
+            "norm": 0.03621511906385422,
+            "zero_fraction": 0.0
+          },
+          "core.first_address.weight": {
+            "norm": 0.014843334443867207,
+            "zero_fraction": 0.0
+          },
+          "core.first_address.bias": {
+            "norm": 0.00476843910291791,
+            "zero_fraction": 0.0
+          },
+          "core.second_address.weight": {
+            "norm": 0.021290622651576996,
+            "zero_fraction": 0.0
+          },
+          "core.second_address.bias": {
+            "norm": 0.006411089561879635,
+            "zero_fraction": 0.0
+          },
+          "core.destination.weight": {
+            "norm": 0.17422699928283691,
+            "zero_fraction": 0.0
+          },
+          "core.destination.bias": {
+            "norm": 0.05256808176636696,
+            "zero_fraction": 0.0
+          },
+          "core.use_link.weight": {
+            "norm": 0.024494726210832596,
+            "zero_fraction": 0.0
+          },
+          "core.use_link.bias": {
+            "norm": 0.005978080444037914,
+            "zero_fraction": 0.0
+          },
+          "core.link_edit.weight": {
+            "norm": 0.0,
+            "zero_fraction": 1.0
+          },
+          "core.link_edit.bias": {
+            "norm": 0.0,
+            "zero_fraction": 1.0
+          },
+          "core.operator.weight": {
+            "norm": 0.0021123355254530907,
+            "zero_fraction": 0.0
+          },
+          "core.operator.bias": {
+            "norm": 0.000985906575806439,
+            "zero_fraction": 0.0
+          },
+          "core.transform.0.weight": {
+            "norm": 0.06323528289794922,
+            "zero_fraction": 0.0
+          },
+          "core.transform.0.bias": {
+            "norm": 0.014776740223169327,
+            "zero_fraction": 0.0
+          },
+          "core.transform.2.weight": {
+            "norm": 0.045936085283756256,
+            "zero_fraction": 0.0
+          },
+          "core.transform.2.bias": {
+            "norm": 0.010640639811754227,
+            "zero_fraction": 0.0
+          },
+          "core.write_gate.weight": {
+            "norm": 0.04863367974758148,
+            "zero_fraction": 0.0
+          },
+          "core.write_gate.bias": {
+            "norm": 0.03050265461206436,
+            "zero_fraction": 0.0
+          },
+          "core.value_edit.weight": {
+            "norm": 0.020549733191728592,
+            "zero_fraction": 0.0
+          },
+          "core.value_edit.bias": {
+            "norm": 0.014667853713035583,
+            "zero_fraction": 0.0
+          },
+          "core.output.weight": {
+            "norm": 0.5277634263038635,
+            "zero_fraction": 0.0
+          },
+          "core.output.bias": {
+            "norm": 0.09856117516756058,
+            "zero_fraction": 0.0
+          },
+          "driver.weight": {
+            "norm": 0.01610187254846096,
+            "zero_fraction": 0.0
+          },
+          "driver.bias": {
+            "norm": 0.012398946098983288,
+            "zero_fraction": 0.0
+          },
+          "injection.weight": {
+            "norm": 0.020614655688405037,
+            "zero_fraction": 0.0
+          }
+        }
+      }
+    }
+  ]
+}
