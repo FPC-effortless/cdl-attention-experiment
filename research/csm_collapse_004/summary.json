@@ -1,0 +1,30 @@
+{
+  "hard": {
+    "fit_nll": 0.10448514421780904,
+    "fit_accuracy": 0.9817708333333334,
+    "criterion_passes": 3,
+    "adjacent_nll": 4.59316619237264,
+    "dev_nll": 6.064516703287761
+  },
+  "soft_routes": {
+    "fit_nll": 0.11251707995931308,
+    "fit_accuracy": 0.9869791666666666,
+    "criterion_passes": 3,
+    "adjacent_nll": 4.2176462809244795,
+    "dev_nll": 5.818281809488933
+  },
+  "soft_admission": {
+    "fit_nll": 1.2173103143771489,
+    "fit_accuracy": 0.6979166666666666,
+    "criterion_passes": 2,
+    "adjacent_nll": 3.9267615477244058,
+    "dev_nll": 5.147214968999227
+  },
+  "residual_front": {
+    "fit_nll": 0.05780711273352305,
+    "fit_accuracy": 0.9739583333333334,
+    "criterion_passes": 3,
+    "adjacent_nll": 4.36251703898112,
+    "dev_nll": 5.954064051310222
+  }
+}

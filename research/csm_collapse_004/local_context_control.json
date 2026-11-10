@@ -1,0 +1,23 @@
+{
+  "scope": "Post-fit descriptive lookup on the same training excerpt; no generalization or matched-budget claim",
+  "rows": [
+    {
+      "context_bytes": 1,
+      "unique_contexts": 32,
+      "training_lookup_accuracy": 0.46875,
+      "empirical_conditional_nll": 1.2437253928898515
+    },
+    {
+      "context_bytes": 2,
+      "unique_contexts": 83,
+      "training_lookup_accuracy": 0.8515625,
+      "empirical_conditional_nll": 0.2437904231138742
+    },
+    {
+      "context_bytes": 3,
+      "unique_contexts": 102,
+      "training_lookup_accuracy": 0.953125,
+      "empirical_conditional_nll": 0.06907042430065541
+    }
+  ]
+}

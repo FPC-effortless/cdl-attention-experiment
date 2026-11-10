@@ -1,0 +1,224 @@
+{
+  "status": "PASS",
+  "checkpoint_replays": 12,
+  "panel_scores": 36,
+  "max_error": 0.0,
+  "rows": [
+    {
+      "seed": 11,
+      "arm": "hard",
+      "panel": "fit",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 11,
+      "arm": "hard",
+      "panel": "adjacent_train",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 11,
+      "arm": "hard",
+      "panel": "exposed_dev",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 11,
+      "arm": "soft_routes",
+      "panel": "fit",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 11,
+      "arm": "soft_routes",
+      "panel": "adjacent_train",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 11,
+      "arm": "soft_routes",
+      "panel": "exposed_dev",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 11,
+      "arm": "soft_admission",
+      "panel": "fit",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 11,
+      "arm": "soft_admission",
+      "panel": "adjacent_train",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 11,
+      "arm": "soft_admission",
+      "panel": "exposed_dev",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 11,
+      "arm": "residual_front",
+      "panel": "fit",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 11,
+      "arm": "residual_front",
+      "panel": "adjacent_train",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 11,
+      "arm": "residual_front",
+      "panel": "exposed_dev",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 23,
+      "arm": "hard",
+      "panel": "fit",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 23,
+      "arm": "hard",
+      "panel": "adjacent_train",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 23,
+      "arm": "hard",
+      "panel": "exposed_dev",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 23,
+      "arm": "soft_routes",
+      "panel": "fit",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 23,
+      "arm": "soft_routes",
+      "panel": "adjacent_train",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 23,
+      "arm": "soft_routes",
+      "panel": "exposed_dev",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 23,
+      "arm": "soft_admission",
+      "panel": "fit",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 23,
+      "arm": "soft_admission",
+      "panel": "adjacent_train",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 23,
+      "arm": "soft_admission",
+      "panel": "exposed_dev",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 23,
+      "arm": "residual_front",
+      "panel": "fit",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 23,
+      "arm": "residual_front",
+      "panel": "adjacent_train",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 23,
+      "arm": "residual_front",
+      "panel": "exposed_dev",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 37,
+      "arm": "hard",
+      "panel": "fit",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 37,
+      "arm": "hard",
+      "panel": "adjacent_train",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 37,
+      "arm": "hard",
+      "panel": "exposed_dev",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 37,
+      "arm": "soft_routes",
+      "panel": "fit",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 37,
+      "arm": "soft_routes",
+      "panel": "adjacent_train",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 37,
+      "arm": "soft_routes",
+      "panel": "exposed_dev",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 37,
+      "arm": "soft_admission",
+      "panel": "fit",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 37,
+      "arm": "soft_admission",
+      "panel": "adjacent_train",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 37,
+      "arm": "soft_admission",
+      "panel": "exposed_dev",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 37,
+      "arm": "residual_front",
+      "panel": "fit",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 37,
+      "arm": "residual_front",
+      "panel": "adjacent_train",
+      "absolute_nll_error": 0.0
+    },
+    {
+      "seed": 37,
+      "arm": "residual_front",
+      "panel": "exposed_dev",
+      "absolute_nll_error": 0.0
+    }
+  ]
+}
