@@ -1,0 +1,119 @@
+{
+  "answer_exposures": 24576,
+  "control_cells_recomputed": 30,
+  "elapsed_s": 21.009882091995678,
+  "limits": [
+    "Eight independent base blocks; shifts/depths/regimes/queries correlated.",
+    "Historical Transformer answer-only supervision differs.",
+    "Aggregate controller counters were not independently replayed in full.",
+    "Native replay is sampled, not all predictions; all saved metrics are independently recomputed.",
+    "No fits, timing, scientific promotion, external replication or broad efficiency claim."
+  ],
+  "metric_cells_recomputed": 138,
+  "raw_prediction_counts": {
+    "changing_state_001": 27648,
+    "slot_control_001": 7680
+  },
+  "replay": [
+    {
+      "arm": "slot_store",
+      "checkpoint_sha256": "45c7f6d6760c1ef0dde9c3d34f308fd24e177840bb9068dacbebdb2ed589272a",
+      "predictions_replayed": 128,
+      "seed": 101
+    },
+    {
+      "arm": "slot_store",
+      "checkpoint_sha256": "53ab68a18fd8562de7cc6d4d03d8f386b8c9b1e35cc7061f5933adff666f8433",
+      "predictions_replayed": 128,
+      "seed": 202
+    },
+    {
+      "arm": "slot_store",
+      "checkpoint_sha256": "424641e3982b06f1d54098f887111d876b4d06ff943f62ce3549785e84f10edd",
+      "predictions_replayed": 128,
+      "seed": 303
+    },
+    {
+      "arm": "supervised",
+      "checkpoint_sha256": "cd658528ba361ce3498bec81113741783a7b964df1e660c71e820db3b6185197",
+      "predictions_replayed": 128,
+      "seed": 101
+    },
+    {
+      "arm": "supervised",
+      "checkpoint_sha256": "e415d00e1df236f12d0c1bd7adf27bc2fb6e1a0a558d8a7b03b6662cfd979b1e",
+      "predictions_replayed": 128,
+      "seed": 202
+    },
+    {
+      "arm": "supervised",
+      "checkpoint_sha256": "650b50678230beb4a2007272a4378dafb3cf7829cc7a276e1f64b6b3763aa43b",
+      "predictions_replayed": 128,
+      "seed": 303
+    },
+    {
+      "arm": "raw",
+      "checkpoint_sha256": "c0e1147c622339710cbea560b83c84906b9a203c9db42b2775a38e8f121cbfc0",
+      "predictions_replayed": 128,
+      "seed": 101
+    },
+    {
+      "arm": "raw",
+      "checkpoint_sha256": "07f961cfa5ed411594586a53f15d33487ed892a8e634e1c387611e0e21f84d45",
+      "predictions_replayed": 128,
+      "seed": 202
+    },
+    {
+      "arm": "raw",
+      "checkpoint_sha256": "a5c5e859c049957a6c8ef6d89e26ca38a10936673f2de94dc0601815adc72f05",
+      "predictions_replayed": 128,
+      "seed": 303
+    },
+    {
+      "arm": "supplied_controller",
+      "checkpoint_sha256": "1e9ea6a35f705c049cf6fc640b10d21484de1620f25f5c2f1e18277d87bc40d8",
+      "predictions_replayed": 128,
+      "seed": 101
+    },
+    {
+      "arm": "supplied_controller",
+      "checkpoint_sha256": "8323f4438a5069e00a3a5eaa594d4e47ff086a9b27a1f6a5776958358e5fe09b",
+      "predictions_replayed": 128,
+      "seed": 202
+    },
+    {
+      "arm": "supplied_controller",
+      "checkpoint_sha256": "1d596656a3b2a5b7bfcb101c63f042c690d6000561d3b1effb96d25229bf25a9",
+      "predictions_replayed": 128,
+      "seed": 303
+    },
+    {
+      "arm": "transformer",
+      "checkpoint_sha256": "012ea2930f903ba48b2e2c0df6c932c29ffb34938f0250af4e0995391af321f6",
+      "predictions_replayed": 64,
+      "seed": 101
+    },
+    {
+      "arm": "transformer",
+      "checkpoint_sha256": "ff28ca23121e609f9bb7dee2bcee291eb74197cd7b8c22fbc907a01203c2ef6d",
+      "predictions_replayed": 64,
+      "seed": 202
+    },
+    {
+      "arm": "transformer",
+      "checkpoint_sha256": "7f3eecf2c84d4fcaf08cfc8fba8644f53ec7c8e080a7a5622d2ef4b90c8a08ad",
+      "predictions_replayed": 64,
+      "seed": 303
+    }
+  ],
+  "replayed_predictions": 1728,
+  "source_and_prediction_hashes": {
+    "changing_state_001/freeze.json": "183b959792c8767d2ab56e621c0080803e5aa87a8024980a71bca8585e89036e",
+    "changing_state_001/predictions.jsonl": "fc0c7c6fb48f1e915edc91f537ecfd9ef1c18604236a6c45743bbc8831c2dccf",
+    "slot_control_001/freeze.json": "a3143df3d74cac89230be2fa19e80f619554ce74c379cab7f6c82516c1da53a7",
+    "slot_control_001/predictions.jsonl": "d436becae304520bca5f66a2f90459754746b2e51ef05ef4d9605f99be71316c"
+  },
+  "status": "PASS",
+  "torch": "2.5.1+cpu",
+  "training_updates": 768
+}

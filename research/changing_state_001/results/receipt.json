@@ -1,0 +1,33 @@
+{
+  "device": "cpu",
+  "elapsed_s": 154.57817268399958,
+  "evaluation_kind": "instrumented batched independent query replay, not session timing",
+  "freeze_sha256": "183b959792c8767d2ab56e621c0080803e5aa87a8024980a71bca8585e89036e",
+  "loaded_modules": {
+    "csm_address_reference_baselines": {
+      "path": "/workspace/scratch/a74a27d116f3/recovered/experiments/csm_foundation_001/baselines.py",
+      "sha256": "f67e1559b8a2024f488413543a16a930dbcaa5fcd2ad1767c2888a9cf38ffd1d"
+    },
+    "csm_address_reference_model": {
+      "path": "/workspace/scratch/a74a27d116f3/recovered/experiments/csm_foundation_001/model.py",
+      "sha256": "f496837236ea1f53939d29776255bfba8f1d02512a8b52f581a79d94134a4234"
+    },
+    "data": {
+      "path": "/workspace/scratch/a74a27d116f3/recovered/experiments/csm_address_002/data.py",
+      "sha256": "92b7b7d91aa12a0c1f4b3fe409832631d99c69383a423996ffbe26a1f16ca1a7"
+    },
+    "model_adapter": {
+      "path": "/workspace/scratch/a74a27d116f3/recovered/experiments/csm_address_002/model_adapter.py",
+      "sha256": "6282b590f4205ee024f8b1710ce18c9db416cdfe1f65fd6271db519994804b40"
+    }
+  },
+  "numpy": "2.3.5",
+  "pid": 5,
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "predictions_sha256": "fc0c7c6fb48f1e915edc91f537ecfd9ef1c18604236a6c45743bbc8831c2dccf",
+  "python": "3.12.14",
+  "runtime_executable": "/workspace/scratch/a74a27d116f3/venv/bin/python",
+  "threads": 1,
+  "torch": "2.5.1+cpu",
+  "weights_unchanged": true
+}

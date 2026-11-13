@@ -1,0 +1,6 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "cpu_count": 9,
+  "cpu_model": "model name\t: INTEL(R) XEON(R) PLATINUM 8573C"
+}

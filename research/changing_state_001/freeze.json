@@ -1,0 +1,44 @@
+{
+  "checkpoints": {
+    "raw_101": "c0e1147c622339710cbea560b83c84906b9a203c9db42b2775a38e8f121cbfc0",
+    "raw_202": "07f961cfa5ed411594586a53f15d33487ed892a8e634e1c387611e0e21f84d45",
+    "raw_303": "a5c5e859c049957a6c8ef6d89e26ca38a10936673f2de94dc0601815adc72f05",
+    "supervised_101": "cd658528ba361ce3498bec81113741783a7b964df1e660c71e820db3b6185197",
+    "supervised_202": "e415d00e1df236f12d0c1bd7adf27bc2fb6e1a0a558d8a7b03b6662cfd979b1e",
+    "supervised_303": "650b50678230beb4a2007272a4378dafb3cf7829cc7a276e1f64b6b3763aa43b",
+    "supplied_controller_101": "1e9ea6a35f705c049cf6fc640b10d21484de1620f25f5c2f1e18277d87bc40d8",
+    "supplied_controller_202": "8323f4438a5069e00a3a5eaa594d4e47ff086a9b27a1f6a5776958358e5fe09b",
+    "supplied_controller_303": "1d596656a3b2a5b7bfcb101c63f042c690d6000561d3b1effb96d25229bf25a9",
+    "transformer_101": "012ea2930f903ba48b2e2c0df6c932c29ffb34938f0250af4e0995391af321f6",
+    "transformer_202": "ff28ca23121e609f9bb7dee2bcee291eb74197cd7b8c22fbc907a01203c2ef6d",
+    "transformer_303": "7f3eecf2c84d4fcaf08cfc8fba8644f53ec7c8e080a7a5622d2ef4b90c8a08ad"
+  },
+  "checks": {
+    "exact_answer_balance": true,
+    "families_per_panel": 64,
+    "independent_data_unit": "base block; eight value shifts are correlated",
+    "paired_value_shift_blocks": 8,
+    "panels": 10,
+    "queries": 2560,
+    "train_complete_history_overlap": 0,
+    "worlds": 640
+  },
+  "dependencies": {
+    "experiments/csm_address_002/data.py": "92b7b7d91aa12a0c1f4b3fe409832631d99c69383a423996ffbe26a1f16ca1a7",
+    "experiments/csm_address_002/model_adapter.py": "6282b590f4205ee024f8b1710ce18c9db416cdfe1f65fd6271db519994804b40",
+    "experiments/csm_address_002/prefit_manifest.json": "8c65a183c517e4aa24a5a370c4322d7d59b02a152d23f77bd8ba942fcbdbd8a1",
+    "experiments/csm_foundation_001/baselines.py": "f67e1559b8a2024f488413543a16a930dbcaa5fcd2ad1767c2888a9cf38ffd1d",
+    "experiments/csm_foundation_001/model.py": "f496837236ea1f53939d29776255bfba8f1d02512a8b52f581a79d94134a4234"
+  },
+  "files": {
+    "PROTOCOL.md": "955c6210e005f93cdff189b7e638b009e8c898946259f5e719b778f3a4cde0ce",
+    "lifecycle.py": "9648d975c6f32ced7ca7b15e8988119d15219d005e224f788bb543cdcaac8a6e",
+    "run_frozen.py": "2d050cc3a0efad066b564b1313290aa4281e4fe67c052918c574ec7d8268244a",
+    "stress_data.py": "8dc2f8e619511e69c10369eeedb4a23abec23896de05b6f2ca857ca914561f41",
+    "test_lifecycle.py": "0d7cc6863f7fa6f63102127e70b9748b3217f8fed3d2f10f341451263372f2cd",
+    "test_stress.py": "6114b355154fbaa5a19b4028fb132e4bcc6f1b466f1fd9406929d0adc2d2a2ac",
+    "worlds.json": "18e9c8cad9b13c7512586c76cbc50a0a82e2dfe40a5bd398a83b41c732435284"
+  },
+  "status": "development diagnostic; no new fits; no protected TEST",
+  "time_utc": "2026-11-13T20:35:20Z"
+}

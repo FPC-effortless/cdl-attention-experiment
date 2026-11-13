@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "experiments/csm_address_002/data.py": "92b7b7d91aa12a0c1f4b3fe409832631d99c69383a423996ffbe26a1f16ca1a7",
+    "experiments/csm_address_002/model_adapter.py": "6282b590f4205ee024f8b1710ce18c9db416cdfe1f65fd6271db519994804b40",
+    "experiments/csm_address_002/prefit_manifest.json": "8c65a183c517e4aa24a5a370c4322d7d59b02a152d23f77bd8ba942fcbdbd8a1",
+    "experiments/csm_foundation_001/baselines.py": "f67e1559b8a2024f488413543a16a930dbcaa5fcd2ad1767c2888a9cf38ffd1d",
+    "experiments/csm_foundation_001/model.py": "f496837236ea1f53939d29776255bfba8f1d02512a8b52f581a79d94134a4234"
+  },
+  "note": "Additional read-only dependency verification after sampled replay; no source changes or neural rerun.",
+  "status": "PASS"
+}

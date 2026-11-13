@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "metric_cells": 138,
+  "raw_predictions": 35328,
+  "replayed": 1728,
+  "elapsed_s": 21.009882091995678
+}

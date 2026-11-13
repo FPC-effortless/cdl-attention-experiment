@@ -1,0 +1,18 @@
+{
+  "files": {
+    "PROTOCOL.md": "f826bc9d7e3f2ec5f5d947071c9e02d575bedb7ed5c5db18d736af75fe80c853",
+    "model.py": "48df5c75d2a4da1e5a1f39b028f4bdc793e15d4a71a58e9261484d3410f86992",
+    "run.py": "cdd6dce82a28ea836032d7fc622ae29301d9938b7847ce3bacb83261418599e1",
+    "test_model.py": "f233f61ae044dfc85b5bfb892c56ea01d7c132eb220c34308c93e17dcd559342",
+    "timing.py": "394f4a8e62eea801b13c400dbbca6f4cccd670500961accb123e6ba43cd2943f"
+  },
+  "historical_config_sha256": "b5c45d0b727f9fac274b1b70d2834aedfabb894dfdc5e0e319001ff3802f1a36",
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "stress_freeze_sha256": "183b959792c8767d2ab56e621c0080803e5aa87a8024980a71bca8585e89036e",
+  "time_utc": "2026-11-13T20:39:30Z",
+  "training_data_sha256": "1d7f1881d1a01f219610954bfdb68618b19076df932b1eb6c246dbd569aafbfb"
+}

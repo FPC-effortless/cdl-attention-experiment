@@ -1,0 +1,21 @@
+{
+  "independently_parsed_query_streams": 2560,
+  "limits": [
+    "Small exhaustive lifecycle alphabet: two keys/two values, four events; includes a third absent query key.",
+    "Public development fixture, only eight independent base blocks.",
+    "No runtime replay, scientific comparison, confidence interval or performance qualification."
+  ],
+  "neural_execution": false,
+  "prefix_query_comparisons": 607500,
+  "reviewed_files": {
+    "PROTOCOL.md": "955c6210e005f93cdff189b7e638b009e8c898946259f5e719b778f3a4cde0ce",
+    "lifecycle.py": "9648d975c6f32ced7ca7b15e8988119d15219d005e224f788bb543cdcaac8a6e",
+    "run_frozen.py": "2d050cc3a0efad066b564b1313290aa4281e4fe67c052918c574ec7d8268244a",
+    "stress_data.py": "8dc2f8e619511e69c10369eeedb4a23abec23896de05b6f2ca857ca914561f41",
+    "test_lifecycle.py": "0d7cc6863f7fa6f63102127e70b9748b3217f8fed3d2f10f341451263372f2cd",
+    "test_stress.py": "6114b355154fbaa5a19b4028fb132e4bcc6f1b466f1fd9406929d0adc2d2a2ac"
+  },
+  "status": "PASS",
+  "trace_count": 50625,
+  "training": false
+}

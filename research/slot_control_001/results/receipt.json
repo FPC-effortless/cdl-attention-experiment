@@ -1,0 +1,10 @@
+{
+  "closure_sha256": "615eae57fafb3569ba455ff225e1c79be6fa3c746eff60e6508f3106cb9acef2",
+  "freeze_sha256": "a3143df3d74cac89230be2fa19e80f619554ce74c379cab7f6c82516c1da53a7",
+  "numpy": "2.3.5",
+  "pid": 5,
+  "predictions_sha256": "d436becae304520bca5f66a2f90459754746b2e51ef05ef4d9605f99be71316c",
+  "python": "3.12.14",
+  "torch": "2.5.1+cpu",
+  "weights_unchanged": true
+}
