@@ -1,0 +1,15 @@
+test_cycles_break_and_self_copy (test_lifecycle.LifecycleTests.test_cycles_break_and_self_copy) ... ok
+test_delete_recreate_dangling_and_unknown_copy (test_lifecycle.LifecycleTests.test_delete_recreate_dangling_and_unknown_copy) ... ok
+test_generated_differential_prefixes (test_lifecycle.LifecycleTests.test_generated_differential_prefixes) ... ok
+test_reject_bad_events (test_lifecycle.LifecycleTests.test_reject_bad_events) ... ok
+test_snapshot_and_live_reference (test_lifecycle.LifecycleTests.test_snapshot_and_live_reference) ... ok
+test_untouched_records_and_pure_queries (test_lifecycle.LifecycleTests.test_untouched_records_and_pure_queries) ... ok
+test_balance_shape_and_reproducibility (test_stress.StressTests.test_balance_shape_and_reproducibility) ... ok
+test_excludes_train_history (test_stress.StressTests.test_excludes_train_history) ... ok
+test_metric_denominators (test_stress.StressTests.test_metric_denominators) ... ok
+test_one_changed_preservation (test_stress.StressTests.test_one_changed_preservation) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.796s
+
+OK

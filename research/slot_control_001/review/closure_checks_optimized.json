@@ -1,0 +1,18 @@
+{
+  "cases": {
+    "budget": "REJECT",
+    "checkpoint": "REJECT",
+    "duplicates": "REJECT",
+    "early": "REJECT",
+    "freeze": "REJECT",
+    "log": "REJECT",
+    "missing": "REJECT",
+    "receipt_mismatch": "REJECT",
+    "schedule": "REJECT",
+    "steps": "REJECT",
+    "valid": "ACCEPT"
+  },
+  "scope": "Generated temporary receipts. verify() mocked only to isolate closure logic; no genuine training claim or neural execution.",
+  "source_sha256": "c7a69caf4ce4f827422d276e06d8eb37ebf59755ab6d83e718d27d6ef4e15506",
+  "status": "PASS"
+}

@@ -1,0 +1,10 @@
+test_causality_and_step_parity (test_model.ModelTests.test_causality_and_step_parity) ... ok
+test_fresh_states_do_not_alias (test_model.ModelTests.test_fresh_states_do_not_alias) ... ok
+test_labels_not_accepted (test_model.ModelTests.test_labels_not_accepted) ... ok
+test_no_admission_preserves_values (test_model.ModelTests.test_no_admission_preserves_values) ... ok
+test_parameters (test_model.ModelTests.test_parameters) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.043s
+
+OK

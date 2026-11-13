@@ -1,0 +1,26 @@
+[
+  {
+    "updates": 1,
+    "csm_median_ms": 10.978287,
+    "slot_median_ms": 4.042158,
+    "median_paired_csm_over_slot": 2.564761460409379,
+    "paired_measurements": 144,
+    "pairs_slot_slower": 0
+  },
+  {
+    "updates": 16,
+    "csm_median_ms": 35.63862,
+    "slot_median_ms": 13.643033,
+    "median_paired_csm_over_slot": 2.5779142663290897,
+    "paired_measurements": 144,
+    "pairs_slot_slower": 2
+  },
+  {
+    "updates": 256,
+    "csm_median_ms": 419.9259805,
+    "slot_median_ms": 166.5443705,
+    "median_paired_csm_over_slot": 2.5309405817310506,
+    "paired_measurements": 144,
+    "pairs_slot_slower": 0
+  }
+]

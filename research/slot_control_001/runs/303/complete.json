@@ -1,0 +1,17 @@
+{
+  "answer_exposures": 8192,
+  "checkpoint_sha256": "424641e3982b06f1d54098f887111d876b4d06ff943f62ce3549785e84f10edd",
+  "device": "cpu",
+  "elapsed_s": 7.472749152002507,
+  "freeze_sha256": "a3143df3d74cac89230be2fa19e80f619554ce74c379cab7f6c82516c1da53a7",
+  "numpy": "2.3.5",
+  "parameters": 18254,
+  "pid": 10,
+  "python": "3.12.14",
+  "schedule_sha256": "608de3cd150dde9dfbe6756cd0ef47c0500342348e9f7ed9c720c78495f60fec",
+  "seed": 303,
+  "threads": 1,
+  "torch": "2.5.1+cpu",
+  "training_log_sha256": "82eb1ab73b617d3d4670ce1813fc07ce8adb91038494b3b11817e84199b5599c",
+  "updates": 256
+}

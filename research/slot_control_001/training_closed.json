@@ -1,0 +1,56 @@
+{
+  "all_three_closed_before_stress_scoring": true,
+  "runs": [
+    {
+      "answer_exposures": 8192,
+      "checkpoint_sha256": "45c7f6d6760c1ef0dde9c3d34f308fd24e177840bb9068dacbebdb2ed589272a",
+      "device": "cpu",
+      "elapsed_s": 9.576912094002182,
+      "freeze_sha256": "a3143df3d74cac89230be2fa19e80f619554ce74c379cab7f6c82516c1da53a7",
+      "numpy": "2.3.5",
+      "parameters": 18254,
+      "pid": 10,
+      "python": "3.12.14",
+      "schedule_sha256": "898968c99aeafcc741ee38ec394bae04acc6d3b67a5c27c2202b73550159a479",
+      "seed": 101,
+      "threads": 1,
+      "torch": "2.5.1+cpu",
+      "training_log_sha256": "bd843044940308074b69a559820f1699d5d45f5422c38e7d1f0bac26f2cfb922",
+      "updates": 256
+    },
+    {
+      "answer_exposures": 8192,
+      "checkpoint_sha256": "53ab68a18fd8562de7cc6d4d03d8f386b8c9b1e35cc7061f5933adff666f8433",
+      "device": "cpu",
+      "elapsed_s": 7.33144310300122,
+      "freeze_sha256": "a3143df3d74cac89230be2fa19e80f619554ce74c379cab7f6c82516c1da53a7",
+      "numpy": "2.3.5",
+      "parameters": 18254,
+      "pid": 10,
+      "python": "3.12.14",
+      "schedule_sha256": "2c007ed446f8809139f2c4f1d09ebe125484dcf223db8e7e9d25128194c285b6",
+      "seed": 202,
+      "threads": 1,
+      "torch": "2.5.1+cpu",
+      "training_log_sha256": "6a85206390834149adace2ad0c1826a887e92fbadcfb2d7a123b5a0c00d59ebe",
+      "updates": 256
+    },
+    {
+      "answer_exposures": 8192,
+      "checkpoint_sha256": "424641e3982b06f1d54098f887111d876b4d06ff943f62ce3549785e84f10edd",
+      "device": "cpu",
+      "elapsed_s": 7.472749152002507,
+      "freeze_sha256": "a3143df3d74cac89230be2fa19e80f619554ce74c379cab7f6c82516c1da53a7",
+      "numpy": "2.3.5",
+      "parameters": 18254,
+      "pid": 10,
+      "python": "3.12.14",
+      "schedule_sha256": "608de3cd150dde9dfbe6756cd0ef47c0500342348e9f7ed9c720c78495f60fec",
+      "seed": 303,
+      "threads": 1,
+      "torch": "2.5.1+cpu",
+      "training_log_sha256": "82eb1ab73b617d3d4670ce1813fc07ce8adb91038494b3b11817e84199b5599c",
+      "updates": 256
+    }
+  ]
+}
