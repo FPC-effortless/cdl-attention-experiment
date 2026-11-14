@@ -1,0 +1,66 @@
+{
+  "experiment": "LIFECYCLE-LEARNING-001",
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "updates_per_fit": 512,
+  "batch_size": 32,
+  "parameters": {
+    "csm": 18359,
+    "pointer_slot": 18357
+  },
+  "mean_results": {
+    "csm": {
+      "erase_values": {
+        "mean_accuracy": 0.06474358974358975,
+        "mean_complete_map": 0.0,
+        "query_preserved_fraction": 1.0
+      },
+      "identity_links": {
+        "mean_accuracy": 0.8557692307692308,
+        "mean_complete_map": 0.4948717948717949,
+        "query_preserved_fraction": 1.0
+      },
+      "normal": {
+        "mean_accuracy": 0.9141025641025641,
+        "mean_complete_map": 0.7051282051282052,
+        "query_preserved_fraction": 1.0
+      },
+      "supplied_control": {
+        "mean_accuracy": 0.9147435897435897,
+        "mean_complete_map": 0.7076923076923077,
+        "query_preserved_fraction": 1.0
+      }
+    },
+    "pointer_slot": {
+      "erase_values": {
+        "mean_accuracy": 0.10448717948717949,
+        "mean_complete_map": 0.0,
+        "query_preserved_fraction": 1.0
+      },
+      "identity_links": {
+        "mean_accuracy": 0.7480769230769231,
+        "mean_complete_map": 0.2435897435897436,
+        "query_preserved_fraction": 1.0
+      },
+      "normal": {
+        "mean_accuracy": 0.8032051282051281,
+        "mean_complete_map": 0.38974358974358975,
+        "query_preserved_fraction": 1.0
+      },
+      "supplied_control": {
+        "mean_accuracy": 0.8057692307692307,
+        "mean_complete_map": 0.39999999999999997,
+        "query_preserved_fraction": 1.0
+      }
+    }
+  },
+  "raw_predictions_sha256": "48f262c447742eb2f675f1edbb1445138a997a61ec68983e3579019ef9f2ec6b",
+  "review": {
+    "rescored": 12480,
+    "replayed": 960
+  },
+  "qualification": "KNOWN_TEMPLATE_DEVELOPMENT_ONLY"
+}
