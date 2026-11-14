@@ -1,0 +1,27 @@
+# SET-REPAIR-001 — matched continuation with a SET-state invariance objective
+
+14 November2026. Follow completed OVERWRITE-PATHS-051 / CDL#60 commit e05829fd7c9af377e7ccb53fa7343fe4b8c0863c. The intervention that zeroed old-row inputs was diagnostic. This experiment tests a learned objective repair with normal raw-token inference. Existing model architecture unchanged; no oracle interventions during training or normal evaluation. Scope: known-template development repair, not architectural superiority or general memory qualification.
+
+## Fixed treatment and budget
+
+Clone each of the six closed LIFECYCLE-LEARNING-001 final checkpoints into two continuation arms: control and invariance. Reset AdamW in both (lr.002,weight_decay.01), clipnorm1, CPUfloat32/one thread,256 updates of16 pairs=32 sequences,8192 answer exposures per fit. Same original checkpoint, seed-specific schedule, process labels, paired examples, forward captures and loss calculations for both.12 fits total, no tuning/retries/early stopping;180seconds per fit, maximum36CPU process-minutes, expected roughly5minutes based on previous512-step runs. Stop and retain failed attempts. No paid/GPU/provider work or infrastructure changes.
+
+Both arms optimize original answer and process-head objective. At event5's SET commit(token17), capture only the target root value row with gradients attached. For each paired old-value history, compute mean squared difference between those two root rows, averaged over16 pairs and32 dimensions. Control loss=original+0*MSE; invariance loss=original+1*MSE. Computing the term in both equalizes the added computation shape, but observed runtime and training work must still be reported; no equal-FLOP/cost claim. This is an added semantic constraint, not identical effective objectives or new architecture. Do not constrain COPY snapshots, other rows, or paired final answers.
+
+## Data and closure
+
+Generate800 paired groups with seed520011. Each pair has two histories differing only in the root's initial old value (two distinct values sampled from8). Four keys initialized in random order; event4 COPY or LINK root into alias; event5 SET root to shared new value. Five panels: overwrite; DELETEroot; DELETEalias; detach alias with SET; DELETEroot then COPYspare from absent root. The last directly observes absence; no recreation claim. Values/roles vary. Final input remains27tokens including padded events plus QUERY. Correct answers independently derived for each world; COPY-alias answers may differ across the pair.
+
+All1600 full token histories must be distinct, labels checked by independent forward/backward oracles, and shared-root truth afterevent5 equal. Existing Forge groups the two worlds into one row and assigns640 train/80 validation/80 unused groups with fixedsalt. Group identities are assignment units, not independent causal mechanisms. Train/query schedules sampled once perseed and hashed; same queried key for both worlds in a pair. Validation and third partition receive no model scoring before12 fits close. The third partition is generated/integrity-checked but never used by model training/evaluation. No historical parent dataset used. New histories differ structurally from original training (four initial SETs before COPY/LINK rather than three).
+
+After all12 fits close, evaluate six starting checkpoints and12 continuations on the same new validation bank, all4queries perworld. Conditions: normal and erase-values just before QUERY; erased state is a diagnostic, not performance. Also evaluate the existing288 target-only old/new grid normally as a known secondary DEV diagnostic, not a fresh holdout. No model selection or retraining after any evaluation. Preserve full predictions, checkpoints/optimizer state, update logs, source/runtime/recipe pins and receipts through Forge→TrainLab→Veritas→ResearchLab.
+
+## Outcomes fixed before fitting
+
+Report perseed/architecture/stage: validation query accuracy; complete-map accuracy; eachtemplate×focal-op and role; UNKNOWN and concrete accuracy; query preservation; normal-minus-erased dependence. Secondary: empty-row, same-value and changed-value counts. Paired continuation-control comparisons are primary; starting-checkpoint comparisons reveal effects of additional training and are descriptive.
+
+A repair passes the descriptive screen for an architecture only if: mean query and mean complete-map accuracy improve over continuation control; everyseed query delta>=0; no template×seed query drop exceeds2percentagepoints; no seed's secondary same-value accuracy regresses; normal query preservation remains100%. This is a screen, not a statistical or architectural admission gate. Report all failures and rescue/harm counts; no significance claim from correlated queries.
+
+Record root vectors afterevent5 in normal validation. Report paired old-value MSE together with norms, total representation variance and between-new-value separation; row-MSE can decrease via shrinking/rescaling. These are descriptive diagnostics, not proof of useful invariance. A learned improvement must also improve answers and preserve other operations.
+
+Independent prefit source/native review, then exact frozen dispatch; independent postfit rescoring, schedule/initial-weight verification and bounded native replay. Random-initialized software tests are not research fits. All new models' validation results remain unopened until the full training closure.
