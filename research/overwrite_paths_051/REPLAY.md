@@ -1,0 +1,9 @@
+# Reproduction and interpretation
+
+Restore the exact source commit and overlay the private evidence package's research/ entries only where files are absent or identical. This source is stacked on CDL#59 and retains the unchanged six-checkpoint parent implementation. Parent closure/receipts are needed by the restricted verifier; historical parent datasets are neither needed nor included. Package versions, source trees, Python/Torch identity and recorded absolute torch path must match `freeze.json`; a different environment requires explicit requalification, not silent hash bypass.
+
+`run.py prepare` and `run.py run DISPATCH_SHA256` are one-shot preparation/inference actions and should not be invoked in a completed evidence directory. `run.py finalize` only verifies, recomputes summaries and imports existing completed output; it does not invoke a model. Three state views per prediction are stored in `state_traces.npz`, aligned by each JSONL record's `trace_index`: after final SET, before QUERY, and final query scratch row. Captures do not replace the original computation.
+
+Use the recorded TrainLab `verify_run` receipt and checkpoint before/after hashes. `factorial_summary.summarize` recomputes aggregate tables from all13,824 JSONL records. Six `test_native` tests concern random initialized software behavior, not trained-model performance. Any reviewer replay is an audit of the same cases/checkpoints, not another scientific seed.
+
+The native preflight source correction is disclosed in DEVIATIONS.md. All research inputs, executable assay and summary code were frozen before the trained-checkpoint run. RESULTS.md/REPLAY.md and packaging metadata are post-execution reporting artifacts. The copied050 candidate source retains its historical 'unexecuted' docstring; the new051 receipts, rather than that earlier header, establish the native checks actually performed.

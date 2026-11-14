@@ -1,0 +1,1401 @@
+{
+  "experiment": "OVERWRITE-PATHS-051",
+  "predictions": 13824,
+  "model_fits": 0,
+  "scope": "FROZEN_POST_HOC_PATHWAY_DIAGNOSTIC_NOT_LEARNED_QUALIFICATION",
+  "full_result_sha256": "1e92cc9e745120443f5e382562fb34149ef5fcb16201f21aba2f16fea34b6e29",
+  "cells": [
+    {
+      "arm": "csm",
+      "seed": 101,
+      "heads": "normal",
+      "zero_reads": false,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 4,
+      "newly_induced_old_answers": 2,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 29,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 28,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 179,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 2.5581986904144287
+    },
+    {
+      "arm": "csm",
+      "seed": 101,
+      "heads": "normal",
+      "zero_reads": false,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 4,
+      "newly_induced_old_answers": 2,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 29,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 28,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 177,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 2.5707359313964844
+    },
+    {
+      "arm": "csm",
+      "seed": 101,
+      "heads": "normal",
+      "zero_reads": true,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 3,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 29,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 29,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 203,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 0.03127908706665039
+    },
+    {
+      "arm": "csm",
+      "seed": 101,
+      "heads": "normal",
+      "zero_reads": true,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 3,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 29,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 29,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 203,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 0.02436661720275879
+    },
+    {
+      "arm": "csm",
+      "seed": 101,
+      "heads": "categorical",
+      "zero_reads": false,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 4,
+      "newly_induced_old_answers": 2,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 29,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 28,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 179,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 2.5581986904144287
+    },
+    {
+      "arm": "csm",
+      "seed": 101,
+      "heads": "categorical",
+      "zero_reads": false,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 4,
+      "newly_induced_old_answers": 2,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 29,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 28,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 177,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 2.5707359313964844
+    },
+    {
+      "arm": "csm",
+      "seed": 101,
+      "heads": "categorical",
+      "zero_reads": true,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 3,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 29,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 29,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 203,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 0.03127908706665039
+    },
+    {
+      "arm": "csm",
+      "seed": 101,
+      "heads": "categorical",
+      "zero_reads": true,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 3,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 29,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 29,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 203,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 0.02436661720275879
+    },
+    {
+      "arm": "csm",
+      "seed": 202,
+      "heads": "normal",
+      "zero_reads": false,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 4,
+      "newly_induced_old_answers": 4,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 31,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 29,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 196,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 2.0060667991638184
+    },
+    {
+      "arm": "csm",
+      "seed": 202,
+      "heads": "normal",
+      "zero_reads": false,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 4,
+      "newly_induced_old_answers": 4,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 31,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 29,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 195,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 2.0147299766540527
+    },
+    {
+      "arm": "csm",
+      "seed": 202,
+      "heads": "normal",
+      "zero_reads": true,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 1,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 31,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 31,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 216,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 0.4061765670776367
+    },
+    {
+      "arm": "csm",
+      "seed": 202,
+      "heads": "normal",
+      "zero_reads": true,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 1,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 31,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 31,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 217,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 0.3957486152648926
+    },
+    {
+      "arm": "csm",
+      "seed": 202,
+      "heads": "categorical",
+      "zero_reads": false,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 4,
+      "newly_induced_old_answers": 4,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 31,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 29,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 196,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 2.0060667991638184
+    },
+    {
+      "arm": "csm",
+      "seed": 202,
+      "heads": "categorical",
+      "zero_reads": false,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 4,
+      "newly_induced_old_answers": 4,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 31,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 29,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 195,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 2.0147299766540527
+    },
+    {
+      "arm": "csm",
+      "seed": 202,
+      "heads": "categorical",
+      "zero_reads": true,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 1,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 31,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 31,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 216,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 0.4061765670776367
+    },
+    {
+      "arm": "csm",
+      "seed": 202,
+      "heads": "categorical",
+      "zero_reads": true,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 1,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 31,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 31,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 217,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 0.3957486152648926
+    },
+    {
+      "arm": "csm",
+      "seed": 303,
+      "heads": "normal",
+      "zero_reads": false,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 9,
+      "newly_induced_old_answers": 9,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 32,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 22,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 169,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 3.537818670272827
+    },
+    {
+      "arm": "csm",
+      "seed": 303,
+      "heads": "normal",
+      "zero_reads": false,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 9,
+      "newly_induced_old_answers": 9,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 32,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 22,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 169,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 3.4238269329071045
+    },
+    {
+      "arm": "csm",
+      "seed": 303,
+      "heads": "normal",
+      "zero_reads": true,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 0,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 32,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 32,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 224,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 0.0536494255065918
+    },
+    {
+      "arm": "csm",
+      "seed": 303,
+      "heads": "normal",
+      "zero_reads": true,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 0,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 32,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 32,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 224,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 9.5367431640625e-07
+    },
+    {
+      "arm": "csm",
+      "seed": 303,
+      "heads": "categorical",
+      "zero_reads": false,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 9,
+      "newly_induced_old_answers": 9,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 32,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 22,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 169,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 3.537818670272827
+    },
+    {
+      "arm": "csm",
+      "seed": 303,
+      "heads": "categorical",
+      "zero_reads": false,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 9,
+      "newly_induced_old_answers": 9,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 32,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 22,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 169,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 3.4238269329071045
+    },
+    {
+      "arm": "csm",
+      "seed": 303,
+      "heads": "categorical",
+      "zero_reads": true,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 0,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 32,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 32,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 224,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 0.0536494255065918
+    },
+    {
+      "arm": "csm",
+      "seed": 303,
+      "heads": "categorical",
+      "zero_reads": true,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 0,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 32,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 32,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 224,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 9.5367431640625e-07
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 101,
+      "heads": "normal",
+      "zero_reads": false,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 2,
+      "newly_induced_old_answers": 2,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 29,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 30,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 191,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 2.6077544689178467
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 101,
+      "heads": "normal",
+      "zero_reads": false,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 2,
+      "newly_induced_old_answers": 2,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 29,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 30,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 194,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 2.6747148036956787
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 101,
+      "heads": "normal",
+      "zero_reads": true,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 3,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 29,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 29,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 201,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 0.06409740447998047
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 101,
+      "heads": "normal",
+      "zero_reads": true,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 3,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 29,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 29,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 203,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 4.76837158203125e-07
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 101,
+      "heads": "categorical",
+      "zero_reads": false,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 2,
+      "newly_induced_old_answers": 2,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 29,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 30,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 191,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 2.6077544689178467
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 101,
+      "heads": "categorical",
+      "zero_reads": false,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 2,
+      "newly_induced_old_answers": 2,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 29,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 30,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 194,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 2.6747148036956787
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 101,
+      "heads": "categorical",
+      "zero_reads": true,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 3,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 29,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 29,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 201,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 0.06409740447998047
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 101,
+      "heads": "categorical",
+      "zero_reads": true,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 3,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": true,
+      "accuracy": {
+        "baseline": {
+          "correct": 29,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 29,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 203,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 4.76837158203125e-07
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 202,
+      "heads": "normal",
+      "zero_reads": false,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 8,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 24,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 24,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 158,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 1.6294918060302734
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 202,
+      "heads": "normal",
+      "zero_reads": false,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 8,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 24,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 24,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 154,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 1.7132477760314941
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 202,
+      "heads": "normal",
+      "zero_reads": true,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 8,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 24,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 24,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 168,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 0.10766077041625977
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 202,
+      "heads": "normal",
+      "zero_reads": true,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 8,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 24,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 24,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 168,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 4.76837158203125e-07
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 202,
+      "heads": "categorical",
+      "zero_reads": false,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 8,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 24,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 24,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 158,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 1.6294918060302734
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 202,
+      "heads": "categorical",
+      "zero_reads": false,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 8,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 24,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 24,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 154,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 1.7132477760314941
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 202,
+      "heads": "categorical",
+      "zero_reads": true,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 8,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 24,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 24,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 168,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 0.10766077041625977
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 202,
+      "heads": "categorical",
+      "zero_reads": true,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 8,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": true,
+      "accuracy": {
+        "baseline": {
+          "correct": 24,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 24,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 168,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 4.76837158203125e-07
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 303,
+      "heads": "normal",
+      "zero_reads": false,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 9,
+      "newly_induced_old_answers": 4,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 27,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 18,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 145,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 2.5141990184783936
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 303,
+      "heads": "normal",
+      "zero_reads": false,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 9,
+      "newly_induced_old_answers": 4,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 27,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 18,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 141,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 2.488159656524658
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 303,
+      "heads": "normal",
+      "zero_reads": true,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 5,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 27,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 27,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 189,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 0.0850534439086914
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 303,
+      "heads": "normal",
+      "zero_reads": true,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 5,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 27,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 27,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 189,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 9.5367431640625e-07
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 303,
+      "heads": "categorical",
+      "zero_reads": false,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 9,
+      "newly_induced_old_answers": 4,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 27,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 18,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 145,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 2.5141990184783936
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 303,
+      "heads": "categorical",
+      "zero_reads": false,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 9,
+      "newly_induced_old_answers": 4,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 27,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 18,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 141,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 2.488159656524658
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 303,
+      "heads": "categorical",
+      "zero_reads": true,
+      "full_gain": false,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 5,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": null,
+      "accuracy": {
+        "baseline": {
+          "correct": 27,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 27,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 189,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 0.0850534439086914
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 303,
+      "heads": "categorical",
+      "zero_reads": true,
+      "full_gain": true,
+      "raw_head_error_cases": 0,
+      "query_preserved": 288,
+      "untouched_set_preserved": 288,
+      "target_retained_until_query": 288,
+      "off_diagonal_old_answers": 5,
+      "newly_induced_old_answers": 0,
+      "pointer_invariant_pass": true,
+      "accuracy": {
+        "baseline": {
+          "correct": 27,
+          "total": 32
+        },
+        "diagonal": {
+          "correct": 27,
+          "total": 32
+        },
+        "off_diagonal": {
+          "correct": 189,
+          "total": 224
+        }
+      },
+      "baseline_logit_max_difference": 9.5367431640625e-07
+    }
+  ]
+}
