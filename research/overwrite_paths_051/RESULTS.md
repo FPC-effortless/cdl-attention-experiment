@@ -49,7 +49,7 @@ For CSM, zero reads plus full gain also restores all baseline argmax predictions
 
 ## Scientific implication and next repair
 
-This finding supports repairing how SET forms a replacement representation before scaling the architecture comparison. Turning the overwrite gain up is insufficient when the proposal itself already depends on old contents. It does not justify zeroing memory reads globally: COPY, LINK and other state-dependent operations need them.
+This finding supports repairing how SET forms a replacement representation before scaling the architecture comparison. Turning the overwrite gain up is insufficient when the proposal itself already depends on old contents. It does not justify suppressing memory access globally: COPY requires value transport, while LINK requires pointer/address handling. In this contract LINK does not commit the value-transform output, so this assay does not establish a need for its direct transform-read slice.
 
 The next learned repair should teach SET-specific independence from prior contents, under equivalent information and a fixed total budget for both architectures. Compare an unchanged objective against an operation-appropriate invariance objective or learned read-admission rule; preserve COPY/LINK and deletion behavior and evaluate fresh histories. Keep the empty-row value discrimination failure as a separate target: even the most effective intervention here reaches only the existing 95.83% CSM and 83.33% pointer baseline, not 100%. Any repair must earn its result through learning; privileged intervention scores cannot substitute for that test.
 
