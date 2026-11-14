@@ -1,0 +1,278 @@
+{
+  "post_hoc": true,
+  "normal_categorical_pairs": 6912,
+  "max_head_regime_logit_difference": 0.0,
+  "max_head_regime_state_difference": 0.0,
+  "max_after_set_to_prequery_change": 0.0,
+  "states_shape": [
+    13824,
+    3,
+    32
+  ],
+  "contrasts": [
+    {
+      "arm": "csm",
+      "seed": 101,
+      "zero_reads": false,
+      "full_gain": false,
+      "max_absolute_state_difference_vs_baseline": [
+        1.9826995134353638,
+        1.9826995134353638,
+        1.757415533065796
+      ]
+    },
+    {
+      "arm": "csm",
+      "seed": 101,
+      "zero_reads": false,
+      "full_gain": true,
+      "max_absolute_state_difference_vs_baseline": [
+        1.9951262474060059,
+        1.9951262474060059,
+        1.744095802307129
+      ]
+    },
+    {
+      "arm": "csm",
+      "seed": 101,
+      "zero_reads": true,
+      "full_gain": false,
+      "max_absolute_state_difference_vs_baseline": [
+        0.07821613550186157,
+        0.07821613550186157,
+        0.03940090537071228
+      ]
+    },
+    {
+      "arm": "csm",
+      "seed": 101,
+      "zero_reads": true,
+      "full_gain": true,
+      "max_absolute_state_difference_vs_baseline": [
+        0.08337590098381042,
+        0.08337590098381042,
+        0.03465293347835541
+      ]
+    },
+    {
+      "arm": "csm",
+      "seed": 202,
+      "zero_reads": false,
+      "full_gain": false,
+      "max_absolute_state_difference_vs_baseline": [
+        1.99595308303833,
+        1.99595308303833,
+        1.3623460531234741
+      ]
+    },
+    {
+      "arm": "csm",
+      "seed": 202,
+      "zero_reads": false,
+      "full_gain": true,
+      "max_absolute_state_difference_vs_baseline": [
+        1.999135971069336,
+        1.999135971069336,
+        1.4507222175598145
+      ]
+    },
+    {
+      "arm": "csm",
+      "seed": 202,
+      "zero_reads": true,
+      "full_gain": false,
+      "max_absolute_state_difference_vs_baseline": [
+        0.16547390818595886,
+        0.16547390818595886,
+        0.3519343137741089
+      ]
+    },
+    {
+      "arm": "csm",
+      "seed": 202,
+      "zero_reads": true,
+      "full_gain": true,
+      "max_absolute_state_difference_vs_baseline": [
+        0.16407932341098785,
+        0.16407932341098785,
+        0.34333154559135437
+      ]
+    },
+    {
+      "arm": "csm",
+      "seed": 303,
+      "zero_reads": false,
+      "full_gain": false,
+      "max_absolute_state_difference_vs_baseline": [
+        1.993926763534546,
+        1.993926763534546,
+        1.8862147331237793
+      ]
+    },
+    {
+      "arm": "csm",
+      "seed": 303,
+      "zero_reads": false,
+      "full_gain": true,
+      "max_absolute_state_difference_vs_baseline": [
+        1.9995830059051514,
+        1.9995830059051514,
+        1.8875255584716797
+      ]
+    },
+    {
+      "arm": "csm",
+      "seed": 303,
+      "zero_reads": true,
+      "full_gain": false,
+      "max_absolute_state_difference_vs_baseline": [
+        0.015610694885253906,
+        0.015610694885253906,
+        0.041131168603897095
+      ]
+    },
+    {
+      "arm": "csm",
+      "seed": 303,
+      "zero_reads": true,
+      "full_gain": true,
+      "max_absolute_state_difference_vs_baseline": [
+        5.960464477539063e-08,
+        5.960464477539063e-08,
+        2.086162567138672e-07
+      ]
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 101,
+      "zero_reads": false,
+      "full_gain": false,
+      "max_absolute_state_difference_vs_baseline": [
+        1.9925304651260376,
+        1.9925304651260376,
+        1.7399568557739258
+      ]
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 101,
+      "zero_reads": false,
+      "full_gain": true,
+      "max_absolute_state_difference_vs_baseline": [
+        1.9998340606689453,
+        1.9998340606689453,
+        1.720097541809082
+      ]
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 101,
+      "zero_reads": true,
+      "full_gain": false,
+      "max_absolute_state_difference_vs_baseline": [
+        0.028859615325927734,
+        0.028859615325927734,
+        0.0731617733836174
+      ]
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 101,
+      "zero_reads": true,
+      "full_gain": true,
+      "max_absolute_state_difference_vs_baseline": [
+        5.960464477539063e-08,
+        5.960464477539063e-08,
+        2.3096799850463867e-07
+      ]
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 202,
+      "zero_reads": false,
+      "full_gain": false,
+      "max_absolute_state_difference_vs_baseline": [
+        1.9923828840255737,
+        1.9923828840255737,
+        1.23725163936615
+      ]
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 202,
+      "zero_reads": false,
+      "full_gain": true,
+      "max_absolute_state_difference_vs_baseline": [
+        1.9991164207458496,
+        1.9991164207458496,
+        1.25664222240448
+      ]
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 202,
+      "zero_reads": true,
+      "full_gain": false,
+      "max_absolute_state_difference_vs_baseline": [
+        0.05734628438949585,
+        0.05734628438949585,
+        0.15912528336048126
+      ]
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 202,
+      "zero_reads": true,
+      "full_gain": true,
+      "max_absolute_state_difference_vs_baseline": [
+        5.960464477539063e-08,
+        5.960464477539063e-08,
+        1.7881393432617188e-07
+      ]
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 303,
+      "zero_reads": false,
+      "full_gain": false,
+      "max_absolute_state_difference_vs_baseline": [
+        1.9855762720108032,
+        1.9855762720108032,
+        1.9642375707626343
+      ]
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 303,
+      "zero_reads": false,
+      "full_gain": true,
+      "max_absolute_state_difference_vs_baseline": [
+        1.9980380535125732,
+        1.9980380535125732,
+        1.9668309688568115
+      ]
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 303,
+      "zero_reads": true,
+      "full_gain": false,
+      "max_absolute_state_difference_vs_baseline": [
+        0.01572096347808838,
+        0.01572096347808838,
+        0.14416667819023132
+      ]
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 303,
+      "zero_reads": true,
+      "full_gain": true,
+      "max_absolute_state_difference_vs_baseline": [
+        5.960464477539063e-08,
+        5.960464477539063e-08,
+        1.4901161193847656e-07
+      ]
+    }
+  ]
+}
