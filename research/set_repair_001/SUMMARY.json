@@ -1,0 +1,1392 @@
+{
+  "experiment": "SET-REPAIR-001",
+  "scope": "KNOWN_TEMPLATE_DEV_OBJECTIVE_INTERVENTION_NOT_ARCHITECTURE_QUALIFICATION",
+  "new_fits": 12,
+  "validation_pairs": 80,
+  "paired": [
+    {
+      "arm": "csm",
+      "seed": 101,
+      "from": "control",
+      "to": "invariance",
+      "queries": 640,
+      "rescued": 20,
+      "harmed": 13
+    },
+    {
+      "arm": "csm",
+      "seed": 101,
+      "from": "starting",
+      "to": "control",
+      "queries": 640,
+      "rescued": 88,
+      "harmed": 10
+    },
+    {
+      "arm": "csm",
+      "seed": 101,
+      "from": "starting",
+      "to": "invariance",
+      "queries": 640,
+      "rescued": 90,
+      "harmed": 5
+    },
+    {
+      "arm": "csm",
+      "seed": 202,
+      "from": "control",
+      "to": "invariance",
+      "queries": 640,
+      "rescued": 23,
+      "harmed": 51
+    },
+    {
+      "arm": "csm",
+      "seed": 202,
+      "from": "starting",
+      "to": "control",
+      "queries": 640,
+      "rescued": 94,
+      "harmed": 16
+    },
+    {
+      "arm": "csm",
+      "seed": 202,
+      "from": "starting",
+      "to": "invariance",
+      "queries": 640,
+      "rescued": 83,
+      "harmed": 33
+    },
+    {
+      "arm": "csm",
+      "seed": 303,
+      "from": "control",
+      "to": "invariance",
+      "queries": 640,
+      "rescued": 21,
+      "harmed": 20
+    },
+    {
+      "arm": "csm",
+      "seed": 303,
+      "from": "starting",
+      "to": "control",
+      "queries": 640,
+      "rescued": 69,
+      "harmed": 7
+    },
+    {
+      "arm": "csm",
+      "seed": 303,
+      "from": "starting",
+      "to": "invariance",
+      "queries": 640,
+      "rescued": 68,
+      "harmed": 5
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 101,
+      "from": "control",
+      "to": "invariance",
+      "queries": 640,
+      "rescued": 21,
+      "harmed": 36
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 101,
+      "from": "starting",
+      "to": "control",
+      "queries": 640,
+      "rescued": 119,
+      "harmed": 20
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 101,
+      "from": "starting",
+      "to": "invariance",
+      "queries": 640,
+      "rescued": 98,
+      "harmed": 14
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 202,
+      "from": "control",
+      "to": "invariance",
+      "queries": 640,
+      "rescued": 70,
+      "harmed": 87
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 202,
+      "from": "starting",
+      "to": "control",
+      "queries": 640,
+      "rescued": 54,
+      "harmed": 14
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 202,
+      "from": "starting",
+      "to": "invariance",
+      "queries": 640,
+      "rescued": 103,
+      "harmed": 80
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 303,
+      "from": "control",
+      "to": "invariance",
+      "queries": 640,
+      "rescued": 92,
+      "harmed": 94
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 303,
+      "from": "starting",
+      "to": "control",
+      "queries": 640,
+      "rescued": 110,
+      "harmed": 79
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 303,
+      "from": "starting",
+      "to": "invariance",
+      "queries": 640,
+      "rescued": 38,
+      "harmed": 9
+    }
+  ],
+  "repair_screens": [
+    {
+      "arm": "csm",
+      "criteria": {
+        "mean_query_improves": false,
+        "mean_map_improves": false,
+        "no_seed_query_regression": false,
+        "no_template_seed_drop_over_2pp": false,
+        "no_same_value_seed_regression": false,
+        "normal_query_preservation_100pct": true
+      },
+      "pass": false,
+      "query_deltas": [
+        0.010937500000000044,
+        -0.04375000000000007,
+        0.0015625000000000222
+      ],
+      "map_deltas": [
+        0.03749999999999998,
+        -0.125,
+        0.018750000000000044
+      ],
+      "template_deltas": [
+        {
+          "seed": 101,
+          "template": "overwrite",
+          "delta": 0.03472222222222221
+        },
+        {
+          "seed": 101,
+          "template": "delete_root",
+          "delta": -0.006578947368421018
+        },
+        {
+          "seed": 101,
+          "template": "delete_alias",
+          "delta": 0.01041666666666663
+        },
+        {
+          "seed": 101,
+          "template": "detach_alias",
+          "delta": 0.025000000000000022
+        },
+        {
+          "seed": 101,
+          "template": "absence_snapshot",
+          "delta": -0.0078125
+        },
+        {
+          "seed": 202,
+          "template": "overwrite",
+          "delta": -0.04166666666666674
+        },
+        {
+          "seed": 202,
+          "template": "delete_root",
+          "delta": -0.07236842105263164
+        },
+        {
+          "seed": 202,
+          "template": "delete_alias",
+          "delta": -0.04166666666666663
+        },
+        {
+          "seed": 202,
+          "template": "detach_alias",
+          "delta": -0.05833333333333335
+        },
+        {
+          "seed": 202,
+          "template": "absence_snapshot",
+          "delta": 0.0
+        },
+        {
+          "seed": 303,
+          "template": "overwrite",
+          "delta": 0.00694444444444442
+        },
+        {
+          "seed": 303,
+          "template": "delete_root",
+          "delta": -0.02631578947368418
+        },
+        {
+          "seed": 303,
+          "template": "delete_alias",
+          "delta": 0.02083333333333337
+        },
+        {
+          "seed": 303,
+          "template": "detach_alias",
+          "delta": 0.01666666666666672
+        },
+        {
+          "seed": 303,
+          "template": "absence_snapshot",
+          "delta": 0.0
+        }
+      ],
+      "same_value_count_deltas": [
+        1,
+        -2,
+        1
+      ]
+    },
+    {
+      "arm": "pointer_slot",
+      "criteria": {
+        "mean_query_improves": false,
+        "mean_map_improves": false,
+        "no_seed_query_regression": false,
+        "no_template_seed_drop_over_2pp": false,
+        "no_same_value_seed_regression": false,
+        "normal_query_preservation_100pct": true
+      },
+      "pass": false,
+      "query_deltas": [
+        -0.0234375,
+        -0.026562500000000044,
+        -0.0031250000000000444
+      ],
+      "map_deltas": [
+        -0.11875000000000002,
+        -0.08124999999999999,
+        -0.012500000000000011
+      ],
+      "template_deltas": [
+        {
+          "seed": 101,
+          "template": "overwrite",
+          "delta": -0.006944444444444531
+        },
+        {
+          "seed": 101,
+          "template": "delete_root",
+          "delta": -0.03289473684210531
+        },
+        {
+          "seed": 101,
+          "template": "delete_alias",
+          "delta": -0.02083333333333326
+        },
+        {
+          "seed": 101,
+          "template": "detach_alias",
+          "delta": -0.04166666666666663
+        },
+        {
+          "seed": 101,
+          "template": "absence_snapshot",
+          "delta": -0.015625
+        },
+        {
+          "seed": 202,
+          "template": "overwrite",
+          "delta": 0.04166666666666663
+        },
+        {
+          "seed": 202,
+          "template": "delete_root",
+          "delta": -0.13815789473684215
+        },
+        {
+          "seed": 202,
+          "template": "delete_alias",
+          "delta": 0.0
+        },
+        {
+          "seed": 202,
+          "template": "detach_alias",
+          "delta": 0.016666666666666607
+        },
+        {
+          "seed": 202,
+          "template": "absence_snapshot",
+          "delta": -0.03125
+        },
+        {
+          "seed": 303,
+          "template": "overwrite",
+          "delta": -0.02083333333333326
+        },
+        {
+          "seed": 303,
+          "template": "delete_root",
+          "delta": 0.02631578947368418
+        },
+        {
+          "seed": 303,
+          "template": "delete_alias",
+          "delta": -0.03125
+        },
+        {
+          "seed": 303,
+          "template": "detach_alias",
+          "delta": 0.04999999999999993
+        },
+        {
+          "seed": 303,
+          "template": "absence_snapshot",
+          "delta": -0.046875
+        }
+      ],
+      "same_value_count_deltas": [
+        -3,
+        1,
+        -4
+      ]
+    }
+  ],
+  "predictions_sha256": "0e8847c58afb5d59bc35c84b1b2493f59da278c0301cf41a0cf2fcff06fbf17c",
+  "cells": [
+    {
+      "arm": "csm",
+      "seed": 101,
+      "stage": "starting",
+      "overall": {
+        "correct": 522,
+        "total": 640,
+        "accuracy": 0.815625,
+        "complete_maps": 66,
+        "maps": 160,
+        "map_accuracy": 0.4125
+      },
+      "erased": {
+        "correct": 47,
+        "total": 640,
+        "accuracy": 0.0734375,
+        "complete_maps": 0,
+        "maps": 160,
+        "map_accuracy": 0.0
+      },
+      "concrete": {
+        "correct": 371,
+        "total": 480,
+        "accuracy": 0.7729166666666667
+      },
+      "unknown": {
+        "correct": 151,
+        "total": 160,
+        "accuracy": 0.94375
+      },
+      "probe": {
+        "baseline": {
+          "correct": 29,
+          "total": 32,
+          "accuracy": 0.90625
+        },
+        "same_value": {
+          "correct": 28,
+          "total": 32,
+          "accuracy": 0.875
+        },
+        "changed_value": {
+          "correct": 179,
+          "total": 224,
+          "accuracy": 0.7991071428571429
+        }
+      },
+      "query_preserved": 640,
+      "latent": {
+        "paired_old_mse": 1.2078508138656616,
+        "rms": 0.868684709072113,
+        "pairmean_variance": 0.346358060836792,
+        "within_over_variance": 3.4872894568818134,
+        "between_new_centroid_mse": 0.3304499089717865
+      }
+    },
+    {
+      "arm": "csm",
+      "seed": 101,
+      "stage": "control",
+      "overall": {
+        "correct": 600,
+        "total": 640,
+        "accuracy": 0.9375,
+        "complete_maps": 121,
+        "maps": 160,
+        "map_accuracy": 0.75625
+      },
+      "erased": {
+        "correct": 47,
+        "total": 640,
+        "accuracy": 0.0734375,
+        "complete_maps": 0,
+        "maps": 160,
+        "map_accuracy": 0.0
+      },
+      "concrete": {
+        "correct": 440,
+        "total": 480,
+        "accuracy": 0.9166666666666666
+      },
+      "unknown": {
+        "correct": 160,
+        "total": 160,
+        "accuracy": 1.0
+      },
+      "probe": {
+        "baseline": {
+          "correct": 32,
+          "total": 32,
+          "accuracy": 1.0
+        },
+        "same_value": {
+          "correct": 31,
+          "total": 32,
+          "accuracy": 0.96875
+        },
+        "changed_value": {
+          "correct": 217,
+          "total": 224,
+          "accuracy": 0.96875
+        }
+      },
+      "query_preserved": 640,
+      "latent": {
+        "paired_old_mse": 1.2452725172042847,
+        "rms": 0.8725197315216064,
+        "pairmean_variance": 0.3673061728477478,
+        "within_over_variance": 3.3902847522169814,
+        "between_new_centroid_mse": 0.38048750162124634
+      }
+    },
+    {
+      "arm": "csm",
+      "seed": 101,
+      "stage": "invariance",
+      "overall": {
+        "correct": 607,
+        "total": 640,
+        "accuracy": 0.9484375,
+        "complete_maps": 127,
+        "maps": 160,
+        "map_accuracy": 0.79375
+      },
+      "erased": {
+        "correct": 54,
+        "total": 640,
+        "accuracy": 0.084375,
+        "complete_maps": 0,
+        "maps": 160,
+        "map_accuracy": 0.0
+      },
+      "concrete": {
+        "correct": 447,
+        "total": 480,
+        "accuracy": 0.93125
+      },
+      "unknown": {
+        "correct": 160,
+        "total": 160,
+        "accuracy": 1.0
+      },
+      "probe": {
+        "baseline": {
+          "correct": 32,
+          "total": 32,
+          "accuracy": 1.0
+        },
+        "same_value": {
+          "correct": 32,
+          "total": 32,
+          "accuracy": 1.0
+        },
+        "changed_value": {
+          "correct": 224,
+          "total": 224,
+          "accuracy": 1.0
+        }
+      },
+      "query_preserved": 640,
+      "latent": {
+        "paired_old_mse": 0.006389203481376171,
+        "rms": 0.8783400058746338,
+        "pairmean_variance": 0.16970285773277283,
+        "within_over_variance": 0.037649357039110404,
+        "between_new_centroid_mse": 0.4024345874786377
+      }
+    },
+    {
+      "arm": "csm",
+      "seed": 202,
+      "stage": "starting",
+      "overall": {
+        "correct": 518,
+        "total": 640,
+        "accuracy": 0.809375,
+        "complete_maps": 62,
+        "maps": 160,
+        "map_accuracy": 0.3875
+      },
+      "erased": {
+        "correct": 52,
+        "total": 640,
+        "accuracy": 0.08125,
+        "complete_maps": 0,
+        "maps": 160,
+        "map_accuracy": 0.0
+      },
+      "concrete": {
+        "correct": 397,
+        "total": 480,
+        "accuracy": 0.8270833333333333
+      },
+      "unknown": {
+        "correct": 121,
+        "total": 160,
+        "accuracy": 0.75625
+      },
+      "probe": {
+        "baseline": {
+          "correct": 31,
+          "total": 32,
+          "accuracy": 0.96875
+        },
+        "same_value": {
+          "correct": 29,
+          "total": 32,
+          "accuracy": 0.90625
+        },
+        "changed_value": {
+          "correct": 196,
+          "total": 224,
+          "accuracy": 0.875
+        }
+      },
+      "query_preserved": 568,
+      "latent": {
+        "paired_old_mse": 0.932360053062439,
+        "rms": 0.889242947101593,
+        "pairmean_variance": 0.2968088984489441,
+        "within_over_variance": 3.1412806621755602,
+        "between_new_centroid_mse": 0.39420080184936523
+      }
+    },
+    {
+      "arm": "csm",
+      "seed": 202,
+      "stage": "control",
+      "overall": {
+        "correct": 596,
+        "total": 640,
+        "accuracy": 0.93125,
+        "complete_maps": 117,
+        "maps": 160,
+        "map_accuracy": 0.73125
+      },
+      "erased": {
+        "correct": 53,
+        "total": 640,
+        "accuracy": 0.0828125,
+        "complete_maps": 0,
+        "maps": 160,
+        "map_accuracy": 0.0
+      },
+      "concrete": {
+        "correct": 439,
+        "total": 480,
+        "accuracy": 0.9145833333333333
+      },
+      "unknown": {
+        "correct": 157,
+        "total": 160,
+        "accuracy": 0.98125
+      },
+      "probe": {
+        "baseline": {
+          "correct": 32,
+          "total": 32,
+          "accuracy": 1.0
+        },
+        "same_value": {
+          "correct": 28,
+          "total": 32,
+          "accuracy": 0.875
+        },
+        "changed_value": {
+          "correct": 208,
+          "total": 224,
+          "accuracy": 0.9285714285714286
+        }
+      },
+      "query_preserved": 640,
+      "latent": {
+        "paired_old_mse": 0.9348936080932617,
+        "rms": 0.8890272378921509,
+        "pairmean_variance": 0.2972681522369385,
+        "within_over_variance": 3.144950446440549,
+        "between_new_centroid_mse": 0.3978736698627472
+      }
+    },
+    {
+      "arm": "csm",
+      "seed": 202,
+      "stage": "invariance",
+      "overall": {
+        "correct": 568,
+        "total": 640,
+        "accuracy": 0.8875,
+        "complete_maps": 97,
+        "maps": 160,
+        "map_accuracy": 0.60625
+      },
+      "erased": {
+        "correct": 60,
+        "total": 640,
+        "accuracy": 0.09375,
+        "complete_maps": 0,
+        "maps": 160,
+        "map_accuracy": 0.0
+      },
+      "concrete": {
+        "correct": 408,
+        "total": 480,
+        "accuracy": 0.85
+      },
+      "unknown": {
+        "correct": 160,
+        "total": 160,
+        "accuracy": 1.0
+      },
+      "probe": {
+        "baseline": {
+          "correct": 29,
+          "total": 32,
+          "accuracy": 0.90625
+        },
+        "same_value": {
+          "correct": 26,
+          "total": 32,
+          "accuracy": 0.8125
+        },
+        "changed_value": {
+          "correct": 191,
+          "total": 224,
+          "accuracy": 0.8526785714285714
+        }
+      },
+      "query_preserved": 640,
+      "latent": {
+        "paired_old_mse": 0.014139982871711254,
+        "rms": 0.9094798564910889,
+        "pairmean_variance": 0.15859302878379822,
+        "within_over_variance": 0.08915891814449431,
+        "between_new_centroid_mse": 0.3809916377067566
+      }
+    },
+    {
+      "arm": "csm",
+      "seed": 303,
+      "stage": "starting",
+      "overall": {
+        "correct": 543,
+        "total": 640,
+        "accuracy": 0.8484375,
+        "complete_maps": 74,
+        "maps": 160,
+        "map_accuracy": 0.4625
+      },
+      "erased": {
+        "correct": 47,
+        "total": 640,
+        "accuracy": 0.0734375,
+        "complete_maps": 0,
+        "maps": 160,
+        "map_accuracy": 0.0
+      },
+      "concrete": {
+        "correct": 392,
+        "total": 480,
+        "accuracy": 0.8166666666666667
+      },
+      "unknown": {
+        "correct": 151,
+        "total": 160,
+        "accuracy": 0.94375
+      },
+      "probe": {
+        "baseline": {
+          "correct": 32,
+          "total": 32,
+          "accuracy": 1.0
+        },
+        "same_value": {
+          "correct": 22,
+          "total": 32,
+          "accuracy": 0.6875
+        },
+        "changed_value": {
+          "correct": 169,
+          "total": 224,
+          "accuracy": 0.7544642857142857
+        }
+      },
+      "query_preserved": 640,
+      "latent": {
+        "paired_old_mse": 1.004481554031372,
+        "rms": 0.8649247288703918,
+        "pairmean_variance": 0.31257784366607666,
+        "within_over_variance": 3.2135404808193466,
+        "between_new_centroid_mse": 0.2773790955543518
+      }
+    },
+    {
+      "arm": "csm",
+      "seed": 303,
+      "stage": "control",
+      "overall": {
+        "correct": 605,
+        "total": 640,
+        "accuracy": 0.9453125,
+        "complete_maps": 127,
+        "maps": 160,
+        "map_accuracy": 0.79375
+      },
+      "erased": {
+        "correct": 73,
+        "total": 640,
+        "accuracy": 0.1140625,
+        "complete_maps": 0,
+        "maps": 160,
+        "map_accuracy": 0.0
+      },
+      "concrete": {
+        "correct": 445,
+        "total": 480,
+        "accuracy": 0.9270833333333334
+      },
+      "unknown": {
+        "correct": 160,
+        "total": 160,
+        "accuracy": 1.0
+      },
+      "probe": {
+        "baseline": {
+          "correct": 32,
+          "total": 32,
+          "accuracy": 1.0
+        },
+        "same_value": {
+          "correct": 31,
+          "total": 32,
+          "accuracy": 0.96875
+        },
+        "changed_value": {
+          "correct": 212,
+          "total": 224,
+          "accuracy": 0.9464285714285714
+        }
+      },
+      "query_preserved": 640,
+      "latent": {
+        "paired_old_mse": 0.8302537798881531,
+        "rms": 0.8587558269500732,
+        "pairmean_variance": 0.31662309169769287,
+        "within_over_variance": 2.6222148720543896,
+        "between_new_centroid_mse": 0.3382546305656433
+      }
+    },
+    {
+      "arm": "csm",
+      "seed": 303,
+      "stage": "invariance",
+      "overall": {
+        "correct": 606,
+        "total": 640,
+        "accuracy": 0.946875,
+        "complete_maps": 130,
+        "maps": 160,
+        "map_accuracy": 0.8125
+      },
+      "erased": {
+        "correct": 79,
+        "total": 640,
+        "accuracy": 0.1234375,
+        "complete_maps": 0,
+        "maps": 160,
+        "map_accuracy": 0.0
+      },
+      "concrete": {
+        "correct": 446,
+        "total": 480,
+        "accuracy": 0.9291666666666667
+      },
+      "unknown": {
+        "correct": 160,
+        "total": 160,
+        "accuracy": 1.0
+      },
+      "probe": {
+        "baseline": {
+          "correct": 32,
+          "total": 32,
+          "accuracy": 1.0
+        },
+        "same_value": {
+          "correct": 32,
+          "total": 32,
+          "accuracy": 1.0
+        },
+        "changed_value": {
+          "correct": 210,
+          "total": 224,
+          "accuracy": 0.9375
+        }
+      },
+      "query_preserved": 640,
+      "latent": {
+        "paired_old_mse": 0.0077019319869577885,
+        "rms": 0.886585533618927,
+        "pairmean_variance": 0.16850616037845612,
+        "within_over_variance": 0.045707124117088306,
+        "between_new_centroid_mse": 0.3621152341365814
+      }
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 101,
+      "stage": "starting",
+      "overall": {
+        "correct": 498,
+        "total": 640,
+        "accuracy": 0.778125,
+        "complete_maps": 50,
+        "maps": 160,
+        "map_accuracy": 0.3125
+      },
+      "erased": {
+        "correct": 97,
+        "total": 640,
+        "accuracy": 0.1515625,
+        "complete_maps": 0,
+        "maps": 160,
+        "map_accuracy": 0.0
+      },
+      "concrete": {
+        "correct": 369,
+        "total": 480,
+        "accuracy": 0.76875
+      },
+      "unknown": {
+        "correct": 129,
+        "total": 160,
+        "accuracy": 0.80625
+      },
+      "probe": {
+        "baseline": {
+          "correct": 29,
+          "total": 32,
+          "accuracy": 0.90625
+        },
+        "same_value": {
+          "correct": 30,
+          "total": 32,
+          "accuracy": 0.9375
+        },
+        "changed_value": {
+          "correct": 191,
+          "total": 224,
+          "accuracy": 0.8526785714285714
+        }
+      },
+      "query_preserved": 592,
+      "latent": {
+        "paired_old_mse": 1.0143003463745117,
+        "rms": 0.8794335126876831,
+        "pairmean_variance": 0.28085508942604065,
+        "within_over_variance": 3.611472195300924,
+        "between_new_centroid_mse": 0.3512917160987854
+      }
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 101,
+      "stage": "control",
+      "overall": {
+        "correct": 597,
+        "total": 640,
+        "accuracy": 0.9328125,
+        "complete_maps": 124,
+        "maps": 160,
+        "map_accuracy": 0.775
+      },
+      "erased": {
+        "correct": 58,
+        "total": 640,
+        "accuracy": 0.090625,
+        "complete_maps": 0,
+        "maps": 160,
+        "map_accuracy": 0.0
+      },
+      "concrete": {
+        "correct": 438,
+        "total": 480,
+        "accuracy": 0.9125
+      },
+      "unknown": {
+        "correct": 159,
+        "total": 160,
+        "accuracy": 0.99375
+      },
+      "probe": {
+        "baseline": {
+          "correct": 31,
+          "total": 32,
+          "accuracy": 0.96875
+        },
+        "same_value": {
+          "correct": 30,
+          "total": 32,
+          "accuracy": 0.9375
+        },
+        "changed_value": {
+          "correct": 208,
+          "total": 224,
+          "accuracy": 0.9285714285714286
+        }
+      },
+      "query_preserved": 640,
+      "latent": {
+        "paired_old_mse": 1.0235819816589355,
+        "rms": 0.8948637247085571,
+        "pairmean_variance": 0.31847280263900757,
+        "within_over_variance": 3.2140326369280676,
+        "between_new_centroid_mse": 0.42742738127708435
+      }
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 101,
+      "stage": "invariance",
+      "overall": {
+        "correct": 582,
+        "total": 640,
+        "accuracy": 0.909375,
+        "complete_maps": 105,
+        "maps": 160,
+        "map_accuracy": 0.65625
+      },
+      "erased": {
+        "correct": 55,
+        "total": 640,
+        "accuracy": 0.0859375,
+        "complete_maps": 0,
+        "maps": 160,
+        "map_accuracy": 0.0
+      },
+      "concrete": {
+        "correct": 422,
+        "total": 480,
+        "accuracy": 0.8791666666666667
+      },
+      "unknown": {
+        "correct": 160,
+        "total": 160,
+        "accuracy": 1.0
+      },
+      "probe": {
+        "baseline": {
+          "correct": 32,
+          "total": 32,
+          "accuracy": 1.0
+        },
+        "same_value": {
+          "correct": 27,
+          "total": 32,
+          "accuracy": 0.84375
+        },
+        "changed_value": {
+          "correct": 192,
+          "total": 224,
+          "accuracy": 0.8571428571428571
+        }
+      },
+      "query_preserved": 640,
+      "latent": {
+        "paired_old_mse": 0.01043483056128025,
+        "rms": 0.9124360084533691,
+        "pairmean_variance": 0.12886083126068115,
+        "within_over_variance": 0.0809775201596361,
+        "between_new_centroid_mse": 0.29117801785469055
+      }
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 202,
+      "stage": "starting",
+      "overall": {
+        "correct": 452,
+        "total": 640,
+        "accuracy": 0.70625,
+        "complete_maps": 39,
+        "maps": 160,
+        "map_accuracy": 0.24375
+      },
+      "erased": {
+        "correct": 57,
+        "total": 640,
+        "accuracy": 0.0890625,
+        "complete_maps": 0,
+        "maps": 160,
+        "map_accuracy": 0.0
+      },
+      "concrete": {
+        "correct": 324,
+        "total": 480,
+        "accuracy": 0.675
+      },
+      "unknown": {
+        "correct": 128,
+        "total": 160,
+        "accuracy": 0.8
+      },
+      "probe": {
+        "baseline": {
+          "correct": 24,
+          "total": 32,
+          "accuracy": 0.75
+        },
+        "same_value": {
+          "correct": 24,
+          "total": 32,
+          "accuracy": 0.75
+        },
+        "changed_value": {
+          "correct": 158,
+          "total": 224,
+          "accuracy": 0.7053571428571429
+        }
+      },
+      "query_preserved": 560,
+      "latent": {
+        "paired_old_mse": 0.9664413332939148,
+        "rms": 0.866013765335083,
+        "pairmean_variance": 0.3148297071456909,
+        "within_over_variance": 3.0697272568487755,
+        "between_new_centroid_mse": 0.3841830790042877
+      }
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 202,
+      "stage": "control",
+      "overall": {
+        "correct": 492,
+        "total": 640,
+        "accuracy": 0.76875,
+        "complete_maps": 53,
+        "maps": 160,
+        "map_accuracy": 0.33125
+      },
+      "erased": {
+        "correct": 53,
+        "total": 640,
+        "accuracy": 0.0828125,
+        "complete_maps": 0,
+        "maps": 160,
+        "map_accuracy": 0.0
+      },
+      "concrete": {
+        "correct": 334,
+        "total": 480,
+        "accuracy": 0.6958333333333333
+      },
+      "unknown": {
+        "correct": 158,
+        "total": 160,
+        "accuracy": 0.9875
+      },
+      "probe": {
+        "baseline": {
+          "correct": 24,
+          "total": 32,
+          "accuracy": 0.75
+        },
+        "same_value": {
+          "correct": 23,
+          "total": 32,
+          "accuracy": 0.71875
+        },
+        "changed_value": {
+          "correct": 161,
+          "total": 224,
+          "accuracy": 0.71875
+        }
+      },
+      "query_preserved": 640,
+      "latent": {
+        "paired_old_mse": 0.9332181215286255,
+        "rms": 0.8835743069648743,
+        "pairmean_variance": 0.32649165391921997,
+        "within_over_variance": 2.8583215231488355,
+        "between_new_centroid_mse": 0.38532671332359314
+      }
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 202,
+      "stage": "invariance",
+      "overall": {
+        "correct": 475,
+        "total": 640,
+        "accuracy": 0.7421875,
+        "complete_maps": 40,
+        "maps": 160,
+        "map_accuracy": 0.25
+      },
+      "erased": {
+        "correct": 60,
+        "total": 640,
+        "accuracy": 0.09375,
+        "complete_maps": 0,
+        "maps": 160,
+        "map_accuracy": 0.0
+      },
+      "concrete": {
+        "correct": 335,
+        "total": 480,
+        "accuracy": 0.6979166666666666
+      },
+      "unknown": {
+        "correct": 140,
+        "total": 160,
+        "accuracy": 0.875
+      },
+      "probe": {
+        "baseline": {
+          "correct": 23,
+          "total": 32,
+          "accuracy": 0.71875
+        },
+        "same_value": {
+          "correct": 24,
+          "total": 32,
+          "accuracy": 0.75
+        },
+        "changed_value": {
+          "correct": 142,
+          "total": 224,
+          "accuracy": 0.6339285714285714
+        }
+      },
+      "query_preserved": 640,
+      "latent": {
+        "paired_old_mse": 0.007671074476093054,
+        "rms": 0.9173601865768433,
+        "pairmean_variance": 0.12752260267734528,
+        "within_over_variance": 0.060154626042585355,
+        "between_new_centroid_mse": 0.23137827217578888
+      }
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 303,
+      "stage": "starting",
+      "overall": {
+        "correct": 481,
+        "total": 640,
+        "accuracy": 0.7515625,
+        "complete_maps": 51,
+        "maps": 160,
+        "map_accuracy": 0.31875
+      },
+      "erased": {
+        "correct": 60,
+        "total": 640,
+        "accuracy": 0.09375,
+        "complete_maps": 0,
+        "maps": 160,
+        "map_accuracy": 0.0
+      },
+      "concrete": {
+        "correct": 321,
+        "total": 480,
+        "accuracy": 0.66875
+      },
+      "unknown": {
+        "correct": 160,
+        "total": 160,
+        "accuracy": 1.0
+      },
+      "probe": {
+        "baseline": {
+          "correct": 27,
+          "total": 32,
+          "accuracy": 0.84375
+        },
+        "same_value": {
+          "correct": 18,
+          "total": 32,
+          "accuracy": 0.5625
+        },
+        "changed_value": {
+          "correct": 145,
+          "total": 224,
+          "accuracy": 0.6473214285714286
+        }
+      },
+      "query_preserved": 640,
+      "latent": {
+        "paired_old_mse": 1.0777018070220947,
+        "rms": 0.9061630964279175,
+        "pairmean_variance": 0.3730189800262451,
+        "within_over_variance": 2.889133970993594,
+        "between_new_centroid_mse": 0.35190677642822266
+      }
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 303,
+      "stage": "control",
+      "overall": {
+        "correct": 512,
+        "total": 640,
+        "accuracy": 0.8,
+        "complete_maps": 64,
+        "maps": 160,
+        "map_accuracy": 0.4
+      },
+      "erased": {
+        "correct": 60,
+        "total": 640,
+        "accuracy": 0.09375,
+        "complete_maps": 0,
+        "maps": 160,
+        "map_accuracy": 0.0
+      },
+      "concrete": {
+        "correct": 352,
+        "total": 480,
+        "accuracy": 0.7333333333333333
+      },
+      "unknown": {
+        "correct": 160,
+        "total": 160,
+        "accuracy": 1.0
+      },
+      "probe": {
+        "baseline": {
+          "correct": 27,
+          "total": 32,
+          "accuracy": 0.84375
+        },
+        "same_value": {
+          "correct": 26,
+          "total": 32,
+          "accuracy": 0.8125
+        },
+        "changed_value": {
+          "correct": 172,
+          "total": 224,
+          "accuracy": 0.7678571428571429
+        }
+      },
+      "query_preserved": 640,
+      "latent": {
+        "paired_old_mse": 1.051575779914856,
+        "rms": 0.9150834679603577,
+        "pairmean_variance": 0.4119209349155426,
+        "within_over_variance": 2.552858305509311,
+        "between_new_centroid_mse": 0.45421892404556274
+      }
+    },
+    {
+      "arm": "pointer_slot",
+      "seed": 303,
+      "stage": "invariance",
+      "overall": {
+        "correct": 510,
+        "total": 640,
+        "accuracy": 0.796875,
+        "complete_maps": 62,
+        "maps": 160,
+        "map_accuracy": 0.3875
+      },
+      "erased": {
+        "correct": 58,
+        "total": 640,
+        "accuracy": 0.090625,
+        "complete_maps": 0,
+        "maps": 160,
+        "map_accuracy": 0.0
+      },
+      "concrete": {
+        "correct": 350,
+        "total": 480,
+        "accuracy": 0.7291666666666666
+      },
+      "unknown": {
+        "correct": 160,
+        "total": 160,
+        "accuracy": 1.0
+      },
+      "probe": {
+        "baseline": {
+          "correct": 28,
+          "total": 32,
+          "accuracy": 0.875
+        },
+        "same_value": {
+          "correct": 22,
+          "total": 32,
+          "accuracy": 0.6875
+        },
+        "changed_value": {
+          "correct": 166,
+          "total": 224,
+          "accuracy": 0.7410714285714286
+        }
+      },
+      "query_preserved": 640,
+      "latent": {
+        "paired_old_mse": 0.007671026978641748,
+        "rms": 0.928210973739624,
+        "pairmean_variance": 0.18540409207344055,
+        "within_over_variance": 0.041374636842221355,
+        "between_new_centroid_mse": 0.38237980008125305
+      }
+    }
+  ],
+  "full_analysis_sha256": "82325997d45c092efc223030bd42c4d750d1d9f710f76dad3d55659cf723b404"
+}
