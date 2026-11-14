@@ -25,7 +25,7 @@ Across single, filled_last and filled_first, predictions are identical within ev
 
 Relative to filled_last, normal overwrite harms 5 and rescues 1 CSM answers; it harms 8 and rescues 1 pointer-slot answers. These are paired counts over 96 probes per arm. CSM seed 202 improves to 32/32, so overwrite is not uniformly harmful across checkpoints.
 
-Only 4/23 normal pointer-slot overwrite errors equal the immediately superseded value; all four are seed 303 targetv6 predictedv7. CSM has 0/8 old-value answers among its overwrite errors. The old value was deliberately absent from background rows. Thus most overwrite errors here cannot be described as literal stale-value responses. Lack of a stale answer does not establish absence of old-state interference in the internal computation.
+Only 4/23 normal pointer-slot overwrite errors equal the immediately superseded value; all four are seed 303 targetv6 predictedv7. CSM has 0/8 old-value answers among its overwrite errors. The old value was deliberately absent from background rows. All four old-value matches are the same v6→v7 predictions already present in matched filled_last without an old target write, in both conditions; none was newly introduced by overwrite. The fixed old=new+1 pairing therefore coincides with a pre-existing confusion and does not establish stale-memory causation. Thus most overwrite errors here cannot be described as literal stale-value responses. Lack of a stale answer does not establish absence of old-state interference in the internal computation.
 
 Examples of errors already present in single SET→QUERY:
 
