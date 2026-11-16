@@ -12,8 +12,10 @@ Local checkpoint generations protect the previous committed snapshot during inde
 
 ## Engineering checks only
 
-Use a separately pinned Python/Torch CPU environment. First `cd research/csm_boundary_017`. Generate local development fixtures with `python data_build.py`, then run `python -m unittest discover -p 'test_*.py'`. The recovery tests perform tiny optimizer unit fixtures, not scientific training. These tests do not prove learned competence, unrestricted language parsing, or native CSM superiority.
+Use a separately pinned Python/Torch CPU environment. First `cd research/csm_boundary_017`. Generate local development fixtures with `python data_build.py`, then `python prepare017.py`, then run `python -m unittest discover -p 'test_*.py'`. The recovery tests perform tiny optimizer unit fixtures, not scientific training. These tests do not prove learned competence, unrestricted language parsing, or native CSM superiority.
 
 This draft has not passed a repository release or merge gate. No execution of protected TEST data or paid compute is requested.
 
 `base_data.py` is an inherited import-only rendering/helper module. Its legacy standalone build entry point is not the 017 generator; use `data_build.py`.
+
+New draft additions include a separately implemented scorer, clustered uncertainty, warm/cold timing, exact-bound checkpoint replay and native ecosystem recipe. The private Forge snapshot requires a separately reviewed additive Forge patch; it is not claimed upstream-released. Native ecosystem tests require compatible Forge/TrainLab/Veritas/ResearchLab packages.64-update segmentation requires verified private Library backup before continuation. Final training admission remains separate.

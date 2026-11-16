@@ -6,3 +6,11 @@ ADMISSION_017.json
 *.pt
 *.generations/
 outputs/
+
+TIMING_PLAN.json
+review017.json
+forge_017/
+study_split_map.json
+research_lab_017/
+recipe_*.json
+forge_source*
