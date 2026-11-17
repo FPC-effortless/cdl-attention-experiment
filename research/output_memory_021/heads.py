@@ -72,7 +72,7 @@ def masked_loss(head,clean,condition,t,generator):
     if t==0:raise ValueError('nonzero training time')
     noisy=torch.where(torch.rand(clean.shape,device=clean.device,generator=generator)<t,MASK,clean)
     logits=head(noisy,condition,t)
-    ce=F.cross_entropy(logits.transpose(1,2),clean,reduction='none')
+    ce=F.cross_entropy(logits.reshape(-1,logits.shape[-1]),clean.reshape(-1),reduction='none').reshape_as(clean)
     return (ce*(noisy==MASK)).mean()/t
 
 

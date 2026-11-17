@@ -3,9 +3,9 @@
   "batch_conditioner.py": "f0624abe61f14fe8a7b6741da6a5b8b718b1e20b28a6e2e860194705a75381c1",
   "surface_patterns.py": "4dbf99f5bd7c6af9b8ec70a8c4c2844f42bd4a341db7c18f8a19f71f30185986",
   "benchmark_adapters.py": "571b75cef1fcf5b7102baba2b11ee4fb19e2cd2133313bd528bd73cc268193f9",
-  "heads.py": "1e570f4ce733d6abdf81e76a4aa16024e0744107123de4eb2a03b4f7a3e0c1d5",
+  "heads.py": "757d2801dbc279d53e33165a4dbf55b4395d263452994ecc7dbe3bfca13043a1",
   "test_adapters.py": "a9afd8afa1defa6f38f13cc1942354a95029336099638251879e7bad74fc1d74",
-  "train_heads.py": "17bdd521f2285fcd06afd74c81e64497bb6ca6a02b3aa5105716bcb07b6a9b49",
+  "train_heads.py": "4fe4c8b9c79e859c17dbf6e71b7202058f50dd776ff7f1beb3438d13023bcfe3",
   "score_sessions.py": "c5a7927991e14c79c150530a3fe307f388e1a67dcb42f6ad24f8fa91733f5557",
   "calibration.py": "f0c4b786be15624c615b0b7d46ea0edc7e40fdc70027c5a40998decee9592e70",
   "test_assemble_private_inputs.py": "c99663724416bc1f98c98aec84f6f81fb71e45a06067cd0e0a6051877ce1796e",
@@ -16,12 +16,12 @@
   "test_train_heads.py": "dc99d879879c98c37f11853dc3cb0d19e1db0ee2c64ce45067dd0005f299f0e7",
   "evaluate_sessions.py": "7299386dfcc820e4888b49db9be1e4122a7f1ac31f2e2527787fd5357bfbec41",
   "cache_train.py": "479ccaa643575ecb7a87211905046eeef3761d969c996b7d48cb2cd5acdc15e2",
-  "test_heads.py": "6dca3287d7efaebb09dafb2c500f68dbe3b4fe6b37b0859d642833f6da1d1a36",
+  "test_heads.py": "7afc9317f64fedbd20f19d4795fa9cee837e35faaeb909bf86b16b89ea1631ce",
   "EVALUATION.md": "c723d4b19ac2fd7e0c497830e03ae352be4b354c1ab25f462211e387410c8c76",
-  "IMPLEMENTATION.md": "46494a5b1ded422c51e093942d4912999ffd22dd647c0cd9e051ae6a48b6e711",
+  "IMPLEMENTATION.md": "242ed66498235d1c775475e566b58c8d664993458dd5c048da957f47d18f3665",
   "PROTOCOL.md": "32be22baa6d77e4a3da2a9514e1c2b30e9d03751618b79236e91d67d7c3114b0",
   "legacy/native_csm.py": "f496837236ea1f53939d29776255bfba8f1d02512a8b52f581a79d94134a4234",
   "legacy/build_sessions.py": "d645ecda800ff5e21b8294681c73c3fd666ab7ce2177e2468fb49711dcd928ec",
   "README.md": "0154c417b6b8432e308e96c93ffa5affc7e38c264744350cf2b9221e0d2d486f",
-  "run.py": "034596023cd3032aa1f343e9b24b895bc5400f9df123b8b394d0d1252b080183"
+  "run.py": "1956be6f5a1547b9ebf948419fb1015601ff6675aede31e0ef8ccf88c794705f"
 }

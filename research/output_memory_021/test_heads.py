@@ -94,6 +94,15 @@ class Tests(unittest.TestCase):
  def test_ar_no_active_no_work(self):
   a,r=generate_ar(self.head,self.c,16,['a','b'],active=torch.zeros(2,dtype=torch.bool))
   self.assertEqual(r['head_calls'],0);self.assertTrue((a==PAD).all())
+ def test_flattened_ce_loss_and_gradient_equivalence(self):
+  x=torch.randn(3,11,258,dtype=torch.float64,requires_grad=True)
+  target=torch.randint(0,258,(3,11));mask=torch.rand(3,11)<.4
+  ref=F.cross_entropy(x.transpose(1,2),target,reduction='none')
+  flat=F.cross_entropy(x.reshape(-1,258),target.reshape(-1),reduction='none').reshape_as(target)
+  self.assertTrue(torch.allclose(ref,flat,atol=1e-12,rtol=1e-12))
+  a=(ref*mask).mean()/.4;b=(flat*mask).mean()/.4
+  ga=torch.autograd.grad(a,x,retain_graph=True)[0];gb=torch.autograd.grad(b,x)[0]
+  self.assertTrue(torch.allclose(ga,gb,atol=1e-12,rtol=1e-12))
  def test_prefix_only_adapter_signature(self):
   import inspect
   self.assertEqual(list(inspect.signature(prefix_condition).parameters),['model','prefixes'])

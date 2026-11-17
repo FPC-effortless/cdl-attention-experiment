@@ -45,10 +45,10 @@ def train(cache_path,out,mode,condition,seed,updates,batch=128,width=64,layers=2
    update_start=time.perf_counter()
    idx=torch.randint(len(ids),(batch,),generator=sampler);ix=idx.to(device);c=features[ix];clean=targets[ix];opt.zero_grad(set_to_none=True)
    if mode=='ar':
-    loss=F.cross_entropy(head(ar_inputs(clean),c,causal=True).transpose(1,2),clean);t=0.;masked=0
+    logits=head(ar_inputs(clean),c,causal=True);loss=F.cross_entropy(logits.reshape(-1,logits.shape[-1]),clean.reshape(-1));t=0.;masked=0
    else:
     t=1e-4+(1-1e-4)*torch.rand((),generator=time_rng).item();keep=torch.rand(clean.shape,device=device,generator=noise)<t;noisy=torch.where(keep,MASK,clean)
-    ce=F.cross_entropy(head(noisy,c,t).transpose(1,2),clean,reduction='none');loss=(ce*keep).mean()/t;masked=int(keep.sum())
+    logits=head(noisy,c,t);ce=F.cross_entropy(logits.reshape(-1,logits.shape[-1]),clean.reshape(-1),reduction='none').reshape_as(clean);loss=(ce*keep).mean()/t;masked=int(keep.sum())
    if not torch.isfinite(loss):raise ValueError('nonfinite training loss')
    loss.backward();norm=torch.nn.utils.clip_grad_norm_(head.parameters(),1.,error_if_nonfinite=True);opt.step()
    trace.write(canonical({'update':u+1,'loss':float(loss.detach()),'gradient_norm':float(norm),'time':t,'masked_targets':masked,'answer_exposures':batch,'target_positions':batch*64,'nonpad_targets':int((clean!=PAD).sum()),'step_elapsed_before_trace_write_seconds':time.perf_counter()-update_start,'sampled_ids_sha256':hashlib.sha256(canonical([ids[i] for i in idx.tolist()]).encode()).hexdigest()})+'\n');trace.flush()
