@@ -1,6 +1,6 @@
-# OUTPUT-MEMORY-021: reviewed scientific source, awaiting execution
+# OUTPUT-MEMORY-021: reviewed scientific source and recovery
 
-This source snapshot extends the separately completed software calibration into a bounded scientific sentence-output comparison. It is not a completed scientific result or a qualified CSM repair. Paused020 and released-NCM feasibility remain separate.
+This source snapshot extends the separately completed software calibration into a bounded scientific sentence-output comparison. The full three-seed campaign is not yet reported as complete or qualified; no CSM repair claim is made. Paused020 and released-NCM feasibility remain separate.
 
 Independent review approved the frozen three-seed design/closures subject to public source verification, private recovery roundtrip, exact runtime checks and fresh quota admission before each launch. Each seed compares four heads: autoregressive versus actual diffusion, each conditioned on frozen native CSM features versus supplied engineered resolved state. Read PROTOCOL.md and RESOLVED_ADAPTER_V2.md for scope and limitations. No convergence, general language or unrestricted-memory claim is authorized by this design.
 
@@ -10,6 +10,8 @@ PUBLIC_SOURCE_SHA256.json identifies public file contents. Private TRAIN_SELECTI
 
 The existing run.py is the earlier calibration launcher and must not be mistaken for scientific launch authorization. scientific_run.py is separately reviewed and bound to seed11 only. Other seeds require their own manifest-bound reviewed launch and fresh quota admission. Public draft status does not approve merge or bypass checks.
 
-## Current recovery and execution hold
+## Current recovery status
 
-Scientific launch is held for a duplicate-pair validation defect in the evaluator. No scientific head fit has launched; inspected data remain valid. Prior admissions must not be reused pending corrected source, fresh independent review and re-bound private closure. See [private recovery access instructions](PRIVATE_RECOVERY_GUIDE_PUBLIC.md) for owner-authorized restoration without exposing private access identifiers.
+Snapshot 17 November 2026, 18:45:13 UTC: seeds11 and23 completed, independently audited from retained evidence and privately backed up with verified roundtrips. Seed37 was last observed RUNNING with no completed archive yet. This is not independent GPU retraining/replay or a cross-seed quality conclusion. Check live status before restarting.
+
+The duplicate-pair source defect and later review-text length rejection are preserved historical pre-fit failures, not an active blanket launch hold. V3 changed only private REVIEW/ADMISSION records; reviewed source, data, INPUTS and launchers remain unchanged. Use the exact V3 private administrative bundle, not older admissions sharing the same INPUTS. See [private recovery access instructions](PRIVATE_RECOVERY_GUIDE_PUBLIC.md) and the latest owner-authorized Library guide.
