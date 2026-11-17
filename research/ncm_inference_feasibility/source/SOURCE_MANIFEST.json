@@ -1,0 +1,117 @@
+[
+  {
+    "path": "LICENSE",
+    "git_blob": "8c9c7f4ff5fc026b93c55dcce141d142bd3b650c",
+    "sha256": "2b379bec6e8f7f362eef851d10a2afc4171b0e96a3525d50350e2cf783f2c441"
+  },
+  {
+    "path": "config/eval/xsum.yaml",
+    "git_blob": "0394a34c0dee9e36e60318d61f7de1bd9c7fa489",
+    "sha256": "5dee6b7339645a22362f695fbadb27df6e5254db2d3be0bff8516138d95da493"
+  },
+  {
+    "path": "evaluate.py",
+    "git_blob": "fb7ae1cc4569ae6269a0692d62599d2914345573",
+    "sha256": "74b6b7781031a8c7e690ae8f7d80b1d82775e51c10ced3c19d47262aac014be0"
+  },
+  {
+    "path": "evaluation/__init__.py",
+    "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evaluation/gen_ppl.py",
+    "git_blob": "98bd96e4e6eb0a9bfeeecd1f47fd162550ccb412",
+    "sha256": "31cde7d31aadc8cd873f7a853e818270e27e4789af4fb573d1821c8a0072ef5f"
+  },
+  {
+    "path": "models/__init__.py",
+    "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "models/common.py",
+    "git_blob": "e1d214a9cfa677c543388990d2f35f1fedb7e30a",
+    "sha256": "41b7c2c653d7ba312d583caca878ea3708d83da1a770b0b39651dbfd19754b73"
+  },
+  {
+    "path": "models/next_concept.py",
+    "git_blob": "25ee56d5bbcaa21558768b279490ad21f5a12cb9",
+    "sha256": "4a1c483ca3b3522adb5ee754db4917c96ce08a82e992679ad7ed79e8f8c8da9b"
+  },
+  {
+    "path": "models/quant.py",
+    "git_blob": "8262ab80e782ff6e59a60ee59cff58eb0c2ec804",
+    "sha256": "5fd16053a826a5a0af580715a79bb03dc3eea49669514969c1086c445e9c9e2b"
+  },
+  {
+    "path": "models/vae.py",
+    "git_blob": "83c4e7c0e190a0a3214d100131d099f15dfd01e2",
+    "sha256": "7d393b56813342278def3b053e83ec4ff4e56a492e4ddf2a2441e1c9f78d4317"
+  },
+  {
+    "path": "models/vqvae.py",
+    "git_blob": "2aa3236a1e4b2f9a7bc7945ec592d5b087ec67a5",
+    "sha256": "9873af280da08ca39360388f652f993f17ace761a751ffa812caa706f66f592b"
+  },
+  {
+    "path": "requirements.txt",
+    "git_blob": "a32cf29dbf7cf31629b9fdb15d57f48e101f36e2",
+    "sha256": "b36eb1319640370b61f529b08299266458f5d2fa50fd8b8634ab10f7733fcf85"
+  },
+  {
+    "path": "scripts/eval_merge.py",
+    "git_blob": "ddee0bc716c13a17e2e271bad5dd6749832debc8",
+    "sha256": "6452cb5cc06a2355ab7cd16b9809b7144a557418e9041e4617f3c50aef5655fc"
+  },
+  {
+    "path": "scripts/eval_shard.py",
+    "git_blob": "2875b0b20e9873f45b26e2376187e486f73ba272",
+    "sha256": "e1eb550123ec76601d1af9c59c2bb7a81d5ca683a662948fcb4d8164dd510c4a"
+  },
+  {
+    "path": "tokenization/__init__.py",
+    "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "tokenization/bpe_tokenizer.py",
+    "git_blob": "6ea79ae0a12d41c047e7cf88fcbd6497eaf79c09",
+    "sha256": "5df2bf286b36cdc3c428aaf347c56a98c0abb3da65c8ff734582b1d59959ba2c"
+  },
+  {
+    "path": "tokenization/hf_tokenizer.py",
+    "git_blob": "57c4cbd7da088f69d4d1b58756ba93b64bea51ca",
+    "sha256": "76438d8e102a365cb30fd053e47ca138712649c893a06a92b0cc1448b5dcd49d"
+  },
+  {
+    "path": "tokenization/sudoku_tokenizer.py",
+    "git_blob": "62bd205b0ca9f13f5e2bc1aac9675d1822f404ee",
+    "sha256": "a76c58f60d759ad3da045d3045a47588d1de16ca12c88472fa7f8262a236975f"
+  },
+  {
+    "path": "tokenization/tokenizer.py",
+    "git_blob": "506893336239369bf52bd484fb06c160b39874f7",
+    "sha256": "e527d47e4ed8634c673d48a872a07c9cc8828d30988331de2d4bd3b7c21ddcb7"
+  },
+  {
+    "path": "tokenization/vqvae_tokenizer.py",
+    "git_blob": "711866d77c3a6b2ffb5ebd300eeb4689cfa8c4f0",
+    "sha256": "8fd909578fd384da49ebf44d1589f414c43860a6a84cb85e2c6659a6b0ff37ee"
+  },
+  {
+    "path": "utils/__init__.py",
+    "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "utils/misc.py",
+    "git_blob": "f98d4875dc7d668e57aff6af278c6df2837814e2",
+    "sha256": "7e766c7ee036648f4959323ab671e6a7c5d3e873adb9ed60fbec83497728b452"
+  },
+  {
+    "path": "utils/registry.py",
+    "git_blob": "f7e68e10fb62f1415647b2564ab9015e8cfc395f",
+    "sha256": "28ecdf5be072c55e18348e519b5bd079c58dee085561abfb3f4587e5eac7938a"
+  }
+]
