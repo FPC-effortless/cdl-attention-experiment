@@ -1,0 +1,473 @@
+{
+  "scope": "Original source and protocols, not private runtime/data/evidence",
+  "files": [
+    {
+      "path": "research/recovered_source/CSM_POINTER_014_EVIDENCE/build_canonical.py",
+      "sha256": "9c0a26cff8b13c7d6e05137c004ea8738c0eddfff11223a5445d0bde4ea468ed",
+      "source_archive": "CSM_POINTER_014_EVIDENCE.zip",
+      "source_member": "source/build_canonical.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_POINTER_014_EVIDENCE/canonical.py",
+      "sha256": "5a4dc3a5eff80ee287c4e907ae2aa91c9382f102c724a4c929cf1f911d8085b0",
+      "source_archive": "CSM_POINTER_014_EVIDENCE.zip",
+      "source_member": "source/canonical.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_POINTER_014_EVIDENCE/data_build.py",
+      "sha256": "89492a3e5504eb3d831535ce9f3f39cd92f70ecf67092b22d4fa791678bc38a3",
+      "source_archive": "CSM_POINTER_014_EVIDENCE.zip",
+      "source_member": "source/data_build.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_POINTER_014_EVIDENCE/evaluate.py",
+      "sha256": "15947d6434b9e410a7377820df6004312417625a87d4adf2484637c32e8be18f",
+      "source_archive": "CSM_POINTER_014_EVIDENCE.zip",
+      "source_member": "source/evaluate.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_POINTER_014_EVIDENCE/executor.py",
+      "sha256": "a0a210c3ecd322c17d3805d573a36ab397f8ee313fdd3bdf9c9a9c233879f18a",
+      "source_archive": "CSM_POINTER_014_EVIDENCE.zip",
+      "source_member": "source/executor.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_POINTER_014_EVIDENCE/gates.py",
+      "sha256": "3d64234625c34d120dd5a589a1663df016d7d410da7ead0686968d4424895380",
+      "source_archive": "CSM_POINTER_014_EVIDENCE.zip",
+      "source_member": "source/gates.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_POINTER_014_EVIDENCE/lexer.py",
+      "sha256": "97088da6f0583511bec689509ff99f37f5ee03e952f1591e0cda17088f0d7750",
+      "source_archive": "CSM_POINTER_014_EVIDENCE.zip",
+      "source_member": "source/lexer.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_POINTER_014_EVIDENCE/model.py",
+      "sha256": "86de3b9027b8de143fc952b9f16445487d08af95b9ad2179161084fe1ad0042f",
+      "source_archive": "CSM_POINTER_014_EVIDENCE.zip",
+      "source_member": "source/model.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_POINTER_014_EVIDENCE/original_data_build_012.py",
+      "sha256": "5b28a6ef1715d371ef4b9787a958603e6f5db486820f6393931958d6205aae54",
+      "source_archive": "CSM_POINTER_014_EVIDENCE.zip",
+      "source_member": "source/original_data_build_012.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_POINTER_014_EVIDENCE/reference_executor.py",
+      "sha256": "bec9d5c1a05f6c50b43ed68fc3e6040064f76036d9d2fbecb024eb2dd81a7059",
+      "source_archive": "CSM_POINTER_014_EVIDENCE.zip",
+      "source_member": "source/reference_executor.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_POINTER_014_EVIDENCE/runtime_check.py",
+      "sha256": "160866ad289ff766d13880e2f36c83fd6012f9fd0af1ffa83307565f62f66212",
+      "source_archive": "CSM_POINTER_014_EVIDENCE.zip",
+      "source_member": "source/runtime_check.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_POINTER_014_EVIDENCE/study.py",
+      "sha256": "e0f79ea7a70273347e3051250b097d5576a2f72d5fd95d2ef74575b0a1413700",
+      "source_archive": "CSM_POINTER_014_EVIDENCE.zip",
+      "source_member": "source/study.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_POINTER_014_EVIDENCE/test_evaluate.py",
+      "sha256": "44f144bc1dfd47a285a3c983d82b3564c6a2b7ee0b395be39d95e72a31e262aa",
+      "source_archive": "CSM_POINTER_014_EVIDENCE.zip",
+      "source_member": "source/test_evaluate.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_POINTER_014_EVIDENCE/test_lexer.py",
+      "sha256": "79e5a73813cfc86ec6193896c443202bd464ceeff7e7873b7cea3c6724e00131",
+      "source_archive": "CSM_POINTER_014_EVIDENCE.zip",
+      "source_member": "source/test_lexer.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_POINTER_014_EVIDENCE/training.py",
+      "sha256": "ace058dad9b243e9e163cfcf3d2992dadc42e084b67c63c56f0a46da0e9a3509",
+      "source_archive": "CSM_POINTER_014_EVIDENCE.zip",
+      "source_member": "source/training.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_COMPOSITION_015_EVIDENCE/closed_loop.py",
+      "sha256": "f4270bb3146bab024d4c325c085aacdd3d7f460f39517ae449973497b7a17d6f",
+      "source_archive": "CSM_COMPOSITION_015_EVIDENCE.zip",
+      "source_member": "source/closed_loop.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_COMPOSITION_015_EVIDENCE/evaluate.py",
+      "sha256": "15947d6434b9e410a7377820df6004312417625a87d4adf2484637c32e8be18f",
+      "source_archive": "CSM_COMPOSITION_015_EVIDENCE.zip",
+      "source_member": "source/evaluate.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_COMPOSITION_015_EVIDENCE/executor.py",
+      "sha256": "a0a210c3ecd322c17d3805d573a36ab397f8ee313fdd3bdf9c9a9c233879f18a",
+      "source_archive": "CSM_COMPOSITION_015_EVIDENCE.zip",
+      "source_member": "source/executor.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_COMPOSITION_015_EVIDENCE/extract.py",
+      "sha256": "b527873ef117f29d91aab1d8ace7b9b3dd404a8314102efcc58c6ed595b80dae",
+      "source_archive": "CSM_COMPOSITION_015_EVIDENCE.zip",
+      "source_member": "source/extract.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_COMPOSITION_015_EVIDENCE/lexer.py",
+      "sha256": "97088da6f0583511bec689509ff99f37f5ee03e952f1591e0cda17088f0d7750",
+      "source_archive": "CSM_COMPOSITION_015_EVIDENCE.zip",
+      "source_member": "source/lexer.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_COMPOSITION_015_EVIDENCE/model.py",
+      "sha256": "86de3b9027b8de143fc952b9f16445487d08af95b9ad2179161084fe1ad0042f",
+      "source_archive": "CSM_COMPOSITION_015_EVIDENCE.zip",
+      "source_member": "source/model.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_COMPOSITION_015_EVIDENCE/open_loop.py",
+      "sha256": "b619d2f764e31f22f9f68bc2b07874420f4b039d2106e84107b61ae378c6522f",
+      "source_archive": "CSM_COMPOSITION_015_EVIDENCE.zip",
+      "source_member": "source/open_loop.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_COMPOSITION_015_EVIDENCE/reference_executor.py",
+      "sha256": "bec9d5c1a05f6c50b43ed68fc3e6040064f76036d9d2fbecb024eb2dd81a7059",
+      "source_archive": "CSM_COMPOSITION_015_EVIDENCE.zip",
+      "source_member": "source/reference_executor.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_COMPOSITION_015_EVIDENCE/runtime_check.py",
+      "sha256": "160866ad289ff766d13880e2f36c83fd6012f9fd0af1ffa83307565f62f66212",
+      "source_archive": "CSM_COMPOSITION_015_EVIDENCE.zip",
+      "source_member": "source/runtime_check.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_COMPOSITION_015_EVIDENCE/study.py",
+      "sha256": "86f711e28f6a3f069f32e93e56d68c6dcbe0d89678c88a3290806eb8292adfe5",
+      "source_archive": "CSM_COMPOSITION_015_EVIDENCE.zip",
+      "source_member": "source/study.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_SIGNAL_009_EVIDENCE/source/baseline.py",
+      "sha256": "548257582a1b4c181bfd244bc8b24aa610e2a14ee27927da0c201d0ead73d600",
+      "source_archive": "CSM_SIGNAL_009_EVIDENCE.zip",
+      "source_member": "source/baseline.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_SIGNAL_009_EVIDENCE/source/diagnostic.py",
+      "sha256": "b2f166d74fff8c4474967bac1d02b29e054890be284679c54848545546601faf",
+      "source_archive": "CSM_SIGNAL_009_EVIDENCE.zip",
+      "source_member": "source/diagnostic.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_SIGNAL_009_EVIDENCE/source/native_csm.py",
+      "sha256": "5740222397bd082e878f3ccb24786b46b37b8075d070f6db90a210fdd081f8bd",
+      "source_archive": "CSM_SIGNAL_009_EVIDENCE.zip",
+      "source_member": "source/native_csm.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_SIGNAL_009_EVIDENCE/source/PROTOCOL.md",
+      "sha256": "3013bef926e6961d063c20057310a81b325063be09b1672fd18cad9ea1f03a98",
+      "source_archive": "CSM_SIGNAL_009_EVIDENCE.zip",
+      "source_member": "source/PROTOCOL.md"
+    },
+    {
+      "path": "research/recovered_source/CSM_SIGNAL_009_EVIDENCE/source/runtime_check.py",
+      "sha256": "160866ad289ff766d13880e2f36c83fd6012f9fd0af1ffa83307565f62f66212",
+      "source_archive": "CSM_SIGNAL_009_EVIDENCE.zip",
+      "source_member": "source/runtime_check.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_CARRIER_010_EVIDENCE/math_refinement/driver.py",
+      "sha256": "3904c2b590fe7845a08ef0a27e8d084a26728367b1e35f48ef6692d4de7bc329",
+      "source_archive": "CSM_CARRIER_010_EVIDENCE.zip",
+      "source_member": "math_refinement/driver.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_CARRIER_010_EVIDENCE/math_refinement/Carrier.lean",
+      "sha256": "fb367bbab2a33224ae64c4b48a56d1efacea97149b49f696b3c585d246c35a59",
+      "source_archive": "CSM_CARRIER_010_EVIDENCE.zip",
+      "source_member": "math_refinement/Carrier.lean"
+    },
+    {
+      "path": "research/recovered_source/CSM_CARRIER_010_EVIDENCE/math_refinement/executor_frozen.py",
+      "sha256": "bec9d5c1a05f6c50b43ed68fc3e6040064f76036d9d2fbecb024eb2dd81a7059",
+      "source_archive": "CSM_CARRIER_010_EVIDENCE.zip",
+      "source_member": "math_refinement/executor_frozen.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_CARRIER_010_EVIDENCE/math_refinement/check.py",
+      "sha256": "1728273a77da4a5a4fec7182912e3f81f88c7f4e9d1b2a75bb31f9c4f2f54097",
+      "source_archive": "CSM_CARRIER_010_EVIDENCE.zip",
+      "source_member": "math_refinement/check.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_CARRIER_010_EVIDENCE/math_refinement/TypedMemory.lean",
+      "sha256": "58d9986d2185fe39ae3aeac822e6a4f0a56766ecbae9653bc4573cc71b645151",
+      "source_archive": "CSM_CARRIER_010_EVIDENCE.zip",
+      "source_member": "math_refinement/TypedMemory.lean"
+    },
+    {
+      "path": "research/recovered_source/CSM_CARRIER_010_EVIDENCE/math_refinement/study_frozen.py",
+      "sha256": "beab182f0e5895a39897cb10a31bbf471895162d618e3778c7e702c0be36235f",
+      "source_archive": "CSM_CARRIER_010_EVIDENCE.zip",
+      "source_member": "math_refinement/study_frozen.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_CARRIER_010_EVIDENCE/math_refinement/dispatch.py",
+      "sha256": "9491ba9271471ffea8ab2d55421d16c685afb289de917d293804cc8f93bd3ae3",
+      "source_archive": "CSM_CARRIER_010_EVIDENCE.zip",
+      "source_member": "math_refinement/dispatch.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_CARRIER_010_EVIDENCE/source/baseline.py",
+      "sha256": "7fe54f8b8ad5cf16be0428820783f15e3022cc3b498eb63ae55d74b6cb220aea",
+      "source_archive": "CSM_CARRIER_010_EVIDENCE.zip",
+      "source_member": "source/baseline.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_CARRIER_010_EVIDENCE/source/study.py",
+      "sha256": "beab182f0e5895a39897cb10a31bbf471895162d618e3778c7e702c0be36235f",
+      "source_archive": "CSM_CARRIER_010_EVIDENCE.zip",
+      "source_member": "source/study.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_CARRIER_010_EVIDENCE/source/native_csm.py",
+      "sha256": "ae706e35d3ebaba37d0bbf3adb37394bab38e345b302e496b92c626b82446a69",
+      "source_archive": "CSM_CARRIER_010_EVIDENCE.zip",
+      "source_member": "source/native_csm.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_CARRIER_010_EVIDENCE/source/PROTOCOL.md",
+      "sha256": "4ea37a514a8741285d215a0e402cfa096aecb4ef889c9b03bbf0188469941c8f",
+      "source_archive": "CSM_CARRIER_010_EVIDENCE.zip",
+      "source_member": "source/PROTOCOL.md"
+    },
+    {
+      "path": "research/recovered_source/CSM_CARRIER_010_EVIDENCE/source/runtime_check.py",
+      "sha256": "160866ad289ff766d13880e2f36c83fd6012f9fd0af1ffa83307565f62f66212",
+      "source_archive": "CSM_CARRIER_010_EVIDENCE.zip",
+      "source_member": "source/runtime_check.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_PARSER_011_EVIDENCE/math_refinement/driver.py",
+      "sha256": "dc9883b2bc95e6e148603b019988bd4ec855d2f4841856691b607363c28a8999",
+      "source_archive": "CSM_PARSER_011_EVIDENCE.zip",
+      "source_member": "math_refinement/driver.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_PARSER_011_EVIDENCE/math_refinement/check.py",
+      "sha256": "2ee6b9b1bd18d08f0121b3381d97f0ba49cb32761a1c1c7f712583900556aa9e",
+      "source_archive": "CSM_PARSER_011_EVIDENCE.zip",
+      "source_member": "math_refinement/check.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_PARSER_011_EVIDENCE/math_refinement/study_frozen.py",
+      "sha256": "01b976aeb9f34e7ccdbb87d2679027bdb36337598ed0994b927dfeadb4a6e6e1",
+      "source_archive": "CSM_PARSER_011_EVIDENCE.zip",
+      "source_member": "math_refinement/study_frozen.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_PARSER_011_EVIDENCE/math_refinement/dispatch.py",
+      "sha256": "a4d7f851dbd28a82fd11f300bcaa66bbceb3453c582e70b089a3da3b8cc4b4e7",
+      "source_archive": "CSM_PARSER_011_EVIDENCE.zip",
+      "source_member": "math_refinement/dispatch.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_PARSER_011_EVIDENCE/math_refinement/Carry.lean",
+      "sha256": "70eb89a04ca79dbf4d7ae6e0b5d66cb82546a5e7c2707275c472ebb2e492fb64",
+      "source_archive": "CSM_PARSER_011_EVIDENCE.zip",
+      "source_member": "math_refinement/Carry.lean"
+    },
+    {
+      "path": "research/recovered_source/CSM_PARSER_011_EVIDENCE/source/study.py",
+      "sha256": "01b976aeb9f34e7ccdbb87d2679027bdb36337598ed0994b927dfeadb4a6e6e1",
+      "source_archive": "CSM_PARSER_011_EVIDENCE.zip",
+      "source_member": "source/study.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_PARSER_011_EVIDENCE/source/PROTOCOL.md",
+      "sha256": "019f3a38204719e14b36347889fdbd88e02d4286076a14a85f9d87f90984bab4",
+      "source_archive": "CSM_PARSER_011_EVIDENCE.zip",
+      "source_member": "source/PROTOCOL.md"
+    },
+    {
+      "path": "research/recovered_source/CSM_PARSER_011_EVIDENCE/source/data_build.py",
+      "sha256": "ee8284967d7a8ffce1962506e4bf6f0d81682785732b8f8935aebe5ada3a9f9c",
+      "source_archive": "CSM_PARSER_011_EVIDENCE.zip",
+      "source_member": "source/data_build.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_PARSER_011_EVIDENCE/source/runtime_check.py",
+      "sha256": "160866ad289ff766d13880e2f36c83fd6012f9fd0af1ffa83307565f62f66212",
+      "source_archive": "CSM_PARSER_011_EVIDENCE.zip",
+      "source_member": "source/runtime_check.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_MATH_008_VERIFIED_EXECUTOR_20261116/driver.py",
+      "sha256": "037c3fbc1a5677297d58d8aa44ba46aa7dc1c4b13d06e3d1cf0c6ea23ded9f62",
+      "source_archive": "CSM_MATH_008_VERIFIED_EXECUTOR_20261116.zip",
+      "source_member": "driver.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_MATH_008_VERIFIED_EXECUTOR_20261116/verify.py",
+      "sha256": "2e675789e578f23d074f1d8adcd2fee14327ea4d5c3bdad3710ed0868041e75a",
+      "source_archive": "CSM_MATH_008_VERIFIED_EXECUTOR_20261116.zip",
+      "source_member": "verify.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_MATH_008_VERIFIED_EXECUTOR_20261116/Mutation.lean",
+      "sha256": "a6a7529ceafe81bdef1b4b7b67ade4bbfb41ad2ceb0705cabae76122aa0616e2",
+      "source_archive": "CSM_MATH_008_VERIFIED_EXECUTOR_20261116.zip",
+      "source_member": "Mutation.lean"
+    },
+    {
+      "path": "research/recovered_source/CSM_MATH_008_VERIFIED_EXECUTOR_20261116/executor.py",
+      "sha256": "bec9d5c1a05f6c50b43ed68fc3e6040064f76036d9d2fbecb024eb2dd81a7059",
+      "source_archive": "CSM_MATH_008_VERIFIED_EXECUTOR_20261116.zip",
+      "source_member": "executor.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_MATH_008_VERIFIED_EXECUTOR_20261116/Parity.lean",
+      "sha256": "29782c3aaabe05b6df72ffea4754218319d8239e75aba5af69e0043340238e1e",
+      "source_archive": "CSM_MATH_008_VERIFIED_EXECUTOR_20261116.zip",
+      "source_member": "Parity.lean"
+    },
+    {
+      "path": "research/recovered_source/CSM_MATH_008_VERIFIED_EXECUTOR_20261116/TypedMemory.lean",
+      "sha256": "58d9986d2185fe39ae3aeac822e6a4f0a56766ecbae9653bc4573cc71b645151",
+      "source_archive": "CSM_MATH_008_VERIFIED_EXECUTOR_20261116.zip",
+      "source_member": "TypedMemory.lean"
+    },
+    {
+      "path": "research/recovered_source/CSM_MATH_008_VERIFIED_EXECUTOR_20261116/dispatch.py",
+      "sha256": "d902459a8f5708cbc6ff320679acd6c303767df52a24f5a09a9752134fdf40de",
+      "source_archive": "CSM_MATH_008_VERIFIED_EXECUTOR_20261116.zip",
+      "source_member": "dispatch.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_ATTRIBUTION_013_EVIDENCE/source/reference_executor.py",
+      "sha256": "bec9d5c1a05f6c50b43ed68fc3e6040064f76036d9d2fbecb024eb2dd81a7059",
+      "source_archive": "CSM_ATTRIBUTION_013_EVIDENCE.zip",
+      "source_member": "source/reference_executor.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_ATTRIBUTION_013_EVIDENCE/source/PROTOCOL.md",
+      "sha256": "aef0d0ffbc9139eef53beae2d879ed54ab161de72ab9e0ccb0a053e1ea82199a",
+      "source_archive": "CSM_ATTRIBUTION_013_EVIDENCE.zip",
+      "source_member": "source/PROTOCOL.md"
+    },
+    {
+      "path": "research/recovered_source/CSM_ATTRIBUTION_013_EVIDENCE/source/diagnose.py",
+      "sha256": "868bb82abeff85b9c2032bc94dd347cb40eea45559e9e647c92199c92f7f2b20",
+      "source_archive": "CSM_ATTRIBUTION_013_EVIDENCE.zip",
+      "source_member": "source/diagnose.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_LIFECYCLE_012_EVIDENCE/source/reference_executor.py",
+      "sha256": "bec9d5c1a05f6c50b43ed68fc3e6040064f76036d9d2fbecb024eb2dd81a7059",
+      "source_archive": "CSM_LIFECYCLE_012_EVIDENCE.zip",
+      "source_member": "source/reference_executor.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_LIFECYCLE_012_EVIDENCE/source/model.py",
+      "sha256": "471688967e6bc1ca85208e9919067f46520910db459206d0ba6e11f567f67bcc",
+      "source_archive": "CSM_LIFECYCLE_012_EVIDENCE.zip",
+      "source_member": "source/model.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_LIFECYCLE_012_EVIDENCE/source/test_evaluate.py",
+      "sha256": "44f144bc1dfd47a285a3c983d82b3564c6a2b7ee0b395be39d95e72a31e262aa",
+      "source_archive": "CSM_LIFECYCLE_012_EVIDENCE.zip",
+      "source_member": "source/test_evaluate.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_LIFECYCLE_012_EVIDENCE/source/study.py",
+      "sha256": "62d6376fd3a218be7f572b4b81b54fb96c0e2278117e84fd1b1a3d1e261abe2f",
+      "source_archive": "CSM_LIFECYCLE_012_EVIDENCE.zip",
+      "source_member": "source/study.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_LIFECYCLE_012_EVIDENCE/source/executor.py",
+      "sha256": "a0a210c3ecd322c17d3805d573a36ab397f8ee313fdd3bdf9c9a9c233879f18a",
+      "source_archive": "CSM_LIFECYCLE_012_EVIDENCE.zip",
+      "source_member": "source/executor.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_LIFECYCLE_012_EVIDENCE/source/evaluate.py",
+      "sha256": "15947d6434b9e410a7377820df6004312417625a87d4adf2484637c32e8be18f",
+      "source_archive": "CSM_LIFECYCLE_012_EVIDENCE.zip",
+      "source_member": "source/evaluate.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_LIFECYCLE_012_EVIDENCE/source/PROTOCOL.md",
+      "sha256": "14e48e80a56f147e6f40f856f30ff9d79aef02bd542d35e060d171cf7595132f",
+      "source_archive": "CSM_LIFECYCLE_012_EVIDENCE.zip",
+      "source_member": "source/PROTOCOL.md"
+    },
+    {
+      "path": "research/recovered_source/CSM_LIFECYCLE_012_EVIDENCE/source/gates.py",
+      "sha256": "3d64234625c34d120dd5a589a1663df016d7d410da7ead0686968d4424895380",
+      "source_archive": "CSM_LIFECYCLE_012_EVIDENCE.zip",
+      "source_member": "source/gates.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_LIFECYCLE_012_EVIDENCE/source/data_build.py",
+      "sha256": "5b28a6ef1715d371ef4b9787a958603e6f5db486820f6393931958d6205aae54",
+      "source_archive": "CSM_LIFECYCLE_012_EVIDENCE.zip",
+      "source_member": "source/data_build.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_LIFECYCLE_012_EVIDENCE/source/runtime_check.py",
+      "sha256": "160866ad289ff766d13880e2f36c83fd6012f9fd0af1ffa83307565f62f66212",
+      "source_archive": "CSM_LIFECYCLE_012_EVIDENCE.zip",
+      "source_member": "source/runtime_check.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_ROUTING_008_EVIDENCE/source/study.py",
+      "sha256": "548257582a1b4c181bfd244bc8b24aa610e2a14ee27927da0c201d0ead73d600",
+      "source_archive": "CSM_ROUTING_008_EVIDENCE.zip",
+      "source_member": "source/study.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_ROUTING_008_EVIDENCE/source/native_csm.py",
+      "sha256": "5740222397bd082e878f3ccb24786b46b37b8075d070f6db90a210fdd081f8bd",
+      "source_archive": "CSM_ROUTING_008_EVIDENCE.zip",
+      "source_member": "source/native_csm.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_ROUTING_008_EVIDENCE/source/PROTOCOL.md",
+      "sha256": "95b218848d653bbe6132a04b05f63e7e4c8e5c95d52ece007f66f4aeca61226c",
+      "source_archive": "CSM_ROUTING_008_EVIDENCE.zip",
+      "source_member": "source/PROTOCOL.md"
+    },
+    {
+      "path": "research/recovered_source/CSM_ROUTING_008_EVIDENCE/source/runtime_check.py",
+      "sha256": "160866ad289ff766d13880e2f36c83fd6012f9fd0af1ffa83307565f62f66212",
+      "source_archive": "CSM_ROUTING_008_EVIDENCE.zip",
+      "source_member": "source/runtime_check.py"
+    },
+    {
+      "path": "research/recovered_source/CSM_POINTER_014_EVIDENCE/DESIGN.md",
+      "sha256": "1f978ecbad56dade2e2d75c69a53a6b6882a33d722f004b9f0ee9fcd938aa3c6",
+      "source_archive": "CSM_POINTER_014_EVIDENCE.zip",
+      "source_member": "source/DESIGN.md"
+    },
+    {
+      "path": "research/recovered_source/CSM_POINTER_014_EVIDENCE/PROTOCOL.md",
+      "sha256": "d9e79ef6aa7071a5a2b9e8b9765eeb62bafe2209d1cbf1da4ec84e9ac13a6644",
+      "source_archive": "CSM_POINTER_014_EVIDENCE.zip",
+      "source_member": "source/PROTOCOL.md"
+    },
+    {
+      "path": "research/recovered_source/CSM_COMPOSITION_015_EVIDENCE/PROTOCOL.md",
+      "sha256": "d488f688fff38c3c244008764fff539dd502b7df7fda45b8d17be849115f7867",
+      "source_archive": "CSM_COMPOSITION_015_EVIDENCE.zip",
+      "source_member": "source/PROTOCOL.md"
+    }
+  ]
+}
