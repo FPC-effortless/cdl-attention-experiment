@@ -22,7 +22,7 @@
   "PROTOCOL.md": "2a476eea555dceed46462f635d666c842e5b10326cc5d9b053cd1ef224fc71a1",
   "legacy/native_csm.py": "f496837236ea1f53939d29776255bfba8f1d02512a8b52f581a79d94134a4234",
   "legacy/build_sessions.py": "d645ecda800ff5e21b8294681c73c3fd666ab7ce2177e2468fb49711dcd928ec",
-  "README.md": "a9c4af6844d87aa7337416ac8584dd6cb55037ff4d0e4978166d9dab3fe470e3",
+  "README.md": "f757ef5142cf871abd46945f2476e081ba0205928f298535655adfbfaab5da7c",
   "run.py": "1956be6f5a1547b9ebf948419fb1015601ff6675aede31e0ef8ccf88c794705f",
   "budget_projection.py": "ee2401c1389ba7d14b24515e8e5b7c422dbe4cbc2d6f49e4df94e30a1539c6ab",
   "scientific_runner.py": "015ef1a37e9393cf5959469a1d14995ac8ac81995373be7e35898ca632d618b9",
@@ -34,5 +34,6 @@
   "test_native_scientific021.py": "f1b3952a5d64892d3d59ed3fa3e8f7e9321d2b561ae731e81de5aee3fb57d332",
   "test_resolved_state.py": "d49030e62d5a85e6e5c9279fa7ef11fbdea8984108dbe03677cf21388bc35688",
   "native_scientific021.py": "43758a704fc0b8afc46c04db369ae16575f50e56671df63ea27cee67fbf9b07c",
-  "RESOLVED_ADAPTER_V2.md": "425cb763f3b6215ed962a0b079567d9963f84849e0e9c32544e9f9d793c15a84"
+  "RESOLVED_ADAPTER_V2.md": "425cb763f3b6215ed962a0b079567d9963f84849e0e9c32544e9f9d793c15a84",
+  "scientific_run.py": "0d5b1f3a01adedc46f5fcf6e03a87bea524f0daff94b2dc17d9f977bd167c7a6"
 }
