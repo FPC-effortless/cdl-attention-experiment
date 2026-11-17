@@ -1,6 +1,6 @@
 # NCM inference feasibility: bounded v2 outcome
 
-17 November 2026. This is released-model/configuration software feasibility, not formal paper reproduction, CSM integration, trained repair, or architectural promotion. Author preprocessing review remains pending.
+17 November 2026. This is released-model/configuration software feasibility, not formal paper reproduction, CSM integration, trained repair, or architectural promotion. Author-source preprocessing review is complete: no source-level mismatch was identified in GPT2 tokenization, padding, generation settings, learned-VQ decoding or reranking. This is code inspection, not same-input numerical parity against the authors' runtime. Upstream dependencies are not pinned to this runtime; numerical/backend/version differences and the cause of the observed errors remain unresolved.
 
 ## Verified execution and retained-evidence audit
 
