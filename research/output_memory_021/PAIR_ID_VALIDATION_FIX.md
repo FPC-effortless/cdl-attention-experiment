@@ -1,0 +1,7 @@
+# Pre-fit global pair-identity validation correction
+
+Before scientific execution, independent review reproduced a scoring validation gap: four distinct session IDs in two batches could reuse one pair ID and be reported as two independent pairs. No scientific fits had run. The actual frozen six DEV panels each contain 256 unique sessions and 128 distinct complete pairs; no evidence was found that those rosters were inflated. The production full-roster evaluator already rejected the malformed four-session group, but standalone scoring and batch validation were insufficiently strict.
+
+The active scorer now requires globally unique session IDs, exactly two variants (integer 0 and 1) per pair, matching output-row variants, and no repeated completed pair groups across batches. Scientific batch evaluation validates identities and variants before execution. Eight focused regressions cover reused pair identities, duplicate variants, split pairs, and unchanged valid 128-pair accounting. The full current CPU suite passes 63 tests. Independent final review and refreshed immutable source/admission are required before launch.
+
+Original calibration and prior frozen bundles remain retained; their prior scientific admissions were withdrawn. Data, prospective selection, model/training budgets, evaluation roster and quality gates are unchanged. A reported external fix commit could not be retrieved and is not claimed as inspected or incorporated. This correction is based on independently reproduced local behavior, not a model-performance outcome.

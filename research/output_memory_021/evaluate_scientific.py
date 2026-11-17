@@ -14,6 +14,14 @@ def sync(device):
 
 def evaluate_batch(model,head,records,kind='ar',steps=4,condition='native',intervention='full',length=64,seed=0,target_renderer=render_target,serial_reference=False,software_single=False):
     if not records or (len(records)%2 and not (software_single and len(records)==1 and intervention!='swapped')):raise ValueError('complete paired groups required')
+    if len({r['id'] for r in records})!=len(records):raise ValueError('duplicate session ID')
+    roster_pairs={}
+    for record in records:
+        variant=record.get('variant')
+        if type(variant) is not int or variant not in (0,1):raise ValueError('invalid variant')
+        roster_pairs.setdefault(record['pair_id'],[]).append(variant)
+    if not (software_single and len(records)==1):
+        if any(sorted(v)!=[0,1] for v in roster_pairs.values()):raise ValueError('each pair requires exactly variants0/1 once')
     for i in range(0,len(records)-1,2):
         if records[i]['pair_id']!=records[i+1]['pair_id']:raise ValueError('adjacent paired groups required')
     if condition not in ('native','exact'):raise ValueError('condition')

@@ -6,7 +6,7 @@
   "heads.py": "757d2801dbc279d53e33165a4dbf55b4395d263452994ecc7dbe3bfca13043a1",
   "test_adapters.py": "a9afd8afa1defa6f38f13cc1942354a95029336099638251879e7bad74fc1d74",
   "train_heads.py": "4fe4c8b9c79e859c17dbf6e71b7202058f50dd776ff7f1beb3438d13023bcfe3",
-  "score_sessions.py": "c5a7927991e14c79c150530a3fe307f388e1a67dcb42f6ad24f8fa91733f5557",
+  "score_sessions.py": "b5578f0f9000d76513bb24e0a03e41f24e6c254ad31af2a9105b95557618b3e1",
   "calibration.py": "f0c4b786be15624c615b0b7d46ea0edc7e40fdc70027c5a40998decee9592e70",
   "test_assemble_private_inputs.py": "c99663724416bc1f98c98aec84f6f81fb71e45a06067cd0e0a6051877ce1796e",
   "assemble_private_inputs.py": "0afb5173b61e8f5ad06130bad4abce563c25e3b260ae853687a02ff70fbcdae4",
@@ -26,7 +26,7 @@
   "run.py": "1956be6f5a1547b9ebf948419fb1015601ff6675aede31e0ef8ccf88c794705f",
   "budget_projection.py": "ee2401c1389ba7d14b24515e8e5b7c422dbe4cbc2d6f49e4df94e30a1539c6ab",
   "scientific_runner.py": "015ef1a37e9393cf5959469a1d14995ac8ac81995373be7e35898ca632d618b9",
-  "evaluate_scientific.py": "1508f102f53708be596664f773153f23e3e28d30a15877dc8fb61846a287724c",
+  "evaluate_scientific.py": "36e4534dbac6812d9f1426e30cf43c6196102079a8d11f526d50215ad5957799",
   "cache_scientific.py": "11dd7a285f8f55e44e52e4629f69edba7185b701bc4f64b84fce79ff661f4610",
   "test_scientific_adapter.py": "8d829a5e6b1784422b29de0e65ef138278db3ec88704633cb3a0db9f0dce0ef5",
   "audit_selection.py": "0c1cbc24cdb80af3d4824f48163d01e40db53d7cfa961ee8dffd7c9481c2f66d",
@@ -35,6 +35,8 @@
   "test_resolved_state.py": "d49030e62d5a85e6e5c9279fa7ef11fbdea8984108dbe03677cf21388bc35688",
   "native_scientific021.py": "43758a704fc0b8afc46c04db369ae16575f50e56671df63ea27cee67fbf9b07c",
   "RESOLVED_ADAPTER_V2.md": "425cb763f3b6215ed962a0b079567d9963f84849e0e9c32544e9f9d793c15a84",
-  "scientific_run.py": "0d5b1f3a01adedc46f5fcf6e03a87bea524f0daff94b2dc17d9f977bd167c7a6",
-  "PRIVATE_RECOVERY_GUIDE_PUBLIC.md": "68a54d965926a10a42385968e9f2238196ff0e2cc4afbd49bbf9c451f365ec52"
+  "scientific_run.py": "bc21556008e666c20fdccad3ff57f031e6c4ecb7a847bf697533ec8dd2b56e88",
+  "PRIVATE_RECOVERY_GUIDE_PUBLIC.md": "68a54d965926a10a42385968e9f2238196ff0e2cc4afbd49bbf9c451f365ec52",
+  "test_score_global_pairs.py": "03675313a24d91c6e186aececaf07985d6f6614d728a98eb7768af64a8297036",
+  "PAIR_ID_VALIDATION_FIX.md": "ed8463bb5ead9cb6ae43d53a8c2e22936c30a59612903009096c78a591b32d4f"
 }
