@@ -1,6 +1,6 @@
 # OUTPUT-MEMORY-021: reviewed scientific source and recovery
 
-This source snapshot extends the separately completed software calibration into a bounded scientific sentence-output comparison. The full three-seed campaign is not yet reported as complete or qualified; no CSM repair claim is made. Paused020 and released-NCM feasibility remain separate.
+This source snapshot extends the separately completed software calibration into a bounded scientific sentence-output comparison. The full three-seed campaign is complete and failed qualification; no CSM repair claim is made. See [final results](RESULTS.md) and [aggregate accounting](AGGREGATE.json). Paused020 and released-NCM feasibility remain separate.
 
 Independent review approved the frozen three-seed design/closures subject to public source verification, private recovery roundtrip, exact runtime checks and fresh quota admission before each launch. Each seed compares four heads: autoregressive versus actual diffusion, each conditioned on frozen native CSM features versus supplied engineered resolved state. Read PROTOCOL.md and RESOLVED_ADAPTER_V2.md for scope and limitations. No convergence, general language or unrestricted-memory claim is authorized by this design.
 
@@ -12,6 +12,6 @@ The existing run.py is the earlier calibration launcher and must not be mistaken
 
 ## Current recovery status
 
-Snapshot 17 November 2026, 18:45:13 UTC: seeds11 and23 completed, independently audited from retained evidence and privately backed up with verified roundtrips. Seed37 was last observed RUNNING with no completed archive yet. This is not independent GPU retraining/replay or a cross-seed quality conclusion. Check live status before restarting.
+Final 17 November 2026 status: all three seeds and 12 planned head fits completed, with independently audited retained evidence, saved-record rescoring and recorded same-host checkpoint replay. All 72 primary qualification panels failed. Private archives are retained; no new fit is implied. This is not independent GPU retraining/replay or a successful architecture.
 
 The duplicate-pair source defect and later review-text length rejection are preserved historical pre-fit failures, not an active blanket launch hold. V3 changed only private REVIEW/ADMISSION records; reviewed source, data, INPUTS and launchers remain unchanged. Use the exact V3 private administrative bundle, not older admissions sharing the same INPUTS. See [private recovery access instructions](PRIVATE_RECOVERY_GUIDE_PUBLIC.md) and the latest owner-authorized Library guide.
