@@ -19,9 +19,20 @@
   "test_heads.py": "7afc9317f64fedbd20f19d4795fa9cee837e35faaeb909bf86b16b89ea1631ce",
   "EVALUATION.md": "c723d4b19ac2fd7e0c497830e03ae352be4b354c1ab25f462211e387410c8c76",
   "IMPLEMENTATION.md": "242ed66498235d1c775475e566b58c8d664993458dd5c048da957f47d18f3665",
-  "PROTOCOL.md": "32be22baa6d77e4a3da2a9514e1c2b30e9d03751618b79236e91d67d7c3114b0",
+  "PROTOCOL.md": "2a476eea555dceed46462f635d666c842e5b10326cc5d9b053cd1ef224fc71a1",
   "legacy/native_csm.py": "f496837236ea1f53939d29776255bfba8f1d02512a8b52f581a79d94134a4234",
   "legacy/build_sessions.py": "d645ecda800ff5e21b8294681c73c3fd666ab7ce2177e2468fb49711dcd928ec",
-  "README.md": "0154c417b6b8432e308e96c93ffa5affc7e38c264744350cf2b9221e0d2d486f",
-  "run.py": "1956be6f5a1547b9ebf948419fb1015601ff6675aede31e0ef8ccf88c794705f"
+  "README.md": "a9c4af6844d87aa7337416ac8584dd6cb55037ff4d0e4978166d9dab3fe470e3",
+  "run.py": "1956be6f5a1547b9ebf948419fb1015601ff6675aede31e0ef8ccf88c794705f",
+  "budget_projection.py": "ee2401c1389ba7d14b24515e8e5b7c422dbe4cbc2d6f49e4df94e30a1539c6ab",
+  "scientific_runner.py": "015ef1a37e9393cf5959469a1d14995ac8ac81995373be7e35898ca632d618b9",
+  "evaluate_scientific.py": "1508f102f53708be596664f773153f23e3e28d30a15877dc8fb61846a287724c",
+  "cache_scientific.py": "11dd7a285f8f55e44e52e4629f69edba7185b701bc4f64b84fce79ff661f4610",
+  "test_scientific_adapter.py": "8d829a5e6b1784422b29de0e65ef138278db3ec88704633cb3a0db9f0dce0ef5",
+  "audit_selection.py": "0c1cbc24cdb80af3d4824f48163d01e40db53d7cfa961ee8dffd7c9481c2f66d",
+  "resolved_state.py": "5117a722e1b0f1173feeeff0ff6b73f8637bff4013e7720823c589a630fae1de",
+  "test_native_scientific021.py": "f1b3952a5d64892d3d59ed3fa3e8f7e9321d2b561ae731e81de5aee3fb57d332",
+  "test_resolved_state.py": "d49030e62d5a85e6e5c9279fa7ef11fbdea8984108dbe03677cf21388bc35688",
+  "native_scientific021.py": "43758a704fc0b8afc46c04db369ae16575f50e56671df63ea27cee67fbf9b07c",
+  "RESOLVED_ADAPTER_V2.md": "425cb763f3b6215ed962a0b079567d9963f84849e0e9c32544e9f9d793c15a84"
 }
