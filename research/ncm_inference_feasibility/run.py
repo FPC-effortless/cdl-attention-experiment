@@ -4,7 +4,7 @@ from pathlib import Path
 os.environ['CUBLAS_WORKSPACE_CONFIG']=':4096:8'
 os.environ['PYTHONDONTWRITEBYTECODE']='1'
 sys.dont_write_bytecode=True
-INPUTS_SHA='b5728ee1c1e7eeb99f5bfcd49cbb8a4dc902d85603844de0c47df98b08bc61e8'
+INPUTS_SHA='a43be0f523ed2c597fadc9384288eb262314669748d9a856d2de7c2dbdef1542'
 ASSEMBLER_SHA='0afb5173b61e8f5ad06130bad4abce563c25e3b260ae853687a02ff70fbcdae4'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 try:

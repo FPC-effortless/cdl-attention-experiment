@@ -24,6 +24,28 @@ def contained_file(root, relative):
  assert not root.is_symlink() and not any(v.is_symlink() for v in [path, *path.parents])
  assert path.is_file() and path.resolve().is_relative_to(root.resolve())
  return path
+def validate_state_dict(sd, role, cfg, torch):
+ assert type(sd) in (dict,collections.OrderedDict)
+ assert all(type(k) is str and type(v) is torch.Tensor for k,v in sd.items())
+ for key,value in sd.items():
+  if role == 'generator.pt' and key == 'attn_mask_for_masking':
+   # Independent reconstruction of this exact admitted architecture, before model load.
+   assert cfg.model.attn_pattern == 'block_diagonal' and cfg.model.query_level0
+   assert not cfg.model.get('l0_autoregressive',False)
+   levels=list(cfg.tokenizer.vqvae.vector_quantizer_config.levels.manual_levels)
+   assert levels == [4,6,10,14,20,26,32,40,48] and cfg.model.prefix_len == 512
+   size=512+sum(levels)
+   expected=torch.full((1,1,size,size),-torch.inf,dtype=torch.float32)
+   expected[:,:,:512,:512]=0.
+   expected[:,:,512:,:512]=0.
+   offset=512
+   for length in levels:
+    expected[:,:,offset:offset+length,offset:offset+length]=0.;offset+=length
+   assert value.dtype == torch.float32 and value.shape == expected.shape
+   assert torch.equal(value,expected), 'Structural attention mask differs from exact config'
+  elif value.is_floating_point():
+   assert torch.isfinite(value).all().item(), 'Nonfinite learned/state tensor: '+key
+ if role == 'generator.pt':assert 'attn_mask_for_masking' in sd
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--source',required=True);ap.add_argument('--checkpoints',required=True);ap.add_argument('--text-tokenizer',required=True);ap.add_argument('--device',default='cuda');ap.add_argument('--out',required=True);ap.add_argument('--repeats',type=int,default=3);ap.add_argument('--load-only',action='store_true');a=ap.parse_args()
  assert a.repeats == 3, 'Admitted protocol fixes exactly 3 warm repeats'
@@ -72,13 +94,13 @@ def main():
  def load(p):
   o=torch.load(p,map_location='cpu',weights_only=True)
   assert type(o) is dict and 'model' in o
-  sd=o['model'];assert type(sd) in (dict,collections.OrderedDict)
-  assert all(type(k) is str and type(v) is torch.Tensor for k,v in sd.items())
-  assert all(torch.isfinite(v).all().item() for v in sd.values() if v.is_floating_point())
+  sd=o['model'];validate_state_dict(sd,p.name,cfg,torch)
   return o
  start=time.perf_counter();tokck=load(ck/'tokenizer.pt');genck=load(ck/'generator.pt')
  vae=VQVAE(**cfg.tokenizer.vqvae);vae.load_state_dict(tokck['model'],strict=True);del tokck
- net=NextConceptTransformer(vqvae_local=vae,config=cfg.model);net.load_state_dict(genck['model'],strict=True)
+ net=NextConceptTransformer(vqvae_local=vae,config=cfg.model)
+ assert torch.equal(net.attn_mask_for_masking,genck['model']['attn_mask_for_masking']), 'Constructed model mask differs from checkpoint'
+ net.load_state_dict(genck['model'],strict=True)
  allowance=genck['inference']['token_unigram'];assert type(allowance) is torch.Tensor and torch.isfinite(allowance).all();del genck
  # Count physical storages once as well as exposed parameter objects.
  def storage_counts(module):
@@ -88,7 +110,7 @@ def main():
   return d
  ng=storage_counts(net);nv=storage_counts(vae);shared=set(ng)&set(nv)
  unique_bytes=sum({**ng,**nv}.values())
- result={'scope':'own synthetic DEV fixture; NCM summarization feasibility, not CSM or QA qualification','source_commit':(source/'SOURCE_COMMIT').read_text().strip(),'checkpoint_revision':'d342ce8aaea58830eef3b8ad473664673e41f692','hashes':PINS,'torch':torch.__version__,'precision':'float32','weights_only':True,'strict_state_dict':True,'load_seconds':time.perf_counter()-start,'generator_parameters':sum(x.numel() for x in net.parameters()),'tokenizer_parameters':sum(x.numel() for x in vae.parameters()),'levels':list(vae.vq.levels),'fixture':FIXTURE}
+ result={'scope':'own synthetic DEV fixture; NCM summarization feasibility, not CSM or QA qualification','source_commit':(source/'SOURCE_COMMIT').read_text().strip(),'checkpoint_revision':'d342ce8aaea58830eef3b8ad473664673e41f692','hashes':PINS,'torch':torch.__version__,'precision':'float32','weights_only':True,'strict_state_dict':True,'structural_mask_exact_config_and_constructor_match':True,'load_seconds':time.perf_counter()-start,'generator_parameters':sum(x.numel() for x in net.parameters()),'tokenizer_parameters':sum(x.numel() for x in vae.parameters()),'levels':list(vae.vq.levels),'fixture':FIXTURE}
  result.update(unique_parameter_storage_bytes=unique_bytes,unique_parameter_storage_float32_elements=unique_bytes//4,shared_parameter_storage_bytes=sum(ng[k] for k in shared),generator_exclusive_parameter_storage_bytes=sum(v for k,v in ng.items() if k not in shared),tokenizer_exclusive_parameter_storage_bytes=sum(v for k,v in nv.items() if k not in shared),runtime_source_manifest_sha256='e17e90642d0cbe9de3b599dd83ac74c60e079a5eee8fd6cc95a9724cfec3b19a')
  costs['checkpoint_cpu_load_construction_seconds']=result['load_seconds']
  def unique_tensor_storages(tensors):
