@@ -3,7 +3,7 @@ import hashlib,json,re,time
 from pathlib import Path
 import torch
 from models import OPS,REQUIRED,infer_chunks,parity_guard
-from executor import Executor
+from executor import Executor,reference
 from data import external_events,payload_int,payload_text,validate_roster
 NAME=re.compile(r'[A-Za-z][A-Za-z0-9_]*/[A-Za-z][A-Za-z0-9_]*\Z')
 
@@ -41,26 +41,52 @@ def session(model,record,executor,chunk=1,parallel=False,threads=1,capacity=64):
  if device.type=='cuda':torch.cuda.synchronize()
  parser_end=time.perf_counter();ops,n,banks,errors,ids=commands(texts,actions,capacity);registry_end=time.perf_counter()
  result=executor.execute(ops,n,bank_ids=banks,threads=threads,parallel=parallel)
+ rendered=[None if a==-2 else ('No code is currently assigned.' if a is None else 'The current code is '+payload_text(a)+'.') for a in result['answers']]
  end=time.perf_counter()
- row={'id':record['id'],'pair_id':record['pair_id'],'variant':record['variant'],'actions':actions,'typed_commands':ops,'registry':ids,'errors':errors,'answers':result['answers'],'final_state':result['state'],'executor_stats':result['stats'],'cost':{'parser_including_tokenizer_and_decode_seconds':parser_end-start,'registry_validation_seconds':registry_end-parser_end,'executor_wall_seconds':end-registry_end,'complete_session_seconds':end-start},'schedule':{'chunk':chunk,'parallel_executor':parallel,'threads':threads}}
+ # Independent serial audit is outside measured production-session cost.
+ state=None;guards=[]
+ for op in ops:
+  guard=None
+  if op[0]==6:
+   guard=reference([[5,op[2],0,0,0]],n,state)['answers'][0]==op[4]
+  step=reference([op],n,state);state=step['state'];guards.append(guard)
+ if state!=result['state']:raise RuntimeError('native/reference final-state mismatch')
+ row={'id':record['id'],'pair_id':record['pair_id'],'variant':record['variant'],'actions':actions,'typed_commands':ops,'registry':ids,'errors':errors,'answers':result['answers'],'rendered_answers':rendered,'predicted_guards':guards,'final_state':[list(x) for x in result['state']],'executor_stats':result['stats'],'cost':{'parser_including_tokenizer_and_decode_seconds':parser_end-start,'registry_validation_seconds':registry_end-parser_end,'executor_and_render_wall_seconds':end-registry_end,'complete_session_seconds':end-start},'schedule':{'chunk':chunk,'parallel_executor':parallel,'threads':threads}}
  return row,logits
+
+def audit_record(record,row):
+ ops,n,banks,errors,registry=commands(external_events(record),row['actions'])
+ if row['typed_commands']!=ops or row['errors']!=errors or row['registry']!=registry:raise ValueError('raw-action command/registry/error audit')
+ state=None;answers=[];guards=[]
+ for op in ops:
+  guard=reference([[5,op[2],0,0,0]],n,state)['answers'][0]==op[4] if op[0]==6 else None
+  step=reference([op],n,state);answers.extend(step['answers']);state=step['state'];guards.append(guard)
+ rendered=[None if a==-2 else ('No code is currently assigned.' if a is None else 'The current code is '+payload_text(a)+'.') for a in answers]
+ expected={'answers':answers,'predicted_guards':guards,'rendered_answers':rendered,'final_state':[list(x) for x in state]}
+ for name,value in expected.items():
+  if row.get(name)!=value:raise ValueError('serial raw-action audit mismatch '+name)
+ return expected
 
 def score(records,rows):
  validate_roster(records)
  if len(rows)!=len(records) or len({r['id'] for r in rows})!=len(rows):raise ValueError('prediction roster')
  byid={r['id']:r for r in rows}
  if set(byid)!={r['id'] for r in records}:raise ValueError('prediction ID substitution')
- counts={'queries':0,'answers_correct':0,'nonabsence_queries':0,'nonabsence_correct':0,'absence_queries':0,'absence_correct':0,'complete_sessions':0,'sessions':len(records),'operation_correct':0,'events':0,'all_required_roles_correct':0,'invalid_actions':0,'paired_first_correct':0,'pairs':len(records)//2}
+ counts={'queries':0,'answers_correct':0,'nonabsence_queries':0,'nonabsence_correct':0,'absence_queries':0,'absence_correct':0,'complete_sessions':0,'sessions':len(records),'operation_correct':0,'events':0,'all_required_roles_correct':0,'invalid_actions':0,'paired_first_correct':0,'pairs':len(records)//2,'conditional_decisions':0,'conditional_decisions_correct':0}
  pair={}
  for record in records:
   r=byid[record['id']]
+  audit_record(record,r)
   if (r['pair_id'],r['variant'])!=(record['pair_id'],record['variant']):raise ValueError('pair/variant substitution')
   if not(len(r['answers'])==len(r['actions'])==len(r['errors'])==len(record['events'])):raise ValueError('event roster')
   complete=True;first=None
-  for e,a,answer,error in zip(record['events'],r['actions'],r['answers'],r['errors']):
+  for event_index,(e,a,answer,error) in enumerate(zip(record['events'],r['actions'],r['answers'],r['errors'])):
    g=e['gold'];truth=g['op_name'];counts['events']+=1;counts['invalid_actions']+=error is not None
    counts['operation_correct']+=a['op']==truth
    roles=a['op']==truth and a['valid'] and all(a['spans'][f]==e['labels']['spans'][f] for f in REQUIRED[truth]);counts['all_required_roles_correct']+=roles
+   if truth=='IFSET':
+    counts['conditional_decisions']+=1
+    counts['conditional_decisions_correct']+=error is None and a['op']=='IFSET' and r.get('predicted_guards',[None]*len(record['events']))[event_index]==g['guard']
    if truth=='QUERY':
     counts['queries']+=1;expected=None if g['answer'] is None else payload_int(g['answer'])
     correct=error is None and a['op']=='QUERY' and answer==expected
@@ -73,14 +99,14 @@ def score(records,rows):
  counts['qualified']=counts['complete_sessions']/max(1,counts['sessions'])>=.95 and counts['paired_first_correct']/max(1,counts['pairs'])>=.95
  return counts
 
-def run(model,records,out,chunk=1,parallel=False,threads=1,reference_rows=None):
- validate_roster(records);ex=Executor();rows=[];parity=[]
+def run(model,records,out,chunk=1,parallel=False,threads=1,reference_rows=None,executor=None):
+ validate_roster(records);ex=executor or Executor();rows=[];parity=[]
  model.eval();start=time.perf_counter()
  for record in records:
   row,z=session(model,record,ex,chunk,parallel,threads)
   if reference_rows is not None:
    old=reference_rows[record['id']]
-   for field in ('actions','typed_commands','registry','errors','answers','final_state'):
+   for field in ('actions','typed_commands','registry','errors','answers','rendered_answers','predicted_guards','final_state'):
     if row[field]!=old[field]:raise RuntimeError('end-to-end scheduling parity failed '+record['id']+' '+field)
    parity.append(record['id'])
   rows.append(row)

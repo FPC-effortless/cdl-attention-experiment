@@ -58,10 +58,17 @@ class SentenceParser(nn.Module):
             h,_=self.encoder(h);h=self.gru_projection(h)
             summary=h[torch.arange(x.shape[0],device=x.device),lengths-1]
         h=self.norm(h);summary=self.norm(summary)
-        role_input=torch.cat((h,summary[:,None].expand_as(h)),-1)
         result={'op':self.op(summary)}
-        for name,head in self.role.items():result[name]=head(role_input).squeeze(-1).masked_fill(~mask,-float('inf'))
+        result.update(self.role_logits(h,summary,mask))
         return result
+
+    def role_logits(self,h,summary,mask):
+        # A concatenated additive global term cancels across position logits.
+        # Multiplicative local/global features make relative span scores depend
+        # on the complete-sentence summary, including later GRU token context.
+        role_input=torch.cat((h,h*summary[:,None]),-1)
+        return {name:head(role_input).squeeze(-1).masked_fill(~mask,-float('inf'))
+                for name,head in self.role.items()}
 
 
 def supervised_loss(logits,labels):

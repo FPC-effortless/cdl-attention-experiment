@@ -24,6 +24,23 @@ class Tests(unittest.TestCase):
   a['dst_start'][0,0]=float('nan')
   with self.assertRaises(RuntimeError):parity_guard(a,b,a,b)
   with self.assertRaises(ValueError):decode_logits(a,torch.tensor([11]))
+ def test_global_context_changes_relative_roles_and_gradient(self):
+  m=SentenceParser(Config(arm='gru',max_length=64)).eval();w=m.config.width
+  scorer=m.role['dst_start'];scorer.weight.data.zero_();scorer.bias.data.zero_();scorer.weight.data[0,w]=1
+  local=torch.zeros(1,2,w);local[0,0,0]=1;local[0,1,0]=2
+  global_context=torch.ones(1,w,requires_grad=True);mask=torch.ones(1,2,dtype=torch.bool)
+  a=m.role_logits(local,global_context,mask)['dst_start']
+  b=m.role_logits(local,global_context*2,mask)['dst_start']
+  self.assertNotEqual(float((a[0,1]-a[0,0]).detach()),float((b[0,1]-b[0,0]).detach()))
+  F.cross_entropy(a,torch.tensor([0])).backward()
+  self.assertGreater(abs(float(global_context.grad[0,0])),.1)
+ def test_gru_late_text_changes_early_relative_scores(self):
+  m=SentenceParser(Config(arm='gru',max_length=64)).eval()
+  x,n=tensorize_texts(['Copy A from B.','Copy A into B.'],max_length=64)
+  z=m(x,n)['dst_start']
+  # Earlier byte representations match up to the changed suffix, but role
+  # scores can use the later sentence information through global interaction.
+  self.assertGreater(abs(float((z[0,5]-z[0,6])-(z[1,5]-z[1,6]))),1e-6)
  def test_boundaries_no_truncation(self):
   for text in ('','a'*65):
    with self.assertRaises(ValueError):tensorize_texts([text],max_length=64)

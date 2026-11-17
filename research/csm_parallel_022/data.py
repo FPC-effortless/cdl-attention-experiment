@@ -23,10 +23,13 @@ TEMPLATES={
  'QUERY':['Report the current value of {dst}.','Which code belongs to {dst}?'],
  'IFSET':['Provided {src} equals {expected}, write {value} into {dst}.','Give {dst} code {value} when {src} holds {expected}.'],
  'NOOP':['An unrelated notice describes the weather.','No records change while everyone waits.']}}
-DEFAULT_REFERENCE=Path(__file__).resolve().parents[1]/'csm-conditional-019-public/research/csm_conditional_019/reference_executor.py'
+DEFAULT_REFERENCE=Path(__file__).resolve().parent/'reference019.py'
+REFERENCE_SHA256='bec9d5c1a05f6c50b43ed68fc3e6040064f76036d9d2fbecb024eb2dd81a7059'
 
 def load_reference(path=DEFAULT_REFERENCE):
-    path=Path(path);name='_typed019_'+hashlib.sha256(path.read_bytes()).hexdigest()[:12]
+    path=Path(path);digest=hashlib.sha256(path.read_bytes()).hexdigest()
+    if digest!=REFERENCE_SHA256:raise ValueError('pinned reference source mismatch')
+    name='_typed019_'+digest[:12]
     spec=importlib.util.spec_from_file_location(name,path);module=importlib.util.module_from_spec(spec);sys.modules[name]=module;spec.loader.exec_module(module)
     return module.Memory
 

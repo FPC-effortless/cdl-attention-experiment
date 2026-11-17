@@ -12,7 +12,14 @@ class PipelineTests(unittest.TestCase):
   for r in records:
    actions=[{'op':OPS[e['labels']['op']],'valid':True,'spans':e['labels']['spans']} for e in r['events']]
    ops,n,banks,errors,registry=commands(external_events(r),actions);x=Executor().execute(ops,n,bank_ids=banks)
-   rows.append({'id':r['id'],'pair_id':r['pair_id'],'variant':r['variant'],'actions':actions,'answers':x['answers'],'errors':errors})
+   from executor import reference
+   from data import payload_text
+   state=None;guards=[]
+   for op in ops:
+    guards.append(reference([[5,op[2],0,0,0]],n,state)['answers'][0]==op[4] if op[0]==6 else None)
+    state=reference([op],n,state)['state']
+   rendered=[None if a==-2 else 'No code is currently assigned.' if a is None else 'The current code is '+payload_text(a)+'.' for a in x['answers']]
+   rows.append({'id':r['id'],'pair_id':r['pair_id'],'variant':r['variant'],'actions':actions,'answers':x['answers'],'errors':errors,'typed_commands':ops,'registry':registry,'predicted_guards':guards,'rendered_answers':rendered,'final_state':[list(v) for v in x['state']]})
   s=score(records,rows);self.assertEqual(s['complete_sessions'],2);self.assertEqual(s['paired_first_correct'],1)
  def test_invalid_identity_no_registration(self):
   rows,n,banks,errors,ids=commands(['Set west/A to ABC.'],[{'op':'SET','valid':True,'spans':{'dst':[0,3],'value':[14,17]}}]);self.assertEqual(ids,{});self.assertEqual(rows[0][0],0);self.assertIsNotNone(errors[0])
