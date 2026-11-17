@@ -1,0 +1,22 @@
+{
+  "test_executor.py": "cb3538a1488ae7923c2a966999ae58337e725ef2a789f200392a0148db49a541",
+  "runtime022.py": "8aee84a3b2662817e419532ba3736fbc4f6d8bd9b5c1bd3d8590ade5f772f8f8",
+  "train.py": "2578f052c07c859c93284bbfe814c1dcb0094b1fd5f7dae81b48119385f5c58b",
+  "reference019.py": "bec9d5c1a05f6c50b43ed68fc3e6040064f76036d9d2fbecb024eb2dd81a7059",
+  "test_data.py": "9cf08bb54e0284404eb38b7bd37607964b805d65532e60204dc60c70feade286",
+  "native022.py": "1916bdb2706ed9efc1ad5b5200ce2cfdbe47ae68a18ea60bfe7b9a3d1ecf5ee9",
+  "calibrate.py": "299134de19e4fd96d2c5e89e9c1a100a9616a184a4b948a5062ce048f65a4fb6",
+  "models.py": "54fe09a89a8082f681d22f434556c5f6a4dfaf0f6fc30ac3dc6ef281ca5d9da6",
+  "data.py": "c35dcaf0fb35b71eafd44adda371f2649e7ff992c6c530de863c70b3636082d8",
+  "test_native022.py": "ec294f1098444d0b17ae4cfb99ac55cbe7fd3506c9da795e75e99b0faaeb0013",
+  "executor.py": "25f6c16726506611e770330d279fdc862e40139ca1cd25b036bae506f249acf7",
+  "test_models.py": "bb7046562195b98d20f1fb96c8146066610610e256133c175ef5edfc4e2ee43f",
+  "test_pipeline.py": "65f77e619258597a15b58b941e5e1e1d3f22e4a61acde3a90d8ceb530ea875ba",
+  "evaluate.py": "5286794d444d41b4a78c983b94d253db4e56b038237eb78ce44c7bbc68d97d8d",
+  "typed_executor.cpp": "a784f5d50f5b6bac8468dfde8250e739ed734ba24b30ad1de54737c41c56481d",
+  "EXECUTOR_MATH.md": "07681a3f8c09b10cb25fb7bc0a8159a2d844196ee25d8b65f86baf5727c571bf",
+  "EXECUTOR_PROVENANCE.json": "81f255b947ce1f909aaeb8d5eb642c6ea216ba6723add509f2035c3c5ada7eb6",
+  "PROTOCOL_DRAFT.md": "12034d78eda46bc6bfdd38220a5b2fe528c3a487e9067092688b4760133fa115",
+  "INDEPENDENT_001_SCOPE_REVIEW.md": "536a3bc0bde8ea4ca567d6d83944dedab0541f7ef0ad7cd2020c2b2a4330a8cc",
+  "README.md": "870bb3199064f0fba773f32e453d9ef210ff855317566ceae8559aeec492985c"
+}
