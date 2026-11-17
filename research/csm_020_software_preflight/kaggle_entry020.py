@@ -20,15 +20,23 @@ def copy_bundle(source,dest,manifest_sha):
  if sha(manifest)!=manifest_sha:raise ValueError('outer input bundle identity mismatch')
  files=read(manifest)['files']
  if dest.exists() and any(dest.iterdir()):raise ValueError('refuse to overwrite an existing work directory')
- dest.mkdir(parents=True,exist_ok=True)
+ dest.mkdir(mode=0o700,parents=True,exist_ok=True)
+ if dest.stat().st_mode & 0o777 != 0o700:raise ValueError('work directory must be newly private or owner-only')
+ def private_copy(src,out):
+  current=dest
+  for part in out.parent.relative_to(dest).parts:
+   current=current/part;current.mkdir(mode=0o700,exist_ok=True)
+   if current.stat().st_mode & 0o777 != 0o700:raise ValueError('copied directory not owner-only')
+  fd=os.open(out,os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600)
+  with os.fdopen(fd,'wb') as target,Path(src).open('rb') as origin:shutil.copyfileobj(origin,target)
  for n,h in files.items():
   p=Path(n);raw=source/p;src=raw.resolve()
   if any(q.is_symlink() for q in [raw,*raw.parents] if q.is_relative_to(source)):raise ValueError('symlink bundle input prohibited')
   if p.is_absolute() or '..' in p.parts or not src.is_relative_to(source) or not src.is_file() or src.is_symlink():raise ValueError('unsafe bundle entry')
   if p.name in ('kaggle.json','.env') or any(x in p.parts for x in ('.git','.aws')):raise ValueError('credential-like bundle entry prohibited')
   if sha(src)!=h:raise ValueError('bundle content hash mismatch '+n)
-  out=dest/p;out.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(src,out)
- shutil.copyfile(manifest,dest/'BUNDLE_MANIFEST.json');return files
+  out=dest/p;private_copy(src,out)
+ private_copy(manifest,dest/'BUNDLE_MANIFEST.json');return files
 
 def retain_failure(work,error,output_root=None):
  work=Path(work).resolve();work.mkdir(parents=True,exist_ok=True)
