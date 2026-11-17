@@ -9,3 +9,7 @@ The prior software calibration passed native execution, strict-deterministic los
 PUBLIC_SOURCE_SHA256.json identifies public file contents. Private TRAIN_SELECTION session/pair rosters, input data/cache, checkpoints, runtime/pip freeze, vendor, review/admission and evidence are excluded. Exact scientific resumption requires the owner-authorized frozen private closure and actual checkpoint; source alone cannot recover trained weights. Do not substitute inputs or silently drop seeds. Preserve partial failures, independently reconcile actual budgets and retain recovery reserve. No paid resources or protected TEST.
 
 The existing run.py is the earlier calibration launcher and must not be mistaken for scientific launch authorization. scientific_run.py is separately reviewed and bound to seed11 only. Other seeds require their own manifest-bound reviewed launch and fresh quota admission. Public draft status does not approve merge or bypass checks.
+
+## Current recovery and execution hold
+
+Scientific launch is held for a duplicate-pair validation defect in the evaluator. No scientific head fit has launched; inspected data remain valid. Prior admissions must not be reused pending corrected source, fresh independent review and re-bound private closure. See [private recovery access instructions](PRIVATE_RECOVERY_GUIDE_PUBLIC.md) for owner-authorized restoration without exposing private access identifiers.
