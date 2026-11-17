@@ -64,3 +64,7 @@ Independent auditing checks archive integrity, pinned source/runtime/data, actua
 The next repair should target reusable identity and role binding with enough linguistic and multi-region training coverage, keeping the exact executor and batched GRU as controls. Do not add memory complexity or increase backbone size solely because unfamiliar instruction parsing failed. A later study must prospectively separate learned boundary detection, role generalization and genuinely online commit behavior, then demonstrate acceptable quality before claiming inference superiority.
 
 Reviewed source and resumable instructions are published in draft PR 69. Private checkpoints, constructed data, native receipts and raw predictions are retained separately in the owner's Library and will be indexed in ChatGPT Space after final package verification. Another agent needs access to those private files as well as the public repository to resume without retraining; public GitHub alone does not contain them.
+
+## Post-audit interpretation clarification
+
+See [compound development shifts addendum](PANEL_INTERPRETATION_ADDENDUM.md). The cross-bank and independent-region panels change identifier formats and other structural factors simultaneously. Their failures do not isolate bank interactions, interleaving, capacity or unfamiliar identifier formats. Original scores, gates and evidence remain unchanged.
