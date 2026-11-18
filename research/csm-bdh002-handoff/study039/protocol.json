@@ -1,0 +1,13 @@
+{
+ "seeds":[11,23,37],"train_quartets":240,"test_quartets":96,
+ "train":["note {d} ; {m} applies to the {r} ; {n} applies to the {s}","mention {d} ; the {r} is {m} ; the {s} is {n}","mention {d} ; the {r} after review is {m} ; the {s} after review is {n}","{m} applies to the {r} ; note {d} ; {n} applies to the {s}"],
+ "test":{
+  "prior_decoy":"compare the {d} ; the {m} status applies after review to the {r} ; the {n} status applies after review to the {s}",
+  "postposed":"note the {d} . the {r} after a long review by the board was {m} . the {s} after a long review by the board was {n}",
+  "interposed":"{m} is the final disposition of the {r} ! mention the {d} ! the {s} receives the disposition {n}",
+  "same_clause":"{m} despite a mention of the {d} applies to the {r} ; {n} applies to the {s}",
+  "reported":"the {r} is {m} ; the {s} is {n} ; yesterday someone said the {d} was accepted"
+ },
+ "gate":">=92/96 jointly correct quartets per layout and seed. Gate includes occurrence, expression, address and effects. Benchmark only deployable arms that pass all layouts.",
+ "scope":"Synthetic instrumented study. Two expression spans and episodic bindings supplied, fixed dictionary, whitespace tokenization with spaced separators. Counterbalance reference and approval order. Held-out templates and roster, no new cue vocabulary. Training labels the governing reference occurrence. Compare proximity, clause-first deterministic baseline, and learned occurrence scorer."
+}
