@@ -1,0 +1,52 @@
+{
+  "artifacts": [
+    "summary.json",
+    "scores.csv",
+    "observations.json"
+  ],
+  "budget": {
+    "evaluation_goals": 46656,
+    "fits": 1,
+    "training_goals": 3408
+  },
+  "command": [
+    "python",
+    "research.py",
+    "evaluate",
+    "frozen.json"
+  ],
+  "description": "Frozen two-skill selector on complete six-record roster",
+  "execution_purpose": "research",
+  "inputs": [
+    "research.py",
+    "admission.py",
+    "diagnostic.py",
+    "README.md",
+    "REVIEW.md",
+    "development.zip",
+    "pilot.py",
+    "run.py",
+    "requirements.txt",
+    "frozen.json",
+    "preflight.json",
+    "adequacy.json"
+  ],
+  "metrics": {
+    "hindsight": "min",
+    "learned": "min",
+    "longest": "min",
+    "primitive": "min",
+    "rotate": "min",
+    "swap": "min"
+  },
+  "name": "csm-skill006-transfer",
+  "research_adequacy": {
+    "file": "adequacy.json",
+    "sha256": "fb79db03f08b36f3c8af017842548342f740a4929bd16029f3cd8c9a0a3756c4"
+  },
+  "schema": "trainlab.experiment.v1",
+  "seed": 0,
+  "source_kind": "CONSTRUCTED",
+  "split_identity": "train-all-3-4-5/evaluate-all-6",
+  "timeout_seconds": 1200
+}

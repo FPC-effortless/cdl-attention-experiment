@@ -1,0 +1,221 @@
+{
+  "seed": 0,
+  "features": [
+    "misplaced",
+    "duplicates",
+    "two_cycles",
+    "three_cycles"
+  ],
+  "arms": [
+    "primitive",
+    "swap",
+    "rotate"
+  ],
+  "nodes": [
+    {
+      "left": 1,
+      "right": 6,
+      "feature": 2,
+      "threshold": 0.5,
+      "costs": [
+        0.0,
+        1.9480633802816902,
+        0.7053990610328639
+      ]
+    },
+    {
+      "left": 2,
+      "right": 3,
+      "feature": 3,
+      "threshold": 0.5,
+      "costs": [
+        0.0,
+        0.0,
+        1.1187236039418114
+      ]
+    },
+    {
+      "left": -1,
+      "right": -1,
+      "feature": -2,
+      "threshold": -2.0,
+      "costs": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "left": 4,
+      "right": 5,
+      "feature": 0,
+      "threshold": 3.5,
+      "costs": [
+        0.0,
+        0.0,
+        4.638132295719845
+      ]
+    },
+    {
+      "left": -1,
+      "right": -1,
+      "feature": -2,
+      "threshold": -2.0,
+      "costs": [
+        0.0,
+        0.0,
+        -4.0
+      ]
+    },
+    {
+      "left": -1,
+      "right": -1,
+      "feature": -2,
+      "threshold": -2.0,
+      "costs": [
+        0.0,
+        0.0,
+        5.1735537190082646
+      ]
+    },
+    {
+      "left": 7,
+      "right": 10,
+      "feature": 1,
+      "threshold": 1.5,
+      "costs": [
+        0.0,
+        5.198903680501175,
+        0.015661707126076743
+      ]
+    },
+    {
+      "left": 8,
+      "right": 9,
+      "feature": 0,
+      "threshold": 2.5,
+      "costs": [
+        0.0,
+        3.683250414593698,
+        0.03316749585406302
+      ]
+    },
+    {
+      "left": -1,
+      "right": -1,
+      "feature": -2,
+      "threshold": -2.0,
+      "costs": [
+        0.0,
+        -3.0,
+        0.0
+      ]
+    },
+    {
+      "left": -1,
+      "right": -1,
+      "feature": -2,
+      "threshold": -2.0,
+      "costs": [
+        0.0,
+        3.9006849315068495,
+        0.03424657534246575
+      ]
+    },
+    {
+      "left": 11,
+      "right": 12,
+      "feature": 0,
+      "threshold": 4.5,
+      "costs": [
+        0.0,
+        6.554896142433234,
+        0.0
+      ]
+    },
+    {
+      "left": -1,
+      "right": -1,
+      "feature": -2,
+      "threshold": -2.0,
+      "costs": [
+        0.0,
+        5.979591836734694,
+        0.0
+      ]
+    },
+    {
+      "left": -1,
+      "right": -1,
+      "feature": -2,
+      "threshold": -2.0,
+      "costs": [
+        0.0,
+        7.0,
+        0.0
+      ]
+    }
+  ],
+  "programs": [
+    [
+      [],
+      0
+    ],
+    [
+      [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          null
+        ]
+      ],
+      2
+    ],
+    [
+      [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          null
+        ]
+      ],
+      3
+    ]
+  ],
+  "tree_depth": 3,
+  "observations": {
+    "features": 4,
+    "tree_depth": 3,
+    "tree_nodes": 13,
+    "fit_calls": 1,
+    "train_goals": 3408,
+    "arms": 3,
+    "training_labels": 10224
+  }
+}

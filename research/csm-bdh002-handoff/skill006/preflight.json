@@ -1,0 +1,13 @@
+{
+  "arms": 3,
+  "dev_goals": 256,
+  "dev_headroom": 86,
+  "dev_rotate_wins": 8,
+  "dev_swap_wins": 18,
+  "features": 4,
+  "fit_calls": 1,
+  "train_goals": 3408,
+  "training_labels": 10224,
+  "tree_depth": 3,
+  "tree_nodes": 13
+}
