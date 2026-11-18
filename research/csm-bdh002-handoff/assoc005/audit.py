@@ -16,6 +16,36 @@ assert s[s.noise.eq(0)].state_exact.eq(1).all()
 assert len(t)==3*3*12*2 and not t.duplicated(["seed","noise","block","arm"]).any()
 assert t.ns.gt(0).all()
 assert t.groupby(["seed","noise","block"]).position.nunique().eq(2).all()
+def decode_effect(packet):
+    op, a, b, c = packet
+    registers = set(range(4,20))
+    valid = op in range(4) and a in registers
+    if op == 0:
+        valid = valid and b in range(20,255) and c == 255
+    elif op in (1,2):
+        valid = valid and b in registers and a != b and c == 255
+    elif op == 3:
+        valid = valid and b in registers and c in registers and len({a,b,c}) == 3
+    state = list(range(16)) + [None]
+    if valid:
+        destination = a-4
+        if op == 0:
+            state[destination] = 980+b
+        elif op == 1:
+            state[destination] = b-4
+        elif op == 2:
+            state[destination], state[b-4] = b-4, destination
+        else:
+            state[destination], state[b-4], state[c-4] = b-4, c-4, destination
+    return tuple(state), bool(valid)
+
+for row in s.itertuples():
+    goal, gold_valid = decode_effect(json.loads(row.gold))
+    result, valid = decode_effect(json.loads(row.decoded))
+    assert gold_valid and row.rejected == int(not valid)
+    assert row.state_exact == int(result == goal)
+    assert row.wrong_commit == int(valid and result != goal)
+
 timing=t.pivot(index=["seed","noise","block"],columns="arm",values="ns")
 paired=timing.filtered/timing.full
 report={"summary":s.groupby(["noise","arm"])[["packet_exact","state_exact","rejected","wrong_commit"]].sum().reset_index().to_dict("records"),
