@@ -2,6 +2,8 @@
 
 [Research Lab OS historical replay](pipeline/README.md) contains the six TrainLab runs, Forge inventory, Veritas evidence records and portable lab database.
 
+[ASSOC-002 development results](assoc002/RESULTS.md) follow the author-reported UNIFIED-001 interference finding with a bounded selective-retrieval diagnostic.
+
 ## Resume from a new machine
 
 ```sh
