@@ -1,0 +1,9 @@
+# CSM-SKILL-006 — Selecting between acquired SWAP and ROTATE3
+
+## Question and protocol for review
+
+Can a selector trained on three-, four- and five-record assignments use one of two acquired procedures to beat the best fixed single-skill controller across six-record assignments? Learn SWAP and ROTATE3 from one primitive state-transition trace each. Supply operand bindings to every arm. A candidate skill call must settle every changed operand in that call. Use the same primitive constructive planner to finish the goal. Permit at most one skill call per goal. Enumerate bindings in lexicographic order, keeping the first eligible binding. The primitive-only arm provides a third choice.
+
+For the proposed research run, enumerate all assignments on each size, with initially distinct values and empty scratch. Freeze a depth-three cost regression tree on all three smaller sizes. Inputs are misplaced count, duplicate target count and counts of closed two- and three-cycles. Predict differences relative to primitive cost. Break ties in the order primitive, SWAP, ROTATE3. Use four units per primitive plus one per dispatch, as in Study 005. Also evaluate a hand-written longest-cycle-first selector and report hindsight headroom. Require exact final states on all 46,656 held-out goals and strictly lower total cost than every fixed controller. Report performance by goal family and selection frequency. Count binding search separately before drawing any inference-cost conclusion. No timing or broader generalization claim follows from this gate.
+
+The development diagnostic below checks the executors, demonstrations and whether there is room for selection to help. It uses only four-record goals. The six-record evaluation requires a reviewed TrainLab research adequacy contract covering model size, training duration, datasets and training regime.

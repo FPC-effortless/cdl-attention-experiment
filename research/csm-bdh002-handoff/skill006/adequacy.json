@@ -1,0 +1,206 @@
+{
+  "claim": "Does the frozen two-skill selector reduce weighted action cost below every fixed controller?",
+  "claim_kind": "fixed_budget_comparison",
+  "dimensions": {
+    "datasets": {
+      "configuration": "Synthetic assignment goals with distinct initial values and empty scratch.",
+      "criteria": [
+        {
+          "evidence": "preflight.json",
+          "field": "dev_goals",
+          "id": "dev_goals",
+          "operator": "eq",
+          "rationale": "Exhaust the separate four-record development panel.",
+          "threshold": 256
+        },
+        {
+          "evidence": "preflight.json",
+          "field": "dev_headroom",
+          "id": "dev_headroom",
+          "operator": "ge",
+          "rationale": "Permit an observed gain over the best fixed arm.",
+          "threshold": 1
+        },
+        {
+          "evidence": "preflight.json",
+          "field": "dev_swap_wins",
+          "id": "dev_swap_wins",
+          "operator": "ge",
+          "rationale": "SWAP must uniquely win a development case.",
+          "threshold": 1
+        },
+        {
+          "evidence": "preflight.json",
+          "field": "dev_rotate_wins",
+          "id": "dev_rotate_wins",
+          "operator": "ge",
+          "rationale": "ROTATE3 must uniquely win a development case.",
+          "threshold": 1
+        }
+      ],
+      "justification": "Both procedures have strict wins on the frozen diagnostic panel.",
+      "limitations": "Six-record goals were previously used for a different controller comparison."
+    },
+    "model_size": {
+      "configuration": "Depth-three, four-feature cost-regression tree.",
+      "criteria": [
+        {
+          "evidence": "preflight.json",
+          "field": "features",
+          "id": "features",
+          "operator": "eq",
+          "rationale": "Use the frozen four structural summaries.",
+          "threshold": 4
+        },
+        {
+          "evidence": "preflight.json",
+          "field": "tree_depth",
+          "id": "tree_depth",
+          "operator": "le",
+          "rationale": "Bound split depth to the reviewed controller capacity.",
+          "threshold": 3
+        },
+        {
+          "evidence": "preflight.json",
+          "field": "tree_nodes",
+          "id": "tree_nodes",
+          "operator": "le",
+          "rationale": "A depth-three binary tree contains at most fifteen nodes.",
+          "threshold": 15
+        }
+      ],
+      "justification": "Evaluate transfer of a fixed compact policy with a controlled capacity.",
+      "limitations": "Inputs and depth were engineered from prior development studies."
+    },
+    "training_duration": {
+      "configuration": "One fit with full supervised controller costs on sizes 3 through 5.",
+      "criteria": [
+        {
+          "evidence": "preflight.json",
+          "field": "fit_calls",
+          "id": "fit_calls",
+          "operator": "eq",
+          "rationale": "One prescribed deterministic fit at each replay.",
+          "threshold": 1
+        },
+        {
+          "evidence": "preflight.json",
+          "field": "train_goals",
+          "id": "train_goals",
+          "operator": "eq",
+          "rationale": "Exhaust three-, four- and five-record training assignments.",
+          "threshold": 3408
+        }
+      ],
+      "justification": "The deterministic learner consumes the entire defined training population.",
+      "limitations": "No iterative optimizer or convergence claim."
+    },
+    "training_regime": {
+      "configuration": "Multioutput cost regression against exactly three candidate controllers.",
+      "criteria": [
+        {
+          "evidence": "preflight.json",
+          "field": "arms",
+          "id": "arms",
+          "operator": "eq",
+          "rationale": "Supply costs of every candidate controller to the learner.",
+          "threshold": 3
+        },
+        {
+          "evidence": "preflight.json",
+          "field": "training_labels",
+          "id": "training_labels",
+          "operator": "eq",
+          "rationale": "Observe one target per training assignment and arm.",
+          "threshold": 10224
+        }
+      ],
+      "justification": "Each controller receives the same initial state, goal and primitive fallback.",
+      "limitations": "Cost excludes binding enumeration and routing work."
+    }
+  },
+  "excluded_claims": "Latency, external replication, general algorithm discovery and broad transfer.",
+  "execution": {
+    "artifact": "observations.json",
+    "dimensions": {
+      "datasets": [
+        {
+          "field": "heldout_goals",
+          "operator": "eq",
+          "rationale": "Evaluate the complete six-record roster.",
+          "threshold": 46656
+        }
+      ],
+      "model_size": [
+        {
+          "field": "features",
+          "operator": "eq",
+          "rationale": "Use the frozen four structural summaries.",
+          "threshold": 4
+        },
+        {
+          "field": "tree_depth",
+          "operator": "le",
+          "rationale": "Bound split depth to the reviewed controller capacity.",
+          "threshold": 3
+        },
+        {
+          "field": "tree_nodes",
+          "operator": "le",
+          "rationale": "A depth-three binary tree contains at most fifteen nodes.",
+          "threshold": 15
+        }
+      ],
+      "training_duration": [
+        {
+          "field": "fit_calls",
+          "operator": "eq",
+          "rationale": "One prescribed deterministic fit at each replay.",
+          "threshold": 1
+        },
+        {
+          "field": "train_goals",
+          "operator": "eq",
+          "rationale": "Exhaust three-, four- and five-record training assignments.",
+          "threshold": 3408
+        }
+      ],
+      "training_regime": [
+        {
+          "field": "arms",
+          "operator": "eq",
+          "rationale": "Supply costs of every candidate controller to the learner.",
+          "threshold": 3
+        },
+        {
+          "field": "training_labels",
+          "operator": "eq",
+          "rationale": "Observe one target per training assignment and arm.",
+          "threshold": 10224
+        }
+      ]
+    }
+  },
+  "inputs": {
+    "README.md": "e76bd7e0461ba8f8dd2db7932da1aaebc0836d23a42a3df0ddcaad43097498c6",
+    "REVIEW.md": "2bbac4787544d152e60e2175924d173c7fbbebbed61ddbafff2c244af8bcaea9",
+    "admission.py": "524db1ca8383c45759b3ca87b649678a69d545e6426c5b157a930204ef0b9de1",
+    "development.zip": "b64131179f2ba9b0890065fe0cea2bba45a98dc3502077b4f150823b332268f8",
+    "diagnostic.py": "84659ccceeb3dc27b27db38560413504cc845431f482330ed51496ea004a3378",
+    "frozen.json": "0396867da9494653234fc5e747f1e51072434ee00cefe87a712ee9217c478f71",
+    "pilot.py": "38bb0b147b1ed5358bb8dbef5f767853606981adf62bed44c9ed3d71ad2ae458",
+    "preflight.json": "3c1690875c822fb8aeaf035a759c6825631ab77427da50808078335ba867ec9d",
+    "requirements.txt": "37d25cd77b87c89e00af5b03238de7c03f15159335b36c24ee4c9d256a264f44",
+    "research.py": "51afc104f98cb17ea8abd4a34a7bdf589d4c4ec9fa7af54e5c383bd9dacd979d",
+    "run.py": "d42f350d645de8005769752fca706e26eb20127334687671cb4078ebd85351c2"
+  },
+  "recipe_sha256": "66440f84fce5e89a069b0d6ae7b6eb1d3c80a17aa181ca085c6c67ad214a8bd6",
+  "review": {
+    "author": "CSM-SKILL-006 research implementer",
+    "basis": "See pinned REVIEW.md for independent inspection of the four domains and conditions.",
+    "criteria_frozen_before_evaluation": true,
+    "reviewer": "Codex scientific_review and pipeline_review (separate same-session subagents)"
+  },
+  "schema": "trainlab.research-adequacy.v1",
+  "scope": "Complete six-record assignment roster and the reviewed three-controller action semantics."
+}

@@ -1,0 +1,650 @@
+[
+  {
+    "seed": 11,
+    "load": 29,
+    "arm": "0tables-16bits",
+    "improved": 335,
+    "worsened": 0,
+    "max_union": 29
+  },
+  {
+    "seed": 11,
+    "load": 29,
+    "arm": "0tables-32bits",
+    "improved": 335,
+    "worsened": 0,
+    "max_union": 29
+  },
+  {
+    "seed": 11,
+    "load": 29,
+    "arm": "1tables-16bits",
+    "improved": 0,
+    "worsened": 0,
+    "max_union": 12
+  },
+  {
+    "seed": 11,
+    "load": 29,
+    "arm": "1tables-32bits",
+    "improved": 0,
+    "worsened": 0,
+    "max_union": 12
+  },
+  {
+    "seed": 11,
+    "load": 29,
+    "arm": "2tables-16bits",
+    "improved": 232,
+    "worsened": 0,
+    "max_union": 20
+  },
+  {
+    "seed": 11,
+    "load": 29,
+    "arm": "2tables-32bits",
+    "improved": 232,
+    "worsened": 0,
+    "max_union": 20
+  },
+  {
+    "seed": 11,
+    "load": 29,
+    "arm": "4tables-16bits",
+    "improved": 326,
+    "worsened": 0,
+    "max_union": 27
+  },
+  {
+    "seed": 11,
+    "load": 29,
+    "arm": "4tables-32bits",
+    "improved": 326,
+    "worsened": 0,
+    "max_union": 27
+  },
+  {
+    "seed": 11,
+    "load": 29,
+    "arm": "full",
+    "improved": 335,
+    "worsened": 0,
+    "max_union": 29
+  },
+  {
+    "seed": 11,
+    "load": 64,
+    "arm": "0tables-16bits",
+    "improved": 292,
+    "worsened": 5,
+    "max_union": 64
+  },
+  {
+    "seed": 11,
+    "load": 64,
+    "arm": "0tables-32bits",
+    "improved": 297,
+    "worsened": 0,
+    "max_union": 64
+  },
+  {
+    "seed": 11,
+    "load": 64,
+    "arm": "1tables-16bits",
+    "improved": 0,
+    "worsened": 0,
+    "max_union": 27
+  },
+  {
+    "seed": 11,
+    "load": 64,
+    "arm": "1tables-32bits",
+    "improved": 0,
+    "worsened": 0,
+    "max_union": 27
+  },
+  {
+    "seed": 11,
+    "load": 64,
+    "arm": "2tables-16bits",
+    "improved": 198,
+    "worsened": 0,
+    "max_union": 40
+  },
+  {
+    "seed": 11,
+    "load": 64,
+    "arm": "2tables-32bits",
+    "improved": 199,
+    "worsened": 0,
+    "max_union": 40
+  },
+  {
+    "seed": 11,
+    "load": 64,
+    "arm": "4tables-16bits",
+    "improved": 288,
+    "worsened": 1,
+    "max_union": 57
+  },
+  {
+    "seed": 11,
+    "load": 64,
+    "arm": "4tables-32bits",
+    "improved": 290,
+    "worsened": 0,
+    "max_union": 57
+  },
+  {
+    "seed": 11,
+    "load": 64,
+    "arm": "full",
+    "improved": 297,
+    "worsened": 0,
+    "max_union": 64
+  },
+  {
+    "seed": 11,
+    "load": 256,
+    "arm": "0tables-16bits",
+    "improved": 268,
+    "worsened": 43,
+    "max_union": 256
+  },
+  {
+    "seed": 11,
+    "load": 256,
+    "arm": "0tables-32bits",
+    "improved": 348,
+    "worsened": 4,
+    "max_union": 256
+  },
+  {
+    "seed": 11,
+    "load": 256,
+    "arm": "1tables-16bits",
+    "improved": 0,
+    "worsened": 0,
+    "max_union": 79
+  },
+  {
+    "seed": 11,
+    "load": 256,
+    "arm": "1tables-32bits",
+    "improved": 1,
+    "worsened": 0,
+    "max_union": 79
+  },
+  {
+    "seed": 11,
+    "load": 256,
+    "arm": "2tables-16bits",
+    "improved": 222,
+    "worsened": 7,
+    "max_union": 129
+  },
+  {
+    "seed": 11,
+    "load": 256,
+    "arm": "2tables-32bits",
+    "improved": 241,
+    "worsened": 0,
+    "max_union": 129
+  },
+  {
+    "seed": 11,
+    "load": 256,
+    "arm": "4tables-16bits",
+    "improved": 285,
+    "worsened": 28,
+    "max_union": 194
+  },
+  {
+    "seed": 11,
+    "load": 256,
+    "arm": "4tables-32bits",
+    "improved": 344,
+    "worsened": 2,
+    "max_union": 194
+  },
+  {
+    "seed": 11,
+    "load": 256,
+    "arm": "full",
+    "improved": 354,
+    "worsened": 0,
+    "max_union": 256
+  },
+  {
+    "seed": 23,
+    "load": 29,
+    "arm": "0tables-16bits",
+    "improved": 353,
+    "worsened": 0,
+    "max_union": 29
+  },
+  {
+    "seed": 23,
+    "load": 29,
+    "arm": "0tables-32bits",
+    "improved": 353,
+    "worsened": 0,
+    "max_union": 29
+  },
+  {
+    "seed": 23,
+    "load": 29,
+    "arm": "1tables-16bits",
+    "improved": 0,
+    "worsened": 0,
+    "max_union": 13
+  },
+  {
+    "seed": 23,
+    "load": 29,
+    "arm": "1tables-32bits",
+    "improved": 0,
+    "worsened": 0,
+    "max_union": 13
+  },
+  {
+    "seed": 23,
+    "load": 29,
+    "arm": "2tables-16bits",
+    "improved": 224,
+    "worsened": 0,
+    "max_union": 21
+  },
+  {
+    "seed": 23,
+    "load": 29,
+    "arm": "2tables-32bits",
+    "improved": 224,
+    "worsened": 0,
+    "max_union": 21
+  },
+  {
+    "seed": 23,
+    "load": 29,
+    "arm": "4tables-16bits",
+    "improved": 339,
+    "worsened": 0,
+    "max_union": 28
+  },
+  {
+    "seed": 23,
+    "load": 29,
+    "arm": "4tables-32bits",
+    "improved": 339,
+    "worsened": 0,
+    "max_union": 28
+  },
+  {
+    "seed": 23,
+    "load": 29,
+    "arm": "full",
+    "improved": 353,
+    "worsened": 0,
+    "max_union": 29
+  },
+  {
+    "seed": 23,
+    "load": 64,
+    "arm": "0tables-16bits",
+    "improved": 295,
+    "worsened": 5,
+    "max_union": 64
+  },
+  {
+    "seed": 23,
+    "load": 64,
+    "arm": "0tables-32bits",
+    "improved": 301,
+    "worsened": 0,
+    "max_union": 64
+  },
+  {
+    "seed": 23,
+    "load": 64,
+    "arm": "1tables-16bits",
+    "improved": 0,
+    "worsened": 0,
+    "max_union": 19
+  },
+  {
+    "seed": 23,
+    "load": 64,
+    "arm": "1tables-32bits",
+    "improved": 0,
+    "worsened": 0,
+    "max_union": 19
+  },
+  {
+    "seed": 23,
+    "load": 64,
+    "arm": "2tables-16bits",
+    "improved": 198,
+    "worsened": 0,
+    "max_union": 35
+  },
+  {
+    "seed": 23,
+    "load": 64,
+    "arm": "2tables-32bits",
+    "improved": 198,
+    "worsened": 0,
+    "max_union": 35
+  },
+  {
+    "seed": 23,
+    "load": 64,
+    "arm": "4tables-16bits",
+    "improved": 293,
+    "worsened": 0,
+    "max_union": 54
+  },
+  {
+    "seed": 23,
+    "load": 64,
+    "arm": "4tables-32bits",
+    "improved": 293,
+    "worsened": 0,
+    "max_union": 54
+  },
+  {
+    "seed": 23,
+    "load": 64,
+    "arm": "full",
+    "improved": 301,
+    "worsened": 0,
+    "max_union": 64
+  },
+  {
+    "seed": 23,
+    "load": 256,
+    "arm": "0tables-16bits",
+    "improved": 282,
+    "worsened": 35,
+    "max_union": 256
+  },
+  {
+    "seed": 23,
+    "load": 256,
+    "arm": "0tables-32bits",
+    "improved": 354,
+    "worsened": 0,
+    "max_union": 256
+  },
+  {
+    "seed": 23,
+    "load": 256,
+    "arm": "1tables-16bits",
+    "improved": 0,
+    "worsened": 0,
+    "max_union": 77
+  },
+  {
+    "seed": 23,
+    "load": 256,
+    "arm": "1tables-32bits",
+    "improved": 2,
+    "worsened": 0,
+    "max_union": 77
+  },
+  {
+    "seed": 23,
+    "load": 256,
+    "arm": "2tables-16bits",
+    "improved": 222,
+    "worsened": 6,
+    "max_union": 128
+  },
+  {
+    "seed": 23,
+    "load": 256,
+    "arm": "2tables-32bits",
+    "improved": 236,
+    "worsened": 0,
+    "max_union": 128
+  },
+  {
+    "seed": 23,
+    "load": 256,
+    "arm": "4tables-16bits",
+    "improved": 302,
+    "worsened": 19,
+    "max_union": 202
+  },
+  {
+    "seed": 23,
+    "load": 256,
+    "arm": "4tables-32bits",
+    "improved": 346,
+    "worsened": 0,
+    "max_union": 202
+  },
+  {
+    "seed": 23,
+    "load": 256,
+    "arm": "full",
+    "improved": 360,
+    "worsened": 0,
+    "max_union": 256
+  },
+  {
+    "seed": 37,
+    "load": 29,
+    "arm": "0tables-16bits",
+    "improved": 372,
+    "worsened": 0,
+    "max_union": 29
+  },
+  {
+    "seed": 37,
+    "load": 29,
+    "arm": "0tables-32bits",
+    "improved": 372,
+    "worsened": 0,
+    "max_union": 29
+  },
+  {
+    "seed": 37,
+    "load": 29,
+    "arm": "1tables-16bits",
+    "improved": 0,
+    "worsened": 0,
+    "max_union": 11
+  },
+  {
+    "seed": 37,
+    "load": 29,
+    "arm": "1tables-32bits",
+    "improved": 0,
+    "worsened": 0,
+    "max_union": 11
+  },
+  {
+    "seed": 37,
+    "load": 29,
+    "arm": "2tables-16bits",
+    "improved": 255,
+    "worsened": 0,
+    "max_union": 18
+  },
+  {
+    "seed": 37,
+    "load": 29,
+    "arm": "2tables-32bits",
+    "improved": 255,
+    "worsened": 0,
+    "max_union": 18
+  },
+  {
+    "seed": 37,
+    "load": 29,
+    "arm": "4tables-16bits",
+    "improved": 365,
+    "worsened": 0,
+    "max_union": 26
+  },
+  {
+    "seed": 37,
+    "load": 29,
+    "arm": "4tables-32bits",
+    "improved": 365,
+    "worsened": 0,
+    "max_union": 26
+  },
+  {
+    "seed": 37,
+    "load": 29,
+    "arm": "full",
+    "improved": 372,
+    "worsened": 0,
+    "max_union": 29
+  },
+  {
+    "seed": 37,
+    "load": 64,
+    "arm": "0tables-16bits",
+    "improved": 327,
+    "worsened": 4,
+    "max_union": 64
+  },
+  {
+    "seed": 37,
+    "load": 64,
+    "arm": "0tables-32bits",
+    "improved": 333,
+    "worsened": 0,
+    "max_union": 64
+  },
+  {
+    "seed": 37,
+    "load": 64,
+    "arm": "1tables-16bits",
+    "improved": 0,
+    "worsened": 0,
+    "max_union": 23
+  },
+  {
+    "seed": 37,
+    "load": 64,
+    "arm": "1tables-32bits",
+    "improved": 0,
+    "worsened": 0,
+    "max_union": 23
+  },
+  {
+    "seed": 37,
+    "load": 64,
+    "arm": "2tables-16bits",
+    "improved": 229,
+    "worsened": 0,
+    "max_union": 39
+  },
+  {
+    "seed": 37,
+    "load": 64,
+    "arm": "2tables-32bits",
+    "improved": 229,
+    "worsened": 0,
+    "max_union": 39
+  },
+  {
+    "seed": 37,
+    "load": 64,
+    "arm": "4tables-16bits",
+    "improved": 325,
+    "worsened": 0,
+    "max_union": 55
+  },
+  {
+    "seed": 37,
+    "load": 64,
+    "arm": "4tables-32bits",
+    "improved": 326,
+    "worsened": 0,
+    "max_union": 55
+  },
+  {
+    "seed": 37,
+    "load": 64,
+    "arm": "full",
+    "improved": 333,
+    "worsened": 0,
+    "max_union": 64
+  },
+  {
+    "seed": 37,
+    "load": 256,
+    "arm": "0tables-16bits",
+    "improved": 279,
+    "worsened": 31,
+    "max_union": 256
+  },
+  {
+    "seed": 37,
+    "load": 256,
+    "arm": "0tables-32bits",
+    "improved": 363,
+    "worsened": 1,
+    "max_union": 256
+  },
+  {
+    "seed": 37,
+    "load": 256,
+    "arm": "1tables-16bits",
+    "improved": 0,
+    "worsened": 0,
+    "max_union": 73
+  },
+  {
+    "seed": 37,
+    "load": 256,
+    "arm": "1tables-32bits",
+    "improved": 0,
+    "worsened": 0,
+    "max_union": 73
+  },
+  {
+    "seed": 37,
+    "load": 256,
+    "arm": "2tables-16bits",
+    "improved": 237,
+    "worsened": 6,
+    "max_union": 129
+  },
+  {
+    "seed": 37,
+    "load": 256,
+    "arm": "2tables-32bits",
+    "improved": 258,
+    "worsened": 0,
+    "max_union": 129
+  },
+  {
+    "seed": 37,
+    "load": 256,
+    "arm": "4tables-16bits",
+    "improved": 311,
+    "worsened": 17,
+    "max_union": 194
+  },
+  {
+    "seed": 37,
+    "load": 256,
+    "arm": "4tables-32bits",
+    "improved": 358,
+    "worsened": 0,
+    "max_union": 194
+  },
+  {
+    "seed": 37,
+    "load": 256,
+    "arm": "full",
+    "improved": 365,
+    "worsened": 0,
+    "max_union": 256
+  }
+]

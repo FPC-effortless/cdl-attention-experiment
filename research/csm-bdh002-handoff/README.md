@@ -1,5 +1,32 @@
 # Resume CSM-BDH-002 research
 
+[Research Lab OS historical replay](pipeline/README.md) contains the six TrainLab runs, Forge inventory, Veritas evidence records and portable lab database.
+
+[ASSOC-002 development results](assoc002/RESULTS.md) follow the author-reported UNIFIED-001 interference finding with a bounded selective-retrieval diagnostic.
+
+[ASSOC-003](assoc003/RESULTS.md) measures the effect of Hamming pre-ranking and the observed packet ceiling of the two-bank route.
+
+[ASSOC-004](assoc004/RESULTS.md) compares redundant routing against global signature scanning under a shared 32-dot cap.
+
+[ASSOC-005](assoc005/RESULTS.md) measures retrieval-to-state errors and complete-call timing on fresh stores at three noise levels.
+
+## Resume from a new machine
+
+```sh
+git clone --branch research/csm-skill-first-pilot https://github.com/FPC-effortless/cdl-attention-experiment.git
+cd cdl-attention-experiment/research/csm-bdh002-handoff
+```
+
+Follow the experiment-specific commands below. The checkout contains the source, frozen inputs, protocols, and expected results for the current replay. See [ARCHIVES.md](ARCHIVES.md) for historical evidence that requires separate access.
+
+- [Study 041](study041/README.md) replays the Study 040 bottlenecks with a bounded scope grammar.
+- [CSM-SKILL-001](skill001/README.md) records the skill-first proposal and a language-free procedural-memory pilot.
+- [CSM-SKILL-002](skill002/README.md) compares a goal-directed planner with and without the acquired SWAP across every four-record assignment.
+- [CSM-SKILL-003](skill003/README.md) evaluates when to defer SWAP and records controller-plus-executor timing.
+- [CSM-SKILL-004](skill004/README.md) tests learned controller selection across record counts and documents the remaining transfer error.
+- [CSM-SKILL-005](skill005/README.md) freezes the independent-pair selector and evaluates every six-record assignment.
+- [CSM-SKILL-006 development panel](skill006/RESULTS.md) measures headroom for routing between acquired SWAP and ROTATE3.
+
 Start with [study 040](study040/README.md). Its best deployable methods passed three of five held-out synthetic layouts across three seeds. Every deployable method failed on contrastive subjects and subordinate denials. The supplied-occurrence oracle passed all five. The 92/96 per-layout gate prevented a qualified timing comparison. The open research question is whether a compact parser can identify governing subjects and predicate scope before a reference is bound to a record.
 
 ## Replay the latest study

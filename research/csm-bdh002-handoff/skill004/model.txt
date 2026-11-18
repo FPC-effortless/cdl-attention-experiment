@@ -1,0 +1,15 @@
+|--- reciprocal_pairs <= 0.50
+|   |--- value: [0.00, 0.00, 0.00]
+|--- reciprocal_pairs >  0.50
+|   |--- duplicate_values <= 0.50
+|   |   |--- misplaced <= 3.00
+|   |   |   |--- value: [0.00, -3.00, -3.00]
+|   |   |--- misplaced >  3.00
+|   |   |   |--- value: [0.00, -1.00, -1.00]
+|   |--- duplicate_values >  0.50
+|   |   |--- misplaced <= 3.50
+|   |   |   |--- value: [0.00, -0.86, 4.14]
+|   |   |--- misplaced >  3.50
+|   |   |   |--- value: [0.00, 0.00, 7.00]
+
+Best fixed training arm: deferred

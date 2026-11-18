@@ -1,0 +1,351 @@
+{
+  "operations": [
+    {
+      "arm": "filtered",
+      "noise": 0.0,
+      "op": 0,
+      "rejected": 0,
+      "state_exact": 192,
+      "wrong_commit": 0
+    },
+    {
+      "arm": "filtered",
+      "noise": 0.0,
+      "op": 1,
+      "rejected": 0,
+      "state_exact": 192,
+      "wrong_commit": 0
+    },
+    {
+      "arm": "filtered",
+      "noise": 0.0,
+      "op": 2,
+      "rejected": 0,
+      "state_exact": 192,
+      "wrong_commit": 0
+    },
+    {
+      "arm": "filtered",
+      "noise": 0.0,
+      "op": 3,
+      "rejected": 0,
+      "state_exact": 192,
+      "wrong_commit": 0
+    },
+    {
+      "arm": "full",
+      "noise": 0.0,
+      "op": 0,
+      "rejected": 0,
+      "state_exact": 192,
+      "wrong_commit": 0
+    },
+    {
+      "arm": "full",
+      "noise": 0.0,
+      "op": 1,
+      "rejected": 0,
+      "state_exact": 192,
+      "wrong_commit": 0
+    },
+    {
+      "arm": "full",
+      "noise": 0.0,
+      "op": 2,
+      "rejected": 0,
+      "state_exact": 192,
+      "wrong_commit": 0
+    },
+    {
+      "arm": "full",
+      "noise": 0.0,
+      "op": 3,
+      "rejected": 0,
+      "state_exact": 192,
+      "wrong_commit": 0
+    },
+    {
+      "arm": "filtered",
+      "noise": 0.09,
+      "op": 0,
+      "rejected": 2,
+      "state_exact": 189,
+      "wrong_commit": 1
+    },
+    {
+      "arm": "filtered",
+      "noise": 0.09,
+      "op": 1,
+      "rejected": 5,
+      "state_exact": 186,
+      "wrong_commit": 1
+    },
+    {
+      "arm": "filtered",
+      "noise": 0.09,
+      "op": 2,
+      "rejected": 2,
+      "state_exact": 190,
+      "wrong_commit": 0
+    },
+    {
+      "arm": "filtered",
+      "noise": 0.09,
+      "op": 3,
+      "rejected": 2,
+      "state_exact": 190,
+      "wrong_commit": 0
+    },
+    {
+      "arm": "full",
+      "noise": 0.09,
+      "op": 0,
+      "rejected": 0,
+      "state_exact": 192,
+      "wrong_commit": 0
+    },
+    {
+      "arm": "full",
+      "noise": 0.09,
+      "op": 1,
+      "rejected": 0,
+      "state_exact": 192,
+      "wrong_commit": 0
+    },
+    {
+      "arm": "full",
+      "noise": 0.09,
+      "op": 2,
+      "rejected": 0,
+      "state_exact": 192,
+      "wrong_commit": 0
+    },
+    {
+      "arm": "full",
+      "noise": 0.09,
+      "op": 3,
+      "rejected": 0,
+      "state_exact": 192,
+      "wrong_commit": 0
+    },
+    {
+      "arm": "filtered",
+      "noise": 0.18,
+      "op": 0,
+      "rejected": 55,
+      "state_exact": 121,
+      "wrong_commit": 16
+    },
+    {
+      "arm": "filtered",
+      "noise": 0.18,
+      "op": 1,
+      "rejected": 73,
+      "state_exact": 113,
+      "wrong_commit": 6
+    },
+    {
+      "arm": "filtered",
+      "noise": 0.18,
+      "op": 2,
+      "rejected": 73,
+      "state_exact": 118,
+      "wrong_commit": 1
+    },
+    {
+      "arm": "filtered",
+      "noise": 0.18,
+      "op": 3,
+      "rejected": 62,
+      "state_exact": 128,
+      "wrong_commit": 2
+    },
+    {
+      "arm": "full",
+      "noise": 0.18,
+      "op": 0,
+      "rejected": 9,
+      "state_exact": 182,
+      "wrong_commit": 1
+    },
+    {
+      "arm": "full",
+      "noise": 0.18,
+      "op": 1,
+      "rejected": 12,
+      "state_exact": 180,
+      "wrong_commit": 0
+    },
+    {
+      "arm": "full",
+      "noise": 0.18,
+      "op": 2,
+      "rejected": 8,
+      "state_exact": 184,
+      "wrong_commit": 0
+    },
+    {
+      "arm": "full",
+      "noise": 0.18,
+      "op": 3,
+      "rejected": 8,
+      "state_exact": 184,
+      "wrong_commit": 0
+    }
+  ],
+  "summary": [
+    {
+      "arm": "filtered",
+      "noise": 0.0,
+      "packet_exact": 768,
+      "rejected": 0,
+      "state_exact": 768,
+      "wrong_commit": 0
+    },
+    {
+      "arm": "full",
+      "noise": 0.0,
+      "packet_exact": 768,
+      "rejected": 0,
+      "state_exact": 768,
+      "wrong_commit": 0
+    },
+    {
+      "arm": "filtered",
+      "noise": 0.09,
+      "packet_exact": 755,
+      "rejected": 11,
+      "state_exact": 755,
+      "wrong_commit": 2
+    },
+    {
+      "arm": "full",
+      "noise": 0.09,
+      "packet_exact": 768,
+      "rejected": 0,
+      "state_exact": 768,
+      "wrong_commit": 0
+    },
+    {
+      "arm": "filtered",
+      "noise": 0.18,
+      "packet_exact": 480,
+      "rejected": 263,
+      "state_exact": 480,
+      "wrong_commit": 25
+    },
+    {
+      "arm": "full",
+      "noise": 0.18,
+      "packet_exact": 730,
+      "rejected": 37,
+      "state_exact": 730,
+      "wrong_commit": 1
+    }
+  ],
+  "timing_ratio_filtered_over_full": {
+    "max": 5.649142154729987,
+    "median": 4.753801558742919,
+    "min": 3.2904967939644947
+  },
+  "timing_us_per_packet": [
+    {
+      "arm": "filtered",
+      "noise": 0.0,
+      "ns": 36.973205078125
+    },
+    {
+      "arm": "full",
+      "noise": 0.0,
+      "ns": 7.668228515625
+    },
+    {
+      "arm": "filtered",
+      "noise": 0.09,
+      "ns": 36.94616796875
+    },
+    {
+      "arm": "full",
+      "noise": 0.09,
+      "ns": 7.719966796875
+    },
+    {
+      "arm": "filtered",
+      "noise": 0.18,
+      "ns": 36.4620703125
+    },
+    {
+      "arm": "full",
+      "noise": 0.18,
+      "ns": 7.695849609375
+    }
+  ],
+  "token_confusions": {
+    "0.0/filtered/0/operation/operation/exact": 768,
+    "0.0/filtered/1/register/register/exact": 768,
+    "0.0/filtered/2/literal/literal/exact": 192,
+    "0.0/filtered/2/register/register/exact": 576,
+    "0.0/filtered/3/padding/padding/exact": 576,
+    "0.0/filtered/3/register/register/exact": 192,
+    "0.0/full/0/operation/operation/exact": 768,
+    "0.0/full/1/register/register/exact": 768,
+    "0.0/full/2/literal/literal/exact": 192,
+    "0.0/full/2/register/register/exact": 576,
+    "0.0/full/3/padding/padding/exact": 576,
+    "0.0/full/3/register/register/exact": 192,
+    "0.09/filtered/0/operation/literal/changed": 3,
+    "0.09/filtered/0/operation/operation/exact": 765,
+    "0.09/filtered/1/register/register/exact": 768,
+    "0.09/filtered/2/literal/literal/changed": 1,
+    "0.09/filtered/2/literal/literal/exact": 190,
+    "0.09/filtered/2/literal/operation/changed": 1,
+    "0.09/filtered/2/register/literal/changed": 2,
+    "0.09/filtered/2/register/register/changed": 1,
+    "0.09/filtered/2/register/register/exact": 573,
+    "0.09/filtered/3/padding/literal/changed": 4,
+    "0.09/filtered/3/padding/padding/exact": 572,
+    "0.09/filtered/3/register/literal/changed": 1,
+    "0.09/filtered/3/register/register/exact": 191,
+    "0.09/full/0/operation/operation/exact": 768,
+    "0.09/full/1/register/register/exact": 768,
+    "0.09/full/2/literal/literal/exact": 192,
+    "0.09/full/2/register/register/exact": 576,
+    "0.09/full/3/padding/padding/exact": 576,
+    "0.09/full/3/register/register/exact": 192,
+    "0.18/filtered/0/operation/literal/changed": 61,
+    "0.18/filtered/0/operation/operation/changed": 4,
+    "0.18/filtered/0/operation/operation/exact": 697,
+    "0.18/filtered/0/operation/register/changed": 6,
+    "0.18/filtered/1/register/literal/changed": 57,
+    "0.18/filtered/1/register/operation/changed": 4,
+    "0.18/filtered/1/register/register/changed": 7,
+    "0.18/filtered/1/register/register/exact": 700,
+    "0.18/filtered/2/literal/literal/changed": 22,
+    "0.18/filtered/2/literal/literal/exact": 166,
+    "0.18/filtered/2/literal/operation/changed": 2,
+    "0.18/filtered/2/literal/register/changed": 2,
+    "0.18/filtered/2/register/literal/changed": 57,
+    "0.18/filtered/2/register/register/changed": 9,
+    "0.18/filtered/2/register/register/exact": 510,
+    "0.18/filtered/3/padding/literal/changed": 85,
+    "0.18/filtered/3/padding/operation/changed": 3,
+    "0.18/filtered/3/padding/padding/exact": 486,
+    "0.18/filtered/3/padding/register/changed": 2,
+    "0.18/filtered/3/register/literal/changed": 18,
+    "0.18/filtered/3/register/register/exact": 174,
+    "0.18/full/0/operation/literal/changed": 8,
+    "0.18/full/0/operation/operation/exact": 759,
+    "0.18/full/0/operation/register/changed": 1,
+    "0.18/full/1/register/literal/changed": 4,
+    "0.18/full/1/register/register/exact": 764,
+    "0.18/full/2/literal/literal/changed": 1,
+    "0.18/full/2/literal/literal/exact": 191,
+    "0.18/full/2/register/literal/changed": 8,
+    "0.18/full/2/register/register/exact": 568,
+    "0.18/full/3/padding/literal/changed": 15,
+    "0.18/full/3/padding/operation/changed": 1,
+    "0.18/full/3/padding/padding/exact": 560,
+    "0.18/full/3/register/literal/changed": 1,
+    "0.18/full/3/register/register/exact": 191
+  }
+}
