@@ -1,0 +1,5 @@
+# CSM-SKILL-004 — Transfer a learned choice of controller
+
+Train a depth-three regression tree on measured costs for the primitive, eager SWAP and deferred SWAP controllers over every three- and four-record assignment. At inference, select one controller per goal from its predicted costs, breaking ties in favor of primitive then deferred then eager. The router receives counts of misplaced records, reciprocal pairs and duplicate target values. Freeze training before evaluating every five-record assignment (3,125 goals). No larger roster enters model fitting.
+
+The milestone requires exact final states on every goal, lower total cost than primitive-only planning, and total cost at most equal to the hand-written deferred controller. Compare also to the best single training controller and the per-goal hindsight minimum. Define cost as four units per expanded primitive plus one per controller dispatch. This is a design choice for measuring a trade-off. It excludes routing overhead and does not estimate latency. Publish the outcome even if the learned router misses the milestone.
