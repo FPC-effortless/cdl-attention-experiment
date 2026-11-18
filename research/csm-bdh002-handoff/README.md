@@ -4,6 +4,8 @@
 
 [ASSOC-002 development results](assoc002/RESULTS.md) follow the author-reported UNIFIED-001 interference finding with a bounded selective-retrieval diagnostic.
 
+[ASSOC-003](assoc003/RESULTS.md) measures the effect of Hamming pre-ranking and the observed packet ceiling of the two-bank route.
+
 ## Resume from a new machine
 
 ```sh
