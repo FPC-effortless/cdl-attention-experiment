@@ -1,5 +1,8 @@
 # Resume CSM-BDH-002 research
 
+- [Study 041](study041/README.md) replays the Study 040 bottlenecks with a bounded scope grammar.
+- [CSM-SKILL-001](skill001/README.md) records the skill-first proposal and a language-free procedural-memory pilot.
+
 Start with [study 040](study040/README.md). Its best deployable methods passed three of five held-out synthetic layouts across three seeds. Every deployable method failed on contrastive subjects and subordinate denials. The supplied-occurrence oracle passed all five. The 92/96 per-layout gate prevented a qualified timing comparison. The open research question is whether a compact parser can identify governing subjects and predicate scope before a reference is bound to a record.
 
 ## Replay the latest study

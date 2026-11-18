@@ -1,0 +1,84 @@
+{
+  "primitive_budgets_per_task": [
+    512,
+    2048,
+    8192,
+    32768
+  ],
+  "outcome_only_seed_candidate_checks": 70,
+  "outcome_only_seed_primitive_checks": 70,
+  "demonstration_transitions": 4,
+  "demonstration_candidate_checks": 28,
+  "admission_cases": 162,
+  "transfer_tasks_per_arm": 48,
+  "transfer": {
+    "512": {
+      "outcome_only": {
+        "passed": 0,
+        "candidate_checks": 24576,
+        "primitive_checks_charged": 24576
+      },
+      "demonstrations_flat": {
+        "passed": 0,
+        "candidate_checks": 24576,
+        "primitive_checks_charged": 24576
+      },
+      "demonstrations_procedural_memory": {
+        "passed": 48,
+        "candidate_checks": 1536,
+        "primitive_checks_charged": 3120
+      }
+    },
+    "2048": {
+      "outcome_only": {
+        "passed": 0,
+        "candidate_checks": 98304,
+        "primitive_checks_charged": 98304
+      },
+      "demonstrations_flat": {
+        "passed": 0,
+        "candidate_checks": 98304,
+        "primitive_checks_charged": 98304
+      },
+      "demonstrations_procedural_memory": {
+        "passed": 48,
+        "candidate_checks": 1536,
+        "primitive_checks_charged": 3120
+      }
+    },
+    "8192": {
+      "outcome_only": {
+        "passed": 0,
+        "candidate_checks": 393216,
+        "primitive_checks_charged": 393216
+      },
+      "demonstrations_flat": {
+        "passed": 0,
+        "candidate_checks": 393216,
+        "primitive_checks_charged": 393216
+      },
+      "demonstrations_procedural_memory": {
+        "passed": 48,
+        "candidate_checks": 1536,
+        "primitive_checks_charged": 3120
+      }
+    },
+    "32768": {
+      "outcome_only": {
+        "passed": 48,
+        "candidate_checks": 1048824,
+        "primitive_checks_charged": 1048824
+      },
+      "demonstrations_flat": {
+        "passed": 48,
+        "candidate_checks": 842184,
+        "primitive_checks_charged": 842184
+      },
+      "demonstrations_procedural_memory": {
+        "passed": 48,
+        "candidate_checks": 1536,
+        "primitive_checks_charged": 3120
+      }
+    }
+  }
+}

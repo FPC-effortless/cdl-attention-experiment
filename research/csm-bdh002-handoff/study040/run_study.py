@@ -89,7 +89,7 @@ def predict(rows,weights):
     return list(scores)[picked] if picked>=0 else -1
 
 
-def evaluate(seed, writer):
+def evaluate(seed, writer, extra_selector=None):
     plain, structured = fit(seed,False), fit(seed,True)
     rng = random.Random(40001)
     supports,_,targets,_ = base.data(40002,protocol['test_quartets'],'train')
@@ -118,6 +118,8 @@ def evaluate(seed, writer):
                     goldslot = int(slots[references.index(words[gold])^flip])
                     predictions = dict(clause=clause, plain=predict(rows,plain),
                                        structured=predict(paths,structured), rule=rule, oracle=gold)
+                    if extra_selector is not None:
+                        predictions['scope_grammar'] = extra_selector(words)
                     for arm,ref in predictions.items():
                         slot = -1 if ref<0 else int(addresses[episode,base.WORDS.index(names[references.index(words[ref])^flip])])
                         exact,wrong = prior.effects(slot,goldslot,slots,gate)
