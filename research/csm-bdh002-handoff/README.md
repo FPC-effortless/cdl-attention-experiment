@@ -8,6 +8,8 @@
 
 [ASSOC-004](assoc004/RESULTS.md) compares redundant routing against global signature scanning under a shared 32-dot cap.
 
+[ASSOC-005](assoc005/RESULTS.md) measures retrieval-to-state errors and complete-call timing on fresh stores at three noise levels.
+
 ## Resume from a new machine
 
 ```sh
