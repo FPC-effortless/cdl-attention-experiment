@@ -1,5 +1,14 @@
 # Resume CSM-BDH-002 research
 
+## Resume from a new machine
+
+```sh
+git clone --branch research/csm-skill-first-pilot https://github.com/FPC-effortless/cdl-attention-experiment.git
+cd cdl-attention-experiment/research/csm-bdh002-handoff
+```
+
+Follow the experiment-specific commands below. The checkout contains the source, frozen inputs, protocols, and expected results for the current replay. See [ARCHIVES.md](ARCHIVES.md) for historical evidence that requires separate access.
+
 - [Study 041](study041/README.md) replays the Study 040 bottlenecks with a bounded scope grammar.
 - [CSM-SKILL-001](skill001/README.md) records the skill-first proposal and a language-free procedural-memory pilot.
 
