@@ -8,6 +8,10 @@ root = Path(sys.argv[1])
 raw = pd.read_csv(root/"cues.csv.gz")
 scores = pd.read_csv(root/"scores.csv")
 ids = ["seed","load","arm"]
+expected = {(seed, load, arm) for seed in (11,23,37) for load in (29,64,256)
+            for arm in ["full", *[f"{tables}tables-{bits}bits" for tables in (0,1,2,4) for bits in (16,32)]]}
+assert len(scores) == 81 and set(map(tuple,scores[ids].to_numpy())) == expected
+assert set(map(tuple,raw[ids].drop_duplicates().to_numpy())) == expected
 assert len(raw)==3*3*9*2048
 assert not raw.duplicated(ids+["cue"]).any()
 assert raw.groupby(ids).cue.nunique().eq(2048).all()
