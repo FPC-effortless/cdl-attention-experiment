@@ -8,7 +8,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "skill001"))
 from pilot import admit, bind, execute, learn_trace
 
 
-def plan(initial, goal, swap):
+def safe_copy(state, goal, pending, required):
+    for i in pending:
+        if state[i] not in required or state.count(state[i]) > 1:
+            return ((i, state.index(goal[i])),)
+    return None
+
+
+def plan(initial, goal, swap, defer_swap=False):
     state = initial
     scratch = len(goal) - 1
     visited = set()
@@ -19,16 +26,15 @@ def plan(initial, goal, swap):
         pending = [i for i in range(scratch) if state[i] != goal[i]]
         required = {goal[i] for i in pending}
         action = None
-        if swap and state[scratch] is None:
+        if defer_swap or not swap:
+            action = safe_copy(state, goal, pending, required)
+        if action is None and swap and state[scratch] is None:
             for i, j in combinations(pending, 2):
                 if (state[j], state[i]) == (goal[i], goal[j]):
                     action = bind(swap, (i, j, scratch))
                     break
-        if action is None:
-            for i in pending:
-                if state[i] not in required or state.count(state[i]) > 1:
-                    action = ((i, state.index(goal[i])),)
-                    break
+        if action is None and swap and not defer_swap:
+            action = safe_copy(state, goal, pending, required)
         if action is None:
             if pending:
                 assert state[scratch] not in required

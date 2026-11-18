@@ -12,6 +12,7 @@ Follow the experiment-specific commands below. The checkout contains the source,
 - [Study 041](study041/README.md) replays the Study 040 bottlenecks with a bounded scope grammar.
 - [CSM-SKILL-001](skill001/README.md) records the skill-first proposal and a language-free procedural-memory pilot.
 - [CSM-SKILL-002](skill002/README.md) compares a goal-directed planner with and without the acquired SWAP across every four-record assignment.
+- [CSM-SKILL-003](skill003/README.md) evaluates when to defer SWAP and records controller-plus-executor timing.
 
 Start with [study 040](study040/README.md). Its best deployable methods passed three of five held-out synthetic layouts across three seeds. Every deployable method failed on contrastive subjects and subordinate denials. The supplied-occurrence oracle passed all five. The 92/96 per-layout gate prevented a qualified timing comparison. The open research question is whether a compact parser can identify governing subjects and predicate scope before a reference is bound to a record.
 
