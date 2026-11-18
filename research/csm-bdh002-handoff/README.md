@@ -6,6 +6,8 @@
 
 [ASSOC-003](assoc003/RESULTS.md) measures the effect of Hamming pre-ranking and the observed packet ceiling of the two-bank route.
 
+[ASSOC-004](assoc004/RESULTS.md) compares redundant routing against global signature scanning under a shared 32-dot cap.
+
 ## Resume from a new machine
 
 ```sh
