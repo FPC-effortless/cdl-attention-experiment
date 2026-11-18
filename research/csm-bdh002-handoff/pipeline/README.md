@@ -20,3 +20,7 @@ python verify.py /tmp/csm-saved
 python pipeline.py /tmp/csm-new-run
 python verify.py /tmp/csm-new-run
 ```
+
+## Second execution
+
+[Download the second execution bundle](historical-replay-2.zip) to inspect six fresh TrainLab receipts and the corresponding Research Lab OS database. All six input inventories and deterministic artifact hashes matched the first execution. Study 003 collected another 90 timing batches. Use the same extraction and verification commands above with the second archive and a fresh destination.
