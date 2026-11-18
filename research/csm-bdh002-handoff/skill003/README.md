@@ -1,0 +1,3 @@
+# CSM-SKILL-003 — Defer SWAP until a copy would lose a needed value
+
+Compare primitive-only, eager SWAP and deferred SWAP controllers on the complete four-record roster from study 002. Deferred SWAP first checks for a final-value copy that preserves every sole remaining source still required. If no such copy exists, it attempts to resolve a reciprocal pair with SWAP. All arms share the scratch fallback. Require exact final state on every case and reproduce both prior arms before timing. Compare dispatch counts and expanded primitive counts. Measure the median wall time per goal across 30 blocks, balancing the six arm orders. Include planning and execution inside the planner and exclude training, goal construction, and result validation.
