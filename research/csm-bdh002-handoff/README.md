@@ -1,5 +1,7 @@
 # Resume CSM-BDH-002 research
 
+[Research Lab OS historical replay](pipeline/README.md) contains the six TrainLab runs, Forge inventory, Veritas evidence records and portable lab database.
+
 ## Resume from a new machine
 
 ```sh
