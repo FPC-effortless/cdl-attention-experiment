@@ -1,0 +1,868 @@
+{
+  "counts": {
+    "historical_checks": 7186,
+    "issues": 810
+  },
+  "crosschecks": [
+    {
+      "issue": "numpy/numpy#31820",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "numpy/numpy#31861",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "numpy/numpy#32014",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "numpy/numpy#32033",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "numpy/numpy#32044",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "numpy/numpy#32102",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "numpy/numpy#32111",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "numpy/numpy#32153",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "numpy/numpy#32168",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "numpy/numpy#32191",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "numpy/numpy#32209",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "numpy/numpy#32229",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "numpy/numpy#32301",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "numpy/numpy#32302",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "numpy/numpy#32373",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "numpy/numpy#32390",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "numpy/numpy#32394",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "numpy/numpy#32426",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "numpy/numpy#32464",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "numpy/numpy#32591",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66140",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66142",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66211",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66255",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66259",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66261",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66287",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66341",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66346",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66373",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66378",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66379",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66407",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66410",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66451",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66493",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66499",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66501",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66522",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66542",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66552",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66593",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66674",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pandas-dev/pandas#66703",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "matplotlib/matplotlib#31989",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "matplotlib/matplotlib#31991",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "matplotlib/matplotlib#32012",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "matplotlib/matplotlib#32054",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "matplotlib/matplotlib#32055",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "matplotlib/matplotlib#32084",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "matplotlib/matplotlib#32093",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "matplotlib/matplotlib#32122",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "matplotlib/matplotlib#32127",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "matplotlib/matplotlib#32143",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "matplotlib/matplotlib#32156",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "matplotlib/matplotlib#32200",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "matplotlib/matplotlib#32208",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "matplotlib/matplotlib#32217",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "matplotlib/matplotlib#32224",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "matplotlib/matplotlib#32240",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "matplotlib/matplotlib#32345",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "matplotlib/matplotlib#32352",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scipy/scipy#25545",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scipy/scipy#25572",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scipy/scipy#25640",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scipy/scipy#25648",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scipy/scipy#25668",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scipy/scipy#25692",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scipy/scipy#25732",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scipy/scipy#25734",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scipy/scipy#25781",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scipy/scipy#25799",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scipy/scipy#25803",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scipy/scipy#25824",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scipy/scipy#25843",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scipy/scipy#25888",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scipy/scipy#25907",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scipy/scipy#25924",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scipy/scipy#25965",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scipy/scipy#26025",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scipy/scipy#26074",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34459",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34502",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34511",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34521",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34525",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34529",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34537",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34538",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34550",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34566",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34569",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34604",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34615",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34717",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34738",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34792",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34807",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34816",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34822",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34883",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-learn/scikit-learn#34889",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-image/scikit-image#8260",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "scikit-image/scikit-image#8296",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python-pillow/Pillow#9754",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python-pillow/Pillow#9790",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python-pillow/Pillow#9836",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python-pillow/Pillow#9865",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python-pillow/Pillow#9885",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python-pillow/Pillow#9918",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python-pillow/Pillow#9929",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python-pillow/Pillow#9961",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python-pillow/Pillow#10068",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python-pillow/Pillow#10087",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "statsmodels/statsmodels#10149",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "statsmodels/statsmodels#10157",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "statsmodels/statsmodels#10216",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "statsmodels/statsmodels#10222",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "statsmodels/statsmodels#10271",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "statsmodels/statsmodels#10284",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#152741",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#152805",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#152907",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#152915",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#152936",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#152966",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#152997",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#153037",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#153062",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#153117",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#153245",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#153266",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#153290",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#153319",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#153367",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#153437",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#153438",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#153444",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#153463",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#153477",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#153521",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "python/cpython#153529",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "jupyterlab/jupyterlab#19216",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "jupyterlab/jupyterlab#19258",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "jupyterlab/jupyterlab#19316",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "jupyterlab/jupyterlab#19611",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "jupyterlab/jupyterlab#19668",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "jupyterlab/jupyterlab#19671",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "jupyterlab/jupyterlab#19676",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "jupyterlab/jupyterlab#19722",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "jupyterlab/jupyterlab#19767",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "jupyterlab/jupyterlab#19816",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pytorch/pytorch#188627",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pytorch/pytorch#188628",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pytorch/pytorch#188652",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pytorch/pytorch#188655",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pytorch/pytorch#188674",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pytorch/pytorch#188683",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pytorch/pytorch#188686",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pytorch/pytorch#188697",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pytorch/pytorch#188707",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pytorch/pytorch#188713",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pytorch/pytorch#188756",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pytorch/pytorch#188767",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pytorch/pytorch#188803",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pytorch/pytorch#188810",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pytorch/pytorch#188840",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pytorch/pytorch#188878",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pytorch/pytorch#188938",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pytorch/pytorch#188949",
+      "flagged": false,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pytorch/pytorch#188953",
+      "flagged": true,
+      "equal_event_ids": true
+    },
+    {
+      "issue": "pytorch/pytorch#188958",
+      "flagged": true,
+      "equal_event_ids": true
+    }
+  ]
+}

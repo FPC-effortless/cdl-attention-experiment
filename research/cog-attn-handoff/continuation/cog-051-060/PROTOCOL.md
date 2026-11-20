@@ -1,0 +1,18 @@
+# COG-ATTN-051–060 frozen qualification attempt
+
+Use seeds 5101, 5107, 5113. Separate training and evaluation RNG streams and new pixel layouts. Retain every seed, per-instance outcomes, code and checksums. Score a controlled five-factor panel from raw binary frames plus the previously frozen fresh GitHub holdout. The simulator has five physical switches with unknown pixels, effects and conditional prerequisites. Only the evaluator sees the physical state. Primitive button identities and the ability to reset/probe are supplied. Distinguish controlled successes, authentic observational outcomes, component replay and integrated qualification.
+
+| ID | Intervention, reference and declared outcome |
+| --- | --- |
+| 051 | Infer sensor groups by their joint variation and button effects by intervention. Compare single-state versus varied-state probing. Require exact next-frame prediction on every held transition on new layouts. |
+| 052 | Learn words for effects and selecting a referent from experienced frame changes. Test new aliases with support and new clause order. Compare lexical grounding, recurrent and Transformer encoders on the same experience. Evaluate feedback-grounded utterance retrieval for communication. |
+| 053 | Hold out ordered pairs, role reversals, syntax and their intersection. Require 90% exact intended actions per controlled slice and 70% strict authentic recall at 99% precision with the earlier confidence gate. Report failures separately. |
+| 054 | Plan paths to novel goal frames using the induced transition model. Compare environment steps to a random legal policy under a common 64-step limit. Require fewer physical attempts and exact predicted path consequences. |
+| 055 | Extract successful paths from solved tasks, admit only replay-verified macros, measure actual online planning time, cache hits and invalidation after an observed dynamics change. Require correct reuse and positive timing benefit. |
+| 056 | Evaluate precision, recall, abstention and verification cost on fresh authentic comments under the frozen issue-history follow-up protocol. Keep future evidence out of admission. |
+| 057 | Run sequential environments with different switch effects, retest earlier routes after later training, compare overwriting, versioned storage, bounded rehearsal and online parameter updates. Require 95% retention plus new-task competence. Include a change before any visible signal. |
+| 058 | Run actual recovered CSM/LRC/TAC implementations on held typed routes, include module corruptions, test attention-free and semantic-assisted models on shared tasks. Full qualification requires grounded language, memory, deliberation and continual execution through those modules on authentic tasks. |
+| 059 | Measure indexed and scoped attention retrieval on the same growing history with real online verification and updates. Lengths 128, 2048, 32768, 131072, 1048576. Account for build/training, online work, payload and quality. Require 2x end-to-end at matched quality, score training + 12 x inference. Accelerator qualification requires accelerator measurements. |
+| 060 | Run a persistent closed-loop controlled agent with feedback, changes, staged skill reuse and trace verification. Require 051–058 competence plus authentic interactive execution and independent replication for full qualification. A retrospective behavior label cannot certify authority or user intent. |
+
+Do not tune on fresh outcomes. Separate episodic recall, discovering latent concepts and causal identification. Record unresolved sources, resource limits and comparisons without qualified evidence.

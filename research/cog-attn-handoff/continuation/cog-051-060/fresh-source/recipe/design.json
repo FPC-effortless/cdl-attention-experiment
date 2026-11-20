@@ -1,0 +1,32 @@
+{
+  "familiar": [
+    "numpy/numpy",
+    "pandas-dev/pandas",
+    "matplotlib/matplotlib",
+    "scipy/scipy"
+  ],
+  "external": [
+    "scikit-learn/scikit-learn",
+    "scikit-image/scikit-image",
+    "python-pillow/Pillow",
+    "statsmodels/statsmodels",
+    "python/cpython",
+    "jupyterlab/jupyterlab",
+    "pytorch/pytorch"
+  ],
+  "created": [
+    "2026-07-01",
+    "2026-09-30"
+  ],
+  "issue_limit_per_source": 100,
+  "cutoff": "2026-11-10T00:00:00Z",
+  "horizon_seconds": 900,
+  "precision_gate": 0.99,
+  "seeds": [
+    67003,
+    67009,
+    67021
+  ],
+  "bootstrap_draws": 1000,
+  "minimum_positive_coverage": 0.7
+}

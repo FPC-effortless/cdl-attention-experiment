@@ -1,0 +1,43 @@
+{
+  "schema": "trainlab.experiment.v1",
+  "execution_purpose": "engineering_diagnostic",
+  "name": "issues-control",
+  "description": "Chronological real GitHub issue history diagnostic",
+  "command": [
+    "/workspace/issue-history-study/../scratch/labenv/bin/python",
+    "entry.py",
+    "control"
+  ],
+  "seed": 49103,
+  "timeout_seconds": 900,
+  "source_kind": "AUTHENTIC_CANDIDATE",
+  "split_identity": "github-public-issues-five-repos-2024-2026-v1",
+  "inputs": [
+    "entry.py",
+    "design.json",
+    "evaluation.py",
+    "models.py",
+    "wr006.py",
+    "state_store.py",
+    "dataset.json",
+    "streams.json",
+    "cohort-counts.json",
+    "source-manifest.json",
+    "semantic.npy",
+    "semantic-timing.json",
+    "frozen-plan.sha256"
+  ],
+  "artifacts": [
+    "results.json",
+    "predictions.json",
+    "predictions.sha256",
+    "checkpoint.joblib"
+  ],
+  "metrics": {
+    "ap": "max"
+  },
+  "budget": {
+    "human_comment_corpus": 1,
+    "cpu": 1
+  }
+}

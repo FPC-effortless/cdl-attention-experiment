@@ -1,0 +1,93 @@
+{
+  "knownDiscrepancyCases": 6,
+  "correctStreamOnlyStates": 0,
+  "confirmedSnapshotAnchors": 6,
+  "passedCutoffChecks": 24,
+  "checks": [
+    {
+      "issue": "numpy/numpy#28240",
+      "anchor": {
+        "issue": "numpy/numpy#28240",
+        "state": "closed",
+        "validFrom": "2025-01-28T17:14:54.000Z",
+        "knownFrom": "2026-11-20T14:29:38.354Z",
+        "source": "github.issue_snapshot",
+        "snapshotUpdatedAt": "2025-01-28T17:15:23Z"
+      },
+      "cutoffChecks": 4,
+      "liveMatch": true,
+      "liveStateReason": "duplicate"
+    },
+    {
+      "issue": "sympy/sympy#29175",
+      "anchor": {
+        "issue": "sympy/sympy#29175",
+        "state": "closed",
+        "validFrom": "2026-02-16T05:38:12.000Z",
+        "knownFrom": "2026-11-20T14:29:38.354Z",
+        "source": "github.issue_snapshot",
+        "snapshotUpdatedAt": "2026-02-16T05:38:12Z"
+      },
+      "cutoffChecks": 4,
+      "liveMatch": true,
+      "liveStateReason": "completed"
+    },
+    {
+      "issue": "sympy/sympy#29341",
+      "anchor": {
+        "issue": "sympy/sympy#29341",
+        "state": "closed",
+        "validFrom": "2026-03-06T21:17:29.000Z",
+        "knownFrom": "2026-11-20T14:29:38.354Z",
+        "source": "github.issue_snapshot",
+        "snapshotUpdatedAt": "2026-03-06T21:17:29Z"
+      },
+      "cutoffChecks": 4,
+      "liveMatch": true,
+      "liveStateReason": "completed"
+    },
+    {
+      "issue": "sympy/sympy#29460",
+      "anchor": {
+        "issue": "sympy/sympy#29460",
+        "state": "closed",
+        "validFrom": "2026-03-22T09:46:36.000Z",
+        "knownFrom": "2026-11-20T14:29:38.354Z",
+        "source": "github.issue_snapshot",
+        "snapshotUpdatedAt": "2026-03-22T09:46:36Z"
+      },
+      "cutoffChecks": 4,
+      "liveMatch": true,
+      "liveStateReason": "completed"
+    },
+    {
+      "issue": "sympy/sympy#29695",
+      "anchor": {
+        "issue": "sympy/sympy#29695",
+        "state": "closed",
+        "validFrom": "2026-04-16T18:04:03.000Z",
+        "knownFrom": "2026-11-20T14:29:38.354Z",
+        "source": "github.issue_snapshot",
+        "snapshotUpdatedAt": "2026-04-16T18:04:03Z"
+      },
+      "cutoffChecks": 4,
+      "liveMatch": true,
+      "liveStateReason": "completed"
+    },
+    {
+      "issue": "sympy/sympy#29740",
+      "anchor": {
+        "issue": "sympy/sympy#29740",
+        "state": "closed",
+        "validFrom": "2026-05-05T22:01:34.000Z",
+        "knownFrom": "2026-11-20T14:29:38.354Z",
+        "source": "github.issue_snapshot",
+        "snapshotUpdatedAt": "2026-05-05T22:01:34Z"
+      },
+      "cutoffChecks": 4,
+      "liveMatch": true,
+      "liveStateReason": "completed"
+    }
+  ],
+  "invariantChecks": 8
+}

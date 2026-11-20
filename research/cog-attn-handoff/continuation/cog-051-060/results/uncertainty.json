@@ -1,0 +1,128 @@
+{
+  "utility": {
+    "threshold": 0.8,
+    "test": {
+      "n": 1276,
+      "tp": 12,
+      "fp": 0,
+      "recall": 0.41379310344827586,
+      "requests": 66,
+      "charged_seconds": 16435.0,
+      "utility": 7.056499999999999
+    },
+    "external": {
+      "n": 924,
+      "tp": 11,
+      "fp": 0,
+      "recall": 0.3235294117647059,
+      "requests": 54,
+      "charged_seconds": 15378.0,
+      "utility": 6.762200000000001
+    }
+  },
+  "entropy": {
+    "threshold": 1.01,
+    "test": {
+      "n": 1276,
+      "tp": 0,
+      "fp": 0,
+      "recall": 0.0,
+      "requests": 0,
+      "charged_seconds": 0,
+      "utility": 0.0
+    },
+    "external": {
+      "n": 924,
+      "tp": 0,
+      "fp": 0,
+      "recall": 0.0,
+      "requests": 0,
+      "charged_seconds": 0,
+      "utility": 0.0
+    }
+  },
+  "pooled": {
+    "threshold": 0,
+    "test": {
+      "n": 1276,
+      "tp": 27,
+      "fp": 23,
+      "recall": 0.9310344827586207,
+      "requests": 3828,
+      "charged_seconds": 960313.0,
+      "utility": -835.4313
+    },
+    "external": {
+      "n": 924,
+      "tp": 29,
+      "fp": 23,
+      "recall": 0.8529411764705882,
+      "requests": 2772,
+      "charged_seconds": 711766.0,
+      "utility": -755.7766
+    }
+  },
+  "verify_all": {
+    "threshold": 0,
+    "test": {
+      "n": 1276,
+      "tp": 26,
+      "fp": 4,
+      "recall": 0.896551724137931,
+      "requests": 3828,
+      "charged_seconds": 960313.0,
+      "utility": -361.43129999999996
+    },
+    "external": {
+      "n": 924,
+      "tp": 28,
+      "fp": 12,
+      "recall": 0.8235294117647058,
+      "requests": 2772,
+      "charged_seconds": 711766.0,
+      "utility": -481.77660000000003
+    }
+  },
+  "direct": {
+    "threshold": 1.01,
+    "test": {
+      "n": 1276,
+      "tp": 0,
+      "fp": 0,
+      "recall": 0.0,
+      "requests": 0,
+      "charged_seconds": 0,
+      "utility": 0.0
+    },
+    "external": {
+      "n": 924,
+      "tp": 0,
+      "fp": 0,
+      "recall": 0.0,
+      "requests": 0,
+      "charged_seconds": 0,
+      "utility": 0.0
+    }
+  },
+  "defer": {
+    "threshold": 0,
+    "test": {
+      "n": 1276,
+      "tp": 0,
+      "fp": 0,
+      "recall": 0.0,
+      "requests": 0,
+      "charged_seconds": 0,
+      "utility": 0.0
+    },
+    "external": {
+      "n": 924,
+      "tp": 0,
+      "fp": 0,
+      "recall": 0.0,
+      "requests": 0,
+      "charged_seconds": 0,
+      "utility": 0.0
+    }
+  }
+}

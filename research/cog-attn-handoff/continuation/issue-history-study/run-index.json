@@ -1,0 +1,274 @@
+{
+  "primary": [
+    {
+      "id": "20261120T143042-c0f61e4b81fc",
+      "seed": 49103,
+      "name": "issues-candidate",
+      "source_kind": "AUTHENTIC_CANDIDATE",
+      "execution_purpose": "engineering_diagnostic",
+      "status": "succeeded",
+      "split_identity": "github-public-issues-five-repos-2024-2026-v1",
+      "elapsed_seconds": 23.587988,
+      "metrics": {
+        "ap": 0.4013094646253496
+      },
+      "inputs": {
+        "cohort-counts.json": "6ff3d7f28bd0c3c21be869c76783fb33c13429e99d0c69d95423fc67ebb50da5",
+        "dataset.json": "3f3c91ce1c0aa5b175da1217b1261a91c3afa30505d2d981da16fd3f68fae72a",
+        "design.json": "07e68a72615158ee899abe263bf2f5d41402e4d48f29db800dc6536944234da2",
+        "entry.py": "aa9e66aab722e28d611c89f7f695b645cb513b379de7b892cfe949a982abf34f",
+        "evaluation.py": "c0edd7f4e478eab72e4d7f487a1d419c712e6b4556d4274240e89c851d44c001",
+        "frozen-plan.sha256": "a0844d8765de07486ee9e05742065cd72296ae019a2dfae7f098a0ad787bce26",
+        "models.py": "91a4136f62c510a9ebda3f1428fb31eb1451a80e84973b2446ce4210d4992444",
+        "semantic-timing.json": "e7b1390aea806e01b1caa2c9ad9c9af5db36d8b20a58ae2c044346b866a50444",
+        "semantic.npy": "319747112153a140ef522f56a193e036e256e6bfece6c15e99d126a52990fff7",
+        "source-manifest.json": "b5cfd606f17e559e1195f653ba3ecd9712abc2b3362acb19e67bcffc226d8b75",
+        "state_store.py": "ac8e297f77d1386ca9a812eb8c7b1825126a7f13d29eecb76bd9f69d6b7c001e",
+        "streams.json": "823c17e40b6a5e742288e35604339b56cd04bf54c7b5dde8c1b97fbc4d0bb181",
+        "wr006.py": "6066e3a67e6b7fc65af5b7abdd654e073fd337219c93afd2cc7aedd94a519af6"
+      },
+      "artifacts": {
+        "checkpoint.joblib": "09ae463fe67db7026a58ae1170b679f1991e129bbc99cfd2509df351336b58db",
+        "predictions.json": "f62714cde322f21888f9a46441ff835ecbbf1652bed47d0fddde343deebe57fe",
+        "predictions.sha256": "f6049420551033e75adc66d50c0c68e4aaf9252e4cd8f4187142403d7d0034b3",
+        "results.json": "5a22311a494063187f7af79da0304bbaa7b268b4fd62d777f407ce29f5e3fc44"
+      }
+    },
+    {
+      "id": "20261120T143105-ecc87e1a5eef",
+      "seed": 49109,
+      "name": "issues-candidate",
+      "source_kind": "AUTHENTIC_CANDIDATE",
+      "execution_purpose": "engineering_diagnostic",
+      "status": "succeeded",
+      "split_identity": "github-public-issues-five-repos-2024-2026-v1",
+      "elapsed_seconds": 20.70908,
+      "metrics": {
+        "ap": 0.39639348971849653
+      },
+      "inputs": {
+        "cohort-counts.json": "6ff3d7f28bd0c3c21be869c76783fb33c13429e99d0c69d95423fc67ebb50da5",
+        "dataset.json": "3f3c91ce1c0aa5b175da1217b1261a91c3afa30505d2d981da16fd3f68fae72a",
+        "design.json": "07e68a72615158ee899abe263bf2f5d41402e4d48f29db800dc6536944234da2",
+        "entry.py": "aa9e66aab722e28d611c89f7f695b645cb513b379de7b892cfe949a982abf34f",
+        "evaluation.py": "c0edd7f4e478eab72e4d7f487a1d419c712e6b4556d4274240e89c851d44c001",
+        "frozen-plan.sha256": "a0844d8765de07486ee9e05742065cd72296ae019a2dfae7f098a0ad787bce26",
+        "models.py": "91a4136f62c510a9ebda3f1428fb31eb1451a80e84973b2446ce4210d4992444",
+        "semantic-timing.json": "e7b1390aea806e01b1caa2c9ad9c9af5db36d8b20a58ae2c044346b866a50444",
+        "semantic.npy": "319747112153a140ef522f56a193e036e256e6bfece6c15e99d126a52990fff7",
+        "source-manifest.json": "b5cfd606f17e559e1195f653ba3ecd9712abc2b3362acb19e67bcffc226d8b75",
+        "state_store.py": "ac8e297f77d1386ca9a812eb8c7b1825126a7f13d29eecb76bd9f69d6b7c001e",
+        "streams.json": "823c17e40b6a5e742288e35604339b56cd04bf54c7b5dde8c1b97fbc4d0bb181",
+        "wr006.py": "6066e3a67e6b7fc65af5b7abdd654e073fd337219c93afd2cc7aedd94a519af6"
+      },
+      "artifacts": {
+        "checkpoint.joblib": "ab937550aa2b3a5173783864860128e364034f0b0a858c2113b9ac034a9648a7",
+        "predictions.json": "749c2dcff7749e3d10f4d6be8d0b2cf36a0d0970367c1005c266c971d51606dd",
+        "predictions.sha256": "9ec588ac78f67b9798cb60db4c196802f39d3a24ecedf9c9e17d9c6cbe139053",
+        "results.json": "1b7e1fb53c296cbc49334ee506200304f2672147d9c29777ed8317a61053c749"
+      }
+    },
+    {
+      "id": "20261120T143126-c7e91cec0e06",
+      "seed": 49121,
+      "name": "issues-candidate",
+      "source_kind": "AUTHENTIC_CANDIDATE",
+      "execution_purpose": "engineering_diagnostic",
+      "status": "succeeded",
+      "split_identity": "github-public-issues-five-repos-2024-2026-v1",
+      "elapsed_seconds": 21.408602,
+      "metrics": {
+        "ap": 0.40539524610536026
+      },
+      "inputs": {
+        "cohort-counts.json": "6ff3d7f28bd0c3c21be869c76783fb33c13429e99d0c69d95423fc67ebb50da5",
+        "dataset.json": "3f3c91ce1c0aa5b175da1217b1261a91c3afa30505d2d981da16fd3f68fae72a",
+        "design.json": "07e68a72615158ee899abe263bf2f5d41402e4d48f29db800dc6536944234da2",
+        "entry.py": "aa9e66aab722e28d611c89f7f695b645cb513b379de7b892cfe949a982abf34f",
+        "evaluation.py": "c0edd7f4e478eab72e4d7f487a1d419c712e6b4556d4274240e89c851d44c001",
+        "frozen-plan.sha256": "a0844d8765de07486ee9e05742065cd72296ae019a2dfae7f098a0ad787bce26",
+        "models.py": "91a4136f62c510a9ebda3f1428fb31eb1451a80e84973b2446ce4210d4992444",
+        "semantic-timing.json": "e7b1390aea806e01b1caa2c9ad9c9af5db36d8b20a58ae2c044346b866a50444",
+        "semantic.npy": "319747112153a140ef522f56a193e036e256e6bfece6c15e99d126a52990fff7",
+        "source-manifest.json": "b5cfd606f17e559e1195f653ba3ecd9712abc2b3362acb19e67bcffc226d8b75",
+        "state_store.py": "ac8e297f77d1386ca9a812eb8c7b1825126a7f13d29eecb76bd9f69d6b7c001e",
+        "streams.json": "823c17e40b6a5e742288e35604339b56cd04bf54c7b5dde8c1b97fbc4d0bb181",
+        "wr006.py": "6066e3a67e6b7fc65af5b7abdd654e073fd337219c93afd2cc7aedd94a519af6"
+      },
+      "artifacts": {
+        "checkpoint.joblib": "f264a5b7c07989a2ec22e8231856738310f9df87b2ab33f1510cfd5252259a3f",
+        "predictions.json": "5c1ad746d301465d1a7ffeda8e3e07994dd6203c689a7894af04413fdc551808",
+        "predictions.sha256": "8ecf44439f4203763e1f013877c87f67007319ca283df3b4a7ba4f7232ea5420",
+        "results.json": "6e3d7e7e29faa6275c960e2a58d4c04bc7ac2c19b35cb0dc1fe95dba0c6b894c"
+      }
+    },
+    {
+      "id": "20261120T143148-d4255433286e",
+      "seed": 49103,
+      "name": "issues-control",
+      "source_kind": "AUTHENTIC_CANDIDATE",
+      "execution_purpose": "engineering_diagnostic",
+      "status": "succeeded",
+      "split_identity": "github-public-issues-five-repos-2024-2026-v1",
+      "elapsed_seconds": 12.097175,
+      "metrics": {
+        "ap": 0.34958464066412315
+      },
+      "inputs": {
+        "cohort-counts.json": "6ff3d7f28bd0c3c21be869c76783fb33c13429e99d0c69d95423fc67ebb50da5",
+        "dataset.json": "3f3c91ce1c0aa5b175da1217b1261a91c3afa30505d2d981da16fd3f68fae72a",
+        "design.json": "07e68a72615158ee899abe263bf2f5d41402e4d48f29db800dc6536944234da2",
+        "entry.py": "aa9e66aab722e28d611c89f7f695b645cb513b379de7b892cfe949a982abf34f",
+        "evaluation.py": "c0edd7f4e478eab72e4d7f487a1d419c712e6b4556d4274240e89c851d44c001",
+        "frozen-plan.sha256": "a0844d8765de07486ee9e05742065cd72296ae019a2dfae7f098a0ad787bce26",
+        "models.py": "91a4136f62c510a9ebda3f1428fb31eb1451a80e84973b2446ce4210d4992444",
+        "semantic-timing.json": "e7b1390aea806e01b1caa2c9ad9c9af5db36d8b20a58ae2c044346b866a50444",
+        "semantic.npy": "319747112153a140ef522f56a193e036e256e6bfece6c15e99d126a52990fff7",
+        "source-manifest.json": "b5cfd606f17e559e1195f653ba3ecd9712abc2b3362acb19e67bcffc226d8b75",
+        "state_store.py": "ac8e297f77d1386ca9a812eb8c7b1825126a7f13d29eecb76bd9f69d6b7c001e",
+        "streams.json": "823c17e40b6a5e742288e35604339b56cd04bf54c7b5dde8c1b97fbc4d0bb181",
+        "wr006.py": "6066e3a67e6b7fc65af5b7abdd654e073fd337219c93afd2cc7aedd94a519af6"
+      },
+      "artifacts": {
+        "checkpoint.joblib": "7ccb6cbc375788b81a12e35a4725470e524ea71a1fc55366cc69988900889c69",
+        "predictions.json": "3f0ecd0b3b66f3668a28e442cdfd0199c28f90aed2375dedaae693d759652fad",
+        "predictions.sha256": "02ac4ec3cd082adcc1e1fb5538f2d3a6b23cdb0bca4bac18505d6a882e924d5a",
+        "results.json": "979a5f19214d2964ab1fa1744ec695a33d2c611009af1c4293997eb8998c7e11"
+      }
+    },
+    {
+      "id": "20261120T143200-e13e33a80d04",
+      "seed": 49109,
+      "name": "issues-control",
+      "source_kind": "AUTHENTIC_CANDIDATE",
+      "execution_purpose": "engineering_diagnostic",
+      "status": "succeeded",
+      "split_identity": "github-public-issues-five-repos-2024-2026-v1",
+      "elapsed_seconds": 12.035243,
+      "metrics": {
+        "ap": 0.34958464066412315
+      },
+      "inputs": {
+        "cohort-counts.json": "6ff3d7f28bd0c3c21be869c76783fb33c13429e99d0c69d95423fc67ebb50da5",
+        "dataset.json": "3f3c91ce1c0aa5b175da1217b1261a91c3afa30505d2d981da16fd3f68fae72a",
+        "design.json": "07e68a72615158ee899abe263bf2f5d41402e4d48f29db800dc6536944234da2",
+        "entry.py": "aa9e66aab722e28d611c89f7f695b645cb513b379de7b892cfe949a982abf34f",
+        "evaluation.py": "c0edd7f4e478eab72e4d7f487a1d419c712e6b4556d4274240e89c851d44c001",
+        "frozen-plan.sha256": "a0844d8765de07486ee9e05742065cd72296ae019a2dfae7f098a0ad787bce26",
+        "models.py": "91a4136f62c510a9ebda3f1428fb31eb1451a80e84973b2446ce4210d4992444",
+        "semantic-timing.json": "e7b1390aea806e01b1caa2c9ad9c9af5db36d8b20a58ae2c044346b866a50444",
+        "semantic.npy": "319747112153a140ef522f56a193e036e256e6bfece6c15e99d126a52990fff7",
+        "source-manifest.json": "b5cfd606f17e559e1195f653ba3ecd9712abc2b3362acb19e67bcffc226d8b75",
+        "state_store.py": "ac8e297f77d1386ca9a812eb8c7b1825126a7f13d29eecb76bd9f69d6b7c001e",
+        "streams.json": "823c17e40b6a5e742288e35604339b56cd04bf54c7b5dde8c1b97fbc4d0bb181",
+        "wr006.py": "6066e3a67e6b7fc65af5b7abdd654e073fd337219c93afd2cc7aedd94a519af6"
+      },
+      "artifacts": {
+        "checkpoint.joblib": "7ccb6cbc375788b81a12e35a4725470e524ea71a1fc55366cc69988900889c69",
+        "predictions.json": "3f0ecd0b3b66f3668a28e442cdfd0199c28f90aed2375dedaae693d759652fad",
+        "predictions.sha256": "02ac4ec3cd082adcc1e1fb5538f2d3a6b23cdb0bca4bac18505d6a882e924d5a",
+        "results.json": "94442548c2f5af8eae73225f25c0a70965151298d94412c8039372285ea16c75"
+      }
+    },
+    {
+      "id": "20261120T143212-d9b847af9b21",
+      "seed": 49121,
+      "name": "issues-control",
+      "source_kind": "AUTHENTIC_CANDIDATE",
+      "execution_purpose": "engineering_diagnostic",
+      "status": "succeeded",
+      "split_identity": "github-public-issues-five-repos-2024-2026-v1",
+      "elapsed_seconds": 11.909295,
+      "metrics": {
+        "ap": 0.34958464066412315
+      },
+      "inputs": {
+        "cohort-counts.json": "6ff3d7f28bd0c3c21be869c76783fb33c13429e99d0c69d95423fc67ebb50da5",
+        "dataset.json": "3f3c91ce1c0aa5b175da1217b1261a91c3afa30505d2d981da16fd3f68fae72a",
+        "design.json": "07e68a72615158ee899abe263bf2f5d41402e4d48f29db800dc6536944234da2",
+        "entry.py": "aa9e66aab722e28d611c89f7f695b645cb513b379de7b892cfe949a982abf34f",
+        "evaluation.py": "c0edd7f4e478eab72e4d7f487a1d419c712e6b4556d4274240e89c851d44c001",
+        "frozen-plan.sha256": "a0844d8765de07486ee9e05742065cd72296ae019a2dfae7f098a0ad787bce26",
+        "models.py": "91a4136f62c510a9ebda3f1428fb31eb1451a80e84973b2446ce4210d4992444",
+        "semantic-timing.json": "e7b1390aea806e01b1caa2c9ad9c9af5db36d8b20a58ae2c044346b866a50444",
+        "semantic.npy": "319747112153a140ef522f56a193e036e256e6bfece6c15e99d126a52990fff7",
+        "source-manifest.json": "b5cfd606f17e559e1195f653ba3ecd9712abc2b3362acb19e67bcffc226d8b75",
+        "state_store.py": "ac8e297f77d1386ca9a812eb8c7b1825126a7f13d29eecb76bd9f69d6b7c001e",
+        "streams.json": "823c17e40b6a5e742288e35604339b56cd04bf54c7b5dde8c1b97fbc4d0bb181",
+        "wr006.py": "6066e3a67e6b7fc65af5b7abdd654e073fd337219c93afd2cc7aedd94a519af6"
+      },
+      "artifacts": {
+        "checkpoint.joblib": "7ccb6cbc375788b81a12e35a4725470e524ea71a1fc55366cc69988900889c69",
+        "predictions.json": "3f0ecd0b3b66f3668a28e442cdfd0199c28f90aed2375dedaae693d759652fad",
+        "predictions.sha256": "02ac4ec3cd082adcc1e1fb5538f2d3a6b23cdb0bca4bac18505d6a882e924d5a",
+        "results.json": "b177c074b64ae15db438b16a03fb36df8b5b814a07fde48a71e144c1e00adc4e"
+      }
+    }
+  ],
+  "replay": {
+    "all_match": true,
+    "environment_scope": "CLEAN_DIRECTORY_SAME_HOST_AND_RUNTIME",
+    "replays": {
+      "authentic-issue-history.candidate.49103": {
+        "match": true,
+        "original_pin": "c950ead87fcd9687dafdaecaac4cc695da536749a58401d2805cbb6009249c65",
+        "record_pin": "ef8bf5cc9dd95e25addd04ddd30b63c50fd334a6b1bbc61d95ce2f0c1e577e58",
+        "run_id": "20261120T143224-5db4f00654e3"
+      },
+      "authentic-issue-history.candidate.49109": {
+        "match": true,
+        "original_pin": "54f7057f90d2f4dd04c3dcca866b81f0e216daa9e2b9fbf951822851d8e49a3f",
+        "record_pin": "13a5a91e045af645b31d8282e3f587a768f6f0efee498cdb9aa699904f2b2fd7",
+        "run_id": "20261120T143245-7d24501a01e5"
+      },
+      "authentic-issue-history.candidate.49121": {
+        "match": true,
+        "original_pin": "a59b931a7a6ec9727108e8e62e9cfdb2a5d2189d69608c8b5da85abad9eb8073",
+        "record_pin": "989f05e3c7a3665d02b57c180f4a89029afcf78c703179ba3b34f84b58204427",
+        "run_id": "20261120T143306-0f36315a9980"
+      },
+      "authentic-issue-history.control.49103": {
+        "match": true,
+        "original_pin": "0a916e5e81471047428468107ab74b47bcc5f62d71bbd25598691c6f234d0212",
+        "record_pin": "ed3f0745a79e89f4f2bb709295582d4748a744744eb6722891fbf6b1810ca6cd",
+        "run_id": "20261120T143329-85c3c76ca450"
+      },
+      "authentic-issue-history.control.49109": {
+        "match": true,
+        "original_pin": "ad443028ea51f578b711820c37b6a67c3a63e39e3e4a04d4860dc7c61b2f1a16",
+        "record_pin": "baa358b1d2ee987ffd5d63aa47a66551cb007c68fadc36829abc85f9cac4e704",
+        "run_id": "20261120T143343-d17b4f01972f"
+      },
+      "authentic-issue-history.control.49121": {
+        "match": true,
+        "original_pin": "b13b19ad64338cb0ff60d456d87821daa276faa8710343c164608c1915cfcfbc",
+        "record_pin": "100eddbb6a40d2400a0f66427d16fc036b99ea6f31eef2d7c89fedfc3329c9a7",
+        "run_id": "20261120T143354-9eccfb99ea4f"
+      }
+    }
+  },
+  "semantic_checkpoint_inputs": {
+    "semantic.py": "901e35ad9b893da242a50882e991b821c0cc0a132e7013d173c2aa69e88d67a6",
+    "dataset.json": "3f3c91ce1c0aa5b175da1217b1261a91c3afa30505d2d981da16fd3f68fae72a",
+    "design.json": "07e68a72615158ee899abe263bf2f5d41402e4d48f29db800dc6536944234da2",
+    "source-manifest.json": "b5cfd606f17e559e1195f653ba3ecd9712abc2b3362acb19e67bcffc226d8b75",
+    "nli/README.md": "4aeb5585a9eeb71b2d572249f9faa22ef3378c6abee3eeaffaae8c961068a2c6",
+    "nli/added_tokens.json": "a4b6bfe668f2b3cf6f0cd535e98a0663d2d0d4a4a15f13075ad3597d33985a23",
+    "nli/config.json": "8d9f07bf7ba54a6fc3b1962483056f94c39dcf188db4cf61843e1c88f94b2342",
+    "nli/model_quint8_avx2.onnx": "21b14751a95520953bfcc607ceeb617de7cbeaeb6d60f4c8966716c743985337",
+    "nli/special_tokens_map.json": "ed7c099c988dbb414b18a6980d20cb57b91b7cd119f6f6941eb364b0e892e712",
+    "nli/tokenizer.json": "5124ef2ead1a10a717703bc436de7f353da76d6340e4587719b42b1693707964",
+    "nli/tokenizer_config.json": "f3eecd07c370ef0bf7dd3780d3cd68cf9c8b00c267e21a208ddcd8f82bfec1a6"
+  },
+  "semantic_run": {
+    "id": "20261120T142729-b7f24a457a77",
+    "metrics": {
+      "rows": 9268
+    },
+    "artifacts": {
+      "semantic.npy": "319747112153a140ef522f56a193e036e256e6bfece6c15e99d126a52990fff7",
+      "semantic-timing.json": "e7b1390aea806e01b1caa2c9ad9c9af5db36d8b20a58ae2c044346b866a50444"
+    },
+    "elapsed_seconds": 193.011892
+  }
+}

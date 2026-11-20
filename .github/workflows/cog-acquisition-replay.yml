@@ -1,0 +1,29 @@
+name: Reproduce grounded acquisition diagnostics
+on:
+  push:
+    branches: [research/cog-attn-reproducibility-20261120]
+    paths:
+      - 'research/cog-attn-handoff/continuation/cog-051-060/**'
+      - '.github/workflows/cog-acquisition-replay.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install numpy==2.3.5 scikit-learn==1.8.0
+      - run: python research/cog-attn-handoff/continuation/cog-051-060/external_replay.py
+
+      - run: |
+          cd research/cog-attn-handoff/continuation/cog-051-060
+          sha256sum --quiet -c SHA256SUMS
+          python audit_transfer.py
+          python dialogue_session.py
+          git diff --exit-code -- results/dialogue-session.json
+      - run: python -m pip install scipy==1.17.0 joblib==1.5.3
+      - run: python research/cog-attn-handoff/continuation/cog-051-060/public_data_replay.py

@@ -1,0 +1,332 @@
+{
+  "controlled": {
+    "discovery": [
+      3840,
+      2304
+    ],
+    "scenes": 24,
+    "language": {
+      "familiar": {
+        "roles": 480,
+        "gru": 480,
+        "transformer": 480,
+        "csm": 480
+      },
+      "reversed_pair": {
+        "roles": 480,
+        "gru": 480,
+        "transformer": 401,
+        "csm": 230
+      },
+      "new_syntax": {
+        "roles": 480,
+        "gru": 480,
+        "transformer": 326,
+        "csm": 445
+      },
+      "implicit": {
+        "roles": 0,
+        "gru": 134,
+        "transformer": 126,
+        "csm": 129
+      },
+      "joint": {
+        "roles": 480,
+        "gru": 480,
+        "transformer": 337,
+        "csm": 393
+      },
+      "unsupported_alias": {
+        "roles": 0,
+        "gru": 96,
+        "transformer": 72,
+        "csm": 17
+      }
+    },
+    "paths": 1536,
+    "predicted_steps": 3.8626302083333335,
+    "random_steps": 45.291666666666664,
+    "planned_correct": 1536,
+    "random_correct": 764,
+    "trace_correct": 1536,
+    "cache_hits": 356,
+    "speed": 1.368313681829922,
+    "unchanged_bad": 433,
+    "replanned": 641,
+    "retained": 5760,
+    "overwrite": 1560,
+    "session": [
+      159,
+      159,
+      159
+    ],
+    "routes": [
+      {
+        "integrated": 256,
+        "rotate_tac": 0,
+        "rotate_lrc": 0,
+        "rotate_csm": 0,
+        "unresolved": 0
+      },
+      {
+        "integrated": 256,
+        "rotate_tac": 0,
+        "rotate_lrc": 0,
+        "rotate_csm": 0,
+        "unresolved": 0
+      },
+      {
+        "integrated": 256,
+        "rotate_tac": 0,
+        "rotate_lrc": 0,
+        "rotate_csm": 0,
+        "unresolved": 0
+      }
+    ]
+  },
+  "novel_skills": {
+    "queries": 2496,
+    "macro_used": 2171,
+    "correct": 2496,
+    "primitive_steps": 3.83974358974359,
+    "macro_decisions": 2.1702724358974357,
+    "physical_steps": 3.855769230769231,
+    "speed": 0.578735344988086
+  },
+  "latency": {
+    "128": {
+      "index": 1.0,
+      "scoped_cached": 1.1721663881582287,
+      "scoped_sdpa": 1.7843543152087324,
+      "weighted_cached": 1.1721446609696553
+    },
+    "2048": {
+      "index": 1.0,
+      "scoped_cached": 1.0348912374466084,
+      "scoped_sdpa": 1.8107973304621727,
+      "weighted_cached": 1.0348837956532504
+    },
+    "32768": {
+      "index": 1.0,
+      "scoped_cached": 0.8898467800707861,
+      "scoped_sdpa": 1.3814776648374743,
+      "weighted_cached": 0.8898551295209535
+    },
+    "131072": {
+      "index": 1.0,
+      "scoped_cached": 1.0482705099414475,
+      "scoped_sdpa": 1.8855576919210153,
+      "weighted_cached": 1.048243695315566
+    },
+    "1048576": {
+      "index": 1.0,
+      "scoped_cached": 1.1184926758263518,
+      "scoped_sdpa": 3.1763392143546323,
+      "weighted_cached": 1.1183753420619869
+    }
+  },
+  "issue": {
+    "strict_flat": {
+      "test": {
+        "ap": 0.41478340881628717,
+        "tp_fp": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "external": {
+        "ap": 0.585698864076159,
+        "tp_fp": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      }
+    },
+    "pooled_flat": {
+      "test": {
+        "ap": 0.5405954032746768,
+        "tp_fp": [
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ]
+      },
+      "external": {
+        "ap": 0.7179772136609908,
+        "tp_fp": [
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            0
+          ]
+        ]
+      }
+    },
+    "strict_modular": {
+      "test": {
+        "ap": 0.4418042626708203,
+        "tp_fp": [
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            1
+          ]
+        ]
+      },
+      "external": {
+        "ap": 0.5896342207025622,
+        "tp_fp": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      }
+    },
+    "pooled_modular": {
+      "test": {
+        "ap": 0.5076601318544598,
+        "tp_fp": [
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ]
+      },
+      "external": {
+        "ap": 0.6617586042732823,
+        "tp_fp": [
+          [
+            5,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      }
+    },
+    "separate_expert": {
+      "test": {
+        "ap": 0.5289459134543876,
+        "tp_fp": [
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ]
+      },
+      "external": {
+        "ap": 0.6329584801399797,
+        "tp_fp": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      }
+    }
+  },
+  "intervals": {
+    "test": [
+      [
+        -0.024735874034944087,
+        0.06515315496438286
+      ],
+      [
+        -0.0024953159289913306,
+        0.23848118629563236
+      ]
+    ],
+    "external": [
+      [
+        -0.07900289000143881,
+        0.02919700729084159
+      ],
+      [
+        0.026701918444965275,
+        0.24785025965419147
+      ]
+    ]
+  }
+}

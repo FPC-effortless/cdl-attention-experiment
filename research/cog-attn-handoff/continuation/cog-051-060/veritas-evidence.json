@@ -1,0 +1,38 @@
+{
+  "schema_version": "veritas.shared-evidence.v1",
+  "evidence_id": "EVID-6F2AD05B102BE7BE82AD5153",
+  "evidence_content_sha256": "6f2ad05b102be7be82ad515358adbcadf66fbd1653dc3be1040794586ccfa619",
+  "record_id": "EREC-6C889D74E32263844CF71C1E",
+  "evidence_type": "runtime.grounded_acquisition",
+  "outcome": "OBSERVED",
+  "visibility": "public",
+  "claim": "Bounded acquisition experiments and held authentic diagnostics with open qualification gates.",
+  "subjects": [
+    {
+      "kind": "protocol",
+      "subject_id": "cog-051-060",
+      "version": null,
+      "content_sha256": "288cadc0c632361a3409e64a34bb6b641e766d63ac86a7542035895455e350c8"
+    }
+  ],
+  "producer": {
+    "producer_id": "grounded-cycle-audit",
+    "producer_version": "1",
+    "content_sha256": "cdadde10436f1b809b7fd7b01e4040a04d08413dfac876204be6ec0989466ae4"
+  },
+  "policy": null,
+  "artifacts": [
+    {
+      "artifact_id": "study-manifest",
+      "role": "primary",
+      "content_sha256": "04c8a405cb68d80c50eb5b27e2c7b1dde6c35693caa22b55c04b95c82e9953a2",
+      "media_type": null
+    }
+  ],
+  "dependencies": [],
+  "observed_at": "2026-11-20T17:34:19.011526Z",
+  "provenance": {
+    "replay": "same-host TrainLab and separate GitHub-hosted scoped replay",
+    "review": "single research operator"
+  }
+}
