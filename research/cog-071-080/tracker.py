@@ -62,6 +62,7 @@ def run(seed,bank,arm,n=192,opts=None):
     cal=meter.call('calibration',512,opts.get('calibrator') or calibrate,model)
     meter.work['setup']+=opts.get('extra_work',0)
     support=meter.call('setup',48,opts['support_factory']).bindings if opts.get('support_factory') else {}
+    acquired=meter.call('setup',opts.get('support_work',0),opts['inducer']) if opts.get('inducer') else None
     lex=Lexicon()
     if arm!='no_skill':
         meter.call('setup',len(outcome_examples()),lex.learn,outcome_examples())
@@ -94,6 +95,8 @@ def run(seed,bank,arm,n=192,opts=None):
                 meter.call('staging',2,provisional,workspace,db,i,first[0]%4,first[0]//4)
             beliefs=[]
             for (speaker,revision,txt),p,q in zip(observed,ps,qs):
+                if acquired is not None:
+                    p=meter.call('grounding',len(txt.split()),acquired.apply,txt,p)
                 for phrase,value in support.items():
                     if phrase in txt:
                         p=np.full(8,.01/7);p[value]=.99;break

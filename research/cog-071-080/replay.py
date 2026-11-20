@@ -32,5 +32,23 @@ def main():
             assert hashlib.sha256(blob).hexdigest()==h
             p=dest/name;p.parent.mkdir(exist_ok=True);p.write_bytes(blob)
         assert ac.dialogue()==read(HERE/'results/authentic-dialogue.json')
+        for name,script,arguments in [('transfer','transfer.py',['score']),('admission','admission.py',[]),
+                                      ('corrections','corrections.py',[])]:
+            path=HERE/'results'/(name+'.json')
+            old=read(path)
+            subprocess.run([sys.executable,script,*arguments],cwd=HERE,env=env,check=True)
+            new=read(path)
+            if name=='corrections':
+                assert old==new
+                continue
+            if name=='admission':
+                assert old['dictionary']==new['dictionary'] and old['causal']==new['causal']
+                old,new=old['sessions'],new['sessions']
+            for left,right in zip(old,new,strict=True):
+                assert (left['arm'],left['seed'])==(right['arm'],right['seed'])
+                for a,b in zip(left['rows'],right['rows'],strict=True):
+                    for k in ('gold','top5','provisional','proposal','status','semantic_error','bad_permission'):
+                        assert a[k]==b[k],(name,left['arm'],left['seed'],a['i'],k)
+    print('Replicated transfer, admission, and correction decisions (teacher logits supplied).')
     print('Replicated the reserved-seed panel, banking top-1/top-5 counts, and all dialogue read/write traces.')
 if __name__=='__main__':main()
