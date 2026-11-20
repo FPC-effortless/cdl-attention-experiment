@@ -1,0 +1,72 @@
+{
+  "bounded_vs_empty_ci": [
+    0.10243055555555555,
+    0.140625
+  ],
+  "cache_bytes_json": 116826,
+  "cache_entries": 864,
+  "compile_ms": 1279.712926,
+  "complete_warm_p95_ms": 0.07235,
+  "correctness": {
+    "bound16": {
+      "correct": 286,
+      "danger": 0,
+      "tokens": 974
+    },
+    "empty": {
+      "correct": 216,
+      "danger": 0,
+      "tokens": 144
+    },
+    "full": {
+      "correct": 576,
+      "danger": 0,
+      "tokens": 2164
+    }
+  },
+  "decision": "STOP",
+  "full_vs_bounded_ci": [
+    0.4618055555555556,
+    0.5486111111111112
+  ],
+  "groups": 72,
+  "lookup_p95_ms": 0.001933,
+  "material_gap": true,
+  "nominal_token_summaries": {
+    "bounded_mean": 6.763888888888889,
+    "empty_mean": 1.0,
+    "full_maximum_words_including_eos": 29,
+    "full_mean": 15.027777777777779,
+    "full_messages_above_16": 90
+  },
+  "role_success_counts": {
+    "auditor": {
+      "bound16": 102,
+      "empty": 72,
+      "full": 192
+    },
+    "operator": {
+      "bound16": 82,
+      "empty": 72,
+      "full": 192
+    },
+    "requester": {
+      "bound16": 102,
+      "empty": 72,
+      "full": 192
+    }
+  },
+  "safety_guard": true,
+  "scope": "constructed_only_not_qualified_no_fit",
+  "timing_boundaries": {
+    "cold_excludes_acquisition_parse_verify": true,
+    "complete_p50_ms": 0.0540265,
+    "lookup_p50_ms": 0.001022,
+    "uncached_chooser_p50_ms": 1.593882,
+    "uncached_chooser_p95_ms": 2.518501,
+    "uncached_chooser_samples": 12,
+    "warm_complete_samples": 720,
+    "warm_lookup_samples": 720
+  },
+  "total_receiver_context_cases": 576
+}

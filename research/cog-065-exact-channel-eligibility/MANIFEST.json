@@ -1,0 +1,17 @@
+{
+  "scope": "source/protocol/aggregate only",
+  "payloads": {
+    "PROTOCOL.md": "d5ceb4da100424f8c30462bf63474e54e111583e6358f3c91fdce321358780c8",
+    "README.md": "50323415b2003c80392408205e25d1f5553ba797096de9259469287b6d66d09f",
+    "REPRODUCE.md": "b5fb58df92bb95a67235704b49b22d9506edb1d6297194d7c026ff4f8a6a041d",
+    "aggregates.json": "7ad8ada9302146321b1975758db680e9de0f53afdc275acdaebfbadb1e95e54d",
+    "codec.py": "1b85a8cedbd42534bd05824506c11453b67622a4c6564a53d9268fca842f8233",
+    "generate.py": "33d03ae75758f6ae1fa545033738c27dd43f834f5c5dd2db127d8e1e94b9a550",
+    "lab.py": "24bdd23573244923b43d175edd1f55cacce5323a934e8563c2d09d231d1c0e01",
+    "primitive_reference.py": "6e189792c826db0f462a0160ab07cfb09859c249c9b54f48a28dcecaece20263",
+    "rules.py": "e21dc1b788758e3a46708f42ddee416101e16a2e04a045118ac6c710a968aad6",
+    "test_clock.py": "398f501c99c33b961a83d2dc64a8bce8cfefd3dd540681507c698bf825bae935",
+    "timeline.py": "34a0e9f380481fb45686f4361139477c7ab72ab474a63101803f082f84c1ebb3",
+    "worker.py": "9ae54f4ea3918f919b1cc08a29f7e622ec51a0ed40ba47e23a15a4b52acd88c3"
+  }
+}
