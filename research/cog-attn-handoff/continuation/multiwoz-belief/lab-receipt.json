@@ -1,0 +1,40 @@
+{
+  "protocol": "42825354c0ed2e11889df28647f3921d24c429a6a5a6e9c01cbb099b22fd99de",
+  "runs": [
+    {
+      "id": "20261120T183838-b964a6454514",
+      "artifacts": {
+        "results.json": "f0e5262ced112519cfc3c347abf05e3466ece6c1ed9247ed3586349bf400ede3",
+        "traces.json": "8d435f65f6b5f38a8f163b3b9b0544a5c3454656169d2f6587c4d8ed6483cc2f"
+      },
+      "inputs": {
+        "study.py": "89c849d565ae2e040c93e1439d987a4985cf3f5d960f9f87098db262e9c2dc56",
+        "belief.py": "762f8961671fe40992d0c622abed75f2234ba9550060d620017f4c72761382ad",
+        "PROTOCOL.md": "c44bde97fe6bea1256c16e7bbc1c67b3bf9fb883a545633d4b6464bc2de16dd1",
+        "selection.json": "b0d70aac34648bd99831e4ffb57d874307385630113caa4d3d29b95647cac16d"
+      },
+      "elapsed_seconds": 6.661617,
+      "metrics": {
+        "joint": 6560
+      }
+    },
+    {
+      "id": "20261120T183844-bacb6b3845a0",
+      "artifacts": {
+        "results.json": "f0e5262ced112519cfc3c347abf05e3466ece6c1ed9247ed3586349bf400ede3",
+        "traces.json": "8d435f65f6b5f38a8f163b3b9b0544a5c3454656169d2f6587c4d8ed6483cc2f"
+      },
+      "inputs": {
+        "study.py": "89c849d565ae2e040c93e1439d987a4985cf3f5d960f9f87098db262e9c2dc56",
+        "belief.py": "762f8961671fe40992d0c622abed75f2234ba9550060d620017f4c72761382ad",
+        "PROTOCOL.md": "c44bde97fe6bea1256c16e7bbc1c67b3bf9fb883a545633d4b6464bc2de16dd1",
+        "selection.json": "b0d70aac34648bd99831e4ffb57d874307385630113caa4d3d29b95647cac16d"
+      },
+      "elapsed_seconds": 6.682392,
+      "metrics": {
+        "joint": 6560
+      }
+    }
+  ],
+  "clean_directory_replay": true
+}
