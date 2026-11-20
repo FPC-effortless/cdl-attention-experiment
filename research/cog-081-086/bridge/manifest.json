@@ -1,0 +1,14 @@
+{
+  "study": "COG-ATTN-086a/b",
+  "date": "2026-11-21",
+  "source_repo": "FPC-effortless/cdl-attention-experiment",
+  "source_ref": "975732f1081d4e5c98c460df1cfa067c48af213d",
+  "source_path": "research/cog-071-080/vendor/packet/planning.py",
+  "source_blob_sha": "47257edde1e7700f14ea63f46fe541a1b5d999ad",
+  "training_seeds": [8101,8107],
+  "calibration_seed": 8113,
+  "test_seeds": [9101,9107,9113],
+  "agents_evaluated": ["exact A* control", "exact A* plus real COG-066 mined options", "same-count shuffled options", "dev-cost-gated options"],
+  "full_cog_attn_policy_evaluated": false,
+  "notes": "Do not interpret reference exact solver success as COG autonomous reasoning."
+}
