@@ -1,0 +1,14 @@
+{
+ "seeds":[11,23,37],"train_quartets":240,"eval_quartets":96,
+ "train":["of {x} and {y} the {r} was {m} and the {s} was {n}","for {x} and {y} the reviewer marked the {r} as {m} but the {s} as {n}"],
+ "tests":{
+   "familiar":"of {x} and {y} the {r} was {m} and the {s} was {n}",
+   "approval_first":"of {x} and {y} {m} was the status of the {r} whereas {n} was the status of the {s}",
+   "long_gap":"of {x} and {y} the {r} following the review conducted by the committee yesterday was {m} while the {s} following the review conducted by the committee yesterday was {n}",
+   "grouped":"of {x} and {y} the status of the {r} and the {s} was {m} and {n} respectively",
+   "explicit_groups":"of {x} and {y} compare the {r} and the {s} the {m} status applies to the {r} and the {n} status applies to the {s}",
+   "unseen_alias":"of {x} and {y} the {r} was {m} and the {s} was {n}"
+ },
+ "gate":"At least 92 of 96 reversal quartets exact per seed and layout. Each quartet crosses clause reference order with accepted/discarded order. A quartet requires exact expression, route, and all executor effects across its four members.",
+ "scope":"Synthetic fixtures. Two candidate expression spans and phrase-to-record directions are supplied, along with a reference-word inventory at evaluation. Learn reference-to-expression position from winner labels. Exact dictionary shares the training vocabulary. Expanded dictionary additionally understands unseen aliases. Ordinal control pairs first cue with first expression. Oracle receives correct expression. Wrong authorizations count COPY and LINK separately."
+}

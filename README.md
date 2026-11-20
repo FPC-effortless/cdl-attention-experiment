@@ -13,6 +13,10 @@ pinned: false
 
 A falsification-first experiment for the hypothesis that relevance can be defined by conditional description length rather than only learned Q/K compatibility.
 
+## CSM research handoff
+
+The [CSM-BDH-002 resume guide](research/csm-bdh002-handoff/README.md) links the latest experiments, replay commands, evidence archives, and earlier GitHub recovery drafts.
+
 ## Model
 
 `HuggingFaceTB/SmolLM2-135M`

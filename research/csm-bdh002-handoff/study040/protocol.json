@@ -1,0 +1,18 @@
+{
+ "seeds":[11,23,37],"train_quartets":240,"test_quartets":96,
+ "train":[
+  "{m} after discussion of the {d} applies to the {r} ; {n} applies to the {s}",
+  "{m} with input about the {t} applies to the {r} ; {n} applies to the {s}",
+  "note the {d} ; the {r} receives {m} ; the {s} receives {n}",
+  "{m} is assigned to the {r} after discussing the {t} ; {n} is assigned to the {s} after discussing the {q}"
+ ],
+ "test":{
+  "intervening_consultation":"{m} after consultation concerning the {t} is granted to the {r} ; {n} is granted to the {s} after consultation concerning the {q}",
+  "postposed_consultation":"{m} is awarded to the {r} despite remarks on the {t} ; {n} is awarded to the {s} despite remarks on the {q}",
+  "unseen_connector":"{m} following objections about the {t} pertains to the {r} ; {n} following objections about the {q} pertains to the {s}",
+  "contrastive_subject":"the {r} rather than the {t} receives {m} ; the {s} rather than the {q} receives {n}",
+  "indirect_scope":"{m} as denied to the {t} takes effect for the {r} ; {n} as denied to the {q} takes effect for the {s}"
+ },
+ "gate":"At least 92/96 jointly exact quartets per seed and held-out layout. Time deployable arms only if they pass all cells.",
+ "scope":"Synthetic whitespace-tokenized fixtures. Freeze expression-to-record binding, checks and roster generation. Evaluate a prior proximity-plus-clause rule, the same logistic scoring family with and without explicit cue-to-argument features on matched training data, and a deterministic rule on those same features. Strong occurrence-label supervision for both learned arms. Check occurrence, record, and conditional effects under both guard states."
+}

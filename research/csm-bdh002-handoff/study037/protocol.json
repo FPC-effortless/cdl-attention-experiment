@@ -1,0 +1,6 @@
+{
+ "seeds":[11,23,37],"train_pairs":240,"episodes":96,
+ "training":["{u} {x} and {v} {y}","the {m} draft gives {x} but the {n} draft gives {y}","{x} is {m} while {y} is {n}"],
+ "evaluation":{"familiar":"{u} {x} and {v} {y}","postposed":"the relation {x} was officially {m} while the relation {y} was officially {n}","long":"{x} after a review by the team on duty was {m} while {y} after a review by the team on duty was {n}","mixed":"{x} was {m} but the {n} draft specifies {y}","list":"{x} and {y} were {m} and {n} respectively","reverse_list":"of {x} and {y} the latter was {n} and the former was {m}"},
+ "endpoint":"At least 92/96 paired exact expressions, routes and effects per frame and seed. Count wrong authorizations and abstentions separately. Both learned readers use the same two supplied spans and paired trial labels; pair reader receives an engineered four-word approval vocabulary; no supplied attachments. Compare a first-cue-to-first-expression heuristic and an oracle. Fixed episodic direction bindings isolate query parsing. Synthetic diagnostic with fresh rosters and previously seen approval vocabulary."
+}

@@ -1,0 +1,8 @@
+{
+ "seeds":[11,23,37],"episodes":96,"train_pairs":240,
+ "train":["{u} {x} and {v} {y}","the {m} draft gives {x} but the {n} draft gives {y}","{x} is {m} while {y} is {n}"],
+ "tests":{"verb":"{u} {x} and {v} {y}","postposed":"the relation {x} was officially {m} while the relation {y} was officially {n}","draft":"the relation is {x} in the {m} draft but is {y} in the {n} draft","preference":"i prefer {p} to {d}"},
+ "source":"Preference skeleton adapted from Cambridge English Grammar Today, Prefer, https://dictionary.cambridge.org/us/grammar/british-grammar/prefer-would-prefer ; record prefix and role substitution authored for this study.",
+ "gate":"At least 92/96 jointly exact pairs per seed, frame and permutation. Check spans, routes and conditional COPY/LINK effects. Log wrong commits and abstentions individually.",
+ "factor":"Same paired training data, span labels and evaluator for both arms. Local reader uses archived feature function. Wide reader adds lexical features at signed offsets 1 through 6 from each span boundary. Three demonstrations vary across six frame assignments. Target expressions have opposite directions. Third phrase direction, foil choice and demonstration order of accepted expression are randomized independently. Both queried expressions remain present in both reversal queries. Primary selection unrestricted."
+}
