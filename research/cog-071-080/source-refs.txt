@@ -1,0 +1,8 @@
+dfa44108c82e508104683ec4fdd6a241536af870	refs/heads/research/cog-061063-continuous-dynamics
+6c6ebcb2eada940c27775f2c0ed43298f1795ae3	refs/heads/research/cog-062-binary-handoff-20261120
+7d03edf70f885b5f5c98a1858ede4a89d63f7250	refs/heads/research/cog-062064-recovery-handoff
+03549826bdaed4e2cb59e715cdb0293170ec5727	refs/heads/research/cog-065-exact-channel-eligibility
+4ed917b00c38ac5078f14633be8036dbf69fe56e	refs/heads/research/cog-066-procedural-chunks-20261120
+2b8ea32cf9efeea06824ad0ba162425aba78e3f1	refs/heads/research/cog-067-adaptive-acquisition-20261120
+94ce2642a83bec20d94ac80ada262a474e7c162c	refs/heads/research/cog-068069-readonly-packed-cpu
+49f2c2ee0a533c329e3c5e7131171474876a6634	refs/heads/research/cog-070-observational-admission
