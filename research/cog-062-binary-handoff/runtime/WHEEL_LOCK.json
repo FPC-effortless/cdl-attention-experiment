@@ -1,0 +1,93 @@
+{
+  "requirements_satisfied_by_base": {
+    "certifi": "2026.10.19",
+    "click": "8.4.2",
+    "greenlet": "3.5.5",
+    "numpy": "2.3.5",
+    "pygments": "2.21.0",
+    "typing-extensions": "4.16.0"
+  },
+  "wheels": [
+    {
+      "filename": "pyproj-3.7.2-cp312-cp312-manylinux_2_28_x86_64.whl",
+      "metadata_sha256": "e5788ea46cff6d2ed57b9c5c60eedea9eff0c54d1b1808dd16926e85e58a14e1",
+      "name": "pyproj",
+      "sha256": "1edc34266c0c23ced85f95a1ee8b47c9035eae6aca5b6b340327250e8e281630",
+      "size": 9552797,
+      "url": "https://files.pythonhosted.org/packages/b8/be/212882c450bba74fc8d7d35cbd57e4af84792f0a56194819d98106b075af/pyproj-3.7.2-cp312-cp312-manylinux_2_28_x86_64.whl",
+      "version": "3.7.2"
+    },
+    {
+      "filename": "shapely-2.1.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "metadata_sha256": "0ccb2024fb612e2a59ab1e87caf1cd7f12d8d9957489c63205210e9c3bacc487",
+      "name": "shapely",
+      "sha256": "1e7d4d7ad262a48bb44277ca12c7c78cb1b0f56b32c10734ec9a1d30c0b0c54b",
+      "size": 3099844,
+      "url": "https://files.pythonhosted.org/packages/b9/37/e781683abac55dde9771e086b790e554811a71ed0b2b8a1e789b7430dd44/shapely-2.1.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "version": "2.1.2"
+    },
+    {
+      "filename": "sqlalchemy-2.0.44-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "metadata_sha256": "46be62f0d0d9a0504ae58e729a364f25ff6d79600849f35f1ae6b28d69ae498f",
+      "name": "SQLAlchemy",
+      "sha256": "119dc41e7a7defcefc57189cfa0e61b1bf9c228211aba432b53fb71ef367fda1",
+      "size": 3337842,
+      "url": "https://files.pythonhosted.org/packages/45/e5/5aa65852dadc24b7d8ae75b7efb8d19303ed6ac93482e60c44a585930ea5/sqlalchemy-2.0.44-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "version": "2.0.44"
+    },
+    {
+      "filename": "duckdb-1.4.2-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl",
+      "metadata_sha256": "831d7f50300d97aac3da5bae9b0f284dccb1fa78ea0c852f2982dfe64c4dd888",
+      "name": "duckdb",
+      "sha256": "c6a21732dd52a76f1e61484c06d65800b18f57fe29e8102a7466c201a2221604",
+      "size": 20481138,
+      "url": "https://files.pythonhosted.org/packages/a5/52/7570a50430cbffc8bd702443ac28a446b0fa4f77747a3821d4b37a852b15/duckdb-1.4.2-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl",
+      "version": "1.4.2"
+    },
+    {
+      "filename": "typer-0.20.0-py3-none-any.whl",
+      "metadata_sha256": "f5f544fa747b95e563a015ff7f1df2fcfd437c98d517eaf599abdb9846a62449",
+      "name": "typer",
+      "sha256": "5b463df6793ec1dca6213a3cf4c0f03bc6e322ac5e16e13ddd622a889489784a",
+      "size": 47028,
+      "url": "https://files.pythonhosted.org/packages/78/64/7713ffe4b5983314e9d436a90d5bd4f63b6054e2aca783a3cfc44cb95bbf/typer-0.20.0-py3-none-any.whl",
+      "version": "0.20.0"
+    },
+    {
+      "filename": "shellingham-1.5.4-py2.py3-none-any.whl",
+      "metadata_sha256": "9381443cd6295d50fc7f7bd34a457243b0f3a54732cde45b0fc2d0994b61f3af",
+      "name": "shellingham",
+      "sha256": "7ecfff8f2fd72616f7481040475a65b2bf8af90a56c89140852d1120324e8686",
+      "size": 9755,
+      "url": "https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl",
+      "version": "1.5.4"
+    },
+    {
+      "filename": "rich-14.2.0-py3-none-any.whl",
+      "metadata_sha256": "74527f1342cd2c3ddb2c7a85d42d4a7249df3d60e12db2062c288addecb654ee",
+      "name": "rich",
+      "sha256": "76bc51fe2e57d2b1be1f96c524b890b816e334ab4c1e45888799bfaab0021edd",
+      "size": 243393,
+      "url": "https://files.pythonhosted.org/packages/25/7a/b0178788f8dc6cafce37a212c99565fa1fe7872c70c6c9c1e1a372d9d88f/rich-14.2.0-py3-none-any.whl",
+      "version": "14.2.0"
+    },
+    {
+      "filename": "markdown_it_py-4.0.0-py3-none-any.whl",
+      "metadata_sha256": "0e85cd8a3624c3d7cb4a18666b50e8417f834c8469474d72195acb0d5b9c4e54",
+      "name": "markdown-it-py",
+      "sha256": "87327c59b172c5011896038353a81343b6754500a08cd7a4973bb48c6d578147",
+      "size": 87321,
+      "url": "https://files.pythonhosted.org/packages/94/54/e7d793b573f298e1c9013b8c4dade17d481164aa517d1d7148619c2cedbf/markdown_it_py-4.0.0-py3-none-any.whl",
+      "version": "4.0.0"
+    },
+    {
+      "filename": "mdurl-0.1.2-py3-none-any.whl",
+      "metadata_sha256": "c7baac0b363d92cf55f1f3a313f4bb0564bff27343e6a0a4e9d7ff03afc8a6c7",
+      "name": "mdurl",
+      "sha256": "84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8",
+      "size": 9979,
+      "url": "https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl",
+      "version": "0.1.2"
+    }
+  ]
+}

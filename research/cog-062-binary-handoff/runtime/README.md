@@ -1,0 +1,7 @@
+# Local runtime restoration
+
+The original public Veritas source revision and observed Python distribution versions are disclosed in BASE_VERSIONS.json. That inventory is not a hermetic base lock. An isolated CPython 3.12 target contained the nine additional wheels in WHEEL_LOCK.json; wheel bytes are not included. Do not mix CPython 3.13 compiled extensions.
+
+1. Obtain the nine official versioned PyPI metadata records listed in prepare_wheels.py from `https://pypi.org/pypi/<name>/<version>/json`. Verify each against WHEEL_LOCK.json before use. Retrieve only listed official TLS artifacts and verify exact byte length, SHA-256, distribution/version, wheel tag and active Requires-Dist constraints. The helper expects metadata/ and wheelhouse/ alongside the script; use a private copied workspace. It checks compatible artifacts and writes a local lock only after digest and transitive checks.
+2. With all nine files verified, create a new private target and install offline: `python -m pip install --no-index --find-links WHEELHOUSE --target SITE --only-binary=:all: --require-hashes --no-deps -r REQUIREMENTS-ADDITIONAL.lock`. No fallback to an unknown mirror or changed version.
+3. Independently verify the exact local interpreter, base and active package metadata, native import origins, installed overlay bytes, and a synthetic canonical Veritas EvidenceRecord serialization roundtrip. Do not infer complete OS attestation or experimental admissibility from distribution names, official metadata or a successful import.

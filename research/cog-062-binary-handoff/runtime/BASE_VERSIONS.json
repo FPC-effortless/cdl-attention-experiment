@@ -1,0 +1,43 @@
+{
+  "ecosystem_commit": "eec439492407b0aa26922c23b5ae40d95289f4eb",
+  "evidence": {
+    "annotated-doc": "0.0.5",
+    "annotated-types": "0.8.0",
+    "anyio": "4.14.2",
+    "certifi": "2026.10.19",
+    "click": "8.4.2",
+    "duckdb": "1.4.2",
+    "et-xmlfile": "2.0.0",
+    "fastapi": "0.141.1",
+    "greenlet": "3.5.5",
+    "h11": "0.16.0",
+    "idna": "3.18",
+    "markdown-it-py": "4.0.0",
+    "mdurl": "0.1.2",
+    "numpy": "2.3.5",
+    "openpyxl": "3.1.5",
+    "pydantic": "2.13.4",
+    "pydantic-core": "2.46.4",
+    "pygments": "2.21.0",
+    "pyproj": "3.7.2",
+    "rich": "14.2.0",
+    "shapely": "2.1.2",
+    "shellingham": "1.5.4",
+    "sqlalchemy": "2.0.44",
+    "starlette": "1.6.0",
+    "typer": "0.20.0",
+    "typing-extensions": "4.16.0",
+    "typing-inspection": "0.4.3",
+    "uvicorn": "0.52.1"
+  },
+  "limits": "Versions of study base; not complete OS/native closure or independent runtime attestation; verified overlay listed in WHEEL_LOCK",
+  "model": {
+    "joblib": "1.5.3",
+    "numpy": "2.3.5",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.0",
+    "threadpoolctl": "3.6.0"
+  },
+  "platform": "Linux x86_64 compatible wheel tags",
+  "python": "3.12.14"
+}

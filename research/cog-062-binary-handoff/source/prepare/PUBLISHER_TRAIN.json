@@ -1,0 +1,92 @@
+{
+  "repository": "https://github.com/budzianowski/multiwoz",
+  "ref": "fe0c8e65cfcd8462bd33c86e35f21addc84ca82b",
+  "source_path": "data/MultiWOZ_2.2/train",
+  "files": [
+    {
+      "name": "dialogues_001.json",
+      "git_blob": "1ab08d377750e83493095b0eb1249df81a99ba21",
+      "bytes": 10678768
+    },
+    {
+      "name": "dialogues_002.json",
+      "git_blob": "d182eae43341a44ebe3807ed61e829d73dc34a84",
+      "bytes": 10779713
+    },
+    {
+      "name": "dialogues_003.json",
+      "git_blob": "2544e4c90a5eeef4c290fe2cf0c4c4d70c4f69ff",
+      "bytes": 9980098
+    },
+    {
+      "name": "dialogues_004.json",
+      "git_blob": "ec487da741ebc423770ae2d09c9cb5c70b81bd1f",
+      "bytes": 10267341
+    },
+    {
+      "name": "dialogues_005.json",
+      "git_blob": "34d733cbc334bb39c79e6f06652b1d1aa997307e",
+      "bytes": 10518980
+    },
+    {
+      "name": "dialogues_006.json",
+      "git_blob": "8d390b5dac386dd87c927eafaec63699fde304ea",
+      "bytes": 10567400
+    },
+    {
+      "name": "dialogues_007.json",
+      "git_blob": "ee6a677c78d8416779840e2dd306d668851061b6",
+      "bytes": 10362425
+    },
+    {
+      "name": "dialogues_008.json",
+      "git_blob": "cf849daab0a6f0caa3f543a6f6d171e443a80dce",
+      "bytes": 10207271
+    },
+    {
+      "name": "dialogues_009.json",
+      "git_blob": "ee088d84d2c274c6f3fb3e119346bfd3321c986e",
+      "bytes": 10168917
+    },
+    {
+      "name": "dialogues_010.json",
+      "git_blob": "8b6252a34be01fa9500511dc5cc30121cb1ac7f7",
+      "bytes": 10539061
+    },
+    {
+      "name": "dialogues_011.json",
+      "git_blob": "c24eb2c071e3d2ab3f12f742eb591a2526d0c19f",
+      "bytes": 10326640
+    },
+    {
+      "name": "dialogues_012.json",
+      "git_blob": "89937591b044fa964a0430480cd9f91dfc681a6a",
+      "bytes": 10584880
+    },
+    {
+      "name": "dialogues_013.json",
+      "git_blob": "c39aa0c69fda70278ff37de94f2189f2bb3f9e69",
+      "bytes": 10471034
+    },
+    {
+      "name": "dialogues_014.json",
+      "git_blob": "d0399d022e916ae79b40df7adb92cb17fe97ad57",
+      "bytes": 10260484
+    },
+    {
+      "name": "dialogues_015.json",
+      "git_blob": "e1db3d9ab1475ffffd725d1e8326f7b1df2adf38",
+      "bytes": 10423185
+    },
+    {
+      "name": "dialogues_016.json",
+      "git_blob": "079e9f5881429c398626c8615cb979b67c46329d",
+      "bytes": 10218682
+    },
+    {
+      "name": "dialogues_017.json",
+      "git_blob": "2cdad94fbcbf80c21e67cb57d40eece195fe3181",
+      "bytes": 5020445
+    }
+  ]
+}

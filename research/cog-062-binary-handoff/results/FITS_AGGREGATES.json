@@ -1,0 +1,47 @@
+{
+  "area_base_converged": true,
+  "area_base_iterations": 36,
+  "area_binary_excluded_misses": 44,
+  "area_binary_supervised_rows": 11224,
+  "area_canonical_converged": true,
+  "area_canonical_iterations": 24,
+  "area_ordered_converged": true,
+  "area_ordered_iterations": 24,
+  "area_rank_groups": {
+    "0": 1676,
+    "1": 175,
+    "2": 42
+  },
+  "area_rank_rows": {
+    "0": 11029,
+    "1": 195,
+    "2": 44
+  },
+  "estimand": "candidate-hit binary rank choice, B-informed amendment",
+  "fits_per_attempt": 6,
+  "optimization_adequacy": "SOLVERS_CONVERGED",
+  "postfit_criteria_met": true,
+  "price_base_converged": true,
+  "price_base_iterations": 35,
+  "price_binary_excluded_misses": 51,
+  "price_binary_supervised_rows": 11217,
+  "price_canonical_converged": true,
+  "price_canonical_iterations": 23,
+  "price_ordered_converged": true,
+  "price_ordered_iterations": 25,
+  "price_rank_groups": {
+    "0": 1676,
+    "1": 150,
+    "2": 47
+  },
+  "price_rank_rows": {
+    "0": 11047,
+    "1": 170,
+    "2": 51
+  },
+  "replay_byte_identical": true,
+  "wall_seconds": {
+    "fit-primary": 41.215988,
+    "fit-replay": 39.58204
+  }
+}

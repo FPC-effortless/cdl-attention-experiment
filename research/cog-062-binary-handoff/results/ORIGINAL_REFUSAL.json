@@ -1,0 +1,20 @@
+{
+  "area_proposer_converged": true,
+  "area_proposer_iterations": 36,
+  "area_rank_rows": {
+    "0": 11029,
+    "1": 195,
+    "2": 44
+  },
+  "automatic_retry": false,
+  "completed_meta_fits": 0,
+  "completed_proposer_fits": 1,
+  "elapsed_wall_seconds": 29.934465,
+  "estimand": "three-way rank1/rank2/neither classifier",
+  "evaluation_started": false,
+  "first_failed_slot": "area",
+  "preregistered_min_examples_per_class_per_slot": 100,
+  "qualification": "NOT_QUALIFIED",
+  "replay_started": false,
+  "status": "STOPPED_PREDECLARED_B_SUPPORT_GATE"
+}
