@@ -24,6 +24,8 @@ This index covers the 15 evidence bundles available from WR-004 through the 047â
 
 The [real GitHub issue-history report](issue-history-study/README.md) covers 2,340 public issues from five repositories. Exact replay agreed on every recorded prefix checkpoint. The learned admission policy fell short of the frozen precision and coverage gate, and the input-matched flat reference ranked better in the held-out repository. The handoff includes frozen recipes, per-comment predictions, source digests, and the replay audit.
 
+The [snapshot reconciliation follow-up](issue-history-followup/README.md) reverified the six known stream omissions and tested the valid-time and knowledge-time boundaries. It also preserves the frozen design for the pending fresh-cohort comparison.
+
 ## Download and verify
 
 For a complete original archive, use the bundled [downloader](https://github.com/FPC-effortless/cdl-attention-experiment/tree/ba8777f522db0efa17f855c744993135abe1da2d/download_evidence.py). Small archives have a single file and larger ones are in ordered parts. The downloader verifies each part and the reconstructed original.
