@@ -1,0 +1,50 @@
+[
+  {
+    "file": "vendor/packet/planning.py",
+    "revision": "4ed917b00c38ac5078f14633be8036dbf69fe56e",
+    "source": "research/cog-066/cog_065_066_packet/planning.py",
+    "sha256": "0a86636ba92df6080fef08b7a78e56256983001672c5f80b25de6e0bf96542b2"
+  },
+  {
+    "file": "vendor/packet/domain.py",
+    "revision": "4ed917b00c38ac5078f14633be8036dbf69fe56e",
+    "source": "research/cog-066/cog_065_066_packet/domain.py",
+    "sha256": "6e189792c826db0f462a0160ab07cfb09859c249c9b54f48a28dcecaece20263"
+  },
+  {
+    "file": "vendor/p067/policies.py",
+    "revision": "2b8ea32cf9efeea06824ad0ba162425aba78e3f1",
+    "source": "research/cog-067/cog_067_packet/policies.py",
+    "sha256": "34a954cc349339798975e0b834de9d668a411e939357ada57414b87d1654187d"
+  },
+  {
+    "file": "vendor/p067/world.py",
+    "revision": "2b8ea32cf9efeea06824ad0ba162425aba78e3f1",
+    "source": "research/cog-067/cog_067_packet/world.py",
+    "sha256": "0952277415d831bb02e3836f08956d6ceb392b94678b1a615cf5d74bc8a63f2b"
+  },
+  {
+    "file": "vendor/expiry.py",
+    "revision": "7d03edf70f885b5f5c98a1858ede4a89d63f7250",
+    "source": "research/cog-062064-dev/runtime.py",
+    "sha256": "43d3df8aa1b73ad7e88c9047e3872e010202796638a346e0f50af916cb991c46"
+  },
+  {
+    "file": "vendor/gateway068.py",
+    "revision": "94ce2642a83bec20d94ac80ada262a474e7c162c",
+    "source": "research/cog-068069-readonly-packed-cpu/gateway.py",
+    "sha256": "685bbc527be2a9f2c58c158599a8bc54d18fc3bca306b34590a562acb10eddf6"
+  },
+  {
+    "file": "vendor/upstream/belief.py",
+    "revision": "1f0c2a18ad0d49bd5e27bb079aec48e5eb0a55dd",
+    "source": "research/cog-attn-handoff/continuation/multiwoz-belief/belief.py",
+    "sha256": "762f8961671fe40992d0c622abed75f2234ba9550060d620017f4c72761382ad"
+  },
+  {
+    "file": "vendor/state_store.py",
+    "revision": "b500d1a93efd7f1a967c48101b402aa88d34e3e6",
+    "source": "research/cog-attn-handoff/continuation/delta-authority-048/recipe/state_store.py",
+    "sha256": "ac8e297f77d1386ca9a812eb8c7b1825126a7f13d29eecb76bd9f69d6b7c001e"
+  }
+]

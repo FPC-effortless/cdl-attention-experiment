@@ -7,7 +7,7 @@ HERE=Path(__file__).resolve().parent
 def read(p):return json.loads(p.read_bytes())
 def main():
     with TemporaryDirectory() as tmp:
-        dest=Path(tmp);env=dict(os.environ,TRAINLAB_OUTPUT_DIR=tmp,OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1')
+        dest=Path(tmp);env=dict(os.environ,TRAINLAB_OUTPUT_DIR=tmp,COG_RESULT_OUT=tmp,OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1')
         subprocess.run([sys.executable,'experiments.py','rep'],cwd=HERE,env=env,check=True)
         expected=(HERE/'results/rep/stable.sha256').read_text()
         actual=(dest/'stable.sha256').read_text()
@@ -37,7 +37,7 @@ def main():
             path=HERE/'results'/(name+'.json')
             old=read(path)
             subprocess.run([sys.executable,script,*arguments],cwd=HERE,env=env,check=True)
-            new=read(path)
+            new=read(dest/path.name)
             if name=='corrections':
                 assert old==new
                 continue

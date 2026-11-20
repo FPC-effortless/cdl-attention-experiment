@@ -1002,5 +1002,319 @@
       "joint": 6560,
       "stale": 665
     }
+  },
+  "attention_free_admission": {
+    "memo_cache": {
+      "turns": 576,
+      "families_n": 360,
+      "first1": 58,
+      "first5": 253,
+      "provisional": 513,
+      "proposal_correct": 513,
+      "commits": 224,
+      "wrong": 29,
+      "eligible": 222,
+      "asks": 0,
+      "rolled_nodes": 1736,
+      "work": 56711,
+      "wall_ms": 1513.761603,
+      "external_teacher_s": 0.0,
+      "matched_exact": false,
+      "speed_by_seed": [
+        1.0809808199840738,
+        1.1141417618545648,
+        1.1894139804659063
+      ],
+      "wrong_delta_mean_ci": [
+        -29.0,
+        -15.0
+      ]
+    },
+    "memo_exact": {
+      "turns": 576,
+      "families_n": 360,
+      "first1": 58,
+      "first5": 253,
+      "provisional": 513,
+      "proposal_correct": 513,
+      "commits": 224,
+      "wrong": 29,
+      "eligible": 222,
+      "asks": 0,
+      "rolled_nodes": 1736,
+      "work": 73836,
+      "wall_ms": 1510.234512,
+      "external_teacher_s": 0.0,
+      "matched_exact": false,
+      "speed_by_seed": [
+        1.1047826426985818,
+        1.1233863351630535,
+        1.1616213980341
+      ],
+      "wrong_delta_mean_ci": [
+        -29.0,
+        -15.0
+      ]
+    },
+    "primitive": {
+      "turns": 576,
+      "families_n": 360,
+      "first1": 58,
+      "first5": 253,
+      "provisional": 157,
+      "proposal_correct": 307,
+      "commits": 218,
+      "wrong": 96,
+      "eligible": 222,
+      "asks": 247,
+      "rolled_nodes": 1414,
+      "work": 64610,
+      "wall_ms": 1706.406041,
+      "external_teacher_s": 0.0,
+      "matched_exact": true,
+      "speed_by_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "wrong_delta_mean_ci": [
+        0.0,
+        0.0
+      ]
+    },
+    "raw": {
+      "turns": 576,
+      "families_n": 360,
+      "first1": 58,
+      "first5": 253,
+      "provisional": 157,
+      "proposal_correct": 307,
+      "commits": 218,
+      "wrong": 96,
+      "eligible": 222,
+      "asks": 247,
+      "rolled_nodes": 1414,
+      "work": 64610,
+      "wall_ms": 1706.406041,
+      "external_teacher_s": 0.0,
+      "matched_exact": true,
+      "speed_by_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "wrong_delta_mean_ci": [
+        0.0,
+        0.0
+      ]
+    },
+    "supported_cache": {
+      "turns": 576,
+      "families_n": 360,
+      "first1": 58,
+      "first5": 253,
+      "provisional": 513,
+      "proposal_correct": 513,
+      "commits": 224,
+      "wrong": 29,
+      "eligible": 222,
+      "asks": 0,
+      "rolled_nodes": 1736,
+      "work": 56711,
+      "wall_ms": 1662.124558,
+      "external_teacher_s": 0.0,
+      "matched_exact": false,
+      "speed_by_seed": [
+        1.0204904079201997,
+        0.9843028094319913,
+        1.0762841605887874
+      ],
+      "wrong_delta_mean_ci": [
+        -29.0,
+        -15.0
+      ]
+    },
+    "supported_exact": {
+      "turns": 576,
+      "families_n": 360,
+      "first1": 58,
+      "first5": 253,
+      "provisional": 513,
+      "proposal_correct": 513,
+      "commits": 224,
+      "wrong": 29,
+      "eligible": 222,
+      "asks": 0,
+      "rolled_nodes": 1736,
+      "work": 73836,
+      "wall_ms": 1689.301824,
+      "external_teacher_s": 0.0,
+      "matched_exact": false,
+      "speed_by_seed": [
+        0.9770044141098383,
+        0.9964726927713041,
+        1.0582513463821634
+      ],
+      "wrong_delta_mean_ci": [
+        -29.0,
+        -15.0
+      ]
+    }
+  },
+  "diagnostic_request": {
+    "True/True/demand": {
+      "right": 72,
+      "unknown_diagnosis": 0,
+      "cost": 720,
+      "probes": 144,
+      "wrong": 0
+    },
+    "True/True/regular": {
+      "right": 72,
+      "unknown_diagnosis": 0,
+      "cost": 4320,
+      "probes": 864,
+      "wrong": 0
+    },
+    "True/True/passive": {
+      "right": 0,
+      "unknown_diagnosis": 0,
+      "cost": 1440,
+      "probes": 0,
+      "wrong": 0
+    },
+    "True/True/frozen": {
+      "right": 0,
+      "unknown_diagnosis": 0,
+      "cost": 1440,
+      "probes": 0,
+      "wrong": 0
+    },
+    "True/False/demand": {
+      "right": 0,
+      "unknown_diagnosis": 72,
+      "cost": 72,
+      "probes": 0,
+      "wrong": 0
+    },
+    "True/False/regular": {
+      "right": 0,
+      "unknown_diagnosis": 72,
+      "cost": 72,
+      "probes": 0,
+      "wrong": 0
+    },
+    "True/False/passive": {
+      "right": 0,
+      "unknown_diagnosis": 0,
+      "cost": 1440,
+      "probes": 0,
+      "wrong": 0
+    },
+    "True/False/frozen": {
+      "right": 0,
+      "unknown_diagnosis": 0,
+      "cost": 1440,
+      "probes": 0,
+      "wrong": 0
+    },
+    "False/True/demand": {
+      "right": 72,
+      "unknown_diagnosis": 0,
+      "cost": 4470,
+      "probes": 734,
+      "wrong": 40
+    },
+    "False/True/regular": {
+      "right": 72,
+      "unknown_diagnosis": 0,
+      "cost": 5302,
+      "probes": 864,
+      "wrong": 48
+    },
+    "False/True/passive": {
+      "right": 72,
+      "unknown_diagnosis": 0,
+      "cost": 1512,
+      "probes": 0,
+      "wrong": 72
+    },
+    "False/True/frozen": {
+      "right": 0,
+      "unknown_diagnosis": 0,
+      "cost": 17200,
+      "probes": 0,
+      "wrong": 788
+    },
+    "False/False/demand": {
+      "right": 0,
+      "unknown_diagnosis": 72,
+      "cost": 1558,
+      "probes": 0,
+      "wrong": 39
+    },
+    "False/False/regular": {
+      "right": 0,
+      "unknown_diagnosis": 72,
+      "cost": 1562,
+      "probes": 0,
+      "wrong": 35
+    },
+    "False/False/passive": {
+      "right": 70,
+      "unknown_diagnosis": 1,
+      "cost": 1533,
+      "probes": 0,
+      "wrong": 72
+    },
+    "False/False/frozen": {
+      "right": 0,
+      "unknown_diagnosis": 0,
+      "cost": 16740,
+      "probes": 0,
+      "wrong": 765
+    }
+  },
+  "corrections": {
+    "legitimate/claimed": {
+      "n": 96,
+      "correct_commits": 96
+    },
+    "legitimate/signed": {
+      "n": 96,
+      "correct_commits": 96
+    },
+    "mirror/claimed": {
+      "n": 96,
+      "correct_commits": 0
+    },
+    "mirror/signed": {
+      "n": 96,
+      "correct_commits": 96
+    },
+    "late/claimed": {
+      "n": 96,
+      "correct_commits": 0
+    },
+    "late/signed": {
+      "n": 96,
+      "correct_commits": 96
+    },
+    "mistaken/claimed": {
+      "n": 96,
+      "correct_commits": 0
+    },
+    "mistaken/signed": {
+      "n": 96,
+      "correct_commits": 0
+    },
+    "silence/claimed": {
+      "n": 96,
+      "correct_commits": 0
+    },
+    "silence/signed": {
+      "n": 96,
+      "correct_commits": 0
+    }
   }
 }

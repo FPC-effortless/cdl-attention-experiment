@@ -125,7 +125,7 @@ def run():
                          support_factory=acquire_phrases if arm=='supported' else None)
             r=session(seed,'transfer','primitive' if arm=='primitive' else 'full',opts=options)
             r['arm']=arm;res.append(r)
-    (HERE/'results/transfer.json').write_text(json.dumps(res,separators=(',',':')))
+    (Path(os.getenv('COG_RESULT_OUT',HERE/'results'))/'transfer.json').write_text(json.dumps(res,separators=(',',':')))
 if __name__=='__main__':
     import sys
     (teacher if sys.argv[1]=='teacher' else run)()

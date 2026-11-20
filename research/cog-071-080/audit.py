@@ -89,5 +89,22 @@ def main():
     d=read(R/'authentic-dialogue.json')
     for rows in d.values():assert [r[4] for r in rows]==[r[4] for r in d['verified']]
     summary['dialogue']={k:dict(joint=sum(r[2] for r in v),stale=sum(not r[2] and r[3] for r in v)) for k,v in d.items()}
+    acquired=read(R/'admission.json')
+    raw_sessions=[dict(s,arm='primitive') for s in acquired['sessions'] if s['arm']=='raw']
+    summary['attention_free_admission']=summarize('admission',acquired['sessions']+raw_sessions)
+    summary['diagnostic_request']={}
+    episodes=[r for group in acquired['causal'].values() for r in group]
+    for confounded in (True,False):
+        for available in (True,False):
+            for mode in ('demand','regular','passive','frozen'):
+                rs=[r for r in episodes if (r['confounded'],r['available'],r['mode'])==(confounded,available,mode)]
+                summary['diagnostic_request'][f'{confounded}/{available}/{mode}']={k:sum(r[k] for r in rs) for k in ('right','unknown_diagnosis','cost','probes','wrong')}
+    correction=[r for group in read(R/'corrections.json').values() for r in group]
+    summary['corrections']={}
+    for cond in ('legitimate','mirror','late','mistaken','silence'):
+        for mode in ('claimed','signed'):
+            rs=[r for r in correction if (r[0],r[1])==(cond,mode)]
+            assert all((r[4]=='committed')==(cond!='silence') for r in rs)
+            summary['corrections'][cond+'/'+mode]=dict(n=len(rs),correct_commits=sum(r[4]=='committed' and r[2]==r[3] for r in rs))
     (R/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
 if __name__=='__main__':main()

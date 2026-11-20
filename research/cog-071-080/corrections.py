@@ -1,6 +1,6 @@
 """Data provenance and sequence qualification on local scripted correction sessions."""
 from dataclasses import asdict,dataclass
-import hashlib,hmac,json,random
+import hashlib,hmac,json,random,os
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import numpy as np
@@ -62,5 +62,5 @@ def fixture(seed):
         for db in stores.values():db.db.close()
     return result
 if __name__=='__main__':
-    p=Path(__file__).resolve().parent/'results/corrections.json'
+    p=Path(os.getenv('COG_RESULT_OUT',Path(__file__).resolve().parent/'results'))/'corrections.json'
     p.write_text(json.dumps({s:fixture(s) for s in (8231,8233,8237)},separators=(',',':')))

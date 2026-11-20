@@ -30,7 +30,14 @@ def vectors(training,test,expanded):
     vec=[TfidfVectorizer(ngram_range=(1,2),sublinear_tf=True,min_df=1)]
     if expanded:vec.append(TfidfVectorizer(analyzer='char_wb',ngram_range=(2,5),min_df=2,sublinear_tf=True))
     for v in vec:v.fit(training)
-    return [hstack([v.transform(texts) for v in vec],format='csr') for texts in (training,test)]
+    return vec, [hstack([v.transform(texts) for v in vec],format='csr') for texts in (training,test)]
+
+def preserve(dataset,arm,vec,model):
+    if os.environ.get('COG_CHECKPOINT_DIR'):
+        import joblib
+        base=Path(os.environ['COG_CHECKPOINT_DIR'])/dataset
+        base.mkdir(parents=True,exist_ok=True)
+        joblib.dump((vec,model),base/(arm+'.joblib'),compress=3)
 
 def banking():
     pin='57ec275d8078af65b7731c2a98be812d844a6d6b'
@@ -44,8 +51,9 @@ def banking():
     overlap={r['text'].strip().lower() for r in splits['train']}
     for arm in ('word','expanded'):
         start=perf_counter()
-        x,z=vectors([r['text'] for r in train],[r['text'] for r in cal+held],arm=='expanded')
+        vec,(x,z)=vectors([r['text'] for r in train],[r['text'] for r in cal+held],arm=='expanded')
         svc=LinearSVC(C=2,random_state=71).fit(x,[r['category'] for r in train])
+        preserve('banking',arm,vec,svc)
         scores=svc.decision_function(z);ix=np.argsort(-scores,axis=1,kind='stable')[:,:5]
         order=svc.classes_[ix];margin=np.take_along_axis(scores,ix[:,:2],axis=1);margin=margin[:,0]-margin[:,1]
         gold=np.array([r['category'] for r in cal+held]);n=len(cal)
@@ -64,8 +72,9 @@ def issues():
     assert {r['issue'] for r in train+cal}.isdisjoint({r['issue'] for r in fresh})
     outcomes={}
     for arm in ('word','expanded'):
-        x,z=vectors([r['text'] for r in train],[r['text'] for r in cal+fresh],arm=='expanded')
+        vec,(x,z)=vectors([r['text'] for r in train],[r['text'] for r in cal+fresh],arm=='expanded')
         model=LogisticRegression(C=8,max_iter=350).fit(x,[r['target'] for r in train])
+        preserve('issues',arm,vec,model)
         p=model.predict_proba(z)[:,1];truth=np.array([r['target'] for r in cal])
         ts=[t for t in np.arange(.01,1,.01) if (p[:len(cal)]>=t).any() and truth[p[:len(cal)]>=t].mean()>=.99]
         t=min(ts,default=2.)

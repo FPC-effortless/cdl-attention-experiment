@@ -1,7 +1,7 @@
 """Induction from full utterances, exact semantic memoization and targeted causal tests."""
 from collections import OrderedDict,defaultdict
 from pathlib import Path
-import random,re,json
+import random,re,json,os
 import numpy as np
 from causal import env,INPUTS,ACCEPT,Learner
 from language import Grounder,render,TARGETS
@@ -98,6 +98,6 @@ def main():
             if arm!='raw':opts.update(inducer=lambda:Inducer(observations()),support_work=sum(len(grams(r[0])) for r in ds))
             s=session(seed,'transfer','full' if 'cache' in arm else 'primitive',opts=opts);s['arm']=arm;cases.append(s)
         causal[seed]=targeted(seed)
-    (ROOT/'results/admission.json').write_text(json.dumps(dict(sessions=cases,causal=causal,
+    (Path(os.getenv('COG_RESULT_OUT',ROOT/'results'))/'admission.json').write_text(json.dumps(dict(sessions=cases,causal=causal,
         dictionary={' '.join(k):v for k,v in sorted(ind.dictionary.items())}),separators=(',',':')))
 if __name__=='__main__':main()
