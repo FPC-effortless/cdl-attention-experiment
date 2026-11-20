@@ -1,0 +1,48 @@
+{
+  "schema": "research_lab.protocol.v1",
+  "id": "authentic-issue-history",
+  "program": "authentic-issue-history",
+  "author": "codex",
+  "question": "Does state-scoped modular grounding beat an input-matched flat model on real future issue changes?",
+  "hypothesis": "Separate language, state and semantic evidence yields commit precision at useful coverage.",
+  "alternatives": [
+    "Recorded behavior is poorly identified from a comment.",
+    "A flat model is sufficient."
+  ],
+  "predictions": [
+    "Modular test AP exceeds the flat control.",
+    "Recorded state replay is exact."
+  ],
+  "controls": [
+    "Identical source, split, safe history and semantic checkpoint."
+  ],
+  "ablations": [
+    "Remove NLI, add normalized binding reuse, compare history-only and character/word text models."
+  ],
+  "metric": "ap",
+  "direction": "max",
+  "minimum_effect": 0,
+  "seeds": [
+    49103,
+    49109,
+    49121
+  ],
+  "resource": "cpu-one",
+  "slots": 1,
+  "max_attempts": 1,
+  "stopping_rule": "Run each paired seed once and replay all predictions in clean directories.",
+  "scope": "AUTHENTIC_CANDIDATE",
+  "priority": 1,
+  "source_commit": "eec439492407b0aa26922c23b5ae40d95289f4eb",
+  "next_test": "Independent prospective recording with human-labeled intent and authority.",
+  "limitations": [
+    "Historical behavior proxy, no independently authenticated comment authority.",
+    "Fixed single-host retrospective data, no independent external review."
+  ],
+  "candidate": "candidate.json",
+  "control": "control.json",
+  "replication_tolerance": 0,
+  "replay_artifacts": [
+    "predictions.sha256"
+  ]
+}

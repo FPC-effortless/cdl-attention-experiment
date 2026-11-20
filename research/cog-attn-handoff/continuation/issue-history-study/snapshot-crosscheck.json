@@ -1,0 +1,77 @@
+{
+  "checked_at": "2026-11-20T14:29:38.354612+00:00",
+  "disagreements": [
+    {
+      "issue": "numpy/numpy#28240",
+      "search_state": "closed",
+      "timeline_state": "open",
+      "issue_endpoint_state": "closed",
+      "events_endpoint_state": "open",
+      "snapshot_closed_at": "2025-01-28T17:14:54Z",
+      "search_updated_at": "2025-01-28T17:15:23Z",
+      "issue_endpoint_updated_at": "2025-01-28T17:15:23Z",
+      "only_in_issue_events": [],
+      "only_in_timeline": []
+    },
+    {
+      "issue": "sympy/sympy#29175",
+      "search_state": "closed",
+      "timeline_state": "open",
+      "issue_endpoint_state": "closed",
+      "events_endpoint_state": "open",
+      "snapshot_closed_at": "2026-02-16T05:38:12Z",
+      "search_updated_at": "2026-02-16T05:38:12Z",
+      "issue_endpoint_updated_at": "2026-02-16T05:38:12Z",
+      "only_in_issue_events": [],
+      "only_in_timeline": []
+    },
+    {
+      "issue": "sympy/sympy#29341",
+      "search_state": "closed",
+      "timeline_state": "open",
+      "issue_endpoint_state": "closed",
+      "events_endpoint_state": "open",
+      "snapshot_closed_at": "2026-03-06T21:17:29Z",
+      "search_updated_at": "2026-03-06T21:17:29Z",
+      "issue_endpoint_updated_at": "2026-03-06T21:17:29Z",
+      "only_in_issue_events": [],
+      "only_in_timeline": []
+    },
+    {
+      "issue": "sympy/sympy#29460",
+      "search_state": "closed",
+      "timeline_state": "open",
+      "issue_endpoint_state": "closed",
+      "events_endpoint_state": "open",
+      "snapshot_closed_at": "2026-03-22T09:46:36Z",
+      "search_updated_at": "2026-03-22T09:46:36Z",
+      "issue_endpoint_updated_at": "2026-03-22T09:46:36Z",
+      "only_in_issue_events": [],
+      "only_in_timeline": []
+    },
+    {
+      "issue": "sympy/sympy#29695",
+      "search_state": "closed",
+      "timeline_state": "open",
+      "issue_endpoint_state": "closed",
+      "events_endpoint_state": "open",
+      "snapshot_closed_at": "2026-04-16T18:04:03Z",
+      "search_updated_at": "2026-04-16T18:04:03Z",
+      "issue_endpoint_updated_at": "2026-04-16T18:04:03Z",
+      "only_in_issue_events": [],
+      "only_in_timeline": []
+    },
+    {
+      "issue": "sympy/sympy#29740",
+      "search_state": "closed",
+      "timeline_state": "open",
+      "issue_endpoint_state": "closed",
+      "events_endpoint_state": "open",
+      "snapshot_closed_at": "2026-05-05T22:01:34Z",
+      "search_updated_at": "2026-05-05T22:01:34Z",
+      "issue_endpoint_updated_at": "2026-05-05T22:01:34Z",
+      "only_in_issue_events": [],
+      "only_in_timeline": []
+    }
+  ]
+}

@@ -20,6 +20,10 @@ This index covers the 15 evidence bundles available from WR-004 through the 047�
 | COG-ATTN-047–050 · [cog-047-050](cog-047-050/README.md) | Public dialogue, recovered modules, causal scaling and continual execution | [cog-047-050-evidence.tar.gz](https://github.com/FPC-effortless/cdl-attention-experiment/tree/ba8777f522db0efa17f855c744993135abe1da2d/archives/cog-047-050-evidence) |
 | Delta and authority · [delta-authority-048](delta-authority-048/README.md) | MultiWOZ deltas, retrained 048 bridge and Ed25519 attestations | [delta-authority-048-evidence.tar.gz](https://github.com/FPC-effortless/cdl-attention-experiment/tree/ba8777f522db0efa17f855c744993135abe1da2d/archives/delta-authority-048-evidence) |
 
+## Authentic issue-history diagnostic
+
+The [real GitHub issue-history report](issue-history-study/README.md) covers 2,340 public issues from five repositories. Exact replay agreed on every recorded prefix checkpoint. The learned admission policy fell short of the frozen precision and coverage gate, and the input-matched flat reference ranked better in the held-out repository. The handoff includes frozen recipes, per-comment predictions, source digests, and the replay audit.
+
 ## Download and verify
 
 For a complete original archive, use the bundled [downloader](https://github.com/FPC-effortless/cdl-attention-experiment/tree/ba8777f522db0efa17f855c744993135abe1da2d/download_evidence.py). Small archives have a single file and larger ones are in ordered parts. The downloader verifies each part and the reconstructed original.

@@ -1,0 +1,5127 @@
+{
+  "seed": 49109,
+  "arm": "control",
+  "heads": {
+    "train_prevalence": {
+      "threshold": null,
+      "corroboration": 0.0,
+      "cohorts": {
+        "validation": {
+          "rows": 2568,
+          "positives": 54,
+          "ap": 0.02102803738317757,
+          "auc": 0.5,
+          "brier": 0.02061274282992606,
+          "tp": 0,
+          "fp": 0,
+          "fn": 54,
+          "admitted": 0,
+          "precision": null,
+          "positive_recall": 0.0,
+          "comment_coverage": 0.0,
+          "admitted_issues": 0,
+          "issues_with_false_admissions": 0,
+          "issue_success_lower_95": 0.0,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 2452,
+              "positives": 52,
+              "ap": 0.021207177814029365,
+              "auc": 0.5,
+              "brier": 0.02078620698910997,
+              "tp": 0,
+              "fp": 0,
+              "fn": 52,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 116,
+              "positives": 2,
+              "ap": 0.017241379310344827,
+              "auc": 0.5,
+              "brier": 0.016946069396141954,
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 2446,
+              "positives": 54,
+              "ap": 0.022076860179885527,
+              "auc": 0.5,
+              "brier": 0.021628332463705508,
+              "tp": 0,
+              "fp": 0,
+              "fn": 54,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 122,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.0002510031231675453,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 54,
+              "admitted": 2568
+            },
+            {
+              "threshold": 0.01,
+              "tp": 54,
+              "admitted": 2568
+            },
+            {
+              "threshold": 0.025,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.05,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.075,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.1,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.15,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.2,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.25,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.3,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.35,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.4,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.45,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.5,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.55,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.6,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.65,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.7,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.75,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.8,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.85,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.9,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.95,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.975,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.99,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.995,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.999,
+              "tp": 0,
+              "admitted": 0
+            }
+          ]
+        },
+        "test": {
+          "rows": 2964,
+          "positives": 56,
+          "ap": 0.018893387314439947,
+          "auc": 0.5,
+          "brier": 0.018545731616629386,
+          "tp": 0,
+          "fp": 0,
+          "fn": 56,
+          "admitted": 0,
+          "precision": null,
+          "positive_recall": 0.0,
+          "comment_coverage": 0.0,
+          "admitted_issues": 0,
+          "issues_with_false_admissions": 0,
+          "issue_success_lower_95": 0.0,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 2804,
+              "positives": 56,
+              "ap": 0.019971469329529243,
+              "auc": 0.5,
+              "brier": 0.019589653356627205,
+              "tp": 0,
+              "fp": 0,
+              "fn": 56,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 160,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.0002510031231675453,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 2925,
+              "positives": 54,
+              "ap": 0.018461538461538463,
+              "auc": 0.5,
+              "brier": 0.01812756639392168,
+              "tp": 0,
+              "fp": 0,
+              "fn": 54,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 39,
+              "positives": 2,
+              "ap": 0.05128205128205128,
+              "auc": 0.5,
+              "brier": 0.04990812331970682,
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 56,
+              "admitted": 2964
+            },
+            {
+              "threshold": 0.01,
+              "tp": 56,
+              "admitted": 2964
+            },
+            {
+              "threshold": 0.025,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.05,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.075,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.1,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.15,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.2,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.25,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.3,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.35,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.4,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.45,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.5,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.55,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.6,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.65,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.7,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.75,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.8,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.85,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.9,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.95,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.975,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.99,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.995,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.999,
+              "tp": 0,
+              "admitted": 0
+            }
+          ]
+        },
+        "external": {
+          "rows": 533,
+          "positives": 11,
+          "ap": 0.020637898686679174,
+          "auc": 0.5,
+          "brier": 0.02023496612909189,
+          "tp": 0,
+          "fp": 0,
+          "fn": 11,
+          "admitted": 0,
+          "precision": null,
+          "positive_recall": 0.0,
+          "comment_coverage": 0.0,
+          "admitted_issues": 0,
+          "issues_with_false_admissions": 0,
+          "issue_success_lower_95": 0.0,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 510,
+              "positives": 11,
+              "ap": 0.021568627450980392,
+              "auc": 0.5,
+              "brier": 0.021136203676417886,
+              "tp": 0,
+              "fp": 0,
+              "fn": 11,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 23,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.0002510031231675453,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 532,
+              "positives": 11,
+              "ap": 0.020676691729323307,
+              "auc": 0.5,
+              "brier": 0.020272529969328587,
+              "tp": 0,
+              "fp": 0,
+              "fn": 11,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 1,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.00025100312316754536,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 11,
+              "admitted": 533
+            },
+            {
+              "threshold": 0.01,
+              "tp": 11,
+              "admitted": 533
+            },
+            {
+              "threshold": 0.025,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.05,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.075,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.1,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.15,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.2,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.25,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.3,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.35,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.4,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.45,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.5,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.55,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.6,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.65,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.7,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.75,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.8,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.85,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.9,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.95,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.975,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.99,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.995,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.999,
+              "tp": 0,
+              "admitted": 0
+            }
+          ]
+        }
+      }
+    },
+    "explicit_rule": {
+      "threshold": null,
+      "corroboration": 0.0,
+      "cohorts": {
+        "validation": {
+          "rows": 2568,
+          "positives": 54,
+          "ap": 0.05650744202146071,
+          "auc": 0.5362414920887474,
+          "brier": 0.02102803738317757,
+          "tp": 0,
+          "fp": 0,
+          "fn": 54,
+          "admitted": 0,
+          "precision": null,
+          "positive_recall": 0.0,
+          "comment_coverage": 0.0,
+          "admitted_issues": 0,
+          "issues_with_false_admissions": 0,
+          "issue_success_lower_95": 0.0,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 2452,
+              "positives": 52,
+              "ap": 0.058037394905257875,
+              "auc": 0.5376282051282051,
+              "brier": 0.021207177814029365,
+              "tp": 0,
+              "fp": 0,
+              "fn": 52,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 116,
+              "positives": 2,
+              "ap": 0.017241379310344827,
+              "auc": 0.5,
+              "brier": 0.017241379310344827,
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 2446,
+              "positives": 54,
+              "ap": 0.057478574240634746,
+              "auc": 0.5362009166356991,
+              "brier": 0.022076860179885527,
+              "tp": 0,
+              "fp": 0,
+              "fn": 54,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 122,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 54,
+              "admitted": 2568
+            },
+            {
+              "threshold": 0.01,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.025,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.05,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.075,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.1,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.15,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.2,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.25,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.3,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.35,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.4,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.45,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.5,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.55,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.6,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.65,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.7,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.75,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.8,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.85,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.9,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.95,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.975,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.99,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.995,
+              "tp": 4,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.999,
+              "tp": 4,
+              "admitted": 8
+            }
+          ]
+        },
+        "test": {
+          "rows": 2964,
+          "positives": 56,
+          "ap": 0.08383940620782726,
+          "auc": 0.5614683631361761,
+          "brier": 0.018556005398110663,
+          "tp": 0,
+          "fp": 0,
+          "fn": 56,
+          "admitted": 0,
+          "precision": null,
+          "positive_recall": 0.0,
+          "comment_coverage": 0.0,
+          "admitted_issues": 0,
+          "issues_with_false_admissions": 0,
+          "issue_success_lower_95": 0.0,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 2804,
+              "positives": 56,
+              "ap": 0.0847827279710304,
+              "auc": 0.5614082969432315,
+              "brier": 0.019614835948644792,
+              "tp": 0,
+              "fp": 0,
+              "fn": 56,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 160,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 2925,
+              "positives": 54,
+              "ap": 0.08586894586894586,
+              "auc": 0.5637698827353999,
+              "brier": 0.01811965811965812,
+              "tp": 0,
+              "fp": 0,
+              "fn": 54,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 39,
+              "positives": 2,
+              "ap": 0.05128205128205128,
+              "auc": 0.5,
+              "brier": 0.05128205128205128,
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 56,
+              "admitted": 2964
+            },
+            {
+              "threshold": 0.01,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.025,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.05,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.075,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.1,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.15,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.2,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.25,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.3,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.35,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.4,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.45,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.5,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.55,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.6,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.65,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.7,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.75,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.8,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.85,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.9,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.95,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.975,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.99,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.995,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.999,
+              "tp": 7,
+              "admitted": 13
+            }
+          ]
+        },
+        "external": {
+          "rows": 533,
+          "positives": 11,
+          "ap": 0.020637898686679174,
+          "auc": 0.4990421455938697,
+          "brier": 0.0225140712945591,
+          "tp": 0,
+          "fp": 0,
+          "fn": 11,
+          "admitted": 0,
+          "precision": null,
+          "positive_recall": 0.0,
+          "comment_coverage": 0.0,
+          "admitted_issues": 0,
+          "issues_with_false_admissions": 0,
+          "issue_success_lower_95": 0.0,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 510,
+              "positives": 11,
+              "ap": 0.021568627450980392,
+              "auc": 0.49899799599198397,
+              "brier": 0.023529411764705882,
+              "tp": 0,
+              "fp": 0,
+              "fn": 11,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 23,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 532,
+              "positives": 11,
+              "ap": 0.020676691729323307,
+              "auc": 0.4990403071017274,
+              "brier": 0.022556390977443608,
+              "tp": 0,
+              "fp": 0,
+              "fn": 11,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 1,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 11,
+              "admitted": 533
+            },
+            {
+              "threshold": 0.01,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.025,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.05,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.075,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.1,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.15,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.2,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.25,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.3,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.35,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.4,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.45,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.5,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.55,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.6,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.65,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.7,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.75,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.8,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.85,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.9,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.95,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.975,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.99,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.995,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.999,
+              "tp": 0,
+              "admitted": 1
+            }
+          ]
+        }
+      }
+    },
+    "zero_shot_nli": {
+      "threshold": null,
+      "corroboration": 0.0,
+      "cohorts": {
+        "validation": {
+          "rows": 2568,
+          "positives": 54,
+          "ap": 0.1945766822989411,
+          "auc": 0.7764518695306285,
+          "brier": 0.021111713722348213,
+          "tp": 0,
+          "fp": 0,
+          "fn": 54,
+          "admitted": 0,
+          "precision": null,
+          "positive_recall": 0.0,
+          "comment_coverage": 0.0,
+          "admitted_issues": 0,
+          "issues_with_false_admissions": 0,
+          "issue_success_lower_95": 0.0,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 2452,
+              "positives": 52,
+              "ap": 0.1759957317398664,
+              "auc": 0.7776041666666667,
+              "brier": 0.02110634744167328,
+              "tp": 0,
+              "fp": 0,
+              "fn": 52,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 116,
+              "positives": 2,
+              "ap": 0.5166666666666667,
+              "auc": 0.7456140350877193,
+              "brier": 0.021225199103355408,
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 2446,
+              "positives": 54,
+              "ap": 0.1976622433050428,
+              "auc": 0.7867738139477269,
+              "brier": 0.02216298133134842,
+              "tp": 0,
+              "fp": 0,
+              "fn": 54,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 122,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 3.467894930508919e-05,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 54,
+              "admitted": 2568
+            },
+            {
+              "threshold": 0.01,
+              "tp": 26,
+              "admitted": 305
+            },
+            {
+              "threshold": 0.025,
+              "tp": 22,
+              "admitted": 189
+            },
+            {
+              "threshold": 0.05,
+              "tp": 21,
+              "admitted": 137
+            },
+            {
+              "threshold": 0.075,
+              "tp": 18,
+              "admitted": 107
+            },
+            {
+              "threshold": 0.1,
+              "tp": 17,
+              "admitted": 88
+            },
+            {
+              "threshold": 0.15,
+              "tp": 16,
+              "admitted": 72
+            },
+            {
+              "threshold": 0.2,
+              "tp": 16,
+              "admitted": 64
+            },
+            {
+              "threshold": 0.25,
+              "tp": 14,
+              "admitted": 56
+            },
+            {
+              "threshold": 0.3,
+              "tp": 12,
+              "admitted": 43
+            },
+            {
+              "threshold": 0.35,
+              "tp": 12,
+              "admitted": 39
+            },
+            {
+              "threshold": 0.4,
+              "tp": 12,
+              "admitted": 35
+            },
+            {
+              "threshold": 0.45,
+              "tp": 12,
+              "admitted": 32
+            },
+            {
+              "threshold": 0.5,
+              "tp": 11,
+              "admitted": 30
+            },
+            {
+              "threshold": 0.55,
+              "tp": 10,
+              "admitted": 26
+            },
+            {
+              "threshold": 0.6,
+              "tp": 10,
+              "admitted": 23
+            },
+            {
+              "threshold": 0.65,
+              "tp": 10,
+              "admitted": 21
+            },
+            {
+              "threshold": 0.7,
+              "tp": 10,
+              "admitted": 21
+            },
+            {
+              "threshold": 0.75,
+              "tp": 9,
+              "admitted": 17
+            },
+            {
+              "threshold": 0.8,
+              "tp": 8,
+              "admitted": 15
+            },
+            {
+              "threshold": 0.85,
+              "tp": 7,
+              "admitted": 12
+            },
+            {
+              "threshold": 0.9,
+              "tp": 5,
+              "admitted": 9
+            },
+            {
+              "threshold": 0.95,
+              "tp": 1,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.975,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.99,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.995,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.999,
+              "tp": 0,
+              "admitted": 0
+            }
+          ]
+        },
+        "test": {
+          "rows": 2964,
+          "positives": 56,
+          "ap": 0.2609857207823508,
+          "auc": 0.7989352033798389,
+          "brier": 0.01765090599656105,
+          "tp": 0,
+          "fp": 0,
+          "fn": 56,
+          "admitted": 0,
+          "precision": null,
+          "positive_recall": 0.0,
+          "comment_coverage": 0.0,
+          "admitted_issues": 0,
+          "issues_with_false_admissions": 0,
+          "issue_success_lower_95": 0.0,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 2804,
+              "positives": 56,
+              "ap": 0.2656573387271411,
+              "auc": 0.8018364004990642,
+              "brier": 0.018559876829385757,
+              "tp": 0,
+              "fp": 0,
+              "fn": 56,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 160,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.0017212361562997103,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 2925,
+              "positives": 54,
+              "ap": 0.264686943726759,
+              "auc": 0.7956448262961673,
+              "brier": 0.01723364368081093,
+              "tp": 0,
+              "fp": 0,
+              "fn": 54,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 39,
+              "positives": 2,
+              "ap": 1.0,
+              "auc": 1.0,
+              "brier": 0.04894581437110901,
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 56,
+              "admitted": 2964
+            },
+            {
+              "threshold": 0.01,
+              "tp": 32,
+              "admitted": 352
+            },
+            {
+              "threshold": 0.025,
+              "tp": 28,
+              "admitted": 193
+            },
+            {
+              "threshold": 0.05,
+              "tp": 23,
+              "admitted": 122
+            },
+            {
+              "threshold": 0.075,
+              "tp": 21,
+              "admitted": 100
+            },
+            {
+              "threshold": 0.1,
+              "tp": 21,
+              "admitted": 83
+            },
+            {
+              "threshold": 0.15,
+              "tp": 17,
+              "admitted": 67
+            },
+            {
+              "threshold": 0.2,
+              "tp": 17,
+              "admitted": 52
+            },
+            {
+              "threshold": 0.25,
+              "tp": 16,
+              "admitted": 43
+            },
+            {
+              "threshold": 0.3,
+              "tp": 15,
+              "admitted": 39
+            },
+            {
+              "threshold": 0.35,
+              "tp": 14,
+              "admitted": 33
+            },
+            {
+              "threshold": 0.4,
+              "tp": 13,
+              "admitted": 31
+            },
+            {
+              "threshold": 0.45,
+              "tp": 12,
+              "admitted": 30
+            },
+            {
+              "threshold": 0.5,
+              "tp": 11,
+              "admitted": 29
+            },
+            {
+              "threshold": 0.55,
+              "tp": 11,
+              "admitted": 27
+            },
+            {
+              "threshold": 0.6,
+              "tp": 10,
+              "admitted": 23
+            },
+            {
+              "threshold": 0.65,
+              "tp": 10,
+              "admitted": 23
+            },
+            {
+              "threshold": 0.7,
+              "tp": 9,
+              "admitted": 20
+            },
+            {
+              "threshold": 0.75,
+              "tp": 8,
+              "admitted": 17
+            },
+            {
+              "threshold": 0.8,
+              "tp": 7,
+              "admitted": 13
+            },
+            {
+              "threshold": 0.85,
+              "tp": 7,
+              "admitted": 11
+            },
+            {
+              "threshold": 0.9,
+              "tp": 5,
+              "admitted": 7
+            },
+            {
+              "threshold": 0.95,
+              "tp": 5,
+              "admitted": 5
+            },
+            {
+              "threshold": 0.975,
+              "tp": 3,
+              "admitted": 3
+            },
+            {
+              "threshold": 0.99,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.995,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.999,
+              "tp": 0,
+              "admitted": 0
+            }
+          ]
+        },
+        "external": {
+          "rows": 533,
+          "positives": 11,
+          "ap": 0.04241452298577053,
+          "auc": 0.6478578892371996,
+          "brier": 0.023904450237751007,
+          "tp": 0,
+          "fp": 0,
+          "fn": 11,
+          "admitted": 0,
+          "precision": null,
+          "positive_recall": 0.0,
+          "comment_coverage": 0.0,
+          "admitted_issues": 0,
+          "issues_with_false_admissions": 0,
+          "issue_success_lower_95": 0.0,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 510,
+              "positives": 11,
+              "ap": 0.04408771102229913,
+              "auc": 0.6523957004918928,
+              "brier": 0.02498176135122776,
+              "tp": 0,
+              "fp": 0,
+              "fn": 11,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 23,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 1.6250944099738263e-05,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 532,
+              "positives": 11,
+              "ap": 0.04248363600939331,
+              "auc": 0.6482289303786424,
+              "brier": 0.02394936792552471,
+              "tp": 0,
+              "fp": 0,
+              "fn": 11,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 1,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 7.337617716984823e-06,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 11,
+              "admitted": 533
+            },
+            {
+              "threshold": 0.01,
+              "tp": 2,
+              "admitted": 53
+            },
+            {
+              "threshold": 0.025,
+              "tp": 1,
+              "admitted": 29
+            },
+            {
+              "threshold": 0.05,
+              "tp": 1,
+              "admitted": 17
+            },
+            {
+              "threshold": 0.075,
+              "tp": 1,
+              "admitted": 14
+            },
+            {
+              "threshold": 0.1,
+              "tp": 1,
+              "admitted": 10
+            },
+            {
+              "threshold": 0.15,
+              "tp": 1,
+              "admitted": 10
+            },
+            {
+              "threshold": 0.2,
+              "tp": 0,
+              "admitted": 7
+            },
+            {
+              "threshold": 0.25,
+              "tp": 0,
+              "admitted": 5
+            },
+            {
+              "threshold": 0.3,
+              "tp": 0,
+              "admitted": 4
+            },
+            {
+              "threshold": 0.35,
+              "tp": 0,
+              "admitted": 3
+            },
+            {
+              "threshold": 0.4,
+              "tp": 0,
+              "admitted": 3
+            },
+            {
+              "threshold": 0.45,
+              "tp": 0,
+              "admitted": 3
+            },
+            {
+              "threshold": 0.5,
+              "tp": 0,
+              "admitted": 3
+            },
+            {
+              "threshold": 0.55,
+              "tp": 0,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.6,
+              "tp": 0,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.65,
+              "tp": 0,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.7,
+              "tp": 0,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.75,
+              "tp": 0,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.8,
+              "tp": 0,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.85,
+              "tp": 0,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.9,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.95,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.975,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.99,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.995,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.999,
+              "tp": 0,
+              "admitted": 0
+            }
+          ]
+        }
+      }
+    },
+    "history_only": {
+      "threshold": null,
+      "corroboration": 0.0,
+      "cohorts": {
+        "validation": {
+          "rows": 2568,
+          "positives": 54,
+          "ap": 0.04157244316723924,
+          "auc": 0.59971934942102,
+          "brier": 0.020562879449667053,
+          "tp": 0,
+          "fp": 0,
+          "fn": 54,
+          "admitted": 0,
+          "precision": null,
+          "positive_recall": 0.0,
+          "comment_coverage": 0.0,
+          "admitted_issues": 0,
+          "issues_with_false_admissions": 0,
+          "issue_success_lower_95": 0.0,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 2452,
+              "positives": 52,
+              "ap": 0.04458884793796712,
+              "auc": 0.5914623397435896,
+              "brier": 0.020736229328811622,
+              "tp": 0,
+              "fp": 0,
+              "fn": 52,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 116,
+              "positives": 2,
+              "ap": 0.09166666666666667,
+              "auc": 0.8640350877192983,
+              "brier": 0.01689862165947322,
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 2446,
+              "positives": 54,
+              "ap": 0.04376271599747885,
+              "auc": 0.6060479375696768,
+              "brier": 0.021566102831486692,
+              "tp": 0,
+              "fp": 0,
+              "fn": 54,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 122,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.00044907295843067853,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 54,
+              "admitted": 2568
+            },
+            {
+              "threshold": 0.01,
+              "tp": 50,
+              "admitted": 1944
+            },
+            {
+              "threshold": 0.025,
+              "tp": 15,
+              "admitted": 466
+            },
+            {
+              "threshold": 0.05,
+              "tp": 0,
+              "admitted": 11
+            },
+            {
+              "threshold": 0.075,
+              "tp": 0,
+              "admitted": 7
+            },
+            {
+              "threshold": 0.1,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.15,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.2,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.25,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.3,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.35,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.4,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.45,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.5,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.55,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.6,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.65,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.7,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.75,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.8,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.85,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.9,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.95,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.975,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.99,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.995,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.999,
+              "tp": 0,
+              "admitted": 0
+            }
+          ]
+        },
+        "test": {
+          "rows": 2964,
+          "positives": 56,
+          "ap": 0.024029965439313718,
+          "auc": 0.5240531047357044,
+          "brier": 0.018586449566457084,
+          "tp": 0,
+          "fp": 0,
+          "fn": 56,
+          "admitted": 0,
+          "precision": null,
+          "positive_recall": 0.0,
+          "comment_coverage": 0.0,
+          "admitted_issues": 0,
+          "issues_with_false_admissions": 0,
+          "issue_success_lower_95": 0.0,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 2804,
+              "positives": 56,
+              "ap": 0.024405258539807025,
+              "auc": 0.5043863069245165,
+              "brier": 0.01964030404228158,
+              "tp": 0,
+              "fp": 0,
+              "fn": 56,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 160,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.00011764987763282771,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 2925,
+              "positives": 54,
+              "ap": 0.024299977746385624,
+              "auc": 0.5343989060464156,
+              "brier": 0.018158757038846098,
+              "tp": 0,
+              "fp": 0,
+              "fn": 54,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 39,
+              "positives": 2,
+              "ap": 0.046296296296296294,
+              "auc": 0.18918918918918914,
+              "brier": 0.05066338913728102,
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 56,
+              "admitted": 2964
+            },
+            {
+              "threshold": 0.01,
+              "tp": 40,
+              "admitted": 2148
+            },
+            {
+              "threshold": 0.025,
+              "tp": 9,
+              "admitted": 511
+            },
+            {
+              "threshold": 0.05,
+              "tp": 1,
+              "admitted": 11
+            },
+            {
+              "threshold": 0.075,
+              "tp": 1,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.1,
+              "tp": 1,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.15,
+              "tp": 1,
+              "admitted": 5
+            },
+            {
+              "threshold": 0.2,
+              "tp": 0,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.25,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.3,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.35,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.4,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.45,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.5,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.55,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.6,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.65,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.7,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.75,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.8,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.85,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.9,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.95,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.975,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.99,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.995,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.999,
+              "tp": 0,
+              "admitted": 0
+            }
+          ]
+        },
+        "external": {
+          "rows": 533,
+          "positives": 11,
+          "ap": 0.022015638051798,
+          "auc": 0.5233368164402648,
+          "brier": 0.020319179419995004,
+          "tp": 0,
+          "fp": 0,
+          "fn": 11,
+          "admitted": 0,
+          "precision": null,
+          "positive_recall": 0.0,
+          "comment_coverage": 0.0,
+          "admitted_issues": 0,
+          "issues_with_false_admissions": 0,
+          "issue_success_lower_95": 0.0,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 510,
+              "positives": 11,
+              "ap": 0.022783762281801876,
+              "auc": 0.5175806157770086,
+              "brier": 0.02120968795997571,
+              "tp": 0,
+              "fp": 0,
+              "fn": 11,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 23,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.0005731204899880313,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 532,
+              "positives": 11,
+              "ap": 0.022112383114785052,
+              "auc": 0.5243413016925493,
+              "brier": 0.02035563417139833,
+              "tp": 0,
+              "fp": 0,
+              "fn": 11,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 1,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.0009252516734253666,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 11,
+              "admitted": 533
+            },
+            {
+              "threshold": 0.01,
+              "tp": 11,
+              "admitted": 438
+            },
+            {
+              "threshold": 0.025,
+              "tp": 1,
+              "admitted": 128
+            },
+            {
+              "threshold": 0.05,
+              "tp": 0,
+              "admitted": 3
+            },
+            {
+              "threshold": 0.075,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.1,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.15,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.2,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.25,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.3,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.35,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.4,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.45,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.5,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.55,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.6,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.65,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.7,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.75,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.8,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.85,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.9,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.95,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.975,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.99,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.995,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.999,
+              "tp": 0,
+              "admitted": 0
+            }
+          ]
+        }
+      }
+    },
+    "lexical": {
+      "threshold": null,
+      "corroboration": 0.0,
+      "cohorts": {
+        "validation": {
+          "rows": 2568,
+          "positives": 54,
+          "ap": 0.19066611967535368,
+          "auc": 0.8005686673148884,
+          "brier": 0.019475614788750956,
+          "tp": 0,
+          "fp": 0,
+          "fn": 54,
+          "admitted": 0,
+          "precision": null,
+          "positive_recall": 0.0,
+          "comment_coverage": 0.0,
+          "admitted_issues": 0,
+          "issues_with_false_admissions": 0,
+          "issue_success_lower_95": 0.0,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 2452,
+              "positives": 52,
+              "ap": 0.21604533024130548,
+              "auc": 0.8074919871794871,
+              "brier": 0.019363253946722093,
+              "tp": 0,
+              "fp": 0,
+              "fn": 52,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 116,
+              "positives": 2,
+              "ap": 0.025932953826691967,
+              "auc": 0.5175438596491229,
+              "brier": 0.02185069051853352,
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 2446,
+              "positives": 54,
+              "ap": 0.192178635169645,
+              "auc": 0.7923169825343738,
+              "brier": 0.02044437093934925,
+              "tp": 0,
+              "fp": 0,
+              "fn": 54,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 122,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 5.284803167365504e-05,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 54,
+              "admitted": 2568
+            },
+            {
+              "threshold": 0.01,
+              "tp": 19,
+              "admitted": 108
+            },
+            {
+              "threshold": 0.025,
+              "tp": 13,
+              "admitted": 54
+            },
+            {
+              "threshold": 0.05,
+              "tp": 11,
+              "admitted": 33
+            },
+            {
+              "threshold": 0.075,
+              "tp": 9,
+              "admitted": 25
+            },
+            {
+              "threshold": 0.1,
+              "tp": 8,
+              "admitted": 22
+            },
+            {
+              "threshold": 0.15,
+              "tp": 7,
+              "admitted": 15
+            },
+            {
+              "threshold": 0.2,
+              "tp": 6,
+              "admitted": 10
+            },
+            {
+              "threshold": 0.25,
+              "tp": 6,
+              "admitted": 10
+            },
+            {
+              "threshold": 0.3,
+              "tp": 4,
+              "admitted": 7
+            },
+            {
+              "threshold": 0.35,
+              "tp": 4,
+              "admitted": 7
+            },
+            {
+              "threshold": 0.4,
+              "tp": 4,
+              "admitted": 7
+            },
+            {
+              "threshold": 0.45,
+              "tp": 3,
+              "admitted": 6
+            },
+            {
+              "threshold": 0.5,
+              "tp": 3,
+              "admitted": 6
+            },
+            {
+              "threshold": 0.55,
+              "tp": 3,
+              "admitted": 6
+            },
+            {
+              "threshold": 0.6,
+              "tp": 3,
+              "admitted": 6
+            },
+            {
+              "threshold": 0.65,
+              "tp": 3,
+              "admitted": 6
+            },
+            {
+              "threshold": 0.7,
+              "tp": 3,
+              "admitted": 6
+            },
+            {
+              "threshold": 0.75,
+              "tp": 3,
+              "admitted": 4
+            },
+            {
+              "threshold": 0.8,
+              "tp": 1,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.85,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.9,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.95,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.975,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.99,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.995,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.999,
+              "tp": 0,
+              "admitted": 0
+            }
+          ]
+        },
+        "test": {
+          "rows": 2964,
+          "positives": 56,
+          "ap": 0.26394745623602484,
+          "auc": 0.8364855570839065,
+          "brier": 0.017235527937254455,
+          "tp": 0,
+          "fp": 0,
+          "fn": 56,
+          "admitted": 0,
+          "precision": null,
+          "positive_recall": 0.0,
+          "comment_coverage": 0.0,
+          "admitted_issues": 0,
+          "issues_with_false_admissions": 0,
+          "issue_success_lower_95": 0.0,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 2804,
+              "positives": 56,
+              "ap": 0.2835128516846391,
+              "auc": 0.8383304741110418,
+              "brier": 0.0181967774798888,
+              "tp": 0,
+              "fp": 0,
+              "fn": 56,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 160,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.00038962970258754045,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 2925,
+              "positives": 54,
+              "ap": 0.21822567120352662,
+              "auc": 0.8295212663028755,
+              "brier": 0.01740827033315925,
+              "tp": 0,
+              "fp": 0,
+              "fn": 54,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 39,
+              "positives": 2,
+              "ap": 1.0,
+              "auc": 1.0,
+              "brier": 0.004279848244394867,
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 56,
+              "admitted": 2964
+            },
+            {
+              "threshold": 0.01,
+              "tp": 31,
+              "admitted": 112
+            },
+            {
+              "threshold": 0.025,
+              "tp": 17,
+              "admitted": 47
+            },
+            {
+              "threshold": 0.05,
+              "tp": 12,
+              "admitted": 30
+            },
+            {
+              "threshold": 0.075,
+              "tp": 11,
+              "admitted": 25
+            },
+            {
+              "threshold": 0.1,
+              "tp": 10,
+              "admitted": 22
+            },
+            {
+              "threshold": 0.15,
+              "tp": 6,
+              "admitted": 17
+            },
+            {
+              "threshold": 0.2,
+              "tp": 5,
+              "admitted": 11
+            },
+            {
+              "threshold": 0.25,
+              "tp": 3,
+              "admitted": 6
+            },
+            {
+              "threshold": 0.3,
+              "tp": 2,
+              "admitted": 5
+            },
+            {
+              "threshold": 0.35,
+              "tp": 2,
+              "admitted": 4
+            },
+            {
+              "threshold": 0.4,
+              "tp": 2,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.45,
+              "tp": 2,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.5,
+              "tp": 2,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.55,
+              "tp": 2,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.6,
+              "tp": 2,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.65,
+              "tp": 2,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.7,
+              "tp": 2,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.75,
+              "tp": 2,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.8,
+              "tp": 2,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.85,
+              "tp": 2,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.9,
+              "tp": 1,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.95,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.975,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.99,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.995,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.999,
+              "tp": 0,
+              "admitted": 0
+            }
+          ]
+        },
+        "external": {
+          "rows": 533,
+          "positives": 11,
+          "ap": 0.15464262432040332,
+          "auc": 0.8251480320445839,
+          "brier": 0.02009825317127413,
+          "tp": 0,
+          "fp": 0,
+          "fn": 11,
+          "admitted": 0,
+          "precision": null,
+          "positive_recall": 0.0,
+          "comment_coverage": 0.0,
+          "admitted_issues": 0,
+          "issues_with_false_admissions": 0,
+          "issue_success_lower_95": 0.0,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 510,
+              "positives": 11,
+              "ap": 0.15823128833590064,
+              "auc": 0.8252869375113864,
+              "brier": 0.021003564660213928,
+              "tp": 0,
+              "fp": 0,
+              "fn": 11,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 23,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 2.3954938261255658e-05,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 532,
+              "positives": 11,
+              "ap": 0.15507608690149807,
+              "auc": 0.8260338509858663,
+              "brier": 0.020135923325745084,
+              "tp": 0,
+              "fp": 0,
+              "fn": 11,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 1,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 5.773099272859244e-05,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 11,
+              "admitted": 533
+            },
+            {
+              "threshold": 0.01,
+              "tp": 4,
+              "admitted": 21
+            },
+            {
+              "threshold": 0.025,
+              "tp": 1,
+              "admitted": 9
+            },
+            {
+              "threshold": 0.05,
+              "tp": 1,
+              "admitted": 7
+            },
+            {
+              "threshold": 0.075,
+              "tp": 1,
+              "admitted": 5
+            },
+            {
+              "threshold": 0.1,
+              "tp": 1,
+              "admitted": 5
+            },
+            {
+              "threshold": 0.15,
+              "tp": 1,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.2,
+              "tp": 1,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.25,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.3,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.35,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.4,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.45,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.5,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.55,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.6,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.65,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.7,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.75,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.8,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.85,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.9,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.95,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.975,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.99,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.995,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.999,
+              "tp": 0,
+              "admitted": 0
+            }
+          ]
+        }
+      }
+    },
+    "lexical_history": {
+      "threshold": 0.95,
+      "corroboration": 0.0,
+      "cohorts": {
+        "validation": {
+          "rows": 2568,
+          "positives": 54,
+          "ap": 0.20837278352542085,
+          "auc": 0.786212027461033,
+          "brier": 0.01933300622598185,
+          "tp": 1,
+          "fp": 0,
+          "fn": 53,
+          "admitted": 1,
+          "precision": 1.0,
+          "positive_recall": 0.018518518518518517,
+          "comment_coverage": 0.0003894080996884735,
+          "admitted_issues": 1,
+          "issues_with_false_admissions": 0,
+          "issue_success_lower_95": 0.05,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 2452,
+              "positives": 52,
+              "ap": 0.22218401410770072,
+              "auc": 0.8008814102564102,
+              "brier": 0.01928699776899409,
+              "tp": 1,
+              "fp": 0,
+              "fn": 51,
+              "admitted": 1,
+              "precision": 1.0,
+              "positive_recall": 0.019230769230769232,
+              "comment_coverage": 0.0004078303425774878,
+              "admitted_issues": 1,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.05,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 116,
+              "positives": 2,
+              "ap": 0.0521680216802168,
+              "auc": 0.7543859649122807,
+              "brier": 0.020305529816792095,
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 2446,
+              "positives": 54,
+              "ap": 0.21117369336555783,
+              "auc": 0.7794887278582932,
+              "brier": 0.020262574042327806,
+              "tp": 1,
+              "fp": 0,
+              "fn": 53,
+              "admitted": 1,
+              "precision": 1.0,
+              "positive_recall": 0.018518518518518517,
+              "comment_coverage": 0.0004088307440719542,
+              "admitted_issues": 1,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.05,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 122,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.0006959334490785832,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 54,
+              "admitted": 2568
+            },
+            {
+              "threshold": 0.01,
+              "tp": 24,
+              "admitted": 127
+            },
+            {
+              "threshold": 0.025,
+              "tp": 14,
+              "admitted": 54
+            },
+            {
+              "threshold": 0.05,
+              "tp": 9,
+              "admitted": 31
+            },
+            {
+              "threshold": 0.075,
+              "tp": 8,
+              "admitted": 24
+            },
+            {
+              "threshold": 0.1,
+              "tp": 8,
+              "admitted": 20
+            },
+            {
+              "threshold": 0.15,
+              "tp": 6,
+              "admitted": 16
+            },
+            {
+              "threshold": 0.2,
+              "tp": 6,
+              "admitted": 12
+            },
+            {
+              "threshold": 0.25,
+              "tp": 6,
+              "admitted": 11
+            },
+            {
+              "threshold": 0.3,
+              "tp": 6,
+              "admitted": 10
+            },
+            {
+              "threshold": 0.35,
+              "tp": 5,
+              "admitted": 9
+            },
+            {
+              "threshold": 0.4,
+              "tp": 5,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.45,
+              "tp": 4,
+              "admitted": 7
+            },
+            {
+              "threshold": 0.5,
+              "tp": 4,
+              "admitted": 7
+            },
+            {
+              "threshold": 0.55,
+              "tp": 4,
+              "admitted": 7
+            },
+            {
+              "threshold": 0.6,
+              "tp": 4,
+              "admitted": 6
+            },
+            {
+              "threshold": 0.65,
+              "tp": 4,
+              "admitted": 6
+            },
+            {
+              "threshold": 0.7,
+              "tp": 3,
+              "admitted": 5
+            },
+            {
+              "threshold": 0.75,
+              "tp": 3,
+              "admitted": 4
+            },
+            {
+              "threshold": 0.8,
+              "tp": 3,
+              "admitted": 4
+            },
+            {
+              "threshold": 0.85,
+              "tp": 1,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.9,
+              "tp": 1,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.95,
+              "tp": 1,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.975,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.99,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.995,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.999,
+              "tp": 0,
+              "admitted": 0
+            }
+          ]
+        },
+        "test": {
+          "rows": 2964,
+          "positives": 56,
+          "ap": 0.2321397753390303,
+          "auc": 0.8247875319316171,
+          "brier": 0.017599904062950755,
+          "tp": 0,
+          "fp": 0,
+          "fn": 56,
+          "admitted": 0,
+          "precision": null,
+          "positive_recall": 0.0,
+          "comment_coverage": 0.0,
+          "admitted_issues": 0,
+          "issues_with_false_admissions": 0,
+          "issue_success_lower_95": 0.0,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 2804,
+              "positives": 56,
+              "ap": 0.23820547733583888,
+              "auc": 0.8171917238511124,
+              "brier": 0.018583893259428507,
+              "tp": 0,
+              "fp": 0,
+              "fn": 56,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 160,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.00035549339467805165,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 2925,
+              "positives": 54,
+              "ap": 0.19116630216991592,
+              "auc": 0.8173045912509515,
+              "brier": 0.017706599954524695,
+              "tp": 0,
+              "fp": 0,
+              "fn": 54,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 39,
+              "positives": 2,
+              "ap": 1.0,
+              "auc": 1.0,
+              "brier": 0.009597712194905088,
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 56,
+              "admitted": 2964
+            },
+            {
+              "threshold": 0.01,
+              "tp": 24,
+              "admitted": 127
+            },
+            {
+              "threshold": 0.025,
+              "tp": 20,
+              "admitted": 51
+            },
+            {
+              "threshold": 0.05,
+              "tp": 16,
+              "admitted": 34
+            },
+            {
+              "threshold": 0.075,
+              "tp": 11,
+              "admitted": 25
+            },
+            {
+              "threshold": 0.1,
+              "tp": 8,
+              "admitted": 21
+            },
+            {
+              "threshold": 0.15,
+              "tp": 4,
+              "admitted": 14
+            },
+            {
+              "threshold": 0.2,
+              "tp": 4,
+              "admitted": 11
+            },
+            {
+              "threshold": 0.25,
+              "tp": 4,
+              "admitted": 10
+            },
+            {
+              "threshold": 0.3,
+              "tp": 3,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.35,
+              "tp": 3,
+              "admitted": 7
+            },
+            {
+              "threshold": 0.4,
+              "tp": 3,
+              "admitted": 7
+            },
+            {
+              "threshold": 0.45,
+              "tp": 3,
+              "admitted": 7
+            },
+            {
+              "threshold": 0.5,
+              "tp": 2,
+              "admitted": 5
+            },
+            {
+              "threshold": 0.55,
+              "tp": 2,
+              "admitted": 4
+            },
+            {
+              "threshold": 0.6,
+              "tp": 2,
+              "admitted": 3
+            },
+            {
+              "threshold": 0.65,
+              "tp": 2,
+              "admitted": 3
+            },
+            {
+              "threshold": 0.7,
+              "tp": 1,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.75,
+              "tp": 1,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.8,
+              "tp": 1,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.85,
+              "tp": 1,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.9,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.95,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.975,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.99,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.995,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.999,
+              "tp": 0,
+              "admitted": 0
+            }
+          ]
+        },
+        "external": {
+          "rows": 533,
+          "positives": 11,
+          "ap": 0.148617416310544,
+          "auc": 0.8056426332288402,
+          "brier": 0.01966043671828514,
+          "tp": 0,
+          "fp": 0,
+          "fn": 11,
+          "admitted": 0,
+          "precision": null,
+          "positive_recall": 0.0,
+          "comment_coverage": 0.0,
+          "admitted_issues": 0,
+          "issues_with_false_admissions": 0,
+          "issue_success_lower_95": 0.0,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 510,
+              "positives": 11,
+              "ap": 0.1492046110480139,
+              "auc": 0.7995991983967936,
+              "brier": 0.020546356587862122,
+              "tp": 0,
+              "fp": 0,
+              "fn": 11,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 23,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 1.6126566795504202e-05,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 532,
+              "positives": 11,
+              "ap": 0.14896295131389756,
+              "auc": 0.8064910137846799,
+              "brier": 0.019697036510015736,
+              "tp": 0,
+              "fp": 0,
+              "fn": 11,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 1,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.00018934751760897765,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 11,
+              "admitted": 533
+            },
+            {
+              "threshold": 0.01,
+              "tp": 4,
+              "admitted": 36
+            },
+            {
+              "threshold": 0.025,
+              "tp": 2,
+              "admitted": 10
+            },
+            {
+              "threshold": 0.05,
+              "tp": 1,
+              "admitted": 7
+            },
+            {
+              "threshold": 0.075,
+              "tp": 1,
+              "admitted": 6
+            },
+            {
+              "threshold": 0.1,
+              "tp": 1,
+              "admitted": 5
+            },
+            {
+              "threshold": 0.15,
+              "tp": 1,
+              "admitted": 5
+            },
+            {
+              "threshold": 0.2,
+              "tp": 1,
+              "admitted": 3
+            },
+            {
+              "threshold": 0.25,
+              "tp": 1,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.3,
+              "tp": 1,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.35,
+              "tp": 1,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.4,
+              "tp": 1,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.45,
+              "tp": 1,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.5,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.55,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.6,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.65,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.7,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.75,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.8,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.85,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.9,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.95,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.975,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.99,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.995,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.999,
+              "tp": 0,
+              "admitted": 0
+            }
+          ]
+        }
+      }
+    },
+    "flat_all_features": {
+      "threshold": 0.65,
+      "corroboration": 0.0,
+      "cohorts": {
+        "validation": {
+          "rows": 2568,
+          "positives": 54,
+          "ap": 0.36408120490997403,
+          "auc": 0.8285526974866672,
+          "brier": 0.01639094949482182,
+          "tp": 7,
+          "fp": 0,
+          "fn": 47,
+          "admitted": 7,
+          "precision": 1.0,
+          "positive_recall": 0.12962962962962962,
+          "comment_coverage": 0.0027258566978193145,
+          "admitted_issues": 7,
+          "issues_with_false_admissions": 0,
+          "issue_success_lower_95": 0.6518363448688391,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 2452,
+              "positives": 52,
+              "ap": 0.3754126058407923,
+              "auc": 0.8373157051282051,
+              "brier": 0.01638567459345916,
+              "tp": 7,
+              "fp": 0,
+              "fn": 45,
+              "admitted": 7,
+              "precision": 1.0,
+              "positive_recall": 0.1346153846153846,
+              "comment_coverage": 0.0028548123980424145,
+              "admitted_issues": 7,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.6518363448688391,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 116,
+              "positives": 2,
+              "ap": 0.2608695652173913,
+              "auc": 0.6008771929824561,
+              "brier": 0.016502449996039528,
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 2446,
+              "positives": 54,
+              "ap": 0.3671854367163036,
+              "auc": 0.8273875882571534,
+              "brier": 0.01715406199304507,
+              "tp": 7,
+              "fp": 0,
+              "fn": 47,
+              "admitted": 7,
+              "precision": 1.0,
+              "positive_recall": 0.12962962962962962,
+              "comment_coverage": 0.0028618152085036794,
+              "admitted_issues": 7,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.6518363448688391,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 122,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.0010911694074933627,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 54,
+              "admitted": 2568
+            },
+            {
+              "threshold": 0.01,
+              "tp": 39,
+              "admitted": 562
+            },
+            {
+              "threshold": 0.025,
+              "tp": 30,
+              "admitted": 230
+            },
+            {
+              "threshold": 0.05,
+              "tp": 29,
+              "admitted": 118
+            },
+            {
+              "threshold": 0.075,
+              "tp": 25,
+              "admitted": 85
+            },
+            {
+              "threshold": 0.1,
+              "tp": 23,
+              "admitted": 67
+            },
+            {
+              "threshold": 0.15,
+              "tp": 20,
+              "admitted": 46
+            },
+            {
+              "threshold": 0.2,
+              "tp": 15,
+              "admitted": 34
+            },
+            {
+              "threshold": 0.25,
+              "tp": 14,
+              "admitted": 29
+            },
+            {
+              "threshold": 0.3,
+              "tp": 13,
+              "admitted": 24
+            },
+            {
+              "threshold": 0.35,
+              "tp": 13,
+              "admitted": 20
+            },
+            {
+              "threshold": 0.4,
+              "tp": 12,
+              "admitted": 16
+            },
+            {
+              "threshold": 0.45,
+              "tp": 10,
+              "admitted": 14
+            },
+            {
+              "threshold": 0.5,
+              "tp": 9,
+              "admitted": 11
+            },
+            {
+              "threshold": 0.55,
+              "tp": 8,
+              "admitted": 10
+            },
+            {
+              "threshold": 0.6,
+              "tp": 7,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.65,
+              "tp": 7,
+              "admitted": 7
+            },
+            {
+              "threshold": 0.7,
+              "tp": 3,
+              "admitted": 3
+            },
+            {
+              "threshold": 0.75,
+              "tp": 3,
+              "admitted": 3
+            },
+            {
+              "threshold": 0.8,
+              "tp": 1,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.85,
+              "tp": 1,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.9,
+              "tp": 1,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.95,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.975,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.99,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.995,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.999,
+              "tp": 0,
+              "admitted": 0
+            }
+          ]
+        },
+        "test": {
+          "rows": 2964,
+          "positives": 56,
+          "ap": 0.34958464066412315,
+          "auc": 0.8813126350953037,
+          "brier": 0.014915855272535174,
+          "tp": 1,
+          "fp": 1,
+          "fn": 55,
+          "admitted": 2,
+          "precision": 0.5,
+          "positive_recall": 0.017857142857142856,
+          "comment_coverage": 0.0006747638326585695,
+          "admitted_issues": 2,
+          "issues_with_false_admissions": 1,
+          "issue_success_lower_95": 0.02532056551910361,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 2804,
+              "positives": 56,
+              "ap": 0.3537276329555559,
+              "auc": 0.8797177167810356,
+              "brier": 0.015734693586390805,
+              "tp": 1,
+              "fp": 1,
+              "fn": 55,
+              "admitted": 2,
+              "precision": 0.5,
+              "positive_recall": 0.017857142857142856,
+              "comment_coverage": 0.0007132667617689016,
+              "admitted_issues": 2,
+              "issues_with_false_admissions": 1,
+              "issue_success_lower_95": 0.02532056551910361,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 160,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.0005657138222152702,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 2925,
+              "positives": 54,
+              "ap": 0.3324961467228615,
+              "auc": 0.8771237276984404,
+              "brier": 0.014816253385901907,
+              "tp": 1,
+              "fp": 1,
+              "fn": 53,
+              "admitted": 2,
+              "precision": 0.5,
+              "positive_recall": 0.018518518518518517,
+              "comment_coverage": 0.0006837606837606838,
+              "admitted_issues": 2,
+              "issues_with_false_admissions": 1,
+              "issue_success_lower_95": 0.02532056551910361,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 39,
+              "positives": 2,
+              "ap": 0.8333333333333333,
+              "auc": 0.9864864864864865,
+              "brier": 0.022385996770030097,
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 56,
+              "admitted": 2964
+            },
+            {
+              "threshold": 0.01,
+              "tp": 45,
+              "admitted": 641
+            },
+            {
+              "threshold": 0.025,
+              "tp": 37,
+              "admitted": 250
+            },
+            {
+              "threshold": 0.05,
+              "tp": 34,
+              "admitted": 140
+            },
+            {
+              "threshold": 0.075,
+              "tp": 33,
+              "admitted": 104
+            },
+            {
+              "threshold": 0.1,
+              "tp": 26,
+              "admitted": 76
+            },
+            {
+              "threshold": 0.15,
+              "tp": 21,
+              "admitted": 55
+            },
+            {
+              "threshold": 0.2,
+              "tp": 19,
+              "admitted": 38
+            },
+            {
+              "threshold": 0.25,
+              "tp": 16,
+              "admitted": 29
+            },
+            {
+              "threshold": 0.3,
+              "tp": 14,
+              "admitted": 25
+            },
+            {
+              "threshold": 0.35,
+              "tp": 10,
+              "admitted": 19
+            },
+            {
+              "threshold": 0.4,
+              "tp": 10,
+              "admitted": 14
+            },
+            {
+              "threshold": 0.45,
+              "tp": 7,
+              "admitted": 11
+            },
+            {
+              "threshold": 0.5,
+              "tp": 7,
+              "admitted": 9
+            },
+            {
+              "threshold": 0.55,
+              "tp": 6,
+              "admitted": 7
+            },
+            {
+              "threshold": 0.6,
+              "tp": 3,
+              "admitted": 4
+            },
+            {
+              "threshold": 0.65,
+              "tp": 1,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.7,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.75,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.8,
+              "tp": 0,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.85,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.9,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.95,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.975,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.99,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.995,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.999,
+              "tp": 0,
+              "admitted": 0
+            }
+          ]
+        },
+        "external": {
+          "rows": 533,
+          "positives": 11,
+          "ap": 0.18918562824273502,
+          "auc": 0.7941483803552769,
+          "brier": 0.019583803367287753,
+          "tp": 0,
+          "fp": 0,
+          "fn": 11,
+          "admitted": 0,
+          "precision": null,
+          "positive_recall": 0.0,
+          "comment_coverage": 0.0,
+          "admitted_issues": 0,
+          "issues_with_false_admissions": 0,
+          "issue_success_lower_95": 0.0,
+          "passes": false,
+          "slices": {
+            "close": {
+              "rows": 510,
+              "positives": 11,
+              "ap": 0.1908524611484019,
+              "auc": 0.7941337219894334,
+              "brier": 0.020459658626119738,
+              "tp": 0,
+              "fp": 0,
+              "fn": 11,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "reopen": {
+              "rows": 23,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.00016266501927400127,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "unseen_text": {
+              "rows": 532,
+              "positives": 11,
+              "ap": 0.18948947571837324,
+              "auc": 0.7946257197696737,
+              "brier": 0.019618939088512085,
+              "tp": 0,
+              "fp": 0,
+              "fn": 11,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": 0.0,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            },
+            "seen_text": {
+              "rows": 1,
+              "positives": 0,
+              "ap": null,
+              "auc": null,
+              "brier": 0.0008915996759403675,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "admitted": 0,
+              "precision": null,
+              "positive_recall": null,
+              "comment_coverage": 0.0,
+              "admitted_issues": 0,
+              "issues_with_false_admissions": 0,
+              "issue_success_lower_95": 0.0,
+              "passes": false
+            }
+          },
+          "frontier_diagnostic": [
+            {
+              "threshold": 0.0,
+              "tp": 11,
+              "admitted": 533
+            },
+            {
+              "threshold": 0.01,
+              "tp": 7,
+              "admitted": 153
+            },
+            {
+              "threshold": 0.025,
+              "tp": 6,
+              "admitted": 53
+            },
+            {
+              "threshold": 0.05,
+              "tp": 2,
+              "admitted": 23
+            },
+            {
+              "threshold": 0.075,
+              "tp": 2,
+              "admitted": 18
+            },
+            {
+              "threshold": 0.1,
+              "tp": 2,
+              "admitted": 14
+            },
+            {
+              "threshold": 0.15,
+              "tp": 2,
+              "admitted": 14
+            },
+            {
+              "threshold": 0.2,
+              "tp": 2,
+              "admitted": 11
+            },
+            {
+              "threshold": 0.25,
+              "tp": 2,
+              "admitted": 8
+            },
+            {
+              "threshold": 0.3,
+              "tp": 1,
+              "admitted": 4
+            },
+            {
+              "threshold": 0.35,
+              "tp": 1,
+              "admitted": 4
+            },
+            {
+              "threshold": 0.4,
+              "tp": 1,
+              "admitted": 2
+            },
+            {
+              "threshold": 0.45,
+              "tp": 1,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.5,
+              "tp": 1,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.55,
+              "tp": 1,
+              "admitted": 1
+            },
+            {
+              "threshold": 0.6,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.65,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.7,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.75,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.8,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.85,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.9,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.95,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.975,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.99,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.995,
+              "tp": 0,
+              "admitted": 0
+            },
+            {
+              "threshold": 0.999,
+              "tp": 0,
+              "admitted": 0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "tied_only": {
+    "train_prevalence": {
+      "test": {
+        "rows": 158,
+        "positives": 158,
+        "ap": 1.0,
+        "auc": null,
+        "brier": 0.9685648469556835,
+        "tp": 0,
+        "fp": 0,
+        "fn": 158,
+        "admitted": 0,
+        "precision": null,
+        "positive_recall": 0.0,
+        "comment_coverage": 0.0,
+        "admitted_issues": 0,
+        "issues_with_false_admissions": 0,
+        "issue_success_lower_95": 0.0,
+        "passes": false
+      },
+      "external": {
+        "rows": 38,
+        "positives": 38,
+        "ap": 1.0,
+        "auc": null,
+        "brier": 0.9685648469556839,
+        "tp": 0,
+        "fp": 0,
+        "fn": 38,
+        "admitted": 0,
+        "precision": null,
+        "positive_recall": 0.0,
+        "comment_coverage": 0.0,
+        "admitted_issues": 0,
+        "issues_with_false_admissions": 0,
+        "issue_success_lower_95": 0.0,
+        "passes": false
+      }
+    },
+    "explicit_rule": {
+      "test": {
+        "rows": 158,
+        "positives": 158,
+        "ap": 1.0,
+        "auc": null,
+        "brier": 0.9240506329113924,
+        "tp": 0,
+        "fp": 0,
+        "fn": 158,
+        "admitted": 0,
+        "precision": null,
+        "positive_recall": 0.0,
+        "comment_coverage": 0.0,
+        "admitted_issues": 0,
+        "issues_with_false_admissions": 0,
+        "issue_success_lower_95": 0.0,
+        "passes": false
+      },
+      "external": {
+        "rows": 38,
+        "positives": 38,
+        "ap": 1.0,
+        "auc": null,
+        "brier": 0.9210526315789473,
+        "tp": 0,
+        "fp": 0,
+        "fn": 38,
+        "admitted": 0,
+        "precision": null,
+        "positive_recall": 0.0,
+        "comment_coverage": 0.0,
+        "admitted_issues": 0,
+        "issues_with_false_admissions": 0,
+        "issue_success_lower_95": 0.0,
+        "passes": false
+      }
+    },
+    "zero_shot_nli": {
+      "test": {
+        "rows": 158,
+        "positives": 158,
+        "ap": 1.0,
+        "auc": null,
+        "brier": 0.6942198872566223,
+        "tp": 0,
+        "fp": 0,
+        "fn": 158,
+        "admitted": 0,
+        "precision": null,
+        "positive_recall": 0.0,
+        "comment_coverage": 0.0,
+        "admitted_issues": 0,
+        "issues_with_false_admissions": 0,
+        "issue_success_lower_95": 0.0,
+        "passes": false
+      },
+      "external": {
+        "rows": 38,
+        "positives": 38,
+        "ap": 0.9999999999999999,
+        "auc": null,
+        "brier": 0.7699444890022278,
+        "tp": 0,
+        "fp": 0,
+        "fn": 38,
+        "admitted": 0,
+        "precision": null,
+        "positive_recall": 0.0,
+        "comment_coverage": 0.0,
+        "admitted_issues": 0,
+        "issues_with_false_admissions": 0,
+        "issue_success_lower_95": 0.0,
+        "passes": false
+      }
+    },
+    "history_only": {
+      "test": {
+        "rows": 158,
+        "positives": 158,
+        "ap": 1.0000000000000002,
+        "auc": null,
+        "brier": 0.963342326695911,
+        "tp": 0,
+        "fp": 0,
+        "fn": 158,
+        "admitted": 0,
+        "precision": null,
+        "positive_recall": 0.0,
+        "comment_coverage": 0.0,
+        "admitted_issues": 0,
+        "issues_with_false_admissions": 0,
+        "issue_success_lower_95": 0.0,
+        "passes": false
+      },
+      "external": {
+        "rows": 38,
+        "positives": 38,
+        "ap": 0.9999999999999998,
+        "auc": null,
+        "brier": 0.9559688718738832,
+        "tp": 0,
+        "fp": 0,
+        "fn": 38,
+        "admitted": 0,
+        "precision": null,
+        "positive_recall": 0.0,
+        "comment_coverage": 0.0,
+        "admitted_issues": 0,
+        "issues_with_false_admissions": 0,
+        "issue_success_lower_95": 0.0,
+        "passes": false
+      }
+    },
+    "lexical": {
+      "test": {
+        "rows": 158,
+        "positives": 158,
+        "ap": 1.0,
+        "auc": null,
+        "brier": 0.8947516695781158,
+        "tp": 0,
+        "fp": 0,
+        "fn": 158,
+        "admitted": 0,
+        "precision": null,
+        "positive_recall": 0.0,
+        "comment_coverage": 0.0,
+        "admitted_issues": 0,
+        "issues_with_false_admissions": 0,
+        "issue_success_lower_95": 0.0,
+        "passes": false
+      },
+      "external": {
+        "rows": 38,
+        "positives": 38,
+        "ap": 0.9999999999999999,
+        "auc": null,
+        "brier": 0.9096112034819681,
+        "tp": 0,
+        "fp": 0,
+        "fn": 38,
+        "admitted": 0,
+        "precision": null,
+        "positive_recall": 0.0,
+        "comment_coverage": 0.0,
+        "admitted_issues": 0,
+        "issues_with_false_admissions": 0,
+        "issue_success_lower_95": 0.0,
+        "passes": false
+      }
+    },
+    "lexical_history": {
+      "test": {
+        "rows": 158,
+        "positives": 158,
+        "ap": 1.0000000000000002,
+        "auc": null,
+        "brier": 0.8857134037245783,
+        "tp": 1,
+        "fp": 0,
+        "fn": 157,
+        "admitted": 1,
+        "precision": 1.0,
+        "positive_recall": 0.006329113924050633,
+        "comment_coverage": 0.006329113924050633,
+        "admitted_issues": 1,
+        "issues_with_false_admissions": 0,
+        "issue_success_lower_95": 0.05,
+        "passes": false
+      },
+      "external": {
+        "rows": 38,
+        "positives": 38,
+        "ap": 0.9999999999999998,
+        "auc": null,
+        "brier": 0.8867031214889013,
+        "tp": 0,
+        "fp": 0,
+        "fn": 38,
+        "admitted": 0,
+        "precision": null,
+        "positive_recall": 0.0,
+        "comment_coverage": 0.0,
+        "admitted_issues": 0,
+        "issues_with_false_admissions": 0,
+        "issue_success_lower_95": 0.0,
+        "passes": false
+      }
+    },
+    "flat_all_features": {
+      "test": {
+        "rows": 158,
+        "positives": 158,
+        "ap": 1.0000000000000002,
+        "auc": null,
+        "brier": 0.6953964578236657,
+        "tp": 8,
+        "fp": 0,
+        "fn": 150,
+        "admitted": 8,
+        "precision": 1.0,
+        "positive_recall": 0.05063291139240506,
+        "comment_coverage": 0.05063291139240506,
+        "admitted_issues": 8,
+        "issues_with_false_admissions": 0,
+        "issue_success_lower_95": 0.6876560219336321,
+        "passes": false
+      },
+      "external": {
+        "rows": 38,
+        "positives": 38,
+        "ap": 0.9999999999999998,
+        "auc": null,
+        "brier": 0.7587384425272592,
+        "tp": 2,
+        "fp": 0,
+        "fn": 36,
+        "admitted": 2,
+        "precision": 1.0,
+        "positive_recall": 0.05263157894736842,
+        "comment_coverage": 0.05263157894736842,
+        "admitted_issues": 2,
+        "issues_with_false_admissions": 0,
+        "issue_success_lower_95": 0.22360679774997896,
+        "passes": false
+      }
+    }
+  },
+  "systems": null,
+  "fit_and_score_seconds": 9.861477600003127
+}

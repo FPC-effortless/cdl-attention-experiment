@@ -1,0 +1,15 @@
+{
+  "sources": ["numpy/numpy", "pandas-dev/pandas", "matplotlib/matplotlib", "scipy/scipy"],
+  "external_source": "sympy/sympy",
+  "splits": {
+    "train": ["2024-01-01", "2024-06-30", "2024-09-30T00:00:00Z"],
+    "validation": ["2025-01-01", "2025-06-30", "2025-09-30T00:00:00Z"],
+    "test": ["2026-01-01", "2026-06-30", "2026-09-30T00:00:00Z"]
+  },
+  "issue_limit_per_source_and_split": 180,
+  "horizon_seconds": 900,
+  "precision_gate": 0.99,
+  "minimum_positive_coverage": 0.70,
+  "bootstrap_draws": 1000,
+  "seed": 49103
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "trainlab.experiment.v1",
+  "execution_purpose": "engineering_diagnostic",
+  "name": "semantic-evidence",
+  "description": "Chronological real GitHub issue history diagnostic",
+  "command": [
+    "/workspace/issue-history-study/../scratch/labenv/bin/python",
+    "semantic.py"
+  ],
+  "seed": 49103,
+  "timeout_seconds": 900,
+  "source_kind": "AUTHENTIC_CANDIDATE",
+  "split_identity": "github-public-issues-five-repos-2024-2026-v1",
+  "inputs": [
+    "semantic.py",
+    "dataset.json",
+    "design.json",
+    "source-manifest.json",
+    "nli/README.md",
+    "nli/added_tokens.json",
+    "nli/config.json",
+    "nli/model_quint8_avx2.onnx",
+    "nli/special_tokens_map.json",
+    "nli/tokenizer.json",
+    "nli/tokenizer_config.json"
+  ],
+  "artifacts": [
+    "semantic.npy",
+    "semantic-timing.json"
+  ],
+  "metrics": {
+    "rows": "max"
+  },
+  "budget": {
+    "human_comment_corpus": 1,
+    "cpu": 1
+  }
+}
