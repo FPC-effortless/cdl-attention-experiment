@@ -1,0 +1,17 @@
+# OUTPUT-MEMORY-021: reviewed scientific source and recovery
+
+This source snapshot extends the separately completed software calibration into a bounded scientific sentence-output comparison. The full three-seed campaign is complete and failed qualification; no CSM repair claim is made. See [final results](RESULTS.md) and [aggregate accounting](AGGREGATE.json). Paused020 and released-NCM feasibility remain separate.
+
+Independent review approved the frozen three-seed design/closures subject to public source verification, private recovery roundtrip, exact runtime checks and fresh quota admission before each launch. Each seed compares four heads: autoregressive versus actual diffusion, each conditioned on frozen native CSM features versus supplied engineered resolved state. Read PROTOCOL.md and RESOLVED_ADAPTER_V2.md for scope and limitations. No convergence, general language or unrestricted-memory claim is authorized by this design.
+
+The prior software calibration passed native execution, strict-deterministic loss/gradient checks, and exact full-versus-resumed AR/diffusion checkpoint dictionaries including optimizer/RNG. Native serial/batch feature max difference was 3.576e-7; cached-AR logits 5.960e-7 within declared tolerances, and full-session output parity passed. Those 56 random-fixture updates and 32 timing cases are software checks, not trained quality or speed superiority. The original zero-update rank-3 loss failure remains preserved.
+
+PUBLIC_SOURCE_SHA256.json identifies public file contents. Private TRAIN_SELECTION session/pair rosters, input data/cache, checkpoints, runtime/pip freeze, vendor, review/admission and evidence are excluded. Exact scientific resumption requires the owner-authorized frozen private closure and actual checkpoint; source alone cannot recover trained weights. Do not substitute inputs or silently drop seeds. Preserve partial failures, independently reconcile actual budgets and retain recovery reserve. No paid resources or protected TEST.
+
+The existing run.py is the earlier calibration launcher and must not be mistaken for scientific launch authorization. scientific_run.py is separately reviewed and bound to seed11 only. Other seeds require their own manifest-bound reviewed launch and fresh quota admission. Public draft status does not approve merge or bypass checks.
+
+## Current recovery status
+
+Final 17 November 2026 status: all three seeds and 12 planned head fits completed, with independently audited retained evidence, saved-record rescoring and recorded same-host checkpoint replay. All 72 primary qualification panels failed. Private archives are retained; no new fit is implied. This is not independent GPU retraining/replay or a successful architecture.
+
+The duplicate-pair source defect and later review-text length rejection are preserved historical pre-fit failures, not an active blanket launch hold. V3 changed only private REVIEW/ADMISSION records; reviewed source, data, INPUTS and launchers remain unchanged. Use the exact V3 private administrative bundle, not older admissions sharing the same INPUTS. See [private recovery access instructions](PRIVATE_RECOVERY_GUIDE_PUBLIC.md) and the latest owner-authorized Library guide.
