@@ -1,0 +1,142 @@
+{
+  "schema": 1,
+  "tag": "cog-attn-continuation-20261120",
+  "archives": [
+    {
+      "name": "wr004-005-evidence.tar.gz",
+      "sha256": "c991b3f45cebc8eb6c1ed538242720445b04c640dcc5669f7c74898f60495a1e",
+      "bytes": 4790544,
+      "file_members": 39,
+      "experiments": [
+        "wr004-005"
+      ]
+    },
+    {
+      "name": "wr005-007-evidence.tar.gz",
+      "sha256": "d4381a27b72b04398dabe186745ee886cf0e81cd4d833f5ed2ed398acc78c6a8",
+      "bytes": 7838149,
+      "file_members": 46,
+      "experiments": [
+        "wr005-followup",
+        "wr006-007"
+      ]
+    },
+    {
+      "name": "subsystem-followup.tar.gz",
+      "sha256": "d2d3eb31226c9a4f3038fefeab01fe79eaf2feeef0aba640bee904f2462d0f3e",
+      "bytes": 2233775,
+      "file_members": 21,
+      "experiments": [
+        "iteration"
+      ]
+    },
+    {
+      "name": "wr008-veritas-evidence.tar.gz",
+      "sha256": "4d91cc38ee72afa6873e7288e1c03db2dbebb9d24f3f4afc2f12587425ce382e",
+      "bytes": 78131,
+      "file_members": 224,
+      "experiments": [
+        "veritas-wr008"
+      ]
+    },
+    {
+      "name": "authority-followup.tar.gz",
+      "sha256": "48017992c6c4891aa2d5a2c1722fffeaa7394e03bf1ee6cc4239b6f4650d41ed",
+      "bytes": 88987,
+      "file_members": 139,
+      "experiments": [
+        "authority-followup"
+      ]
+    },
+    {
+      "name": "wr009-evidence.tar.gz",
+      "sha256": "227f9fd83af4128872b6864124a67c934cf758e27bb71af597bfc21a365d055d",
+      "bytes": 252563,
+      "file_members": 143,
+      "experiments": [
+        "wr009"
+      ]
+    },
+    {
+      "name": "wr010-evidence.tar.gz",
+      "sha256": "d35edd13cef6e93d2f99c7946e44ee0149ea1cc52542d290caae4f268c748c29",
+      "bytes": 9355036,
+      "file_members": 199,
+      "experiments": [
+        "wr010"
+      ]
+    },
+    {
+      "name": "post-wr-evidence.tar.gz",
+      "sha256": "7487fe43f0c39a931c2e052bb1d331597c676145293dee274484abe5aec7791f",
+      "bytes": 93201569,
+      "file_members": 723,
+      "experiments": [
+        "post-wr"
+      ]
+    },
+    {
+      "name": "drift-evidence.tar.gz",
+      "sha256": "0a4ba79fdc814f896ebd3ab46d95c462d7440a39dbad42c6ee8a09387b46e03a",
+      "bytes": 9280987,
+      "file_members": 207,
+      "experiments": [
+        "drift"
+      ]
+    },
+    {
+      "name": "weakness-repairs-evidence.tar.gz",
+      "sha256": "0bf9fb408f97d262f5b7908d61cd77bb7f9e3e6eee37b978c38aed34ac973adb",
+      "bytes": 4954234,
+      "file_members": 669,
+      "experiments": [
+        "weakness-repairs"
+      ]
+    },
+    {
+      "name": "binding-repair-evidence.tar.gz",
+      "sha256": "03be43a39f8bb5863b6b341290cd6290f6c1562c653fc12ef78fd38e06d5cb1a",
+      "bytes": 3038566,
+      "file_members": 647,
+      "experiments": [
+        "binding-repair"
+      ]
+    },
+    {
+      "name": "semantic-transfer-evidence.tar.gz",
+      "sha256": "a1b6d4f335b921195ea35a01067f5bb1614c3b936c185deb9e24e5d8e89262bc",
+      "bytes": 174484356,
+      "file_members": 450,
+      "experiments": [
+        "semantic-transfer"
+      ]
+    },
+    {
+      "name": "staged-clarification-evidence.tar.gz",
+      "sha256": "77273ddb544822855f9dfe0a0d2c37c96b31f9399530c377280363cea5a7f9ea",
+      "bytes": 74719598,
+      "file_members": 350,
+      "experiments": [
+        "staged-clarification"
+      ]
+    },
+    {
+      "name": "cog-047-050-evidence.tar.gz",
+      "sha256": "e6c87689d13f6d617430fe7dc7843c894830e537a53355646a29466a166284c5",
+      "bytes": 166129838,
+      "file_members": 717,
+      "experiments": [
+        "cog-047-050"
+      ]
+    },
+    {
+      "name": "delta-authority-048-evidence.tar.gz",
+      "sha256": "211958cb00861bc3cae1a02da5e5f60771ea0ded15b80757a041611716f0fda9",
+      "bytes": 106808858,
+      "file_members": 1210,
+      "experiments": [
+        "delta-authority-048"
+      ]
+    }
+  ]
+}

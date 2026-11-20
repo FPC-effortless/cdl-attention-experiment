@@ -1,5 +1,7 @@
 # COG-ATTN research handoff (2026-11-20)
 
+**Continuation through the 047–050 qualification attempt and its follow-ups is available.** The [continuation index](continuation/README.md) links browsable source and original evidence bundles in the [research prerelease](https://github.com/FPC-effortless/cdl-attention-experiment/releases/tag/cog-attn-continuation-20261120). The partial status below applies to the original 001–046 and WR-001–003 handoff.
+
 **Evidence publication is partial.** This branch contains the ten original reports, eight protocol documents, and the original WR-001–003 Python source files. These 21 original files were matched byte-for-byte against their original Git blob hashes. The ten original evidence archives contain 241 files, including 69 checkpoints. Their archive checksums and all nine available internal manifests were verified locally, but the binary archives and remaining files have NOT yet been pushed. Do not treat this branch as a self-contained reproduction until the evidence import is complete.
 
 ## Experiment index
