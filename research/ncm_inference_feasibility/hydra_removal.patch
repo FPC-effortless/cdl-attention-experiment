@@ -1,0 +1,21 @@
+--- original/models/vqvae.py
++++ safe/models/vqvae.py
+@@ -3,7 +3,7 @@
+ from models.vae import Encoder, Decoder
+ from utils.registry import vector_quantizers
+ import torch
+-import hydra 
++from models.quant import MultiscaleResidualVectorQuantizer
+ from omegaconf import OmegaConf
+ from utils.misc import count_params
+ 
+@@ -47,7 +47,8 @@
+             use_pos_emb=enc_positional,
+         )
+         
+-        vq = hydra.utils.get_class(vector_quantizers[vector_quantizer_config.clss])
++        assert vector_quantizer_config.clss == 'multiscale_residual_vector_quantizer'
++        vq = MultiscaleResidualVectorQuantizer
+         self.vq = vq.from_config({ **{'vqvae_vocab_size': vqvae_vocab_size, 'embed_dim': embed_dim}, **dict(vector_quantizer_config)})
+                 
+         self.decoder = Decoder(

@@ -1,0 +1,28 @@
+"""Private, bounded NCM software feasibility. No training or protected TEST."""
+import os,sys,subprocess,hashlib,json,traceback,zipfile,shutil
+from pathlib import Path
+os.environ['CUBLAS_WORKSPACE_CONFIG']=':4096:8'
+os.environ['PYTHONDONTWRITEBYTECODE']='1'
+sys.dont_write_bytecode=True
+INPUTS_SHA='a43be0f523ed2c597fadc9384288eb262314669748d9a856d2de7c2dbdef1542'
+ASSEMBLER_SHA='0afb5173b61e8f5ad06130bad4abce563c25e3b260ae853687a02ff70fbcdae4'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+try:
+ roots=[p.parent for p in Path('/kaggle/input').rglob('INPUTS.json') if sha(p)==INPUTS_SHA]
+ assert len(roots)==1,'Expected unique admitted code closure'
+ root=roots[0];assembler=root/'assemble_private_inputs.py'
+ assert sha(assembler)==ASSEMBLER_SHA,'Transport source mismatch'
+ # Source executes only after launcher-pinned hash verification.
+ ns={'__name__':'admitted_input_assembler'};exec(compile(assembler.read_text(),str(assembler),'exec'),ns)
+ receipt=ns['assemble'](root,Path('/kaggle/input'),Path('/tmp/woyengi-ncm-admitted'),INPUTS_SHA)
+ Path('/kaggle/working/ASSEMBLY.json').write_text(json.dumps(receipt,indent=2))
+ try:
+  subprocess.run([sys.executable,'/tmp/woyengi-ncm-admitted/native_ecosystem.py','run','/tmp/woyengi-ncm-admitted','/tmp/ncm_result'],check=True)
+ finally:
+  archive=Path('/tmp/ncm_result.zip')
+  if archive.exists():
+   with zipfile.ZipFile(archive) as z:assert z.testzip() is None,'Output ZIP integrity failed'
+   exported=Path('/kaggle/working/ncm_result.zip');shutil.copyfile(archive,exported)
+   assert sha(exported)==sha(archive),'Output archive copy mismatch'
+except BaseException as e:
+ Path('/kaggle/working/LAUNCH_FAILURE.json').write_text(json.dumps({'error':repr(e),'traceback':traceback.format_exc(),'scope':'software inference only; no training'},indent=2));raise

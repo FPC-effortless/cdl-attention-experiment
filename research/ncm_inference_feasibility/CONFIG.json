@@ -1,0 +1,12 @@
+{
+  "loader": "safe_ncm_loader.py",
+  "source": "source",
+  "checkpoints": "checkpoints",
+  "text_tokenizer": "gpt2-tokenizer",
+  "vendor": "vendor",
+  "repeats": 3,
+  "device": "cuda",
+  "training": false,
+  "protected_test": false,
+  "timeout_seconds": 1200
+}
