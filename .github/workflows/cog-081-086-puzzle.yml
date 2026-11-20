@@ -1,0 +1,51 @@
+name: COG-ATTN-081-086 puzzle replay
+on:
+  pull_request:
+    paths:
+      - "research/cog-081-086/**"
+      - ".github/workflows/cog-081-086-puzzle.yml"
+  workflow_dispatch:
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Rebuild puzzle fixtures and replay COG-066 option transfer
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd research/cog-081-086
+          python run_pilot.py --out results.json
+          python bridge/experiment_086.py --out bridge/086-results.json
+          python - <<'PY'
+          import importlib
+          for module in ('test_puzzles','bridge.test_086'):
+              m=importlib.import_module(module)
+              for name in sorted(n for n in dir(m) if n.startswith('test_')):
+                  getattr(m,name)()
+                  print('PASS',module,name)
+          import json
+          report=json.load(open('bridge/086-results.json'))
+          assert report['totals']['primitive']['attempts']==20560
+          assert report['totals']['cog066']['attempts']==88206
+          assert report['totals']['gated']['attempts']==20560
+          assert all(not x['admitted'] for x in report['calibration'].values())
+          print('Verified 086 action decisions and cost-gating invariants')
+          PY
+      - name: Inspect evidence ZIP archive
+        shell: bash
+        run: |
+          python - <<'PY'
+          from zipfile import ZipFile
+          from pathlib import Path
+          p=Path('research/cog-081-086/artifacts/puzzle-081-086-full-evidence.zip')
+          with ZipFile(p) as z:
+              assert z.testzip() is None
+              assert any(s.endswith('bridge/086-results.json') for s in z.namelist())
+          print('Published evidence archive integrity check passed')
+          PY
