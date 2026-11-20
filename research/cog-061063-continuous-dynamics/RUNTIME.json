@@ -1,0 +1,22 @@
+{
+  "blas": [
+    {
+      "implementation": "openblas",
+      "sha256": "ee2039cf13a45e1e89f04d0cea9585657d93ffaa425594e1935161013fdf4e12",
+      "version": "0.3.30"
+    }
+  ],
+  "ecosystem_commit": "eec439492407b0aa26922c23b5ae40d95289f4eb",
+  "executable_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+  "module_sha256": {
+    "forge_data.diagnostics": "4726e3e96870c13b0a972de2ecd1d551a6493d02f3d3ce2f3af67c967235c85f",
+    "research_lab.core": "f88e75f6e4b5720d4f7d3006e3101e1a4bba41225555dbd7c492c418aef00492",
+    "research_lab.evidence": "1f51d91a923de1ad008a38bffa7feed322fc7d34a18b6e6626cc5f49ca090d98",
+    "trainlab.execution_adequacy": "cf5915a8d9768993c76ef41a2559af7036ced7e0b7554aa8d0157c8b9753e5b9",
+    "trainlab.research_adequacy": "4583f4ce9ff181fa1b3a3b60d82fb40349fc9fcff45c0c7d559bf40f533c759a",
+    "trainlab.runner": "eec95df7e2a8e1a805eb1b4021b1c937796aca40da4612ffb2332738613bc6d7"
+  },
+  "numpy": "2.3.5",
+  "python": "3.12.14",
+  "threadpoolctl": "3.6.0"
+}

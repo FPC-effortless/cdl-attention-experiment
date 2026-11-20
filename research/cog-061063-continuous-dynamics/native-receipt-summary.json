@@ -1,0 +1,47 @@
+{
+  "fit": {
+    "id": "20261120T201119-c1d86fe81f68",
+    "status": "succeeded",
+    "elapsed_seconds": 0.513178,
+    "execution_purpose": "research",
+    "research_adequacy": "EXECUTED_CRITERIA_MET",
+    "claim_eligibility": "DECLARED_CONDITIONS_ONLY",
+    "qualification": "NOT_QUALIFIED",
+    "artifacts": {
+      "execution-observations.json": "ce63393c4607203441646c371194bfc88e4c2ef24aa119c267ae3a5bf0ac7b7f",
+      "fit-summary.json": "9b3541df4292aaf02af17396b5b257c5690c2984887857bc2fd1fa7280393c98",
+      "narx.npz": "506a76546ed71ad0735220ccd01c617cbb4c6ab6998552a1c2994642d90ca128",
+      "pca.npz": "9a5f6b76e12260c3faad05ecedaa9c66db2615dcd0f6c65f8b61bd2c84d3e50e",
+      "predictive.npz": "85757e992ed4753937e33fcc3bef562530cb897e3866e4236a22561456db1395"
+    }
+  },
+  "predict": {
+    "id": "20261120T201747-5efa8fa3a431",
+    "status": "succeeded",
+    "elapsed_seconds": 3.403423,
+    "execution_purpose": "research",
+    "research_adequacy": "EXECUTED_CRITERIA_MET",
+    "claim_eligibility": "DECLARED_CONDITIONS_ONLY",
+    "qualification": "NOT_QUALIFIED",
+    "artifacts": {
+      "execution-observations.json": "fc3cd281dbeead5abcfa3a9c6b048122aee5062f9c1ced5923ebd5b84d65d781",
+      "held-encodings.json": "da04df6499343850fcac79529d47c7ac5386850df4f7fe06c1911d7ce7f0904a",
+      "predictions.json": "1b47f3c5559e05684f3fbe9114262e0361f55e62797275489f00c6c5f2a849d5",
+      "timing.json": "5154f8283949af304f9cd347893658fa75d8aa5af465b4ed0bf2edb50ab26ac1"
+    }
+  },
+  "verify": {
+    "id": "20261120T201945-80b8ea313879",
+    "status": "succeeded",
+    "elapsed_seconds": 2.169115,
+    "execution_purpose": "research",
+    "research_adequacy": "EXECUTED_CRITERIA_MET",
+    "claim_eligibility": "DECLARED_CONDITIONS_ONLY",
+    "qualification": "NOT_QUALIFIED",
+    "artifacts": {
+      "execution-observations.json": "2aef18265522fac53977509a95a02995c581e49a9482e49db465d27f7ea2d405",
+      "group-effects.json": "4a257e7617aad33aa489cd4789fde311bdcb414cbfb17acfef638d6d90aa3c92",
+      "scores.json": "8a2e7c48e152b87530856e1d3eb6bf12dc78aa9985212307d5aac76310985eca"
+    }
+  }
+}

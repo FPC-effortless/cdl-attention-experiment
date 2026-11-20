@@ -1,0 +1,25 @@
+{
+  "scope": "source and aggregate only",
+  "payloads": {
+    "DATA_AUDIT.json": "22a9c2c7658b63c95c9e0ed01be95a126c7e485a8389101d88fd35dad3098241",
+    "PREFIT_SHA256.json": "0f775c17040e52d2ea712f1ae42d4ae448899d372535298a6eaddd7513a10b04",
+    "PROTOCOL.md": "319ca763def6a026ec2738bb45490568ec5dcca7dd2ebbb33707282d772ab0e8",
+    "README.md": "d3027ec9ca3bbc3b41109e6e5f84db08791748f5f02a9b697831f94bc944d2c3",
+    "REPRODUCE.md": "baac0252c88435d105e2d1f3ef04e2610bffe25be3b16324c7ac75c3b6310047",
+    "RUNTIME.json": "0289e15e5589da747802fc92c31acb62194d8ba7439d7beb3f9e7b3deef6ff2e",
+    "audit_generator.py": "410f5ed3d51d5928a8b7610835b09a25f9a0187f911c1707902b67855e983891",
+    "fit-summary.json": "9b3541df4292aaf02af17396b5b257c5690c2984887857bc2fd1fa7280393c98",
+    "fit.py": "5d35eb94596bcfbb31b15530a364f3716f89c5577ca4dc943015758c4895a6ca",
+    "lab.py": "918a2eb0bfef54197faf88aba41b6072b3987e5a3dac2cfa5a51b01639c4358e",
+    "model.py": "6596f234c736e2e6273f9def46860d8ff495d4aef56880e75124c6c6d2b8ae41",
+    "native-receipt-summary.json": "92f470fc59b8515a9e04c91c95666d8edab73ec788c678a7ad9e0c5b71f72526",
+    "observe.py": "cdaee471dabd63c213593f858cf869fc6cb4370abe784b8ce0cf446836c575cd",
+    "predict.py": "ce8ef06b820b8a6e81b2aff3085a000606c1e33ef84a0540285d5dd9b39de640",
+    "score_veritas.py": "8c34801a43e8e5817f6d9875211c55d432832fb47b83193861e0e0bdd95f6965",
+    "scores.json": "8a2e7c48e152b87530856e1d3eb6bf12dc78aa9985212307d5aac76310985eca",
+    "sim.py": "5512f5430100d183ad850c25938398fb6f64e88d4d2c97a04a31d1366d47d41f",
+    "test_preflight.py": "440a315cdada94c17d4f237b900c876faaf564259ac8792c76acc236e8691e27",
+    "test_scoring_fixture.py": "67fdd7d83c721989f98f3d0ff6d80b80eb1bcc8a60588ba1fc287e1fc13ebc0d",
+    "timing.json": "5154f8283949af304f9cd347893658fa75d8aa5af465b4ed0bf2edb50ab26ac1"
+  }
+}

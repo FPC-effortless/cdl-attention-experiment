@@ -1,0 +1,10 @@
+{
+  "frozen_inputs": {
+    "challenge.json": "8952cd79356a73eb3d403842800b6356b2a94b8bbea393c3d28188b42efd5a2b",
+    "train.json": "2ca660d233fbf7f3198814c6b37625927bb6c8692c1126d37902e1ed020bf333",
+    "truth.json": "1889f42d6f4dc017a735b5fa9b05707ac21423cc74459a4cea622833a9e711a7"
+  },
+  "observed": "128 independent generated source episodes and 768 branch plans/ref outcomes exactly reproduced; no learned prediction",
+  "reviewer": "adequacy_review",
+  "script_sha256": "410f5ed3d51d5928a8b7610835b09a25f9a0187f911c1707902b67855e983891"
+}
