@@ -55,18 +55,23 @@ def provisional(w,db,i,t,a):
     w.stage('ticket',(),p);w.stage('activity',('ticket',),p)
     return p
 
-def run(seed,bank,arm,n=192):
+def run(seed,bank,arm,n=192,opts=None):
+    opts=opts or {}
     allstart=perf_counter_ns();meter=Cost()
-    model=meter.call('setup',1152,Grounder,arm!='word')
-    cal=meter.call('calibration',512,calibrate,model)
+    model=meter.call('setup',1152,opts.get('factory',Grounder),arm!='word')
+    cal=meter.call('calibration',512,opts.get('calibrator') or calibrate,model)
+    meter.work['setup']+=opts.get('extra_work',0)
+    support=meter.call('setup',48,opts['support_factory']).bindings if opts.get('support_factory') else {}
     lex=Lexicon()
     if arm!='no_skill':
         meter.call('setup',len(outcome_examples()),lex.learn,outcome_examples())
     trials=cases(seed,bank,n); rows=[]
     key=hashlib.sha256(str(seed).encode()).digest()
     authority=Authority(key);epoch=0
-    learner=Learner(arm if arm in ('frozen','passive') else 'active')
+    learner=opts.get('causal',Learner)(arm if arm in ('frozen','passive') else 'active')
     planner=Planner('primitive' if arm=='primitive' else 'chunks' if arm=='chunks' else 'cache')
+    if opts.get('planner'):
+        planner=meter.call('planning',0,opts['planner']);meter.work['planning']+=planner.profile_work
     with TemporaryDirectory() as d:
         db=meter.call('setup',1,Ledger,Path(d)/'tracker.db',key)
         for i,c in enumerate(trials):
@@ -89,6 +94,9 @@ def run(seed,bank,arm,n=192):
                 meter.call('staging',2,provisional,workspace,db,i,first[0]%4,first[0]//4)
             beliefs=[]
             for (speaker,revision,txt),p,q in zip(observed,ps,qs):
+                for phrase,value in support.items():
+                    if phrase in txt:
+                        p=np.full(8,.01/7);p[value]=.99;break
                 beliefs.append(('user' if speaker=='mirror' else speaker,revision,
                                 meter.call('grounding',1,lex.apply,txt,p),q))
             op,tgt=meter.call('belief',len(beliefs),infer,beliefs,arm)
@@ -110,7 +118,7 @@ def run(seed,bank,arm,n=192):
             if not workspace.nodes:
                 meter.call('staging',2,provisional,workspace,db,i,t,a)
             proposal=workspace.prepared('activity')
-            w=layout(t,a,db.epoch())
+            w=opts.get('layout',layout)(t,a,db.epoch())
             path,work,hit=meter.call('planning',0,planner.solve,w);meter.work['planning']+=work
             valid=meter.call('execution',len(path),checked,w,path)
             guess=learner.decision(c.flags)
@@ -140,6 +148,8 @@ def run(seed,bank,arm,n=192):
         assert j==sum(r['status']=='committed' for r in rows)
         db.db.close()
     return dict(seed=seed,arm=arm,bank=bank,elapsed_ns=perf_counter_ns()-allstart,
+                **(dict(teacher_charge_ns=opts.get('external_ns',0),mixture=getattr(model,'weight',0),
+                        profile=getattr(planner,'profile',None)) if opts else {}),
                 units=dict(meter.work),times=dict(meter.ns),rows=rows)
 
 def run_panel(seeds,bank):
