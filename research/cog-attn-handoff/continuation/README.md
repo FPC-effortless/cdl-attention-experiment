@@ -22,7 +22,7 @@ This index covers the 15 evidence bundles available from WR-004 through the 047�
 
 ## Grounded acquisition and reuse
 
-[COG-ATTN-051–060](cog-051-060/README.md) covers all ten phase attempts, including authentic EPIC-KITCHENS, MultiWOZ and GitHub evaluations, controlled module integration, CPU scaling through 1,048,576 records and a separate-machine replay. Open language, anticipation and end-to-end agent gates remain open.
+[COG-ATTN-051–060](cog-051-060/README.md) covers all ten phase attempts, including authentic EPIC-KITCHENS, MultiWOZ and GitHub evaluations, controlled module integration, CPU scaling through 1,048,576 records and a separate-machine replay. The GitHub-hosted Ubuntu refit independently fetched both public datasets, reproduced each fixed-seed kitchen label and all eight dialogue operating points, and passed the module and state-replay audits. Open language, anticipation and end-to-end agent gates remain open. [Hosted refit receipt](COG-051-060-HOSTED-REPLAY.json) · [Execution log](https://github.com/FPC-effortless/cdl-attention-experiment/actions/runs/44784576077)
 
 ## Authentic issue-history diagnostic
 
