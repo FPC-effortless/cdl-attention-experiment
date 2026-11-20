@@ -1,0 +1,97 @@
+{
+  "evidence_commit": "ba8777f522db0efa17f855c744993135abe1da2d",
+  "verification": "public raw GitHub download, SHA-256 of each part and each original concatenated archive",
+  "total_bytes": 657255191,
+  "archives": [
+    {
+      "name": "wr004-005-evidence.tar.gz",
+      "bytes": 4790544,
+      "sha256": "c991b3f45cebc8eb6c1ed538242720445b04c640dcc5669f7c74898f60495a1e",
+      "parts": 1
+    },
+    {
+      "name": "wr005-007-evidence.tar.gz",
+      "bytes": 7838149,
+      "sha256": "d4381a27b72b04398dabe186745ee886cf0e81cd4d833f5ed2ed398acc78c6a8",
+      "parts": 1
+    },
+    {
+      "name": "subsystem-followup.tar.gz",
+      "bytes": 2233775,
+      "sha256": "d2d3eb31226c9a4f3038fefeab01fe79eaf2feeef0aba640bee904f2462d0f3e",
+      "parts": 1
+    },
+    {
+      "name": "wr008-veritas-evidence.tar.gz",
+      "bytes": 78131,
+      "sha256": "4d91cc38ee72afa6873e7288e1c03db2dbebb9d24f3f4afc2f12587425ce382e",
+      "parts": 1
+    },
+    {
+      "name": "authority-followup.tar.gz",
+      "bytes": 88987,
+      "sha256": "48017992c6c4891aa2d5a2c1722fffeaa7394e03bf1ee6cc4239b6f4650d41ed",
+      "parts": 1
+    },
+    {
+      "name": "wr009-evidence.tar.gz",
+      "bytes": 252563,
+      "sha256": "227f9fd83af4128872b6864124a67c934cf758e27bb71af597bfc21a365d055d",
+      "parts": 1
+    },
+    {
+      "name": "wr010-evidence.tar.gz",
+      "bytes": 9355036,
+      "sha256": "d35edd13cef6e93d2f99c7946e44ee0149ea1cc52542d290caae4f268c748c29",
+      "parts": 1
+    },
+    {
+      "name": "post-wr-evidence.tar.gz",
+      "bytes": 93201569,
+      "sha256": "7487fe43f0c39a931c2e052bb1d331597c676145293dee274484abe5aec7791f",
+      "parts": 5
+    },
+    {
+      "name": "drift-evidence.tar.gz",
+      "bytes": 9280987,
+      "sha256": "0a4ba79fdc814f896ebd3ab46d95c462d7440a39dbad42c6ee8a09387b46e03a",
+      "parts": 1
+    },
+    {
+      "name": "weakness-repairs-evidence.tar.gz",
+      "bytes": 4954234,
+      "sha256": "0bf9fb408f97d262f5b7908d61cd77bb7f9e3e6eee37b978c38aed34ac973adb",
+      "parts": 1
+    },
+    {
+      "name": "binding-repair-evidence.tar.gz",
+      "bytes": 3038566,
+      "sha256": "03be43a39f8bb5863b6b341290cd6290f6c1562c653fc12ef78fd38e06d5cb1a",
+      "parts": 1
+    },
+    {
+      "name": "semantic-transfer-evidence.tar.gz",
+      "bytes": 174484356,
+      "sha256": "a1b6d4f335b921195ea35a01067f5bb1614c3b936c185deb9e24e5d8e89262bc",
+      "parts": 9
+    },
+    {
+      "name": "staged-clarification-evidence.tar.gz",
+      "bytes": 74719598,
+      "sha256": "77273ddb544822855f9dfe0a0d2c37c96b31f9399530c377280363cea5a7f9ea",
+      "parts": 4
+    },
+    {
+      "name": "cog-047-050-evidence.tar.gz",
+      "bytes": 166129838,
+      "sha256": "e6c87689d13f6d617430fe7dc7843c894830e537a53355646a29466a166284c5",
+      "parts": 8
+    },
+    {
+      "name": "delta-authority-048-evidence.tar.gz",
+      "bytes": 106808858,
+      "sha256": "211958cb00861bc3cae1a02da5e5f60771ea0ded15b80757a041611716f0fda9",
+      "parts": 6
+    }
+  ]
+}

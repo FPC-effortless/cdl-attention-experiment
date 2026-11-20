@@ -1,6 +1,5 @@
 {
   "schema": 1,
-  "tag": "cog-attn-continuation-20261120",
   "archives": [
     {
       "name": "wr004-005-evidence.tar.gz",
@@ -138,5 +137,8 @@
         "delta-authority-048"
       ]
     }
-  ]
+  ],
+  "evidence_branch": "research/cog-attn-continuation-evidence-20261120",
+  "evidence_commit": "ba8777f522db0efa17f855c744993135abe1da2d",
+  "parts_manifest": "https://raw.githubusercontent.com/FPC-effortless/cdl-attention-experiment/ba8777f522db0efa17f855c744993135abe1da2d/manifest.json"
 }
