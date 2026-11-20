@@ -1,0 +1,876 @@
+{
+  "schema": 1,
+  "scope": "Remote committed source only; private artifact hashes are not included",
+  "files": [
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/.gitignore",
+      "sha256": "3efeb398cf982a0e300f65ca1587239737624c7b30509b74855d5660fae5a6a3"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/PROTOCOL.md",
+      "sha256": "28cdad4304d33e225305807ecb3526661465734c2d47a9d464bc1b08fa56f91e"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/README.md",
+      "sha256": "c859712ff54bf48945054271d4ec00c8b537a1d233ce60048ce2872a13aef7b2"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/audit017.py",
+      "sha256": "2132aff3726068baabace6b608f1b567c7a085f74b226ed7a22e717c38f67fe2"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/base_data.py",
+      "sha256": "89492a3e5504eb3d831535ce9f3f39cd92f70ecf67092b22d4fa791678bc38a3"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/canonical.py",
+      "sha256": "5a4dc3a5eff80ee287c4e907ae2aa91c9382f102c724a4c929cf1f911d8085b0"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/cost017.py",
+      "sha256": "c7ae7b7fc2ddb1be22a734a64f998d55bf573af9cac65a0c9d6e73a5c3b1dac1"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/data_build.py",
+      "sha256": "7f7ba01546a59f9023775248058f5bbd07d2af310bd3e9bf18c1a8cbac56231a"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/ecosystem017.py",
+      "sha256": "aa0e81e855173b6fef76fe6fb327fbe279ef6649e411892c8626f5bbf9edb1ae"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/evaluate.py",
+      "sha256": "8d2867f5a792b03d16dc9c446a61b053d0b5e4e690bb72f97f829cdf9dd85012"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/executor.py",
+      "sha256": "a0a210c3ecd322c17d3805d573a36ab397f8ee313fdd3bdf9c9a9c233879f18a"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/gates.py",
+      "sha256": "a7b6791f6781b5c6551feee057bd8b71777394d30b42db27237abc27782f57f5"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/guard.py",
+      "sha256": "d077478a4453e08523742b48c016a8e1468b97dfc5e1d468516a1f501699fa45"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/lexer.py",
+      "sha256": "97088da6f0583511bec689509ff99f37f5ee03e952f1591e0cda17088f0d7750"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/model.py",
+      "sha256": "48b78fe82380de3b90108b2df9a7a533a50684cb599b1d34af4c7798a2a566ed"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/overlap017.py",
+      "sha256": "eb5d1fea407694b4707006a2f67c214ba61745602462b2220a9d4fe55ff49d0e"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/prepare017.py",
+      "sha256": "7c6a820abebd580609cfcf458443df6a2ba45cfd5cae3080c77a155a1160c8d7"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/recovery.py",
+      "sha256": "e08130066908571acb4d2858b3354c84c55c8de1ceb60995eac31fd557d8c83b"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/reference_executor.py",
+      "sha256": "bec9d5c1a05f6c50b43ed68fc3e6040064f76036d9d2fbecb024eb2dd81a7059"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/replay017.py",
+      "sha256": "93f150f50d5c693b272b30830fa3d7ef23af33073ae75a78294ce5f78aafef54"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/test_audit017.py",
+      "sha256": "7c8c823cb9a6683695c99a706c4e54e8d908cf830380aaf9b7235b10cdf2ecbe"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/test_cost017.py",
+      "sha256": "f5c124b8ff15902fa7dd1be140778e8c12ed8f226194b6f451990e5fcc60e4f8"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/test_ecosystem017.py",
+      "sha256": "0144ae8070e99894a567af244f8d82443e94ce134c15a9ef18de8a568711d841"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/test_evaluate.py",
+      "sha256": "04f09c3377139ddfedab3338b45c31568919d4b9139ced2bfb1a91573e6b5543"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/test_gates.py",
+      "sha256": "d88b75d102ee22d8e92fd1351ceb9e668fca79b7e73c0202997cf7dccefb80fa"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/test_guard_reference.py",
+      "sha256": "f63b0164b9dc9f61f43b43a783b424a17710b1e8d01fa2a3af7002589c0e5051"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/test_model.py",
+      "sha256": "7b2108132258cf258baeffc874719551a6cbe68801232b952d77443f15dc5cc3"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/test_recovery.py",
+      "sha256": "2c9250c63325ce350318cf5fb04911fe910adbcf40a6bfb069741e70e28eb7f7"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/test_worker017.py",
+      "sha256": "cae7ee148e01416b4a359ad497452fa29238480449a1c95d4842f7c5e1c0e6db"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/training.py",
+      "sha256": "951a6fe442e00fc70f811b33e1f9593ce8c7a0cc1b9078106a337eb055f73c1a"
+    },
+    {
+      "study": "017",
+      "commit": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "path": "research/csm_boundary_017/worker.py",
+      "sha256": "b935d07a2fd1f95a5a64cb121fb2db333952844e819692d7b6222288481ea6fe"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/.gitignore",
+      "sha256": "3efeb398cf982a0e300f65ca1587239737624c7b30509b74855d5660fae5a6a3"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/PROTOCOL.md",
+      "sha256": "28cdad4304d33e225305807ecb3526661465734c2d47a9d464bc1b08fa56f91e"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/README.md",
+      "sha256": "c859712ff54bf48945054271d4ec00c8b537a1d233ce60048ce2872a13aef7b2"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/audit017.py",
+      "sha256": "2132aff3726068baabace6b608f1b567c7a085f74b226ed7a22e717c38f67fe2"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/base_data.py",
+      "sha256": "89492a3e5504eb3d831535ce9f3f39cd92f70ecf67092b22d4fa791678bc38a3"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/canonical.py",
+      "sha256": "5a4dc3a5eff80ee287c4e907ae2aa91c9382f102c724a4c929cf1f911d8085b0"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/cost017.py",
+      "sha256": "c7ae7b7fc2ddb1be22a734a64f998d55bf573af9cac65a0c9d6e73a5c3b1dac1"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/data_build.py",
+      "sha256": "7f7ba01546a59f9023775248058f5bbd07d2af310bd3e9bf18c1a8cbac56231a"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/ecosystem017.py",
+      "sha256": "aa0e81e855173b6fef76fe6fb327fbe279ef6649e411892c8626f5bbf9edb1ae"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/evaluate.py",
+      "sha256": "8d2867f5a792b03d16dc9c446a61b053d0b5e4e690bb72f97f829cdf9dd85012"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/executor.py",
+      "sha256": "a0a210c3ecd322c17d3805d573a36ab397f8ee313fdd3bdf9c9a9c233879f18a"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/gates.py",
+      "sha256": "a7b6791f6781b5c6551feee057bd8b71777394d30b42db27237abc27782f57f5"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/guard.py",
+      "sha256": "d077478a4453e08523742b48c016a8e1468b97dfc5e1d468516a1f501699fa45"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/lexer.py",
+      "sha256": "97088da6f0583511bec689509ff99f37f5ee03e952f1591e0cda17088f0d7750"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/model.py",
+      "sha256": "48b78fe82380de3b90108b2df9a7a533a50684cb599b1d34af4c7798a2a566ed"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/overlap017.py",
+      "sha256": "eb5d1fea407694b4707006a2f67c214ba61745602462b2220a9d4fe55ff49d0e"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/prepare017.py",
+      "sha256": "7c6a820abebd580609cfcf458443df6a2ba45cfd5cae3080c77a155a1160c8d7"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/recovery.py",
+      "sha256": "e08130066908571acb4d2858b3354c84c55c8de1ceb60995eac31fd557d8c83b"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/reference_executor.py",
+      "sha256": "bec9d5c1a05f6c50b43ed68fc3e6040064f76036d9d2fbecb024eb2dd81a7059"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/replay017.py",
+      "sha256": "93f150f50d5c693b272b30830fa3d7ef23af33073ae75a78294ce5f78aafef54"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/test_audit017.py",
+      "sha256": "7c8c823cb9a6683695c99a706c4e54e8d908cf830380aaf9b7235b10cdf2ecbe"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/test_cost017.py",
+      "sha256": "f5c124b8ff15902fa7dd1be140778e8c12ed8f226194b6f451990e5fcc60e4f8"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/test_ecosystem017.py",
+      "sha256": "0144ae8070e99894a567af244f8d82443e94ce134c15a9ef18de8a568711d841"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/test_evaluate.py",
+      "sha256": "04f09c3377139ddfedab3338b45c31568919d4b9139ced2bfb1a91573e6b5543"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/test_gates.py",
+      "sha256": "d88b75d102ee22d8e92fd1351ceb9e668fca79b7e73c0202997cf7dccefb80fa"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/test_guard_reference.py",
+      "sha256": "f63b0164b9dc9f61f43b43a783b424a17710b1e8d01fa2a3af7002589c0e5051"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/test_model.py",
+      "sha256": "7b2108132258cf258baeffc874719551a6cbe68801232b952d77443f15dc5cc3"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/test_recovery.py",
+      "sha256": "2c9250c63325ce350318cf5fb04911fe910adbcf40a6bfb069741e70e28eb7f7"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/test_worker017.py",
+      "sha256": "cae7ee148e01416b4a359ad497452fa29238480449a1c95d4842f7c5e1c0e6db"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/training.py",
+      "sha256": "951a6fe442e00fc70f811b33e1f9593ce8c7a0cc1b9078106a337eb055f73c1a"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_boundary_017/worker.py",
+      "sha256": "b935d07a2fd1f95a5a64cb121fb2db333952844e819692d7b6222288481ea6fe"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/MATH.md",
+      "sha256": "df12a01d39d878b22a88eb381784b5dc7aa2eb7ed7e0cb3366845a87d661b186"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/PROTOCOL.md",
+      "sha256": "8d9ee306ee5e4c297707db0bb2686b34ad8da0d8629f1c72e9529eca4aa33904"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/README.md",
+      "sha256": "5796e99ff457eaaec41df17c74211fc7d3c47d7abdfc534f5a69eef2c62ad75e"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/audit018.py",
+      "sha256": "fe63005311ea50f56f138137174afe7ed495010e9f39faa9929eb63a71cb8ab0"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/conditional.py",
+      "sha256": "d13e84514c9d9c04d3603bc5d6644666b6ead6decdd385140a98bce65323ab8a"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/cost018.py",
+      "sha256": "1495afa92de5c5e848c37eb6260b3056b53078f61bdea3260899fffac5501170"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/data018.py",
+      "sha256": "a3cc2d5261ed35297a20e0c710de8ed9444a87ecb16f13254503b3be89d23513"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/ecosystem018.py",
+      "sha256": "389f27534ca3fcc273353e3cd61d7cb7c948353651cf9bfacecff85d2aed42c7"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/evaluate.py",
+      "sha256": "d9194b93dfb62c8eb0c3a11bb982ff0c948c34c6aeea4dac3e2606fe9a7cba38"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/executor.py",
+      "sha256": "a0a210c3ecd322c17d3805d573a36ab397f8ee313fdd3bdf9c9a9c233879f18a"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/gates.py",
+      "sha256": "486936591d7fc722ff413be3bc4d07a708c6a18d0cec8d628c58c583354b81c1"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/lexer.py",
+      "sha256": "97088da6f0583511bec689509ff99f37f5ee03e952f1591e0cda17088f0d7750"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/model.py",
+      "sha256": "eb7a101ccb7328c06cbbaec7feaf73e50d45216465ae3a81129205b1c18fb496"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/prepare018.py",
+      "sha256": "eebff768f65ab39f739bb7cb51e657629513c39483bf26b5012c227e9b328f26"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/recovery.py",
+      "sha256": "e08130066908571acb4d2858b3354c84c55c8de1ceb60995eac31fd557d8c83b"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/reference_executor.py",
+      "sha256": "bec9d5c1a05f6c50b43ed68fc3e6040064f76036d9d2fbecb024eb2dd81a7059"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/replay018.py",
+      "sha256": "14cef1f44cc8af51eebc595c77c8b43d2fcf3059421e569f71d3bac15b61b7a1"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/runtime018.py",
+      "sha256": "3c0b76ab21a94f69587662d77d769d898c055da0ecd09656df93360c3cb02e66"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/test018.py",
+      "sha256": "1c992fefeda6ba0fe1ef242616e967c0e0f1bf5cdd85ccec8b439fef47b16b68"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/test_audit018.py",
+      "sha256": "bbf8fe83d438fb7df1f682b1f1c5e355f0706ba5a45620ff0beb39a2441636e3"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/test_failure018.py",
+      "sha256": "e292685c62471033379e5798ed6c230e036e212eb0840fcb7f588eca0db56b95"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/test_integrity018.py",
+      "sha256": "5aad58d92b8a33ece5eab174e8cc5a1a9f7eff219848c4db5a57f4c158ceac05"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/test_prefix018.py",
+      "sha256": "4d2cf1e505cc22ffd305b282f6ed9939e8103b516e2b53b8df5fd4ae7171bbf1"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/training.py",
+      "sha256": "5c45d0e24873f96487a045c81848b00530eeb9023ffdbf47a0760ab82129f226"
+    },
+    {
+      "study": "018",
+      "commit": "2eff614af8303f31376049c9aece37324fd7535d",
+      "path": "research/csm_conditional_018/worker.py",
+      "sha256": "889c6a3d10c2c3cf9ee82c7a1f2d102ccf4180af69be4dace186b90b9ec2ba34"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/.gitignore",
+      "sha256": "3efeb398cf982a0e300f65ca1587239737624c7b30509b74855d5660fae5a6a3"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/PROTOCOL.md",
+      "sha256": "28cdad4304d33e225305807ecb3526661465734c2d47a9d464bc1b08fa56f91e"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/README.md",
+      "sha256": "c859712ff54bf48945054271d4ec00c8b537a1d233ce60048ce2872a13aef7b2"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/audit017.py",
+      "sha256": "2132aff3726068baabace6b608f1b567c7a085f74b226ed7a22e717c38f67fe2"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/base_data.py",
+      "sha256": "89492a3e5504eb3d831535ce9f3f39cd92f70ecf67092b22d4fa791678bc38a3"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/canonical.py",
+      "sha256": "5a4dc3a5eff80ee287c4e907ae2aa91c9382f102c724a4c929cf1f911d8085b0"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/cost017.py",
+      "sha256": "c7ae7b7fc2ddb1be22a734a64f998d55bf573af9cac65a0c9d6e73a5c3b1dac1"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/data_build.py",
+      "sha256": "7f7ba01546a59f9023775248058f5bbd07d2af310bd3e9bf18c1a8cbac56231a"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/ecosystem017.py",
+      "sha256": "aa0e81e855173b6fef76fe6fb327fbe279ef6649e411892c8626f5bbf9edb1ae"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/evaluate.py",
+      "sha256": "8d2867f5a792b03d16dc9c446a61b053d0b5e4e690bb72f97f829cdf9dd85012"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/executor.py",
+      "sha256": "a0a210c3ecd322c17d3805d573a36ab397f8ee313fdd3bdf9c9a9c233879f18a"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/gates.py",
+      "sha256": "a7b6791f6781b5c6551feee057bd8b71777394d30b42db27237abc27782f57f5"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/guard.py",
+      "sha256": "d077478a4453e08523742b48c016a8e1468b97dfc5e1d468516a1f501699fa45"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/lexer.py",
+      "sha256": "97088da6f0583511bec689509ff99f37f5ee03e952f1591e0cda17088f0d7750"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/model.py",
+      "sha256": "48b78fe82380de3b90108b2df9a7a533a50684cb599b1d34af4c7798a2a566ed"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/overlap017.py",
+      "sha256": "eb5d1fea407694b4707006a2f67c214ba61745602462b2220a9d4fe55ff49d0e"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/prepare017.py",
+      "sha256": "7c6a820abebd580609cfcf458443df6a2ba45cfd5cae3080c77a155a1160c8d7"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/recovery.py",
+      "sha256": "e08130066908571acb4d2858b3354c84c55c8de1ceb60995eac31fd557d8c83b"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/reference_executor.py",
+      "sha256": "bec9d5c1a05f6c50b43ed68fc3e6040064f76036d9d2fbecb024eb2dd81a7059"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/replay017.py",
+      "sha256": "93f150f50d5c693b272b30830fa3d7ef23af33073ae75a78294ce5f78aafef54"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/test_audit017.py",
+      "sha256": "7c8c823cb9a6683695c99a706c4e54e8d908cf830380aaf9b7235b10cdf2ecbe"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/test_cost017.py",
+      "sha256": "f5c124b8ff15902fa7dd1be140778e8c12ed8f226194b6f451990e5fcc60e4f8"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/test_ecosystem017.py",
+      "sha256": "0144ae8070e99894a567af244f8d82443e94ce134c15a9ef18de8a568711d841"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/test_evaluate.py",
+      "sha256": "04f09c3377139ddfedab3338b45c31568919d4b9139ced2bfb1a91573e6b5543"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/test_gates.py",
+      "sha256": "d88b75d102ee22d8e92fd1351ceb9e668fca79b7e73c0202997cf7dccefb80fa"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/test_guard_reference.py",
+      "sha256": "f63b0164b9dc9f61f43b43a783b424a17710b1e8d01fa2a3af7002589c0e5051"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/test_model.py",
+      "sha256": "7b2108132258cf258baeffc874719551a6cbe68801232b952d77443f15dc5cc3"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/test_recovery.py",
+      "sha256": "2c9250c63325ce350318cf5fb04911fe910adbcf40a6bfb069741e70e28eb7f7"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/test_worker017.py",
+      "sha256": "cae7ee148e01416b4a359ad497452fa29238480449a1c95d4842f7c5e1c0e6db"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/training.py",
+      "sha256": "951a6fe442e00fc70f811b33e1f9593ce8c7a0cc1b9078106a337eb055f73c1a"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_boundary_017/worker.py",
+      "sha256": "b935d07a2fd1f95a5a64cb121fb2db333952844e819692d7b6222288481ea6fe"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/MATH.md",
+      "sha256": "df12a01d39d878b22a88eb381784b5dc7aa2eb7ed7e0cb3366845a87d661b186"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/PROTOCOL.md",
+      "sha256": "1340ddd25409f370c9c42a80055a78e25b779f2aff1083a8681f8feb854dfd4e"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/README.md",
+      "sha256": "211107660b524cff3efd4bffaf2da06d2f8d54a068b94bc3f500d9c43e782b3f"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/audit019.py",
+      "sha256": "9540f8dbeb277b02bd204a3b366dcff9b2dbd5ffab470b2f8ed86aeeda65f1e2"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/conditional.py",
+      "sha256": "b16fe1fe30c457a6e9c914fbd5a3a1c2c1b1734ebedff487d9d7778f7986cfc6"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/cost019.py",
+      "sha256": "955ae3e0dd68475d3c1a1cad41cb08c0efb61ac6dee3989385e0e949c65cb027"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/data019.py",
+      "sha256": "f0d14c1d4405357ff98c70c09d9a48fd470234fd2e41c9aba519f3e9f0356821"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/ecosystem019.py",
+      "sha256": "8d56c79571269d33c2009abff9c86c5e2b77a17a686d0dc733cfd60a6e39af80"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/evaluate.py",
+      "sha256": "99e020108aff5c8c5f329974706a27b9880d882596096afd8994c12ed7e11943"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/executor.py",
+      "sha256": "a0a210c3ecd322c17d3805d573a36ab397f8ee313fdd3bdf9c9a9c233879f18a"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/gate_diagnostic019.py",
+      "sha256": "6a8cd56aa9280a7ce1c9a2ec6c3480cde4872f3cfc5ec5d00f7b4e83706da75e"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/gates.py",
+      "sha256": "486936591d7fc722ff413be3bc4d07a708c6a18d0cec8d628c58c583354b81c1"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/lexer.py",
+      "sha256": "97088da6f0583511bec689509ff99f37f5ee03e952f1591e0cda17088f0d7750"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/model.py",
+      "sha256": "eceba774b313d9c0020a2475bf39c5649f8b1f68cc6dc54fb3b4996c2fa1c61f"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/prepare019.py",
+      "sha256": "1437ff47fd9877aaea054fadc84781047de33eaa5db56fc9fee112670716792e"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/recovery.py",
+      "sha256": "e08130066908571acb4d2858b3354c84c55c8de1ceb60995eac31fd557d8c83b"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/reference_executor.py",
+      "sha256": "bec9d5c1a05f6c50b43ed68fc3e6040064f76036d9d2fbecb024eb2dd81a7059"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/replay019.py",
+      "sha256": "a343da1c32811a8a5833a6245129076faa3efda251939131eaf279ae0072089f"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/runtime019.py",
+      "sha256": "3c0b76ab21a94f69587662d77d769d898c055da0ecd09656df93360c3cb02e66"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/test019.py",
+      "sha256": "7acd6d15e3c205328ee0175b70ed325899350efec9dfbfe535a8b4b379797b7d"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/test_audit019.py",
+      "sha256": "ccc204ecbd3f904b2039f3ea83b4a281fe9d97584e39c9665715858f4a82354c"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/test_failure019.py",
+      "sha256": "6c008c02bb4b16e08e626a49ae7ecca93c3a98a8ae3a8ce442bc3931e86010a1"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/test_gate_input019.py",
+      "sha256": "c31b4f66925d382c38005b196cb02d76f18b2a2b6307b317a18f2f6fe8dc3caf"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/test_integrity019.py",
+      "sha256": "87c1ec1a8c84b55b6345e6cf783430612ce112094e6c8ff64ee46474c25aba0b"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/test_prefix019.py",
+      "sha256": "fea3fb03885354a0837219afef7aeaf7ed18a96dddf037a9c62d6520a4225af4"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/training.py",
+      "sha256": "a8bd215245475132c3c7e9ea89072fbc9e5e41ef4bdb8af785a37922af858697"
+    },
+    {
+      "study": "019",
+      "commit": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "path": "research/csm_conditional_019/worker.py",
+      "sha256": "7f7f5346d21f98d381bf84b1358ecfb0d1d8fc830a3894eebf0b5fa03d846ee9"
+    }
+  ]
+}

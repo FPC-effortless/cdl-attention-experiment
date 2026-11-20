@@ -9,6 +9,9 @@ app_file: app.py
 pinned: false
 ---
 
+> **Resuming recent Woyengi research?** Start with [RESEARCH_RESUME.md](RESEARCH_RESUME.md). Recent studies live on draft branches; main alone is not the full research record.
+
+
 # Conditional Description-Length Attention Test
 
 A falsification-first experiment for the hypothesis that relevance can be defined by conditional description length rather than only learned Q/K compatibility.
