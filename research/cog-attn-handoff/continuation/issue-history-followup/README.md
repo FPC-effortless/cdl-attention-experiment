@@ -20,3 +20,5 @@ Run `node verify.mjs` to recompute the report from the archived, non-text inputs
 ## Fresh holdout
 
 The follow-up collector logged at least 300 issues before the execution environment disconnected. Final acquisition and the Research Lab OS and TrainLab runs are unverified. The [frozen design](PROTOCOL.md) records the source selection, the comparison of same-second supervision arms, and the independent snapshot checks.
+
+The resumed study acquired all 810 issues and completed the TrainLab comparisons and replays. [Fresh-cohort results and qualification](../cog-051-060/README.md)

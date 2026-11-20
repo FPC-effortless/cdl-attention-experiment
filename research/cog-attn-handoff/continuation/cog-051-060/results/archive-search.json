@@ -1,0 +1,674 @@
+{
+  "branches": [
+    {
+      "ref": "refs/heads/benchmark/a4-state-preserved-rerun",
+      "sha": "306058be7fc12435f7411a6f2ea7eea3db896452",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/benchmark/casm-bench-v1",
+      "sha": "1fb108e69f6b79c7b389013cffc85a9b286836a6",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/benchmark/unified-harness-v2",
+      "sha": "8b60ddb8887f295b2fd576b02edb3594de9d490f",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/chore/fpc-universal-skill-20261016",
+      "sha": "160d3f4644ea6fa9d9547c6a3f2db516b8fc9a1a",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/diagnostic/casm-calibration-ladder",
+      "sha": "b8fab9cceb03e938eeb70f840b4388a84918a251",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/diagnostic/casm-capacity-floor",
+      "sha": "7177a39638295ebba2ce8d8bb2dcdefcc249ac48",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/diagnostic/casm-d-depth-sweep",
+      "sha": "a4a956ce18d28901f343398cfe6a1cebc31f75a9",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/diagnostic/casm-y-sequence-scoring",
+      "sha": "9233d3ddf7eb6692be6e0b46f6efc6e01d6d148a",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/diagnostic/full-context-answer-baseline",
+      "sha": "b8fab9cceb03e938eeb70f840b4388a84918a251",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/diagnostic/full-context-easy-eval",
+      "sha": "0ffdcd75dc687574b852cff0bba578f3ae1d2887",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/docs/research-resume-20261117",
+      "sha": "8dee1979664a7502f44eabd3ab6513e18d707d1d",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-d-deep-answer",
+      "sha": "bb4c97e0c2dd88553e20ce857b4d14bf6363169a",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-p-process-supervision",
+      "sha": "72e1079881a8b1d62584600e71b507632af89c12",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-r-recurrent-utility",
+      "sha": "8dfc8a5b1a343518592b024faae33bcc69209909",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-r-scoped-memory",
+      "sha": "a8a34ff3e39615cc5818aca694d7c4f2ea90366b",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-u-answer-utility",
+      "sha": "ca6999d52a009366367f2288c8a0051421b3ac8b",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-v01-compression-qk",
+      "sha": "e786f3cc372675cf29d5a388bb29d9517d6887f6",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-v01-compression-qk-multiseed",
+      "sha": "ed904f3bff2216c00f4f7379e459cab1e1752402",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-v01-multiseed",
+      "sha": "82f1d93e436a3dc6fa9c4935953945aa79d7cc5b",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-v02-corrected-curriculum",
+      "sha": "3d2525907d92acffd651173cebd24939e74cd77b",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x-explicit-computation",
+      "sha": "47d22cc5d024d4e29e65efa4f77409ebea05d10b",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x10-coordinated-binding",
+      "sha": "5bca7a36c183d3eb62180087a4d84e23ca9debff",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x11-resource-competitive-binding",
+      "sha": "e0eec774ee7f58b61adbfaa8a613b16b1a9ff1f8",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x12-scarcity-binding",
+      "sha": "68ced62e26441f9e88efaa0e6e58036acbb15299",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x13-collision-barrier",
+      "sha": "5ab667b9824c3c2c5ce86ec8467ed9e425f18992",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x14-occupancy-state-binding",
+      "sha": "b6da598375745db5f98cb07a3e52a460eb775d3a",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x15-soft-capacity-conservation",
+      "sha": "ceadb93ed2082e996479c273f7a2b3ace302f23e",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x16-primal-dual-capacity",
+      "sha": "3a7fcb962359f239314a691923ef1ebafbe88682",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x17-dual-horizon",
+      "sha": "f78f507efacbbe881e0b3ba1747278aea69186f2",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x18-global-coordinate-descriptor",
+      "sha": "006c54c35ed6b7d65dba3fbf67a4436c1f8c492c",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x18r-detached-dual-gradients",
+      "sha": "a1ebf25a560b2156fd9bc0013ea280763fe054eb",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x19-recursive-role-construction",
+      "sha": "31d203a75e6edc23d1450c8e83620cea3074c823",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x19d-noncontractive-role-dynamics",
+      "sha": "56688d8da76e8c7ab4efdcb8055ac04defa5d2a9",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x19v-soft-address-margin",
+      "sha": "79f478f02a9c4a0153f85bcd2cb355ae9e776714",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x2-contextual-state",
+      "sha": "3796577d7430b51f9760a6d87829370f584fdb31",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x20-state-instantiation",
+      "sha": "3225172c78ca44ad57a26d64b13ae24f122b96bb",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x20r-straight-through-instantiation",
+      "sha": "a4b8ee98dd300dc51e4398c84020a2e90c2cccc6",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x20s-storage-onset",
+      "sha": "9d4ebc5805f11e7e6e208de006878508111e201e",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x20t-counterfactual-credit",
+      "sha": "a122c447efc31054b61134b3271cbc282f167ddb",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x20u-local-counterfactual-credit",
+      "sha": "38e776c6e410d55bf62208faa55923533abb90c0",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x20v-reuse-merge",
+      "sha": "83466d521d8c71a306f5129e0849e7d0e9c054f1",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x3-weak-supervision",
+      "sha": "0b3e36d8564e5db0fa97503314378b2d6bbd9f81",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x4-partial-final-answer",
+      "sha": "d22ef412e206b0347ad4dad46e989d197437f482",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x5-fixed-answer-register",
+      "sha": "5fbef24ad3df937c09bdd178cf205b22650d3ef8",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x6-learned-binding",
+      "sha": "ef9dfb002f509bb7b11d352719236818aa341bff",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x6r-normalized-binding",
+      "sha": "ea84c0d31ea177f51ff4df1b929e3cacefd411f1",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x7-surplus-slot-binding",
+      "sha": "99c3df82034cdb38de99600be5a1aa03972258c8",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x8-unconstrained-binding",
+      "sha": "3f750c1132b79bb49574523bd82ab23fdb9dcf78",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x9-variable-cardinality",
+      "sha": "3fdd0011fd19c90f3d01130001b526b687bca28d",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x9r-slot-coverage-validity",
+      "sha": "85502102c25fcca9d078d12dd72d0f501d9ac82f",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-x9r2-stable-optimizer",
+      "sha": "f907f3ca1f3d8194ade925690959a947edf7e30d",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/experiment/casm-y-answer-state",
+      "sha": "563b8f04bf2c709e938c07911aee71d80a9167cf",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/feat/casm-phase1-benchmark-controls",
+      "sha": "a12f176edbd929c45043592e93a9c8bb461a192d",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/feat/casm-phase1-benchmark-controls-v2",
+      "sha": "aa4142024924a7c6fabd08bb6430c650e1b13c16",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/feat/casm-phase1-bool-dag",
+      "sha": "cfb605ccc1398299172e1e73a7a386801cf8a7a5",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/feat/casm-phase1-dag-falsification",
+      "sha": "a15426ebdb78e283c96d73a36912719f0c7caf87",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/fix/casm-phase1-runner",
+      "sha": "1d96f2d4fee91a5e6faf028eeb4d8c6b52538bb3",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/fix/phase1-gate3-structural-pair",
+      "sha": "8a95c4c59dd3a26ba0a75789cc5097c0b34e5fb4",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/main",
+      "sha": "c26ff92b8ecec74045bd2393cdaf956c99a0d9d5",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/model/compression-attention-v0",
+      "sha": "894d447c2b87cbcc68d64259cb2bae1efdf6577b",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/model/compression-attention-v01",
+      "sha": "f0b006dea3d084ed81c1e8329346ef4b6aab0dbf",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/model/compression-attention-v02-selective-writes",
+      "sha": "3e6886f67c6aba71500c3b4cbda06388e5fe917f",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/ops/publish-lrc-route-repair-002-20261108",
+      "sha": "e418d1a6e02c5e392ee0dcc83f0e8b2e23777eeb",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/pnds",
+      "sha": "bd2baea4499914672bbfead2cb1378c1cfaa5539",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/changing-state-001-20261113",
+      "sha": "9a205c4c7c78e0cf1a7e7083098dc9cb62fd465e",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/cog-attn-continuation-evidence-20261120",
+      "sha": "ba8777f522db0efa17f855c744993135abe1da2d",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/cog-attn-reproducibility-20261120",
+      "sha": "dfc4268489b6acb88cc583fdcfacfa69c8bd44f4",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/csm-020-software-preflight-20261117",
+      "sha": "840ffa40adc4eea93184c56f473a4513f838b58d",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/csm-bdh002-handoff-20261118",
+      "sha": "fef6eb2d2528300822b6142aa0bfe27cd9768421",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/csm-boundary-017-draft-20261116",
+      "sha": "7608a276dbbe6e3707e024b7de7456cb491f840e",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/csm-collapse-004-20261110",
+      "sha": "8b17bbe6389162d39de330028687180fcf50b0a2",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/csm-conditional-018-draft-20261117",
+      "sha": "2eff614af8303f31376049c9aece37324fd7535d",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/csm-conditional-019-draft-20261117",
+      "sha": "c5b53d973192d3f1842185a4ec51d55c7e958b38",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/csm-longbench-003-20261109",
+      "sha": "21b0d41cebae4762577d4c34f60cc07bdceac6c7",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/csm-original-scope-reconstructed-20261109",
+      "sha": "1bb6e10084cb06a9b600c2d055bfd54a9ae4ee0d",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/csm-parallel-022-calibration-20261117",
+      "sha": "6afd3566ea6dabb2376e6ae0f2d5537007504848",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/csm-parity-002-20261109",
+      "sha": "d63ca288a29998c86301fe213852929fdfe9bb21",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/csm-recovered-address-002-20261109",
+      "sha": "3edc4f1a541a3221390e4c0a21fe0c12004f1ca5",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/csm-regulation-math-001-20261109",
+      "sha": "b5ff1410905dc5dfb11a383ebb60362247899070",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/csm-skill-first-pilot",
+      "sha": "2a3dd21fcbd55e87eca3c4e5bb05846136b86d4f",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/frozen-value-001-20261114",
+      "sha": "f7b304a023258da069b10342d3e2f90641fe042a",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lifecycle-learning-001-20261114",
+      "sha": "a96ecc1b92fc7121bc35a8c60e1803328c05929f",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrc-information-diagnostics-v02",
+      "sha": "474fba0059deb6f2f054401231d8317e5a896da5",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrc-math-formal-review",
+      "sha": "cd4dadd3a407a4d9dd85c6f6f678e6562940b457",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrc-refinement-001-20261108",
+      "sha": "8908a87a627aa6bcdeed1158097afbf67ac4d595",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrc-route-repair-002-20261108",
+      "sha": "3f71af6eb53827eb7eb3c74e10964f70e8e84460",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrc-route-repair-002-handoff-20261108",
+      "sha": "566ba9933a35cf88a55f830891d8d6e33d6ca524",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrc-v4-integration-review",
+      "sha": "b50e1615e16410b06af34081e83762460c0f9de3",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrc-vb002-matched",
+      "sha": "83388c8b8af99b7b3cfd9607e0bfbda68adf4255",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrc-versioned-baselines",
+      "sha": "9f6bbd21e580cc2a96c64e6645ec499f576f22e6",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrr-cached-retrieval-v03b",
+      "sha": "338e1809994a0fe3283e9b9c417b627b973efec5",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrr-causal-index-v01",
+      "sha": "66bfbf25ba993e211b567ae3ce1a237f3ccaa094",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrr-curriculum-retention-v09",
+      "sha": "1c04002238605da1e83617807ddf55012cba3a03",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrr-dual-relational-credit-v07",
+      "sha": "09becc095010e14002576a3582e8577aa54eb690",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrr-energy-selectivity-v06",
+      "sha": "90cc5a8984e363ca3af60dc991235f9dbba86f39",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrr-locality-abstention-v04",
+      "sha": "ef38cf978fb86c0ef8ef166f88d971ef51f82438",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrr-nuisance-invariance-v08",
+      "sha": "0c6d9ecd1a5a145a9d1b6a47b428313d29f44f8d",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrr-outcome-codes-v02",
+      "sha": "dc1790908a3547deef23c81c1a1589619f03b114",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrr-paired-entropy-v10",
+      "sha": "7056df49f6cfa4a3c463bbf63438a5c7bd7004cc",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrr-raw-causal-v03",
+      "sha": "77f5bb927bd5b64e096a0ad0b0c3fb5c2c98b876",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrr-read-write-binding-v11",
+      "sha": "837d89ebcf1bbcdb487d195a47a0ce591669b9e0",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrr-record-separation-v12",
+      "sha": "1588b60cd2f9c8ef5ea4b2dc3c1b25b1baf779e2",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/lrr-role-register-v05",
+      "sha": "c9609c0971d38377210b003401115e584de5ca15",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/ncm-inference-feasibility-20261117",
+      "sha": "5e5542d2d6ff2ff561a08971a39d2aeb5010a4ae",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/output-memory-021-calibration-20261117",
+      "sha": "89b7fff3f41ab25eb3fd2b2d969e0792b18e9762",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/overwrite-paths-051-20261114",
+      "sha": "e05829fd7c9af377e7ccb53fa7343fe4b8c0863c",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/relational-composition-v01",
+      "sha": "d73e7f903fe35b629f090825178c7de42e02a6b8",
+      "truncated": false,
+      "paths": []
+    },
+    {
+      "ref": "refs/heads/research/set-repair-001-20261114",
+      "sha": "320b973c5ca3caa243b9ecf035340020cc613242",
+      "truncated": false,
+      "paths": []
+    }
+  ],
+  "assets": [
+    "LRC_ROUTE_REPAIR_002_Checkpoints_and_Evidence_20261108.zip",
+    "LRC_ROUTE_REPAIR_002_Code.patch",
+    "lrc_vb001_matched_comparison.zip",
+    "README.md",
+    "requirements-restore.txt",
+    "restore.py",
+    "SHA256SUMS"
+  ],
+  "local": [],
+  "targets": {
+    "COG_ATTN_001_pilot.zip": "58ec90cdf99c64b6b47184d7c29e1f28dffaa0fd159b17b015e7498a26737570",
+    "COG_ATTN_002_010_evidence.zip": "562465429049bbedbcf8e61ac399fccd7c2d274e49d256dfc4f292d17722e804",
+    "COG_ATTN_011_013_evidence.zip": "91d39f45548866e741278b26842cc0660fbe3fe7eac6335e99c1ede162dbeff7",
+    "COG_ATTN_014_020_evidence.zip": "d9e7a6f36a4b14ef108695b8cc4379945b7b777893f8062819e2f0677bafd49a",
+    "COG_ATTN_021_030_evidence.zip": "53f9aa2f39eb5d78768a088021c0fa1910ed3c90c7a67cac53a662b194d0603f",
+    "COG_ATTN_031_040_evidence.zip": "78b9bbccfa208f9ec73298ba077836145d444f33e1e5c4be7c8d8542b0be0591",
+    "COG_ATTN_041_046_evidence.zip": "4263355e73e9248d7cd4d3603665559bcfdf502aff45d6c9a032f65a1bbafbcc",
+    "COG_ATTN_epistemic_lifecycle_evidence.zip": "d7f68b4ca396f040e7f2002ac83c0699000361ac135ad3740cd003ef5b25aeae",
+    "COG_ATTN_epistemic_lifecycle_v2_evidence.zip": "4e90b684b12b8baa177363695e4bf1aa6a89ca88841a76d96f385ee039e064f0",
+    "COG_ATTN_weakness_repair_evidence.zip": "d49ce3d2700f22000799cb0dd015cceefb36dcd570d6a47bbab2b83d3640b534"
+  }
+}
