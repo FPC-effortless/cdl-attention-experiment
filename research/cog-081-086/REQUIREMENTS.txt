@@ -1,0 +1,1 @@
+python>=3.10; standard library at runtime; pytest only for tests
