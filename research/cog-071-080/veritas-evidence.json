@@ -1,0 +1,39 @@
+{
+  "schema_version": "veritas.shared-evidence.v1",
+  "evidence_id": "EVID-D4ADA4C0133F236780247FF2",
+  "evidence_content_sha256": "d4ada4c0133f236780247ff274e8cbb404591a22a543df6c82e0764d2c8ea00a",
+  "record_id": "EREC-EF6A190564C91C7FFCA03628",
+  "evidence_type": "runtime.adaptive_commitment",
+  "outcome": "OBSERVED",
+  "visibility": "public",
+  "claim": "Ten bounded qualification attempts with distinct authority, semantic and economic outcomes.",
+  "subjects": [
+    {
+      "kind": "protocol",
+      "subject_id": "cog-071-080",
+      "version": null,
+      "content_sha256": "b4a413b9bb87225b8e597a566bd0158f8599cca6b687b2afdcd434b5f7790352"
+    }
+  ],
+  "producer": {
+    "producer_id": "graded-commitment-audit",
+    "producer_version": "1",
+    "content_sha256": "ea926052d53405d0bfb89e1a8fbe59cec8a673c710b9035bc2ec37abe6fa9e2b"
+  },
+  "policy": null,
+  "artifacts": [
+    {
+      "artifact_id": "cycle-manifest",
+      "role": "primary",
+      "content_sha256": "d6053f52c72f6b9fe3cfb8a00fc950f1986c0f55756a929b6c95f3887aa74c60",
+      "media_type": null
+    }
+  ],
+  "dependencies": [],
+  "observed_at": "2026-11-20T22:45:33.137770Z",
+  "provenance": {
+    "lab": "Veritas Research Lab OS and TrainLab",
+    "replay": "separate hosted CPU, shared source",
+    "scope": "single investigator, simulated authority"
+  }
+}
