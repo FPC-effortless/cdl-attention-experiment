@@ -1,0 +1,38 @@
+{
+  "files": {
+    "AGGREGATE_RESULTS.json": {
+      "bytes": 48410,
+      "sha256": "ee152a8ccf06ed04e77736dbd1bafd89b1a6b15f9f22fb3267211ad8ca0d5fb7"
+    },
+    "README.md": {
+      "bytes": 5005,
+      "sha256": "34533f74eb18eb6b7830ada5bd92a33c3f711c956730a533a4f4061bcff60b77"
+    },
+    "cog_067_packet/PROTOCOL.md": {
+      "bytes": 8503,
+      "sha256": "fa0f0629be88616175fea5dddcafa52027c65fe6efd1d4e2a04181d4d98119cd"
+    },
+    "cog_067_packet/__init__.py": {
+      "bytes": 58,
+      "sha256": "3338207aaaf0e763d1478fbfc34ff4456f89fd80d9c9c8fdc56d5f1daef56c5b"
+    },
+    "cog_067_packet/pipeline.py": {
+      "bytes": 13728,
+      "sha256": "b550997efa8f8b7f7edddc72cd31226bdcf798cb9171723a093b366fd3ec4708"
+    },
+    "cog_067_packet/policies.py": {
+      "bytes": 2670,
+      "sha256": "34a954cc349339798975e0b834de9d668a411e939357ada57414b87d1654187d"
+    },
+    "cog_067_packet/test_fixtures.py": {
+      "bytes": 1506,
+      "sha256": "221fe7fb5ef2eeef606bd896234eb2d04c1f3b84ca907751c7edfdca36bdd96d"
+    },
+    "cog_067_packet/world.py": {
+      "bytes": 3538,
+      "sha256": "0952277415d831bb02e3836f08956d6ceb392b94678b1a615cf5d74bc8a63f2b"
+    }
+  },
+  "freeze_sha256": "64ad7cf23e1e9bd5deec1b9f53f198e812611e54290b3d77b1ca932507d2c586",
+  "scope": "public scientific source, protocol and aggregate-only result; constructed development, NOT_QUALIFIED"
+}

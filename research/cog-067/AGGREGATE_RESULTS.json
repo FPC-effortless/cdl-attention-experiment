@@ -1,0 +1,2034 @@
+{
+  "adaptive_active_precision": 0.0,
+  "adaptive_coverage": 0.08125,
+  "contrasts": {
+    "fixed_evsi": {
+      "ci95": [
+        0,
+        0
+      ],
+      "extra_session_ns": 48590.68125,
+      "extra_session_ns_ci95": [
+        47622.5875,
+        49697.38125
+      ],
+      "regret_reduction": 0,
+      "weighted_added_inference_ns_12x": 583088.175
+    },
+    "learned_uncertainty": {
+      "ci95": [
+        0,
+        0
+      ],
+      "extra_session_ns": 38570.05,
+      "extra_session_ns_ci95": [
+        37203.3125,
+        39806.1375
+      ],
+      "regret_reduction": 0,
+      "weighted_added_inference_ns_12x": 462840.60000000003
+    },
+    "query_ignore": {
+      "ci95": [
+        0,
+        0
+      ],
+      "extra_session_ns": 49467.5875,
+      "extra_session_ns_ci95": [
+        48494.2875,
+        50586.64375
+      ],
+      "regret_reduction": 0,
+      "weighted_added_inference_ns_12x": 593611.05
+    },
+    "random_matched": {
+      "ci95": [
+        0,
+        0
+      ],
+      "extra_session_ns": 48427.75625,
+      "extra_session_ns_ci95": [
+        47419.00625,
+        49650.2125
+      ],
+      "regret_reduction": 0,
+      "weighted_added_inference_ns_12x": 581133.075
+    }
+  },
+  "gate": false,
+  "inference_cost_gate": false,
+  "offline_all_sources_not_available_to_live_policy": {
+    "clean:None": {
+      "known": 0,
+      "regret": 2086,
+      "rows": 480
+    },
+    "clean:direct": {
+      "known": 162,
+      "regret": 2086,
+      "rows": 480
+    },
+    "clean:mirror": {
+      "known": 0,
+      "regret": 2086,
+      "rows": 480
+    },
+    "clean:replay": {
+      "known": 0,
+      "regret": 2086,
+      "rows": 480
+    },
+    "exporter_flip:None": {
+      "known": 0,
+      "regret": 2363,
+      "rows": 480
+    },
+    "exporter_flip:direct": {
+      "known": 159,
+      "regret": 2363,
+      "rows": 480
+    },
+    "exporter_flip:mirror": {
+      "known": 0,
+      "regret": 2363,
+      "rows": 480
+    },
+    "exporter_flip:replay": {
+      "known": 0,
+      "regret": 2363,
+      "rows": 480
+    },
+    "journal_missing:None": {
+      "known": 0,
+      "regret": 2175,
+      "rows": 480
+    },
+    "journal_missing:direct": {
+      "known": 156,
+      "regret": 2175,
+      "rows": 480
+    },
+    "journal_missing:mirror": {
+      "known": 0,
+      "regret": 2175,
+      "rows": 480
+    },
+    "journal_missing:replay": {
+      "known": 0,
+      "regret": 2175,
+      "rows": 480
+    },
+    "snapshot_stale:None": {
+      "known": 0,
+      "regret": 2204,
+      "rows": 480
+    },
+    "snapshot_stale:direct": {
+      "known": 169,
+      "regret": 2204,
+      "rows": 480
+    },
+    "snapshot_stale:mirror": {
+      "known": 0,
+      "regret": 2204,
+      "rows": 480
+    },
+    "snapshot_stale:replay": {
+      "known": 0,
+      "regret": 2204,
+      "rows": 480
+    }
+  },
+  "oracle_effects": {
+    "null": {
+      "max_best_uplift": 0,
+      "mean_best_uplift": 0,
+      "mean_signed_actions": [
+        -1,
+        -1
+      ],
+      "noop_active_tie_cases": 0,
+      "noop_optimal": 480,
+      "rows": 480,
+      "strict_active_improvement_cases": 0,
+      "strict_noop_win_cases": 480
+    },
+    "null:clean": {
+      "max_best_uplift": 0,
+      "mean_best_uplift": 0,
+      "mean_signed_actions": [
+        -1,
+        -1
+      ],
+      "noop_active_tie_cases": 0,
+      "noop_optimal": 120,
+      "rows": 120,
+      "strict_active_improvement_cases": 0,
+      "strict_noop_win_cases": 120
+    },
+    "null:exporter_flip": {
+      "max_best_uplift": 0,
+      "mean_best_uplift": 0,
+      "mean_signed_actions": [
+        -1,
+        -1
+      ],
+      "noop_active_tie_cases": 0,
+      "noop_optimal": 120,
+      "rows": 120,
+      "strict_active_improvement_cases": 0,
+      "strict_noop_win_cases": 120
+    },
+    "null:journal_missing": {
+      "max_best_uplift": 0,
+      "mean_best_uplift": 0,
+      "mean_signed_actions": [
+        -1,
+        -1
+      ],
+      "noop_active_tie_cases": 0,
+      "noop_optimal": 120,
+      "rows": 120,
+      "strict_active_improvement_cases": 0,
+      "strict_noop_win_cases": 120
+    },
+    "null:snapshot_stale": {
+      "max_best_uplift": 0,
+      "mean_best_uplift": 0,
+      "mean_signed_actions": [
+        -1,
+        -1
+      ],
+      "noop_active_tie_cases": 0,
+      "noop_optimal": 120,
+      "rows": 120,
+      "strict_active_improvement_cases": 0,
+      "strict_noop_win_cases": 120
+    },
+    "reverse": {
+      "max_best_uplift": 0,
+      "mean_best_uplift": 0,
+      "mean_signed_actions": [
+        -9.560416666666667,
+        -9.810416666666667
+      ],
+      "noop_active_tie_cases": 0,
+      "noop_optimal": 480,
+      "rows": 480,
+      "strict_active_improvement_cases": 0,
+      "strict_noop_win_cases": 480
+    },
+    "reverse:clean": {
+      "max_best_uplift": 0,
+      "mean_best_uplift": 0,
+      "mean_signed_actions": [
+        -9.25,
+        -9.733333333333333
+      ],
+      "noop_active_tie_cases": 0,
+      "noop_optimal": 120,
+      "rows": 120,
+      "strict_active_improvement_cases": 0,
+      "strict_noop_win_cases": 120
+    },
+    "reverse:exporter_flip": {
+      "max_best_uplift": 0,
+      "mean_best_uplift": 0,
+      "mean_signed_actions": [
+        -9.633333333333333,
+        -9.958333333333334
+      ],
+      "noop_active_tie_cases": 0,
+      "noop_optimal": 120,
+      "rows": 120,
+      "strict_active_improvement_cases": 0,
+      "strict_noop_win_cases": 120
+    },
+    "reverse:journal_missing": {
+      "max_best_uplift": 0,
+      "mean_best_uplift": 0,
+      "mean_signed_actions": [
+        -9.6,
+        -9.258333333333333
+      ],
+      "noop_active_tie_cases": 0,
+      "noop_optimal": 120,
+      "rows": 120,
+      "strict_active_improvement_cases": 0,
+      "strict_noop_win_cases": 120
+    },
+    "reverse:snapshot_stale": {
+      "max_best_uplift": 0,
+      "mean_best_uplift": 0,
+      "mean_signed_actions": [
+        -9.758333333333333,
+        -10.291666666666666
+      ],
+      "noop_active_tie_cases": 0,
+      "noop_optimal": 120,
+      "rows": 120,
+      "strict_active_improvement_cases": 0,
+      "strict_noop_win_cases": 120
+    },
+    "strong": {
+      "max_best_uplift": 23,
+      "mean_best_uplift": 11.4875,
+      "mean_signed_actions": [
+        6.479166666666667,
+        6.683333333333334
+      ],
+      "noop_active_tie_cases": 31,
+      "noop_optimal": 90,
+      "rows": 480,
+      "strict_active_improvement_cases": 390,
+      "strict_noop_win_cases": 59
+    },
+    "strong:clean": {
+      "max_best_uplift": 23,
+      "mean_best_uplift": 11.558333333333334,
+      "mean_signed_actions": [
+        6.475,
+        6.066666666666666
+      ],
+      "noop_active_tie_cases": 6,
+      "noop_optimal": 20,
+      "rows": 120,
+      "strict_active_improvement_cases": 100,
+      "strict_noop_win_cases": 14
+    },
+    "strong:exporter_flip": {
+      "max_best_uplift": 23,
+      "mean_best_uplift": 12.333333333333334,
+      "mean_signed_actions": [
+        6.8,
+        7.425
+      ],
+      "noop_active_tie_cases": 7,
+      "noop_optimal": 20,
+      "rows": 120,
+      "strict_active_improvement_cases": 100,
+      "strict_noop_win_cases": 13
+    },
+    "strong:journal_missing": {
+      "max_best_uplift": 23,
+      "mean_best_uplift": 11.025,
+      "mean_signed_actions": [
+        6.058333333333334,
+        6.825
+      ],
+      "noop_active_tie_cases": 10,
+      "noop_optimal": 29,
+      "rows": 120,
+      "strict_active_improvement_cases": 91,
+      "strict_noop_win_cases": 19
+    },
+    "strong:snapshot_stale": {
+      "max_best_uplift": 23,
+      "mean_best_uplift": 11.033333333333333,
+      "mean_signed_actions": [
+        6.583333333333333,
+        6.416666666666667
+      ],
+      "noop_active_tie_cases": 8,
+      "noop_optimal": 21,
+      "rows": 120,
+      "strict_active_improvement_cases": 99,
+      "strict_noop_win_cases": 13
+    },
+    "weak": {
+      "max_best_uplift": 11,
+      "mean_best_uplift": 6.904166666666667,
+      "mean_signed_actions": [
+        3.8958333333333335,
+        4.102083333333334
+      ],
+      "noop_active_tie_cases": 48,
+      "noop_optimal": 114,
+      "rows": 480,
+      "strict_active_improvement_cases": 366,
+      "strict_noop_win_cases": 66
+    },
+    "weak:clean": {
+      "max_best_uplift": 11,
+      "mean_best_uplift": 5.825,
+      "mean_signed_actions": [
+        3.35,
+        2.6416666666666666
+      ],
+      "noop_active_tie_cases": 8,
+      "noop_optimal": 32,
+      "rows": 120,
+      "strict_active_improvement_cases": 88,
+      "strict_noop_win_cases": 24
+    },
+    "weak:exporter_flip": {
+      "max_best_uplift": 11,
+      "mean_best_uplift": 7.358333333333333,
+      "mean_signed_actions": [
+        3.816666666666667,
+        4.975
+      ],
+      "noop_active_tie_cases": 15,
+      "noop_optimal": 27,
+      "rows": 120,
+      "strict_active_improvement_cases": 93,
+      "strict_noop_win_cases": 12
+    },
+    "weak:journal_missing": {
+      "max_best_uplift": 11,
+      "mean_best_uplift": 7.1,
+      "mean_signed_actions": [
+        3.6416666666666666,
+        4.408333333333333
+      ],
+      "noop_active_tie_cases": 11,
+      "noop_optimal": 30,
+      "rows": 120,
+      "strict_active_improvement_cases": 90,
+      "strict_noop_win_cases": 19
+    },
+    "weak:snapshot_stale": {
+      "max_best_uplift": 11,
+      "mean_best_uplift": 7.333333333333333,
+      "mean_signed_actions": [
+        4.775,
+        4.383333333333334
+      ],
+      "noop_active_tie_cases": 14,
+      "noop_optimal": 25,
+      "rows": 120,
+      "strict_active_improvement_cases": 95,
+      "strict_noop_win_cases": 11
+    }
+  },
+  "policy_metrics": {
+    "adaptive": {
+      "acquired_None": 0,
+      "acquired_direct": 320,
+      "acquired_replay": 160,
+      "acquisition_ticks": 640,
+      "brier_proposal": 0.2123118256815052,
+      "correct": 83,
+      "decisions": 104,
+      "displaced": 640,
+      "displaced_opportunity_regret": 2620,
+      "effect": {
+        "null": {
+          "displaced": 160,
+          "regret": 0,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 286
+        },
+        "reverse": {
+          "displaced": 160,
+          "regret": 0,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 296
+        },
+        "strong": {
+          "displaced": 160,
+          "regret": 5514,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 301
+        },
+        "weak": {
+          "displaced": 160,
+          "regret": 3314,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 293
+        }
+      },
+      "effect_fault": {
+        "null:clean": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 74
+        },
+        "null:exporter_flip": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 75
+        },
+        "null:journal_missing": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 70
+        },
+        "null:snapshot_stale": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 67
+        },
+        "reverse:clean": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 76
+        },
+        "reverse:exporter_flip": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 74
+        },
+        "reverse:journal_missing": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 72
+        },
+        "reverse:snapshot_stale": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 74
+        },
+        "strong:clean": {
+          "displaced": 40,
+          "regret": 1387,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 75
+        },
+        "strong:exporter_flip": {
+          "displaced": 40,
+          "regret": 1480,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 75
+        },
+        "strong:journal_missing": {
+          "displaced": 40,
+          "regret": 1323,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 75
+        },
+        "strong:snapshot_stale": {
+          "displaced": 40,
+          "regret": 1324,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 76
+        },
+        "weak:clean": {
+          "displaced": 40,
+          "regret": 699,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 73
+        },
+        "weak:exporter_flip": {
+          "displaced": 40,
+          "regret": 883,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 71
+        },
+        "weak:journal_missing": {
+          "displaced": 40,
+          "regret": 852,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 75
+        },
+        "weak:snapshot_stale": {
+          "displaced": 40,
+          "regret": 880,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 74
+        }
+      },
+      "fault": {
+        "clean": {
+          "displaced": 160,
+          "regret": 2086,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 298
+        },
+        "exporter_flip": {
+          "displaced": 160,
+          "regret": 2363,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 295
+        },
+        "journal_missing": {
+          "displaced": 160,
+          "regret": 2175,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 292
+        },
+        "snapshot_stale": {
+          "displaced": 160,
+          "regret": 2204,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 291
+        }
+      },
+      "median_session_ns": 95024.0,
+      "missing_reads": 40,
+      "regret": 8828,
+      "risk_coverage": [
+        {
+          "confidence_min": 0,
+          "coverage": 1.0,
+          "risk": 0.62421875
+        },
+        {
+          "confidence_min": 0.35,
+          "coverage": 0.3609375,
+          "risk": 0.4653679653679653
+        },
+        {
+          "confidence_min": 0.45,
+          "coverage": 0.20078125,
+          "risk": 0.36575875486381326
+        },
+        {
+          "confidence_min": 0.55,
+          "coverage": 0.08125,
+          "risk": 0.20192307692307687
+        },
+        {
+          "confidence_min": 0.65,
+          "coverage": 0.08125,
+          "risk": 0.20192307692307687
+        },
+        {
+          "confidence_min": 0.75,
+          "coverage": 0.06015625,
+          "risk": 0.19480519480519476
+        },
+        {
+          "confidence_min": 0.85,
+          "coverage": 0.0,
+          "risk": null
+        },
+        {
+          "confidence_min": 0.95,
+          "coverage": 0.0,
+          "risk": null
+        }
+      ],
+      "served": 1280,
+      "source_wall_ns_total": 3429643,
+      "unknown": 1176,
+      "unknown_fraction": 0.91875
+    },
+    "always_ask": {
+      "acquired_direct": 960,
+      "acquisition_ticks": 960,
+      "brier_proposal": 0.23078518876550194,
+      "correct": 214,
+      "decisions": 284,
+      "displaced": 960,
+      "displaced_opportunity_regret": 4077,
+      "effect": {
+        "null": {
+          "displaced": 240,
+          "regret": 0,
+          "scheduled": 480,
+          "served": 240,
+          "unknown": 167
+        },
+        "reverse": {
+          "displaced": 240,
+          "regret": 0,
+          "scheduled": 480,
+          "served": 240,
+          "unknown": 171
+        },
+        "strong": {
+          "displaced": 240,
+          "regret": 5514,
+          "scheduled": 480,
+          "served": 240,
+          "unknown": 171
+        },
+        "weak": {
+          "displaced": 240,
+          "regret": 3314,
+          "scheduled": 480,
+          "served": 240,
+          "unknown": 167
+        }
+      },
+      "effect_fault": {
+        "null:clean": {
+          "displaced": 60,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 60,
+          "unknown": 47
+        },
+        "null:exporter_flip": {
+          "displaced": 60,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 60,
+          "unknown": 38
+        },
+        "null:journal_missing": {
+          "displaced": 60,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 60,
+          "unknown": 42
+        },
+        "null:snapshot_stale": {
+          "displaced": 60,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 60,
+          "unknown": 40
+        },
+        "reverse:clean": {
+          "displaced": 60,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 60,
+          "unknown": 43
+        },
+        "reverse:exporter_flip": {
+          "displaced": 60,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 60,
+          "unknown": 45
+        },
+        "reverse:journal_missing": {
+          "displaced": 60,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 60,
+          "unknown": 41
+        },
+        "reverse:snapshot_stale": {
+          "displaced": 60,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 60,
+          "unknown": 42
+        },
+        "strong:clean": {
+          "displaced": 60,
+          "regret": 1387,
+          "scheduled": 120,
+          "served": 60,
+          "unknown": 46
+        },
+        "strong:exporter_flip": {
+          "displaced": 60,
+          "regret": 1480,
+          "scheduled": 120,
+          "served": 60,
+          "unknown": 43
+        },
+        "strong:journal_missing": {
+          "displaced": 60,
+          "regret": 1323,
+          "scheduled": 120,
+          "served": 60,
+          "unknown": 41
+        },
+        "strong:snapshot_stale": {
+          "displaced": 60,
+          "regret": 1324,
+          "scheduled": 120,
+          "served": 60,
+          "unknown": 41
+        },
+        "weak:clean": {
+          "displaced": 60,
+          "regret": 699,
+          "scheduled": 120,
+          "served": 60,
+          "unknown": 42
+        },
+        "weak:exporter_flip": {
+          "displaced": 60,
+          "regret": 883,
+          "scheduled": 120,
+          "served": 60,
+          "unknown": 39
+        },
+        "weak:journal_missing": {
+          "displaced": 60,
+          "regret": 852,
+          "scheduled": 120,
+          "served": 60,
+          "unknown": 45
+        },
+        "weak:snapshot_stale": {
+          "displaced": 60,
+          "regret": 880,
+          "scheduled": 120,
+          "served": 60,
+          "unknown": 41
+        }
+      },
+      "fault": {
+        "clean": {
+          "displaced": 240,
+          "regret": 2086,
+          "scheduled": 480,
+          "served": 240,
+          "unknown": 178
+        },
+        "exporter_flip": {
+          "displaced": 240,
+          "regret": 2363,
+          "scheduled": 480,
+          "served": 240,
+          "unknown": 165
+        },
+        "journal_missing": {
+          "displaced": 240,
+          "regret": 2175,
+          "scheduled": 480,
+          "served": 240,
+          "unknown": 169
+        },
+        "snapshot_stale": {
+          "displaced": 240,
+          "regret": 2204,
+          "scheduled": 480,
+          "served": 240,
+          "unknown": 164
+        }
+      },
+      "median_session_ns": 142535.0,
+      "regret": 8828,
+      "risk_coverage": [
+        {
+          "confidence_min": 0,
+          "coverage": 1.0,
+          "risk": 0.44791666666666663
+        },
+        {
+          "confidence_min": 0.35,
+          "coverage": 1.0,
+          "risk": 0.44791666666666663
+        },
+        {
+          "confidence_min": 0.45,
+          "coverage": 0.815625,
+          "risk": 0.4278416347381865
+        },
+        {
+          "confidence_min": 0.55,
+          "coverage": 0.29583333333333334,
+          "risk": 0.24647887323943662
+        },
+        {
+          "confidence_min": 0.65,
+          "coverage": 0.29583333333333334,
+          "risk": 0.24647887323943662
+        },
+        {
+          "confidence_min": 0.75,
+          "coverage": 0.22291666666666668,
+          "risk": 0.24766355140186913
+        },
+        {
+          "confidence_min": 0.85,
+          "coverage": 0.0,
+          "risk": null
+        },
+        {
+          "confidence_min": 0.95,
+          "coverage": 0.0,
+          "risk": null
+        }
+      ],
+      "served": 960,
+      "source_wall_ns_total": 9121382,
+      "unknown": 676,
+      "unknown_fraction": 0.7041666666666667
+    },
+    "fixed_evsi": {
+      "acquired_None": 0,
+      "acquired_direct": 320,
+      "acquired_replay": 160,
+      "acquisition_ticks": 640,
+      "brier_proposal": 0.2155158399584144,
+      "correct": 66,
+      "decisions": 89,
+      "displaced": 640,
+      "displaced_opportunity_regret": 2620,
+      "effect": {
+        "null": {
+          "displaced": 160,
+          "regret": 0,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 297
+        },
+        "reverse": {
+          "displaced": 160,
+          "regret": 0,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 297
+        },
+        "strong": {
+          "displaced": 160,
+          "regret": 5514,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 302
+        },
+        "weak": {
+          "displaced": 160,
+          "regret": 3314,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 295
+        }
+      },
+      "effect_fault": {
+        "null:clean": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 74
+        },
+        "null:exporter_flip": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 76
+        },
+        "null:journal_missing": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 73
+        },
+        "null:snapshot_stale": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 74
+        },
+        "reverse:clean": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 75
+        },
+        "reverse:exporter_flip": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 71
+        },
+        "reverse:journal_missing": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 74
+        },
+        "reverse:snapshot_stale": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 77
+        },
+        "strong:clean": {
+          "displaced": 40,
+          "regret": 1387,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 76
+        },
+        "strong:exporter_flip": {
+          "displaced": 40,
+          "regret": 1480,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 76
+        },
+        "strong:journal_missing": {
+          "displaced": 40,
+          "regret": 1323,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 74
+        },
+        "strong:snapshot_stale": {
+          "displaced": 40,
+          "regret": 1324,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 76
+        },
+        "weak:clean": {
+          "displaced": 40,
+          "regret": 699,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 70
+        },
+        "weak:exporter_flip": {
+          "displaced": 40,
+          "regret": 883,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 73
+        },
+        "weak:journal_missing": {
+          "displaced": 40,
+          "regret": 852,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 75
+        },
+        "weak:snapshot_stale": {
+          "displaced": 40,
+          "regret": 880,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 77
+        }
+      },
+      "fault": {
+        "clean": {
+          "displaced": 160,
+          "regret": 2086,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 295
+        },
+        "exporter_flip": {
+          "displaced": 160,
+          "regret": 2363,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 296
+        },
+        "journal_missing": {
+          "displaced": 160,
+          "regret": 2175,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 296
+        },
+        "snapshot_stale": {
+          "displaced": 160,
+          "regret": 2204,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 304
+        }
+      },
+      "median_session_ns": 47632.0,
+      "missing_reads": 40,
+      "regret": 8828,
+      "risk_coverage": [
+        {
+          "confidence_min": 0,
+          "coverage": 1.0,
+          "risk": 0.634375
+        },
+        {
+          "confidence_min": 0.35,
+          "coverage": 0.3609375,
+          "risk": 0.49350649350649356
+        },
+        {
+          "confidence_min": 0.45,
+          "coverage": 0.203125,
+          "risk": 0.41538461538461535
+        },
+        {
+          "confidence_min": 0.55,
+          "coverage": 0.06953125,
+          "risk": 0.2584269662921348
+        },
+        {
+          "confidence_min": 0.65,
+          "coverage": 0.06953125,
+          "risk": 0.2584269662921348
+        },
+        {
+          "confidence_min": 0.75,
+          "coverage": 0.053125,
+          "risk": 0.27941176470588236
+        },
+        {
+          "confidence_min": 0.85,
+          "coverage": 0.0,
+          "risk": null
+        },
+        {
+          "confidence_min": 0.95,
+          "coverage": 0.0,
+          "risk": null
+        }
+      ],
+      "served": 1280,
+      "source_wall_ns_total": 3536388,
+      "unknown": 1191,
+      "unknown_fraction": 0.93046875
+    },
+    "learned_uncertainty": {
+      "acquired_None": 0,
+      "acquired_direct": 320,
+      "acquired_replay": 160,
+      "acquisition_ticks": 640,
+      "brier_proposal": 0.2092955035146721,
+      "correct": 77,
+      "decisions": 109,
+      "displaced": 640,
+      "displaced_opportunity_regret": 2620,
+      "effect": {
+        "null": {
+          "displaced": 160,
+          "regret": 0,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 292
+        },
+        "reverse": {
+          "displaced": 160,
+          "regret": 0,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 295
+        },
+        "strong": {
+          "displaced": 160,
+          "regret": 5514,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 291
+        },
+        "weak": {
+          "displaced": 160,
+          "regret": 3314,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 293
+        }
+      },
+      "effect_fault": {
+        "null:clean": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 76
+        },
+        "null:exporter_flip": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 72
+        },
+        "null:journal_missing": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 71
+        },
+        "null:snapshot_stale": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 73
+        },
+        "reverse:clean": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 74
+        },
+        "reverse:exporter_flip": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 73
+        },
+        "reverse:journal_missing": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 73
+        },
+        "reverse:snapshot_stale": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 75
+        },
+        "strong:clean": {
+          "displaced": 40,
+          "regret": 1387,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 74
+        },
+        "strong:exporter_flip": {
+          "displaced": 40,
+          "regret": 1480,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 70
+        },
+        "strong:journal_missing": {
+          "displaced": 40,
+          "regret": 1323,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 74
+        },
+        "strong:snapshot_stale": {
+          "displaced": 40,
+          "regret": 1324,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 73
+        },
+        "weak:clean": {
+          "displaced": 40,
+          "regret": 699,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 78
+        },
+        "weak:exporter_flip": {
+          "displaced": 40,
+          "regret": 883,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 73
+        },
+        "weak:journal_missing": {
+          "displaced": 40,
+          "regret": 852,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 74
+        },
+        "weak:snapshot_stale": {
+          "displaced": 40,
+          "regret": 880,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 68
+        }
+      },
+      "fault": {
+        "clean": {
+          "displaced": 160,
+          "regret": 2086,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 302
+        },
+        "exporter_flip": {
+          "displaced": 160,
+          "regret": 2363,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 288
+        },
+        "journal_missing": {
+          "displaced": 160,
+          "regret": 2175,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 292
+        },
+        "snapshot_stale": {
+          "displaced": 160,
+          "regret": 2204,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 289
+        }
+      },
+      "median_session_ns": 56936.0,
+      "missing_reads": 40,
+      "regret": 8828,
+      "risk_coverage": [
+        {
+          "confidence_min": 0,
+          "coverage": 1.0,
+          "risk": 0.64921875
+        },
+        {
+          "confidence_min": 0.35,
+          "coverage": 0.34921875,
+          "risk": 0.5011185682326622
+        },
+        {
+          "confidence_min": 0.45,
+          "coverage": 0.20546875,
+          "risk": 0.43726235741444863
+        },
+        {
+          "confidence_min": 0.55,
+          "coverage": 0.08515625,
+          "risk": 0.29357798165137616
+        },
+        {
+          "confidence_min": 0.65,
+          "coverage": 0.08515625,
+          "risk": 0.29357798165137616
+        },
+        {
+          "confidence_min": 0.75,
+          "coverage": 0.06640625,
+          "risk": 0.2705882352941177
+        },
+        {
+          "confidence_min": 0.85,
+          "coverage": 0.0,
+          "risk": null
+        },
+        {
+          "confidence_min": 0.95,
+          "coverage": 0.0,
+          "risk": null
+        }
+      ],
+      "served": 1280,
+      "source_wall_ns_total": 3669786,
+      "unknown": 1171,
+      "unknown_fraction": 0.91484375
+    },
+    "passive": {
+      "acquired_None": 0,
+      "acquisition_ticks": 0,
+      "brier_proposal": 0.19902816071940094,
+      "effect": {
+        "null": {
+          "regret": 0,
+          "scheduled": 480,
+          "served": 480,
+          "unknown": 480
+        },
+        "reverse": {
+          "regret": 0,
+          "scheduled": 480,
+          "served": 480,
+          "unknown": 480
+        },
+        "strong": {
+          "regret": 5514,
+          "scheduled": 480,
+          "served": 480,
+          "unknown": 480
+        },
+        "weak": {
+          "regret": 3314,
+          "scheduled": 480,
+          "served": 480,
+          "unknown": 480
+        }
+      },
+      "effect_fault": {
+        "null:clean": {
+          "regret": 0,
+          "scheduled": 120,
+          "served": 120,
+          "unknown": 120
+        },
+        "null:exporter_flip": {
+          "regret": 0,
+          "scheduled": 120,
+          "served": 120,
+          "unknown": 120
+        },
+        "null:journal_missing": {
+          "regret": 0,
+          "scheduled": 120,
+          "served": 120,
+          "unknown": 120
+        },
+        "null:snapshot_stale": {
+          "regret": 0,
+          "scheduled": 120,
+          "served": 120,
+          "unknown": 120
+        },
+        "reverse:clean": {
+          "regret": 0,
+          "scheduled": 120,
+          "served": 120,
+          "unknown": 120
+        },
+        "reverse:exporter_flip": {
+          "regret": 0,
+          "scheduled": 120,
+          "served": 120,
+          "unknown": 120
+        },
+        "reverse:journal_missing": {
+          "regret": 0,
+          "scheduled": 120,
+          "served": 120,
+          "unknown": 120
+        },
+        "reverse:snapshot_stale": {
+          "regret": 0,
+          "scheduled": 120,
+          "served": 120,
+          "unknown": 120
+        },
+        "strong:clean": {
+          "regret": 1387,
+          "scheduled": 120,
+          "served": 120,
+          "unknown": 120
+        },
+        "strong:exporter_flip": {
+          "regret": 1480,
+          "scheduled": 120,
+          "served": 120,
+          "unknown": 120
+        },
+        "strong:journal_missing": {
+          "regret": 1323,
+          "scheduled": 120,
+          "served": 120,
+          "unknown": 120
+        },
+        "strong:snapshot_stale": {
+          "regret": 1324,
+          "scheduled": 120,
+          "served": 120,
+          "unknown": 120
+        },
+        "weak:clean": {
+          "regret": 699,
+          "scheduled": 120,
+          "served": 120,
+          "unknown": 120
+        },
+        "weak:exporter_flip": {
+          "regret": 883,
+          "scheduled": 120,
+          "served": 120,
+          "unknown": 120
+        },
+        "weak:journal_missing": {
+          "regret": 852,
+          "scheduled": 120,
+          "served": 120,
+          "unknown": 120
+        },
+        "weak:snapshot_stale": {
+          "regret": 880,
+          "scheduled": 120,
+          "served": 120,
+          "unknown": 120
+        }
+      },
+      "fault": {
+        "clean": {
+          "regret": 2086,
+          "scheduled": 480,
+          "served": 480,
+          "unknown": 480
+        },
+        "exporter_flip": {
+          "regret": 2363,
+          "scheduled": 480,
+          "served": 480,
+          "unknown": 480
+        },
+        "journal_missing": {
+          "regret": 2175,
+          "scheduled": 480,
+          "served": 480,
+          "unknown": 480
+        },
+        "snapshot_stale": {
+          "regret": 2204,
+          "scheduled": 480,
+          "served": 480,
+          "unknown": 480
+        }
+      },
+      "median_session_ns": 33670.5,
+      "regret": 8828,
+      "risk_coverage": [
+        {
+          "confidence_min": 0,
+          "coverage": 1.0,
+          "risk": 0.7234375
+        },
+        {
+          "confidence_min": 0.35,
+          "coverage": 0.0,
+          "risk": null
+        },
+        {
+          "confidence_min": 0.45,
+          "coverage": 0.0,
+          "risk": null
+        },
+        {
+          "confidence_min": 0.55,
+          "coverage": 0.0,
+          "risk": null
+        },
+        {
+          "confidence_min": 0.65,
+          "coverage": 0.0,
+          "risk": null
+        },
+        {
+          "confidence_min": 0.75,
+          "coverage": 0.0,
+          "risk": null
+        },
+        {
+          "confidence_min": 0.85,
+          "coverage": 0.0,
+          "risk": null
+        },
+        {
+          "confidence_min": 0.95,
+          "coverage": 0.0,
+          "risk": null
+        }
+      ],
+      "served": 1920,
+      "source_wall_ns_total": 0,
+      "unknown": 1920,
+      "unknown_fraction": 1.0
+    },
+    "query_ignore": {
+      "acquired_None": 0,
+      "acquired_direct": 320,
+      "acquired_replay": 160,
+      "acquisition_ticks": 640,
+      "brier_proposal": 0.20367680250405917,
+      "displaced": 640,
+      "displaced_opportunity_regret": 2620,
+      "effect": {
+        "null": {
+          "displaced": 160,
+          "regret": 0,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 320
+        },
+        "reverse": {
+          "displaced": 160,
+          "regret": 0,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 320
+        },
+        "strong": {
+          "displaced": 160,
+          "regret": 5514,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 320
+        },
+        "weak": {
+          "displaced": 160,
+          "regret": 3314,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 320
+        }
+      },
+      "effect_fault": {
+        "null:clean": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 80
+        },
+        "null:exporter_flip": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 80
+        },
+        "null:journal_missing": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 80
+        },
+        "null:snapshot_stale": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 80
+        },
+        "reverse:clean": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 80
+        },
+        "reverse:exporter_flip": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 80
+        },
+        "reverse:journal_missing": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 80
+        },
+        "reverse:snapshot_stale": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 80
+        },
+        "strong:clean": {
+          "displaced": 40,
+          "regret": 1387,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 80
+        },
+        "strong:exporter_flip": {
+          "displaced": 40,
+          "regret": 1480,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 80
+        },
+        "strong:journal_missing": {
+          "displaced": 40,
+          "regret": 1323,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 80
+        },
+        "strong:snapshot_stale": {
+          "displaced": 40,
+          "regret": 1324,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 80
+        },
+        "weak:clean": {
+          "displaced": 40,
+          "regret": 699,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 80
+        },
+        "weak:exporter_flip": {
+          "displaced": 40,
+          "regret": 883,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 80
+        },
+        "weak:journal_missing": {
+          "displaced": 40,
+          "regret": 852,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 80
+        },
+        "weak:snapshot_stale": {
+          "displaced": 40,
+          "regret": 880,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 80
+        }
+      },
+      "fault": {
+        "clean": {
+          "displaced": 160,
+          "regret": 2086,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 320
+        },
+        "exporter_flip": {
+          "displaced": 160,
+          "regret": 2363,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 320
+        },
+        "journal_missing": {
+          "displaced": 160,
+          "regret": 2175,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 320
+        },
+        "snapshot_stale": {
+          "displaced": 160,
+          "regret": 2204,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 320
+        }
+      },
+      "median_session_ns": 47096.0,
+      "missing_reads": 40,
+      "regret": 8828,
+      "risk_coverage": [
+        {
+          "confidence_min": 0,
+          "coverage": 1.0,
+          "risk": 0.7125
+        },
+        {
+          "confidence_min": 0.35,
+          "coverage": 0.0,
+          "risk": null
+        },
+        {
+          "confidence_min": 0.45,
+          "coverage": 0.0,
+          "risk": null
+        },
+        {
+          "confidence_min": 0.55,
+          "coverage": 0.0,
+          "risk": null
+        },
+        {
+          "confidence_min": 0.65,
+          "coverage": 0.0,
+          "risk": null
+        },
+        {
+          "confidence_min": 0.75,
+          "coverage": 0.0,
+          "risk": null
+        },
+        {
+          "confidence_min": 0.85,
+          "coverage": 0.0,
+          "risk": null
+        },
+        {
+          "confidence_min": 0.95,
+          "coverage": 0.0,
+          "risk": null
+        }
+      ],
+      "served": 1280,
+      "source_wall_ns_total": 3530761,
+      "unknown": 1280,
+      "unknown_fraction": 1.0
+    },
+    "random_matched": {
+      "acquired_None": 0,
+      "acquired_direct": 320,
+      "acquired_replay": 160,
+      "acquisition_ticks": 640,
+      "brier_proposal": 0.2127339381665045,
+      "correct": 84,
+      "decisions": 109,
+      "displaced": 640,
+      "displaced_opportunity_regret": 2620,
+      "effect": {
+        "null": {
+          "displaced": 160,
+          "regret": 0,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 292
+        },
+        "reverse": {
+          "displaced": 160,
+          "regret": 0,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 293
+        },
+        "strong": {
+          "displaced": 160,
+          "regret": 5514,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 296
+        },
+        "weak": {
+          "displaced": 160,
+          "regret": 3314,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 290
+        }
+      },
+      "effect_fault": {
+        "null:clean": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 77
+        },
+        "null:exporter_flip": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 70
+        },
+        "null:journal_missing": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 72
+        },
+        "null:snapshot_stale": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 73
+        },
+        "reverse:clean": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 75
+        },
+        "reverse:exporter_flip": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 75
+        },
+        "reverse:journal_missing": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 73
+        },
+        "reverse:snapshot_stale": {
+          "displaced": 40,
+          "regret": 0,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 70
+        },
+        "strong:clean": {
+          "displaced": 40,
+          "regret": 1387,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 74
+        },
+        "strong:exporter_flip": {
+          "displaced": 40,
+          "regret": 1480,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 72
+        },
+        "strong:journal_missing": {
+          "displaced": 40,
+          "regret": 1323,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 74
+        },
+        "strong:snapshot_stale": {
+          "displaced": 40,
+          "regret": 1324,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 76
+        },
+        "weak:clean": {
+          "displaced": 40,
+          "regret": 699,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 73
+        },
+        "weak:exporter_flip": {
+          "displaced": 40,
+          "regret": 883,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 71
+        },
+        "weak:journal_missing": {
+          "displaced": 40,
+          "regret": 852,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 74
+        },
+        "weak:snapshot_stale": {
+          "displaced": 40,
+          "regret": 880,
+          "scheduled": 120,
+          "served": 80,
+          "unknown": 72
+        }
+      },
+      "fault": {
+        "clean": {
+          "displaced": 160,
+          "regret": 2086,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 299
+        },
+        "exporter_flip": {
+          "displaced": 160,
+          "regret": 2363,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 288
+        },
+        "journal_missing": {
+          "displaced": 160,
+          "regret": 2175,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 293
+        },
+        "snapshot_stale": {
+          "displaced": 160,
+          "regret": 2204,
+          "scheduled": 480,
+          "served": 320,
+          "unknown": 291
+        }
+      },
+      "median_session_ns": 47812.0,
+      "missing_reads": 40,
+      "regret": 8828,
+      "risk_coverage": [
+        {
+          "confidence_min": 0,
+          "coverage": 1.0,
+          "risk": 0.62890625
+        },
+        {
+          "confidence_min": 0.35,
+          "coverage": 0.35625,
+          "risk": 0.4736842105263158
+        },
+        {
+          "confidence_min": 0.45,
+          "coverage": 0.20234375,
+          "risk": 0.4015444015444015
+        },
+        {
+          "confidence_min": 0.55,
+          "coverage": 0.08515625,
+          "risk": 0.22935779816513757
+        },
+        {
+          "confidence_min": 0.65,
+          "coverage": 0.08515625,
+          "risk": 0.22935779816513757
+        },
+        {
+          "confidence_min": 0.75,
+          "coverage": 0.06484375,
+          "risk": 0.2530120481927711
+        },
+        {
+          "confidence_min": 0.85,
+          "coverage": 0.0,
+          "risk": null
+        },
+        {
+          "confidence_min": 0.95,
+          "coverage": 0.0,
+          "risk": null
+        }
+      ],
+      "served": 1280,
+      "source_wall_ns_total": 3931200,
+      "unknown": 1171,
+      "unknown_fraction": 0.91484375
+    }
+  },
+  "quality_gate": false,
+  "scope": "bounded constructed DEV, NOT_QUALIFIED",
+  "source_value_agreement_not_independence": {
+    "clean": {
+      "direct_replay_agree": 364,
+      "direct_replay_nonmissing": 480,
+      "mirror_matches_passive": 480,
+      "rows": 480
+    },
+    "exporter_flip": {
+      "direct_replay_agree": 373,
+      "direct_replay_nonmissing": 480,
+      "mirror_matches_passive": 480,
+      "rows": 480
+    },
+    "journal_missing": {
+      "mirror_matches_passive": 480,
+      "rows": 480
+    },
+    "snapshot_stale": {
+      "direct_replay_agree": 354,
+      "direct_replay_nonmissing": 480,
+      "mirror_matches_passive": 480,
+      "rows": 480
+    }
+  }
+}
