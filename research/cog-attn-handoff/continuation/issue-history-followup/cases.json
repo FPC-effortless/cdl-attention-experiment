@@ -1,0 +1,164 @@
+[
+  {
+    "timeline": {
+      "issue": "numpy/numpy#28240",
+      "state": "open",
+      "lastActionAt": null,
+      "observedAt": "2026-11-20T14:29:38.354612+00:00"
+    },
+    "archived": {
+      "issue": "numpy/numpy#28240",
+      "source": "github.issue_snapshot",
+      "state": "closed",
+      "createdAt": "2025-01-28T16:56:04Z",
+      "updatedAt": "2025-01-28T17:15:23Z",
+      "closedAt": "2025-01-28T17:14:54Z",
+      "observedAt": "2026-11-20T14:29:38.354612+00:00"
+    },
+    "latest": {
+      "issue": "numpy/numpy#28240",
+      "source": "github.issue_snapshot",
+      "state": "closed",
+      "createdAt": "2025-01-28T16:56:04Z",
+      "updatedAt": "2025-01-28T17:15:23Z",
+      "closedAt": "2025-01-28T17:14:54Z",
+      "observedAt": "2026-11-20T16:49:55Z",
+      "stateReason": "duplicate"
+    }
+  },
+  {
+    "timeline": {
+      "issue": "sympy/sympy#29175",
+      "state": "open",
+      "lastActionAt": null,
+      "observedAt": "2026-11-20T14:29:38.354612+00:00"
+    },
+    "archived": {
+      "issue": "sympy/sympy#29175",
+      "source": "github.issue_snapshot",
+      "state": "closed",
+      "createdAt": "2026-02-15T22:06:10Z",
+      "updatedAt": "2026-02-16T05:38:12Z",
+      "closedAt": "2026-02-16T05:38:12Z",
+      "observedAt": "2026-11-20T14:29:38.354612+00:00"
+    },
+    "latest": {
+      "issue": "sympy/sympy#29175",
+      "source": "github.issue_snapshot",
+      "state": "closed",
+      "createdAt": "2026-02-15T22:06:10Z",
+      "updatedAt": "2026-02-16T05:38:12Z",
+      "closedAt": "2026-02-16T05:38:12Z",
+      "observedAt": "2026-11-20T16:49:55Z",
+      "stateReason": "completed"
+    }
+  },
+  {
+    "timeline": {
+      "issue": "sympy/sympy#29341",
+      "state": "open",
+      "lastActionAt": null,
+      "observedAt": "2026-11-20T14:29:38.354612+00:00"
+    },
+    "archived": {
+      "issue": "sympy/sympy#29341",
+      "source": "github.issue_snapshot",
+      "state": "closed",
+      "createdAt": "2026-03-06T19:03:13Z",
+      "updatedAt": "2026-03-06T21:17:29Z",
+      "closedAt": "2026-03-06T21:17:29Z",
+      "observedAt": "2026-11-20T14:29:38.354612+00:00"
+    },
+    "latest": {
+      "issue": "sympy/sympy#29341",
+      "source": "github.issue_snapshot",
+      "state": "closed",
+      "createdAt": "2026-03-06T19:03:13Z",
+      "updatedAt": "2026-03-06T21:17:29Z",
+      "closedAt": "2026-03-06T21:17:29Z",
+      "observedAt": "2026-11-20T16:49:55Z",
+      "stateReason": "completed"
+    }
+  },
+  {
+    "timeline": {
+      "issue": "sympy/sympy#29460",
+      "state": "open",
+      "lastActionAt": null,
+      "observedAt": "2026-11-20T14:29:38.354612+00:00"
+    },
+    "archived": {
+      "issue": "sympy/sympy#29460",
+      "source": "github.issue_snapshot",
+      "state": "closed",
+      "createdAt": "2026-03-20T12:05:21Z",
+      "updatedAt": "2026-03-22T09:46:36Z",
+      "closedAt": "2026-03-22T09:46:36Z",
+      "observedAt": "2026-11-20T14:29:38.354612+00:00"
+    },
+    "latest": {
+      "issue": "sympy/sympy#29460",
+      "source": "github.issue_snapshot",
+      "state": "closed",
+      "createdAt": "2026-03-20T12:05:21Z",
+      "updatedAt": "2026-03-22T09:46:36Z",
+      "closedAt": "2026-03-22T09:46:36Z",
+      "observedAt": "2026-11-20T16:49:55Z",
+      "stateReason": "completed"
+    }
+  },
+  {
+    "timeline": {
+      "issue": "sympy/sympy#29695",
+      "state": "open",
+      "lastActionAt": null,
+      "observedAt": "2026-11-20T14:29:38.354612+00:00"
+    },
+    "archived": {
+      "issue": "sympy/sympy#29695",
+      "source": "github.issue_snapshot",
+      "state": "closed",
+      "createdAt": "2026-04-16T02:58:14Z",
+      "updatedAt": "2026-04-16T18:04:03Z",
+      "closedAt": "2026-04-16T18:04:03Z",
+      "observedAt": "2026-11-20T14:29:38.354612+00:00"
+    },
+    "latest": {
+      "issue": "sympy/sympy#29695",
+      "source": "github.issue_snapshot",
+      "state": "closed",
+      "createdAt": "2026-04-16T02:58:14Z",
+      "updatedAt": "2026-04-16T18:04:03Z",
+      "closedAt": "2026-04-16T18:04:03Z",
+      "observedAt": "2026-11-20T16:49:55Z",
+      "stateReason": "completed"
+    }
+  },
+  {
+    "timeline": {
+      "issue": "sympy/sympy#29740",
+      "state": "open",
+      "lastActionAt": null,
+      "observedAt": "2026-11-20T14:29:38.354612+00:00"
+    },
+    "archived": {
+      "issue": "sympy/sympy#29740",
+      "source": "github.issue_snapshot",
+      "state": "closed",
+      "createdAt": "2026-05-05T17:22:00Z",
+      "updatedAt": "2026-05-05T22:01:34Z",
+      "closedAt": "2026-05-05T22:01:34Z",
+      "observedAt": "2026-11-20T14:29:38.354612+00:00"
+    },
+    "latest": {
+      "issue": "sympy/sympy#29740",
+      "source": "github.issue_snapshot",
+      "state": "closed",
+      "createdAt": "2026-05-05T17:22:00Z",
+      "updatedAt": "2026-05-05T22:01:34Z",
+      "closedAt": "2026-05-05T22:01:34Z",
+      "observedAt": "2026-11-20T16:49:55Z",
+      "stateReason": "completed"
+    }
+  }
+]
