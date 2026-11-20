@@ -1,0 +1,79 @@
+{
+  "expiry2": {
+    "whole_workload_median_seconds": 19.934698903001845,
+    "whole_workload_range_seconds": [
+      19.505511814990314,
+      20.8770915690111
+    ],
+    "mean_turn_ms_from_median": 2.703376580282322,
+    "snapshot_median_ms": 0.12570000399136916,
+    "restore_median_ms": 0.31788549677003175,
+    "snapshot_bytes": 872
+  },
+  "expiry4": {
+    "whole_workload_median_seconds": 20.387051167999743,
+    "whole_workload_range_seconds": [
+      20.14544616700732,
+      21.113991570993676
+    ],
+    "mean_turn_ms_from_median": 2.764720798481115,
+    "snapshot_median_ms": 0.14539949188474566,
+    "restore_median_ms": 0.3479605002212338,
+    "snapshot_bytes": 872
+  },
+  "noop": {
+    "whole_workload_median_seconds": 20.53919557199697,
+    "whole_workload_range_seconds": [
+      20.4004622099892,
+      22.193376206996618
+    ],
+    "mean_turn_ms_from_median": 2.7853533458091904,
+    "snapshot_median_ms": 0.1002965000225231,
+    "restore_median_ms": 0.24896649847505614,
+    "snapshot_bytes": 869
+  },
+  "reset": {
+    "whole_workload_median_seconds": 21.549732522005797,
+    "whole_workload_range_seconds": [
+      20.129786449004314,
+      21.599799828007235
+    ],
+    "mean_turn_ms_from_median": 2.922393886900705,
+    "snapshot_median_ms": 0.10933500016108155,
+    "restore_median_ms": 0.33424500725232065,
+    "snapshot_bytes": 870
+  },
+  "soft": {
+    "whole_workload_median_seconds": 20.158347027012496,
+    "whole_workload_range_seconds": [
+      19.625497825996717,
+      20.794609092990868
+    ],
+    "mean_turn_ms_from_median": 2.733705862084689,
+    "snapshot_median_ms": 0.15065799379954115,
+    "restore_median_ms": 0.29314299899851903,
+    "snapshot_bytes": 1084
+  },
+  "unrestricted": {
+    "whole_workload_median_seconds": 22.61975223600166,
+    "whole_workload_range_seconds": [
+      20.449074581003515,
+      25.82075079099741
+    ],
+    "mean_turn_ms_from_median": 3.067500981285823,
+    "snapshot_median_ms": 0.12012650404358283,
+    "restore_median_ms": 0.3221869992557913,
+    "snapshot_bytes": 877
+  },
+  "verified": {
+    "whole_workload_median_seconds": 22.45128684399242,
+    "whole_workload_range_seconds": [
+      20.16489550600818,
+      22.727665458995034
+    ],
+    "mean_turn_ms_from_median": 3.044655118523518,
+    "snapshot_median_ms": 0.1084789982996881,
+    "restore_median_ms": 0.28458500310080126,
+    "snapshot_bytes": 873
+  }
+}

@@ -1,0 +1,7 @@
+# Independent review
+
+A separate review worker inspected pre-outcome freeze ec000c5. It reproduced all 56 dialogue-bootstrap comparisons and verified all 51,618 gold/decision trace rows against the two original hashed DEV shards, plus every shared gated write (84/84 matched annotated deltas). Primary and same-host replay hashes matched for all three scoring artifacts. The run recorded 20,510 exact post-restore comparisons, 7,000 corrupted-snapshot rejections and 7,000 duplicate-turn rejections.
+
+Expiry2/4 withheld correct outputs as well as false assertions; neither reduced the 14-turn worst error run. Independent frozen-head DEV inference reproduced top-1/2/3 proposal coverage of 344/466/484 out of 511 changes. This is an oracle availability diagnostic, not novel-language or action qualification. No original TEST, new training, or new threshold selection was performed.
+
+Reviewer independence is a separate agent/session operational assertion, not a separate organization or blinded external replication. Same-host execution is not independent hardware replication. Forge verified a single-split diagnostic envelope, not contamination freedom. Independent timing review passed: the succeeded TrainLab run and both artifact hashes matched; all 21 sessions cover 7,374 turns each, plus 140 separately measured snapshot/restore pairs. CPU software-path clocks do not establish hardware deployment performance.

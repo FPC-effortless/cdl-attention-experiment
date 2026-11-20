@@ -1,0 +1,21 @@
+{
+  "scope": "public-safe code protocol and aggregates only",
+  "files": {
+    "AUDIT.md": "426e83a4411aa3775bc3de8cd8380f628c0a27af6b09d2c37c9b809b313c9da1",
+    "PREFLIGHT_SHA256SUMS": "85da3a995cbe6748e24ad16587dbd5e96856334cfe2ff9fa2024980ed56af2ac",
+    "PROTOCOL.md": "ba9ad805c61eba722a8616cb5e4158ea80cb311bdae264a3157dd3daa641e3a8",
+    "README.md": "aad0b82a4275c6a1a14837262edfcbecc063e23118bbbbd624591d4af61884f9",
+    "REPRODUCE.md": "3f1b4a386b7521c67c47e8b864f93d931554e6d488a725e1e9c41efd563f84cf",
+    "execution-summary.json": "f6603e1b20adae7aab7efdcbeda3add2f5aef969dab3bc1f537b413c74fa1603",
+    "lab.py": "f3f767db2950e807bde27edff9bddbc0d5f55d3517c700a766152f619b4d94b0",
+    "recovery_timing.json": "17bf6495c8105b76e861a5dcdd02f9a40cda42165fac1d0979a1d281079ed5a1",
+    "results.json": "bc46f7dbe6008fb1ee939b8c05eb295e26b228adbfe21f2ec817f7e81c08d729",
+    "runtime.py": "43d3df8aa1b73ad7e88c9047e3872e010202796638a346e0f50af916cb991c46",
+    "study.py": "cd3bc474ef3551170a8518c10cff2d541bd32199cf8d73560aa40e4437ddba99",
+    "test_runtime.py": "b7ab2b5817e868c137c81b10dbe9ba1487a5169b749a3c118afca1b27f135974",
+    "timing-summary.json": "f9ddb08ad652aca1256bbc91d0322548cfd88516e5f84a7fbb317ec3d1f9481b",
+    "timing.json": "b3e37765007f73baf21fbc52936f0b6bb1bc86f0634441994f7b6010c1c13487",
+    "upstream/belief.py": "4413e209a5112e1a1a93ef7cb553d26480f0f1c9d82517146f1849d2096e7fc6",
+    "upstream/state_store.py": "f1968292f7fa2cd3a79644e7725d4dd2bd1199243c582e25f3da5cc3557dd438"
+  }
+}
