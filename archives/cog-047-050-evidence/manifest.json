@@ -1,0 +1,51 @@
+{
+  "name": "cog-047-050-evidence.tar.gz",
+  "sha256": "e6c87689d13f6d617430fe7dc7843c894830e537a53355646a29466a166284c5",
+  "bytes": 166129838,
+  "file_members": 717,
+  "experiments": [
+    "cog-047-050"
+  ],
+  "parts": [
+    {
+      "path": "archives/cog-047-050-evidence/cog-047-050-evidence.tar.gz.part01",
+      "bytes": 20971520,
+      "sha256": "264acbff7d1a6af5538c14481ee17ea452ebdb0e2222163f9e84cecfd58a5a8f"
+    },
+    {
+      "path": "archives/cog-047-050-evidence/cog-047-050-evidence.tar.gz.part02",
+      "bytes": 20971520,
+      "sha256": "f6ce329a4f6786e15b05532a1747d608a41135c4378e3e3bc712817715930894"
+    },
+    {
+      "path": "archives/cog-047-050-evidence/cog-047-050-evidence.tar.gz.part03",
+      "bytes": 20971520,
+      "sha256": "274dcbfb54f9b9a8acc53df9220c0748c8d5ad667fdc720252235ea9f28846a0"
+    },
+    {
+      "path": "archives/cog-047-050-evidence/cog-047-050-evidence.tar.gz.part04",
+      "bytes": 20971520,
+      "sha256": "77b4cdc768782f6efa548eba34a1938f7350d2ece750498e971f5577ec55d96f"
+    },
+    {
+      "path": "archives/cog-047-050-evidence/cog-047-050-evidence.tar.gz.part05",
+      "bytes": 20971520,
+      "sha256": "43c1cbd8e34940dd164acfb9473c0738ccc90e2223e5ed35badf3015b7de45de"
+    },
+    {
+      "path": "archives/cog-047-050-evidence/cog-047-050-evidence.tar.gz.part06",
+      "bytes": 20971520,
+      "sha256": "aa850d3babf72c009e465c142ba79f0d6937835914a9652ce92006fb964d24eb"
+    },
+    {
+      "path": "archives/cog-047-050-evidence/cog-047-050-evidence.tar.gz.part07",
+      "bytes": 20971520,
+      "sha256": "03ff6a0f2ae31c03d1452f970182adcf8d4436f827d02b3d3a5111322e27c952"
+    },
+    {
+      "path": "archives/cog-047-050-evidence/cog-047-050-evidence.tar.gz.part08",
+      "bytes": 19329198,
+      "sha256": "4fcbe62d08c490479cfd9258e8b6313ba2c3bf83eef3dd2f29912537f68af583"
+    }
+  ]
+}

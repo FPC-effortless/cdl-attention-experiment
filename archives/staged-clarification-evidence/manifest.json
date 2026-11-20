@@ -1,0 +1,31 @@
+{
+  "name": "staged-clarification-evidence.tar.gz",
+  "sha256": "77273ddb544822855f9dfe0a0d2c37c96b31f9399530c377280363cea5a7f9ea",
+  "bytes": 74719598,
+  "file_members": 350,
+  "experiments": [
+    "staged-clarification"
+  ],
+  "parts": [
+    {
+      "path": "archives/staged-clarification-evidence/staged-clarification-evidence.tar.gz.part01",
+      "bytes": 20971520,
+      "sha256": "9401f9f20b533ccef8a402987c8ff0b2b153de09782d4cba93d91e9f30ae800d"
+    },
+    {
+      "path": "archives/staged-clarification-evidence/staged-clarification-evidence.tar.gz.part02",
+      "bytes": 20971520,
+      "sha256": "99fc0367e64c99d005ae2d06901572207227a09cd24bebdba09aeb99481562a0"
+    },
+    {
+      "path": "archives/staged-clarification-evidence/staged-clarification-evidence.tar.gz.part03",
+      "bytes": 20971520,
+      "sha256": "744cf5f552e5a0cb73b900a3ffd364f3512e0016873d54153b8ac6b23a06d4a0"
+    },
+    {
+      "path": "archives/staged-clarification-evidence/staged-clarification-evidence.tar.gz.part04",
+      "bytes": 11805038,
+      "sha256": "ed11b0136e8ba9cdfb1dbf2986e513fca13c49aeded261086831de2161471a54"
+    }
+  ]
+}

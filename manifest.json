@@ -1,0 +1,382 @@
+{
+  "schema": 1,
+  "archives": [
+    {
+      "name": "wr004-005-evidence.tar.gz",
+      "sha256": "c991b3f45cebc8eb6c1ed538242720445b04c640dcc5669f7c74898f60495a1e",
+      "bytes": 4790544,
+      "file_members": 39,
+      "experiments": [
+        "wr004-005"
+      ],
+      "parts": [
+        {
+          "path": "archives/wr004-005-evidence/wr004-005-evidence.tar.gz",
+          "bytes": 4790544,
+          "sha256": "c991b3f45cebc8eb6c1ed538242720445b04c640dcc5669f7c74898f60495a1e"
+        }
+      ]
+    },
+    {
+      "name": "wr005-007-evidence.tar.gz",
+      "sha256": "d4381a27b72b04398dabe186745ee886cf0e81cd4d833f5ed2ed398acc78c6a8",
+      "bytes": 7838149,
+      "file_members": 46,
+      "experiments": [
+        "wr005-followup",
+        "wr006-007"
+      ],
+      "parts": [
+        {
+          "path": "archives/wr005-007-evidence/wr005-007-evidence.tar.gz",
+          "bytes": 7838149,
+          "sha256": "d4381a27b72b04398dabe186745ee886cf0e81cd4d833f5ed2ed398acc78c6a8"
+        }
+      ]
+    },
+    {
+      "name": "subsystem-followup.tar.gz",
+      "sha256": "d2d3eb31226c9a4f3038fefeab01fe79eaf2feeef0aba640bee904f2462d0f3e",
+      "bytes": 2233775,
+      "file_members": 21,
+      "experiments": [
+        "iteration"
+      ],
+      "parts": [
+        {
+          "path": "archives/subsystem-followup/subsystem-followup.tar.gz",
+          "bytes": 2233775,
+          "sha256": "d2d3eb31226c9a4f3038fefeab01fe79eaf2feeef0aba640bee904f2462d0f3e"
+        }
+      ]
+    },
+    {
+      "name": "wr008-veritas-evidence.tar.gz",
+      "sha256": "4d91cc38ee72afa6873e7288e1c03db2dbebb9d24f3f4afc2f12587425ce382e",
+      "bytes": 78131,
+      "file_members": 224,
+      "experiments": [
+        "veritas-wr008"
+      ],
+      "parts": [
+        {
+          "path": "archives/wr008-veritas-evidence/wr008-veritas-evidence.tar.gz",
+          "bytes": 78131,
+          "sha256": "4d91cc38ee72afa6873e7288e1c03db2dbebb9d24f3f4afc2f12587425ce382e"
+        }
+      ]
+    },
+    {
+      "name": "authority-followup.tar.gz",
+      "sha256": "48017992c6c4891aa2d5a2c1722fffeaa7394e03bf1ee6cc4239b6f4650d41ed",
+      "bytes": 88987,
+      "file_members": 139,
+      "experiments": [
+        "authority-followup"
+      ],
+      "parts": [
+        {
+          "path": "archives/authority-followup/authority-followup.tar.gz",
+          "bytes": 88987,
+          "sha256": "48017992c6c4891aa2d5a2c1722fffeaa7394e03bf1ee6cc4239b6f4650d41ed"
+        }
+      ]
+    },
+    {
+      "name": "wr009-evidence.tar.gz",
+      "sha256": "227f9fd83af4128872b6864124a67c934cf758e27bb71af597bfc21a365d055d",
+      "bytes": 252563,
+      "file_members": 143,
+      "experiments": [
+        "wr009"
+      ],
+      "parts": [
+        {
+          "path": "archives/wr009-evidence/wr009-evidence.tar.gz",
+          "bytes": 252563,
+          "sha256": "227f9fd83af4128872b6864124a67c934cf758e27bb71af597bfc21a365d055d"
+        }
+      ]
+    },
+    {
+      "name": "wr010-evidence.tar.gz",
+      "sha256": "d35edd13cef6e93d2f99c7946e44ee0149ea1cc52542d290caae4f268c748c29",
+      "bytes": 9355036,
+      "file_members": 199,
+      "experiments": [
+        "wr010"
+      ],
+      "parts": [
+        {
+          "path": "archives/wr010-evidence/wr010-evidence.tar.gz",
+          "bytes": 9355036,
+          "sha256": "d35edd13cef6e93d2f99c7946e44ee0149ea1cc52542d290caae4f268c748c29"
+        }
+      ]
+    },
+    {
+      "name": "post-wr-evidence.tar.gz",
+      "sha256": "7487fe43f0c39a931c2e052bb1d331597c676145293dee274484abe5aec7791f",
+      "bytes": 93201569,
+      "file_members": 723,
+      "experiments": [
+        "post-wr"
+      ],
+      "parts": [
+        {
+          "path": "archives/post-wr-evidence/post-wr-evidence.tar.gz.part01",
+          "bytes": 20971520,
+          "sha256": "c1a67723924a9b52d443eabe59b16d07ab31f895959bfb1a38b79d1bb3100a27"
+        },
+        {
+          "path": "archives/post-wr-evidence/post-wr-evidence.tar.gz.part02",
+          "bytes": 20971520,
+          "sha256": "4b876c889b443ce648bae3389609e9dd8a71f4d034bda2847678619e1243e2d1"
+        },
+        {
+          "path": "archives/post-wr-evidence/post-wr-evidence.tar.gz.part03",
+          "bytes": 20971520,
+          "sha256": "9bff780e6ee2b61e3e2ad2b82e721b376fae89536d918cb4ebc2892f3b088ebc"
+        },
+        {
+          "path": "archives/post-wr-evidence/post-wr-evidence.tar.gz.part04",
+          "bytes": 20971520,
+          "sha256": "fcf9785c70f96665603dcd11d1cda3ff62bdac4648f6729f6559494c4756728b"
+        },
+        {
+          "path": "archives/post-wr-evidence/post-wr-evidence.tar.gz.part05",
+          "bytes": 9315489,
+          "sha256": "66ea26ef0f447517c2b7a97df860bd9b3aabd4f5fd30d1dedc0813bda0ea204e"
+        }
+      ]
+    },
+    {
+      "name": "drift-evidence.tar.gz",
+      "sha256": "0a4ba79fdc814f896ebd3ab46d95c462d7440a39dbad42c6ee8a09387b46e03a",
+      "bytes": 9280987,
+      "file_members": 207,
+      "experiments": [
+        "drift"
+      ],
+      "parts": [
+        {
+          "path": "archives/drift-evidence/drift-evidence.tar.gz",
+          "bytes": 9280987,
+          "sha256": "0a4ba79fdc814f896ebd3ab46d95c462d7440a39dbad42c6ee8a09387b46e03a"
+        }
+      ]
+    },
+    {
+      "name": "weakness-repairs-evidence.tar.gz",
+      "sha256": "0bf9fb408f97d262f5b7908d61cd77bb7f9e3e6eee37b978c38aed34ac973adb",
+      "bytes": 4954234,
+      "file_members": 669,
+      "experiments": [
+        "weakness-repairs"
+      ],
+      "parts": [
+        {
+          "path": "archives/weakness-repairs-evidence/weakness-repairs-evidence.tar.gz",
+          "bytes": 4954234,
+          "sha256": "0bf9fb408f97d262f5b7908d61cd77bb7f9e3e6eee37b978c38aed34ac973adb"
+        }
+      ]
+    },
+    {
+      "name": "binding-repair-evidence.tar.gz",
+      "sha256": "03be43a39f8bb5863b6b341290cd6290f6c1562c653fc12ef78fd38e06d5cb1a",
+      "bytes": 3038566,
+      "file_members": 647,
+      "experiments": [
+        "binding-repair"
+      ],
+      "parts": [
+        {
+          "path": "archives/binding-repair-evidence/binding-repair-evidence.tar.gz",
+          "bytes": 3038566,
+          "sha256": "03be43a39f8bb5863b6b341290cd6290f6c1562c653fc12ef78fd38e06d5cb1a"
+        }
+      ]
+    },
+    {
+      "name": "semantic-transfer-evidence.tar.gz",
+      "sha256": "a1b6d4f335b921195ea35a01067f5bb1614c3b936c185deb9e24e5d8e89262bc",
+      "bytes": 174484356,
+      "file_members": 450,
+      "experiments": [
+        "semantic-transfer"
+      ],
+      "parts": [
+        {
+          "path": "archives/semantic-transfer-evidence/semantic-transfer-evidence.tar.gz.part01",
+          "bytes": 20971520,
+          "sha256": "063b1e8530d277706b82fc08aa3eafd1b7fbd4b2695e73099c0ac39fc0da69d2"
+        },
+        {
+          "path": "archives/semantic-transfer-evidence/semantic-transfer-evidence.tar.gz.part02",
+          "bytes": 20971520,
+          "sha256": "bd84d4c0de72a0122a6281d42feacfb10720a4b1a85959f1ced68b1663c3f3cd"
+        },
+        {
+          "path": "archives/semantic-transfer-evidence/semantic-transfer-evidence.tar.gz.part03",
+          "bytes": 20971520,
+          "sha256": "3e3ddfe4423ad2606cb87d4d2794415c1060bd57405a5ac3f85e03050874779b"
+        },
+        {
+          "path": "archives/semantic-transfer-evidence/semantic-transfer-evidence.tar.gz.part04",
+          "bytes": 20971520,
+          "sha256": "dde69f507dabce91f7243d95198bd74850a4f3778125af989f6f562f492369ac"
+        },
+        {
+          "path": "archives/semantic-transfer-evidence/semantic-transfer-evidence.tar.gz.part05",
+          "bytes": 20971520,
+          "sha256": "366bf9487cf8ddcef20c78c9624f288e0bea92b8374c36cac5ea5ee96e92e104"
+        },
+        {
+          "path": "archives/semantic-transfer-evidence/semantic-transfer-evidence.tar.gz.part06",
+          "bytes": 20971520,
+          "sha256": "1d0cc2e6236f715ccc98153729d6867a77610e3fd1b63e7603ffa828debddf4b"
+        },
+        {
+          "path": "archives/semantic-transfer-evidence/semantic-transfer-evidence.tar.gz.part07",
+          "bytes": 20971520,
+          "sha256": "0150f506878a2d9c163e4345bd0bee8104db23052f9d9c58eec9ce78f1257796"
+        },
+        {
+          "path": "archives/semantic-transfer-evidence/semantic-transfer-evidence.tar.gz.part08",
+          "bytes": 20971520,
+          "sha256": "fdd661fc6a9e8d84cd1d790d588e4c35b4a63253011a71d751d94de59ba24a81"
+        },
+        {
+          "path": "archives/semantic-transfer-evidence/semantic-transfer-evidence.tar.gz.part09",
+          "bytes": 6712196,
+          "sha256": "8a261de8076929d0ffb354a6e5f826233c4e3029f717ada42abbf1836bcc2ef5"
+        }
+      ]
+    },
+    {
+      "name": "staged-clarification-evidence.tar.gz",
+      "sha256": "77273ddb544822855f9dfe0a0d2c37c96b31f9399530c377280363cea5a7f9ea",
+      "bytes": 74719598,
+      "file_members": 350,
+      "experiments": [
+        "staged-clarification"
+      ],
+      "parts": [
+        {
+          "path": "archives/staged-clarification-evidence/staged-clarification-evidence.tar.gz.part01",
+          "bytes": 20971520,
+          "sha256": "9401f9f20b533ccef8a402987c8ff0b2b153de09782d4cba93d91e9f30ae800d"
+        },
+        {
+          "path": "archives/staged-clarification-evidence/staged-clarification-evidence.tar.gz.part02",
+          "bytes": 20971520,
+          "sha256": "99fc0367e64c99d005ae2d06901572207227a09cd24bebdba09aeb99481562a0"
+        },
+        {
+          "path": "archives/staged-clarification-evidence/staged-clarification-evidence.tar.gz.part03",
+          "bytes": 20971520,
+          "sha256": "744cf5f552e5a0cb73b900a3ffd364f3512e0016873d54153b8ac6b23a06d4a0"
+        },
+        {
+          "path": "archives/staged-clarification-evidence/staged-clarification-evidence.tar.gz.part04",
+          "bytes": 11805038,
+          "sha256": "ed11b0136e8ba9cdfb1dbf2986e513fca13c49aeded261086831de2161471a54"
+        }
+      ]
+    },
+    {
+      "name": "cog-047-050-evidence.tar.gz",
+      "sha256": "e6c87689d13f6d617430fe7dc7843c894830e537a53355646a29466a166284c5",
+      "bytes": 166129838,
+      "file_members": 717,
+      "experiments": [
+        "cog-047-050"
+      ],
+      "parts": [
+        {
+          "path": "archives/cog-047-050-evidence/cog-047-050-evidence.tar.gz.part01",
+          "bytes": 20971520,
+          "sha256": "264acbff7d1a6af5538c14481ee17ea452ebdb0e2222163f9e84cecfd58a5a8f"
+        },
+        {
+          "path": "archives/cog-047-050-evidence/cog-047-050-evidence.tar.gz.part02",
+          "bytes": 20971520,
+          "sha256": "f6ce329a4f6786e15b05532a1747d608a41135c4378e3e3bc712817715930894"
+        },
+        {
+          "path": "archives/cog-047-050-evidence/cog-047-050-evidence.tar.gz.part03",
+          "bytes": 20971520,
+          "sha256": "274dcbfb54f9b9a8acc53df9220c0748c8d5ad667fdc720252235ea9f28846a0"
+        },
+        {
+          "path": "archives/cog-047-050-evidence/cog-047-050-evidence.tar.gz.part04",
+          "bytes": 20971520,
+          "sha256": "77b4cdc768782f6efa548eba34a1938f7350d2ece750498e971f5577ec55d96f"
+        },
+        {
+          "path": "archives/cog-047-050-evidence/cog-047-050-evidence.tar.gz.part05",
+          "bytes": 20971520,
+          "sha256": "43c1cbd8e34940dd164acfb9473c0738ccc90e2223e5ed35badf3015b7de45de"
+        },
+        {
+          "path": "archives/cog-047-050-evidence/cog-047-050-evidence.tar.gz.part06",
+          "bytes": 20971520,
+          "sha256": "aa850d3babf72c009e465c142ba79f0d6937835914a9652ce92006fb964d24eb"
+        },
+        {
+          "path": "archives/cog-047-050-evidence/cog-047-050-evidence.tar.gz.part07",
+          "bytes": 20971520,
+          "sha256": "03ff6a0f2ae31c03d1452f970182adcf8d4436f827d02b3d3a5111322e27c952"
+        },
+        {
+          "path": "archives/cog-047-050-evidence/cog-047-050-evidence.tar.gz.part08",
+          "bytes": 19329198,
+          "sha256": "4fcbe62d08c490479cfd9258e8b6313ba2c3bf83eef3dd2f29912537f68af583"
+        }
+      ]
+    },
+    {
+      "name": "delta-authority-048-evidence.tar.gz",
+      "sha256": "211958cb00861bc3cae1a02da5e5f60771ea0ded15b80757a041611716f0fda9",
+      "bytes": 106808858,
+      "file_members": 1210,
+      "experiments": [
+        "delta-authority-048"
+      ],
+      "parts": [
+        {
+          "path": "archives/delta-authority-048-evidence/delta-authority-048-evidence.tar.gz.part01",
+          "bytes": 20971520,
+          "sha256": "1edda6d7589919f10ff776535a9473a74e863c57fa971808409888b094126c11"
+        },
+        {
+          "path": "archives/delta-authority-048-evidence/delta-authority-048-evidence.tar.gz.part02",
+          "bytes": 20971520,
+          "sha256": "cb1e1c140055ac709b54457d22930f88947befcae9adaccd2580ca59265b07a5"
+        },
+        {
+          "path": "archives/delta-authority-048-evidence/delta-authority-048-evidence.tar.gz.part03",
+          "bytes": 20971520,
+          "sha256": "9b501a1e59542576bab0dfcdf15fe1ae38a9516562c24bb41fb4af71592f4b28"
+        },
+        {
+          "path": "archives/delta-authority-048-evidence/delta-authority-048-evidence.tar.gz.part04",
+          "bytes": 20971520,
+          "sha256": "4bef2599d86ebde651246809277bd186edff90346e8e976c8a55b58853aba025"
+        },
+        {
+          "path": "archives/delta-authority-048-evidence/delta-authority-048-evidence.tar.gz.part05",
+          "bytes": 20971520,
+          "sha256": "207a163ede3e72a70fe1fb279379c5890cc5dcbc4605352ed6d513a618b1ed7c"
+        },
+        {
+          "path": "archives/delta-authority-048-evidence/delta-authority-048-evidence.tar.gz.part06",
+          "bytes": 1951258,
+          "sha256": "1e701ae8e3d361071763f478f8bb738723db3a3e648b24cda544088753f4ce8b"
+        }
+      ]
+    }
+  ],
+  "branch": "research/cog-attn-continuation-evidence-20261120"
+}

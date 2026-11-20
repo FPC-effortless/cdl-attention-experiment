@@ -1,0 +1,41 @@
+{
+  "name": "delta-authority-048-evidence.tar.gz",
+  "sha256": "211958cb00861bc3cae1a02da5e5f60771ea0ded15b80757a041611716f0fda9",
+  "bytes": 106808858,
+  "file_members": 1210,
+  "experiments": [
+    "delta-authority-048"
+  ],
+  "parts": [
+    {
+      "path": "archives/delta-authority-048-evidence/delta-authority-048-evidence.tar.gz.part01",
+      "bytes": 20971520,
+      "sha256": "1edda6d7589919f10ff776535a9473a74e863c57fa971808409888b094126c11"
+    },
+    {
+      "path": "archives/delta-authority-048-evidence/delta-authority-048-evidence.tar.gz.part02",
+      "bytes": 20971520,
+      "sha256": "cb1e1c140055ac709b54457d22930f88947befcae9adaccd2580ca59265b07a5"
+    },
+    {
+      "path": "archives/delta-authority-048-evidence/delta-authority-048-evidence.tar.gz.part03",
+      "bytes": 20971520,
+      "sha256": "9b501a1e59542576bab0dfcdf15fe1ae38a9516562c24bb41fb4af71592f4b28"
+    },
+    {
+      "path": "archives/delta-authority-048-evidence/delta-authority-048-evidence.tar.gz.part04",
+      "bytes": 20971520,
+      "sha256": "4bef2599d86ebde651246809277bd186edff90346e8e976c8a55b58853aba025"
+    },
+    {
+      "path": "archives/delta-authority-048-evidence/delta-authority-048-evidence.tar.gz.part05",
+      "bytes": 20971520,
+      "sha256": "207a163ede3e72a70fe1fb279379c5890cc5dcbc4605352ed6d513a618b1ed7c"
+    },
+    {
+      "path": "archives/delta-authority-048-evidence/delta-authority-048-evidence.tar.gz.part06",
+      "bytes": 1951258,
+      "sha256": "1e701ae8e3d361071763f478f8bb738723db3a3e648b24cda544088753f4ce8b"
+    }
+  ]
+}

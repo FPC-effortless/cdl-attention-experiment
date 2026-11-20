@@ -1,0 +1,16 @@
+{
+  "name": "wr004-005-evidence.tar.gz",
+  "sha256": "c991b3f45cebc8eb6c1ed538242720445b04c640dcc5669f7c74898f60495a1e",
+  "bytes": 4790544,
+  "file_members": 39,
+  "experiments": [
+    "wr004-005"
+  ],
+  "parts": [
+    {
+      "path": "archives/wr004-005-evidence/wr004-005-evidence.tar.gz",
+      "bytes": 4790544,
+      "sha256": "c991b3f45cebc8eb6c1ed538242720445b04c640dcc5669f7c74898f60495a1e"
+    }
+  ]
+}

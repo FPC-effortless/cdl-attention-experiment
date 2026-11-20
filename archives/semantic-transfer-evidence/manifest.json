@@ -1,0 +1,56 @@
+{
+  "name": "semantic-transfer-evidence.tar.gz",
+  "sha256": "a1b6d4f335b921195ea35a01067f5bb1614c3b936c185deb9e24e5d8e89262bc",
+  "bytes": 174484356,
+  "file_members": 450,
+  "experiments": [
+    "semantic-transfer"
+  ],
+  "parts": [
+    {
+      "path": "archives/semantic-transfer-evidence/semantic-transfer-evidence.tar.gz.part01",
+      "bytes": 20971520,
+      "sha256": "063b1e8530d277706b82fc08aa3eafd1b7fbd4b2695e73099c0ac39fc0da69d2"
+    },
+    {
+      "path": "archives/semantic-transfer-evidence/semantic-transfer-evidence.tar.gz.part02",
+      "bytes": 20971520,
+      "sha256": "bd84d4c0de72a0122a6281d42feacfb10720a4b1a85959f1ced68b1663c3f3cd"
+    },
+    {
+      "path": "archives/semantic-transfer-evidence/semantic-transfer-evidence.tar.gz.part03",
+      "bytes": 20971520,
+      "sha256": "3e3ddfe4423ad2606cb87d4d2794415c1060bd57405a5ac3f85e03050874779b"
+    },
+    {
+      "path": "archives/semantic-transfer-evidence/semantic-transfer-evidence.tar.gz.part04",
+      "bytes": 20971520,
+      "sha256": "dde69f507dabce91f7243d95198bd74850a4f3778125af989f6f562f492369ac"
+    },
+    {
+      "path": "archives/semantic-transfer-evidence/semantic-transfer-evidence.tar.gz.part05",
+      "bytes": 20971520,
+      "sha256": "366bf9487cf8ddcef20c78c9624f288e0bea92b8374c36cac5ea5ee96e92e104"
+    },
+    {
+      "path": "archives/semantic-transfer-evidence/semantic-transfer-evidence.tar.gz.part06",
+      "bytes": 20971520,
+      "sha256": "1d0cc2e6236f715ccc98153729d6867a77610e3fd1b63e7603ffa828debddf4b"
+    },
+    {
+      "path": "archives/semantic-transfer-evidence/semantic-transfer-evidence.tar.gz.part07",
+      "bytes": 20971520,
+      "sha256": "0150f506878a2d9c163e4345bd0bee8104db23052f9d9c58eec9ce78f1257796"
+    },
+    {
+      "path": "archives/semantic-transfer-evidence/semantic-transfer-evidence.tar.gz.part08",
+      "bytes": 20971520,
+      "sha256": "fdd661fc6a9e8d84cd1d790d588e4c35b4a63253011a71d751d94de59ba24a81"
+    },
+    {
+      "path": "archives/semantic-transfer-evidence/semantic-transfer-evidence.tar.gz.part09",
+      "bytes": 6712196,
+      "sha256": "8a261de8076929d0ffb354a6e5f826233c4e3029f717ada42abbf1836bcc2ef5"
+    }
+  ]
+}

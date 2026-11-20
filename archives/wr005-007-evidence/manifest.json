@@ -1,0 +1,17 @@
+{
+  "name": "wr005-007-evidence.tar.gz",
+  "sha256": "d4381a27b72b04398dabe186745ee886cf0e81cd4d833f5ed2ed398acc78c6a8",
+  "bytes": 7838149,
+  "file_members": 46,
+  "experiments": [
+    "wr005-followup",
+    "wr006-007"
+  ],
+  "parts": [
+    {
+      "path": "archives/wr005-007-evidence/wr005-007-evidence.tar.gz",
+      "bytes": 7838149,
+      "sha256": "d4381a27b72b04398dabe186745ee886cf0e81cd4d833f5ed2ed398acc78c6a8"
+    }
+  ]
+}

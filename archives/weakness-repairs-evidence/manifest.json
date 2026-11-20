@@ -1,0 +1,16 @@
+{
+  "name": "weakness-repairs-evidence.tar.gz",
+  "sha256": "0bf9fb408f97d262f5b7908d61cd77bb7f9e3e6eee37b978c38aed34ac973adb",
+  "bytes": 4954234,
+  "file_members": 669,
+  "experiments": [
+    "weakness-repairs"
+  ],
+  "parts": [
+    {
+      "path": "archives/weakness-repairs-evidence/weakness-repairs-evidence.tar.gz",
+      "bytes": 4954234,
+      "sha256": "0bf9fb408f97d262f5b7908d61cd77bb7f9e3e6eee37b978c38aed34ac973adb"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "drift-evidence.tar.gz",
+  "sha256": "0a4ba79fdc814f896ebd3ab46d95c462d7440a39dbad42c6ee8a09387b46e03a",
+  "bytes": 9280987,
+  "file_members": 207,
+  "experiments": [
+    "drift"
+  ],
+  "parts": [
+    {
+      "path": "archives/drift-evidence/drift-evidence.tar.gz",
+      "bytes": 9280987,
+      "sha256": "0a4ba79fdc814f896ebd3ab46d95c462d7440a39dbad42c6ee8a09387b46e03a"
+    }
+  ]
+}

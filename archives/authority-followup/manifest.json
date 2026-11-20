@@ -1,0 +1,16 @@
+{
+  "name": "authority-followup.tar.gz",
+  "sha256": "48017992c6c4891aa2d5a2c1722fffeaa7394e03bf1ee6cc4239b6f4650d41ed",
+  "bytes": 88987,
+  "file_members": 139,
+  "experiments": [
+    "authority-followup"
+  ],
+  "parts": [
+    {
+      "path": "archives/authority-followup/authority-followup.tar.gz",
+      "bytes": 88987,
+      "sha256": "48017992c6c4891aa2d5a2c1722fffeaa7394e03bf1ee6cc4239b6f4650d41ed"
+    }
+  ]
+}

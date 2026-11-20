@@ -1,0 +1,16 @@
+{
+  "name": "binding-repair-evidence.tar.gz",
+  "sha256": "03be43a39f8bb5863b6b341290cd6290f6c1562c653fc12ef78fd38e06d5cb1a",
+  "bytes": 3038566,
+  "file_members": 647,
+  "experiments": [
+    "binding-repair"
+  ],
+  "parts": [
+    {
+      "path": "archives/binding-repair-evidence/binding-repair-evidence.tar.gz",
+      "bytes": 3038566,
+      "sha256": "03be43a39f8bb5863b6b341290cd6290f6c1562c653fc12ef78fd38e06d5cb1a"
+    }
+  ]
+}

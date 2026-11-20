@@ -1,0 +1,16 @@
+{
+  "name": "wr008-veritas-evidence.tar.gz",
+  "sha256": "4d91cc38ee72afa6873e7288e1c03db2dbebb9d24f3f4afc2f12587425ce382e",
+  "bytes": 78131,
+  "file_members": 224,
+  "experiments": [
+    "veritas-wr008"
+  ],
+  "parts": [
+    {
+      "path": "archives/wr008-veritas-evidence/wr008-veritas-evidence.tar.gz",
+      "bytes": 78131,
+      "sha256": "4d91cc38ee72afa6873e7288e1c03db2dbebb9d24f3f4afc2f12587425ce382e"
+    }
+  ]
+}

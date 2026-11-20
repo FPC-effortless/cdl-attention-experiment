@@ -1,0 +1,16 @@
+{
+  "name": "wr010-evidence.tar.gz",
+  "sha256": "d35edd13cef6e93d2f99c7946e44ee0149ea1cc52542d290caae4f268c748c29",
+  "bytes": 9355036,
+  "file_members": 199,
+  "experiments": [
+    "wr010"
+  ],
+  "parts": [
+    {
+      "path": "archives/wr010-evidence/wr010-evidence.tar.gz",
+      "bytes": 9355036,
+      "sha256": "d35edd13cef6e93d2f99c7946e44ee0149ea1cc52542d290caae4f268c748c29"
+    }
+  ]
+}

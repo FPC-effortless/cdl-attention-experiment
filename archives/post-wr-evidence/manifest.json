@@ -1,0 +1,36 @@
+{
+  "name": "post-wr-evidence.tar.gz",
+  "sha256": "7487fe43f0c39a931c2e052bb1d331597c676145293dee274484abe5aec7791f",
+  "bytes": 93201569,
+  "file_members": 723,
+  "experiments": [
+    "post-wr"
+  ],
+  "parts": [
+    {
+      "path": "archives/post-wr-evidence/post-wr-evidence.tar.gz.part01",
+      "bytes": 20971520,
+      "sha256": "c1a67723924a9b52d443eabe59b16d07ab31f895959bfb1a38b79d1bb3100a27"
+    },
+    {
+      "path": "archives/post-wr-evidence/post-wr-evidence.tar.gz.part02",
+      "bytes": 20971520,
+      "sha256": "4b876c889b443ce648bae3389609e9dd8a71f4d034bda2847678619e1243e2d1"
+    },
+    {
+      "path": "archives/post-wr-evidence/post-wr-evidence.tar.gz.part03",
+      "bytes": 20971520,
+      "sha256": "9bff780e6ee2b61e3e2ad2b82e721b376fae89536d918cb4ebc2892f3b088ebc"
+    },
+    {
+      "path": "archives/post-wr-evidence/post-wr-evidence.tar.gz.part04",
+      "bytes": 20971520,
+      "sha256": "fcf9785c70f96665603dcd11d1cda3ff62bdac4648f6729f6559494c4756728b"
+    },
+    {
+      "path": "archives/post-wr-evidence/post-wr-evidence.tar.gz.part05",
+      "bytes": 9315489,
+      "sha256": "66ea26ef0f447517c2b7a97df860bd9b3aabd4f5fd30d1dedc0813bda0ea204e"
+    }
+  ]
+}
