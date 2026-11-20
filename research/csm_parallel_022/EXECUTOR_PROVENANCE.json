@@ -1,0 +1,7 @@
+{
+  "source": "csm-conditional-019/candidate/reference_executor.py",
+  "sha256": "bec9d5c1a05f6c50b43ed68fc3e6040064f76036d9d2fbecb024eb2dd81a7059",
+  "scope": "022 reconstructed executor derived from019 exact semantics; not unavailable001 reproduction",
+  "payload": "uint32 includingzero; current task uses three-byte uint24 subset; None is absence",
+  "reference_extension": "IFSET uses preoperation effective read equality; false branch identity"
+}

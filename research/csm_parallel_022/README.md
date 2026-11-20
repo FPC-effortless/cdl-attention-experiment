@@ -1,0 +1,15 @@
+# CSM-PARALLEL-022: completed bounded comparison
+
+The fixed scientific design is two supervised instruction parsers per seed, three predeclared seeds, 2,048 updates per fit and batch32. All six fits completed and retained evidence was independently audited. Both parsers failed the overall qualification gate. See [RESULTS.md](RESULTS.md) and [AGGREGATE.json](AGGREGATE.json). This is a bounded controlled-grammar CPU comparison, not a general CSM repair. Review and source backup do not guarantee convergence, qualification or speed superiority. No additional fit or promotion is implied by completion.
+
+This candidate combines learned byte parsers (Transformer/GRU) with supplied typed memory execution, OpenMP independent-bank scheduling and serial fallback for dependencies. Literal payload copying, framing and conditional guards remain engineered. All seven DEV axes and every seed must be retained. The current source fixes multiplicative role-context access and supports relocated execution; the earlier calibration predates that role-head correction and is only an approximate resource bound. Costs include rendering but do not measure peak memory or isolated model startup. Available-session ingestion is not online query latency.
+
+Original calibration source is preserved at 086d8437418cdfe6008d05752c2c91a2de549e99. PROTOCOL_DRAFT.md and INDEPENDENT_001_SCOPE_REVIEW.md remain historical calibration documents; PROTOCOL.md defines this scientific study. No original001archive was located, so no001 reproduction or native CSM equivalence is claimed. Mathematical arguments and bounded tests are not new kernel-verified Lean proofs.
+
+PUBLIC_SOURCE_SHA256.json hashes actual public files. Private data, INPUTS/STAGE/runtime/review/admission, dependency vendor, binaries and evidence are excluded. Recover the exact owner-authorized private closure and checkpoint rather than assuming this checkout is self-contained. Keep failed attempts, run the Forge/TrainLab/Veritas/ResearchLab path, no paid compute or protected TEST. Draft publication does not authorize merge or protection bypass.
+
+## Completed-study recovery
+
+All three private seed archives are backed up. Public scientific source is unchanged from commit736095fc6484eb39b0619f3820e7cf0d09e4a7c4; this update adds final reviewed reports and status only. Another owner-authorized agent needs the exact private evidence/input closure and checkpoints to replay, not merely this public checkout. Obtain the current private recovery instructions through Samuel's authenticated Library/Space. External accounts need an explicitly authorized copy; this page grants no access. Do not rerun completed seeds because their private assets are absent here.
+
+Source inspection and independent rescoring of retained actions/evidence are not independent training or GPU/model execution. Repeated evaluation groups across three seeds are not new independent subjects. Reported batching gains are offline session scheduling results, not proof of native CSM parallel-token speedup. Preserve all failed axes and initial calibration history. No private raw evidence, IDs or access URLs are published.
