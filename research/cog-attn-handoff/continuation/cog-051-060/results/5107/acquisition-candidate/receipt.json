@@ -1,0 +1,24 @@
+{
+  "id": "20261120T170634-780433103480",
+  "seed": 5107,
+  "inputs": {
+    "PROTOCOL.md": "288cadc0c632361a3409e64a34bb6b641e766d63ac86a7542035895455e350c8",
+    "execute.py": "ed827df02b02218a3b8b7706d0cba074792cc71ac010030826e4b1c90887001c",
+    "grounding.py": "112f8dbf6ee09606c7668a5616fc986c0945b3bad0725d6d6fdc44ac8a5fc164",
+    "panel.py": "1711184065cc7cf45e209d2b1b06a07e8601ddd189368d2cc0ac0d3d3b59ac06",
+    "prior-inputs.json": "323a0938d3dd16814ce3f003fa67817dea9a8b105008b476956fbbb5bab1783c",
+    "system_tests.py": "55c09078fc2b67f754e9eef22a99c66b1c109ef9614f2433bcea6279ea89da9d"
+  },
+  "artifacts": {
+    "csm.npz": "edd87cb3bb30fded56a3cc75fc34f50d87287097fb054ce63f565d64b64043bc",
+    "gru.pt": "578e9abe1da008bb0ff3c3da2f03ceb01291d7d83000e0b78ff832ce00729134",
+    "result.json": "7e239ade9349dec77b5b81975782006fab032f121b05566831059ce741134f54",
+    "roles.joblib": "a0ce783cf59c3d0fb0ed61989ad9bd1866c32c3aee6b75b64e9e7bac1d73b632",
+    "stable.sha256": "5ef243affb459dd89c621d21c3be5a938ba4220e33921550653d77068997cdec",
+    "transformer.pt": "ff226eb1db2f538fe12547a3463811d202823f9f26115fc26f2ebb92c55d861a"
+  },
+  "elapsed_seconds": 8.875617,
+  "metrics": {
+    "success": 0.99375
+  }
+}

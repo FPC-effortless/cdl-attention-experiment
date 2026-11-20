@@ -1,0 +1,42 @@
+{
+  "all_match": true,
+  "environment_scope": "CLEAN_DIRECTORY_SAME_HOST_AND_RUNTIME",
+  "replays": {
+    "acquisition.candidate.5101": {
+      "match": true,
+      "original_pin": "53eb703beb713a8e4f31696a31600cdd20877069d551e580adb18132fae733b9",
+      "record_pin": "ad376f94da4963c9fc4d6d815fab9b1fabc7ca0f953a83103e139edeba6c0959",
+      "run_id": "20261120T170721-6f0fa0c1c81b"
+    },
+    "acquisition.candidate.5107": {
+      "match": true,
+      "original_pin": "a5632752016106d0ea78a73a94aa0ee5505ae266fd4644a1edb04603524d6d4d",
+      "record_pin": "db7e06da9c9c0b97ace991c87869592894c7eb633fc9ea5bfbe491cda26f2d80",
+      "run_id": "20261120T170730-0c174dd5b0fc"
+    },
+    "acquisition.candidate.5113": {
+      "match": true,
+      "original_pin": "64e510dfc0d6f9c63203cb39452a5febac2dd19d97873cafd21daa3499cbd3ed",
+      "record_pin": "f7847c0a67224fefa7117cd5433874d8eb767efe56449ffe147a82d9476dbcb0",
+      "run_id": "20261120T170740-d0714f668118"
+    },
+    "acquisition.control.5101": {
+      "match": true,
+      "original_pin": "20ef60ac4fbf0e52a663c7b5b055db82a86fc590d43c77da51ae68a5241caae4",
+      "record_pin": "0b70d0bf2e91258845c84be0e9ae161f451193745d4b3ebae2dda7319b848687",
+      "run_id": "20261120T170750-70fe8af5f2a4"
+    },
+    "acquisition.control.5107": {
+      "match": true,
+      "original_pin": "ed36730977214d816b1fdb2e11c7054510ce6f69bb8ed3d044c72f498c6b1947",
+      "record_pin": "512f36ed2b65cc82edfde37a522dbfb9d099c6c88d8c5f6e805f0a0d70c9ae44",
+      "run_id": "20261120T170800-9dbc06e690d9"
+    },
+    "acquisition.control.5113": {
+      "match": true,
+      "original_pin": "07154854cebaeba71096daac19bb3c1878589051bb805f599e6b7f7544f79a74",
+      "record_pin": "409bea25177b8c82b4273bb1f85d7473d01269a3d9c52bfcab4a8ae7ac723316",
+      "run_id": "20261120T170809-830567e6f19d"
+    }
+  }
+}
