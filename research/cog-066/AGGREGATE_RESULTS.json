@@ -1,0 +1,217 @@
+{
+  "arm_stats": {
+    "fixed": {
+      "mean_saved_ns_per_workflow": -266630.3821138211,
+      "median_per_family_fraction_saved": -1.4789742707860727,
+      "option_count": 16,
+      "paired_mean_saved_ns_95pct": [
+        -315634.2113821138,
+        -221503.50406504064
+      ],
+      "panels": {
+        "dev_binding": {
+          "completed": 87,
+          "median_family_fraction_saved": -1.4845426550530332
+        },
+        "dev_composition": {
+          "completed": 95,
+          "median_family_fraction_saved": -1.4789742707860727
+        }
+      },
+      "quality_regressions": 0,
+      "stages": {
+        "expanded": 17024,
+        "finished_options": 840,
+        "option_attempts": 266560,
+        "planned_options": 1508,
+        "spent": 3645,
+        "transition_attempts": 519970
+      },
+      "timed_families": 41,
+      "unique_option_count": 16,
+      "verified_completions": 182,
+      "weighted_lifecycle_delta_ns": {
+        "4096": 13105423100.658535,
+        "512": 1638183626.7073169
+      }
+    },
+    "learned": {
+      "mean_saved_ns_per_workflow": -257241.0650406504,
+      "median_per_family_fraction_saved": -1.4308174360290749,
+      "option_count": 16,
+      "paired_mean_saved_ns_95pct": [
+        -305844.0,
+        -212038.48780487804
+      ],
+      "panels": {
+        "dev_binding": {
+          "completed": 87,
+          "median_family_fraction_saved": -1.6106563027609968
+        },
+        "dev_composition": {
+          "completed": 95,
+          "median_family_fraction_saved": -1.384469362292299
+        }
+      },
+      "quality_regressions": 0,
+      "stages": {
+        "expanded": 17758,
+        "finished_options": 601,
+        "option_attempts": 278304,
+        "planned_options": 1096,
+        "spent": 3646,
+        "transition_attempts": 499404
+      },
+      "timed_families": 41,
+      "unique_option_count": 16,
+      "verified_completions": 182,
+      "weighted_lifecycle_delta_ns": {
+        "4096": 12737481680.878048,
+        "512": 1674057955.609756
+      }
+    },
+    "primitive": {
+      "mean_saved_ns_per_workflow": 0.0,
+      "median_per_family_fraction_saved": 0.0,
+      "option_count": 0,
+      "paired_mean_saved_ns_95pct": [
+        0.0,
+        0.0
+      ],
+      "panels": {
+        "dev_binding": {
+          "completed": 87,
+          "median_family_fraction_saved": 0.0
+        },
+        "dev_composition": {
+          "completed": 95,
+          "median_family_fraction_saved": 0.0
+        }
+      },
+      "quality_regressions": 0,
+      "stages": {
+        "expanded": 17394,
+        "finished_options": 0,
+        "option_attempts": 0,
+        "planned_options": 0,
+        "spent": 3645,
+        "transition_attempts": 85942
+      },
+      "timed_families": 41,
+      "unique_option_count": 0,
+      "verified_completions": 182,
+      "weighted_lifecycle_delta_ns": {
+        "4096": 0.0,
+        "512": 0.0
+      }
+    },
+    "shuffled_6501": {
+      "mean_saved_ns_per_workflow": -257383.92682926828,
+      "median_per_family_fraction_saved": -1.4420331750373565,
+      "option_count": 16,
+      "paired_mean_saved_ns_95pct": [
+        -303210.56910569104,
+        -214448.1869918699
+      ],
+      "panels": {
+        "dev_binding": {
+          "completed": 87,
+          "median_family_fraction_saved": -1.544942943907204
+        },
+        "dev_composition": {
+          "completed": 97,
+          "median_family_fraction_saved": -1.3713471833407005
+        }
+      },
+      "quality_regressions": 2,
+      "stages": {
+        "expanded": 17985,
+        "finished_options": 589,
+        "option_attempts": 281904,
+        "planned_options": 1087,
+        "spent": 3681,
+        "transition_attempts": 489296
+      },
+      "timed_families": 41,
+      "unique_option_count": 16,
+      "verified_completions": 184,
+      "weighted_lifecycle_delta_ns": {
+        "4096": 12744546969.512196,
+        "512": 1674979044.4390244
+      }
+    },
+    "shuffled_6502": {
+      "mean_saved_ns_per_workflow": -265421.56910569104,
+      "median_per_family_fraction_saved": -1.5056630529723063,
+      "option_count": 16,
+      "paired_mean_saved_ns_95pct": [
+        -312375.6910569106,
+        -219240.26829268291
+      ],
+      "panels": {
+        "dev_binding": {
+          "completed": 87,
+          "median_family_fraction_saved": -1.5700308922585082
+        },
+        "dev_composition": {
+          "completed": 97,
+          "median_family_fraction_saved": -1.4497048689313856
+        }
+      },
+      "quality_regressions": 2,
+      "stages": {
+        "expanded": 17978,
+        "finished_options": 571,
+        "option_attempts": 281792,
+        "planned_options": 1044,
+        "spent": 3674,
+        "transition_attempts": 492297
+      },
+      "timed_families": 41,
+      "unique_option_count": 16,
+      "verified_completions": 184,
+      "weighted_lifecycle_delta_ns": {
+        "4096": 13139591078.682926,
+        "512": 1724340234.5853658
+      }
+    },
+    "shuffled_6503": {
+      "mean_saved_ns_per_workflow": -268706.51219512196,
+      "median_per_family_fraction_saved": -1.5279410686112795,
+      "option_count": 16,
+      "paired_mean_saved_ns_95pct": [
+        -318684.59349593497,
+        -222561.63414634147
+      ],
+      "panels": {
+        "dev_binding": {
+          "completed": 87,
+          "median_family_fraction_saved": -1.6120012430160997
+        },
+        "dev_composition": {
+          "completed": 98,
+          "median_family_fraction_saved": -1.4519492414086042
+        }
+      },
+      "quality_regressions": 3,
+      "stages": {
+        "expanded": 17976,
+        "finished_options": 537,
+        "option_attempts": 281744,
+        "planned_options": 986,
+        "spent": 3679,
+        "transition_attempts": 504156
+      },
+      "timed_families": 41,
+      "unique_option_count": 16,
+      "verified_completions": 185,
+      "weighted_lifecycle_delta_ns": {
+        "4096": 13301052421.414635,
+        "512": 1744522744.9268293
+      }
+    }
+  },
+  "gate": false,
+  "oracle_verified_static_reference_cases": 182,
+  "status": "complete"
+}

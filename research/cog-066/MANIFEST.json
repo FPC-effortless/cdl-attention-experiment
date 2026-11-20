@@ -1,0 +1,54 @@
+{
+  "files": {
+    "AGGREGATE_RESULTS.json": {
+      "bytes": 6063,
+      "sha256": "a6b998ec0966d79ae63f3d45a47c4afdfec8bce37efa2014181de63f49fe1288"
+    },
+    "README.md": {
+      "bytes": 4223,
+      "sha256": "4a0d4c167ba844bb5b9854a0477f0195aed5f43941b323b1694beb36e9f607a1"
+    },
+    "cog_065_066_packet/COMMUNICATION_PROPOSAL.md": {
+      "bytes": 4211,
+      "sha256": "6b70f3161ceba4b3f1d49c7b11a3a4fa044a66b6d5446e33bb3a415f4fa5ad6f"
+    },
+    "cog_065_066_packet/PROTOCOL.md": {
+      "bytes": 7347,
+      "sha256": "1636569fad18d59d8ea4df43996a7a2612b0b1cc120bf4d22a33bcd5c9a32a01"
+    },
+    "cog_065_066_packet/__init__.py": {
+      "bytes": 46,
+      "sha256": "71e78581d1e346120a8950a1abfcd4e6f3a73cff719209f6d5127c59f100eb85"
+    },
+    "cog_065_066_packet/domain.py": {
+      "bytes": 999,
+      "sha256": "6e189792c826db0f462a0160ab07cfb09859c249c9b54f48a28dcecaece20263"
+    },
+    "cog_065_066_packet/episodes.py": {
+      "bytes": 3351,
+      "sha256": "c0f3c0c143f184f191ccb9475cad8791a54af6a9442702577803a4bbc408ce83"
+    },
+    "cog_065_066_packet/planning.py": {
+      "bytes": 2757,
+      "sha256": "0a86636ba92df6080fef08b7a78e56256983001672c5f80b25de6e0bf96542b2"
+    },
+    "cog_065_066_packet/reporting.py": {
+      "bytes": 303,
+      "sha256": "b7290dd1505b64a4382143f8e523521484f253ae8231f735212c62378978ba8a"
+    },
+    "cog_065_066_packet/run.py": {
+      "bytes": 9579,
+      "sha256": "fbd5576e85145284fd15d03c798dc447936ee1eeb424562e24dd8cc76a54fd04"
+    },
+    "cog_065_066_packet/test_fixtures.py": {
+      "bytes": 2623,
+      "sha256": "ee82c8124d815ba1c1377e0c301fc56f7efda32b2367b8945393764519529032"
+    },
+    "cog_065_066_packet/verify.py": {
+      "bytes": 3961,
+      "sha256": "db02ac7a2f249c9d33d230a443ef9103be7c814064ac1165feeaf647b6a1d595"
+    }
+  },
+  "science_freeze_sha256": "26f1a4646576a97552ddaff4dbcdd233425910877a40400622f6fcc1511ccc78",
+  "scope": "public scientific source, protocol and aggregate-only result; constructed development, NOT_QUALIFIED"
+}
