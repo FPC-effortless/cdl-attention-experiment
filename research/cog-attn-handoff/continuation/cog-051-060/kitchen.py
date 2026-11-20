@@ -26,7 +26,9 @@ def fit(x,y):
         for k in classes:
             g=int(totals[1]<totals[0]);groups[g].add(k);totals[g]+=counts[k]
         side=np.isin(y[ix],list(groups[1]))
-        model=LogisticRegression(C=20,solver='liblinear',max_iter=150).fit(x[ix],side)
+        model=LogisticRegression(C=20, solver='liblinear', max_iter=150,
+                                 random_state=int(os.environ['KITCHEN_SOLVER_SEED'])
+                                 if 'KITCHEN_SOLVER_SEED' in os.environ else None).fit(x[ix],side)
         return model,branch(ix[~side]),branch(ix[side])
     return branch(np.arange(len(y)))
 def predict(tree,x):

@@ -2,7 +2,7 @@
 
 ## Verify the public handoff
 
-Run from this directory in a fresh checkout of the research branch. Python 3.12 is sufficient for the manifest and numeric audit. The physical re-induction requires NumPy and scikit-learn. The hosted job pins both. Running from the committed predictions avoids live provider drift.
+Run from this directory in a fresh checkout of the research branch. Python 3.12 is sufficient for the manifest and numeric audit. The physical re-induction requires NumPy and scikit-learn. The hosted job pins both. public_data_replay.py independently re-fetches the pinned EPIC and MultiWOZ sources, fits both models and checks the published operating points. Running from the committed predictions avoids live provider drift.
 
 ```bash
 sha256sum --quiet -c SHA256SUMS
@@ -65,10 +65,12 @@ for split in train validation; do
   curl -fsSL "https://raw.githubusercontent.com/epic-kitchens/epic-kitchens-100-annotations/ea8b40457a400c3fffa1c7f406ef3dc169cc2522/EPIC_100_${split}.csv" -o "$COG_RUN_DIR/epic/EPIC_100_${split}.csv"
 done
 python kitchen.py
+python seeded_kitchen.py
 python latent_kitchen.py
 python kitchen_calibration.py
 export MULTIWOZ_DIR=/workspace/scratch/multiwoz/data/MultiWOZ_2.2
 python dialogue_transfer.py
+python dialogue_session.py
 ```
 
 For MultiWOZ check out budzianowski/multiwoz at fe0c8e65cfcd8462bd33c86e35f21addc84ca82b. The program reads the distributed train, dev and test shards, then records their digests. Only observation IDs, predictions, state labels and scores are in the public prediction tables. A second dialogue fit reproduced both result files byte-for-byte. EPIC publication uses the source's noncommercial license and attribution. MultiWOZ credits Paweł Budzianowski and contributors. [EPIC license](EPIC-LICENSE.txt) · [MultiWOZ license](MULTIWOZ-LICENSE.txt)

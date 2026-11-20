@@ -1,8 +1,8 @@
 {
   "schema_version": "veritas.shared-evidence.v1",
-  "evidence_id": "EVID-2BC88124DF96E2BAC22F983B",
-  "evidence_content_sha256": "2bc88124df96e2bac22f983be2808599d8703ad04f869e40bec54aa4bda09cc7",
-  "record_id": "EREC-CFB6F6028CDC6DB89F0193DB",
+  "evidence_id": "EVID-6F2AD05B102BE7BE82AD5153",
+  "evidence_content_sha256": "6f2ad05b102be7be82ad515358adbcadf66fbd1653dc3be1040794586ccfa619",
+  "record_id": "EREC-6C889D74E32263844CF71C1E",
   "evidence_type": "runtime.grounded_acquisition",
   "outcome": "OBSERVED",
   "visibility": "public",
@@ -25,12 +25,12 @@
     {
       "artifact_id": "study-manifest",
       "role": "primary",
-      "content_sha256": "0535550b856d8917369325d060ed4a89a8a47cc0748fa4fc73346d867fafc88c",
+      "content_sha256": "04c8a405cb68d80c50eb5b27e2c7b1dde6c35693caa22b55c04b95c82e9953a2",
       "media_type": null
     }
   ],
   "dependencies": [],
-  "observed_at": "2026-11-20T17:30:45.030875Z",
+  "observed_at": "2026-11-20T17:34:19.011526Z",
   "provenance": {
     "replay": "same-host TrainLab and separate GitHub-hosted scoped replay",
     "review": "single research operator"
