@@ -21,7 +21,11 @@ def mentioned(value, utterance):
 
 
 def cases(path):
-    if hashlib.sha256(path.read_bytes()).hexdigest()!='89af95d8f596a448e733d59b31be78f1dd1632eddd99d5cb298a3fcb1ac9d185':
+    allowed = {
+        '89af95d8f596a448e733d59b31be78f1dd1632eddd99d5cb298a3fcb1ac9d185',  # 002 test panel
+        'e7ddb563e4da5766ea820cc826dead77e7ca219c19b761e218d62d9c999a252e',  # 003 dev transfer panel
+    }
+    if hashlib.sha256(path.read_bytes()).hexdigest() not in allowed:
         raise ValueError('unexpected dialogue source')
     for d in json.loads(path.read_text()):
         prev, transcript, user_words = {}, [], []
