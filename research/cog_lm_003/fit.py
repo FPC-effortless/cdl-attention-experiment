@@ -2,7 +2,7 @@
 import argparse
 import time
 import math
-from common import *
+from common import Path, np, torch, Runtime, sha, save, model_paths, build_docs
 from torch.nn import functional as F
 from architecture import mix
 
@@ -11,6 +11,7 @@ CONFIGS={
  'long_text':('cog_revision',False,False,False),
  'short_revision':('cog_revision',True,True,False),
  'long_revision':('cog_revision',False,True,False),
+ 'floor_revision':('cog_revision',False,True,True),
  'route_revision':('cog_revision',False,True,True),
  'cog_control':('cog_lookup',False,True,False),
  'route_cog_control':('cog_lookup',False,True,True),
@@ -95,6 +96,9 @@ def train(a):
                 natural=-p[:-1].gather(1,torch.tensor([tokens[j+1] for j in positions])[:,None]).mean()
                 answer=-p[-1,q['target']]
                 loss=natural+(answer if supervised else 0.)
+                if a.name=='floor_revision':
+                    shortfall=F.relu(math.log(.01)-torch.log(ratio[-1].clamp_min(1e-9)))
+                    loss=loss+.25*shortfall.square()
                 (loss/2).backward()
                 total+=stop+len(qh)
                 masked+=int(drop)

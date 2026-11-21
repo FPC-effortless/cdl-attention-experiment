@@ -1,6 +1,6 @@
 """Authentic revisions on known and fresh shards, sharing exact frozen backbone computation."""
 import argparse
-from common import *
+from common import Path, torch, Tokenizer, features, successor_ids, Runtime, save, model_paths
 from fit import CONFIGS
 from dialogue import cases,mentioned
 
@@ -10,10 +10,11 @@ def evaluate(a):
     torch.set_num_threads(a.threads)
     base,prior=model_paths(a.parents,a.arm)
     system=Runtime.load(base,prior)
-    variants={name:Runtime.load(base,a.out/(name+'.pt')).head for name in CONFIGS if CONFIGS[name][0]==a.arm}
+    variants={name:Runtime.load(base,a.out/(name+'.pt')).head for name in CONFIGS if CONFIGS[name][0]==a.arm and (not a.only or name==a.only)}
     variants['parent_'+a.arm]=system.head
-    if a.arm=='cog_revision':
-        variants['route_revision_off']=variants['route_revision']
+    for name in ('route_revision','floor_revision'):
+        if name in variants:
+            variants[name+'_off']=variants[name]
     tok=Tokenizer.from_file(str(a.data/'tokenizer.json'))
     for shard,path in [('known',a.known),('fresh',a.fresh)]:
         caseset=list(cases(path))
@@ -61,5 +62,6 @@ if __name__=='__main__':
     p=argparse.ArgumentParser()
     for k in ('parents','out','data','known','fresh'):p.add_argument('--'+k,type=Path,required=True)
     p.add_argument('--arm',required=True)
+    p.add_argument('--only',choices=CONFIGS)
     p.add_argument('--threads',type=int,default=2)
     evaluate(p.parse_args())

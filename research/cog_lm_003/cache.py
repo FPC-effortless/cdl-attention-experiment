@@ -1,6 +1,6 @@
 import argparse
 import copy
-from common import *
+from common import Path, torch, backbone, Successors, model_paths, build_docs, sequence
 
 
 def run(a):

@@ -1,0 +1,194 @@
+[
+  {
+    "name": "parent",
+    "short": true,
+    "example": 4,
+    "prefix_feature_gradient": 0.0,
+    "query_feature_gradient": 0.697516679763794,
+    "ratio": 2.6830873594008153e-06
+  },
+  {
+    "name": "parent",
+    "short": false,
+    "example": 4,
+    "prefix_feature_gradient": 4.536454980552662e-07,
+    "query_feature_gradient": 0.6978290677070618,
+    "ratio": 0.00028131442377343774
+  },
+  {
+    "name": "parent",
+    "short": true,
+    "example": 5,
+    "prefix_feature_gradient": 0.0,
+    "query_feature_gradient": 0.697516679763794,
+    "ratio": 2.6830873594008153e-06
+  },
+  {
+    "name": "parent",
+    "short": false,
+    "example": 5,
+    "prefix_feature_gradient": 5.443700956675457e-07,
+    "query_feature_gradient": 0.6978290677070618,
+    "ratio": 0.00028144745738245547
+  },
+  {
+    "name": "parent",
+    "short": true,
+    "example": 10,
+    "prefix_feature_gradient": 0.0,
+    "query_feature_gradient": 0.7011896967887878,
+    "ratio": 1.0726729669841006e-05
+  },
+  {
+    "name": "parent",
+    "short": false,
+    "example": 10,
+    "prefix_feature_gradient": 3.404987864996656e-07,
+    "query_feature_gradient": 0.7012841701507568,
+    "ratio": 0.00022075003653299063
+  },
+  {
+    "name": "parent",
+    "short": true,
+    "example": 11,
+    "prefix_feature_gradient": 0.0,
+    "query_feature_gradient": 0.7011896967887878,
+    "ratio": 1.0726729669841006e-05
+  },
+  {
+    "name": "parent",
+    "short": false,
+    "example": 11,
+    "prefix_feature_gradient": 3.737350198207423e-07,
+    "query_feature_gradient": 0.7012841701507568,
+    "ratio": 0.00022070093837101012
+  },
+  {
+    "name": "route_revision",
+    "short": true,
+    "example": 4,
+    "prefix_feature_gradient": 0.0,
+    "query_feature_gradient": 0.7127224802970886,
+    "ratio": 4.667921530199237e-05
+  },
+  {
+    "name": "route_revision",
+    "short": false,
+    "example": 4,
+    "prefix_feature_gradient": 1.2875253560196143e-05,
+    "query_feature_gradient": 0.7159872651100159,
+    "ratio": 0.0037469088565558195
+  },
+  {
+    "name": "route_revision",
+    "short": true,
+    "example": 5,
+    "prefix_feature_gradient": 0.0,
+    "query_feature_gradient": 0.7127224802970886,
+    "ratio": 4.667921530199237e-05
+  },
+  {
+    "name": "route_revision",
+    "short": false,
+    "example": 5,
+    "prefix_feature_gradient": 1.8414235455566086e-05,
+    "query_feature_gradient": 0.7159872651100159,
+    "ratio": 0.0037488655652850866
+  },
+  {
+    "name": "route_revision",
+    "short": true,
+    "example": 10,
+    "prefix_feature_gradient": 0.0,
+    "query_feature_gradient": 0.708307683467865,
+    "ratio": 8.150907524395734e-05
+  },
+  {
+    "name": "route_revision",
+    "short": false,
+    "example": 10,
+    "prefix_feature_gradient": 6.322286481008632e-06,
+    "query_feature_gradient": 0.7083021998405457,
+    "ratio": 0.0008880012901499867
+  },
+  {
+    "name": "route_revision",
+    "short": true,
+    "example": 11,
+    "prefix_feature_gradient": 0.0,
+    "query_feature_gradient": 0.708307683467865,
+    "ratio": 8.150907524395734e-05
+  },
+  {
+    "name": "route_revision",
+    "short": false,
+    "example": 11,
+    "prefix_feature_gradient": 6.388757810782408e-06,
+    "query_feature_gradient": 0.7083021998405457,
+    "ratio": 0.0008871197351254523
+  },
+  {
+    "name": "floor_revision",
+    "short": true,
+    "example": 4,
+    "prefix_feature_gradient": 0.0,
+    "query_feature_gradient": 0.7078354358673096,
+    "ratio": 0.4125767648220062
+  },
+  {
+    "name": "floor_revision",
+    "short": false,
+    "example": 4,
+    "prefix_feature_gradient": 0.000126692044432275,
+    "query_feature_gradient": 0.7102569937705994,
+    "ratio": 0.40353837609291077
+  },
+  {
+    "name": "floor_revision",
+    "short": true,
+    "example": 5,
+    "prefix_feature_gradient": 0.0,
+    "query_feature_gradient": 0.7078354358673096,
+    "ratio": 0.4125767648220062
+  },
+  {
+    "name": "floor_revision",
+    "short": false,
+    "example": 5,
+    "prefix_feature_gradient": 0.00012791949848178774,
+    "query_feature_gradient": 0.7102569937705994,
+    "ratio": 0.40350696444511414
+  },
+  {
+    "name": "floor_revision",
+    "short": true,
+    "example": 10,
+    "prefix_feature_gradient": 0.0,
+    "query_feature_gradient": 0.7047051191329956,
+    "ratio": 0.4050506353378296
+  },
+  {
+    "name": "floor_revision",
+    "short": false,
+    "example": 10,
+    "prefix_feature_gradient": 4.150833410676569e-05,
+    "query_feature_gradient": 0.7048534750938416,
+    "ratio": 0.4015672504901886
+  },
+  {
+    "name": "floor_revision",
+    "short": true,
+    "example": 11,
+    "prefix_feature_gradient": 0.0,
+    "query_feature_gradient": 0.7047051191329956,
+    "ratio": 0.4050506353378296
+  },
+  {
+    "name": "floor_revision",
+    "short": false,
+    "example": 11,
+    "prefix_feature_gradient": 4.165332211414352e-05,
+    "query_feature_gradient": 0.7048534750938416,
+    "ratio": 0.4015670418739319
+  }
+]

@@ -1,6 +1,7 @@
 """Verify sparse predictions and gradients against the native 002 token-level path."""
 import copy
-from fit import *
+from common import torch, Readout
+from fit import sparse
 
 
 def run():
