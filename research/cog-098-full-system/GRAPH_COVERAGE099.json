@@ -1,0 +1,74 @@
+{
+  "1701": {
+    "training_graph_states": 1952,
+    "training_graph_edges": 2334,
+    "test_by_domain": {
+      "dialogue": {
+        "actions": 1669,
+        "exact_state_seen": 10,
+        "exact_chosen_edge_seen": 9,
+        "chosen_edge_had_positive_immediate_training_outcome": 6
+      },
+      "interactive": {
+        "actions": 1387,
+        "exact_state_seen": 840,
+        "exact_chosen_edge_seen": 692,
+        "chosen_edge_had_positive_immediate_training_outcome": 24
+      },
+      "software": {
+        "actions": 62,
+        "exact_state_seen": 0,
+        "exact_chosen_edge_seen": 0,
+        "chosen_edge_had_positive_immediate_training_outcome": 0
+      }
+    }
+  },
+  "1707": {
+    "training_graph_states": 1997,
+    "training_graph_edges": 2517,
+    "test_by_domain": {
+      "dialogue": {
+        "actions": 1669,
+        "exact_state_seen": 10,
+        "exact_chosen_edge_seen": 5,
+        "chosen_edge_had_positive_immediate_training_outcome": 4
+      },
+      "interactive": {
+        "actions": 1948,
+        "exact_state_seen": 1462,
+        "exact_chosen_edge_seen": 1402,
+        "chosen_edge_had_positive_immediate_training_outcome": 8
+      },
+      "software": {
+        "actions": 70,
+        "exact_state_seen": 0,
+        "exact_chosen_edge_seen": 0,
+        "chosen_edge_had_positive_immediate_training_outcome": 0
+      }
+    }
+  },
+  "1711": {
+    "training_graph_states": 2015,
+    "training_graph_edges": 2607,
+    "test_by_domain": {
+      "dialogue": {
+        "actions": 1669,
+        "exact_state_seen": 10,
+        "exact_chosen_edge_seen": 2,
+        "chosen_edge_had_positive_immediate_training_outcome": 2
+      },
+      "interactive": {
+        "actions": 1894,
+        "exact_state_seen": 1240,
+        "exact_chosen_edge_seen": 1081,
+        "chosen_edge_had_positive_immediate_training_outcome": 17
+      },
+      "software": {
+        "actions": 70,
+        "exact_state_seen": 0,
+        "exact_chosen_edge_seen": 0,
+        "chosen_edge_had_positive_immediate_training_outcome": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "mode": "assisted",
+    "seed": 1701,
+    "original_elapsed_s": 36.23011953799869,
+    "replay_elapsed_s": 31.81253624099918,
+    "original_digest": "138828b356f0aa4f6a11581e56596dac0659f4d5280ad152b0431f239a482aa7",
+    "replay_digest": "138828b356f0aa4f6a11581e56596dac0659f4d5280ad152b0431f239a482aa7",
+    "checkpoint": "825bfe72abf9223146edf7d1f9d397746b5df4e4754b37c1eb7b794f922d8861"
+  },
+  {
+    "mode": "assisted",
+    "seed": 1707,
+    "original_elapsed_s": 37.52083097099967,
+    "replay_elapsed_s": 32.83219342499979,
+    "original_digest": "9b92733da5719ae85248baced6a91c81b8af8536d7b1263f5bc5549e0c83c4d9",
+    "replay_digest": "9b92733da5719ae85248baced6a91c81b8af8536d7b1263f5bc5549e0c83c4d9",
+    "checkpoint": "59c6c85ad8d9aae530ba148ad3d57ec9776848d6c92195fe4421a2eb9e62020b"
+  },
+  {
+    "mode": "assisted",
+    "seed": 1711,
+    "original_elapsed_s": 36.608025571000326,
+    "replay_elapsed_s": 30.298181771999225,
+    "original_digest": "d5cbafd143197fef4e3d6d2d189bd792ddcb8e78d56d0607f41f937b0d075ee6",
+    "replay_digest": "d5cbafd143197fef4e3d6d2d189bd792ddcb8e78d56d0607f41f937b0d075ee6",
+    "checkpoint": "d2dfcbecefea27c5de45f188e0369f6c67e958a7da3398dad871128c052dbce2"
+  },
+  {
+    "mode": "unaided",
+    "seed": 1701,
+    "original_elapsed_s": 45.41009312599999,
+    "replay_elapsed_s": 52.517350719001115,
+    "original_digest": "9da8790a63ba38318aa8d2b46b0916653a761ed7e81bd78d69efcf43a721051c",
+    "replay_digest": "9da8790a63ba38318aa8d2b46b0916653a761ed7e81bd78d69efcf43a721051c",
+    "checkpoint": "dd8db9bead732d6bb0ac950afc9940328fdc956922c49f125143074981d4c9af"
+  },
+  {
+    "mode": "unaided",
+    "seed": 1707,
+    "original_elapsed_s": 48.10533548799867,
+    "replay_elapsed_s": 49.99889277299917,
+    "original_digest": "5f3a0478feb494d0268fab01e71b94929a84ff3299341d537df6ba97dffe4822",
+    "replay_digest": "5f3a0478feb494d0268fab01e71b94929a84ff3299341d537df6ba97dffe4822",
+    "checkpoint": "b1b05f0860fa14930e6a827ea62cae956b489151fae27bdc12f58096a2a6f756"
+  },
+  {
+    "mode": "unaided",
+    "seed": 1711,
+    "original_elapsed_s": 42.37836014599998,
+    "replay_elapsed_s": 50.66145370300001,
+    "original_digest": "def3733fb31fce45d1316113c44de723bd5fa1b8b9034bf4e6aa61d11c996541",
+    "replay_digest": "def3733fb31fce45d1316113c44de723bd5fa1b8b9034bf4e6aa61d11c996541",
+    "checkpoint": "67f674a591ee873f59c8af53a55b983e341ad16a535e7bed8c82c810bbb43179"
+  }
+]

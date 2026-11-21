@@ -28,13 +28,14 @@ To replay an archived policy, copy its .pt file to an empty output directory (or
 python evaluate.py --data /path/to/data --out /path/to/output --arm cog --seed 1701 --unaided
 ```
 
-For real-project transfer install pytest 7.4.4, python-toolbox 1.3.2, six 1.17.0, future 0.18.3 and decorator 4.4.2 in an additional Python 3.8.20 environment. Its interpreter is used solely for upstream project tests. The harness and learning runtime still run on 3.12. The first two commands reproduce the assisted controls, the third uses the frozen unassisted weights. The last is the separate exhaustive evaluator diagnostic.
+For real-project transfer install pytest 7.4.4, python-toolbox 1.3.2, six 1.17.0, future 0.18.3 and decorator 4.4.2 in an additional Python 3.8.20 environment. Its interpreter is used solely for upstream project tests. The harness and learning runtime still run on 3.12. The first two commands reproduce the assisted controls, the third uses the frozen unassisted weights. The last two commands check every generated edit in a separate evaluator diagnostic.
 
 ```bash
 python bugsinpy_eval.py --data /path/to/data --out /path/to/new-results --python /path/to/py38
 python bugsinpy_eval.py --data /path/to/data --out /path/to/new-results --python /path/to/py38 --compat
 python bugsinpy_eval.py --data /path/to/data --out /path/to/new-results/unaided --python /path/to/py38 --compat
 python bugsinpy_eval.py --data /path/to/data --out /path/to/new-results --python /path/to/py38 --compat --diagnose
+python bugsinpy_eval.py --data /path/to/data --out /path/to/new-results --python /path/to/py38 --compat --diagnose --tail
 ```
 
 Extract the evidence ZIP at the repository root to recover the original files by relative path. Compare the checkpoint SHA-256, trace SHA-256 and decision digests in the run records. A new run may produce different elapsed times or watchdog classifications on different hardware. The admission command remains `python gate.py --strict`. The original internal evaluation supplies no independently held test receipt.
