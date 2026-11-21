@@ -1,5 +1,6 @@
 """Generate text, save live document state, or resume generation exactly on CPU."""
 import argparse
+import json
 from pathlib import Path
 import torch
 from tokenizers import Tokenizer
@@ -30,10 +31,17 @@ def infer(a):
         raise ValueError('tokens and temperature must be positive')
     fingerprint=hashlib.file_digest(a.weights.open('rb'),'sha256').hexdigest()
     vocab_hash=hashlib.file_digest(a.tokenizer.open('rb'),'sha256').hexdigest()
+    manifest=a.weights.with_name('model_manifest.json')
+    if manifest.is_file():
+        expected=json.loads(manifest.read_text())
+        if (fingerprint,vocab_hash)!=(expected['checkpoint_sha256'],expected['tokenizer_sha256']):
+            raise ValueError('released model or tokenizer digest mismatch')
     m=restore(a.weights)
     if m.c.arm!='cog':
         raise ValueError('live state export is implemented for COG checkpoints')
     tok=Tokenizer.from_file(str(a.tokenizer))
+    if tok.get_vocab_size()!=m.c.vocab:
+        raise ValueError('tokenizer vocabulary size mismatch')
     rng=torch.Generator().manual_seed(a.seed)
     if a.resume_state:
         s=torch.load(a.resume_state,map_location='cpu',weights_only=True)

@@ -6,6 +6,22 @@ This directory contains an attention-free autoregressive text model, its CPU tra
 
 A token enters a residual block with a learned diagonal recurrence. Each channel computes a bounded retention rate and candidate value, combines that value with its previous state, and passes the result through a feed-forward network. The batch scan and one-token streaming recurrence calculate the same quantity within floating-point tolerance. No token-to-token self-attention is used in COG. A learned read over eight slots and their link matrix contributes to the vocabulary projection. The model commits convex rewrites after each block of 16 observed tokens. The current block can only read previously committed rows. A separate gate mixes the vocabulary prediction with a bounded, exact last-successor lookup keyed by two input tokens. The observed successor becomes writable only after it arrives. Each new document starts with empty state.
 
+
+```mermaid
+flowchart TD
+    T["Observed subword"] --> R["Recurrent backbone"]
+    T --> I["Observed successor index"]
+    R --> B["Read prior slots and links"]
+    R --> W["Commit after 16 observations"]
+    W --> S["Document slot and link state"]
+    S --> B
+    R --> V["Vocabulary scores"]
+    B --> V
+    V --> G["Learned mixture gate"]
+    I --> G
+    G --> P["Next-subword distribution"]
+```
+
 The working rows and links adapt the CSM record/update idea and the LRC bounded read idea. The successor table adapts COG-099's observation/action transition memory to token prediction. This language experiment trains a new model from scratch. The earlier COG controller, native CSM executor, LRC learned routing policy and Veritas action verifier are outside the model. Only generated text is returned.
 
 The controls include a RoPE Transformer with a real KV cache and the actual reference Mamba-2 mixer. The Mamba arm uses the same surrounding embedding, residual LayerNorm and tied vocabulary projection used here. Its scan is the portable PyTorch implementation, with 8 state channels, trained from scratch. Hardware-optimized Mamba kernels were not benchmarked. The local COG control trains the same recurrent backbone with both extra memories absent.
@@ -19,7 +35,7 @@ python infer.py --weights model.pt --tokenizer tokenizer.json --prompt "The hist
 python infer.py --weights model.pt --tokenizer tokenizer.json --resume-state session.pt --tokens 32
 ```
 
-The saved session carries all recurrent, slot, link, partial-block, successor and sampling state required to resume at the same temperature. Use a new prompt for a new document. Model and tokenizer digests guard session restoration. This is a base text completer trained with next-token prediction. There is no chat instruction tuning.
+The saved session carries all recurrent, slot, link, partial-block, successor and sampling state required to resume at the same temperature. Use a new prompt for a new document. The model archive binds the original checkpoint to its exact tokenizer. Model and tokenizer digests also guard session restoration. This is a base text completer trained with next-token prediction. There is no chat instruction tuning.
 
 ## Reproduce the experiment
 

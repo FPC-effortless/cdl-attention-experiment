@@ -56,6 +56,7 @@ def main(fits,raw,out):
     probes={}
     contexts={}
     efficiency={}
+    foreign={}
     for path in sorted(raw.glob('*.eval.json')):
         name=path.name.removesuffix('.eval.json')
         rec=read(path)
@@ -100,6 +101,21 @@ def main(fits,raw,out):
                              stale_top1=sum(r['top']==r['old'] for r in rr),
                              correct_index=sum(r['index_prediction']==r['target'] for r in rr))
                            for k,rr in grouped.items()}
+        f=raw/(name+'.foreign.json')
+        if f.is_file():
+            foreign[name]={}
+            for split,rr in read(f).items():
+                bydoc=defaultdict(lambda:[0.,0])
+                original={(v['doc'],v['offset']):v for v in rec['rows'][split+'/full']}
+                for r in rr:
+                    assert r['doc']!=r['donor'] and abs(original[r['doc'],r['offset']]['nll']-r['intact'])/128<.00002
+                    bydoc[r['doc']][0]+=r['foreign']-r['intact']
+                    bydoc[r['doc']][1]+=r['count']
+                v=np.array(list(bydoc.values()))
+                ix=np.random.default_rng(210).integers(len(v),size=(5000,len(v)))
+                draws=v[ix].sum(1)
+                foreign[name][split]=dict(foreign_minus_intact=float(v[:,0].sum()/v[:,1].sum()),
+                                          interval95=np.quantile(draws[:,0]/draws[:,1],[.025,.975]).tolist())
         f=raw/(name+'.context.json')
         if f.is_file():
             rr=read(f)
@@ -125,10 +141,12 @@ def main(fits,raw,out):
     for right in ('slots','episode'):
         for split in ('test','transfer'):
             comparisons['compact/cog-minus-'+right+'/'+split]=paired(records,'compact',(17,29,43),'cog',right,split,False)
+    write(out/'samples.json',{k:v['samples'] for k,v in records.items() if k in
+           ('scale-cog-17','scale-cog-17-continued','scale-local-17-continued','scale-mamba2-17')})
     with (out/'training_curves.csv').open('w') as f:
         w=csv.writer(f,lineterminator='\n');w.writerow(['fit','stage_step','training_nll','gradient_norm']);w.writerows(curves)
     for fname,data in [('metrics',metrics),('paired_intervals',comparisons),('discourse',disc),('retention',probes),
-                       ('long_context',contexts),('efficiency',efficiency)]:
+                       ('long_context',contexts),('efficiency',efficiency),('foreign_bank',foreign)]:
         write(out/(fname+'.json'),data)
 
 
