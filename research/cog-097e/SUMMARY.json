@@ -1,0 +1,75 @@
+{
+  "methods": {
+    "char": {
+      "abstained": 438,
+      "accepted": 114,
+      "always_correct": 216,
+      "correct": 78,
+      "coverage": 0.20652173913043478,
+      "mean_index_build_ms": 213.573,
+      "mean_online_ms_per_query": 3.897,
+      "precision": 0.6842105263157895,
+      "unknown_false": 0,
+      "wrong": 36
+    },
+    "learned": {
+      "abstained": 456,
+      "accepted": 96,
+      "always_correct": 160,
+      "correct": 47,
+      "coverage": 0.17391304347826086,
+      "mean_index_build_ms": 210.967,
+      "mean_online_ms_per_query": 5.871,
+      "precision": 0.4895833333333333,
+      "unknown_false": 6,
+      "wrong": 49
+    },
+    "no_encoder": {
+      "abstained": 485,
+      "accepted": 67,
+      "always_correct": 152,
+      "correct": 37,
+      "coverage": 0.1213768115942029,
+      "mean_index_build_ms": 251.603,
+      "mean_online_ms_per_query": 4.58,
+      "precision": 0.5522388059701493,
+      "unknown_false": 1,
+      "wrong": 30
+    },
+    "shuffled_rewards": {
+      "abstained": 487,
+      "accepted": 65,
+      "always_correct": 51,
+      "correct": 8,
+      "coverage": 0.11775362318840579,
+      "mean_index_build_ms": 233.197,
+      "mean_online_ms_per_query": 6.045,
+      "precision": 0.12307692307692308,
+      "unknown_false": 18,
+      "wrong": 57
+    },
+    "word": {
+      "abstained": 489,
+      "accepted": 63,
+      "always_correct": 171,
+      "correct": 33,
+      "coverage": 0.11413043478260869,
+      "mean_index_build_ms": 205.344,
+      "mean_online_ms_per_query": 3.527,
+      "precision": 0.5238095238095238,
+      "unknown_false": 0,
+      "wrong": 30
+    }
+  },
+  "name": "COG-ATTN-097e outcome-trained read-only retriever, not full COG",
+  "reused_distinct_test_requests": 184,
+  "seeds": [
+    1701,
+    1707,
+    1711
+  ],
+  "total_seeded_evaluations": 552,
+  "training_actions": 5788,
+  "training_episodes": 2673,
+  "training_successes": 1073
+}
