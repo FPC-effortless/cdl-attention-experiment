@@ -1,0 +1,49 @@
+{
+  "panels": {
+    "validation": {
+      "documents": 60,
+      "windows": 120,
+      "targets": 15360,
+      "exact_train_window_matches": []
+    },
+    "test": {
+      "documents": 61,
+      "windows": 122,
+      "targets": 15616,
+      "exact_train_window_matches": []
+    },
+    "transfer": {
+      "documents": 96,
+      "windows": 96,
+      "targets": 12288,
+      "exact_train_window_matches": []
+    }
+  },
+  "training": {
+    "compact-17": {
+      "targets_drawn": 131072,
+      "distinct_corpus_target_positions": 129274,
+      "documents_sampled": 412
+    },
+    "compact-29": {
+      "targets_drawn": 131072,
+      "distinct_corpus_target_positions": 127582,
+      "documents_sampled": 416
+    },
+    "compact-43": {
+      "targets_drawn": 131072,
+      "distinct_corpus_target_positions": 128988,
+      "documents_sampled": 424
+    },
+    "scale-17": {
+      "targets_drawn": 65536,
+      "distinct_corpus_target_positions": 65102,
+      "documents_sampled": 291
+    },
+    "scale-extended-17": {
+      "targets_drawn": 524288,
+      "distinct_corpus_target_positions": 485320,
+      "documents_sampled": 575
+    }
+  }
+}
