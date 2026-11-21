@@ -1,0 +1,709 @@
+{
+  "all": {
+    "n": 144,
+    "unique_goal_vectors": 133,
+    "arms": {
+      "B": {
+        "attempts": 161972,
+        "charged": 163667,
+        "popped": 5685,
+        "ns": 343809387,
+        "generated": 538432,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "efficient": {
+        "attempts": 17587,
+        "charged": 19282,
+        "popped": 5630,
+        "ns": 24711053,
+        "generated": 17587,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "structural": {
+        "attempts": 17823,
+        "charged": 35680,
+        "popped": 4528,
+        "ns": 78400904,
+        "generated": 72504,
+        "certified": 588,
+        "activated": 344,
+        "selector_calls": 344,
+        "version_checks": 0,
+        "cell_reads": 15818
+      },
+      "D": {
+        "attempts": 17587,
+        "charged": 19282,
+        "popped": 5630,
+        "ns": 64613412,
+        "generated": 81522,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "E": {
+        "attempts": 17579,
+        "charged": 20719,
+        "popped": 5629,
+        "ns": 81007268,
+        "generated": 81499,
+        "certified": 5,
+        "activated": 19,
+        "selector_calls": 1445,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "C": {
+        "attempts": 161326,
+        "charged": 163021,
+        "popped": 5707,
+        "ns": 338973551,
+        "generated": 535479,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "A": {
+        "attempts": 17587,
+        "charged": 19282,
+        "popped": 5630,
+        "ns": 62768271,
+        "generated": 81522,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      }
+    },
+    "time_ratio": 0.7748474001122961,
+    "ci": [
+      0.7462277143644586,
+      0.7933856721567093
+    ]
+  },
+  "held": {
+    "n": 72,
+    "unique_goal_vectors": 71,
+    "arms": {
+      "B": {
+        "attempts": 73689,
+        "charged": 74621,
+        "popped": 2554,
+        "ns": 143768739,
+        "generated": 233204,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "efficient": {
+        "attempts": 7532,
+        "charged": 8464,
+        "popped": 2536,
+        "ns": 10270828,
+        "generated": 7532,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "structural": {
+        "attempts": 7630,
+        "charged": 17749,
+        "popped": 1877,
+        "ns": 33259315,
+        "generated": 28849,
+        "certified": 353,
+        "activated": 187,
+        "selector_calls": 187,
+        "version_checks": 0,
+        "cell_reads": 9000
+      },
+      "D": {
+        "attempts": 7532,
+        "charged": 8464,
+        "popped": 2536,
+        "ns": 26495425,
+        "generated": 34116,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "E": {
+        "attempts": 7526,
+        "charged": 9303,
+        "popped": 2535,
+        "ns": 33967196,
+        "generated": 34097,
+        "certified": 3,
+        "activated": 8,
+        "selector_calls": 845,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "C": {
+        "attempts": 72662,
+        "charged": 73594,
+        "popped": 2538,
+        "ns": 140269953,
+        "generated": 229711,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "A": {
+        "attempts": 7532,
+        "charged": 8464,
+        "popped": 2536,
+        "ns": 25673278,
+        "generated": 34116,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      }
+    },
+    "time_ratio": 0.7558256501360902,
+    "ci": [
+      0.7176135554182579,
+      0.7886748635742546
+    ]
+  },
+  "rep": {
+    "n": 72,
+    "unique_goal_vectors": 68,
+    "arms": {
+      "C": {
+        "attempts": 88664,
+        "charged": 89427,
+        "popped": 3169,
+        "ns": 198703598,
+        "generated": 305768,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "E": {
+        "attempts": 10053,
+        "charged": 11416,
+        "popped": 3094,
+        "ns": 47040072,
+        "generated": 47402,
+        "certified": 2,
+        "activated": 11,
+        "selector_calls": 600,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "B": {
+        "attempts": 88283,
+        "charged": 89046,
+        "popped": 3131,
+        "ns": 200040648,
+        "generated": 305228,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "D": {
+        "attempts": 10055,
+        "charged": 10818,
+        "popped": 3094,
+        "ns": 38117987,
+        "generated": 47406,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "A": {
+        "attempts": 10055,
+        "charged": 10818,
+        "popped": 3094,
+        "ns": 37094993,
+        "generated": 47406,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "efficient": {
+        "attempts": 10055,
+        "charged": 10818,
+        "popped": 3094,
+        "ns": 14440225,
+        "generated": 10055,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "structural": {
+        "attempts": 10193,
+        "charged": 17931,
+        "popped": 2651,
+        "ns": 45141589,
+        "generated": 43655,
+        "certified": 235,
+        "activated": 157,
+        "selector_calls": 157,
+        "version_checks": 0,
+        "cell_reads": 6818
+      }
+    },
+    "time_ratio": 0.7885828278494131,
+    "ci": [
+      0.7646280605511702,
+      0.8041325465075514
+    ]
+  },
+  "maze": {
+    "n": 48,
+    "unique_goal_vectors": 40,
+    "arms": {
+      "B": {
+        "attempts": 46538,
+        "charged": 47403,
+        "popped": 1474,
+        "ns": 42164543,
+        "generated": 104327,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "efficient": {
+        "attempts": 3045,
+        "charged": 3910,
+        "popped": 1474,
+        "ns": 3938491,
+        "generated": 3045,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "structural": {
+        "attempts": 3289,
+        "charged": 20297,
+        "popped": 373,
+        "ns": 8894521,
+        "generated": 843,
+        "certified": 583,
+        "activated": 325,
+        "selector_calls": 325,
+        "version_checks": 0,
+        "cell_reads": 15818
+      },
+      "D": {
+        "attempts": 3045,
+        "charged": 3910,
+        "popped": 1474,
+        "ns": 6148589,
+        "generated": 9838,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "E": {
+        "attempts": 3045,
+        "charged": 5336,
+        "popped": 1474,
+        "ns": 10077407,
+        "generated": 9838,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 1426,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "C": {
+        "attempts": 44885,
+        "charged": 45750,
+        "popped": 1474,
+        "ns": 41055707,
+        "generated": 101007,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "A": {
+        "attempts": 3045,
+        "charged": 3910,
+        "popped": 1474,
+        "ns": 6234536,
+        "generated": 9838,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      }
+    },
+    "time_ratio": 0.6186647021401438,
+    "ci": [
+      0.6052194095008491,
+      0.6459438655591503
+    ]
+  },
+  "slide": {
+    "n": 48,
+    "unique_goal_vectors": 47,
+    "arms": {
+      "B": {
+        "attempts": 34326,
+        "charged": 34784,
+        "popped": 1069,
+        "ns": 61730386,
+        "generated": 99382,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "efficient": {
+        "attempts": 2820,
+        "charged": 3278,
+        "popped": 1069,
+        "ns": 6581363,
+        "generated": 2820,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "structural": {
+        "attempts": 2817,
+        "charged": 3276,
+        "popped": 1068,
+        "ns": 13059955,
+        "generated": 11076,
+        "certified": 1,
+        "activated": 1,
+        "selector_calls": 1,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "E": {
+        "attempts": 2817,
+        "charged": 3276,
+        "popped": 1068,
+        "ns": 13252434,
+        "generated": 11076,
+        "certified": 1,
+        "activated": 1,
+        "selector_calls": 1,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "A": {
+        "attempts": 2820,
+        "charged": 3278,
+        "popped": 1069,
+        "ns": 10410271,
+        "generated": 11086,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "D": {
+        "attempts": 2820,
+        "charged": 3278,
+        "popped": 1069,
+        "ns": 10312236,
+        "generated": 11086,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "C": {
+        "attempts": 35342,
+        "charged": 35800,
+        "popped": 1069,
+        "ns": 60512844,
+        "generated": 102435,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      }
+    },
+    "time_ratio": 0.7855365286105179,
+    "ci": [
+      0.7416113325523175,
+      0.827363634767937
+    ]
+  },
+  "hanoi": {
+    "n": 48,
+    "unique_goal_vectors": 46,
+    "arms": {
+      "A": {
+        "attempts": 11722,
+        "charged": 12094,
+        "popped": 3087,
+        "ns": 46123464,
+        "generated": 60598,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "C": {
+        "attempts": 81099,
+        "charged": 81471,
+        "popped": 3164,
+        "ns": 237405000,
+        "generated": 332037,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "D": {
+        "attempts": 11722,
+        "charged": 12094,
+        "popped": 3087,
+        "ns": 48152587,
+        "generated": 60598,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "B": {
+        "attempts": 81108,
+        "charged": 81480,
+        "popped": 3142,
+        "ns": 239914458,
+        "generated": 334723,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "efficient": {
+        "attempts": 11722,
+        "charged": 12094,
+        "popped": 3087,
+        "ns": 14191199,
+        "generated": 11722,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "structural": {
+        "attempts": 11717,
+        "charged": 12107,
+        "popped": 3087,
+        "ns": 56446428,
+        "generated": 60585,
+        "certified": 4,
+        "activated": 18,
+        "selector_calls": 18,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "E": {
+        "attempts": 11717,
+        "charged": 12107,
+        "popped": 3087,
+        "ns": 57677427,
+        "generated": 60585,
+        "certified": 4,
+        "activated": 18,
+        "selector_calls": 18,
+        "version_checks": 0,
+        "cell_reads": 0
+      }
+    },
+    "time_ratio": 0.7996796389686385,
+    "ci": [
+      0.7834048297805616,
+      0.8102264279449369
+    ]
+  },
+  "four_peg": {
+    "n": 24,
+    "unique_goal_vectors": 23,
+    "arms": {
+      "D": {
+        "attempts": 10101,
+        "charged": 10221,
+        "popped": 2404,
+        "ns": 42506618,
+        "generated": 54820,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "E": {
+        "attempts": 10101,
+        "charged": 10221,
+        "popped": 2404,
+        "ns": 49708667,
+        "generated": 54820,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "efficient": {
+        "attempts": 10101,
+        "charged": 10221,
+        "popped": 2404,
+        "ns": 11648228,
+        "generated": 10101,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "B": {
+        "attempts": 64458,
+        "charged": 64578,
+        "popped": 2463,
+        "ns": 204698896,
+        "generated": 291567,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "C": {
+        "attempts": 63960,
+        "charged": 64080,
+        "popped": 2467,
+        "ns": 201404403,
+        "generated": 287347,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "structural": {
+        "attempts": 10101,
+        "charged": 10221,
+        "popped": 2404,
+        "ns": 48467903,
+        "generated": 54820,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      },
+      "A": {
+        "attempts": 10101,
+        "charged": 10221,
+        "popped": 2404,
+        "ns": 40420976,
+        "generated": 54820,
+        "certified": 0,
+        "activated": 0,
+        "selector_calls": 0,
+        "version_checks": 0,
+        "cell_reads": 0
+      }
+    },
+    "time_ratio": 0.8131575123509146,
+    "ci": [
+      0.791793391359113,
+      0.8289588227483109
+    ]
+  },
+  "shifts": {
+    "retained": 4446,
+    "invalidated": 524,
+    "old_rejected": 36,
+    "offpath_rejected": 36,
+    "hidden_deferred": 36,
+    "restored": 36
+  },
+  "subgoal": {
+    "zero": {
+      "steps": 5007,
+      "work": 70440,
+      "build": 0,
+      "total": 70440,
+      "queries": 0,
+      "ns": 83298946
+    },
+    "cheap": {
+      "steps": 5007,
+      "work": 49620,
+      "build": 0,
+      "total": 49620,
+      "queries": 0,
+      "ns": 75392017
+    },
+    "always": {
+      "steps": 5007,
+      "work": 41267,
+      "build": 8928,
+      "total": 50195,
+      "queries": 0,
+      "ns": 75544691
+    },
+    "gate": {
+      "steps": 5007,
+      "work": 49620,
+      "build": 0,
+      "total": 49620,
+      "queries": 0,
+      "ns": 74936146
+    }
+  }
+}
