@@ -41,16 +41,21 @@ for arm in cog_revision cog_lookup mamba_lookup; do
     if [ "$arm" = cog_revision ]; then
       "$py" "$new/panels.py" "${args[@]}" --lambada "$lambada" --disabled
       "$py" "$new/matched_cost.py" "${args[@]}"
+      "$py" "$new/memory_use.py" "${args[@]}"
     fi
     if [ "$regime" = joint ]; then
       "$py" "$new/dialogue.py" "${args[@]}" --dialogue "$dialogue"
       if [ "$arm" = cog_revision ]; then "$py" "$new/dialogue.py" "${args[@]}" --dialogue "$dialogue" --disabled; fi
       "$py" "$new/cold_request.py" "${args[@]}" --tokenizer "$data/tokenizer.json"
       "$py" "$new/economics.py" "${args[@]}"
-      if [ "$arm" = cog_revision ]; then "$py" "$new/economics.py" "${args[@]}" --disabled; fi
+      if [ "$arm" = cog_revision ]; then
+        "$py" "$new/economics.py" "${args[@]}" --disabled
+        "$py" "$new/cold_request.py" "${args[@]}" --tokenizer "$data/tokenizer.json" --disabled
+      fi
     fi
   done
 done
+"$py" "$new/balanced_timing.py" --joint "$joint" --data "$data" --out "$raw"
 "$py" "$new/audit.py" --data "$data" --original "$original" --raw "$raw" --joint "$joint" --out "$raw/audit.json"
 "$py" "$new/summarize.py" --raw "$raw" --joint "$joint" --out "$raw/summary.json"
 "$py" -m pytest -q "$old/test_lm.py" "$new/test_runtime.py"
