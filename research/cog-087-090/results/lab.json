@@ -1,0 +1,46 @@
+[
+  {
+    "id": "20261121T001857-9df81dc7bf9c",
+    "inputs": {
+      "tasks.py": "41f7f9a035b18e9313a0a151f192c0e2e156fd7dca445403706534935ff11d25",
+      "search.py": "f2fdb2ae35626ee22a778536f4d9cd7c508462fa3aecc4dc1e0373eac2105fd4",
+      "skills.py": "37f2bbbb306a247d78609e3366d02afdec6b7c611eb4ca3147b1b054f9a8db13",
+      "panel.py": "4ff166bb9f19a97a15d8f4c27afbaa94fce8a5132f3946c90e0b403f7eb60af3",
+      "PROTOCOL.md": "a377973d23bf84f63d534cbf38362cc9f0e3dcab13a62db32d0484d748ccdfb4",
+      "results/model.json": "942db8d9c93cd2a784bcb34aea75d978837cd38ae7649bfc67cb7dc005974d31",
+      "upstream/puzzles.py": "dd2096220391c1f4a348259e1a15f714c90d813afd189617091756ce72e2cc1f",
+      "upstream/evaluate_submissions.py": "329091c133a987a9940f0e0f9092622167eafb23f277b901609d0644c9344fee",
+      "upstream/bridge/cog066_source.py": "b7db6adbfd8656c9c289adf46586d5ffbb7e833202ca53a36aa464fa8ca46abe",
+      "upstream/bridge/experiment_086.py": "e4d6cce8d15e7361ef96f240a4eb98e821d1946eb102b0e779f0fb393bc63c68"
+    },
+    "artifacts": {
+      "held.json": "ab0e43759669904c8d20dff06a5fb7114801ea53e2c3c3e8e31f4877b4fb4561"
+    },
+    "metrics": {
+      "solved": 72
+    },
+    "elapsed_seconds": 1.472112
+  },
+  {
+    "id": "20261121T001858-d90bef928619",
+    "inputs": {
+      "tasks.py": "41f7f9a035b18e9313a0a151f192c0e2e156fd7dca445403706534935ff11d25",
+      "search.py": "f2fdb2ae35626ee22a778536f4d9cd7c508462fa3aecc4dc1e0373eac2105fd4",
+      "skills.py": "37f2bbbb306a247d78609e3366d02afdec6b7c611eb4ca3147b1b054f9a8db13",
+      "panel.py": "4ff166bb9f19a97a15d8f4c27afbaa94fce8a5132f3946c90e0b403f7eb60af3",
+      "PROTOCOL.md": "a377973d23bf84f63d534cbf38362cc9f0e3dcab13a62db32d0484d748ccdfb4",
+      "results/model.json": "942db8d9c93cd2a784bcb34aea75d978837cd38ae7649bfc67cb7dc005974d31",
+      "upstream/puzzles.py": "dd2096220391c1f4a348259e1a15f714c90d813afd189617091756ce72e2cc1f",
+      "upstream/evaluate_submissions.py": "329091c133a987a9940f0e0f9092622167eafb23f277b901609d0644c9344fee",
+      "upstream/bridge/cog066_source.py": "b7db6adbfd8656c9c289adf46586d5ffbb7e833202ca53a36aa464fa8ca46abe",
+      "upstream/bridge/experiment_086.py": "e4d6cce8d15e7361ef96f240a4eb98e821d1946eb102b0e779f0fb393bc63c68"
+    },
+    "artifacts": {
+      "rep.json": "4bf309d4e4f6cc9c5c52f82deea2885961a82b268da886af9bb1652c2609dbdd"
+    },
+    "metrics": {
+      "solved": 72
+    },
+    "elapsed_seconds": 1.989672
+  }
+]

@@ -1,12 +1,12 @@
 """Seeded inputs and independent goal conditions for three 086 puzzle domains."""
 from dataclasses import dataclass, replace
 from hashlib import sha256
-import json
+import json,os
 from pathlib import Path
 import random
 import sys
 
-BASE=Path(__file__).resolve().parent.parent/'cog-081-086'
+BASE=Path(os.getenv('PUZZLE_BASE',Path(__file__).resolve().parent.parent/'cog-081-086'))
 sys.path.insert(0,str(BASE))
 from puzzles import Maze, make_maze, Sliding
 from bridge.cog066_source import acquire
