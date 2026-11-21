@@ -85,7 +85,7 @@ if __name__ == '__main__':
     for k in ('base','data','out'):
         p.add_argument('--'+k,type=Path,required=True)
     p.add_argument('--arm',choices=('cog_lookup','cog_revision','mamba_lookup'),required=True)
-    p.add_argument('--microbatch',type=int,choices=(1,2,4,8),default=8)
+    p.add_argument('--microbatch',type=int,choices=(1,2,4,8),default=4)
     p.add_argument('--save-progress', action=argparse.BooleanOptionalAction,default=True)
     p.add_argument('--threads',type=int,default=2)
     args=p.parse_args()

@@ -29,8 +29,8 @@ done
 for arm in cog_revision cog_lookup mamba_lookup; do
   base="$cog"
   threads=2
-  microbatch=8
-  if [ "$arm" = mamba_lookup ]; then base="$mamba"; microbatch=4; fi
+  microbatch=4
+  if [ "$arm" = mamba_lookup ]; then base="$mamba"; microbatch=2; fi
   "$py" "$new/joint.py" --arm "$arm" --base "$base" --data "$data" --out "$joint" --threads "$threads" --microbatch "$microbatch"
   for regime in frozen joint; do
     head="$raw/$arm.pt"
