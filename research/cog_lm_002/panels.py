@@ -92,6 +92,7 @@ if __name__ == '__main__':
     p = argparse.ArgumentParser()
     for k in ('base','adapter','data','out'):
         p.add_argument('--'+k, type=Path, required=True)
+    p.add_argument('--lambada',type=Path)
     p.add_argument('--disabled',action='store_true')
     p.add_argument('--threads',type=int,default=2)
     a = p.parse_args()
@@ -103,3 +104,7 @@ if __name__ == '__main__':
         result = fn()
         (a.out/(name+'.'+panel+'.json')).write_text(json.dumps(result)+'\n')
         print(name,panel,len(result),flush=True)
+    if a.lambada:
+        from fresh import lambada
+        rows = lambada(s,a.data,a.lambada)
+        (a.out/(name+'.lambada.json')).write_text(json.dumps(rows)+'\n')
