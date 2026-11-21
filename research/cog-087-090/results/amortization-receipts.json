@@ -1,0 +1,59 @@
+{
+  "lineage": {
+    "fixture_count": 432,
+    "forge_manifest_sha256": "14cb88837f708fb6cc6cf816dc6633814dead16c4c8a20da22724dccf8351fdd",
+    "protocol_sha256": "bf78ddf3cc9f46c6a372e3eec268e578b165fa1be2c0809d9296096ba2d15254",
+    "stage": "constructed engineering diagnosis; Forge split labels are archival, not protected datasets or training"
+  },
+  "receipts": {
+    "measure": {
+      "artifacts": {
+        "measurements.json": "9040bca3b56b54711f26fd729afde6995ae01d2bed58e6807e73c829de3b9d71"
+      },
+      "elapsed_seconds": 92.700558,
+      "id": "20261121T002950-1563d955ff28",
+      "inputs": {
+        "AMORTIZATION_PROTOCOL.md": "bf78ddf3cc9f46c6a372e3eec268e578b165fa1be2c0809d9296096ba2d15254",
+        "amortization.py": "71d2d7185e3e613f45a7fa86c12e823edbc98899f9834713e8ba85601425c186",
+        "amortization_lab.py": "fcbeccf7a09236e7b3561d3f1999003ceaeb580f24cb97eaaf90099f68916b6d",
+        "forge_manifest.json": "14cb88837f708fb6cc6cf816dc6633814dead16c4c8a20da22724dccf8351fdd",
+        "panel.py": "4ff166bb9f19a97a15d8f4c27afbaa94fce8a5132f3946c90e0b403f7eb60af3",
+        "search.py": "f2fdb2ae35626ee22a778536f4d9cd7c508462fa3aecc4dc1e0373eac2105fd4",
+        "skills.py": "37f2bbbb306a247d78609e3366d02afdec6b7c611eb4ca3147b1b054f9a8db13",
+        "tasks.py": "41f7f9a035b18e9313a0a151f192c0e2e156fd7dca445403706534935ff11d25",
+        "upstream/bridge/cog066_source.py": "b7db6adbfd8656c9c289adf46586d5ffbb7e833202ca53a36aa464fa8ca46abe",
+        "upstream/bridge/experiment_086.py": "e4d6cce8d15e7361ef96f240a4eb98e821d1946eb102b0e779f0fb393bc63c68",
+        "upstream/evaluate_submissions.py": "329091c133a987a9940f0e0f9092622167eafb23f277b901609d0644c9344fee",
+        "upstream/puzzles.py": "dd2096220391c1f4a348259e1a15f714c90d813afd189617091756ce72e2cc1f"
+      },
+      "metrics": {
+        "sessions": 36
+      }
+    },
+    "score": {
+      "artifacts": {
+        "amortization_summary.json": "5c84b739d860e5b2eff5ee4d090099a0337cc23eb62459e7a1185c6b1cc8a672"
+      },
+      "elapsed_seconds": 5.336859,
+      "id": "20261121T003123-1abd197b3e22",
+      "inputs": {
+        "AMORTIZATION_PROTOCOL.md": "bf78ddf3cc9f46c6a372e3eec268e578b165fa1be2c0809d9296096ba2d15254",
+        "amortization.py": "71d2d7185e3e613f45a7fa86c12e823edbc98899f9834713e8ba85601425c186",
+        "amortization_lab.py": "fcbeccf7a09236e7b3561d3f1999003ceaeb580f24cb97eaaf90099f68916b6d",
+        "forge_manifest.json": "14cb88837f708fb6cc6cf816dc6633814dead16c4c8a20da22724dccf8351fdd",
+        "measurements.json": "9040bca3b56b54711f26fd729afde6995ae01d2bed58e6807e73c829de3b9d71",
+        "panel.py": "4ff166bb9f19a97a15d8f4c27afbaa94fce8a5132f3946c90e0b403f7eb60af3",
+        "search.py": "f2fdb2ae35626ee22a778536f4d9cd7c508462fa3aecc4dc1e0373eac2105fd4",
+        "skills.py": "37f2bbbb306a247d78609e3366d02afdec6b7c611eb4ca3147b1b054f9a8db13",
+        "tasks.py": "41f7f9a035b18e9313a0a151f192c0e2e156fd7dca445403706534935ff11d25",
+        "upstream/bridge/cog066_source.py": "b7db6adbfd8656c9c289adf46586d5ffbb7e833202ca53a36aa464fa8ca46abe",
+        "upstream/bridge/experiment_086.py": "e4d6cce8d15e7361ef96f240a4eb98e821d1946eb102b0e779f0fb393bc63c68",
+        "upstream/evaluate_submissions.py": "329091c133a987a9940f0e0f9092622167eafb23f277b901609d0644c9344fee",
+        "upstream/puzzles.py": "dd2096220391c1f4a348259e1a15f714c90d813afd189617091756ce72e2cc1f"
+      },
+      "metrics": {
+        "verified_tasks": 432
+      }
+    }
+  }
+}

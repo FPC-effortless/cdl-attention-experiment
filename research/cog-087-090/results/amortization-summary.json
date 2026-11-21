@@ -1,0 +1,505 @@
+{
+  "verified_tasks": 432,
+  "per_stratum": {
+    "shared": {
+      "1": {
+        "cheap": {
+          "ns": 57275310,
+          "search": 50539,
+          "build": 0,
+          "hits": 0,
+          "peak_python_bytes_median": 327916.0,
+          "max_entries": 0,
+          "ci": [
+            1.0,
+            1.0
+          ]
+        },
+        "tower": {
+          "ns": 60703050,
+          "search": 50539,
+          "build": 0,
+          "hits": 0,
+          "peak_python_bytes_median": 327964.0,
+          "max_entries": 0,
+          "ci": [
+            0.9363985226910078,
+            0.9527086594201973
+          ]
+        },
+        "cold3": {
+          "ns": 57948713,
+          "search": 47542,
+          "build": 3672,
+          "hits": 0,
+          "peak_python_bytes_median": 306004.0,
+          "max_entries": 0,
+          "ci": [
+            0.963532577420571,
+            1.0098937087744357
+          ]
+        },
+        "warm3": {
+          "ns": 57088307,
+          "search": 47542,
+          "build": 3672,
+          "hits": 0,
+          "peak_python_bytes_median": 342862.0,
+          "max_entries": 64,
+          "ci": [
+            0.9867114001684845,
+            1.0184147049998893
+          ]
+        },
+        "warm5": {
+          "ns": 65740643,
+          "search": 18949,
+          "build": 62424,
+          "hits": 0,
+          "peak_python_bytes_median": 610736.0,
+          "max_entries": 1024,
+          "ci": [
+            0.7636960162810013,
+            0.9557511909992832
+          ]
+        }
+      },
+      "4": {
+        "cheap": {
+          "ns": 172047868,
+          "search": 147168,
+          "build": 0,
+          "hits": 0,
+          "peak_python_bytes_median": 327916.0,
+          "max_entries": 0,
+          "ci": [
+            1.0,
+            1.0
+          ]
+        },
+        "tower": {
+          "ns": 182079667,
+          "search": 147168,
+          "build": 0,
+          "hits": 0,
+          "peak_python_bytes_median": 327964.0,
+          "max_entries": 0,
+          "ci": [
+            0.9309996315821031,
+            0.9582491032914351
+          ]
+        },
+        "cold3": {
+          "ns": 174881530,
+          "search": 138257,
+          "build": 14688,
+          "hits": 0,
+          "peak_python_bytes_median": 306004.0,
+          "max_entries": 0,
+          "ci": [
+            0.9566145320260726,
+            1.003086617078278
+          ]
+        },
+        "warm3": {
+          "ns": 166193986,
+          "search": 138257,
+          "build": 3672,
+          "hits": 54,
+          "peak_python_bytes_median": 342862.0,
+          "max_entries": 64,
+          "ci": [
+            1.0170635377215427,
+            1.0547222408196393
+          ]
+        },
+        "warm5": {
+          "ns": 220970593,
+          "search": 55347,
+          "build": 217516,
+          "hits": 11,
+          "peak_python_bytes_median": 610736.0,
+          "max_entries": 4096,
+          "ci": [
+            0.6545148402717913,
+            0.89755911200392
+          ]
+        }
+      },
+      "8": {
+        "cheap": {
+          "ns": 427274127,
+          "search": 357442,
+          "build": 0,
+          "hits": 0,
+          "peak_python_bytes_median": 327916.0,
+          "max_entries": 0,
+          "ci": [
+            1.0,
+            1.0
+          ]
+        },
+        "tower": {
+          "ns": 448929997,
+          "search": 357442,
+          "build": 0,
+          "hits": 0,
+          "peak_python_bytes_median": 327964.0,
+          "max_entries": 0,
+          "ci": [
+            0.9411770737026259,
+            0.9628732826347459
+          ]
+        },
+        "cold3": {
+          "ns": 430285184,
+          "search": 335005,
+          "build": 28704,
+          "hits": 0,
+          "peak_python_bytes_median": 306004.0,
+          "max_entries": 0,
+          "ci": [
+            0.97416167359671,
+            1.0075991426680384
+          ]
+        },
+        "warm3": {
+          "ns": 411918471,
+          "search": 335005,
+          "build": 7008,
+          "hits": 108,
+          "peak_python_bytes_median": 342862.0,
+          "max_entries": 64,
+          "ci": [
+            1.0214128952515855,
+            1.0476207474476529
+          ]
+        },
+        "warm5": {
+          "ns": 465619779,
+          "search": 130555,
+          "build": 421096,
+          "hits": 19,
+          "peak_python_bytes_median": 610736.0,
+          "max_entries": 6144,
+          "ci": [
+            0.8335935550435434,
+            1.0002619790628262
+          ]
+        }
+      },
+      "12": {
+        "cheap": {
+          "ns": 653222873,
+          "search": 539014,
+          "build": 0,
+          "hits": 0,
+          "peak_python_bytes_median": 327916.0,
+          "max_entries": 0,
+          "ci": [
+            1.0,
+            1.0
+          ]
+        },
+        "tower": {
+          "ns": 683983427,
+          "search": 539014,
+          "build": 0,
+          "hits": 0,
+          "peak_python_bytes_median": 327964.0,
+          "max_entries": 0,
+          "ci": [
+            0.9424046936492907,
+            0.967322985261333
+          ]
+        },
+        "cold3": {
+          "ns": 653176153,
+          "search": 502531,
+          "build": 42048,
+          "hits": 0,
+          "peak_python_bytes_median": 306004.0,
+          "max_entries": 0,
+          "ci": [
+            0.9718580945303069,
+            1.0230310653343877
+          ]
+        },
+        "warm3": {
+          "ns": 623000180,
+          "search": 502531,
+          "build": 7008,
+          "hits": 180,
+          "peak_python_bytes_median": 342862.0,
+          "max_entries": 64,
+          "ci": [
+            1.0110805573386774,
+            1.0755036530819067
+          ]
+        },
+        "warm5": {
+          "ns": 704312802,
+          "search": 197451,
+          "build": 621748,
+          "hits": 29,
+          "peak_python_bytes_median": 610736.0,
+          "max_entries": 6144,
+          "ci": [
+            0.8468068876753705,
+            1.0357657487009064
+          ]
+        }
+      }
+    },
+    "mixed": {
+      "1": {
+        "cheap": {
+          "ns": 76317336,
+          "search": 66727,
+          "build": 0,
+          "hits": 0,
+          "peak_python_bytes_median": 356330.0,
+          "max_entries": 0,
+          "ci": [
+            1.0,
+            1.0
+          ]
+        },
+        "tower": {
+          "ns": 80829120,
+          "search": 66727,
+          "build": 0,
+          "hits": 0,
+          "peak_python_bytes_median": 356270.0,
+          "max_entries": 0,
+          "ci": [
+            0.9345280071589996,
+            0.9507922631632246
+          ]
+        },
+        "cold3": {
+          "ns": 76699000,
+          "search": 62677,
+          "build": 3672,
+          "hits": 0,
+          "peak_python_bytes_median": 347192.0,
+          "max_entries": 0,
+          "ci": [
+            0.963202725198943,
+            1.023251554293834
+          ]
+        },
+        "warm3": {
+          "ns": 76828375,
+          "search": 62677,
+          "build": 3672,
+          "hits": 0,
+          "peak_python_bytes_median": 349132.0,
+          "max_entries": 64,
+          "ci": [
+            0.9683732887041876,
+            1.0120638967956113
+          ]
+        },
+        "warm5": {
+          "ns": 73033057,
+          "search": 25353,
+          "build": 62424,
+          "hits": 0,
+          "peak_python_bytes_median": 608344.0,
+          "max_entries": 1024,
+          "ci": [
+            0.832304449053467,
+            1.2202282868820835
+          ]
+        }
+      },
+      "4": {
+        "cheap": {
+          "ns": 222394698,
+          "search": 192779,
+          "build": 0,
+          "hits": 0,
+          "peak_python_bytes_median": 356330.0,
+          "max_entries": 0,
+          "ci": [
+            1.0,
+            1.0
+          ]
+        },
+        "tower": {
+          "ns": 235642806,
+          "search": 192779,
+          "build": 0,
+          "hits": 0,
+          "peak_python_bytes_median": 356270.0,
+          "max_entries": 0,
+          "ci": [
+            0.9346834698340941,
+            0.9523316575001748
+          ]
+        },
+        "cold3": {
+          "ns": 225968626,
+          "search": 180564,
+          "build": 14688,
+          "hits": 0,
+          "peak_python_bytes_median": 347192.0,
+          "max_entries": 0,
+          "ci": [
+            0.9662096608592288,
+            0.9956965707368671
+          ]
+        },
+        "warm3": {
+          "ns": 225098595,
+          "search": 180564,
+          "build": 14196,
+          "hits": 4,
+          "peak_python_bytes_median": 349132.0,
+          "max_entries": 256,
+          "ci": [
+            0.9671553469794614,
+            1.0046934890904486
+          ]
+        },
+        "warm5": {
+          "ns": 257152284,
+          "search": 70465,
+          "build": 249696,
+          "hits": 0,
+          "peak_python_bytes_median": 608344.0,
+          "max_entries": 4096,
+          "ci": [
+            0.7748752048101771,
+            0.9660404721088769
+          ]
+        }
+      },
+      "8": {
+        "cheap": {
+          "ns": 462415642,
+          "search": 396398,
+          "build": 0,
+          "hits": 0,
+          "peak_python_bytes_median": 356330.0,
+          "max_entries": 0,
+          "ci": [
+            1.0,
+            1.0
+          ]
+        },
+        "tower": {
+          "ns": 490084552,
+          "search": 396398,
+          "build": 0,
+          "hits": 0,
+          "peak_python_bytes_median": 356270.0,
+          "max_entries": 0,
+          "ci": [
+            0.9314709054271094,
+            0.9542348801449467
+          ]
+        },
+        "cold3": {
+          "ns": 461889541,
+          "search": 368628,
+          "build": 28704,
+          "hits": 0,
+          "peak_python_bytes_median": 347192.0,
+          "max_entries": 0,
+          "ci": [
+            0.9868212983463738,
+            1.014022145649979
+          ]
+        },
+        "warm3": {
+          "ns": 467197916,
+          "search": 368628,
+          "build": 26980,
+          "hits": 9,
+          "peak_python_bytes_median": 349132.0,
+          "max_entries": 384,
+          "ci": [
+            0.9756838455633565,
+            1.0054415897745128
+          ]
+        },
+        "warm5": {
+          "ns": 510202709,
+          "search": 135932,
+          "build": 487488,
+          "hits": 0,
+          "peak_python_bytes_median": 608344.0,
+          "max_entries": 6144,
+          "ci": [
+            0.8300186018862032,
+            0.9825878508970782
+          ]
+        }
+      },
+      "12": {
+        "cheap": {
+          "ns": 682272821,
+          "search": 574921,
+          "build": 0,
+          "hits": 0,
+          "peak_python_bytes_median": 356330.0,
+          "max_entries": 0,
+          "ci": [
+            1.0,
+            1.0
+          ]
+        },
+        "tower": {
+          "ns": 718736298,
+          "search": 574919,
+          "build": 0,
+          "hits": 0,
+          "peak_python_bytes_median": 356270.0,
+          "max_entries": 0,
+          "ci": [
+            0.9332207014169113,
+            0.9649652257329308
+          ]
+        },
+        "cold3": {
+          "ns": 682004010,
+          "search": 532583,
+          "build": 42048,
+          "hits": 0,
+          "peak_python_bytes_median": 347192.0,
+          "max_entries": 0,
+          "ci": [
+            0.9704737035100713,
+            1.0225748466138027
+          ]
+        },
+        "warm3": {
+          "ns": 688788828,
+          "search": 532583,
+          "build": 38996,
+          "hits": 17,
+          "peak_python_bytes_median": 349132.0,
+          "max_entries": 384,
+          "ci": [
+            0.9688160056159283,
+            1.0108162951959052
+          ]
+        },
+        "warm5": {
+          "ns": 757609684,
+          "search": 194639,
+          "build": 713376,
+          "hits": 0,
+          "peak_python_bytes_median": 608344.0,
+          "max_entries": 6144,
+          "ci": [
+            0.8310937492574784,
+            0.9631378444738979
+          ]
+        }
+      }
+    }
+  }
+}
