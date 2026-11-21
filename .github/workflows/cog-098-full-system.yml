@@ -1,0 +1,25 @@
+name: COG-098 real full-system admission gate
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/cog-098-full-system/**'
+      - '.github/workflows/cog-098-full-system.yml'
+jobs:
+  full-system-gate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install pytest
+      - run: python -m pytest -q research/cog-098-full-system/test_gate.py
+      - name: Full-system readiness (expected to fail until integrated)
+        run: python research/cog-098-full-system/gate.py --strict
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cog-098-readiness-evidence
+          path: research/cog-098-full-system/readiness.json
