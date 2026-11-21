@@ -1,0 +1,122 @@
+{
+  "scale-cog-17-continued": {
+    "128": {
+      "prefill_ms": 42.15768599897274,
+      "decode_ms_per_token": 4.941533437431644,
+      "tensor_bytes": 19200,
+      "episode_bytes": 22560
+    },
+    "512": {
+      "prefill_ms": 172.48330900110886,
+      "decode_ms_per_token": 5.143301062503269,
+      "tensor_bytes": 19200,
+      "episode_bytes": 59208
+    },
+    "1024": {
+      "prefill_ms": 374.97280499883345,
+      "decode_ms_per_token": 5.18577650007046,
+      "tensor_bytes": 19200,
+      "episode_bytes": 59372
+    }
+  },
+  "scale-cog-17": {
+    "128": {
+      "prefill_ms": 44.4364430004498,
+      "decode_ms_per_token": 4.837050500100304,
+      "tensor_bytes": 19200,
+      "episode_bytes": 20440
+    },
+    "512": {
+      "prefill_ms": 161.49751999910222,
+      "decode_ms_per_token": 5.094494249988202,
+      "tensor_bytes": 19200,
+      "episode_bytes": 59432
+    },
+    "1024": {
+      "prefill_ms": 335.9985049974057,
+      "decode_ms_per_token": 5.032994312500705,
+      "tensor_bytes": 19200,
+      "episode_bytes": 59652
+    }
+  },
+  "scale-local-17-continued": {
+    "128": {
+      "prefill_ms": 63.67586199849029,
+      "decode_ms_per_token": 6.470312937608469,
+      "tensor_bytes": 15360,
+      "episode_bytes": 0
+    },
+    "512": {
+      "prefill_ms": 186.5112479972595,
+      "decode_ms_per_token": 4.736685375064553,
+      "tensor_bytes": 15360,
+      "episode_bytes": 0
+    },
+    "1024": {
+      "prefill_ms": 330.70145799865713,
+      "decode_ms_per_token": 4.60291199999574,
+      "tensor_bytes": 15360,
+      "episode_bytes": 0
+    }
+  },
+  "scale-local-17": {
+    "128": {
+      "prefill_ms": 42.057668997586006,
+      "decode_ms_per_token": 4.437534468706872,
+      "tensor_bytes": 15360,
+      "episode_bytes": 0
+    },
+    "512": {
+      "prefill_ms": 153.85398900252767,
+      "decode_ms_per_token": 4.656290406273911,
+      "tensor_bytes": 15360,
+      "episode_bytes": 0
+    },
+    "1024": {
+      "prefill_ms": 351.0673550008505,
+      "decode_ms_per_token": 4.978349999987586,
+      "tensor_bytes": 15360,
+      "episode_bytes": 0
+    }
+  },
+  "scale-mamba2-17": {
+    "128": {
+      "prefill_ms": 127.28625299860141,
+      "decode_ms_per_token": 10.195088562454657,
+      "tensor_bytes": 4670976,
+      "episode_bytes": 0
+    },
+    "512": {
+      "prefill_ms": 509.16386199969565,
+      "decode_ms_per_token": 6.495286781273535,
+      "tensor_bytes": 16467456,
+      "episode_bytes": 0
+    },
+    "1024": {
+      "prefill_ms": 577.2002630001225,
+      "decode_ms_per_token": 5.944088875025955,
+      "tensor_bytes": 32196096,
+      "episode_bytes": 0
+    }
+  },
+  "scale-transformer-17": {
+    "128": {
+      "prefill_ms": 47.04736799976672,
+      "decode_ms_per_token": 5.790568531324425,
+      "tensor_bytes": 4915200,
+      "episode_bytes": 0
+    },
+    "512": {
+      "prefill_ms": 215.9436710026057,
+      "decode_ms_per_token": 8.570563624971328,
+      "tensor_bytes": 16711680,
+      "episode_bytes": 0
+    },
+    "1024": {
+      "prefill_ms": 479.81803299990133,
+      "decode_ms_per_token": 11.40440081246652,
+      "tensor_bytes": 32440320,
+      "episode_bytes": 0
+    }
+  }
+}

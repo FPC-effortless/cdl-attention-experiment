@@ -52,6 +52,11 @@ def run(a):
         for repeat in range(4):
             t0=time.perf_counter()
             p,state=m(x)
+            if getattr(a,'compact_mamba',False):
+                if m.c.arm!='mamba2':
+                    raise ValueError('compaction control requires Mamba-2')
+                layers,bank,episodes=state
+                state=([type(c)(c.conv_state.clone(),c.ssm_state.clone()) for c in layers],bank,episodes)
             prefill=time.perf_counter()-t0
             history=[]
             t1=time.perf_counter()
@@ -65,11 +70,13 @@ def run(a):
                     generated_ids=history,tensor_cache_bytes=tensor_bytes(state[:2]),
                     episode_heap_estimate=episode_bytes(state[2]),
                     episodes_entries=len(state[2][0].table) if state[2] else 0))
-    (a.out/(a.weights.stem+'.bench.json')).write_text(json.dumps(records)+'\n')
+    suffix='.compact-bench.json' if getattr(a,'compact_mamba',False) else '.bench.json'
+    (a.out/(a.weights.stem+suffix)).write_text(json.dumps(records)+'\n')
 
 
 if __name__=='__main__':
     p=argparse.ArgumentParser()
     for k in ('weights','data','out'):
         p.add_argument('--'+k,type=Path,required=True)
+    p.add_argument('--compact-mamba',action='store_true',help='materialize only tensors needed for the next recurrent step after prefill')
     a=p.parse_args();torch.set_num_threads(2);run(a)

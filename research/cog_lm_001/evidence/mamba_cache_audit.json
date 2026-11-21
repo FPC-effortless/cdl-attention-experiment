@@ -1,0 +1,20 @@
+{
+  "128": {
+    "backed_bytes": 738816,
+    "decode_ms": 8.075137999981052,
+    "prefill_ms": 110.67360200104304,
+    "all_greedy_ids_equal": true
+  },
+  "512": {
+    "backed_bytes": 738816,
+    "decode_ms": 5.830929781154737,
+    "prefill_ms": 344.15072399860946,
+    "all_greedy_ids_equal": true
+  },
+  "1024": {
+    "backed_bytes": 738816,
+    "decode_ms": 5.836141906229386,
+    "prefill_ms": 574.7330529993633,
+    "all_greedy_ids_equal": true
+  }
+}

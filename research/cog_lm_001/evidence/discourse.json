@@ -1,0 +1,99 @@
+{
+  "compact-cog-17": {
+    "n": 512,
+    "exact": 36,
+    "total_nll": 6490.3191566467285,
+    "answer_subwords": 1452,
+    "exact_copy_available": 38,
+    "correct_with_full_copy": 36,
+    "correct_with_prior_word": 30
+  },
+  "compact-local-17": {
+    "n": 512,
+    "exact": 0,
+    "total_nll": 9200.067113399506,
+    "answer_subwords": 1452,
+    "exact_copy_available": 38,
+    "correct_with_full_copy": 0,
+    "correct_with_prior_word": 0,
+    "calibrated_cache_exact": 38
+  },
+  "compact-mamba2-17": {
+    "n": 512,
+    "exact": 0,
+    "total_nll": 9063.610548973083,
+    "answer_subwords": 1452,
+    "exact_copy_available": 38,
+    "correct_with_full_copy": 0,
+    "correct_with_prior_word": 0,
+    "calibrated_cache_exact": 38
+  },
+  "compact-transformer-17": {
+    "n": 512,
+    "exact": 0,
+    "total_nll": 9712.222040176392,
+    "answer_subwords": 1452,
+    "exact_copy_available": 38,
+    "correct_with_full_copy": 0,
+    "correct_with_prior_word": 0,
+    "calibrated_cache_exact": 38
+  },
+  "scale-cog-17-continued": {
+    "n": 512,
+    "exact": 29,
+    "total_nll": 6016.321790099144,
+    "answer_subwords": 1452,
+    "exact_copy_available": 38,
+    "correct_with_full_copy": 28,
+    "correct_with_prior_word": 22
+  },
+  "scale-cog-17": {
+    "n": 512,
+    "exact": 37,
+    "total_nll": 6825.320006519556,
+    "answer_subwords": 1452,
+    "exact_copy_available": 38,
+    "correct_with_full_copy": 36,
+    "correct_with_prior_word": 30
+  },
+  "scale-local-17-continued": {
+    "n": 512,
+    "exact": 0,
+    "total_nll": 8350.33045244217,
+    "answer_subwords": 1452,
+    "exact_copy_available": 38,
+    "correct_with_full_copy": 0,
+    "correct_with_prior_word": 0,
+    "calibrated_cache_exact": 39
+  },
+  "scale-local-17": {
+    "n": 512,
+    "exact": 0,
+    "total_nll": 9621.103942394257,
+    "answer_subwords": 1452,
+    "exact_copy_available": 38,
+    "correct_with_full_copy": 0,
+    "correct_with_prior_word": 0,
+    "calibrated_cache_exact": 39
+  },
+  "scale-mamba2-17": {
+    "n": 512,
+    "exact": 1,
+    "total_nll": 8897.93383026123,
+    "answer_subwords": 1452,
+    "exact_copy_available": 38,
+    "correct_with_full_copy": 0,
+    "correct_with_prior_word": 1,
+    "calibrated_cache_exact": 43
+  },
+  "scale-transformer-17": {
+    "n": 512,
+    "exact": 0,
+    "total_nll": 9824.483612060547,
+    "answer_subwords": 1452,
+    "exact_copy_available": 38,
+    "correct_with_full_copy": 0,
+    "correct_with_prior_word": 0,
+    "calibrated_cache_exact": 38
+  }
+}

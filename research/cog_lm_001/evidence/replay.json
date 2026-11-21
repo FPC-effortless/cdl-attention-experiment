@@ -1,0 +1,146 @@
+{
+  "compact-cog-17": {
+    "checkpoint": "f3a29430acdee6ab89ec9acef0dc847b26426f6aef7b8af79e640325a614684d",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 9.5367431640625e-07,
+    "max_cached_logp_difference": 3.814697265625e-06
+  },
+  "compact-cog-29": {
+    "checkpoint": "8d42bb76cf6dfe40838ae2f67793e826eab92b551b51575ee803ecc95729cfdd",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 4.76837158203125e-07,
+    "max_cached_logp_difference": 3.814697265625e-06
+  },
+  "compact-cog-43": {
+    "checkpoint": "e0bf738bce22832e162e3751ddb7045df537dbcd8a7172b359206c557736625f",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 4.76837158203125e-07,
+    "max_cached_logp_difference": 3.814697265625e-06
+  },
+  "compact-episode-17": {
+    "checkpoint": "46813489b39c17bc212dd06b28df31d33bde2fc28f86313f87bde486bbbb8174",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 4.76837158203125e-07,
+    "max_cached_logp_difference": 3.814697265625e-06
+  },
+  "compact-episode-29": {
+    "checkpoint": "fcd46cf97862c34c482e81a7ce268fb5570e0a95d72c799f56739157f83a7344",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 9.5367431640625e-07,
+    "max_cached_logp_difference": 3.814697265625e-06
+  },
+  "compact-episode-43": {
+    "checkpoint": "fe43568eda2050df728416400b52c667a5428730e7d14ace40b6e6a19e97b055",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 4.76837158203125e-07,
+    "max_cached_logp_difference": 2.86102294921875e-06
+  },
+  "compact-local-17": {
+    "checkpoint": "29d73bb985eb1f184be6425e7cbbd1bd610f3be3bfd97e344b692e6c397c79a4",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 9.5367431640625e-07,
+    "max_cached_logp_difference": 3.814697265625e-06
+  },
+  "compact-local-29": {
+    "checkpoint": "0483831dd32583fd3334141a5f7c74ac5ec2b8c597982f615f39572c29783de7",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 9.5367431640625e-07,
+    "max_cached_logp_difference": 3.814697265625e-06
+  },
+  "compact-local-43": {
+    "checkpoint": "83bcb71ad2856b77c821ab9ff388acc3b43a669f1d644c4c64265f30f448904c",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 4.76837158203125e-07,
+    "max_cached_logp_difference": 2.86102294921875e-06
+  },
+  "compact-mamba2-17": {
+    "checkpoint": "0ad681439dcc232e2a6248cca7282d2685b9afda8ad64f9f0c9ff70c2f9c0534",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 4.76837158203125e-07,
+    "max_cached_logp_difference": 3.814697265625e-06
+  },
+  "compact-mamba2-29": {
+    "checkpoint": "2dc99199131d0f07a28df7fa3ba627cc9da36b1683464434899b7c23aaec9c4e",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 9.5367431640625e-07,
+    "max_cached_logp_difference": 3.814697265625e-06
+  },
+  "compact-mamba2-43": {
+    "checkpoint": "0a6c7977835e5b473237b336775b23f34fe8a56dc8f060cca6f96aa79138cefb",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 4.76837158203125e-07,
+    "max_cached_logp_difference": 3.814697265625e-06
+  },
+  "compact-slots-17": {
+    "checkpoint": "491fc4fd6a33493113d8ed6c8798b64612abbe12f12a94fdd5d9e1a1a16533e4",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 4.76837158203125e-07,
+    "max_cached_logp_difference": 3.814697265625e-06
+  },
+  "compact-slots-29": {
+    "checkpoint": "f874bf3929becdebe413b55698ed3ec93d8e018ac6011fcb19772dcb30e869a6",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 9.5367431640625e-07,
+    "max_cached_logp_difference": 4.76837158203125e-06
+  },
+  "compact-slots-43": {
+    "checkpoint": "68d8bf0ab9640ec37955bb576e5ab43c8bf17b04d1e959f1195376c014a91318",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 4.76837158203125e-07,
+    "max_cached_logp_difference": 2.86102294921875e-06
+  },
+  "compact-transformer-17": {
+    "checkpoint": "b291b4e86ce52d34b37085668bce927ad5c206fc952305c8e87b9fbc3ffdd331",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 4.76837158203125e-07,
+    "max_cached_logp_difference": 3.814697265625e-06
+  },
+  "compact-transformer-29": {
+    "checkpoint": "1d3ed4ae9b384564b4139f80afa45c68d3e7f92a6c082dab3dee9040516e6295",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 9.5367431640625e-07,
+    "max_cached_logp_difference": 3.814697265625e-06
+  },
+  "compact-transformer-43": {
+    "checkpoint": "b4d2913c992c2f4267b44be70d8d21cc37a10f2a347c8d73f0a3b8e0e10b0120",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 9.5367431640625e-07,
+    "max_cached_logp_difference": 3.814697265625e-06
+  },
+  "scale-cog-17-continued": {
+    "checkpoint": "2ea77dd26969bcb60191b79eb7b66202d03beed808e276aa08884a00493d5814",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 4.76837158203125e-07,
+    "max_cached_logp_difference": 9.5367431640625e-06
+  },
+  "scale-cog-17": {
+    "checkpoint": "a24bd520306ac2ced188d0ae016903e38200057196da1276b093646c210aa414",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 9.5367431640625e-07,
+    "max_cached_logp_difference": 4.76837158203125e-06
+  },
+  "scale-local-17-continued": {
+    "checkpoint": "51b7481d49e61e7f2acdd88aedc19efd4997132b2680d319f4a15bec72dc4f74",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 9.5367431640625e-07,
+    "max_cached_logp_difference": 5.7220458984375e-06
+  },
+  "scale-local-17": {
+    "checkpoint": "0c22efe3c72a6c4fdf38f5a4e6a3be3fec940d7f84eef570f208736bee91fb57",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 9.5367431640625e-07,
+    "max_cached_logp_difference": 4.76837158203125e-06
+  },
+  "scale-mamba2-17": {
+    "checkpoint": "3fe14254b47505101be2abdeb5db14ad8df8a71432976bcbcc3746fe8902b4c5",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 4.76837158203125e-07,
+    "max_cached_logp_difference": 3.814697265625e-06
+  },
+  "scale-transformer-17": {
+    "checkpoint": "8f00c6da73dcd4bc12d8ab6fa2c0d0bfb3a94eca6aab59a0433b60931a75aa1b",
+    "rescored_windows": 6,
+    "max_mean_nll_difference": 9.5367431640625e-07,
+    "max_cached_logp_difference": 4.76837158203125e-06
+  }
+}
