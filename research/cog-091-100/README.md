@@ -1,6 +1,6 @@
 # COG-ATTN-091–100 | Attention-function substitutes without full self-attention
 
-**Status:** locally executed bounded synthetic subsystem pilots, 21 November 2026; **not integrated COG-ATTN**, not a claim of Transformer replacement, originally local; 097b publication staged as a research draft; not independently replayed by a separate investigator. This package deliberately preserves negative results, costs, and held-out mistakes.
+**Status:** locally executed bounded synthetic subsystem pilots, 21 November 2026; **not integrated COG-ATTN**, not a claim of Transformer replacement, published on GitHub draft PR #78; independent-investigator replication remains outstanding. This package deliberately preserves negative results, costs, and held-out mistakes.
 
 ## Executive result (leakage-audited version)
 
@@ -102,7 +102,7 @@ sha256sum -c SHA256SUMS
 
 ## COG-ATTN-097a executed episodic grounding bridge (2026-11-21)
 
-Added `experiment_097.py`, `test_097.py`, `test_097_boundary.py`, the byte-identical COG signed boundary source in `vendor_097/boundary.py`, per-case `097-results.json` and the qualified [097 report](REPORT_097.md). The six-seed read-only synthetic bridge achieved 287/288 determinate indexed reads and 72/72 appropriate ambiguity deferrals with the multi-hypothesis model, while a fixed-schema typed lookup remained a stronger cost control. **No real COG controller or authority flow was driven by the learned proposals; no GitHub PR is claimed for these local files.**
+Added `experiment_097.py`, `test_097.py`, `test_097_boundary.py`, the byte-identical COG signed boundary source in `vendor_097/boundary.py`, per-case `097-results.json` and the qualified [097 report](REPORT_097.md). The six-seed read-only synthetic bridge achieved 287/288 determinate indexed reads and 72/72 appropriate ambiguity deferrals with the multi-hypothesis model, while a fixed-schema typed lookup remained a stronger cost control. **No real COG controller or authority flow was driven by the learned proposals; these files are now preserved on GitHub draft PR #78.**
 
 
 ## COG-ATTN-097b: source-grounded language retrieval with no structured entity ID
