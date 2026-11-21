@@ -1,0 +1,1491 @@
+{
+  "frozen_alpha": 0.25,
+  "label": "post hoc exploratory budget sensitivity only",
+  "rows": [
+    {
+      "actions": 314,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 816084,
+      "level": 8,
+      "seed": 9803,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 314,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 879026,
+      "level": 8,
+      "seed": 9803,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 314,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 760803,
+      "level": 8,
+      "seed": 9803,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 314,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 1234490,
+      "level": 8,
+      "seed": 9803,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 314,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 700584,
+      "level": 8,
+      "seed": 9803,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 314,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 762674,
+      "level": 8,
+      "seed": 9803,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 314,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 705814,
+      "level": 8,
+      "seed": 9803,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 314,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 812942,
+      "level": 8,
+      "seed": 9803,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 314,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 665940,
+      "level": 8,
+      "seed": 9803,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 314,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 714861,
+      "level": 8,
+      "seed": 9803,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 314,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 716873,
+      "level": 8,
+      "seed": 9803,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 314,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 743533,
+      "level": 8,
+      "seed": 9803,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 824,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 1752451,
+      "level": 9,
+      "seed": 9803,
+      "solved": false,
+      "world": "original"
+    },
+    {
+      "actions": 646,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 1569008,
+      "level": 9,
+      "seed": 9803,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 1022,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 2162634,
+      "level": 9,
+      "seed": 9803,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 646,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 1751316,
+      "level": 9,
+      "seed": 9803,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 1022,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 2135735,
+      "level": 9,
+      "seed": 9803,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 646,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 1615806,
+      "level": 9,
+      "seed": 9803,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 824,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 1718061,
+      "level": 9,
+      "seed": 9803,
+      "solved": false,
+      "world": "shift"
+    },
+    {
+      "actions": 646,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 1568753,
+      "level": 9,
+      "seed": 9803,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 1022,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 2220130,
+      "level": 9,
+      "seed": 9803,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 646,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 1590967,
+      "level": 9,
+      "seed": 9803,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 1022,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 2200815,
+      "level": 9,
+      "seed": 9803,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 646,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 1544684,
+      "level": 9,
+      "seed": 9803,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 1272,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 3001930,
+      "level": 10,
+      "seed": 9803,
+      "solved": false,
+      "world": "original"
+    },
+    {
+      "actions": 1272,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 3796821,
+      "level": 10,
+      "seed": 9803,
+      "solved": false,
+      "world": "original"
+    },
+    {
+      "actions": 2544,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 6103609,
+      "level": 10,
+      "seed": 9803,
+      "solved": false,
+      "world": "original"
+    },
+    {
+      "actions": 2544,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 6147778,
+      "level": 10,
+      "seed": 9803,
+      "solved": false,
+      "world": "original"
+    },
+    {
+      "actions": 3460,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 7687668,
+      "level": 10,
+      "seed": 9803,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 5088,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 11465384,
+      "level": 10,
+      "seed": 9803,
+      "solved": false,
+      "world": "original"
+    },
+    {
+      "actions": 1272,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 3065363,
+      "level": 10,
+      "seed": 9803,
+      "solved": false,
+      "world": "shift"
+    },
+    {
+      "actions": 1272,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 3150300,
+      "level": 10,
+      "seed": 9803,
+      "solved": false,
+      "world": "shift"
+    },
+    {
+      "actions": 2544,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 5494005,
+      "level": 10,
+      "seed": 9803,
+      "solved": false,
+      "world": "shift"
+    },
+    {
+      "actions": 2544,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 6342040,
+      "level": 10,
+      "seed": 9803,
+      "solved": false,
+      "world": "shift"
+    },
+    {
+      "actions": 3460,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 7297428,
+      "level": 10,
+      "seed": 9803,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 5088,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 10993155,
+      "level": 10,
+      "seed": 9803,
+      "solved": false,
+      "world": "shift"
+    },
+    {
+      "actions": 308,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 691510,
+      "level": 8,
+      "seed": 9809,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 308,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 741528,
+      "level": 8,
+      "seed": 9809,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 308,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 673519,
+      "level": 8,
+      "seed": 9809,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 308,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 737291,
+      "level": 8,
+      "seed": 9809,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 308,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 665838,
+      "level": 8,
+      "seed": 9809,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 308,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 703088,
+      "level": 8,
+      "seed": 9809,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 332,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 716786,
+      "level": 8,
+      "seed": 9809,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 332,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 784970,
+      "level": 8,
+      "seed": 9809,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 332,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 710095,
+      "level": 8,
+      "seed": 9809,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 332,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 758661,
+      "level": 8,
+      "seed": 9809,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 332,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 714020,
+      "level": 8,
+      "seed": 9809,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 332,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 765610,
+      "level": 8,
+      "seed": 9809,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 358,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 996426,
+      "level": 9,
+      "seed": 9809,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 348,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 959084,
+      "level": 9,
+      "seed": 9809,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 358,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 902137,
+      "level": 9,
+      "seed": 9809,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 348,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 969328,
+      "level": 9,
+      "seed": 9809,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 358,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 853800,
+      "level": 9,
+      "seed": 9809,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 348,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 914489,
+      "level": 9,
+      "seed": 9809,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 358,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 970654,
+      "level": 9,
+      "seed": 9809,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 398,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 1029861,
+      "level": 9,
+      "seed": 9809,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 358,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 848134,
+      "level": 9,
+      "seed": 9809,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 398,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 1017038,
+      "level": 9,
+      "seed": 9809,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 358,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 870619,
+      "level": 9,
+      "seed": 9809,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 398,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 997323,
+      "level": 9,
+      "seed": 9809,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 1272,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 3029743,
+      "level": 10,
+      "seed": 9809,
+      "solved": false,
+      "world": "original"
+    },
+    {
+      "actions": 1272,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 3006049,
+      "level": 10,
+      "seed": 9809,
+      "solved": false,
+      "world": "original"
+    },
+    {
+      "actions": 1380,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 3254080,
+      "level": 10,
+      "seed": 9809,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 2544,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 6382503,
+      "level": 10,
+      "seed": 9809,
+      "solved": false,
+      "world": "original"
+    },
+    {
+      "actions": 1380,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 3112040,
+      "level": 10,
+      "seed": 9809,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 5088,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 12171810,
+      "level": 10,
+      "seed": 9809,
+      "solved": false,
+      "world": "original"
+    },
+    {
+      "actions": 1272,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 3060039,
+      "level": 10,
+      "seed": 9809,
+      "solved": false,
+      "world": "shift"
+    },
+    {
+      "actions": 1272,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 3502258,
+      "level": 10,
+      "seed": 9809,
+      "solved": false,
+      "world": "shift"
+    },
+    {
+      "actions": 1380,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 3228212,
+      "level": 10,
+      "seed": 9809,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 2544,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 6576123,
+      "level": 10,
+      "seed": 9809,
+      "solved": false,
+      "world": "shift"
+    },
+    {
+      "actions": 1380,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 3398801,
+      "level": 10,
+      "seed": 9809,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 5088,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 12535856,
+      "level": 10,
+      "seed": 9809,
+      "solved": false,
+      "world": "shift"
+    },
+    {
+      "actions": 342,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 816299,
+      "level": 8,
+      "seed": 9811,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 504,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 1235791,
+      "level": 8,
+      "seed": 9811,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 342,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 893878,
+      "level": 8,
+      "seed": 9811,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 504,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 1271851,
+      "level": 8,
+      "seed": 9811,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 342,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 876744,
+      "level": 8,
+      "seed": 9811,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 504,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 1251420,
+      "level": 8,
+      "seed": 9811,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 342,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 1421726,
+      "level": 8,
+      "seed": 9811,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 504,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 1218302,
+      "level": 8,
+      "seed": 9811,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 342,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 1314629,
+      "level": 8,
+      "seed": 9811,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 504,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 1293547,
+      "level": 8,
+      "seed": 9811,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 342,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 793658,
+      "level": 8,
+      "seed": 9811,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 504,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 1373296,
+      "level": 8,
+      "seed": 9811,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 472,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 1175673,
+      "level": 9,
+      "seed": 9811,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 474,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 1188850,
+      "level": 9,
+      "seed": 9811,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 472,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 1057309,
+      "level": 9,
+      "seed": 9811,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 474,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 1138688,
+      "level": 9,
+      "seed": 9811,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 472,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 1183037,
+      "level": 9,
+      "seed": 9811,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 474,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 1244795,
+      "level": 9,
+      "seed": 9811,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 566,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 1338096,
+      "level": 9,
+      "seed": 9811,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 550,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 1326460,
+      "level": 9,
+      "seed": 9811,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 566,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 1284240,
+      "level": 9,
+      "seed": 9811,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 550,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 1351677,
+      "level": 9,
+      "seed": 9811,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 566,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 1248556,
+      "level": 9,
+      "seed": 9811,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 550,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 1336238,
+      "level": 9,
+      "seed": 9811,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 1272,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 3114458,
+      "level": 10,
+      "seed": 9811,
+      "solved": false,
+      "world": "original"
+    },
+    {
+      "actions": 1272,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 2872881,
+      "level": 10,
+      "seed": 9811,
+      "solved": false,
+      "world": "original"
+    },
+    {
+      "actions": 1704,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 4064518,
+      "level": 10,
+      "seed": 9811,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 2136,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 6014223,
+      "level": 10,
+      "seed": 9811,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 1704,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 4291997,
+      "level": 10,
+      "seed": 9811,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 2136,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 5179155,
+      "level": 10,
+      "seed": 9811,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 1272,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 3031624,
+      "level": 10,
+      "seed": 9811,
+      "solved": false,
+      "world": "shift"
+    },
+    {
+      "actions": 1272,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 2874947,
+      "level": 10,
+      "seed": 9811,
+      "solved": false,
+      "world": "shift"
+    },
+    {
+      "actions": 1704,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 3895375,
+      "level": 10,
+      "seed": 9811,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 2136,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 4952474,
+      "level": 10,
+      "seed": 9811,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 1704,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 3853727,
+      "level": 10,
+      "seed": 9811,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 2136,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 5407685,
+      "level": 10,
+      "seed": 9811,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 216,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 574520,
+      "level": 8,
+      "seed": 9817,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 202,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 651157,
+      "level": 8,
+      "seed": 9817,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 216,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 529944,
+      "level": 8,
+      "seed": 9817,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 202,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 573805,
+      "level": 8,
+      "seed": 9817,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 216,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 583909,
+      "level": 8,
+      "seed": 9817,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 202,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 509021,
+      "level": 8,
+      "seed": 9817,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 216,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 519957,
+      "level": 8,
+      "seed": 9817,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 202,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 517220,
+      "level": 8,
+      "seed": 9817,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 216,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 729571,
+      "level": 8,
+      "seed": 9817,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 202,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 506987,
+      "level": 8,
+      "seed": 9817,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 216,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 771135,
+      "level": 8,
+      "seed": 9817,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 202,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 540440,
+      "level": 8,
+      "seed": 9817,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 824,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 2493013,
+      "level": 9,
+      "seed": 9817,
+      "solved": false,
+      "world": "original"
+    },
+    {
+      "actions": 456,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 1262035,
+      "level": 9,
+      "seed": 9817,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 1268,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 2937866,
+      "level": 9,
+      "seed": 9817,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 456,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 1286840,
+      "level": 9,
+      "seed": 9817,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 1268,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 3301846,
+      "level": 9,
+      "seed": 9817,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 456,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 2074443,
+      "level": 9,
+      "seed": 9817,
+      "solved": true,
+      "world": "original"
+    },
+    {
+      "actions": 824,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 2507876,
+      "level": 9,
+      "seed": 9817,
+      "solved": false,
+      "world": "shift"
+    },
+    {
+      "actions": 456,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 1209482,
+      "level": 9,
+      "seed": 9817,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 1268,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 3468504,
+      "level": 9,
+      "seed": 9817,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 456,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 2587293,
+      "level": 9,
+      "seed": 9817,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 1268,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 2750519,
+      "level": 9,
+      "seed": 9817,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 456,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 1209618,
+      "level": 9,
+      "seed": 9817,
+      "solved": true,
+      "world": "shift"
+    },
+    {
+      "actions": 1272,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 3101373,
+      "level": 10,
+      "seed": 9817,
+      "solved": false,
+      "world": "original"
+    },
+    {
+      "actions": 1272,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 3936284,
+      "level": 10,
+      "seed": 9817,
+      "solved": false,
+      "world": "original"
+    },
+    {
+      "actions": 2544,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 5929795,
+      "level": 10,
+      "seed": 9817,
+      "solved": false,
+      "world": "original"
+    },
+    {
+      "actions": 2544,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 5844293,
+      "level": 10,
+      "seed": 9817,
+      "solved": false,
+      "world": "original"
+    },
+    {
+      "actions": 5088,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 10547639,
+      "level": 10,
+      "seed": 9817,
+      "solved": false,
+      "world": "original"
+    },
+    {
+      "actions": 5088,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 11615548,
+      "level": 10,
+      "seed": 9817,
+      "solved": false,
+      "world": "original"
+    },
+    {
+      "actions": 1272,
+      "arm": "heuristic",
+      "budget_factor": 1,
+      "elapsed_ns": 3227186,
+      "level": 10,
+      "seed": 9817,
+      "solved": false,
+      "world": "shift"
+    },
+    {
+      "actions": 1272,
+      "arm": "learned",
+      "budget_factor": 1,
+      "elapsed_ns": 3417443,
+      "level": 10,
+      "seed": 9817,
+      "solved": false,
+      "world": "shift"
+    },
+    {
+      "actions": 2544,
+      "arm": "heuristic",
+      "budget_factor": 2,
+      "elapsed_ns": 5522992,
+      "level": 10,
+      "seed": 9817,
+      "solved": false,
+      "world": "shift"
+    },
+    {
+      "actions": 2544,
+      "arm": "learned",
+      "budget_factor": 2,
+      "elapsed_ns": 6081956,
+      "level": 10,
+      "seed": 9817,
+      "solved": false,
+      "world": "shift"
+    },
+    {
+      "actions": 5088,
+      "arm": "heuristic",
+      "budget_factor": 4,
+      "elapsed_ns": 10765758,
+      "level": 10,
+      "seed": 9817,
+      "solved": false,
+      "world": "shift"
+    },
+    {
+      "actions": 5088,
+      "arm": "learned",
+      "budget_factor": 4,
+      "elapsed_ns": 14065075,
+      "level": 10,
+      "seed": 9817,
+      "solved": false,
+      "world": "shift"
+    }
+  ],
+  "summary": {
+    "1": {
+      "heuristic": {
+        "actions": 17610,
+        "n": 24,
+        "solved": 12,
+        "total_ms": 43.847
+      },
+      "learned": {
+        "actions": 16830,
+        "n": 24,
+        "solved": 16,
+        "total_ms": 43.511
+      }
+    },
+    "2": {
+      "heuristic": {
+        "actions": 25062,
+        "n": 24,
+        "solved": 20,
+        "total_ms": 58.652
+      },
+      "learned": {
+        "actions": 26190,
+        "n": 24,
+        "solved": 18,
+        "total_ms": 67.126
+      }
+    },
+    "4": {
+      "heuristic": {
+        "actions": 31982,
+        "n": 24,
+        "solved": 22,
+        "total_ms": 71.323
+      },
+      "learned": {
+        "actions": 41454,
+        "n": 24,
+        "solved": 18,
+        "total_ms": 101.02
+      }
+    }
+  },
+  "trained_on": "development levels 1-5"
+}

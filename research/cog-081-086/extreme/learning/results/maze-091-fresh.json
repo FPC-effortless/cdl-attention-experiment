@@ -1,0 +1,2596 @@
+{
+  "acquired_cog066_options": 16,
+  "caveats": [
+    "post-initial fresh seed cohort, not independent external researcher",
+    "maze generator family is the same as training and initial reserved",
+    "controller is a lightweight novel local learner, not an end-to-end COG-ATTN model"
+  ],
+  "controls": {
+    "heuristic": {
+      "actions": 20064,
+      "solved": 39,
+      "total": 52,
+      "wall_ms": 49.311
+    },
+    "learned": {
+      "actions": 19340,
+      "solved": 43,
+      "total": 52,
+      "wall_ms": 54.787
+    },
+    "random": {
+      "actions": 25572,
+      "solved": 20,
+      "total": 52,
+      "wall_ms": 53.98
+    },
+    "shuffled": {
+      "actions": 19812,
+      "solved": 41,
+      "total": 52,
+      "wall_ms": 61.957
+    }
+  },
+  "frozen_alpha": 0.25,
+  "no_reference_path_test_time": true,
+  "rows": [
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 8,
+          "budget": 120,
+          "elapsed_ns": 27769,
+          "illegal_actions": 0,
+          "local_observations": 8,
+          "route_len": 8,
+          "solved": true,
+          "visited": 9
+        },
+        "learned": {
+          "actions": 8,
+          "budget": 120,
+          "elapsed_ns": 25038,
+          "illegal_actions": 0,
+          "local_observations": 8,
+          "route_len": 8,
+          "solved": true,
+          "visited": 9
+        },
+        "random": {
+          "actions": 12,
+          "budget": 120,
+          "elapsed_ns": 25096,
+          "illegal_actions": 0,
+          "local_observations": 12,
+          "route_len": 8,
+          "solved": true,
+          "visited": 11
+        },
+        "shuffled": {
+          "actions": 8,
+          "budget": 120,
+          "elapsed_ns": 34386,
+          "illegal_actions": 0,
+          "local_observations": 8,
+          "route_len": 8,
+          "solved": true,
+          "visited": 9
+        }
+      },
+      "input_sha256": "1722eaf7ea04e8d35c93e535a8a4e273644d02dfb3019d740cd61e4b4a726caf",
+      "level": 1,
+      "seed": 9803,
+      "size": 7,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 16,
+          "budget": 136,
+          "elapsed_ns": 38579,
+          "illegal_actions": 0,
+          "local_observations": 16,
+          "route_len": 16,
+          "solved": true,
+          "visited": 17
+        },
+        "learned": {
+          "actions": 16,
+          "budget": 136,
+          "elapsed_ns": 43146,
+          "illegal_actions": 0,
+          "local_observations": 16,
+          "route_len": 16,
+          "solved": true,
+          "visited": 17
+        },
+        "random": {
+          "actions": 26,
+          "budget": 136,
+          "elapsed_ns": 45537,
+          "illegal_actions": 0,
+          "local_observations": 26,
+          "route_len": 12,
+          "solved": true,
+          "visited": 20
+        },
+        "shuffled": {
+          "actions": 16,
+          "budget": 136,
+          "elapsed_ns": 54718,
+          "illegal_actions": 0,
+          "local_observations": 16,
+          "route_len": 16,
+          "solved": true,
+          "visited": 17
+        }
+      },
+      "input_sha256": "94e925a0da3b1b65f9872c80852c5e623fd25839f0fcf24e3fa2281a5edd9dea",
+      "level": 2,
+      "seed": 9803,
+      "size": 9,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 24,
+          "budget": 152,
+          "elapsed_ns": 60004,
+          "illegal_actions": 0,
+          "local_observations": 24,
+          "route_len": 18,
+          "solved": true,
+          "visited": 22
+        },
+        "learned": {
+          "actions": 24,
+          "budget": 152,
+          "elapsed_ns": 65056,
+          "illegal_actions": 0,
+          "local_observations": 24,
+          "route_len": 18,
+          "solved": true,
+          "visited": 22
+        },
+        "random": {
+          "actions": 80,
+          "budget": 152,
+          "elapsed_ns": 150206,
+          "illegal_actions": 0,
+          "local_observations": 80,
+          "route_len": 20,
+          "solved": true,
+          "visited": 51
+        },
+        "shuffled": {
+          "actions": 24,
+          "budget": 152,
+          "elapsed_ns": 80032,
+          "illegal_actions": 0,
+          "local_observations": 24,
+          "route_len": 18,
+          "solved": true,
+          "visited": 22
+        }
+      },
+      "input_sha256": "87c5d4fc410a2a098430b595755baa149833e589a2c29b5dac18d3c32033b54a",
+      "level": 3,
+      "seed": 9803,
+      "size": 11,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 42,
+          "budget": 184,
+          "elapsed_ns": 104063,
+          "illegal_actions": 0,
+          "local_observations": 42,
+          "route_len": 42,
+          "solved": true,
+          "visited": 43
+        },
+        "learned": {
+          "actions": 42,
+          "budget": 184,
+          "elapsed_ns": 112752,
+          "illegal_actions": 0,
+          "local_observations": 42,
+          "route_len": 42,
+          "solved": true,
+          "visited": 43
+        },
+        "random": {
+          "actions": 144,
+          "budget": 184,
+          "elapsed_ns": 246440,
+          "illegal_actions": 0,
+          "local_observations": 144,
+          "route_len": 62,
+          "solved": true,
+          "visited": 104
+        },
+        "shuffled": {
+          "actions": 44,
+          "budget": 184,
+          "elapsed_ns": 134346,
+          "illegal_actions": 0,
+          "local_observations": 44,
+          "route_len": 44,
+          "solved": true,
+          "visited": 45
+        }
+      },
+      "input_sha256": "60d82bdf4355ed53bd6c66d07457f633851818b19b02d5b37083108a6a5986ed",
+      "level": 4,
+      "seed": 9803,
+      "size": 15,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 94,
+          "budget": 232,
+          "elapsed_ns": 214562,
+          "illegal_actions": 0,
+          "local_observations": 94,
+          "route_len": 70,
+          "solved": true,
+          "visited": 83
+        },
+        "learned": {
+          "actions": 92,
+          "budget": 232,
+          "elapsed_ns": 264689,
+          "illegal_actions": 0,
+          "local_observations": 92,
+          "route_len": 68,
+          "solved": true,
+          "visited": 81
+        },
+        "random": {
+          "actions": 116,
+          "budget": 232,
+          "elapsed_ns": 227619,
+          "illegal_actions": 0,
+          "local_observations": 116,
+          "route_len": 92,
+          "solved": true,
+          "visited": 105
+        },
+        "shuffled": {
+          "actions": 94,
+          "budget": 232,
+          "elapsed_ns": 268568,
+          "illegal_actions": 0,
+          "local_observations": 94,
+          "route_len": 70,
+          "solved": true,
+          "visited": 83
+        }
+      },
+      "input_sha256": "01edaa99d47809daa977ae5db2c5268652463220b0df163cf6b7368020820799",
+      "level": 5,
+      "seed": 9803,
+      "size": 21,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 166,
+          "budget": 312,
+          "elapsed_ns": 389531,
+          "illegal_actions": 0,
+          "local_observations": 166,
+          "route_len": 144,
+          "solved": true,
+          "visited": 156
+        },
+        "learned": {
+          "actions": 186,
+          "budget": 312,
+          "elapsed_ns": 478727,
+          "illegal_actions": 0,
+          "local_observations": 186,
+          "route_len": 150,
+          "solved": true,
+          "visited": 169
+        },
+        "random": {
+          "actions": 202,
+          "budget": 312,
+          "elapsed_ns": 392702,
+          "illegal_actions": 0,
+          "local_observations": 202,
+          "route_len": 162,
+          "solved": true,
+          "visited": 183
+        },
+        "shuffled": {
+          "actions": 172,
+          "budget": 312,
+          "elapsed_ns": 535971,
+          "illegal_actions": 0,
+          "local_observations": 172,
+          "route_len": 148,
+          "solved": true,
+          "visited": 161
+        }
+      },
+      "input_sha256": "0b97669a187b062c7cca04e946345259b8e9d2958b8f260110a8e53dd60cb4be",
+      "level": 6,
+      "seed": 9803,
+      "size": 31,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 310,
+          "budget": 424,
+          "elapsed_ns": 709376,
+          "illegal_actions": 0,
+          "local_observations": 310,
+          "route_len": 196,
+          "solved": true,
+          "visited": 254
+        },
+        "learned": {
+          "actions": 306,
+          "budget": 424,
+          "elapsed_ns": 798740,
+          "illegal_actions": 0,
+          "local_observations": 306,
+          "route_len": 194,
+          "solved": true,
+          "visited": 251
+        },
+        "random": {
+          "actions": 424,
+          "budget": 424,
+          "elapsed_ns": 903878,
+          "illegal_actions": 0,
+          "local_observations": 424,
+          "route_len": null,
+          "solved": false,
+          "visited": 331
+        },
+        "shuffled": {
+          "actions": 304,
+          "budget": 424,
+          "elapsed_ns": 1327097,
+          "illegal_actions": 0,
+          "local_observations": 304,
+          "route_len": 196,
+          "solved": true,
+          "visited": 251
+        }
+      },
+      "input_sha256": "e9367c474db4e12f67c73d175729da23bb9d9136ede8e53297590fba5ba611fd",
+      "level": 7,
+      "seed": 9803,
+      "size": 45,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 314,
+          "budget": 584,
+          "elapsed_ns": 692402,
+          "illegal_actions": 0,
+          "local_observations": 314,
+          "route_len": 238,
+          "solved": true,
+          "visited": 277
+        },
+        "learned": {
+          "actions": 314,
+          "budget": 584,
+          "elapsed_ns": 763100,
+          "illegal_actions": 0,
+          "local_observations": 314,
+          "route_len": 238,
+          "solved": true,
+          "visited": 277
+        },
+        "random": {
+          "actions": 584,
+          "budget": 584,
+          "elapsed_ns": 1167834,
+          "illegal_actions": 0,
+          "local_observations": 584,
+          "route_len": null,
+          "solved": false,
+          "visited": 502
+        },
+        "shuffled": {
+          "actions": 282,
+          "budget": 584,
+          "elapsed_ns": 892305,
+          "illegal_actions": 0,
+          "local_observations": 282,
+          "route_len": 228,
+          "solved": true,
+          "visited": 256
+        }
+      },
+      "input_sha256": "b8e58e4200375d911147e892fe5879bd4ecaef5574c109aa083eedd9e7caacce",
+      "level": 8,
+      "seed": 9803,
+      "size": 65,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 314,
+          "budget": 584,
+          "elapsed_ns": 875133,
+          "illegal_actions": 0,
+          "local_observations": 314,
+          "route_len": 238,
+          "solved": true,
+          "visited": 277
+        },
+        "learned": {
+          "actions": 314,
+          "budget": 584,
+          "elapsed_ns": 897326,
+          "illegal_actions": 0,
+          "local_observations": 314,
+          "route_len": 238,
+          "solved": true,
+          "visited": 277
+        },
+        "random": {
+          "actions": 584,
+          "budget": 584,
+          "elapsed_ns": 1026709,
+          "illegal_actions": 0,
+          "local_observations": 584,
+          "route_len": null,
+          "solved": false,
+          "visited": 417
+        },
+        "shuffled": {
+          "actions": 282,
+          "budget": 584,
+          "elapsed_ns": 962385,
+          "illegal_actions": 0,
+          "local_observations": 282,
+          "route_len": 228,
+          "solved": true,
+          "visited": 256
+        }
+      },
+      "input_sha256": "b8e58e4200375d911147e892fe5879bd4ecaef5574c109aa083eedd9e7caacce",
+      "level": 8,
+      "seed": 9803,
+      "size": 65,
+      "world": "shift"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 824,
+          "budget": 824,
+          "elapsed_ns": 1737259,
+          "illegal_actions": 0,
+          "local_observations": 824,
+          "route_len": null,
+          "solved": false,
+          "visited": 591
+        },
+        "learned": {
+          "actions": 646,
+          "budget": 824,
+          "elapsed_ns": 1679198,
+          "illegal_actions": 0,
+          "local_observations": 646,
+          "route_len": 510,
+          "solved": true,
+          "visited": 579
+        },
+        "random": {
+          "actions": 824,
+          "budget": 824,
+          "elapsed_ns": 1516608,
+          "illegal_actions": 0,
+          "local_observations": 824,
+          "route_len": null,
+          "solved": false,
+          "visited": 699
+        },
+        "shuffled": {
+          "actions": 824,
+          "budget": 824,
+          "elapsed_ns": 2241459,
+          "illegal_actions": 0,
+          "local_observations": 824,
+          "route_len": null,
+          "solved": false,
+          "visited": 589
+        }
+      },
+      "input_sha256": "8b347ad4492490743fb06770e408be0b95d9c30f5f62c1d5e59ab00479a41d1c",
+      "level": 9,
+      "seed": 9803,
+      "size": 95,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 824,
+          "budget": 824,
+          "elapsed_ns": 1726336,
+          "illegal_actions": 0,
+          "local_observations": 824,
+          "route_len": null,
+          "solved": false,
+          "visited": 591
+        },
+        "learned": {
+          "actions": 646,
+          "budget": 824,
+          "elapsed_ns": 1586817,
+          "illegal_actions": 0,
+          "local_observations": 646,
+          "route_len": 510,
+          "solved": true,
+          "visited": 579
+        },
+        "random": {
+          "actions": 824,
+          "budget": 824,
+          "elapsed_ns": 1586165,
+          "illegal_actions": 0,
+          "local_observations": 824,
+          "route_len": null,
+          "solved": false,
+          "visited": 604
+        },
+        "shuffled": {
+          "actions": 824,
+          "budget": 824,
+          "elapsed_ns": 2149389,
+          "illegal_actions": 0,
+          "local_observations": 824,
+          "route_len": null,
+          "solved": false,
+          "visited": 589
+        }
+      },
+      "input_sha256": "8b347ad4492490743fb06770e408be0b95d9c30f5f62c1d5e59ab00479a41d1c",
+      "level": 9,
+      "seed": 9803,
+      "size": 95,
+      "world": "shift"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 2923444,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 960
+        },
+        "learned": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 3201328,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 1049
+        },
+        "random": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 2444348,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 1075
+        },
+        "shuffled": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 3890642,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 1039
+        }
+      },
+      "input_sha256": "af223d3b7a70cb06388188adeb0ef3393883bc9e46fdf9b725157f125ac1b11e",
+      "level": 10,
+      "seed": 9803,
+      "size": 151,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 2744062,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 960
+        },
+        "learned": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 3379451,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 1049
+        },
+        "random": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 2373867,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 958
+        },
+        "shuffled": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 3542644,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 1039
+        }
+      },
+      "input_sha256": "af223d3b7a70cb06388188adeb0ef3393883bc9e46fdf9b725157f125ac1b11e",
+      "level": 10,
+      "seed": 9803,
+      "size": 151,
+      "world": "shift"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 12,
+          "budget": 120,
+          "elapsed_ns": 29929,
+          "illegal_actions": 0,
+          "local_observations": 12,
+          "route_len": 12,
+          "solved": true,
+          "visited": 13
+        },
+        "learned": {
+          "actions": 12,
+          "budget": 120,
+          "elapsed_ns": 46024,
+          "illegal_actions": 0,
+          "local_observations": 12,
+          "route_len": 12,
+          "solved": true,
+          "visited": 13
+        },
+        "random": {
+          "actions": 12,
+          "budget": 120,
+          "elapsed_ns": 24746,
+          "illegal_actions": 0,
+          "local_observations": 12,
+          "route_len": 12,
+          "solved": true,
+          "visited": 13
+        },
+        "shuffled": {
+          "actions": 12,
+          "budget": 120,
+          "elapsed_ns": 36242,
+          "illegal_actions": 0,
+          "local_observations": 12,
+          "route_len": 12,
+          "solved": true,
+          "visited": 13
+        }
+      },
+      "input_sha256": "d785b737592ee6fe19bb506e84b36156f1580e162967491e91442fedff6d2f3b",
+      "level": 1,
+      "seed": 9809,
+      "size": 7,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 16,
+          "budget": 136,
+          "elapsed_ns": 40821,
+          "illegal_actions": 0,
+          "local_observations": 16,
+          "route_len": 16,
+          "solved": true,
+          "visited": 17
+        },
+        "learned": {
+          "actions": 16,
+          "budget": 136,
+          "elapsed_ns": 49289,
+          "illegal_actions": 0,
+          "local_observations": 16,
+          "route_len": 16,
+          "solved": true,
+          "visited": 17
+        },
+        "random": {
+          "actions": 22,
+          "budget": 136,
+          "elapsed_ns": 130870,
+          "illegal_actions": 0,
+          "local_observations": 22,
+          "route_len": 20,
+          "solved": true,
+          "visited": 22
+        },
+        "shuffled": {
+          "actions": 16,
+          "budget": 136,
+          "elapsed_ns": 49519,
+          "illegal_actions": 0,
+          "local_observations": 16,
+          "route_len": 16,
+          "solved": true,
+          "visited": 17
+        }
+      },
+      "input_sha256": "d981b2736aa15586689637fbf218402ac935bd10d001ac6913c669197e82b119",
+      "level": 2,
+      "seed": 9809,
+      "size": 9,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 74,
+          "budget": 152,
+          "elapsed_ns": 217535,
+          "illegal_actions": 0,
+          "local_observations": 74,
+          "route_len": 30,
+          "solved": true,
+          "visited": 53
+        },
+        "learned": {
+          "actions": 74,
+          "budget": 152,
+          "elapsed_ns": 169112,
+          "illegal_actions": 0,
+          "local_observations": 74,
+          "route_len": 30,
+          "solved": true,
+          "visited": 53
+        },
+        "random": {
+          "actions": 32,
+          "budget": 152,
+          "elapsed_ns": 61733,
+          "illegal_actions": 0,
+          "local_observations": 32,
+          "route_len": 32,
+          "solved": true,
+          "visited": 33
+        },
+        "shuffled": {
+          "actions": 74,
+          "budget": 152,
+          "elapsed_ns": 179711,
+          "illegal_actions": 0,
+          "local_observations": 74,
+          "route_len": 30,
+          "solved": true,
+          "visited": 53
+        }
+      },
+      "input_sha256": "d255cebea9300d5a24a44a764c1ae0b7a5d6fb159b144ad3d5c548a31e39ac18",
+      "level": 3,
+      "seed": 9809,
+      "size": 11,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 32,
+          "budget": 184,
+          "elapsed_ns": 83932,
+          "illegal_actions": 0,
+          "local_observations": 32,
+          "route_len": 32,
+          "solved": true,
+          "visited": 33
+        },
+        "learned": {
+          "actions": 32,
+          "budget": 184,
+          "elapsed_ns": 99924,
+          "illegal_actions": 0,
+          "local_observations": 32,
+          "route_len": 32,
+          "solved": true,
+          "visited": 33
+        },
+        "random": {
+          "actions": 44,
+          "budget": 184,
+          "elapsed_ns": 85422,
+          "illegal_actions": 0,
+          "local_observations": 44,
+          "route_len": 36,
+          "solved": true,
+          "visited": 41
+        },
+        "shuffled": {
+          "actions": 34,
+          "budget": 184,
+          "elapsed_ns": 139543,
+          "illegal_actions": 0,
+          "local_observations": 34,
+          "route_len": 32,
+          "solved": true,
+          "visited": 34
+        }
+      },
+      "input_sha256": "9b49fd69f01bbd99bd00fda57a74b518134cec40107b08fdde83d8a36218faa7",
+      "level": 4,
+      "seed": 9809,
+      "size": 15,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 76,
+          "budget": 232,
+          "elapsed_ns": 197194,
+          "illegal_actions": 0,
+          "local_observations": 76,
+          "route_len": 66,
+          "solved": true,
+          "visited": 72
+        },
+        "learned": {
+          "actions": 76,
+          "budget": 232,
+          "elapsed_ns": 207329,
+          "illegal_actions": 0,
+          "local_observations": 76,
+          "route_len": 66,
+          "solved": true,
+          "visited": 72
+        },
+        "random": {
+          "actions": 90,
+          "budget": 232,
+          "elapsed_ns": 167915,
+          "illegal_actions": 0,
+          "local_observations": 90,
+          "route_len": 82,
+          "solved": true,
+          "visited": 87
+        },
+        "shuffled": {
+          "actions": 76,
+          "budget": 232,
+          "elapsed_ns": 223676,
+          "illegal_actions": 0,
+          "local_observations": 76,
+          "route_len": 66,
+          "solved": true,
+          "visited": 72
+        }
+      },
+      "input_sha256": "994e3765e112ac6576d3e7b3dc1879e924c664dc1c22293c2a9226921f5c20d3",
+      "level": 5,
+      "seed": 9809,
+      "size": 21,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 140,
+          "budget": 312,
+          "elapsed_ns": 339746,
+          "illegal_actions": 0,
+          "local_observations": 140,
+          "route_len": 130,
+          "solved": true,
+          "visited": 136
+        },
+        "learned": {
+          "actions": 138,
+          "budget": 312,
+          "elapsed_ns": 355239,
+          "illegal_actions": 0,
+          "local_observations": 138,
+          "route_len": 130,
+          "solved": true,
+          "visited": 135
+        },
+        "random": {
+          "actions": 312,
+          "budget": 312,
+          "elapsed_ns": 1186572,
+          "illegal_actions": 0,
+          "local_observations": 312,
+          "route_len": null,
+          "solved": false,
+          "visited": 195
+        },
+        "shuffled": {
+          "actions": 148,
+          "budget": 312,
+          "elapsed_ns": 453948,
+          "illegal_actions": 0,
+          "local_observations": 148,
+          "route_len": 130,
+          "solved": true,
+          "visited": 140
+        }
+      },
+      "input_sha256": "98342127aa21feca8d9bbbc7b247f775c1abd417ad1bc3ebce8ad32b3f8e94fb",
+      "level": 6,
+      "seed": 9809,
+      "size": 31,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 220,
+          "budget": 424,
+          "elapsed_ns": 506123,
+          "illegal_actions": 0,
+          "local_observations": 220,
+          "route_len": 172,
+          "solved": true,
+          "visited": 197
+        },
+        "learned": {
+          "actions": 266,
+          "budget": 424,
+          "elapsed_ns": 615958,
+          "illegal_actions": 0,
+          "local_observations": 266,
+          "route_len": 156,
+          "solved": true,
+          "visited": 212
+        },
+        "random": {
+          "actions": 424,
+          "budget": 424,
+          "elapsed_ns": 789052,
+          "illegal_actions": 0,
+          "local_observations": 424,
+          "route_len": null,
+          "solved": false,
+          "visited": 309
+        },
+        "shuffled": {
+          "actions": 264,
+          "budget": 424,
+          "elapsed_ns": 759161,
+          "illegal_actions": 0,
+          "local_observations": 264,
+          "route_len": 192,
+          "solved": true,
+          "visited": 229
+        }
+      },
+      "input_sha256": "d0ce05461ef3da28f9732d06b29abc4af8f811fac23fe78275c28c59af32e128",
+      "level": 7,
+      "seed": 9809,
+      "size": 45,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 308,
+          "budget": 584,
+          "elapsed_ns": 692325,
+          "illegal_actions": 0,
+          "local_observations": 308,
+          "route_len": 164,
+          "solved": true,
+          "visited": 237
+        },
+        "learned": {
+          "actions": 308,
+          "budget": 584,
+          "elapsed_ns": 745680,
+          "illegal_actions": 0,
+          "local_observations": 308,
+          "route_len": 164,
+          "solved": true,
+          "visited": 237
+        },
+        "random": {
+          "actions": 584,
+          "budget": 584,
+          "elapsed_ns": 1009119,
+          "illegal_actions": 0,
+          "local_observations": 584,
+          "route_len": null,
+          "solved": false,
+          "visited": 413
+        },
+        "shuffled": {
+          "actions": 314,
+          "budget": 584,
+          "elapsed_ns": 887442,
+          "illegal_actions": 0,
+          "local_observations": 314,
+          "route_len": 164,
+          "solved": true,
+          "visited": 240
+        }
+      },
+      "input_sha256": "c45289e0af40862b5b642446f794b414b34a23c153a647d4051351a4026420b5",
+      "level": 8,
+      "seed": 9809,
+      "size": 65,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 332,
+          "budget": 584,
+          "elapsed_ns": 837111,
+          "illegal_actions": 0,
+          "local_observations": 332,
+          "route_len": 174,
+          "solved": true,
+          "visited": 254
+        },
+        "learned": {
+          "actions": 332,
+          "budget": 584,
+          "elapsed_ns": 791172,
+          "illegal_actions": 0,
+          "local_observations": 332,
+          "route_len": 174,
+          "solved": true,
+          "visited": 254
+        },
+        "random": {
+          "actions": 584,
+          "budget": 584,
+          "elapsed_ns": 1055538,
+          "illegal_actions": 0,
+          "local_observations": 584,
+          "route_len": null,
+          "solved": false,
+          "visited": 449
+        },
+        "shuffled": {
+          "actions": 338,
+          "budget": 584,
+          "elapsed_ns": 1040785,
+          "illegal_actions": 0,
+          "local_observations": 338,
+          "route_len": 174,
+          "solved": true,
+          "visited": 257
+        }
+      },
+      "input_sha256": "c45289e0af40862b5b642446f794b414b34a23c153a647d4051351a4026420b5",
+      "level": 8,
+      "seed": 9809,
+      "size": 65,
+      "world": "shift"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 358,
+          "budget": 824,
+          "elapsed_ns": 976061,
+          "illegal_actions": 0,
+          "local_observations": 358,
+          "route_len": 342,
+          "solved": true,
+          "visited": 351
+        },
+        "learned": {
+          "actions": 348,
+          "budget": 824,
+          "elapsed_ns": 935166,
+          "illegal_actions": 0,
+          "local_observations": 348,
+          "route_len": 336,
+          "solved": true,
+          "visited": 343
+        },
+        "random": {
+          "actions": 824,
+          "budget": 824,
+          "elapsed_ns": 1526132,
+          "illegal_actions": 0,
+          "local_observations": 824,
+          "route_len": null,
+          "solved": false,
+          "visited": 596
+        },
+        "shuffled": {
+          "actions": 358,
+          "budget": 824,
+          "elapsed_ns": 1119558,
+          "illegal_actions": 0,
+          "local_observations": 358,
+          "route_len": 342,
+          "solved": true,
+          "visited": 351
+        }
+      },
+      "input_sha256": "bf0171c3b49f7d39c6950c9d5578ee4efe6c3a5fe35d190bb06d8df2636038c8",
+      "level": 9,
+      "seed": 9809,
+      "size": 95,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 358,
+          "budget": 824,
+          "elapsed_ns": 1027318,
+          "illegal_actions": 0,
+          "local_observations": 358,
+          "route_len": 342,
+          "solved": true,
+          "visited": 351
+        },
+        "learned": {
+          "actions": 398,
+          "budget": 824,
+          "elapsed_ns": 1009204,
+          "illegal_actions": 0,
+          "local_observations": 398,
+          "route_len": 338,
+          "solved": true,
+          "visited": 369
+        },
+        "random": {
+          "actions": 824,
+          "budget": 824,
+          "elapsed_ns": 1579657,
+          "illegal_actions": 0,
+          "local_observations": 824,
+          "route_len": null,
+          "solved": false,
+          "visited": 621
+        },
+        "shuffled": {
+          "actions": 358,
+          "budget": 824,
+          "elapsed_ns": 1111869,
+          "illegal_actions": 0,
+          "local_observations": 358,
+          "route_len": 342,
+          "solved": true,
+          "visited": 351
+        }
+      },
+      "input_sha256": "bf0171c3b49f7d39c6950c9d5578ee4efe6c3a5fe35d190bb06d8df2636038c8",
+      "level": 9,
+      "seed": 9809,
+      "size": 95,
+      "world": "shift"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 4548559,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 1028
+        },
+        "learned": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 5129800,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 1011
+        },
+        "random": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 2431879,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 825
+        },
+        "shuffled": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 6952651,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 1001
+        }
+      },
+      "input_sha256": "3cdd390583ba428ef0ca538ea9f44ed97c017bc8ce38110ef5d5a5d08ab2c71a",
+      "level": 10,
+      "seed": 9809,
+      "size": 151,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 2997012,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 1028
+        },
+        "learned": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 3682031,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 1011
+        },
+        "random": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 3838691,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 961
+        },
+        "shuffled": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 3755273,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 1001
+        }
+      },
+      "input_sha256": "3cdd390583ba428ef0ca538ea9f44ed97c017bc8ce38110ef5d5a5d08ab2c71a",
+      "level": 10,
+      "seed": 9809,
+      "size": 151,
+      "world": "shift"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 16,
+          "budget": 120,
+          "elapsed_ns": 36883,
+          "illegal_actions": 0,
+          "local_observations": 16,
+          "route_len": 10,
+          "solved": true,
+          "visited": 14
+        },
+        "learned": {
+          "actions": 16,
+          "budget": 120,
+          "elapsed_ns": 46798,
+          "illegal_actions": 0,
+          "local_observations": 16,
+          "route_len": 10,
+          "solved": true,
+          "visited": 14
+        },
+        "random": {
+          "actions": 14,
+          "budget": 120,
+          "elapsed_ns": 38405,
+          "illegal_actions": 0,
+          "local_observations": 14,
+          "route_len": 12,
+          "solved": true,
+          "visited": 14
+        },
+        "shuffled": {
+          "actions": 16,
+          "budget": 120,
+          "elapsed_ns": 46132,
+          "illegal_actions": 0,
+          "local_observations": 16,
+          "route_len": 10,
+          "solved": true,
+          "visited": 14
+        }
+      },
+      "input_sha256": "4d23645a822e5c58dc38b255f52686087c689afc8cb83de93e4f2f89f670d86a",
+      "level": 1,
+      "seed": 9811,
+      "size": 7,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 42,
+          "budget": 136,
+          "elapsed_ns": 97383,
+          "illegal_actions": 0,
+          "local_observations": 42,
+          "route_len": 22,
+          "solved": true,
+          "visited": 33
+        },
+        "learned": {
+          "actions": 40,
+          "budget": 136,
+          "elapsed_ns": 93811,
+          "illegal_actions": 0,
+          "local_observations": 40,
+          "route_len": 20,
+          "solved": true,
+          "visited": 31
+        },
+        "random": {
+          "actions": 32,
+          "budget": 136,
+          "elapsed_ns": 60191,
+          "illegal_actions": 0,
+          "local_observations": 32,
+          "route_len": 30,
+          "solved": true,
+          "visited": 32
+        },
+        "shuffled": {
+          "actions": 42,
+          "budget": 136,
+          "elapsed_ns": 112249,
+          "illegal_actions": 0,
+          "local_observations": 42,
+          "route_len": 22,
+          "solved": true,
+          "visited": 33
+        }
+      },
+      "input_sha256": "4b2fc83707e303d0d46184e14098528fdc776e72318c6c7e3d4d3399cc9f1c02",
+      "level": 2,
+      "seed": 9811,
+      "size": 9,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 38,
+          "budget": 152,
+          "elapsed_ns": 93355,
+          "illegal_actions": 0,
+          "local_observations": 38,
+          "route_len": 38,
+          "solved": true,
+          "visited": 39
+        },
+        "learned": {
+          "actions": 38,
+          "budget": 152,
+          "elapsed_ns": 96520,
+          "illegal_actions": 0,
+          "local_observations": 38,
+          "route_len": 38,
+          "solved": true,
+          "visited": 39
+        },
+        "random": {
+          "actions": 48,
+          "budget": 152,
+          "elapsed_ns": 84174,
+          "illegal_actions": 0,
+          "local_observations": 48,
+          "route_len": 40,
+          "solved": true,
+          "visited": 45
+        },
+        "shuffled": {
+          "actions": 38,
+          "budget": 152,
+          "elapsed_ns": 109917,
+          "illegal_actions": 0,
+          "local_observations": 38,
+          "route_len": 38,
+          "solved": true,
+          "visited": 39
+        }
+      },
+      "input_sha256": "d1184af1c313758b195e563483cfaad15cffafe99a5e420b8b54809d13ae49ad",
+      "level": 3,
+      "seed": 9811,
+      "size": 11,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 36,
+          "budget": 184,
+          "elapsed_ns": 91700,
+          "illegal_actions": 0,
+          "local_observations": 36,
+          "route_len": 36,
+          "solved": true,
+          "visited": 37
+        },
+        "learned": {
+          "actions": 36,
+          "budget": 184,
+          "elapsed_ns": 107255,
+          "illegal_actions": 0,
+          "local_observations": 36,
+          "route_len": 36,
+          "solved": true,
+          "visited": 37
+        },
+        "random": {
+          "actions": 108,
+          "budget": 184,
+          "elapsed_ns": 180738,
+          "illegal_actions": 0,
+          "local_observations": 108,
+          "route_len": 32,
+          "solved": true,
+          "visited": 71
+        },
+        "shuffled": {
+          "actions": 36,
+          "budget": 184,
+          "elapsed_ns": 132442,
+          "illegal_actions": 0,
+          "local_observations": 36,
+          "route_len": 36,
+          "solved": true,
+          "visited": 37
+        }
+      },
+      "input_sha256": "bd8a6249980bcb801152501bc2f46646534f4a68d2f4b01d0d9b2070312a6a99",
+      "level": 4,
+      "seed": 9811,
+      "size": 15,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 64,
+          "budget": 232,
+          "elapsed_ns": 232836,
+          "illegal_actions": 0,
+          "local_observations": 64,
+          "route_len": 64,
+          "solved": true,
+          "visited": 65
+        },
+        "learned": {
+          "actions": 64,
+          "budget": 232,
+          "elapsed_ns": 197012,
+          "illegal_actions": 0,
+          "local_observations": 64,
+          "route_len": 64,
+          "solved": true,
+          "visited": 65
+        },
+        "random": {
+          "actions": 140,
+          "budget": 232,
+          "elapsed_ns": 281881,
+          "illegal_actions": 0,
+          "local_observations": 140,
+          "route_len": 110,
+          "solved": true,
+          "visited": 126
+        },
+        "shuffled": {
+          "actions": 68,
+          "budget": 232,
+          "elapsed_ns": 250120,
+          "illegal_actions": 0,
+          "local_observations": 68,
+          "route_len": 66,
+          "solved": true,
+          "visited": 68
+        }
+      },
+      "input_sha256": "bf0a523eaccba7490418ec4c49982ac2bb0a216d25e1604e0896451cf7fdb684",
+      "level": 5,
+      "seed": 9811,
+      "size": 21,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 108,
+          "budget": 312,
+          "elapsed_ns": 254711,
+          "illegal_actions": 0,
+          "local_observations": 108,
+          "route_len": 104,
+          "solved": true,
+          "visited": 107
+        },
+        "learned": {
+          "actions": 108,
+          "budget": 312,
+          "elapsed_ns": 271519,
+          "illegal_actions": 0,
+          "local_observations": 108,
+          "route_len": 104,
+          "solved": true,
+          "visited": 107
+        },
+        "random": {
+          "actions": 312,
+          "budget": 312,
+          "elapsed_ns": 793332,
+          "illegal_actions": 0,
+          "local_observations": 312,
+          "route_len": null,
+          "solved": false,
+          "visited": 258
+        },
+        "shuffled": {
+          "actions": 110,
+          "budget": 312,
+          "elapsed_ns": 477864,
+          "illegal_actions": 0,
+          "local_observations": 110,
+          "route_len": 106,
+          "solved": true,
+          "visited": 109
+        }
+      },
+      "input_sha256": "7bca5c563edc7f8608915f02aa2f33df912d7255772d3cd1627fe179624dc7b7",
+      "level": 6,
+      "seed": 9811,
+      "size": 31,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 230,
+          "budget": 424,
+          "elapsed_ns": 586698,
+          "illegal_actions": 0,
+          "local_observations": 230,
+          "route_len": 202,
+          "solved": true,
+          "visited": 217
+        },
+        "learned": {
+          "actions": 230,
+          "budget": 424,
+          "elapsed_ns": 695557,
+          "illegal_actions": 0,
+          "local_observations": 230,
+          "route_len": 202,
+          "solved": true,
+          "visited": 217
+        },
+        "random": {
+          "actions": 424,
+          "budget": 424,
+          "elapsed_ns": 795221,
+          "illegal_actions": 0,
+          "local_observations": 424,
+          "route_len": null,
+          "solved": false,
+          "visited": 375
+        },
+        "shuffled": {
+          "actions": 236,
+          "budget": 424,
+          "elapsed_ns": 763983,
+          "illegal_actions": 0,
+          "local_observations": 236,
+          "route_len": 200,
+          "solved": true,
+          "visited": 219
+        }
+      },
+      "input_sha256": "f4ef82f23fbf0df32b82ef9c9584cf4921f5bb72c4c826cb6c3498bf14964a9b",
+      "level": 7,
+      "seed": 9811,
+      "size": 45,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 342,
+          "budget": 584,
+          "elapsed_ns": 795824,
+          "illegal_actions": 0,
+          "local_observations": 342,
+          "route_len": 294,
+          "solved": true,
+          "visited": 319
+        },
+        "learned": {
+          "actions": 504,
+          "budget": 584,
+          "elapsed_ns": 1389769,
+          "illegal_actions": 0,
+          "local_observations": 504,
+          "route_len": 350,
+          "solved": true,
+          "visited": 428
+        },
+        "random": {
+          "actions": 584,
+          "budget": 584,
+          "elapsed_ns": 1018306,
+          "illegal_actions": 0,
+          "local_observations": 584,
+          "route_len": null,
+          "solved": false,
+          "visited": 443
+        },
+        "shuffled": {
+          "actions": 370,
+          "budget": 584,
+          "elapsed_ns": 1112805,
+          "illegal_actions": 0,
+          "local_observations": 370,
+          "route_len": 296,
+          "solved": true,
+          "visited": 334
+        }
+      },
+      "input_sha256": "33d5db2e69556949582cf5916e53a840268858dfeff3f87fd376b8b12940b799",
+      "level": 8,
+      "seed": 9811,
+      "size": 65,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 342,
+          "budget": 584,
+          "elapsed_ns": 927718,
+          "illegal_actions": 0,
+          "local_observations": 342,
+          "route_len": 294,
+          "solved": true,
+          "visited": 319
+        },
+        "learned": {
+          "actions": 504,
+          "budget": 584,
+          "elapsed_ns": 1233240,
+          "illegal_actions": 0,
+          "local_observations": 504,
+          "route_len": 350,
+          "solved": true,
+          "visited": 428
+        },
+        "random": {
+          "actions": 584,
+          "budget": 584,
+          "elapsed_ns": 1023013,
+          "illegal_actions": 0,
+          "local_observations": 584,
+          "route_len": null,
+          "solved": false,
+          "visited": 400
+        },
+        "shuffled": {
+          "actions": 370,
+          "budget": 584,
+          "elapsed_ns": 1156806,
+          "illegal_actions": 0,
+          "local_observations": 370,
+          "route_len": 296,
+          "solved": true,
+          "visited": 334
+        }
+      },
+      "input_sha256": "33d5db2e69556949582cf5916e53a840268858dfeff3f87fd376b8b12940b799",
+      "level": 8,
+      "seed": 9811,
+      "size": 65,
+      "world": "shift"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 472,
+          "budget": 824,
+          "elapsed_ns": 1119090,
+          "illegal_actions": 0,
+          "local_observations": 472,
+          "route_len": 326,
+          "solved": true,
+          "visited": 400
+        },
+        "learned": {
+          "actions": 474,
+          "budget": 824,
+          "elapsed_ns": 1259597,
+          "illegal_actions": 0,
+          "local_observations": 474,
+          "route_len": 326,
+          "solved": true,
+          "visited": 401
+        },
+        "random": {
+          "actions": 824,
+          "budget": 824,
+          "elapsed_ns": 1619461,
+          "illegal_actions": 0,
+          "local_observations": 824,
+          "route_len": null,
+          "solved": false,
+          "visited": 577
+        },
+        "shuffled": {
+          "actions": 552,
+          "budget": 824,
+          "elapsed_ns": 1511176,
+          "illegal_actions": 0,
+          "local_observations": 552,
+          "route_len": 328,
+          "solved": true,
+          "visited": 441
+        }
+      },
+      "input_sha256": "4909bf7bef0ccc4e15689c886e67af9bce0d3316b2efb80258b03502949f71b8",
+      "level": 9,
+      "seed": 9811,
+      "size": 95,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 566,
+          "budget": 824,
+          "elapsed_ns": 1420549,
+          "illegal_actions": 0,
+          "local_observations": 566,
+          "route_len": 362,
+          "solved": true,
+          "visited": 465
+        },
+        "learned": {
+          "actions": 550,
+          "budget": 824,
+          "elapsed_ns": 1438815,
+          "illegal_actions": 0,
+          "local_observations": 550,
+          "route_len": 362,
+          "solved": true,
+          "visited": 457
+        },
+        "random": {
+          "actions": 824,
+          "budget": 824,
+          "elapsed_ns": 1385351,
+          "illegal_actions": 0,
+          "local_observations": 824,
+          "route_len": null,
+          "solved": false,
+          "visited": 548
+        },
+        "shuffled": {
+          "actions": 650,
+          "budget": 824,
+          "elapsed_ns": 1978324,
+          "illegal_actions": 0,
+          "local_observations": 650,
+          "route_len": 364,
+          "solved": true,
+          "visited": 508
+        }
+      },
+      "input_sha256": "4909bf7bef0ccc4e15689c886e67af9bce0d3316b2efb80258b03502949f71b8",
+      "level": 9,
+      "seed": 9811,
+      "size": 95,
+      "world": "shift"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 2839549,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 1010
+        },
+        "learned": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 3011255,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 896
+        },
+        "random": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 2923032,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 1002
+        },
+        "shuffled": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 3233673,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 955
+        }
+      },
+      "input_sha256": "30475eb15bff691a814e60140a6330c6734c67e33f229cda78b5ba235ff83515",
+      "level": 10,
+      "seed": 9811,
+      "size": 151,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 2806164,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 1010
+        },
+        "learned": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 2996290,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 896
+        },
+        "random": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 2374160,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 967
+        },
+        "shuffled": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 3367575,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 955
+        }
+      },
+      "input_sha256": "30475eb15bff691a814e60140a6330c6734c67e33f229cda78b5ba235ff83515",
+      "level": 10,
+      "seed": 9811,
+      "size": 151,
+      "world": "shift"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 12,
+          "budget": 120,
+          "elapsed_ns": 36070,
+          "illegal_actions": 0,
+          "local_observations": 12,
+          "route_len": 12,
+          "solved": true,
+          "visited": 13
+        },
+        "learned": {
+          "actions": 12,
+          "budget": 120,
+          "elapsed_ns": 46016,
+          "illegal_actions": 0,
+          "local_observations": 12,
+          "route_len": 12,
+          "solved": true,
+          "visited": 13
+        },
+        "random": {
+          "actions": 12,
+          "budget": 120,
+          "elapsed_ns": 119328,
+          "illegal_actions": 0,
+          "local_observations": 12,
+          "route_len": 12,
+          "solved": true,
+          "visited": 13
+        },
+        "shuffled": {
+          "actions": 12,
+          "budget": 120,
+          "elapsed_ns": 37397,
+          "illegal_actions": 0,
+          "local_observations": 12,
+          "route_len": 12,
+          "solved": true,
+          "visited": 13
+        }
+      },
+      "input_sha256": "4049e93e64d3bfc17e542d9942949e09fa45ba91a0733257a91946a8f41c5694",
+      "level": 1,
+      "seed": 9817,
+      "size": 7,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 14,
+          "budget": 136,
+          "elapsed_ns": 34477,
+          "illegal_actions": 0,
+          "local_observations": 14,
+          "route_len": 14,
+          "solved": true,
+          "visited": 15
+        },
+        "learned": {
+          "actions": 14,
+          "budget": 136,
+          "elapsed_ns": 126565,
+          "illegal_actions": 0,
+          "local_observations": 14,
+          "route_len": 14,
+          "solved": true,
+          "visited": 15
+        },
+        "random": {
+          "actions": 14,
+          "budget": 136,
+          "elapsed_ns": 26417,
+          "illegal_actions": 0,
+          "local_observations": 14,
+          "route_len": 14,
+          "solved": true,
+          "visited": 15
+        },
+        "shuffled": {
+          "actions": 14,
+          "budget": 136,
+          "elapsed_ns": 42636,
+          "illegal_actions": 0,
+          "local_observations": 14,
+          "route_len": 14,
+          "solved": true,
+          "visited": 15
+        }
+      },
+      "input_sha256": "dbba1b96993486fe39e17e4df0407dc5b34962f7bc45580205aa14b561341024",
+      "level": 2,
+      "seed": 9817,
+      "size": 9,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 18,
+          "budget": 152,
+          "elapsed_ns": 44652,
+          "illegal_actions": 0,
+          "local_observations": 18,
+          "route_len": 18,
+          "solved": true,
+          "visited": 19
+        },
+        "learned": {
+          "actions": 18,
+          "budget": 152,
+          "elapsed_ns": 51101,
+          "illegal_actions": 0,
+          "local_observations": 18,
+          "route_len": 18,
+          "solved": true,
+          "visited": 19
+        },
+        "random": {
+          "actions": 72,
+          "budget": 152,
+          "elapsed_ns": 193649,
+          "illegal_actions": 0,
+          "local_observations": 72,
+          "route_len": 18,
+          "solved": true,
+          "visited": 46
+        },
+        "shuffled": {
+          "actions": 18,
+          "budget": 152,
+          "elapsed_ns": 65487,
+          "illegal_actions": 0,
+          "local_observations": 18,
+          "route_len": 18,
+          "solved": true,
+          "visited": 19
+        }
+      },
+      "input_sha256": "2a641d93e5432ea40490a8f76959e8472b6d043a8d4225f9f94c82b62be7720e",
+      "level": 3,
+      "seed": 9817,
+      "size": 11,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 42,
+          "budget": 184,
+          "elapsed_ns": 119804,
+          "illegal_actions": 0,
+          "local_observations": 42,
+          "route_len": 24,
+          "solved": true,
+          "visited": 34
+        },
+        "learned": {
+          "actions": 42,
+          "budget": 184,
+          "elapsed_ns": 102667,
+          "illegal_actions": 0,
+          "local_observations": 42,
+          "route_len": 24,
+          "solved": true,
+          "visited": 34
+        },
+        "random": {
+          "actions": 184,
+          "budget": 184,
+          "elapsed_ns": 292581,
+          "illegal_actions": 0,
+          "local_observations": 184,
+          "route_len": null,
+          "solved": false,
+          "visited": 105
+        },
+        "shuffled": {
+          "actions": 42,
+          "budget": 184,
+          "elapsed_ns": 199080,
+          "illegal_actions": 0,
+          "local_observations": 42,
+          "route_len": 24,
+          "solved": true,
+          "visited": 34
+        }
+      },
+      "input_sha256": "1c9ea1d063e91121ad96cb9b060d0398144e0defd46acdb6d4394d462afef816",
+      "level": 4,
+      "seed": 9817,
+      "size": 15,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 64,
+          "budget": 232,
+          "elapsed_ns": 142744,
+          "illegal_actions": 0,
+          "local_observations": 64,
+          "route_len": 46,
+          "solved": true,
+          "visited": 56
+        },
+        "learned": {
+          "actions": 64,
+          "budget": 232,
+          "elapsed_ns": 213194,
+          "illegal_actions": 0,
+          "local_observations": 64,
+          "route_len": 46,
+          "solved": true,
+          "visited": 56
+        },
+        "random": {
+          "actions": 96,
+          "budget": 232,
+          "elapsed_ns": 179028,
+          "illegal_actions": 0,
+          "local_observations": 96,
+          "route_len": 80,
+          "solved": true,
+          "visited": 89
+        },
+        "shuffled": {
+          "actions": 64,
+          "budget": 232,
+          "elapsed_ns": 231158,
+          "illegal_actions": 0,
+          "local_observations": 64,
+          "route_len": 46,
+          "solved": true,
+          "visited": 56
+        }
+      },
+      "input_sha256": "e3257e671304eda0519c669489c38d85483037e8e10c07d4e2b140537b4b14fb",
+      "level": 5,
+      "seed": 9817,
+      "size": 21,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 312,
+          "budget": 312,
+          "elapsed_ns": 865866,
+          "illegal_actions": 0,
+          "local_observations": 312,
+          "route_len": null,
+          "solved": false,
+          "visited": 228
+        },
+        "learned": {
+          "actions": 312,
+          "budget": 312,
+          "elapsed_ns": 681656,
+          "illegal_actions": 0,
+          "local_observations": 312,
+          "route_len": null,
+          "solved": false,
+          "visited": 228
+        },
+        "random": {
+          "actions": 312,
+          "budget": 312,
+          "elapsed_ns": 718395,
+          "illegal_actions": 0,
+          "local_observations": 312,
+          "route_len": null,
+          "solved": false,
+          "visited": 253
+        },
+        "shuffled": {
+          "actions": 312,
+          "budget": 312,
+          "elapsed_ns": 819648,
+          "illegal_actions": 0,
+          "local_observations": 312,
+          "route_len": null,
+          "solved": false,
+          "visited": 234
+        }
+      },
+      "input_sha256": "a600da33c5df70aec0751d347853bf58403b11477d8d01ee95dd99a9faa11f95",
+      "level": 6,
+      "seed": 9817,
+      "size": 31,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 228,
+          "budget": 424,
+          "elapsed_ns": 597829,
+          "illegal_actions": 0,
+          "local_observations": 228,
+          "route_len": 198,
+          "solved": true,
+          "visited": 214
+        },
+        "learned": {
+          "actions": 228,
+          "budget": 424,
+          "elapsed_ns": 573076,
+          "illegal_actions": 0,
+          "local_observations": 228,
+          "route_len": 198,
+          "solved": true,
+          "visited": 214
+        },
+        "random": {
+          "actions": 424,
+          "budget": 424,
+          "elapsed_ns": 763153,
+          "illegal_actions": 0,
+          "local_observations": 424,
+          "route_len": null,
+          "solved": false,
+          "visited": 340
+        },
+        "shuffled": {
+          "actions": 326,
+          "budget": 424,
+          "elapsed_ns": 1012551,
+          "illegal_actions": 0,
+          "local_observations": 326,
+          "route_len": 222,
+          "solved": true,
+          "visited": 275
+        }
+      },
+      "input_sha256": "b3f4f87892e22eeab13c6f9895700c85d50477860648ff3dbaf38b4a1ba46eea",
+      "level": 7,
+      "seed": 9817,
+      "size": 45,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 216,
+          "budget": 584,
+          "elapsed_ns": 580801,
+          "illegal_actions": 0,
+          "local_observations": 216,
+          "route_len": 214,
+          "solved": true,
+          "visited": 216
+        },
+        "learned": {
+          "actions": 202,
+          "budget": 584,
+          "elapsed_ns": 525545,
+          "illegal_actions": 0,
+          "local_observations": 202,
+          "route_len": 200,
+          "solved": true,
+          "visited": 202
+        },
+        "random": {
+          "actions": 584,
+          "budget": 584,
+          "elapsed_ns": 1125738,
+          "illegal_actions": 0,
+          "local_observations": 584,
+          "route_len": null,
+          "solved": false,
+          "visited": 448
+        },
+        "shuffled": {
+          "actions": 204,
+          "budget": 584,
+          "elapsed_ns": 694842,
+          "illegal_actions": 0,
+          "local_observations": 204,
+          "route_len": 202,
+          "solved": true,
+          "visited": 204
+        }
+      },
+      "input_sha256": "c56f899db5e6f4996e7a749820fbee9b6727d037e5369fe73838cb4fe6f9a529",
+      "level": 8,
+      "seed": 9817,
+      "size": 65,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 216,
+          "budget": 584,
+          "elapsed_ns": 540345,
+          "illegal_actions": 0,
+          "local_observations": 216,
+          "route_len": 214,
+          "solved": true,
+          "visited": 216
+        },
+        "learned": {
+          "actions": 202,
+          "budget": 584,
+          "elapsed_ns": 516563,
+          "illegal_actions": 0,
+          "local_observations": 202,
+          "route_len": 200,
+          "solved": true,
+          "visited": 202
+        },
+        "random": {
+          "actions": 584,
+          "budget": 584,
+          "elapsed_ns": 1043198,
+          "illegal_actions": 0,
+          "local_observations": 584,
+          "route_len": null,
+          "solved": false,
+          "visited": 449
+        },
+        "shuffled": {
+          "actions": 204,
+          "budget": 584,
+          "elapsed_ns": 614139,
+          "illegal_actions": 0,
+          "local_observations": 204,
+          "route_len": 202,
+          "solved": true,
+          "visited": 204
+        }
+      },
+      "input_sha256": "c56f899db5e6f4996e7a749820fbee9b6727d037e5369fe73838cb4fe6f9a529",
+      "level": 8,
+      "seed": 9817,
+      "size": 65,
+      "world": "shift"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 824,
+          "budget": 824,
+          "elapsed_ns": 2158290,
+          "illegal_actions": 0,
+          "local_observations": 824,
+          "route_len": null,
+          "solved": false,
+          "visited": 625
+        },
+        "learned": {
+          "actions": 456,
+          "budget": 824,
+          "elapsed_ns": 1804990,
+          "illegal_actions": 0,
+          "local_observations": 456,
+          "route_len": 380,
+          "solved": true,
+          "visited": 419
+        },
+        "random": {
+          "actions": 824,
+          "budget": 824,
+          "elapsed_ns": 3977267,
+          "illegal_actions": 0,
+          "local_observations": 824,
+          "route_len": null,
+          "solved": false,
+          "visited": 624
+        },
+        "shuffled": {
+          "actions": 824,
+          "budget": 824,
+          "elapsed_ns": 2506514,
+          "illegal_actions": 0,
+          "local_observations": 824,
+          "route_len": null,
+          "solved": false,
+          "visited": 634
+        }
+      },
+      "input_sha256": "5983844579f0c353714cb2d1b42f9e2a43fe5708965eba1449d9a5dc8aa7e8dc",
+      "level": 9,
+      "seed": 9817,
+      "size": 95,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 824,
+          "budget": 824,
+          "elapsed_ns": 2040478,
+          "illegal_actions": 0,
+          "local_observations": 824,
+          "route_len": null,
+          "solved": false,
+          "visited": 625
+        },
+        "learned": {
+          "actions": 456,
+          "budget": 824,
+          "elapsed_ns": 3550532,
+          "illegal_actions": 0,
+          "local_observations": 456,
+          "route_len": 380,
+          "solved": true,
+          "visited": 419
+        },
+        "random": {
+          "actions": 824,
+          "budget": 824,
+          "elapsed_ns": 2134501,
+          "illegal_actions": 0,
+          "local_observations": 824,
+          "route_len": null,
+          "solved": false,
+          "visited": 684
+        },
+        "shuffled": {
+          "actions": 824,
+          "budget": 824,
+          "elapsed_ns": 2496648,
+          "illegal_actions": 0,
+          "local_observations": 824,
+          "route_len": null,
+          "solved": false,
+          "visited": 634
+        }
+      },
+      "input_sha256": "5983844579f0c353714cb2d1b42f9e2a43fe5708965eba1449d9a5dc8aa7e8dc",
+      "level": 9,
+      "seed": 9817,
+      "size": 95,
+      "world": "shift"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 2859211,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 1000
+        },
+        "learned": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 3084845,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 998
+        },
+        "random": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 2473917,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 1012
+        },
+        "shuffled": {
+          "actions": 972,
+          "budget": 1272,
+          "elapsed_ns": 2929602,
+          "illegal_actions": 0,
+          "local_observations": 972,
+          "route_len": 680,
+          "solved": true,
+          "visited": 827
+        }
+      },
+      "input_sha256": "5774edaa46864c7855a2a19b472173c162070637fad7f0348ea1f4c9875f104d",
+      "level": 10,
+      "seed": 9817,
+      "size": 151,
+      "world": "original"
+    },
+    {
+      "arms": {
+        "heuristic": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 3252021,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 1017
+        },
+        "learned": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 3541569,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 1009
+        },
+        "random": {
+          "actions": 1272,
+          "budget": 1272,
+          "elapsed_ns": 2360948,
+          "illegal_actions": 0,
+          "local_observations": 1272,
+          "route_len": null,
+          "solved": false,
+          "visited": 1060
+        },
+        "shuffled": {
+          "actions": 1010,
+          "budget": 1272,
+          "elapsed_ns": 3231127,
+          "illegal_actions": 0,
+          "local_observations": 1010,
+          "route_len": 712,
+          "solved": true,
+          "visited": 862
+        }
+      },
+      "input_sha256": "5774edaa46864c7855a2a19b472173c162070637fad7f0348ea1f4c9875f104d",
+      "level": 10,
+      "seed": 9817,
+      "size": 151,
+      "world": "shift"
+    }
+  ],
+  "seeds": [
+    9803,
+    9809,
+    9811,
+    9817
+  ],
+  "skill_features": 21,
+  "study": "COG-ATTN-091 additional fresh-seed replication of local maze skill controller",
+  "total_worlds": 52,
+  "training_worlds": 10
+}

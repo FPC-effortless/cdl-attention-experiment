@@ -1,0 +1,37 @@
+name: COG-ATTN 091 maze experience replay
+on:
+  workflow_dispatch:
+  push:
+    branches: [research/cog-091-maze-online-transfer]
+    paths:
+      - 'research/cog-081-086/extreme/learning/**'
+      - '.github/workflows/cog-091-maze-learning.yml'
+  pull_request:
+    paths:
+      - 'research/cog-081-086/extreme/learning/**'
+      - '.github/workflows/cog-091-maze-learning.yml'
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Unpack previously published and pinned cases
+        run: |
+          cd research/cog-081-086/extreme
+          unzip -o artifacts/puzzle-087-090-cases-evidence.zip -d .
+          sha256sum -c CASE_SHA256SUMS
+      - name: Replay all policies and fresh cohorts
+        run: |
+          cd research/cog-081-086/extreme/learning
+          python maze_transfer_091.py
+          python replicate_091.py
+          python budget_stress_091.py
+      - name: Compare stable decisions and run tests
+        run: |
+          cd research/cog-081-086/extreme/learning
+          python verify_stable_091.py
+          python -m unittest test_maze_transfer_091 -v
