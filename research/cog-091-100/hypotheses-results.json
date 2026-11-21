@@ -1,0 +1,44 @@
+{
+  "limitations": [
+    "Candidate action space is known and fixed at six",
+    "Outputs trained with two-hot supervisory targets for ambiguous phrases",
+    "Clarification recoverability is candidate coverage only; no interactive natural dialogue was tested",
+    "No external authority, signed token, real action or full COG controller was invoked"
+  ],
+  "name": "COG-ATTN-095 bounded multi-hypothesis readout",
+  "rows": [
+    {
+      "ambiguous_n": 12,
+      "clarification_recoverable": 12,
+      "correct": 60,
+      "defer_on_ambiguity": 12,
+      "dev_composite": 2.0,
+      "n": 60,
+      "pair_top2": 12,
+      "seed": 9107,
+      "selected_epoch": 12
+    },
+    {
+      "ambiguous_n": 12,
+      "clarification_recoverable": 11,
+      "correct": 60,
+      "defer_on_ambiguity": 12,
+      "dev_composite": 1.975,
+      "n": 60,
+      "pair_top2": 11,
+      "seed": 9203,
+      "selected_epoch": 15
+    },
+    {
+      "ambiguous_n": 12,
+      "clarification_recoverable": 12,
+      "correct": 60,
+      "defer_on_ambiguity": 12,
+      "dev_composite": 2.0,
+      "n": 60,
+      "pair_top2": 12,
+      "seed": 9301,
+      "selected_epoch": 16
+    }
+  ]
+}

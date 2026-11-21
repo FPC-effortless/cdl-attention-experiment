@@ -1,0 +1,4265 @@
+{
+  "limitations": [
+    "Raw-index retrieval requires exact lexeme overlap, and consumes growing storage",
+    "Raw-scan is a dense-lookup control, NOT a trained self-attention Transformer",
+    "The program inducer uses a supplied five-operation DSL, not zero-schema intelligence",
+    "All data are synthetic; no authentic COG-ATTN controller or learned language interface",
+    "Timings are local CPU diagnostics, not hardware-normalized or end-to-end costs"
+  ],
+  "memory": [
+    {
+      "build_ns": 3148464,
+      "index_postings": 16896,
+      "n": 1536,
+      "outcomes": {
+        "cached_scan": {
+          "accuracy": 1.0,
+          "average_lookup_us": 68.912734375,
+          "correct": 128,
+          "lookup_ns": 8820830
+        },
+        "eager": {
+          "accuracy": 0.359375,
+          "average_lookup_us": 2.24746875,
+          "correct": 46,
+          "lookup_ns": 287676
+        },
+        "lossless_index": {
+          "accuracy": 1.0,
+          "average_lookup_us": 5.4558359375,
+          "correct": 128,
+          "lookup_ns": 698347
+        },
+        "raw_scan": {
+          "accuracy": 1.0,
+          "average_lookup_us": 643.259796875,
+          "correct": 128,
+          "lookup_ns": 82337254
+        }
+      },
+      "queries": 128,
+      "raw_bytes": 118582,
+      "seed": 9107,
+      "tokenize_ns": 1985210
+    },
+    {
+      "build_ns": 1942699,
+      "index_postings": 16896,
+      "n": 1536,
+      "outcomes": {
+        "cached_scan": {
+          "accuracy": 1.0,
+          "average_lookup_us": 35.2684453125,
+          "correct": 128,
+          "lookup_ns": 4514361
+        },
+        "eager": {
+          "accuracy": 0.328125,
+          "average_lookup_us": 0.3193359375,
+          "correct": 42,
+          "lookup_ns": 40875
+        },
+        "lossless_index": {
+          "accuracy": 1.0,
+          "average_lookup_us": 2.574203125,
+          "correct": 128,
+          "lookup_ns": 329498
+        },
+        "raw_scan": {
+          "accuracy": 1.0,
+          "average_lookup_us": 485.43228125,
+          "correct": 128,
+          "lookup_ns": 62135332
+        }
+      },
+      "queries": 128,
+      "raw_bytes": 118582,
+      "seed": 9203,
+      "tokenize_ns": 1250138
+    },
+    {
+      "build_ns": 4886851,
+      "index_postings": 16896,
+      "n": 1536,
+      "outcomes": {
+        "cached_scan": {
+          "accuracy": 1.0,
+          "average_lookup_us": 39.612625,
+          "correct": 128,
+          "lookup_ns": 5070416
+        },
+        "eager": {
+          "accuracy": 0.3203125,
+          "average_lookup_us": 0.329734375,
+          "correct": 41,
+          "lookup_ns": 42206
+        },
+        "lossless_index": {
+          "accuracy": 1.0,
+          "average_lookup_us": 1.450625,
+          "correct": 128,
+          "lookup_ns": 185680
+        },
+        "raw_scan": {
+          "accuracy": 1.0,
+          "average_lookup_us": 515.660921875,
+          "correct": 128,
+          "lookup_ns": 66004598
+        }
+      },
+      "queries": 128,
+      "raw_bytes": 118582,
+      "seed": 9301,
+      "tokenize_ns": 1023150
+    },
+    {
+      "build_ns": 29145321,
+      "index_postings": 67584,
+      "n": 6144,
+      "outcomes": {
+        "cached_scan": {
+          "accuracy": 1.0,
+          "average_lookup_us": 197.7361875,
+          "correct": 128,
+          "lookup_ns": 25310232
+        },
+        "eager": {
+          "accuracy": 0.40625,
+          "average_lookup_us": 0.7845546875,
+          "correct": 52,
+          "lookup_ns": 100423
+        },
+        "lossless_index": {
+          "accuracy": 1.0,
+          "average_lookup_us": 4.0507890625,
+          "correct": 128,
+          "lookup_ns": 518501
+        },
+        "raw_scan": {
+          "accuracy": 1.0,
+          "average_lookup_us": 2375.10621875,
+          "correct": 128,
+          "lookup_ns": 304013596
+        }
+      },
+      "queries": 128,
+      "raw_bytes": 478462,
+      "seed": 9107,
+      "tokenize_ns": 27826082
+    },
+    {
+      "build_ns": 11136155,
+      "index_postings": 67584,
+      "n": 6144,
+      "outcomes": {
+        "cached_scan": {
+          "accuracy": 1.0,
+          "average_lookup_us": 195.479953125,
+          "correct": 128,
+          "lookup_ns": 25021434
+        },
+        "eager": {
+          "accuracy": 0.34375,
+          "average_lookup_us": 0.781828125,
+          "correct": 44,
+          "lookup_ns": 100074
+        },
+        "lossless_index": {
+          "accuracy": 1.0,
+          "average_lookup_us": 3.550984375,
+          "correct": 128,
+          "lookup_ns": 454526
+        },
+        "raw_scan": {
+          "accuracy": 1.0,
+          "average_lookup_us": 2329.1022890625,
+          "correct": 128,
+          "lookup_ns": 298125093
+        }
+      },
+      "queries": 128,
+      "raw_bytes": 478462,
+      "seed": 9203,
+      "tokenize_ns": 7975193
+    },
+    {
+      "build_ns": 9664930,
+      "index_postings": 67584,
+      "n": 6144,
+      "outcomes": {
+        "cached_scan": {
+          "accuracy": 1.0,
+          "average_lookup_us": 195.6350390625,
+          "correct": 128,
+          "lookup_ns": 25041285
+        },
+        "eager": {
+          "accuracy": 0.3671875,
+          "average_lookup_us": 0.7582578125,
+          "correct": 47,
+          "lookup_ns": 97057
+        },
+        "lossless_index": {
+          "accuracy": 1.0,
+          "average_lookup_us": 6.5577734375,
+          "correct": 128,
+          "lookup_ns": 839395
+        },
+        "raw_scan": {
+          "accuracy": 1.0,
+          "average_lookup_us": 2343.42590625,
+          "correct": 128,
+          "lookup_ns": 299958516
+        }
+      },
+      "queries": 128,
+      "raw_bytes": 478462,
+      "seed": 9301,
+      "tokenize_ns": 7863836
+    },
+    {
+      "build_ns": 150644899,
+      "index_postings": 270336,
+      "n": 24576,
+      "outcomes": {
+        "cached_scan": {
+          "accuracy": 1.0,
+          "average_lookup_us": 1100.70925,
+          "correct": 128,
+          "lookup_ns": 140890784
+        },
+        "eager": {
+          "accuracy": 0.3046875,
+          "average_lookup_us": 1.306390625,
+          "correct": 39,
+          "lookup_ns": 167218
+        },
+        "lossless_index": {
+          "accuracy": 1.0,
+          "average_lookup_us": 6.26771875,
+          "correct": 128,
+          "lookup_ns": 802268
+        },
+        "raw_scan": {
+          "accuracy": 1.0,
+          "average_lookup_us": 10360.579625,
+          "correct": 128,
+          "lookup_ns": 1326154192
+        }
+      },
+      "queries": 128,
+      "raw_bytes": 1923838,
+      "seed": 9107,
+      "tokenize_ns": 127721271
+    },
+    {
+      "build_ns": 63522233,
+      "index_postings": 270336,
+      "n": 24576,
+      "outcomes": {
+        "cached_scan": {
+          "accuracy": 1.0,
+          "average_lookup_us": 1145.6920390625,
+          "correct": 128,
+          "lookup_ns": 146648581
+        },
+        "eager": {
+          "accuracy": 0.3984375,
+          "average_lookup_us": 1.77690625,
+          "correct": 51,
+          "lookup_ns": 227444
+        },
+        "lossless_index": {
+          "accuracy": 1.0,
+          "average_lookup_us": 19.2818359375,
+          "correct": 128,
+          "lookup_ns": 2468075
+        },
+        "raw_scan": {
+          "accuracy": 1.0,
+          "average_lookup_us": 10778.999671875,
+          "correct": 128,
+          "lookup_ns": 1379711958
+        }
+      },
+      "queries": 128,
+      "raw_bytes": 1923838,
+      "seed": 9203,
+      "tokenize_ns": 39514705
+    },
+    {
+      "build_ns": 63280901,
+      "index_postings": 270336,
+      "n": 24576,
+      "outcomes": {
+        "cached_scan": {
+          "accuracy": 1.0,
+          "average_lookup_us": 1227.95196875,
+          "correct": 128,
+          "lookup_ns": 157177852
+        },
+        "eager": {
+          "accuracy": 0.4140625,
+          "average_lookup_us": 1.71228125,
+          "correct": 53,
+          "lookup_ns": 219172
+        },
+        "lossless_index": {
+          "accuracy": 1.0,
+          "average_lookup_us": 9.191828125,
+          "correct": 128,
+          "lookup_ns": 1176554
+        },
+        "raw_scan": {
+          "accuracy": 1.0,
+          "average_lookup_us": 10562.2843125,
+          "correct": 128,
+          "lookup_ns": 1351972392
+        }
+      },
+      "queries": 128,
+      "raw_bytes": 1923838,
+      "seed": 9301,
+      "tokenize_ns": 138887551
+    }
+  ],
+  "program": "COG-ATTN-091 and 096 pilot (synthetic, not complete agent)",
+  "seeds": [
+    9107,
+    9203,
+    9301
+  ],
+  "skill": [
+    {
+      "admitted": 50,
+      "ambiguous": 31,
+      "average_induce_us": 21.4183,
+      "cases": [
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 0,
+          "label_sha256": "afd238613b95b45ba46844dd0d25e9a0e43f93ddf5082529252bf1b373b33c8c",
+          "latency_ns": 30911,
+          "program": [
+            "swap_first",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 1,
+          "label_sha256": "60a30e11e164fa22e7058b86a3c414dd0d7d905be5e7d93ca2c5c1ae3cd7ab0a",
+          "latency_ns": 23960,
+          "program": [
+            "duplicate_last",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 2,
+          "label_sha256": "5b3f59a2a3a46caed1d8c79438f70b7334777719e57ff623676a0f12d862c9c7",
+          "latency_ns": 20373,
+          "program": [
+            "reverse",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 3,
+          "label_sha256": "21a6677f7330d6f7de82bed20f5e668965366560cabfe7635daa89b1f3882dac",
+          "latency_ns": 23965,
+          "program": [
+            "rotate_r",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 4,
+          "label_sha256": "469e6db463a98bf0c79ce4725a521754c2c3d76bbf904a37cbe592232237577c",
+          "latency_ns": 19724,
+          "program": [
+            "swap_first",
+            "duplicate_last"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 5,
+          "label_sha256": "5feff5cbfaa07c89b9c9e222eacb42438a0092f743c0d25cbaf23c33e4575c82",
+          "latency_ns": 19320,
+          "program": [
+            "rotate_r",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "rotate_r",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 6,
+          "label_sha256": "2688ec186408a4ab6f1cbc7689fad502f2245343e8f49eab0fe4b09501326f57",
+          "latency_ns": 18498,
+          "program": [
+            "rotate_r"
+          ],
+          "recognized": [
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 7,
+          "label_sha256": "9864df0cd9eaaa7962d3dd0507ed6d496a8492c48b379b1bf213ed09f0c556f0",
+          "latency_ns": 21211,
+          "program": [
+            "swap_first",
+            "duplicate_last"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 8,
+          "label_sha256": "d93705efc1b5a9c018559ffac8bb705a5801e7c0dc0b30e12003509a51b853bd",
+          "latency_ns": 18890,
+          "program": [
+            "swap_first",
+            "rotate_r"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 9,
+          "label_sha256": "f96cd18aa01f7936a9e4ffb1480cab70c61d719afe4b3513d4ef4ff05af72913",
+          "latency_ns": 20934,
+          "program": [
+            "reverse",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 10,
+          "label_sha256": "2ed65f5f8411e312828c3f3bdcf69c4cd16ea7d060001285c4b48f5efc2895c6",
+          "latency_ns": 23161,
+          "program": [
+            "rotate_r",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 11,
+          "label_sha256": "9aa5c23afafe6211d7743bec80e404c110b0df8cc720734b0649912666ef9478",
+          "latency_ns": 19131,
+          "program": [
+            "swap_first",
+            "reverse"
+          ],
+          "recognized": [
+            "swap_first",
+            "reverse"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 12,
+          "label_sha256": "f5ac751bac1b4778727dec1d8a5160bce2b5e80427bf4b76c3d2b01ec20b86bd",
+          "latency_ns": 17945,
+          "program": [
+            "rotate_l",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "rotate_l",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 13,
+          "label_sha256": "a7a5317f0c2089e017e74f50c7f9073df599ed8b3c3820a482bf84f805a42343",
+          "latency_ns": 37506,
+          "program": [
+            "duplicate_last"
+          ],
+          "recognized": [
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 14,
+          "label_sha256": "2450517c173b3d95816e9ae864198a9095c88f92a67d8156d209338f0cf74652",
+          "latency_ns": 19464,
+          "program": [
+            "rotate_r",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 15,
+          "label_sha256": "a0fa49198875fe29bef6d9ed218220bcdddff965f16b03ed39b9e0a0e24cb1d4",
+          "latency_ns": 20488,
+          "program": [
+            "swap_first",
+            "rotate_l"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 16,
+          "label_sha256": "79a61daa5b344da7b7ad92e50fa432c10dc4f256263e315af2c94e0bacc35c38",
+          "latency_ns": 18072,
+          "program": [
+            "rotate_l"
+          ],
+          "recognized": [
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 17,
+          "label_sha256": "b18c75bfa506ef1ccd8f0909fa25c8fc892b540f8d06f3b7a3385fb067f1da22",
+          "latency_ns": 19043,
+          "program": [
+            "duplicate_last",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 18,
+          "label_sha256": "46a90dc1f3ca7bcfd2b3a5148f0801925c02733710ef14a85a76c3e7dd757cb8",
+          "latency_ns": 18300,
+          "program": [
+            "rotate_r",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "rotate_r",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 19,
+          "label_sha256": "f2a3f2058b8211bdf89d96c6197a900f0c99619487dd50645c15abbd69854484",
+          "latency_ns": 20839,
+          "program": [
+            "reverse",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 20,
+          "label_sha256": "5f9fb4d3630b9f735849671e3c7701d06771f9721960ca2dd8d6367806b3e12e",
+          "latency_ns": 17793,
+          "program": [
+            "duplicate_last",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 21,
+          "label_sha256": "e8e53b4d019b826ac496c446f180be62bfe690e07e88fa98a5a1b2b1cff214b5",
+          "latency_ns": 19398,
+          "program": [
+            "rotate_l"
+          ],
+          "recognized": [
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 22,
+          "label_sha256": "9b88b52195212ef51d36876dcd97cc3e9408dac4c9498d8795972f4ef1ffd3b7",
+          "latency_ns": 17899,
+          "program": [
+            "rotate_l",
+            "rotate_l"
+          ],
+          "recognized": [
+            "rotate_l",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 23,
+          "label_sha256": "03ed1e9e634e96e5d97e2b707bc942268bdbbac85ef9dde8a580d1d95ec0fed5",
+          "latency_ns": 20412,
+          "program": [
+            "duplicate_last",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 24,
+          "label_sha256": "0eec709797523c4cf5bbe5ceaf7ecfff232a63f275f3c232cf35c2e0e1e0305b",
+          "latency_ns": 20190,
+          "program": [
+            "duplicate_last",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 25,
+          "label_sha256": "231171a2176ec6d1cc198338517f57d3efdf0b396036df0139bb043a37ef3639",
+          "latency_ns": 18584,
+          "program": [
+            "rotate_r"
+          ],
+          "recognized": [
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 26,
+          "label_sha256": "cef5eeda1176624eb456f33e1fc7af5d74bf061cb963c9f7fb6c3f1bb899b07e",
+          "latency_ns": 22971,
+          "program": [
+            "swap_first",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 27,
+          "label_sha256": "93d561970ea2f1af4df11225f7516f2794b178144e3ba93efb116cf522400da7",
+          "latency_ns": 100662,
+          "program": [
+            "rotate_r",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 28,
+          "label_sha256": "636aa69fbe1a9890cc06bc495d9910e704d76b9f9c4f07508123a7fa1911b2e9",
+          "latency_ns": 24075,
+          "program": [
+            "swap_first",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 29,
+          "label_sha256": "792a4388c41ae64ab7317e2c7e697d943c3425d3f81d1f56ad68c4344ce05908",
+          "latency_ns": 17765,
+          "program": [
+            "rotate_r"
+          ],
+          "recognized": [
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 30,
+          "label_sha256": "42e0639154d93945e67e1cc5421784ea4256cbaf2ba73a3c597ac6249526d94f",
+          "latency_ns": 19578,
+          "program": [
+            "swap_first",
+            "duplicate_last"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 31,
+          "label_sha256": "56f2f8b759fa8bfbe0a0dbeb8b2e3e9bf119c49e095efdb4d3b9006b95506dbf",
+          "latency_ns": 17836,
+          "program": [
+            "duplicate_last",
+            "rotate_r"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 32,
+          "label_sha256": "6d26d25f06ec817fdf66189e560fa9958215b07bdd6e2529cfef64901e4fa999",
+          "latency_ns": 18734,
+          "program": [
+            "reverse",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "reverse",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 33,
+          "label_sha256": "b240213a4e9a3e8720894207b5f7f3d615b5a87f17d5038d0b2f8f96785e32d5",
+          "latency_ns": 17994,
+          "program": [
+            "rotate_l"
+          ],
+          "recognized": [
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 34,
+          "label_sha256": "3fa48e46c4ae5384cad9baed36aa8f37c013e4a6add223ad3146ab47f1e946c9",
+          "latency_ns": 19239,
+          "program": [
+            "swap_first",
+            "duplicate_last"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 35,
+          "label_sha256": "101578e07618f428436eaafaef4850b9c94051ff3935b73e2e0ca9a939968190",
+          "latency_ns": 17437,
+          "program": [
+            "rotate_r",
+            "rotate_r"
+          ],
+          "recognized": [
+            "rotate_r",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 36,
+          "label_sha256": "bf00cf11055beb40b918987da08a852b15d73346c51e503cfe9e6cf9e0378ebc",
+          "latency_ns": 18492,
+          "program": [
+            "rotate_r",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "rotate_r",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 37,
+          "label_sha256": "8f13b082f19a522b1e6a5af8452c46cf63bc3560822d99463881433ce21dc30f",
+          "latency_ns": 17462,
+          "program": [
+            "swap_first",
+            "rotate_l"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 38,
+          "label_sha256": "f203f95d5b08bb150289964c28a940bb0c0b9b730d7e404f107b7fbd5ca19c04",
+          "latency_ns": 17227,
+          "program": [
+            "duplicate_last"
+          ],
+          "recognized": [
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 39,
+          "label_sha256": "126909c96953df9ecc4778ab80f324c9cbd9aef91835d1558a2fbf22314b5969",
+          "latency_ns": 46365,
+          "program": [
+            "reverse",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 40,
+          "label_sha256": "2cbfe95a303f05bf4ee8876baf85d0417c2cce9fe8a177ed87be13aa01af4871",
+          "latency_ns": 17031,
+          "program": [
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 41,
+          "label_sha256": "5d011f35dfbfcf6c9048da7d1d959b2ea43d8b5e287e7dffbe1a24eeec32d362",
+          "latency_ns": 18991,
+          "program": [
+            "rotate_r"
+          ],
+          "recognized": [
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 42,
+          "label_sha256": "288e132546d497f784aa29dbdb28f620a14468ad707adbf3a82264aaf94a28b1",
+          "latency_ns": 17608,
+          "program": [
+            "rotate_r",
+            "rotate_r"
+          ],
+          "recognized": [
+            "rotate_r",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 43,
+          "label_sha256": "49f5358a19ab86cf663be94d2a2007487941b1ea31e1c3e3629926daa3d55a20",
+          "latency_ns": 17603,
+          "program": [
+            "rotate_r",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "rotate_r",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 44,
+          "label_sha256": "9ee953f39d5b1bfc10ebaafd2c60fefbff137e28bbb724386ad7a075b3c05772",
+          "latency_ns": 17571,
+          "program": [
+            "reverse",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "reverse",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 45,
+          "label_sha256": "69f04f0efdda0784878eeeaa686dfdf8c8cc2b74b83e816a0de7eed1e65d8468",
+          "latency_ns": 19582,
+          "program": [
+            "swap_first",
+            "duplicate_last"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 46,
+          "label_sha256": "3c30715c51c47dd904b1eee17c5ea940644cea57f82d03e49b7b658e495987b7",
+          "latency_ns": 19179,
+          "program": [
+            "reverse",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 47,
+          "label_sha256": "4bb5db257ccccc7d058aa2e8dcf1045f31294a5e57ed887ee3ec7c5adc4907e4",
+          "latency_ns": 19017,
+          "program": [
+            "rotate_r",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "rotate_r",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 48,
+          "label_sha256": "75355845207f7978dd620a1dafb007f403bc782868795bd1222ae1d739b7c8ad",
+          "latency_ns": 17971,
+          "program": [
+            "duplicate_last",
+            "rotate_r"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 49,
+          "label_sha256": "f660f4995220ed0f1596ca516675e30de46745cb08c182603b5b4d46d9138b2a",
+          "latency_ns": 19194,
+          "program": [
+            "reverse",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 50,
+          "label_sha256": "b7dfd729e910f40bf4c23e6a23415d0fa471da051dd8ab98c31732444e701c02",
+          "latency_ns": 17164,
+          "program": [
+            "duplicate_last",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 51,
+          "label_sha256": "2fdc6db4305761c513fa8fd7113d0290451acb4ed13adfdb726fe173e2a35ebf",
+          "latency_ns": 22987,
+          "program": [
+            "rotate_r",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 52,
+          "label_sha256": "2f64a8e0be381a81c7e95484872b94d277e2f029c97d049568f9ae25ce5daab6",
+          "latency_ns": 87936,
+          "program": [
+            "duplicate_last",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 53,
+          "label_sha256": "c48c38b977d772f6c0d19e8ef87b949a409f5e4ac087666f9f925b284c4137f5",
+          "latency_ns": 19595,
+          "program": [
+            "swap_first",
+            "duplicate_last"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 54,
+          "label_sha256": "e6f27538448215e93ec7060bd9c2c2db5a0cde30a8e65797a84384c7a3a77e1e",
+          "latency_ns": 17732,
+          "program": [
+            "duplicate_last",
+            "rotate_r"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 55,
+          "label_sha256": "ccfad2e612b12553917b6cbf919c4c94f9fe0e94e3bc60e2f0322dd89dcbe8d8",
+          "latency_ns": 18210,
+          "program": [
+            "rotate_r",
+            "rotate_r"
+          ],
+          "recognized": [
+            "rotate_r",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 56,
+          "label_sha256": "8ec59f7ce28de6a63aea6971f22581712966541949aae21d540c7ce658fa7556",
+          "latency_ns": 17783,
+          "program": [
+            "rotate_l",
+            "rotate_l"
+          ],
+          "recognized": [
+            "rotate_l",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 57,
+          "label_sha256": "bceac1df7989df299dfeaba849c9bb1daaadb30e8e47a4b3ec4efc1dc00eee54",
+          "latency_ns": 17411,
+          "program": [
+            "rotate_r"
+          ],
+          "recognized": [
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 58,
+          "label_sha256": "28a297c899635aa56af6dcb8ece0831015e84a41f738722969ecc0c3384bfcdd",
+          "latency_ns": 21316,
+          "program": [
+            "rotate_l",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 59,
+          "label_sha256": "93a3e6558aaabf22d4e07e733b61e475ed3989eb1b346385f089d635bc9ff200",
+          "latency_ns": 18857,
+          "program": [
+            "rotate_l",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 60,
+          "label_sha256": "a97f2c93c724679604cc0e0b58ac7b355cb0f6a5dbed2ed48f7b482756f338fe",
+          "latency_ns": 17830,
+          "program": [
+            "rotate_l",
+            "duplicate_last"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 61,
+          "label_sha256": "7ef3528ac738b933537297b92f5b5bc4dcbb0979185c55f063ffc2544f937caa",
+          "latency_ns": 18712,
+          "program": [
+            "duplicate_last",
+            "reverse"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "reverse"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 62,
+          "label_sha256": "2f74179449cad81ac10ead07addd740c08ca2547f895b46b970a730f6041413c",
+          "latency_ns": 18217,
+          "program": [
+            "rotate_r",
+            "rotate_r"
+          ],
+          "recognized": [
+            "rotate_r",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 63,
+          "label_sha256": "dfa0219fd2579dc4c6e8e0c22b50b3cc5c3e3796ecfb591da115fcc302db1197",
+          "latency_ns": 19511,
+          "program": [
+            "duplicate_last",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 64,
+          "label_sha256": "d6893f805b7a04ea8be2990a55488048a567edbaa71f67fe4a599ee29ec17ead",
+          "latency_ns": 23138,
+          "program": [
+            "swap_first",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 65,
+          "label_sha256": "acd97e3cec2c1a7e7d999da36f38f6194d30c13c22ecc859b3d3f1a059e74569",
+          "latency_ns": 19508,
+          "program": [
+            "rotate_r",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 66,
+          "label_sha256": "80984caf9689f2df6bceeff9545d49c8d4dd6501b52179c4e9964e564f48613d",
+          "latency_ns": 18410,
+          "program": [
+            "rotate_r"
+          ],
+          "recognized": [
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 67,
+          "label_sha256": "d55774aa3d05cbb381465dd46dc137471c55d841c4562acb8cfc42475f417d5e",
+          "latency_ns": 18351,
+          "program": [
+            "reverse",
+            "swap_first"
+          ],
+          "recognized": [
+            "reverse",
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 68,
+          "label_sha256": "67ef0765e75845b156937f66af6473bab1f1fcc7e25860e3b7c9f2ca753f7875",
+          "latency_ns": 22524,
+          "program": [
+            "rotate_r",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 69,
+          "label_sha256": "d1ee8d28e09727c0d71cf3f40669d0df130e13ff443049499042dcc6185c48a1",
+          "latency_ns": 18285,
+          "program": [
+            "rotate_l",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "rotate_l",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 70,
+          "label_sha256": "59717d41df7ee4fcd41a035b1f76b53f13f9761d57bed4376425e71ab1ba949e",
+          "latency_ns": 20904,
+          "program": [
+            "rotate_r",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 71,
+          "label_sha256": "c2cfa0916a82e8f1862275f42a02be5e8cd272bc3848b398fd255f4de0b63668",
+          "latency_ns": 19482,
+          "program": [
+            "reverse",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 72,
+          "label_sha256": "b21c4104504d68a4ce58e2a8837e28ee46c9acf23642a29e00a24980264d76f2",
+          "latency_ns": 19038,
+          "program": [
+            "duplicate_last",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 73,
+          "label_sha256": "177129bc06c3cc0a386426912eb2054b08bcf5fe6dc2a5a0837a3adda4ef8792",
+          "latency_ns": 18508,
+          "program": [
+            "duplicate_last",
+            "reverse"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "reverse"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 74,
+          "label_sha256": "a0889736941271b883b1fa69526ebb88879175ecc64116d211401568cf60d2d8",
+          "latency_ns": 18101,
+          "program": [
+            "duplicate_last",
+            "reverse"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "reverse"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 75,
+          "label_sha256": "40793871329e5287cacb55dab8d57765faf8cfdc7fd72e85e805fe583030ed86",
+          "latency_ns": 18178,
+          "program": [
+            "rotate_r",
+            "rotate_r"
+          ],
+          "recognized": [
+            "rotate_r",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 76,
+          "label_sha256": "ff7438771ab4f6acf8fe221363ad10e82c69309a1a464005d2f820ed38122788",
+          "latency_ns": 17757,
+          "program": [
+            "rotate_r",
+            "rotate_r"
+          ],
+          "recognized": [
+            "rotate_r",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 77,
+          "label_sha256": "f94ffc398b2567b3df915c93fc9d2d92bfc9d5a226447bbdbe82306a1a0d41c4",
+          "latency_ns": 18893,
+          "program": [
+            "swap_first",
+            "rotate_r"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 78,
+          "label_sha256": "3cf67285c74a7719b2e7b510a43e9b382a48cfa4f3fc82279342e3b8e0a31d14",
+          "latency_ns": 18037,
+          "program": [
+            "rotate_r",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "rotate_r",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 79,
+          "label_sha256": "8797cb970bf3453c796dd95d12efd73bc4b020e1dd40ad343512ffa0692008de",
+          "latency_ns": 17780,
+          "program": [
+            "rotate_l",
+            "rotate_l"
+          ],
+          "recognized": [
+            "rotate_l",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 80,
+          "label_sha256": "b8c2a05c133f53415d715bdff5834017d7653c8a7fd32bd62c7030efbfb6b62e",
+          "latency_ns": 17689,
+          "program": [
+            "reverse",
+            "duplicate_last"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 81,
+          "label_sha256": "c160c1b621ad7b84a11a13f0723d0c7d181e07c7393b9b910e5278483ba5cb4d",
+          "latency_ns": 17824,
+          "program": [
+            "duplicate_last",
+            "rotate_l"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 82,
+          "label_sha256": "2dc27413e190f2e981f6be0589103d348e25d8466632061095c726177cbe85bb",
+          "latency_ns": 17735,
+          "program": [
+            "duplicate_last",
+            "rotate_r"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 83,
+          "label_sha256": "f394d70e2016f99df9317258ba3ea71870477ef35fae8ffaeb5e10716155fdaf",
+          "latency_ns": 17724,
+          "program": [
+            "swap_first"
+          ],
+          "recognized": [
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 84,
+          "label_sha256": "ab8f439de6d0b375d8bdcaac3594eee3e24245d5f0517306af945abfdabc1a83",
+          "latency_ns": 17822,
+          "program": [
+            "swap_first",
+            "rotate_l"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 85,
+          "label_sha256": "179161ea62c596653805645c4402b5f3d98af91500e222746bac042b0ddb755c",
+          "latency_ns": 18496,
+          "program": [
+            "reverse",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 86,
+          "label_sha256": "46abae424427bc9c5b3f5728fbcfd4b7c4e3557f374b915995b58e56aab19892",
+          "latency_ns": 17007,
+          "program": [
+            "reverse"
+          ],
+          "recognized": [
+            "reverse"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 87,
+          "label_sha256": "a8ba9d88d44b659e3ab14ce046159f66a0a401166a5dca47d806a7665412eb67",
+          "latency_ns": 17748,
+          "program": [
+            "rotate_l",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "rotate_l",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 88,
+          "label_sha256": "c860d005016ed0a2e43373099d697bd14ddbd93b6997864f8b6995506589cb7f",
+          "latency_ns": 19656,
+          "program": [
+            "duplicate_last",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 89,
+          "label_sha256": "8e98bd2e14acfab06347bb098205338b8ab193f0dd41c4fd750cbba4f902a157",
+          "latency_ns": 20196,
+          "program": [
+            "reverse",
+            "rotate_l"
+          ],
+          "recognized": null
+        }
+      ],
+      "checks_upper_bound": 13500,
+      "contradictory": 9,
+      "correct": 59,
+      "corrupt_abstentions": 9,
+      "exact_demo_cache_correct": 0,
+      "n": 90,
+      "seed": 9107,
+      "wrong_actions": 0
+    },
+    {
+      "admitted": 53,
+      "ambiguous": 28,
+      "average_induce_us": 19.372433333333333,
+      "cases": [
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 0,
+          "label_sha256": "455770049ff45f207d32749153f4aaed19a751fe000a0961f1a03efa5c597ae2",
+          "latency_ns": 18308,
+          "program": [
+            "duplicate_last"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 1,
+          "label_sha256": "209a24dfee2d1ebc8c6062285fbbe5fdbdfc19b49f06e2754a97aa6ff6f3130c",
+          "latency_ns": 21575,
+          "program": [
+            "swap_first",
+            "rotate_l"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 2,
+          "label_sha256": "e1d6761d60a7f92a67856c5007f0fb3a85039034eca8b943bc192255aa9be264",
+          "latency_ns": 23077,
+          "program": [
+            "swap_first",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 3,
+          "label_sha256": "2e7a31cce211a6e46731565b54a5ae9e6ee9420052f17634883452ef0691cf4c",
+          "latency_ns": 19854,
+          "program": [
+            "swap_first",
+            "rotate_r"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 4,
+          "label_sha256": "90bd0ef88b1dba150b3d8927af87c54af16205e3c4086efca0b5a0c3c212836e",
+          "latency_ns": 17770,
+          "program": [
+            "rotate_l",
+            "rotate_l"
+          ],
+          "recognized": [
+            "rotate_l",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 5,
+          "label_sha256": "712ad81d829b33c1ed0d8466919eec612214e19a7f4a7928d411eeacfc71d7d2",
+          "latency_ns": 18317,
+          "program": [
+            "rotate_l",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "rotate_l",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 6,
+          "label_sha256": "2b50b86b4e9541572f94c5e4d996875ee08e006019a9a247f1cf9e7ca8024386",
+          "latency_ns": 18083,
+          "program": [
+            "duplicate_last",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 7,
+          "label_sha256": "333b2ea03ddb4a08163e39cd81275c6b6dbe9011aae442bf666fbacc0bd5f92f",
+          "latency_ns": 22291,
+          "program": [
+            "swap_first",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 8,
+          "label_sha256": "d3123d1cccbe46ed7c0deec41d776ae71962f5d20d029cd13583b929a6ace50e",
+          "latency_ns": 19851,
+          "program": [
+            "duplicate_last",
+            "reverse"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "reverse"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 9,
+          "label_sha256": "07acff16fb53021e9ec5a105c87e4aac9758fcaa840234d66d19863432321ab0",
+          "latency_ns": 18340,
+          "program": [
+            "reverse",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "reverse",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 10,
+          "label_sha256": "0cf6c394e4902109d1001bf275019213e3cc07b42498b837a9dbef716494116d",
+          "latency_ns": 18839,
+          "program": [
+            "reverse",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 11,
+          "label_sha256": "36c471d02cc65bdfce5a9b64de264fd47897e5bafb82e87a22707661f64c1709",
+          "latency_ns": 17908,
+          "program": [
+            "duplicate_last",
+            "rotate_r"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 12,
+          "label_sha256": "9b08de5cb8fcabf4263afad2d8c942e35cae3dd99bc9c407ed043b75b8790025",
+          "latency_ns": 18508,
+          "program": [
+            "swap_first",
+            "reverse"
+          ],
+          "recognized": [
+            "swap_first",
+            "reverse"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 13,
+          "label_sha256": "dd165f05f9d89bee493c8154d5b5c45d7c5583cbaa4695333f7f5123c104ea0d",
+          "latency_ns": 17226,
+          "program": [
+            "swap_first"
+          ],
+          "recognized": [
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 14,
+          "label_sha256": "384e9857084cda96299c1734b4460ec6666da4e33bcf395bc7669675f3dfc129",
+          "latency_ns": 23462,
+          "program": [
+            "reverse",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 15,
+          "label_sha256": "e7444373110e13280b051efe409b7e35267ea4ba2326674fefaa4faa3daac93d",
+          "latency_ns": 18309,
+          "program": [
+            "reverse",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "reverse",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 16,
+          "label_sha256": "0b1666408b9891f186295411e3354ab851ccb6489048cf3e3bd0179789772817",
+          "latency_ns": 18173,
+          "program": [
+            "rotate_l",
+            "rotate_l"
+          ],
+          "recognized": [
+            "rotate_l",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 17,
+          "label_sha256": "44519c62a148c31342f3387d01676ec7a9887f50fe4951c41bd846c3f5e25c97",
+          "latency_ns": 17624,
+          "program": [
+            "rotate_r",
+            "rotate_r"
+          ],
+          "recognized": [
+            "rotate_r",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 18,
+          "label_sha256": "a7bb747a815c12c81c2d76093940e4379c3932f7c80bbba668f08224cc962b54",
+          "latency_ns": 18077,
+          "program": [
+            "duplicate_last"
+          ],
+          "recognized": [
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 19,
+          "label_sha256": "8b1bc8b4385b0c54d9caee1c11cdcd9c79539cc948f1bd705481bad36f94768c",
+          "latency_ns": 23461,
+          "program": [
+            "rotate_r",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 20,
+          "label_sha256": "0e59e248817805d6732e715eb039c4b481c237155e7b0166c10cedebf1d2bb2c",
+          "latency_ns": 18495,
+          "program": [
+            "rotate_l",
+            "duplicate_last"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 21,
+          "label_sha256": "9acdb21f3328421043b2b0bd5c6ae56bbbdc17f7ff7f1b94bc7bfd107b417b3f",
+          "latency_ns": 17696,
+          "program": [
+            "duplicate_last",
+            "reverse"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "reverse"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 22,
+          "label_sha256": "19cc40474449b6affa22956f7d65dedb79ef01b25ab8461d3c54a9c45fca1632",
+          "latency_ns": 20044,
+          "program": [
+            "duplicate_last",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 23,
+          "label_sha256": "8bc0386dfd6f38de1b6d95157904b8092035193bb5dbff99e125239ba1bb6cf4",
+          "latency_ns": 19296,
+          "program": [
+            "reverse",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 24,
+          "label_sha256": "2b1eb975b5537441efc9fa3403d655fd150639b2a2ed6ac2224658ef197fdbbc",
+          "latency_ns": 18838,
+          "program": [
+            "rotate_l",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 25,
+          "label_sha256": "b0ffebd7725e05c82a7b0ab519c892b19609e216a469b7f209a40b955653c607",
+          "latency_ns": 18208,
+          "program": [
+            "rotate_r",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "rotate_r",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 26,
+          "label_sha256": "35cfe4f5137a0e5af6584a694b4f66bd555920bf6b308ceb4fc16a86b3ce3b4a",
+          "latency_ns": 22288,
+          "program": [
+            "swap_first",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 27,
+          "label_sha256": "db14b8b1bd3d0ec25ee80df319d2c584e8b20e991d5e27e6f1a9e52b43659564",
+          "latency_ns": 21622,
+          "program": [
+            "swap_first",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 28,
+          "label_sha256": "941c34ff28cc26d5f37166f21ed4279a95dc5c620c863ed6e5add7632d2f1c1e",
+          "latency_ns": 19868,
+          "program": [
+            "reverse",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 29,
+          "label_sha256": "fc6874333aed46407bd525ff56b94a656b27edb67cac015770138015125e58ce",
+          "latency_ns": 17391,
+          "program": [
+            "duplicate_last",
+            "rotate_l"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 30,
+          "label_sha256": "985fe4a0c00f277a0a39af6fa23306093a9c307325b72cb066ef971a5b71798b",
+          "latency_ns": 18529,
+          "program": [
+            "rotate_l",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 31,
+          "label_sha256": "89b8af5f4901e4dbdc1923a4eccfe9d5d59a6b7b6af3e78f03433dd3d3254426",
+          "latency_ns": 22397,
+          "program": [
+            "rotate_l",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 32,
+          "label_sha256": "872082456f72374c5513b725839e991665b53ab5762f24af6dbdcc4e90ba3c87",
+          "latency_ns": 18118,
+          "program": [
+            "reverse",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "reverse",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 33,
+          "label_sha256": "6272ff3ba4cff26ce9d685e665a62a8e85260b7c658d98786a97fb6e7e6d27d7",
+          "latency_ns": 19424,
+          "program": [
+            "rotate_l",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 34,
+          "label_sha256": "ab98b2c8c3fa8a7b4b0f2c5e8ef37a0f7a210411728975d7dbcccd14126f3655",
+          "latency_ns": 18406,
+          "program": [
+            "swap_first",
+            "rotate_r"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 35,
+          "label_sha256": "251b70be5fcaf4b51493605bbdd7c43e0573b897127c22ee5613a1d905eda80d",
+          "latency_ns": 18824,
+          "program": [
+            "swap_first",
+            "rotate_l"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 36,
+          "label_sha256": "db8d36c562b2a9cba522eb309cd6403140a21ee8ae6f23e234f2274a8b74e164",
+          "latency_ns": 17710,
+          "program": [
+            "swap_first",
+            "rotate_r"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 37,
+          "label_sha256": "3da428dc89ac48ebbdfb4e571db9e1106191073311d1ad14e8278e6476dbacf1",
+          "latency_ns": 17719,
+          "program": [
+            "swap_first",
+            "rotate_l"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 38,
+          "label_sha256": "43350873abb1fd358c39b9ed47f193eeef97b9cc1ec171e233ace7b2264f009c",
+          "latency_ns": 18034,
+          "program": [
+            "swap_first",
+            "rotate_r"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 39,
+          "label_sha256": "7825a84159b6909f0f5aea296494590cfdb1a78b6a48a8aa854a82829d3e0090",
+          "latency_ns": 18273,
+          "program": [
+            "rotate_l"
+          ],
+          "recognized": [
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 40,
+          "label_sha256": "fc239fe6a8d1fb1e20287294d38f01e2b8521af043edfe4933d807ce9d31c207",
+          "latency_ns": 19693,
+          "program": [
+            "swap_first",
+            "duplicate_last"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 41,
+          "label_sha256": "faa2f9fa984bffdf5261bc774cd157df8f1ead157475407980f86eb74547886d",
+          "latency_ns": 20668,
+          "program": [
+            "reverse",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 42,
+          "label_sha256": "57fc092c1b1d6b73b91b11ea7d18f4917a35cc93d01b31cc0a61430c58d158da",
+          "latency_ns": 18181,
+          "program": [
+            "rotate_r",
+            "swap_first"
+          ],
+          "recognized": [
+            "rotate_r",
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 43,
+          "label_sha256": "92b5fbd3f12a7cd63c5dc1094bbdf84215708180294b44b8a924dfaebfe6534b",
+          "latency_ns": 20522,
+          "program": [
+            "swap_first",
+            "duplicate_last"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 44,
+          "label_sha256": "e5a3b612040f8b4830ace31b876bb45247c81c530453e0b1e306ae96cd8c85d8",
+          "latency_ns": 22514,
+          "program": [
+            "reverse",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 45,
+          "label_sha256": "e7c77df8dde5d166862232876f5f8a59fd58eef76d79119bf75d4b520b8d6e30",
+          "latency_ns": 18723,
+          "program": [
+            "duplicate_last",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 46,
+          "label_sha256": "08d03a51c7c29f29aeb304229ce6edc18c4a6c53e2deb22a470d298b0ecc2269",
+          "latency_ns": 18909,
+          "program": [
+            "swap_first",
+            "rotate_l"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 47,
+          "label_sha256": "9fd7b2f896055b42245b90500e6984686ef86a5af490e1ae42d6d5ef438dc569",
+          "latency_ns": 19204,
+          "program": [
+            "rotate_l",
+            "rotate_l"
+          ],
+          "recognized": [
+            "rotate_l",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 48,
+          "label_sha256": "0af6247301158a0d119707bd11d7d19598d7f573ba7d71f783a88bb91b16939c",
+          "latency_ns": 21929,
+          "program": [
+            "rotate_r",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 49,
+          "label_sha256": "038ae4ba4ef3d8203413fcbbfd1cee3741771d3c5122b84171fc1c4ba8650afe",
+          "latency_ns": 18105,
+          "program": [
+            "swap_first",
+            "rotate_r"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 50,
+          "label_sha256": "bea37753736af7626c5c3e405ad55991aebd96e65632621b9481670a735fdcec",
+          "latency_ns": 18293,
+          "program": [
+            "swap_first",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 51,
+          "label_sha256": "918be3be34f08a43e2166af45746b375578cbcd3ad499f296a25a05e7b3b3321",
+          "latency_ns": 19587,
+          "program": [
+            "reverse",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 52,
+          "label_sha256": "1059b03bec1572d7f108d24c6d3b253920a74cac1fb8a3964f57c27475659d07",
+          "latency_ns": 17853,
+          "program": [
+            "rotate_l",
+            "rotate_l"
+          ],
+          "recognized": [
+            "rotate_l",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 53,
+          "label_sha256": "33b936460b2b7fbb32afe1ef08ad83a5ef01ac149851ef377f0b7ddd83b26aeb",
+          "latency_ns": 19378,
+          "program": [
+            "duplicate_last",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 54,
+          "label_sha256": "0267df49090d98f68f985583a133c476c8fce5aa949da54c3665c8d7b8063e29",
+          "latency_ns": 19374,
+          "program": [
+            "rotate_r",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 55,
+          "label_sha256": "05878c692e913f1fbd863d0bd32a5c4d7a82933e1fb01d55597a7f27d4c44ada",
+          "latency_ns": 17690,
+          "program": [
+            "rotate_l",
+            "swap_first"
+          ],
+          "recognized": [
+            "rotate_l",
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 56,
+          "label_sha256": "e062fee650829cbb80fdc7f9ffddf8aff27ae602a45ee3f258b37e0bb2fd77a0",
+          "latency_ns": 18226,
+          "program": [
+            "rotate_r",
+            "rotate_r"
+          ],
+          "recognized": [
+            "rotate_r",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 57,
+          "label_sha256": "0ff073774bd09170180bb90b4ebfbf532acf53f0ac6f8cfd7601aacb4eb3e08b",
+          "latency_ns": 17457,
+          "program": [
+            "duplicate_last"
+          ],
+          "recognized": [
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 58,
+          "label_sha256": "3c3d00c7334f4bf748cedbeeb7e6e11d6ff25a2d49d3f4c7dae7546ec357e235",
+          "latency_ns": 17580,
+          "program": [
+            "swap_first"
+          ],
+          "recognized": [
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 59,
+          "label_sha256": "ae2056be8d314e5dd672829f3cba84420e5912db495f9759c622167fde9cde04",
+          "latency_ns": 17898,
+          "program": [
+            "duplicate_last",
+            "reverse"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "reverse"
+          ]
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 60,
+          "label_sha256": "eef6bfb9b213f527e05da0cf598ff9b4c1af2662a002d115817310d6bd62c9ef",
+          "latency_ns": 19668,
+          "program": [
+            "duplicate_last",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 61,
+          "label_sha256": "adeedb9b59df7c8f678ba0fc6b9d7d7eccca0664d551b797132fae8e1c691499",
+          "latency_ns": 18268,
+          "program": [
+            "rotate_r",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "rotate_r",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 62,
+          "label_sha256": "a12217039cc2577fcbe5bd9d31dd871d662a27f08a52e8c3a7d16e33842efb50",
+          "latency_ns": 17981,
+          "program": [
+            "rotate_r",
+            "swap_first"
+          ],
+          "recognized": [
+            "rotate_r",
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 63,
+          "label_sha256": "3299130c5a8e61117e4eaefd666d1278694e0415d311062fc46daec3a4cd91fe",
+          "latency_ns": 17136,
+          "program": [
+            "rotate_l",
+            "rotate_l"
+          ],
+          "recognized": [
+            "rotate_l",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 64,
+          "label_sha256": "b7265728040964a9916cb992c40ae4444b326cc3b7de53b70ee8d58b15ce49c8",
+          "latency_ns": 17602,
+          "program": [
+            "rotate_r",
+            "rotate_r"
+          ],
+          "recognized": [
+            "rotate_r",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 65,
+          "label_sha256": "e25d834187e2b28d4ac3e0cc1221a0c88b817a4427d1cb05e3febcd8021dcb0d",
+          "latency_ns": 17892,
+          "program": [
+            "duplicate_last",
+            "rotate_r"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 66,
+          "label_sha256": "bb1a44d0af2b486d8eed54d0d6bf02937fbe72041d05b0eeda43fd903c4adc30",
+          "latency_ns": 17978,
+          "program": [
+            "duplicate_last",
+            "rotate_r"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 67,
+          "label_sha256": "9944ba520caf193d3858f0a91375e748a1f258970b50722362226bbe444aab1c",
+          "latency_ns": 21748,
+          "program": [
+            "rotate_r",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 68,
+          "label_sha256": "8914060d3f1e3d2e92346934936f3ef8789cd3ce41bb10030ef98777611678cf",
+          "latency_ns": 17472,
+          "program": [
+            "rotate_r",
+            "swap_first"
+          ],
+          "recognized": [
+            "rotate_r",
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 69,
+          "label_sha256": "19d9e8aedef661eb821cc12ba09c58d8f275b8ee041704fa52bdc8ba8e00c74f",
+          "latency_ns": 17256,
+          "program": [
+            "duplicate_last"
+          ],
+          "recognized": [
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 70,
+          "label_sha256": "343d75017a699afb2b038e49d9ab37bab61fd45f6090233d92cf6ca8ccdaa7b5",
+          "latency_ns": 17337,
+          "program": [
+            "duplicate_last",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 71,
+          "label_sha256": "fbd0e5832752be39bfd6e355212f5a72c8a0927cac481f0b8f058a4d22346bb3",
+          "latency_ns": 19135,
+          "program": [
+            "duplicate_last",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 72,
+          "label_sha256": "dfc81be96570d08b529cf9e695c48a754054ab6a5bbd41e98835c034c6ce86c3",
+          "latency_ns": 47194,
+          "program": [
+            "reverse",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 73,
+          "label_sha256": "fc5315af5a7621f6830693ea4fe31f02b1db5811a3e335b4b9f9a882c4142e09",
+          "latency_ns": 19884,
+          "program": [
+            "rotate_l",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 74,
+          "label_sha256": "99d8d1b33f60618873d6b43058543e81bc786984bcf92d5f14a73e9e8cab3ed2",
+          "latency_ns": 18641,
+          "program": [
+            "reverse",
+            "swap_first"
+          ],
+          "recognized": [
+            "reverse",
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 75,
+          "label_sha256": "3167bc269e66d4c1ec58707bfde65786cb752a448fa59f01772c660231a94bd2",
+          "latency_ns": 17593,
+          "program": [
+            "rotate_r"
+          ],
+          "recognized": [
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 76,
+          "label_sha256": "1594549f927320ab238dc34440491e29d525326ef8007299bdfba046a43b514c",
+          "latency_ns": 17398,
+          "program": [
+            "duplicate_last",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 77,
+          "label_sha256": "ed86a9f983ec47681005229f30579a6591fce04538a91699ab605e90d0eb0487",
+          "latency_ns": 19381,
+          "program": [
+            "reverse",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 78,
+          "label_sha256": "7e9b559e9584103a0d1c16d9c0139fffb14b1771cebb9cb593be703b5873fd94",
+          "latency_ns": 24482,
+          "program": [
+            "swap_first",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 79,
+          "label_sha256": "fda5f6547c957b561bfb4118b1d86a9384030a9eeb7468a4e8fe77c5911b7bee",
+          "latency_ns": 17602,
+          "program": [
+            "rotate_l",
+            "swap_first"
+          ],
+          "recognized": [
+            "rotate_l",
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 80,
+          "label_sha256": "551c74d65ef6c3d81e360c55cc27957a92110588a6b6bbba71ed9de4ca99f808",
+          "latency_ns": 18590,
+          "program": [
+            "rotate_r",
+            "duplicate_last"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 81,
+          "label_sha256": "900e48a66b726ef676e66f4abd15d65dd1f86e63b7408baf792362876a29ac41",
+          "latency_ns": 17677,
+          "program": [
+            "duplicate_last",
+            "rotate_l"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 82,
+          "label_sha256": "328237066c8fc2f24dc86cae2fd84b8fc614399b2e29b988be73ea530fc59862",
+          "latency_ns": 19880,
+          "program": [
+            "duplicate_last",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 83,
+          "label_sha256": "f66d4ec757a4d2bab6940ccc568ae807c8f9d0ae0c00c0fa7d5b686fb5614786",
+          "latency_ns": 18741,
+          "program": [
+            "swap_first",
+            "rotate_l"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 84,
+          "label_sha256": "ae04d24bb485db6cf0288ad8aee5bcb6964518efffb10d88cbda0bf00ce2e9f3",
+          "latency_ns": 22039,
+          "program": [
+            "swap_first",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 85,
+          "label_sha256": "9b4d6f3f9801cdff699f71b55dd8aa7ee694f378f35a980119860bea1dd76571",
+          "latency_ns": 18333,
+          "program": [
+            "rotate_l",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "rotate_l",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 86,
+          "label_sha256": "cda7b308902fa11669664dbec15502441e8e1b6ac62563ea30acbd57cf24e173",
+          "latency_ns": 18659,
+          "program": [
+            "duplicate_last",
+            "reverse"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "reverse"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 87,
+          "label_sha256": "329d95602e2fa1f9f6c5a64ee5a578b93694179fc26b1481dc7cd1b7f013caa3",
+          "latency_ns": 17544,
+          "program": [
+            "duplicate_last",
+            "rotate_l"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 88,
+          "label_sha256": "09f6bf8ee0483f3d368109c3b5b3842d59f5036f186d50376cccda46f9940be0",
+          "latency_ns": 18555,
+          "program": [
+            "duplicate_last",
+            "rotate_r"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 89,
+          "label_sha256": "220a169f90b01243a10f599ba0211d9232ea78fe8523254737eea5f1a1de8844",
+          "latency_ns": 19836,
+          "program": [
+            "swap_first",
+            "duplicate_last"
+          ],
+          "recognized": null
+        }
+      ],
+      "checks_upper_bound": 13500,
+      "contradictory": 9,
+      "correct": 62,
+      "corrupt_abstentions": 9,
+      "exact_demo_cache_correct": 0,
+      "n": 90,
+      "seed": 9203,
+      "wrong_actions": 0
+    },
+    {
+      "admitted": 47,
+      "ambiguous": 34,
+      "average_induce_us": 19.957755555555554,
+      "cases": [
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 0,
+          "label_sha256": "780ae3350d35c40fdcd76fa1a54512e90a9f454735a8a05c9cfe739b7286609c",
+          "latency_ns": 18963,
+          "program": [
+            "rotate_l",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 1,
+          "label_sha256": "17c8ec1b6967e4e35bc1a3da8c4762795f496fa18c41935733efff2f96c40969",
+          "latency_ns": 20750,
+          "program": [
+            "reverse",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 2,
+          "label_sha256": "3ae355ddf3de718cf28abf8f293481dcdcd027172939b5d39b2d7daf721f0126",
+          "latency_ns": 17412,
+          "program": [
+            "reverse",
+            "swap_first"
+          ],
+          "recognized": [
+            "reverse",
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 3,
+          "label_sha256": "d81f7ffd3d4034394a380dbaafb741b07d27735c7672cacc981fee3a7d8f1298",
+          "latency_ns": 19589,
+          "program": [
+            "rotate_l",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 4,
+          "label_sha256": "4b8dcf9fb6b3cccb5e62f80171f5cc259088009137151ca74ddec184a1185ad0",
+          "latency_ns": 16968,
+          "program": [
+            "reverse"
+          ],
+          "recognized": [
+            "reverse"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 5,
+          "label_sha256": "ebc6762e6fce11dab0dd204f59eb7a4bc50bdb68201ab7faf37f871a86d80141",
+          "latency_ns": 19575,
+          "program": [
+            "rotate_l",
+            "swap_first"
+          ],
+          "recognized": [
+            "rotate_l",
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 6,
+          "label_sha256": "39f685ea04d346889a0a2a5474672a59d47b33f40db72e79b77e390fde2abfae",
+          "latency_ns": 22441,
+          "program": [
+            "rotate_r",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 7,
+          "label_sha256": "160a43dedf0231697385901bcfa6037dd599d0f425e7075b0a65f97424b6d710",
+          "latency_ns": 20277,
+          "program": [
+            "duplicate_last",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 8,
+          "label_sha256": "02993d54efeee800f8320d8e001445e736969196f36a08617f35049599b6fa5e",
+          "latency_ns": 18729,
+          "program": [
+            "duplicate_last",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 9,
+          "label_sha256": "b1e0aec819c391f5e34d00efdce459f9e50eb4f722b00845a3f05f036ab4a389",
+          "latency_ns": 18304,
+          "program": [
+            "duplicate_last",
+            "rotate_l"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 10,
+          "label_sha256": "764584f4ab15ea8ed3d4296f8895254c98440358194a793f996232a5dacdebdd",
+          "latency_ns": 17919,
+          "program": [
+            "duplicate_last",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 11,
+          "label_sha256": "dfda7fb30d7e794b671878652ac962b4ee62b4645197f27ff0f1d7c63a623551",
+          "latency_ns": 17607,
+          "program": [
+            "swap_first"
+          ],
+          "recognized": [
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 12,
+          "label_sha256": "e06b2a878eb405e777bd7820ede643f7bf48aac4aefbb8f9026e72514b646e23",
+          "latency_ns": 18398,
+          "program": [
+            "rotate_l",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "rotate_l",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 13,
+          "label_sha256": "464925e26d40fa0cef9dd86a7c47f85efb3dcc8be96cfc1cf600c541c7abb7f7",
+          "latency_ns": 22599,
+          "program": [
+            "rotate_l",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 14,
+          "label_sha256": "c3c667fc33c6d0da468a76869c3b12170ad733489d8496828b11c91da9c91d25",
+          "latency_ns": 19441,
+          "program": [
+            "duplicate_last",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 15,
+          "label_sha256": "5cfc27406c41ab675a20944dddb86dd63fc49bca158603d4e30b34ce0b4272dd",
+          "latency_ns": 18170,
+          "program": [
+            "swap_first",
+            "rotate_l"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 16,
+          "label_sha256": "d491450f6acc0c5ab6a611884a91345bb87d9da5338dc2bf475d4b9725d66c84",
+          "latency_ns": 17406,
+          "program": [
+            "rotate_r"
+          ],
+          "recognized": [
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 17,
+          "label_sha256": "e8f6fc696be76596b4ac7e8a12bcddd2d2d3af6f2af2dfb63edf958405a2c21f",
+          "latency_ns": 18956,
+          "program": [
+            "reverse",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 18,
+          "label_sha256": "2da0a562ac21e09f0d59e27a40500e27f49f6cd43d1df53f4810354fc0e41ceb",
+          "latency_ns": 18357,
+          "program": [
+            "swap_first",
+            "rotate_l"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 19,
+          "label_sha256": "b90668169ba54e6c0b616dfbd7ce1e716e626ae03db6e720f9bb7d7368f3d1be",
+          "latency_ns": 22043,
+          "program": [
+            "reverse",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 20,
+          "label_sha256": "892cb370077945e5549a7afecdfa04f2e69a06d818b4ed65b7f8c41c54de1292",
+          "latency_ns": 18062,
+          "program": [
+            "rotate_r",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 21,
+          "label_sha256": "6105be19bc4491e31c27a075214487669e3fce4649321f3343e1bb6b000933b8",
+          "latency_ns": 19494,
+          "program": [
+            "rotate_r",
+            "swap_first"
+          ],
+          "recognized": [
+            "rotate_r",
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 22,
+          "label_sha256": "e4c4eaeecdfaca33ad8a4deea1d84c4d0d1ed481a9febb7fee3ecbcfc2065b83",
+          "latency_ns": 17817,
+          "program": [
+            "duplicate_last",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 23,
+          "label_sha256": "53f3e19f49885c6296c8d1f32ed372364dcc1a134fabd9a58dd84ef2c2454e31",
+          "latency_ns": 21682,
+          "program": [
+            "rotate_l",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 24,
+          "label_sha256": "1cbd83ae62051c10f5decb8f23ae3b1b974120efd2dc31b345997bcb29ea80b9",
+          "latency_ns": 19113,
+          "program": [
+            "reverse",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 25,
+          "label_sha256": "8f8e6fc60ac361d1fd4a697f371ff50d2d031b9df6f3192653cead0a0ef7b745",
+          "latency_ns": 17416,
+          "program": [
+            "swap_first",
+            "rotate_l"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 26,
+          "label_sha256": "269be29c57a7e725e93c4f19c01472daaa969f576749c0430e1dc29a1dfede31",
+          "latency_ns": 19784,
+          "program": [
+            "duplicate_last",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 27,
+          "label_sha256": "7cd114778cc5048ec6e32d025ee5b11e5fd0325a9e1c0d984342e12ee44605d2",
+          "latency_ns": 17480,
+          "program": [
+            "swap_first",
+            "rotate_l"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 28,
+          "label_sha256": "b8efda7bfab029bddb610af1607301af32a6dbefa9c4c5d795794b56c1eaa38c",
+          "latency_ns": 20837,
+          "program": [
+            "reverse",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 29,
+          "label_sha256": "9fcd42e961d0a223211e2cda35874925ad25767d2d93db4851d39c9f1e6a04db",
+          "latency_ns": 18718,
+          "program": [
+            "reverse",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 30,
+          "label_sha256": "cfd9e3dcffd51054e7f1272777006bee136b2f70f170662d20f569bf954ddf23",
+          "latency_ns": 21127,
+          "program": [
+            "rotate_r",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 31,
+          "label_sha256": "a43894c51cceab7aef3591cee117ee7b79ec6e04a8e872497a9ea76d6c1b2b7f",
+          "latency_ns": 19472,
+          "program": [
+            "rotate_l",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 32,
+          "label_sha256": "0558a084f6fec56eb6f0b77ab443d2942c7da36618c94db6e31058150a00e2a0",
+          "latency_ns": 19358,
+          "program": [
+            "rotate_r",
+            "swap_first"
+          ],
+          "recognized": [
+            "rotate_r",
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 33,
+          "label_sha256": "af5f2bd6e1f716109bdae62acc5b5153001b1002c9416c6cad20ab6bc6a498e4",
+          "latency_ns": 18222,
+          "program": [
+            "rotate_r",
+            "swap_first"
+          ],
+          "recognized": [
+            "rotate_r",
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 34,
+          "label_sha256": "54c08e655d281d07c03f14d2d854dc968d2897e85818a00a52c9e2cc5a3fc74f",
+          "latency_ns": 18420,
+          "program": [
+            "duplicate_last",
+            "rotate_l"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 35,
+          "label_sha256": "0d8db5a808ea205964a37e4ee773093d0f66fefab436f79d886184604ab270cb",
+          "latency_ns": 18170,
+          "program": [
+            "duplicate_last",
+            "rotate_r"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 36,
+          "label_sha256": "472d45361cefa3e272758c74d4918952b630ca2b1bf8e5fe6117f952771b6bb4",
+          "latency_ns": 17780,
+          "program": [
+            "duplicate_last"
+          ],
+          "recognized": [
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 37,
+          "label_sha256": "b9f93a0b5dfe2fe402b097608424c00b0b64771db39750a332c9b7c8506b9a78",
+          "latency_ns": 17851,
+          "program": [
+            "rotate_r",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "rotate_r",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 38,
+          "label_sha256": "e592c4a88ae92982dbf84640e484c3b98288678acd0feeae1fe6bb8420a3a330",
+          "latency_ns": 19391,
+          "program": [
+            "reverse",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 39,
+          "label_sha256": "3f453e3d7c58773e7214b35743954d33a821b413af45ddb6745a07adeac34de4",
+          "latency_ns": 18998,
+          "program": [
+            "reverse",
+            "swap_first"
+          ],
+          "recognized": [
+            "reverse",
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 40,
+          "label_sha256": "25317600e14839da2ed7ae80a5aa0102b19a4e78f1dd585f414a98662b8a4d92",
+          "latency_ns": 21911,
+          "program": [
+            "reverse",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 41,
+          "label_sha256": "f1f0fdfe65ddab8f0ed53ad6e9d858db1d50ceaa74ae8de27650821368b88744",
+          "latency_ns": 18972,
+          "program": [
+            "duplicate_last",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 42,
+          "label_sha256": "7e53a646917e4ea0638d640f3192ffce955e4e240361e0a08f4ec56d34db2833",
+          "latency_ns": 18395,
+          "program": [
+            "rotate_l",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "rotate_l",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 43,
+          "label_sha256": "da5789580231074884cdb153c97539bbd66d9d14f25381e27ceff15d975c23e8",
+          "latency_ns": 19855,
+          "program": [
+            "swap_first"
+          ],
+          "recognized": [
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 44,
+          "label_sha256": "60234f468cf150f096efea07569c4693148e0b65a5d4c6ba498e5bfaa9a932d7",
+          "latency_ns": 17327,
+          "program": [
+            "reverse"
+          ],
+          "recognized": [
+            "reverse"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 45,
+          "label_sha256": "5f12706a62b825a3598a5dba357e427a62ae6603484b79f21a47b28ff1494ac0",
+          "latency_ns": 23678,
+          "program": [
+            "rotate_r",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 46,
+          "label_sha256": "433e0f24ac6fd18fd2d7bde59c77801de410977053611f003d4765be797ea205",
+          "latency_ns": 21980,
+          "program": [
+            "rotate_l",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 47,
+          "label_sha256": "969c9c78f51f0d87755df78004754bf842e3290ad83c702689cf621a3b664236",
+          "latency_ns": 18945,
+          "program": [
+            "duplicate_last",
+            "rotate_r"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 48,
+          "label_sha256": "f301efa4a65dc41cb16a4d1cdc28711b27f5860ea07e5c14ce75c62ca2b43c59",
+          "latency_ns": 19640,
+          "program": [
+            "swap_first",
+            "duplicate_last"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 49,
+          "label_sha256": "434a1ed593074f42f186dfac93e1ccc0ea4b4baa553cbc661114045470c80b82",
+          "latency_ns": 23360,
+          "program": [
+            "rotate_l",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 50,
+          "label_sha256": "de3ad8816a4d5e46e8a00f47762137ec757e8defbc117f58fb5fe6a62ff15ea6",
+          "latency_ns": 16988,
+          "program": [
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 51,
+          "label_sha256": "8cbd107d03d5ecb475bb09d29a866a594123e56cdea8653df7834ea3e5db559d",
+          "latency_ns": 18816,
+          "program": [
+            "swap_first",
+            "reverse"
+          ],
+          "recognized": [
+            "swap_first",
+            "reverse"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 52,
+          "label_sha256": "ae4184910e2d4b4b3a3cc87f1c8d71c76b01a9c6f5d3d12ce2b4f9a512803f13",
+          "latency_ns": 17832,
+          "program": [
+            "swap_first",
+            "rotate_l"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 53,
+          "label_sha256": "8e18bd27adb6ec1f6e1ee3c687f0065b44c695f96e88e77b464bb3ba151d3e08",
+          "latency_ns": 18019,
+          "program": [
+            "swap_first"
+          ],
+          "recognized": [
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 54,
+          "label_sha256": "c68b5a54a6bf573ae01409db221bdb127c3f7339f954a48cabf250bf2e58b96e",
+          "latency_ns": 21493,
+          "program": [
+            "reverse",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 55,
+          "label_sha256": "c2ab8d0306432061024a77547b2d2fddfce229a6408c8d0eb88fb2b1aff2fe7a",
+          "latency_ns": 17587,
+          "program": [
+            "rotate_r"
+          ],
+          "recognized": [
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 56,
+          "label_sha256": "cf06ca520cdfb900d93306b664e35b6633010bd521b1979de8e0a00668eefb2e",
+          "latency_ns": 17940,
+          "program": [
+            "swap_first"
+          ],
+          "recognized": [
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 57,
+          "label_sha256": "b928b98007f1cbc3ab34bddafebff17c3c8c73f2617663139482f68fc46e82dd",
+          "latency_ns": 36395,
+          "program": [
+            "reverse",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 58,
+          "label_sha256": "08aa67258d72f263f0f85dee8c6dca93fda6dcf6ecff4832f1897ef9bc7c74a3",
+          "latency_ns": 18019,
+          "program": [
+            "swap_first",
+            "rotate_l"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 59,
+          "label_sha256": "e9fee315c5f6bf7441a8c4dc10682ab7387f8fe2500221d31a1af7a1976c5961",
+          "latency_ns": 19197,
+          "program": [
+            "rotate_l",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 60,
+          "label_sha256": "67113018167355e445ac1c4e1df8ba465821f09311923bd7c01e568ff468d011",
+          "latency_ns": 21565,
+          "program": [
+            "rotate_r",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 61,
+          "label_sha256": "9aa45ebb0817841f92fba3b33979f422f976390c5ba234fa26fb83557c6934f8",
+          "latency_ns": 22028,
+          "program": [
+            "duplicate_last",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 62,
+          "label_sha256": "9a6a862b20d900574c661b70c7b08d367e49660fe6de1e2d0b995fbf1d10918a",
+          "latency_ns": 19537,
+          "program": [
+            "reverse",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 63,
+          "label_sha256": "65bc7760c93f54cba174cfbdc5db3db52b7114d44c5929b167dee3339dad2ac0",
+          "latency_ns": 19433,
+          "program": [
+            "rotate_r",
+            "rotate_r"
+          ],
+          "recognized": [
+            "rotate_r",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 64,
+          "label_sha256": "42c72e94f7a5170ee6a3733772ea5e0c1c3c9780da3898351367e290a9e5a16b",
+          "latency_ns": 18673,
+          "program": [
+            "rotate_l",
+            "duplicate_last"
+          ],
+          "recognized": [
+            "rotate_l",
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 65,
+          "label_sha256": "00f993202d933b0047744ae8cc132915734b08e6c6b0257656a9372e07ca44f8",
+          "latency_ns": 17989,
+          "program": [
+            "swap_first",
+            "rotate_r"
+          ],
+          "recognized": [
+            "swap_first",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 66,
+          "label_sha256": "86a7f329650b2a31d53266bc016b74e65a50d3476100f33ec3c312ac28f91b20",
+          "latency_ns": 17410,
+          "program": [
+            "swap_first"
+          ],
+          "recognized": [
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 67,
+          "label_sha256": "5ee7d838f0ae857a8cb8183b6f27d065a4ce31bb3a350dee846681a91157e2ff",
+          "latency_ns": 19648,
+          "program": [
+            "duplicate_last"
+          ],
+          "recognized": [
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 68,
+          "label_sha256": "ed2c089c01f3552149d8835dac9bd70afd62960261e26125d4bffcf3827b3768",
+          "latency_ns": 21985,
+          "program": [
+            "reverse",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 69,
+          "label_sha256": "00cc3dcc7a08544f06d9c7635cbd396bcbbb4215f91d245bb3f42134bea08956",
+          "latency_ns": 18608,
+          "program": [
+            "reverse",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 70,
+          "label_sha256": "befe4aa12783bc7da07901d058ffda303a0b1e59a27b1c06f29c7939c05d4cce",
+          "latency_ns": 17995,
+          "program": [
+            "duplicate_last"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 71,
+          "label_sha256": "e622200d7e590c821ba1c529481680a935ef6a6e49041047154228b4035e9a94",
+          "latency_ns": 17902,
+          "program": [
+            "duplicate_last"
+          ],
+          "recognized": [
+            "duplicate_last"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 72,
+          "label_sha256": "08b532fcd5ef2c68bb88105c2504ee45e1231d98560e69b04849a4d413198171",
+          "latency_ns": 23409,
+          "program": [
+            "reverse",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 73,
+          "label_sha256": "d0cb25016caf298a183bfa237b6861a62a3c691d2d49bb92949ef38470ca417e",
+          "latency_ns": 17769,
+          "program": [
+            "duplicate_last",
+            "rotate_r"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 74,
+          "label_sha256": "ef1b42acdd17bc0af947dcfa3201850a0dc8fab1078034d3f52312ad59fe040d",
+          "latency_ns": 20748,
+          "program": [
+            "swap_first",
+            "duplicate_last"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 75,
+          "label_sha256": "676fdb1911f6e69947b95f9498f30ee8700b6786e073b686c3f30d903289e597",
+          "latency_ns": 17906,
+          "program": [
+            "swap_first",
+            "reverse"
+          ],
+          "recognized": [
+            "swap_first",
+            "reverse"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 76,
+          "label_sha256": "7b1517853bceece51e297a4319cbd1daa07f4573ae7d75f658868091a7838247",
+          "latency_ns": 17807,
+          "program": [
+            "rotate_r"
+          ],
+          "recognized": [
+            "rotate_r"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 77,
+          "label_sha256": "95055bd08793db4ec80ac7e954dc8a93c28c9b207ff8e37747a091fdadbaacbc",
+          "latency_ns": 17458,
+          "program": [
+            "rotate_l"
+          ],
+          "recognized": [
+            "rotate_l"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 78,
+          "label_sha256": "e31f12d7eb04323b344c6d674bc9c093c11a91b3f0bdb920dc6c3e8a40b5f6b6",
+          "latency_ns": 44673,
+          "program": [
+            "rotate_l",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 79,
+          "label_sha256": "1b58d3b982f022c9259257f2a87f18c7b295eb4ff94750bcfdb258bb64d49f5b",
+          "latency_ns": 18732,
+          "program": [
+            "rotate_l",
+            "reverse"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 0,
+          "correct": true,
+          "corrupt": true,
+          "ep": 80,
+          "label_sha256": "f69c4e49c5b6bed4bdac27aec3f5350b4c98eb17472d802689bfdf915e7b1a83",
+          "latency_ns": 18341,
+          "program": [
+            "swap_first",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 81,
+          "label_sha256": "e821383be1d63f08ca50366835b784391b4d915bcb1645732ee6957ab6a20ec3",
+          "latency_ns": 19419,
+          "program": [
+            "reverse",
+            "rotate_l"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 82,
+          "label_sha256": "e033d0fe171b600fede61b2b4f7a7a324b91de90978f20f9def293e3e2fd5c10",
+          "latency_ns": 18314,
+          "program": [
+            "duplicate_last",
+            "reverse"
+          ],
+          "recognized": [
+            "duplicate_last",
+            "reverse"
+          ]
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 83,
+          "label_sha256": "5cfe33ede0740e91563c4a6c626b9030ba8bd034ab190e4b920c6cfa2f7f8d58",
+          "latency_ns": 18352,
+          "program": [
+            "rotate_r",
+            "swap_first"
+          ],
+          "recognized": [
+            "rotate_r",
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 84,
+          "label_sha256": "a649a844b847ce00ce32b123ec189dbb164b942eae07c99bc894b13e5706e715",
+          "latency_ns": 21415,
+          "program": [
+            "swap_first",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 85,
+          "label_sha256": "f537ed52f4a05b9f9ae6a3c35ce69511c109b280fd25008b8de3faffb69a9830",
+          "latency_ns": 37421,
+          "program": [
+            "swap_first",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 86,
+          "label_sha256": "665ad4d0e8b1617bb7797b9f63cfe28c85c501083a684b70b31c90759005abe1",
+          "latency_ns": 22452,
+          "program": [
+            "rotate_l",
+            "rotate_r"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 4,
+          "correct": false,
+          "corrupt": false,
+          "ep": 87,
+          "label_sha256": "f2c9262749cb308659be643880dc32f8a7945025647da7df2a76bf8255366f1d",
+          "latency_ns": 22097,
+          "program": [
+            "swap_first",
+            "swap_first"
+          ],
+          "recognized": null
+        },
+        {
+          "candidates": 1,
+          "correct": true,
+          "corrupt": false,
+          "ep": 88,
+          "label_sha256": "77a897686915b974469b7398a095ab230fc54797d301f02a574b7dc33247d579",
+          "latency_ns": 17737,
+          "program": [
+            "swap_first"
+          ],
+          "recognized": [
+            "swap_first"
+          ]
+        },
+        {
+          "candidates": 2,
+          "correct": false,
+          "corrupt": false,
+          "ep": 89,
+          "label_sha256": "0c4a6a51b3c80149ec9f24cc3416ea548fb7882d0ddfcae58b7ad5b588aaffe1",
+          "latency_ns": 19930,
+          "program": [
+            "duplicate_last",
+            "swap_first"
+          ],
+          "recognized": null
+        }
+      ],
+      "checks_upper_bound": 13500,
+      "contradictory": 9,
+      "correct": 56,
+      "corrupt_abstentions": 9,
+      "exact_demo_cache_correct": 0,
+      "n": 90,
+      "seed": 9301,
+      "wrong_actions": 0
+    }
+  ]
+}

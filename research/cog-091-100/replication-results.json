@@ -1,0 +1,2220 @@
+{
+  "by_seed": [
+    {
+      "controls": {
+        "lexical_first": 18,
+        "n": 60,
+        "seed": 9409
+      },
+      "hypotheses": {
+        "ambiguous_n": 12,
+        "clarification_recoverable": 10,
+        "correct": 59,
+        "defer_on_ambiguity": 12,
+        "dev_composite": 2.0,
+        "n": 60,
+        "pair_top2": 10,
+        "seed": 9409,
+        "selected_epoch": 11
+      },
+      "models": [
+        {
+          "ambiguous_n": 12,
+          "ambiguous_pair_top2": 0,
+          "by_kind": {
+            "familiar": {
+              "correct": 8,
+              "n": 30
+            },
+            "unseen_inflection": {
+              "correct": 8,
+              "n": 30
+            }
+          },
+          "correct": 16,
+          "dev_best": 0.42500001192092896,
+          "errors": [
+            {
+              "confidence": 0.8025,
+              "predicted": 0,
+              "target": 1,
+              "text": "please schedule actually cancelling"
+            },
+            {
+              "confidence": 0.8605,
+              "predicted": 0,
+              "target": 1,
+              "text": "please scheduled actually cancelled"
+            },
+            {
+              "confidence": 0.6649,
+              "predicted": 0,
+              "target": 1,
+              "text": "do not schedule choose cancelling instead"
+            },
+            {
+              "confidence": 0.705,
+              "predicted": 0,
+              "target": 1,
+              "text": "do not scheduled choose cancelled instead"
+            },
+            {
+              "confidence": 0.7647,
+              "predicted": 1,
+              "target": 0,
+              "text": "please schedule rather than cancelling"
+            },
+            {
+              "confidence": 0.6018,
+              "predicted": 1,
+              "target": 0,
+              "text": "please scheduled rather than cancelled"
+            },
+            {
+              "confidence": 0.8175,
+              "predicted": 1,
+              "target": 0,
+              "text": "use schedule not cancelling"
+            },
+            {
+              "confidence": 0.6354,
+              "predicted": 1,
+              "target": 0,
+              "text": "use scheduled not cancelled"
+            },
+            {
+              "confidence": 0.282,
+              "predicted": 0,
+              "target": 3,
+              "text": "please schedule actually assigning"
+            },
+            {
+              "confidence": 0.4423,
+              "predicted": 0,
+              "target": 3,
+              "text": "please scheduled actually assigned"
+            },
+            {
+              "confidence": 0.3157,
+              "predicted": 0,
+              "target": 3,
+              "text": "do not schedule choose assigning instead"
+            },
+            {
+              "confidence": 0.4114,
+              "predicted": 0,
+              "target": 3,
+              "text": "do not scheduled choose assigned instead"
+            },
+            {
+              "confidence": 0.549,
+              "predicted": 3,
+              "target": 0,
+              "text": "please schedule rather than assigning"
+            },
+            {
+              "confidence": 0.3904,
+              "predicted": 3,
+              "target": 0,
+              "text": "please scheduled rather than assigned"
+            },
+            {
+              "confidence": 0.6838,
+              "predicted": 3,
+              "target": 0,
+              "text": "use schedule not assigning"
+            },
+            {
+              "confidence": 0.5028,
+              "predicted": 3,
+              "target": 0,
+              "text": "use scheduled not assigned"
+            },
+            {
+              "confidence": 0.6709,
+              "predicted": 0,
+              "target": 4,
+              "text": "please schedule actually approving"
+            },
+            {
+              "confidence": 0.7746,
+              "predicted": 0,
+              "target": 4,
+              "text": "please scheduled actually approved"
+            },
+            {
+              "confidence": 0.6025,
+              "predicted": 0,
+              "target": 4,
+              "text": "do not schedule choose approving instead"
+            },
+            {
+              "confidence": 0.6617,
+              "predicted": 0,
+              "target": 4,
+              "text": "do not scheduled choose approved instead"
+            },
+            {
+              "confidence": 0.7979,
+              "predicted": 4,
+              "target": 0,
+              "text": "please schedule rather than approving"
+            },
+            {
+              "confidence": 0.6992,
+              "predicted": 4,
+              "target": 0,
+              "text": "please scheduled rather than approved"
+            },
+            {
+              "confidence": 0.8821,
+              "predicted": 4,
+              "target": 0,
+              "text": "use schedule not approving"
+            },
+            {
+              "confidence": 0.7993,
+              "predicted": 4,
+              "target": 0,
+              "text": "use scheduled not approved"
+            },
+            {
+              "confidence": 0.4563,
+              "predicted": 5,
+              "target": 1,
+              "text": "please move actually cancelling"
+            },
+            {
+              "confidence": 0.3533,
+              "predicted": 5,
+              "target": 1,
+              "text": "please moved actually cancelled"
+            },
+            {
+              "confidence": 0.4837,
+              "predicted": 5,
+              "target": 1,
+              "text": "do not move choose cancelling instead"
+            },
+            {
+              "confidence": 0.4105,
+              "predicted": 5,
+              "target": 1,
+              "text": "do not moved choose cancelled instead"
+            },
+            {
+              "confidence": 0.4943,
+              "predicted": 1,
+              "target": 2,
+              "text": "please move rather than cancelling"
+            },
+            {
+              "confidence": 0.4055,
+              "predicted": 1,
+              "target": 2,
+              "text": "please moved rather than cancelled"
+            },
+            {
+              "confidence": 0.5077,
+              "predicted": 1,
+              "target": 2,
+              "text": "use move not cancelling"
+            },
+            {
+              "confidence": 0.4023,
+              "predicted": 1,
+              "target": 2,
+              "text": "use moved not cancelled"
+            },
+            {
+              "confidence": 0.4287,
+              "predicted": 3,
+              "target": 1,
+              "text": "please assign actually cancelling"
+            },
+            {
+              "confidence": 0.4179,
+              "predicted": 3,
+              "target": 1,
+              "text": "please assigned actually cancelled"
+            },
+            {
+              "confidence": 0.3111,
+              "predicted": 3,
+              "target": 1,
+              "text": "do not assign choose cancelling instead"
+            },
+            {
+              "confidence": 0.3741,
+              "predicted": 5,
+              "target": 1,
+              "text": "do not assigned choose cancelled instead"
+            },
+            {
+              "confidence": 0.6294,
+              "predicted": 1,
+              "target": 3,
+              "text": "please assign rather than cancelling"
+            },
+            {
+              "confidence": 0.5558,
+              "predicted": 1,
+              "target": 3,
+              "text": "please assigned rather than cancelled"
+            },
+            {
+              "confidence": 0.6349,
+              "predicted": 1,
+              "target": 3,
+              "text": "use assign not cancelling"
+            },
+            {
+              "confidence": 0.5497,
+              "predicted": 1,
+              "target": 3,
+              "text": "use assigned not cancelled"
+            },
+            {
+              "confidence": 0.7276,
+              "predicted": 5,
+              "target": 3,
+              "text": "please reject actually assigning"
+            },
+            {
+              "confidence": 0.7238,
+              "predicted": 5,
+              "target": 3,
+              "text": "please rejected actually assigned"
+            },
+            {
+              "confidence": 0.7269,
+              "predicted": 5,
+              "target": 3,
+              "text": "do not reject choose assigning instead"
+            },
+            {
+              "confidence": 0.69,
+              "predicted": 5,
+              "target": 3,
+              "text": "do not rejected choose assigned instead"
+            }
+          ],
+          "freeze_encoder": false,
+          "gated_attempted": 0,
+          "gated_correct": 0,
+          "gated_threshold": 0.9,
+          "gated_wrong": 0,
+          "mode": "bag",
+          "n": 60,
+          "online_all_72_ms": 22.304,
+          "params": 10119,
+          "seed": 9409,
+          "selected_epoch": 18,
+          "test_batch_ms": 0.326,
+          "train_ms": 250.753
+        },
+        {
+          "ambiguous_n": 12,
+          "ambiguous_pair_top2": 2,
+          "by_kind": {
+            "familiar": {
+              "correct": 15,
+              "n": 30
+            },
+            "unseen_inflection": {
+              "correct": 13,
+              "n": 30
+            }
+          },
+          "correct": 28,
+          "dev_best": 0.574999988079071,
+          "errors": [
+            {
+              "confidence": 0.313,
+              "predicted": 5,
+              "target": 1,
+              "text": "please schedule actually cancelling"
+            },
+            {
+              "confidence": 0.3075,
+              "predicted": 5,
+              "target": 1,
+              "text": "please scheduled actually cancelled"
+            },
+            {
+              "confidence": 0.443,
+              "predicted": 1,
+              "target": 0,
+              "text": "please schedule rather than cancelling"
+            },
+            {
+              "confidence": 0.549,
+              "predicted": 1,
+              "target": 0,
+              "text": "please scheduled rather than cancelled"
+            },
+            {
+              "confidence": 0.5748,
+              "predicted": 1,
+              "target": 0,
+              "text": "use schedule not cancelling"
+            },
+            {
+              "confidence": 0.6438,
+              "predicted": 1,
+              "target": 0,
+              "text": "use scheduled not cancelled"
+            },
+            {
+              "confidence": 0.3379,
+              "predicted": 2,
+              "target": 3,
+              "text": "please schedule actually assigning"
+            },
+            {
+              "confidence": 0.2835,
+              "predicted": 2,
+              "target": 3,
+              "text": "please scheduled actually assigned"
+            },
+            {
+              "confidence": 0.3019,
+              "predicted": 5,
+              "target": 0,
+              "text": "please schedule rather than assigning"
+            },
+            {
+              "confidence": 0.3531,
+              "predicted": 1,
+              "target": 0,
+              "text": "please scheduled rather than assigned"
+            },
+            {
+              "confidence": 0.3594,
+              "predicted": 1,
+              "target": 0,
+              "text": "use schedule not assigning"
+            },
+            {
+              "confidence": 0.4443,
+              "predicted": 1,
+              "target": 0,
+              "text": "use scheduled not assigned"
+            },
+            {
+              "confidence": 0.248,
+              "predicted": 5,
+              "target": 4,
+              "text": "please schedule actually approving"
+            },
+            {
+              "confidence": 0.2819,
+              "predicted": 5,
+              "target": 4,
+              "text": "please scheduled actually approved"
+            },
+            {
+              "confidence": 0.3901,
+              "predicted": 1,
+              "target": 0,
+              "text": "please schedule rather than approving"
+            },
+            {
+              "confidence": 0.4624,
+              "predicted": 1,
+              "target": 0,
+              "text": "please scheduled rather than approved"
+            },
+            {
+              "confidence": 0.5129,
+              "predicted": 1,
+              "target": 0,
+              "text": "use schedule not approving"
+            },
+            {
+              "confidence": 0.557,
+              "predicted": 1,
+              "target": 0,
+              "text": "use scheduled not approved"
+            },
+            {
+              "confidence": 0.3815,
+              "predicted": 2,
+              "target": 1,
+              "text": "please move actually cancelling"
+            },
+            {
+              "confidence": 0.3416,
+              "predicted": 5,
+              "target": 1,
+              "text": "please moved actually cancelled"
+            },
+            {
+              "confidence": 0.1935,
+              "predicted": 2,
+              "target": 1,
+              "text": "do not move choose cancelling instead"
+            },
+            {
+              "confidence": 0.1886,
+              "predicted": 5,
+              "target": 1,
+              "text": "do not moved choose cancelled instead"
+            },
+            {
+              "confidence": 0.5898,
+              "predicted": 5,
+              "target": 2,
+              "text": "please moved rather than cancelled"
+            },
+            {
+              "confidence": 0.5075,
+              "predicted": 5,
+              "target": 2,
+              "text": "use moved not cancelled"
+            },
+            {
+              "confidence": 0.2684,
+              "predicted": 2,
+              "target": 1,
+              "text": "please assign actually cancelling"
+            },
+            {
+              "confidence": 0.2738,
+              "predicted": 3,
+              "target": 1,
+              "text": "please assigned actually cancelled"
+            },
+            {
+              "confidence": 0.2302,
+              "predicted": 3,
+              "target": 1,
+              "text": "do not assign choose cancelling instead"
+            },
+            {
+              "confidence": 0.2524,
+              "predicted": 3,
+              "target": 1,
+              "text": "do not assigned choose cancelled instead"
+            },
+            {
+              "confidence": 0.4916,
+              "predicted": 4,
+              "target": 3,
+              "text": "use assign not cancelling"
+            },
+            {
+              "confidence": 0.3372,
+              "predicted": 5,
+              "target": 3,
+              "text": "please reject actually assigning"
+            },
+            {
+              "confidence": 0.5164,
+              "predicted": 5,
+              "target": 3,
+              "text": "please rejected actually assigned"
+            },
+            {
+              "confidence": 0.22,
+              "predicted": 2,
+              "target": 3,
+              "text": "do not rejected choose assigned instead"
+            }
+          ],
+          "freeze_encoder": true,
+          "gated_attempted": 6,
+          "gated_correct": 4,
+          "gated_threshold": 0.58,
+          "gated_wrong": 2,
+          "mode": "recurrent",
+          "n": 60,
+          "online_all_72_ms": 55.254,
+          "params": 20343,
+          "seed": 9409,
+          "selected_epoch": 34,
+          "test_batch_ms": 1.138,
+          "train_ms": 698.921
+        },
+        {
+          "ambiguous_n": 12,
+          "ambiguous_pair_top2": 0,
+          "by_kind": {
+            "familiar": {
+              "correct": 25,
+              "n": 30
+            },
+            "unseen_inflection": {
+              "correct": 25,
+              "n": 30
+            }
+          },
+          "correct": 50,
+          "dev_best": 0.8999999761581421,
+          "errors": [
+            {
+              "confidence": 0.968,
+              "predicted": 1,
+              "target": 0,
+              "text": "please schedule rather than cancelling"
+            },
+            {
+              "confidence": 0.9331,
+              "predicted": 1,
+              "target": 0,
+              "text": "please scheduled rather than cancelled"
+            },
+            {
+              "confidence": 0.9072,
+              "predicted": 1,
+              "target": 0,
+              "text": "use schedule not cancelling"
+            },
+            {
+              "confidence": 0.8531,
+              "predicted": 1,
+              "target": 0,
+              "text": "use scheduled not cancelled"
+            },
+            {
+              "confidence": 0.3875,
+              "predicted": 3,
+              "target": 0,
+              "text": "please schedule rather than assigning"
+            },
+            {
+              "confidence": 0.486,
+              "predicted": 1,
+              "target": 0,
+              "text": "please scheduled rather than assigned"
+            },
+            {
+              "confidence": 0.9028,
+              "predicted": 1,
+              "target": 0,
+              "text": "please schedule rather than approving"
+            },
+            {
+              "confidence": 0.8806,
+              "predicted": 1,
+              "target": 0,
+              "text": "please scheduled rather than approved"
+            },
+            {
+              "confidence": 0.9171,
+              "predicted": 1,
+              "target": 0,
+              "text": "use schedule not approving"
+            },
+            {
+              "confidence": 0.904,
+              "predicted": 1,
+              "target": 0,
+              "text": "use scheduled not approved"
+            }
+          ],
+          "freeze_encoder": false,
+          "gated_attempted": 25,
+          "gated_correct": 22,
+          "gated_threshold": 0.91,
+          "gated_wrong": 3,
+          "mode": "recurrent",
+          "n": 60,
+          "online_all_72_ms": 42.345,
+          "params": 20343,
+          "seed": 9409,
+          "selected_epoch": 15,
+          "test_batch_ms": 0.97,
+          "train_ms": 750.698
+        },
+        {
+          "ambiguous_n": 12,
+          "ambiguous_pair_top2": 0,
+          "by_kind": {
+            "familiar": {
+              "correct": 27,
+              "n": 30
+            },
+            "unseen_inflection": {
+              "correct": 27,
+              "n": 30
+            }
+          },
+          "correct": 54,
+          "dev_best": 1.0,
+          "errors": [
+            {
+              "confidence": 0.8269,
+              "predicted": 0,
+              "target": 1,
+              "text": "please schedule actually cancelling"
+            },
+            {
+              "confidence": 0.7476,
+              "predicted": 0,
+              "target": 1,
+              "text": "please scheduled actually cancelled"
+            },
+            {
+              "confidence": 0.3378,
+              "predicted": 0,
+              "target": 3,
+              "text": "please scheduled actually assigned"
+            },
+            {
+              "confidence": 0.2804,
+              "predicted": 2,
+              "target": 4,
+              "text": "please schedule actually approving"
+            },
+            {
+              "confidence": 0.6137,
+              "predicted": 0,
+              "target": 1,
+              "text": "please move actually cancelling"
+            },
+            {
+              "confidence": 0.6089,
+              "predicted": 0,
+              "target": 1,
+              "text": "please moved actually cancelled"
+            }
+          ],
+          "freeze_encoder": false,
+          "gated_attempted": 48,
+          "gated_correct": 42,
+          "gated_threshold": 0.0,
+          "gated_wrong": 6,
+          "mode": "parallel_specialists",
+          "n": 60,
+          "online_all_72_ms": 25.369,
+          "params": 19023,
+          "seed": 9409,
+          "selected_epoch": 9,
+          "test_batch_ms": 1.715,
+          "train_ms": 743.368
+        },
+        {
+          "ambiguous_n": 12,
+          "ambiguous_pair_top2": 2,
+          "by_kind": {
+            "familiar": {
+              "correct": 28,
+              "n": 30
+            },
+            "unseen_inflection": {
+              "correct": 27,
+              "n": 30
+            }
+          },
+          "correct": 55,
+          "dev_best": 1.0,
+          "errors": [
+            {
+              "confidence": 0.5512,
+              "predicted": 5,
+              "target": 1,
+              "text": "do not scheduled choose cancelled instead"
+            },
+            {
+              "confidence": 0.6395,
+              "predicted": 1,
+              "target": 0,
+              "text": "please schedule rather than cancelling"
+            },
+            {
+              "confidence": 0.4553,
+              "predicted": 1,
+              "target": 0,
+              "text": "please scheduled rather than cancelled"
+            },
+            {
+              "confidence": 0.5788,
+              "predicted": 5,
+              "target": 1,
+              "text": "do not moved choose cancelled instead"
+            },
+            {
+              "confidence": 0.8705,
+              "predicted": 1,
+              "target": 2,
+              "text": "please move rather than cancelling"
+            }
+          ],
+          "freeze_encoder": false,
+          "gated_attempted": 48,
+          "gated_correct": 43,
+          "gated_threshold": 0.0,
+          "gated_wrong": 5,
+          "mode": "self_attention",
+          "n": 60,
+          "online_all_72_ms": 43.405,
+          "params": 25895,
+          "seed": 9409,
+          "selected_epoch": 17,
+          "test_batch_ms": 1.728,
+          "train_ms": 1332.27
+        }
+      ],
+      "seed": 9409
+    },
+    {
+      "controls": {
+        "lexical_first": 18,
+        "n": 60,
+        "seed": 9503
+      },
+      "hypotheses": {
+        "ambiguous_n": 12,
+        "clarification_recoverable": 8,
+        "correct": 60,
+        "defer_on_ambiguity": 12,
+        "dev_composite": 2.0,
+        "n": 60,
+        "pair_top2": 8,
+        "seed": 9503,
+        "selected_epoch": 13
+      },
+      "models": [
+        {
+          "ambiguous_n": 12,
+          "ambiguous_pair_top2": 0,
+          "by_kind": {
+            "familiar": {
+              "correct": 12,
+              "n": 30
+            },
+            "unseen_inflection": {
+              "correct": 11,
+              "n": 30
+            }
+          },
+          "correct": 23,
+          "dev_best": 0.625,
+          "errors": [
+            {
+              "confidence": 0.626,
+              "predicted": 0,
+              "target": 4,
+              "text": "please schedule actually approving"
+            },
+            {
+              "confidence": 0.7062,
+              "predicted": 0,
+              "target": 4,
+              "text": "please scheduled actually approved"
+            },
+            {
+              "confidence": 0.5649,
+              "predicted": 0,
+              "target": 4,
+              "text": "do not schedule choose approving instead"
+            },
+            {
+              "confidence": 0.6019,
+              "predicted": 0,
+              "target": 4,
+              "text": "do not scheduled choose approved instead"
+            },
+            {
+              "confidence": 0.5226,
+              "predicted": 4,
+              "target": 0,
+              "text": "please schedule rather than approving"
+            },
+            {
+              "confidence": 0.4132,
+              "predicted": 4,
+              "target": 0,
+              "text": "please scheduled rather than approved"
+            },
+            {
+              "confidence": 0.5691,
+              "predicted": 4,
+              "target": 0,
+              "text": "use schedule not approving"
+            },
+            {
+              "confidence": 0.4359,
+              "predicted": 4,
+              "target": 0,
+              "text": "use scheduled not approved"
+            },
+            {
+              "confidence": 0.6292,
+              "predicted": 2,
+              "target": 1,
+              "text": "please move actually cancelling"
+            },
+            {
+              "confidence": 0.703,
+              "predicted": 2,
+              "target": 1,
+              "text": "please moved actually cancelled"
+            },
+            {
+              "confidence": 0.5028,
+              "predicted": 2,
+              "target": 1,
+              "text": "do not move choose cancelling instead"
+            },
+            {
+              "confidence": 0.4979,
+              "predicted": 2,
+              "target": 1,
+              "text": "do not moved choose cancelled instead"
+            },
+            {
+              "confidence": 0.6215,
+              "predicted": 1,
+              "target": 2,
+              "text": "please move rather than cancelling"
+            },
+            {
+              "confidence": 0.4446,
+              "predicted": 1,
+              "target": 2,
+              "text": "please moved rather than cancelled"
+            },
+            {
+              "confidence": 0.6567,
+              "predicted": 1,
+              "target": 2,
+              "text": "use move not cancelling"
+            },
+            {
+              "confidence": 0.4574,
+              "predicted": 1,
+              "target": 2,
+              "text": "use moved not cancelled"
+            },
+            {
+              "confidence": 0.5756,
+              "predicted": 2,
+              "target": 4,
+              "text": "please move actually approving"
+            },
+            {
+              "confidence": 0.5983,
+              "predicted": 2,
+              "target": 4,
+              "text": "please moved actually approved"
+            },
+            {
+              "confidence": 0.5912,
+              "predicted": 2,
+              "target": 4,
+              "text": "do not move choose approving instead"
+            },
+            {
+              "confidence": 0.5551,
+              "predicted": 2,
+              "target": 4,
+              "text": "do not moved choose approved instead"
+            },
+            {
+              "confidence": 0.6338,
+              "predicted": 4,
+              "target": 2,
+              "text": "please move rather than approving"
+            },
+            {
+              "confidence": 0.5406,
+              "predicted": 4,
+              "target": 2,
+              "text": "please moved rather than approved"
+            },
+            {
+              "confidence": 0.6923,
+              "predicted": 4,
+              "target": 2,
+              "text": "use move not approving"
+            },
+            {
+              "confidence": 0.5912,
+              "predicted": 4,
+              "target": 2,
+              "text": "use moved not approved"
+            },
+            {
+              "confidence": 0.3002,
+              "predicted": 3,
+              "target": 4,
+              "text": "please assigned actually approved"
+            },
+            {
+              "confidence": 0.298,
+              "predicted": 3,
+              "target": 4,
+              "text": "do not assign choose approving instead"
+            },
+            {
+              "confidence": 0.3082,
+              "predicted": 3,
+              "target": 4,
+              "text": "do not assigned choose approved instead"
+            },
+            {
+              "confidence": 0.4661,
+              "predicted": 4,
+              "target": 3,
+              "text": "please assign rather than approving"
+            },
+            {
+              "confidence": 0.3754,
+              "predicted": 4,
+              "target": 3,
+              "text": "please assigned rather than approved"
+            },
+            {
+              "confidence": 0.5088,
+              "predicted": 4,
+              "target": 3,
+              "text": "use assign not approving"
+            },
+            {
+              "confidence": 0.3945,
+              "predicted": 4,
+              "target": 3,
+              "text": "use assigned not approved"
+            },
+            {
+              "confidence": 0.3629,
+              "predicted": 5,
+              "target": 2,
+              "text": "do not reject choose moving instead"
+            },
+            {
+              "confidence": 0.2886,
+              "predicted": 5,
+              "target": 2,
+              "text": "do not rejected choose moved instead"
+            },
+            {
+              "confidence": 0.452,
+              "predicted": 2,
+              "target": 5,
+              "text": "please reject rather than moving"
+            },
+            {
+              "confidence": 0.4303,
+              "predicted": 2,
+              "target": 5,
+              "text": "please rejected rather than moved"
+            },
+            {
+              "confidence": 0.5268,
+              "predicted": 2,
+              "target": 5,
+              "text": "use reject not moving"
+            },
+            {
+              "confidence": 0.4733,
+              "predicted": 2,
+              "target": 5,
+              "text": "use rejected not moved"
+            }
+          ],
+          "freeze_encoder": false,
+          "gated_attempted": 9,
+          "gated_correct": 0,
+          "gated_threshold": 0.6,
+          "gated_wrong": 9,
+          "mode": "bag",
+          "n": 60,
+          "online_all_72_ms": 20.26,
+          "params": 10119,
+          "seed": 9503,
+          "selected_epoch": 25,
+          "test_batch_ms": 0.343,
+          "train_ms": 243.975
+        },
+        {
+          "ambiguous_n": 12,
+          "ambiguous_pair_top2": 0,
+          "by_kind": {
+            "familiar": {
+              "correct": 15,
+              "n": 30
+            },
+            "unseen_inflection": {
+              "correct": 12,
+              "n": 30
+            }
+          },
+          "correct": 27,
+          "dev_best": 0.675000011920929,
+          "errors": [
+            {
+              "confidence": 0.451,
+              "predicted": 6,
+              "target": 4,
+              "text": "please schedule actually approving"
+            },
+            {
+              "confidence": 0.6752,
+              "predicted": 6,
+              "target": 4,
+              "text": "please scheduled actually approved"
+            },
+            {
+              "confidence": 0.2756,
+              "predicted": 2,
+              "target": 4,
+              "text": "do not schedule choose approving instead"
+            },
+            {
+              "confidence": 0.288,
+              "predicted": 5,
+              "target": 4,
+              "text": "do not scheduled choose approved instead"
+            },
+            {
+              "confidence": 0.2927,
+              "predicted": 0,
+              "target": 1,
+              "text": "please move actually cancelling"
+            },
+            {
+              "confidence": 0.2727,
+              "predicted": 0,
+              "target": 1,
+              "text": "please moved actually cancelled"
+            },
+            {
+              "confidence": 0.2913,
+              "predicted": 5,
+              "target": 1,
+              "text": "do not move choose cancelling instead"
+            },
+            {
+              "confidence": 0.3251,
+              "predicted": 5,
+              "target": 1,
+              "text": "do not moved choose cancelled instead"
+            },
+            {
+              "confidence": 0.4455,
+              "predicted": 4,
+              "target": 2,
+              "text": "please move rather than cancelling"
+            },
+            {
+              "confidence": 0.5238,
+              "predicted": 1,
+              "target": 2,
+              "text": "please moved rather than cancelled"
+            },
+            {
+              "confidence": 0.3495,
+              "predicted": 4,
+              "target": 2,
+              "text": "use move not cancelling"
+            },
+            {
+              "confidence": 0.3513,
+              "predicted": 1,
+              "target": 2,
+              "text": "use moved not cancelled"
+            },
+            {
+              "confidence": 0.2593,
+              "predicted": 0,
+              "target": 4,
+              "text": "please moved actually approved"
+            },
+            {
+              "confidence": 0.2646,
+              "predicted": 2,
+              "target": 4,
+              "text": "do not move choose approving instead"
+            },
+            {
+              "confidence": 0.2563,
+              "predicted": 5,
+              "target": 4,
+              "text": "do not moved choose approved instead"
+            },
+            {
+              "confidence": 0.5936,
+              "predicted": 4,
+              "target": 2,
+              "text": "please move rather than approving"
+            },
+            {
+              "confidence": 0.4362,
+              "predicted": 1,
+              "target": 2,
+              "text": "please moved rather than approved"
+            },
+            {
+              "confidence": 0.5185,
+              "predicted": 4,
+              "target": 2,
+              "text": "use move not approving"
+            },
+            {
+              "confidence": 0.3649,
+              "predicted": 4,
+              "target": 2,
+              "text": "use moved not approved"
+            },
+            {
+              "confidence": 0.5576,
+              "predicted": 1,
+              "target": 4,
+              "text": "please assign actually approving"
+            },
+            {
+              "confidence": 0.5333,
+              "predicted": 1,
+              "target": 4,
+              "text": "please assigned actually approved"
+            },
+            {
+              "confidence": 0.2784,
+              "predicted": 5,
+              "target": 4,
+              "text": "do not assign choose approving instead"
+            },
+            {
+              "confidence": 0.288,
+              "predicted": 5,
+              "target": 4,
+              "text": "do not assigned choose approved instead"
+            },
+            {
+              "confidence": 0.3738,
+              "predicted": 5,
+              "target": 3,
+              "text": "use assign not approving"
+            },
+            {
+              "confidence": 0.4491,
+              "predicted": 5,
+              "target": 3,
+              "text": "use assigned not approved"
+            },
+            {
+              "confidence": 0.3028,
+              "predicted": 2,
+              "target": 3,
+              "text": "please approve actually assigning"
+            },
+            {
+              "confidence": 0.31,
+              "predicted": 0,
+              "target": 3,
+              "text": "please approved actually assigned"
+            },
+            {
+              "confidence": 0.6167,
+              "predicted": 0,
+              "target": 4,
+              "text": "please approved rather than assigned"
+            },
+            {
+              "confidence": 0.5454,
+              "predicted": 1,
+              "target": 2,
+              "text": "please reject actually moving"
+            },
+            {
+              "confidence": 0.4388,
+              "predicted": 1,
+              "target": 2,
+              "text": "please rejected actually moved"
+            },
+            {
+              "confidence": 0.2739,
+              "predicted": 5,
+              "target": 2,
+              "text": "do not reject choose moving instead"
+            },
+            {
+              "confidence": 0.3411,
+              "predicted": 5,
+              "target": 2,
+              "text": "do not rejected choose moved instead"
+            },
+            {
+              "confidence": 0.4683,
+              "predicted": 1,
+              "target": 5,
+              "text": "please rejected rather than moved"
+            }
+          ],
+          "freeze_encoder": true,
+          "gated_attempted": 11,
+          "gated_correct": 6,
+          "gated_threshold": 0.53,
+          "gated_wrong": 5,
+          "mode": "recurrent",
+          "n": 60,
+          "online_all_72_ms": 34.105,
+          "params": 20343,
+          "seed": 9503,
+          "selected_epoch": 36,
+          "test_batch_ms": 1.154,
+          "train_ms": 703.64
+        },
+        {
+          "ambiguous_n": 12,
+          "ambiguous_pair_top2": 0,
+          "by_kind": {
+            "familiar": {
+              "correct": 27,
+              "n": 30
+            },
+            "unseen_inflection": {
+              "correct": 27,
+              "n": 30
+            }
+          },
+          "correct": 54,
+          "dev_best": 1.0,
+          "errors": [
+            {
+              "confidence": 0.3611,
+              "predicted": 2,
+              "target": 4,
+              "text": "do not scheduled choose approved instead"
+            },
+            {
+              "confidence": 0.5874,
+              "predicted": 4,
+              "target": 0,
+              "text": "please schedule rather than approving"
+            },
+            {
+              "confidence": 0.488,
+              "predicted": 4,
+              "target": 0,
+              "text": "please scheduled rather than approved"
+            },
+            {
+              "confidence": 0.4644,
+              "predicted": 2,
+              "target": 4,
+              "text": "do not move choose approving instead"
+            },
+            {
+              "confidence": 0.4793,
+              "predicted": 2,
+              "target": 4,
+              "text": "do not moved choose approved instead"
+            },
+            {
+              "confidence": 0.4844,
+              "predicted": 4,
+              "target": 3,
+              "text": "please assign rather than approving"
+            }
+          ],
+          "freeze_encoder": false,
+          "gated_attempted": 48,
+          "gated_correct": 42,
+          "gated_threshold": 0.0,
+          "gated_wrong": 6,
+          "mode": "recurrent",
+          "n": 60,
+          "online_all_72_ms": 36.199,
+          "params": 20343,
+          "seed": 9503,
+          "selected_epoch": 17,
+          "test_batch_ms": 1.164,
+          "train_ms": 727.54
+        },
+        {
+          "ambiguous_n": 12,
+          "ambiguous_pair_top2": 2,
+          "by_kind": {
+            "familiar": {
+              "correct": 30,
+              "n": 30
+            },
+            "unseen_inflection": {
+              "correct": 30,
+              "n": 30
+            }
+          },
+          "correct": 60,
+          "dev_best": 1.0,
+          "errors": [],
+          "freeze_encoder": false,
+          "gated_attempted": 48,
+          "gated_correct": 48,
+          "gated_threshold": 0.0,
+          "gated_wrong": 0,
+          "mode": "parallel_specialists",
+          "n": 60,
+          "online_all_72_ms": 27.63,
+          "params": 19023,
+          "seed": 9503,
+          "selected_epoch": 10,
+          "test_batch_ms": 0.896,
+          "train_ms": 704.568
+        },
+        {
+          "ambiguous_n": 12,
+          "ambiguous_pair_top2": 4,
+          "by_kind": {
+            "familiar": {
+              "correct": 26,
+              "n": 30
+            },
+            "unseen_inflection": {
+              "correct": 26,
+              "n": 30
+            }
+          },
+          "correct": 52,
+          "dev_best": 1.0,
+          "errors": [
+            {
+              "confidence": 0.6198,
+              "predicted": 2,
+              "target": 4,
+              "text": "please schedule actually approving"
+            },
+            {
+              "confidence": 0.6672,
+              "predicted": 2,
+              "target": 4,
+              "text": "please scheduled actually approved"
+            },
+            {
+              "confidence": 0.6577,
+              "predicted": 2,
+              "target": 0,
+              "text": "use schedule not approving"
+            },
+            {
+              "confidence": 0.5935,
+              "predicted": 2,
+              "target": 0,
+              "text": "use scheduled not approved"
+            },
+            {
+              "confidence": 0.7734,
+              "predicted": 2,
+              "target": 4,
+              "text": "please move actually approving"
+            },
+            {
+              "confidence": 0.7624,
+              "predicted": 2,
+              "target": 4,
+              "text": "please moved actually approved"
+            },
+            {
+              "confidence": 0.4628,
+              "predicted": 2,
+              "target": 4,
+              "text": "please assign actually approving"
+            },
+            {
+              "confidence": 0.5174,
+              "predicted": 2,
+              "target": 4,
+              "text": "please assigned actually approved"
+            }
+          ],
+          "freeze_encoder": false,
+          "gated_attempted": 48,
+          "gated_correct": 40,
+          "gated_threshold": 0.0,
+          "gated_wrong": 8,
+          "mode": "self_attention",
+          "n": 60,
+          "online_all_72_ms": 40.231,
+          "params": 25895,
+          "seed": 9503,
+          "selected_epoch": 18,
+          "test_batch_ms": 1.676,
+          "train_ms": 1336.904
+        }
+      ],
+      "seed": 9503
+    },
+    {
+      "controls": {
+        "lexical_first": 18,
+        "n": 60,
+        "seed": 9601
+      },
+      "hypotheses": {
+        "ambiguous_n": 12,
+        "clarification_recoverable": 10,
+        "correct": 60,
+        "defer_on_ambiguity": 12,
+        "dev_composite": 2.0,
+        "n": 60,
+        "pair_top2": 10,
+        "seed": 9601,
+        "selected_epoch": 16
+      },
+      "models": [
+        {
+          "ambiguous_n": 12,
+          "ambiguous_pair_top2": 4,
+          "by_kind": {
+            "familiar": {
+              "correct": 10,
+              "n": 30
+            },
+            "unseen_inflection": {
+              "correct": 12,
+              "n": 30
+            }
+          },
+          "correct": 22,
+          "dev_best": 0.75,
+          "errors": [
+            {
+              "confidence": 0.423,
+              "predicted": 0,
+              "target": 5,
+              "text": "please scheduled actually rejected"
+            },
+            {
+              "confidence": 0.3,
+              "predicted": 0,
+              "target": 5,
+              "text": "do not scheduled choose rejected instead"
+            },
+            {
+              "confidence": 0.4607,
+              "predicted": 5,
+              "target": 0,
+              "text": "please schedule rather than rejecting"
+            },
+            {
+              "confidence": 0.5275,
+              "predicted": 5,
+              "target": 0,
+              "text": "use schedule not rejecting"
+            },
+            {
+              "confidence": 0.2985,
+              "predicted": 5,
+              "target": 0,
+              "text": "use scheduled not rejected"
+            },
+            {
+              "confidence": 0.3539,
+              "predicted": 1,
+              "target": 2,
+              "text": "please cancel actually moving"
+            },
+            {
+              "confidence": 0.4679,
+              "predicted": 1,
+              "target": 2,
+              "text": "please cancelled actually moved"
+            },
+            {
+              "confidence": 0.3294,
+              "predicted": 1,
+              "target": 2,
+              "text": "do not cancel choose moving instead"
+            },
+            {
+              "confidence": 0.406,
+              "predicted": 1,
+              "target": 2,
+              "text": "do not cancelled choose moved instead"
+            },
+            {
+              "confidence": 0.2547,
+              "predicted": 2,
+              "target": 1,
+              "text": "please cancel rather than moving"
+            },
+            {
+              "confidence": 0.2872,
+              "predicted": 2,
+              "target": 1,
+              "text": "use cancel not moving"
+            },
+            {
+              "confidence": 0.5829,
+              "predicted": 4,
+              "target": 2,
+              "text": "please move rather than approving"
+            },
+            {
+              "confidence": 0.567,
+              "predicted": 4,
+              "target": 2,
+              "text": "please moved rather than approved"
+            },
+            {
+              "confidence": 0.6344,
+              "predicted": 4,
+              "target": 2,
+              "text": "use move not approving"
+            },
+            {
+              "confidence": 0.6292,
+              "predicted": 4,
+              "target": 2,
+              "text": "use moved not approved"
+            },
+            {
+              "confidence": 0.6337,
+              "predicted": 1,
+              "target": 0,
+              "text": "please assign actually scheduling"
+            },
+            {
+              "confidence": 0.6166,
+              "predicted": 1,
+              "target": 0,
+              "text": "please assigned actually scheduled"
+            },
+            {
+              "confidence": 0.5525,
+              "predicted": 1,
+              "target": 0,
+              "text": "do not assign choose scheduling instead"
+            },
+            {
+              "confidence": 0.5351,
+              "predicted": 1,
+              "target": 0,
+              "text": "do not assigned choose scheduled instead"
+            },
+            {
+              "confidence": 0.5107,
+              "predicted": 1,
+              "target": 3,
+              "text": "please assign rather than scheduling"
+            },
+            {
+              "confidence": 0.4962,
+              "predicted": 1,
+              "target": 3,
+              "text": "please assigned rather than scheduled"
+            },
+            {
+              "confidence": 0.5562,
+              "predicted": 1,
+              "target": 3,
+              "text": "use assign not scheduling"
+            },
+            {
+              "confidence": 0.541,
+              "predicted": 1,
+              "target": 3,
+              "text": "use assigned not scheduled"
+            },
+            {
+              "confidence": 0.4167,
+              "predicted": 3,
+              "target": 2,
+              "text": "please assign actually moving"
+            },
+            {
+              "confidence": 0.4661,
+              "predicted": 3,
+              "target": 2,
+              "text": "please assigned actually moved"
+            },
+            {
+              "confidence": 0.3534,
+              "predicted": 3,
+              "target": 2,
+              "text": "do not assign choose moving instead"
+            },
+            {
+              "confidence": 0.3934,
+              "predicted": 3,
+              "target": 2,
+              "text": "do not assigned choose moved instead"
+            },
+            {
+              "confidence": 0.2319,
+              "predicted": 2,
+              "target": 3,
+              "text": "please assign rather than moving"
+            },
+            {
+              "confidence": 0.2895,
+              "predicted": 1,
+              "target": 3,
+              "text": "please assigned rather than moved"
+            },
+            {
+              "confidence": 0.2512,
+              "predicted": 2,
+              "target": 3,
+              "text": "use assign not moving"
+            },
+            {
+              "confidence": 0.3542,
+              "predicted": 1,
+              "target": 4,
+              "text": "please assign actually approving"
+            },
+            {
+              "confidence": 0.447,
+              "predicted": 1,
+              "target": 4,
+              "text": "please assigned actually approved"
+            },
+            {
+              "confidence": 0.3341,
+              "predicted": 1,
+              "target": 4,
+              "text": "do not assign choose approving instead"
+            },
+            {
+              "confidence": 0.3933,
+              "predicted": 1,
+              "target": 4,
+              "text": "do not assigned choose approved instead"
+            },
+            {
+              "confidence": 0.3832,
+              "predicted": 4,
+              "target": 3,
+              "text": "please assign rather than approving"
+            },
+            {
+              "confidence": 0.3127,
+              "predicted": 4,
+              "target": 3,
+              "text": "please assigned rather than approved"
+            },
+            {
+              "confidence": 0.4535,
+              "predicted": 4,
+              "target": 3,
+              "text": "use assign not approving"
+            },
+            {
+              "confidence": 0.358,
+              "predicted": 4,
+              "target": 3,
+              "text": "use assigned not approved"
+            }
+          ],
+          "freeze_encoder": false,
+          "gated_attempted": 0,
+          "gated_correct": 0,
+          "gated_threshold": 0.72,
+          "gated_wrong": 0,
+          "mode": "bag",
+          "n": 60,
+          "online_all_72_ms": 23.063,
+          "params": 10119,
+          "seed": 9601,
+          "selected_epoch": 18,
+          "test_batch_ms": 0.375,
+          "train_ms": 231.417
+        },
+        {
+          "ambiguous_n": 12,
+          "ambiguous_pair_top2": 0,
+          "by_kind": {
+            "familiar": {
+              "correct": 9,
+              "n": 30
+            },
+            "unseen_inflection": {
+              "correct": 10,
+              "n": 30
+            }
+          },
+          "correct": 19,
+          "dev_best": 0.5249999761581421,
+          "errors": [
+            {
+              "confidence": 0.3429,
+              "predicted": 0,
+              "target": 5,
+              "text": "please schedule actually rejecting"
+            },
+            {
+              "confidence": 0.3547,
+              "predicted": 0,
+              "target": 5,
+              "text": "please scheduled actually rejected"
+            },
+            {
+              "confidence": 0.2819,
+              "predicted": 0,
+              "target": 5,
+              "text": "do not schedule choose rejecting instead"
+            },
+            {
+              "confidence": 0.284,
+              "predicted": 0,
+              "target": 5,
+              "text": "do not scheduled choose rejected instead"
+            },
+            {
+              "confidence": 0.3417,
+              "predicted": 4,
+              "target": 0,
+              "text": "use schedule not rejecting"
+            },
+            {
+              "confidence": 0.4658,
+              "predicted": 1,
+              "target": 2,
+              "text": "please cancel actually moving"
+            },
+            {
+              "confidence": 0.2497,
+              "predicted": 5,
+              "target": 2,
+              "text": "please cancelled actually moved"
+            },
+            {
+              "confidence": 0.2691,
+              "predicted": 5,
+              "target": 2,
+              "text": "do not cancel choose moving instead"
+            },
+            {
+              "confidence": 0.2537,
+              "predicted": 0,
+              "target": 2,
+              "text": "do not cancelled choose moved instead"
+            },
+            {
+              "confidence": 0.555,
+              "predicted": 5,
+              "target": 1,
+              "text": "please cancelled rather than moved"
+            },
+            {
+              "confidence": 0.5013,
+              "predicted": 5,
+              "target": 1,
+              "text": "use cancelled not moved"
+            },
+            {
+              "confidence": 0.376,
+              "predicted": 0,
+              "target": 4,
+              "text": "please move actually approving"
+            },
+            {
+              "confidence": 0.438,
+              "predicted": 0,
+              "target": 4,
+              "text": "please moved actually approved"
+            },
+            {
+              "confidence": 0.3055,
+              "predicted": 0,
+              "target": 4,
+              "text": "do not move choose approving instead"
+            },
+            {
+              "confidence": 0.3287,
+              "predicted": 0,
+              "target": 4,
+              "text": "do not moved choose approved instead"
+            },
+            {
+              "confidence": 0.3468,
+              "predicted": 0,
+              "target": 2,
+              "text": "please move rather than approving"
+            },
+            {
+              "confidence": 0.3918,
+              "predicted": 0,
+              "target": 2,
+              "text": "please moved rather than approved"
+            },
+            {
+              "confidence": 0.3658,
+              "predicted": 4,
+              "target": 2,
+              "text": "use move not approving"
+            },
+            {
+              "confidence": 0.4187,
+              "predicted": 0,
+              "target": 2,
+              "text": "use moved not approved"
+            },
+            {
+              "confidence": 0.4319,
+              "predicted": 3,
+              "target": 0,
+              "text": "please assign actually scheduling"
+            },
+            {
+              "confidence": 0.4658,
+              "predicted": 3,
+              "target": 0,
+              "text": "please assigned actually scheduled"
+            },
+            {
+              "confidence": 0.3973,
+              "predicted": 3,
+              "target": 0,
+              "text": "do not assign choose scheduling instead"
+            },
+            {
+              "confidence": 0.4167,
+              "predicted": 3,
+              "target": 0,
+              "text": "do not assigned choose scheduled instead"
+            },
+            {
+              "confidence": 0.4388,
+              "predicted": 1,
+              "target": 3,
+              "text": "please assign rather than scheduling"
+            },
+            {
+              "confidence": 0.4532,
+              "predicted": 1,
+              "target": 3,
+              "text": "use assign not scheduling"
+            },
+            {
+              "confidence": 0.3573,
+              "predicted": 5,
+              "target": 3,
+              "text": "use assigned not scheduled"
+            },
+            {
+              "confidence": 0.465,
+              "predicted": 3,
+              "target": 2,
+              "text": "please assign actually moving"
+            },
+            {
+              "confidence": 0.4344,
+              "predicted": 3,
+              "target": 2,
+              "text": "please assigned actually moved"
+            },
+            {
+              "confidence": 0.4171,
+              "predicted": 3,
+              "target": 2,
+              "text": "do not assign choose moving instead"
+            },
+            {
+              "confidence": 0.3981,
+              "predicted": 3,
+              "target": 2,
+              "text": "do not assigned choose moved instead"
+            },
+            {
+              "confidence": 0.4192,
+              "predicted": 1,
+              "target": 3,
+              "text": "please assign rather than moving"
+            },
+            {
+              "confidence": 0.4319,
+              "predicted": 1,
+              "target": 3,
+              "text": "use assign not moving"
+            },
+            {
+              "confidence": 0.3781,
+              "predicted": 5,
+              "target": 3,
+              "text": "use assigned not moved"
+            },
+            {
+              "confidence": 0.4015,
+              "predicted": 3,
+              "target": 4,
+              "text": "please assign actually approving"
+            },
+            {
+              "confidence": 0.3746,
+              "predicted": 3,
+              "target": 4,
+              "text": "please assigned actually approved"
+            },
+            {
+              "confidence": 0.3762,
+              "predicted": 3,
+              "target": 4,
+              "text": "do not assign choose approving instead"
+            },
+            {
+              "confidence": 0.3499,
+              "predicted": 3,
+              "target": 4,
+              "text": "do not assigned choose approved instead"
+            },
+            {
+              "confidence": 0.4391,
+              "predicted": 1,
+              "target": 3,
+              "text": "please assign rather than approving"
+            },
+            {
+              "confidence": 0.3547,
+              "predicted": 1,
+              "target": 3,
+              "text": "please assigned rather than approved"
+            },
+            {
+              "confidence": 0.4492,
+              "predicted": 1,
+              "target": 3,
+              "text": "use assign not approving"
+            },
+            {
+              "confidence": 0.4007,
+              "predicted": 5,
+              "target": 3,
+              "text": "use assigned not approved"
+            }
+          ],
+          "freeze_encoder": true,
+          "gated_attempted": 7,
+          "gated_correct": 2,
+          "gated_threshold": 0.46,
+          "gated_wrong": 5,
+          "mode": "recurrent",
+          "n": 60,
+          "online_all_72_ms": 32.128,
+          "params": 20343,
+          "seed": 9601,
+          "selected_epoch": 31,
+          "test_batch_ms": 0.888,
+          "train_ms": 680.489
+        },
+        {
+          "ambiguous_n": 12,
+          "ambiguous_pair_top2": 2,
+          "by_kind": {
+            "familiar": {
+              "correct": 28,
+              "n": 30
+            },
+            "unseen_inflection": {
+              "correct": 28,
+              "n": 30
+            }
+          },
+          "correct": 56,
+          "dev_best": 1.0,
+          "errors": [
+            {
+              "confidence": 0.4465,
+              "predicted": 0,
+              "target": 3,
+              "text": "please assign rather than scheduling"
+            },
+            {
+              "confidence": 0.475,
+              "predicted": 0,
+              "target": 3,
+              "text": "please assigned rather than scheduled"
+            },
+            {
+              "confidence": 0.5836,
+              "predicted": 0,
+              "target": 3,
+              "text": "use assign not scheduling"
+            },
+            {
+              "confidence": 0.558,
+              "predicted": 0,
+              "target": 3,
+              "text": "use assigned not scheduled"
+            }
+          ],
+          "freeze_encoder": false,
+          "gated_attempted": 48,
+          "gated_correct": 44,
+          "gated_threshold": 0.0,
+          "gated_wrong": 4,
+          "mode": "recurrent",
+          "n": 60,
+          "online_all_72_ms": 39.25,
+          "params": 20343,
+          "seed": 9601,
+          "selected_epoch": 17,
+          "test_batch_ms": 0.96,
+          "train_ms": 729.745
+        },
+        {
+          "ambiguous_n": 12,
+          "ambiguous_pair_top2": 0,
+          "by_kind": {
+            "familiar": {
+              "correct": 30,
+              "n": 30
+            },
+            "unseen_inflection": {
+              "correct": 30,
+              "n": 30
+            }
+          },
+          "correct": 60,
+          "dev_best": 1.0,
+          "errors": [],
+          "freeze_encoder": false,
+          "gated_attempted": 48,
+          "gated_correct": 48,
+          "gated_threshold": 0.0,
+          "gated_wrong": 0,
+          "mode": "parallel_specialists",
+          "n": 60,
+          "online_all_72_ms": 27.855,
+          "params": 19023,
+          "seed": 9601,
+          "selected_epoch": 16,
+          "test_batch_ms": 1.25,
+          "train_ms": 714.845
+        },
+        {
+          "ambiguous_n": 12,
+          "ambiguous_pair_top2": 2,
+          "by_kind": {
+            "familiar": {
+              "correct": 23,
+              "n": 30
+            },
+            "unseen_inflection": {
+              "correct": 21,
+              "n": 30
+            }
+          },
+          "correct": 44,
+          "dev_best": 1.0,
+          "errors": [
+            {
+              "confidence": 0.4657,
+              "predicted": 0,
+              "target": 2,
+              "text": "please cancelled actually moved"
+            },
+            {
+              "confidence": 0.7214,
+              "predicted": 0,
+              "target": 4,
+              "text": "do not move choose approving instead"
+            },
+            {
+              "confidence": 0.8048,
+              "predicted": 0,
+              "target": 4,
+              "text": "do not moved choose approved instead"
+            },
+            {
+              "confidence": 0.7159,
+              "predicted": 1,
+              "target": 3,
+              "text": "please assign rather than scheduling"
+            },
+            {
+              "confidence": 0.705,
+              "predicted": 1,
+              "target": 3,
+              "text": "please assigned rather than scheduled"
+            },
+            {
+              "confidence": 0.6526,
+              "predicted": 1,
+              "target": 3,
+              "text": "use assign not scheduling"
+            },
+            {
+              "confidence": 0.6285,
+              "predicted": 1,
+              "target": 3,
+              "text": "use assigned not scheduled"
+            },
+            {
+              "confidence": 0.5642,
+              "predicted": 1,
+              "target": 3,
+              "text": "please assign rather than moving"
+            },
+            {
+              "confidence": 0.59,
+              "predicted": 1,
+              "target": 3,
+              "text": "please assigned rather than moved"
+            },
+            {
+              "confidence": 0.4174,
+              "predicted": 1,
+              "target": 3,
+              "text": "use assigned not moved"
+            },
+            {
+              "confidence": 0.8096,
+              "predicted": 0,
+              "target": 4,
+              "text": "do not assign choose approving instead"
+            },
+            {
+              "confidence": 0.8256,
+              "predicted": 0,
+              "target": 4,
+              "text": "do not assigned choose approved instead"
+            },
+            {
+              "confidence": 0.7054,
+              "predicted": 1,
+              "target": 3,
+              "text": "please assign rather than approving"
+            },
+            {
+              "confidence": 0.7051,
+              "predicted": 1,
+              "target": 3,
+              "text": "please assigned rather than approved"
+            },
+            {
+              "confidence": 0.6447,
+              "predicted": 1,
+              "target": 3,
+              "text": "use assign not approving"
+            },
+            {
+              "confidence": 0.6447,
+              "predicted": 1,
+              "target": 3,
+              "text": "use assigned not approved"
+            }
+          ],
+          "freeze_encoder": false,
+          "gated_attempted": 48,
+          "gated_correct": 32,
+          "gated_threshold": 0.0,
+          "gated_wrong": 16,
+          "mode": "self_attention",
+          "n": 60,
+          "online_all_72_ms": 45.262,
+          "params": 25895,
+          "seed": 9601,
+          "selected_epoch": 16,
+          "test_batch_ms": 1.719,
+          "train_ms": 1315.316
+        }
+      ],
+      "seed": 9601
+    }
+  ],
+  "limitations": [
+    "Replicates synthetic generator only, not independent dataset or human language",
+    "Model training remains supervised by generated target actions"
+  ],
+  "name": "Fresh split-seed replication, identical templates/hyperparameters",
+  "seeds": [
+    9409,
+    9503,
+    9601
+  ]
+}

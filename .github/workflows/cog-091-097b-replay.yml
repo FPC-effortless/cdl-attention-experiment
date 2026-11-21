@@ -1,0 +1,38 @@
+name: COG-ATTN 091-097b independent CPU replay
+on:
+  push:
+    branches:
+      - research/cog-091-100-097b-episodic
+  pull_request:
+    paths:
+      - research/cog-091-100/**
+      - .github/workflows/cog-091-097b-replay.yml
+  workflow_dispatch:
+jobs:
+  audit-and-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: research/cog-091-100
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Python dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -r requirements.txt
+      - name: Verify exact retained evidence and source checksums
+        run: sha256sum --check SHA256SUMS
+      - name: Independently reconstruct per-case scores from raw traces
+        run: python audit_097b.py
+      - name: Run no-ID and original boundary regression tests
+        run: python -m pytest -q test_experiment.py test_semantic.py test_hypotheses.py test_097.py test_097_boundary.py test_097b.py
+      - name: Fresh one-seed CPU rerun (no historical timing equality)
+        env:
+          OMP_NUM_THREADS: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+        run: |
+          python experiment_097b.py --seeds 1103 --size 8192 --out /tmp/097b-replay.json
+          python audit_097b.py --replay /tmp/097b-replay.json
