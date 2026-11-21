@@ -1,0 +1,3 @@
+# Longer training at the requested scale
+
+Before inspecting the held-out results, add a controlled continuation for the full COG and its recurrent backbone at 30M, seed 17. Keep the short, four-way panel intact. Resume the exact short-run weights, reinitialize AdamW for both arms, freeze a new schedule of 896 updates, and consume 512 identical sampled targets per update. Restart learning rate at 0.0003 with 24 warmup steps and cosine decay. Total exposure including stage one is 524,288 targets per model. Use independent seed 1017 for the stage-two windows. Report the final checkpoint even if it deteriorates. This extension does not provide long-trained Transformer or Mamba-2 comparisons. Do not use test scores for checkpoint selection.
