@@ -1,0 +1,2 @@
+# Python >=3.12, standard library only.
+# The original research/cog-081-086/puzzles.py must be present in the parent directory.

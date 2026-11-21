@@ -1,0 +1,166 @@
+{
+  "chess_limit": "KQK/KRK forced mate in 1\u20134 White moves; not full chess/engine-rated difficulty",
+  "families": {
+    "chess": 40,
+    "hanoi": 40,
+    "maze": 40,
+    "sliding3": 38,
+    "sliding4": 12,
+    "sudoku": 40
+  },
+  "hanoi_limit": "large-disc counts certified symbolically, full traces intentionally not executed",
+  "held_out_split": "seed-disjoint and input-disjoint except canonical Hanoi repetitions",
+  "known_validation_gaps": [
+    {
+      "cause": "Only two 31-move 8-puzzle states exist; exclude instead of leaking duplicates across splits",
+      "id": "development/8707/sliding3/L10"
+    },
+    {
+      "cause": "Only two 31-move 8-puzzle states exist; exclude instead of leaking duplicates across splits",
+      "id": "reserved/9707/sliding3/L10"
+    }
+  ],
+  "level_counts": {
+    "1": {
+      "domains": {
+        "chess": 4,
+        "hanoi": 4,
+        "maze": 4,
+        "sliding3": 4,
+        "sudoku": 4
+      },
+      "label": "Novice",
+      "n": 20
+    },
+    "10": {
+      "domains": {
+        "chess": 4,
+        "hanoi": 4,
+        "maze": 4,
+        "sliding3": 2,
+        "sliding4": 4,
+        "sudoku": 4
+      },
+      "label": "Frontier",
+      "n": 22
+    },
+    "2": {
+      "domains": {
+        "chess": 4,
+        "hanoi": 4,
+        "maze": 4,
+        "sliding3": 4,
+        "sudoku": 4
+      },
+      "label": "Easy",
+      "n": 20
+    },
+    "3": {
+      "domains": {
+        "chess": 4,
+        "hanoi": 4,
+        "maze": 4,
+        "sliding3": 4,
+        "sudoku": 4
+      },
+      "label": "Foundation",
+      "n": 20
+    },
+    "4": {
+      "domains": {
+        "chess": 4,
+        "hanoi": 4,
+        "maze": 4,
+        "sliding3": 4,
+        "sudoku": 4
+      },
+      "label": "Intermediate",
+      "n": 20
+    },
+    "5": {
+      "domains": {
+        "chess": 4,
+        "hanoi": 4,
+        "maze": 4,
+        "sliding3": 4,
+        "sudoku": 4
+      },
+      "label": "Challenging",
+      "n": 20
+    },
+    "6": {
+      "domains": {
+        "chess": 4,
+        "hanoi": 4,
+        "maze": 4,
+        "sliding3": 4,
+        "sudoku": 4
+      },
+      "label": "Advanced",
+      "n": 20
+    },
+    "7": {
+      "domains": {
+        "chess": 4,
+        "hanoi": 4,
+        "maze": 4,
+        "sliding3": 4,
+        "sudoku": 4
+      },
+      "label": "Expert",
+      "n": 20
+    },
+    "8": {
+      "domains": {
+        "chess": 4,
+        "hanoi": 4,
+        "maze": 4,
+        "sliding3": 4,
+        "sliding4": 4,
+        "sudoku": 4
+      },
+      "label": "Master",
+      "n": 24
+    },
+    "9": {
+      "domains": {
+        "chess": 4,
+        "hanoi": 4,
+        "maze": 4,
+        "sliding3": 4,
+        "sliding4": 4,
+        "sudoku": 4
+      },
+      "label": "Extreme",
+      "n": 24
+    }
+  },
+  "levels": [
+    "Novice",
+    "Easy",
+    "Foundation",
+    "Intermediate",
+    "Challenging",
+    "Advanced",
+    "Expert",
+    "Master",
+    "Extreme",
+    "Frontier"
+  ],
+  "seeds": {
+    "development": [
+      8701,
+      8707
+    ],
+    "reserved": [
+      9701,
+      9707
+    ]
+  },
+  "sliding4_limit": "reversible scrambles but exact minimum unknown",
+  "status": "REFERENCE ENVIRONMENTS ONLY \u2014 NO COG-ATTN POLICY WAS EVALUATED",
+  "study": "COG-ATTN-087\u2013090 puzzle difficulty ladder",
+  "sudoku_limit": "MRV/guess and clue metrics are proxies, not a human-calibrated difficulty rating",
+  "total": 210,
+  "wall_ns": 28249144312
+}
