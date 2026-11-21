@@ -1,0 +1,519 @@
+{
+  "assisted": {
+    "attention-1701": {
+      "software_repaired": [],
+      "dialogue_complete": 50,
+      "dialogue_final": 50,
+      "correct_changed_turns": 0,
+      "changed_turns": 228,
+      "turns": 1669,
+      "unspecified": 1669,
+      "navigation_by_family": {
+        "MiniGrid-DoorKey-6x6-v0": 0,
+        "MiniGrid-Empty-Random-6x6-v0": 22
+      },
+      "unique_novel_layouts": 39,
+      "unique_novel_solved": 15,
+      "overlapped_test_episodes": 5,
+      "actions": 3392,
+      "episode_wall_s": {
+        "software": 27.943,
+        "dialogue": 12.21,
+        "interactive": 3.913
+      },
+      "test_wall_s": 45.751934776999406,
+      "parameters": 535297,
+      "decision_sha256": "d75b49c1c7aa6c0b5c642d3b8f192dbe4a5f18f4c22a7489078f41dc77808610",
+      "checkpoint_sha256": "37fdb0cd2d1f424c91d37befce88b49bae7832af4366b8c13f6f6fe133fdc924"
+    },
+    "attention-1707": {
+      "software_repaired": [],
+      "dialogue_complete": 50,
+      "dialogue_final": 50,
+      "correct_changed_turns": 0,
+      "changed_turns": 228,
+      "turns": 1669,
+      "unspecified": 1668,
+      "navigation_by_family": {
+        "MiniGrid-DoorKey-6x6-v0": 0,
+        "MiniGrid-Empty-Random-6x6-v0": 21
+      },
+      "unique_novel_layouts": 39,
+      "unique_novel_solved": 13,
+      "overlapped_test_episodes": 5,
+      "actions": 3591,
+      "episode_wall_s": {
+        "software": 28.904,
+        "dialogue": 13.619,
+        "interactive": 5.179
+      },
+      "test_wall_s": 49.41552582799886,
+      "parameters": 535297,
+      "decision_sha256": "d8df496e6288d2d5fe338779d3caf517b7d6a59f86d00e9618bc129332a727e0",
+      "checkpoint_sha256": "5fc80c066ba6c9f65c06fbfad3520d15f62220654e79793eb105dee28fec17e6"
+    },
+    "attention-1711": {
+      "software_repaired": [],
+      "dialogue_complete": 50,
+      "dialogue_final": 50,
+      "correct_changed_turns": 0,
+      "changed_turns": 228,
+      "turns": 1669,
+      "unspecified": 1669,
+      "navigation_by_family": {
+        "MiniGrid-DoorKey-6x6-v0": 24,
+        "MiniGrid-Empty-Random-6x6-v0": 18
+      },
+      "unique_novel_layouts": 39,
+      "unique_novel_solved": 36,
+      "overlapped_test_episodes": 5,
+      "actions": 2806,
+      "episode_wall_s": {
+        "software": 29.149,
+        "dialogue": 15.406,
+        "interactive": 3.751
+      },
+      "test_wall_s": 50.09552455100129,
+      "parameters": 535297,
+      "decision_sha256": "582b091ed4bd584bbc92d1e6c7965121b1e06bcec7fd82132140ff9ec599e026",
+      "checkpoint_sha256": "f671a237c281c7d192863fb432da48a6740d1901bdfc9ef0aabfb9476b71609a"
+    },
+    "cog-1701": {
+      "software_repaired": [
+        "knapsack",
+        "find_first_in_sorted"
+      ],
+      "dialogue_complete": 50,
+      "dialogue_final": 50,
+      "correct_changed_turns": 0,
+      "changed_turns": 228,
+      "turns": 1669,
+      "unspecified": 1669,
+      "navigation_by_family": {
+        "MiniGrid-DoorKey-6x6-v0": 4,
+        "MiniGrid-Empty-Random-6x6-v0": 22
+      },
+      "unique_novel_layouts": 39,
+      "unique_novel_solved": 19,
+      "overlapped_test_episodes": 5,
+      "actions": 3152,
+      "episode_wall_s": {
+        "software": 27.608,
+        "dialogue": 4.824,
+        "interactive": 2.061
+      },
+      "restore_replay_equal": true,
+      "test_wall_s": 36.23011953799869,
+      "parameters": 531073,
+      "decision_sha256": "138828b356f0aa4f6a11581e56596dac0659f4d5280ad152b0431f239a482aa7",
+      "checkpoint_sha256": "825bfe72abf9223146edf7d1f9d397746b5df4e4754b37c1eb7b794f922d8861"
+    },
+    "cog-1707": {
+      "software_repaired": [],
+      "dialogue_complete": 50,
+      "dialogue_final": 50,
+      "correct_changed_turns": 0,
+      "changed_turns": 228,
+      "turns": 1669,
+      "unspecified": 1669,
+      "navigation_by_family": {
+        "MiniGrid-DoorKey-6x6-v0": 0,
+        "MiniGrid-Empty-Random-6x6-v0": 8
+      },
+      "unique_novel_layouts": 39,
+      "unique_novel_solved": 4,
+      "overlapped_test_episodes": 5,
+      "actions": 3681,
+      "episode_wall_s": {
+        "software": 30.117,
+        "dialogue": 3.693,
+        "interactive": 2.199
+      },
+      "restore_replay_equal": true,
+      "test_wall_s": 37.52083097099967,
+      "parameters": 531073,
+      "decision_sha256": "9b92733da5719ae85248baced6a91c81b8af8536d7b1263f5bc5549e0c83c4d9",
+      "checkpoint_sha256": "59c6c85ad8d9aae530ba148ad3d57ec9776848d6c92195fe4421a2eb9e62020b"
+    },
+    "cog-1711": {
+      "software_repaired": [],
+      "dialogue_complete": 50,
+      "dialogue_final": 50,
+      "correct_changed_turns": 0,
+      "changed_turns": 228,
+      "turns": 1669,
+      "unspecified": 1669,
+      "navigation_by_family": {
+        "MiniGrid-DoorKey-6x6-v0": 24,
+        "MiniGrid-Empty-Random-6x6-v0": 24
+      },
+      "unique_novel_layouts": 39,
+      "unique_novel_solved": 39,
+      "overlapped_test_episodes": 5,
+      "actions": 2194,
+      "episode_wall_s": {
+        "software": 29.365,
+        "dialogue": 4.612,
+        "interactive": 0.862
+      },
+      "restore_replay_equal": true,
+      "test_wall_s": 36.608025571000326,
+      "parameters": 531073,
+      "decision_sha256": "d5cbafd143197fef4e3d6d2d189bd792ddcb8e78d56d0607f41f937b0d075ee6",
+      "checkpoint_sha256": "d2dfcbecefea27c5de45f188e0369f6c67e958a7da3398dad871128c052dbce2"
+    },
+    "no-memory-1701": {
+      "software_repaired": [
+        "knapsack",
+        "find_first_in_sorted"
+      ],
+      "dialogue_complete": 50,
+      "dialogue_final": 50,
+      "correct_changed_turns": 0,
+      "changed_turns": 228,
+      "turns": 1669,
+      "unspecified": 1669,
+      "navigation_by_family": {
+        "MiniGrid-DoorKey-6x6-v0": 0,
+        "MiniGrid-Empty-Random-6x6-v0": 4
+      },
+      "unique_novel_layouts": 39,
+      "unique_novel_solved": 3,
+      "overlapped_test_episodes": 5,
+      "actions": 3850,
+      "episode_wall_s": {
+        "software": 26.517,
+        "dialogue": 2.051,
+        "interactive": 1.803
+      },
+      "test_wall_s": 32.22018432999903,
+      "parameters": 531073,
+      "decision_sha256": "b8fd8da33ce8e47d70ac8845b3ff0471483d630daa854bd004d92cacb1ac0d2b",
+      "checkpoint_sha256": "825bfe72abf9223146edf7d1f9d397746b5df4e4754b37c1eb7b794f922d8861"
+    },
+    "no-memory-1707": {
+      "software_repaired": [],
+      "dialogue_complete": 50,
+      "dialogue_final": 50,
+      "correct_changed_turns": 0,
+      "changed_turns": 228,
+      "turns": 1669,
+      "unspecified": 1669,
+      "navigation_by_family": {
+        "MiniGrid-DoorKey-6x6-v0": 0,
+        "MiniGrid-Empty-Random-6x6-v0": 4
+      },
+      "unique_novel_layouts": 39,
+      "unique_novel_solved": 3,
+      "overlapped_test_episodes": 5,
+      "actions": 3856,
+      "episode_wall_s": {
+        "software": 26.998,
+        "dialogue": 3.018,
+        "interactive": 2.554
+      },
+      "test_wall_s": 34.23836705499889,
+      "parameters": 531073,
+      "decision_sha256": "b92a3c622d877a21b09d8bc7468cb5e58a918a010f06875ce07b6583c48bbfe2",
+      "checkpoint_sha256": "59c6c85ad8d9aae530ba148ad3d57ec9776848d6c92195fe4421a2eb9e62020b"
+    },
+    "no-memory-1711": {
+      "software_repaired": [],
+      "dialogue_complete": 50,
+      "dialogue_final": 50,
+      "correct_changed_turns": 0,
+      "changed_turns": 228,
+      "turns": 1669,
+      "unspecified": 1669,
+      "navigation_by_family": {
+        "MiniGrid-DoorKey-6x6-v0": 0,
+        "MiniGrid-Empty-Random-6x6-v0": 24
+      },
+      "unique_novel_layouts": 39,
+      "unique_novel_solved": 16,
+      "overlapped_test_episodes": 5,
+      "actions": 3023,
+      "episode_wall_s": {
+        "software": 27.932,
+        "dialogue": 2.509,
+        "interactive": 1.414
+      },
+      "test_wall_s": 33.4694546869996,
+      "parameters": 531073,
+      "decision_sha256": "706ec88e86d93deb177c7715c2ac3ffcdf062daa0307cecc2ab8778c03c69279",
+      "checkpoint_sha256": "d2dfcbecefea27c5de45f188e0369f6c67e958a7da3398dad871128c052dbce2"
+    },
+    "heuristic-1701": {
+      "software_repaired": [
+        "knapsack",
+        "find_first_in_sorted"
+      ],
+      "dialogue_complete": 89,
+      "dialogue_final": 108,
+      "correct_changed_turns": 133,
+      "changed_turns": 228,
+      "turns": 1669,
+      "unspecified": 566,
+      "navigation_by_family": {
+        "MiniGrid-DoorKey-6x6-v0": 24,
+        "MiniGrid-Empty-Random-6x6-v0": 24
+      },
+      "unique_novel_layouts": 39,
+      "unique_novel_solved": 39,
+      "overlapped_test_episodes": 5,
+      "actions": 2150,
+      "episode_wall_s": {
+        "software": 28.764,
+        "dialogue": 0.346,
+        "interactive": 0.274
+      },
+      "test_wall_s": 30.950427708999996,
+      "parameters": 0,
+      "decision_sha256": "9d25e148dbb89d433c0dd48a583b41bba96c8d63e88ecf20d319fade50bbfbc2",
+      "checkpoint_sha256": null
+    }
+  },
+  "unaided": {
+    "attention-1701": {
+      "software_repaired": [],
+      "dialogue_complete": 50,
+      "dialogue_final": 50,
+      "correct_changed_turns": 0,
+      "changed_turns": 228,
+      "turns": 1669,
+      "unspecified": 1668,
+      "navigation_by_family": {
+        "MiniGrid-DoorKey-6x6-v0": 0,
+        "MiniGrid-Empty-Random-6x6-v0": 6
+      },
+      "unique_novel_layouts": 39,
+      "unique_novel_solved": 3,
+      "overlapped_test_episodes": 5,
+      "actions": 3770,
+      "episode_wall_s": {
+        "software": 38.389,
+        "dialogue": 19.106,
+        "interactive": 7.889
+      },
+      "test_wall_s": 67.2138115889993,
+      "parameters": 535297,
+      "decision_sha256": "8e56baa7336e606c12c04a6f7e137fa46e57130ba72ecdaf1c6292cb92896c31",
+      "checkpoint_sha256": "dc55cfe2a328d1c0f780cb9402d58bf6f19d8cca150f4651a2e4b2d726f9999e"
+    },
+    "attention-1707": {
+      "software_repaired": [],
+      "dialogue_complete": 50,
+      "dialogue_final": 50,
+      "correct_changed_turns": 0,
+      "changed_turns": 228,
+      "turns": 1669,
+      "unspecified": 1668,
+      "navigation_by_family": {
+        "MiniGrid-DoorKey-6x6-v0": 0,
+        "MiniGrid-Empty-Random-6x6-v0": 1
+      },
+      "unique_novel_layouts": 39,
+      "unique_novel_solved": 1,
+      "overlapped_test_episodes": 5,
+      "actions": 3996,
+      "episode_wall_s": {
+        "software": 35.923,
+        "dialogue": 16.373,
+        "interactive": 7.153
+      },
+      "test_wall_s": 60.66348487999858,
+      "parameters": 535297,
+      "decision_sha256": "ee6da04ebd235dc157352eeb10181624b59e391caee67ee1507fdad8b15d3e2b",
+      "checkpoint_sha256": "58909752e736cd4b7d37af08e417a1679bb779221c45167bf6ea87218fcd03b2"
+    },
+    "attention-1711": {
+      "software_repaired": [],
+      "dialogue_complete": 50,
+      "dialogue_final": 50,
+      "correct_changed_turns": 0,
+      "changed_turns": 228,
+      "turns": 1669,
+      "unspecified": 1669,
+      "navigation_by_family": {
+        "MiniGrid-DoorKey-6x6-v0": 0,
+        "MiniGrid-Empty-Random-6x6-v0": 3
+      },
+      "unique_novel_layouts": 39,
+      "unique_novel_solved": 2,
+      "overlapped_test_episodes": 5,
+      "actions": 3910,
+      "episode_wall_s": {
+        "software": 36.643,
+        "dialogue": 20.276,
+        "interactive": 9.81
+      },
+      "test_wall_s": 68.46262676399965,
+      "parameters": 535297,
+      "decision_sha256": "8b46e6c8e876943d555b3a1085e0637360ba4b08835dd4a032474e86b2666757",
+      "checkpoint_sha256": "899f62b92ae2bb8c4865b63d2fcb4a656e1250b879750790f2c37dcda66a17e4"
+    },
+    "cog-1701": {
+      "software_repaired": [
+        "find_first_in_sorted"
+      ],
+      "dialogue_complete": 50,
+      "dialogue_final": 50,
+      "correct_changed_turns": 0,
+      "changed_turns": 228,
+      "turns": 1669,
+      "unspecified": 1668,
+      "navigation_by_family": {
+        "MiniGrid-DoorKey-6x6-v0": 0,
+        "MiniGrid-Empty-Random-6x6-v0": 24
+      },
+      "unique_novel_layouts": 39,
+      "unique_novel_solved": 16,
+      "overlapped_test_episodes": 5,
+      "actions": 3118,
+      "episode_wall_s": {
+        "software": 33.138,
+        "dialogue": 6.687,
+        "interactive": 3.148
+      },
+      "restore_replay_equal": true,
+      "test_wall_s": 45.41009312599999,
+      "parameters": 531073,
+      "decision_sha256": "9da8790a63ba38318aa8d2b46b0916653a761ed7e81bd78d69efcf43a721051c",
+      "checkpoint_sha256": "dd8db9bead732d6bb0ac950afc9940328fdc956922c49f125143074981d4c9af"
+    },
+    "cog-1707": {
+      "software_repaired": [],
+      "dialogue_complete": 50,
+      "dialogue_final": 50,
+      "correct_changed_turns": 0,
+      "changed_turns": 228,
+      "turns": 1669,
+      "unspecified": 1669,
+      "navigation_by_family": {
+        "MiniGrid-DoorKey-6x6-v0": 0,
+        "MiniGrid-Empty-Random-6x6-v0": 8
+      },
+      "unique_novel_layouts": 39,
+      "unique_novel_solved": 4,
+      "overlapped_test_episodes": 5,
+      "actions": 3687,
+      "episode_wall_s": {
+        "software": 36.256,
+        "dialogue": 6.315,
+        "interactive": 3.68
+      },
+      "restore_replay_equal": true,
+      "test_wall_s": 48.10533548799867,
+      "parameters": 531073,
+      "decision_sha256": "5f3a0478feb494d0268fab01e71b94929a84ff3299341d537df6ba97dffe4822",
+      "checkpoint_sha256": "b1b05f0860fa14930e6a827ea62cae956b489151fae27bdc12f58096a2a6f756"
+    },
+    "cog-1711": {
+      "software_repaired": [],
+      "dialogue_complete": 50,
+      "dialogue_final": 50,
+      "correct_changed_turns": 0,
+      "changed_turns": 228,
+      "turns": 1669,
+      "unspecified": 1669,
+      "navigation_by_family": {
+        "MiniGrid-DoorKey-6x6-v0": 0,
+        "MiniGrid-Empty-Random-6x6-v0": 17
+      },
+      "unique_novel_layouts": 39,
+      "unique_novel_solved": 13,
+      "overlapped_test_episodes": 5,
+      "actions": 3633,
+      "episode_wall_s": {
+        "software": 33.312,
+        "dialogue": 4.517,
+        "interactive": 3.395
+      },
+      "restore_replay_equal": true,
+      "test_wall_s": 42.37836014599998,
+      "parameters": 531073,
+      "decision_sha256": "def3733fb31fce45d1316113c44de723bd5fa1b8b9034bf4e6aa61d11c996541",
+      "checkpoint_sha256": "67f674a591ee873f59c8af53a55b983e341ad16a535e7bed8c82c810bbb43179"
+    },
+    "no-memory-1701": {
+      "software_repaired": [
+        "find_first_in_sorted"
+      ],
+      "dialogue_complete": 50,
+      "dialogue_final": 50,
+      "correct_changed_turns": 0,
+      "changed_turns": 228,
+      "turns": 1669,
+      "unspecified": 1669,
+      "navigation_by_family": {
+        "MiniGrid-DoorKey-6x6-v0": 0,
+        "MiniGrid-Empty-Random-6x6-v0": 4
+      },
+      "unique_novel_layouts": 39,
+      "unique_novel_solved": 3,
+      "overlapped_test_episodes": 5,
+      "actions": 3848,
+      "episode_wall_s": {
+        "software": 35.099,
+        "dialogue": 4.177,
+        "interactive": 3.382
+      },
+      "test_wall_s": 44.77734026300095,
+      "parameters": 531073,
+      "decision_sha256": "52406c6f9690358859ccbe3c919624ecd968c537adba3a47c9a0b40f9857663f",
+      "checkpoint_sha256": "dd8db9bead732d6bb0ac950afc9940328fdc956922c49f125143074981d4c9af"
+    },
+    "no-memory-1707": {
+      "software_repaired": [],
+      "dialogue_complete": 50,
+      "dialogue_final": 50,
+      "correct_changed_turns": 0,
+      "changed_turns": 228,
+      "turns": 1669,
+      "unspecified": 1669,
+      "navigation_by_family": {
+        "MiniGrid-DoorKey-6x6-v0": 0,
+        "MiniGrid-Empty-Random-6x6-v0": 4
+      },
+      "unique_novel_layouts": 39,
+      "unique_novel_solved": 3,
+      "overlapped_test_episodes": 5,
+      "actions": 3856,
+      "episode_wall_s": {
+        "software": 34.249,
+        "dialogue": 2.798,
+        "interactive": 2.422
+      },
+      "test_wall_s": 41.479835479998656,
+      "parameters": 531073,
+      "decision_sha256": "832b773d12b98d16882a87a9457bfb2dbd26508e30e95cbf112805c45867817a",
+      "checkpoint_sha256": "b1b05f0860fa14930e6a827ea62cae956b489151fae27bdc12f58096a2a6f756"
+    },
+    "no-memory-1711": {
+      "software_repaired": [],
+      "dialogue_complete": 50,
+      "dialogue_final": 50,
+      "correct_changed_turns": 0,
+      "changed_turns": 228,
+      "turns": 1669,
+      "unspecified": 1669,
+      "navigation_by_family": {
+        "MiniGrid-DoorKey-6x6-v0": 0,
+        "MiniGrid-Empty-Random-6x6-v0": 0
+      },
+      "unique_novel_layouts": 39,
+      "unique_novel_solved": 0,
+      "overlapped_test_episodes": 5,
+      "actions": 4043,
+      "episode_wall_s": {
+        "software": 37.783,
+        "dialogue": 3.783,
+        "interactive": 3.612
+      },
+      "test_wall_s": 46.97790981500111,
+      "parameters": 531073,
+      "decision_sha256": "72ff1cdd9268d068c62f0b5807dc5546eddece84d5532a29e5aae56bea9253fe",
+      "checkpoint_sha256": "67f674a591ee873f59c8af53a55b983e341ad16a535e7bed8c82c810bbb43179"
+    }
+  }
+}

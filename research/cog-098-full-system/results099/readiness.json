@@ -1,0 +1,24 @@
+{
+  "components": {
+    "all_upstream_sources": true,
+    "authentic_data_manifest": true,
+    "authentic_holdout_receipts": false,
+    "frozen_test_entrypoint": true,
+    "single_full_agent_interface": true,
+    "training_entrypoint": true
+  },
+  "experiment": "COG-ATTN-098",
+  "gate_type": "source_and_receipt_readiness_not_model_quality",
+  "missing_agent_methods": [],
+  "scientific_decision": "NOT_QUALIFIED",
+  "source_sha256": {
+    "research/cog-071-080/boundary.py": "cffc3a2f10c888094b5919905305048bc41b9b7fa19d1fdfd4de7a5cc61d36f6",
+    "research/cog-071-080/causal.py": "b42340ff076cb60a716f3e2b4d1b043836e9dac80da31c9bae0cbe7719203905",
+    "research/cog-071-080/plans.py": "54118a836b0299ae2aa9fe9e0c66973180b2851e49220254b1dbe74bcf8edbb4",
+    "research/cog-071-080/tracker.py": "d9fde52141ee39d9db12c2edadf1c8686a232b3ae749727eaa92eea652a20f35",
+    "research/cog-097e/experiment.py": "7772e5e463fec6bceb0390c9c5e4c51cbd3ba0ca187d5e53afa2f5c2d66f056b"
+  },
+  "unmet_gates": [
+    "authentic_holdout_receipts"
+  ]
+}
