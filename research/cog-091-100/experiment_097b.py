@@ -28,7 +28,7 @@ FIELDS = (
     ('lunar registry checksum', (), ('what is the lunar registry checksum',)),
 )
 SEEDS=(1103,1117,1129,2111,2129,2137)
-SIZES=(1536,8192,32768)
+SIZES=(2048,8192,32768)
 VEC_DIM=1024
 
 
