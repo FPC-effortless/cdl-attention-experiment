@@ -99,3 +99,15 @@ def test_reference_index_agrees_on_causal_successors_before_eviction():
         before=bisect_left(known,i+1)
         expected=seq[known[before-1]] if before else -1
         assert s.ingest(t)==expected
+
+
+def test_foreign_slot_probe_leaves_unwritten_prefix_unchanged():
+    torch.set_num_threads(1)
+    torch.manual_seed(89)
+    m=LM(Config('cog')).eval()
+    a=torch.randint(0,2048,(2,32))
+    with torch.no_grad():
+        p,_=m(a)
+        q,_=m(a,intervention='foreign_slots')
+        torch.testing.assert_close(p[:,:16],q[:,:16])
+        assert (p[:,16:]-q[:,16:]).abs().max()>.0001

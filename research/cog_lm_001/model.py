@@ -155,14 +155,18 @@ class SlotBank(nn.Module):
         return (x.new_zeros(len(x),c.slots,c.bank_dim),x.new_zeros(len(x),c.slots,c.slots),
                 x.new_zeros(len(x),c.width),0)
 
-    def forward(self,h,state=None):
+    def forward(self,h,state=None,foreign=False):
+        if foreign and len(h)<2:
+            raise ValueError("foreign bank intervention needs distinct documents")
         rows,links,total,used=self.initial(h) if state is None else state
         output=[]; start=0
         while start<h.size(1):
             block=h[:,start:start+self.c.period-used]
             route=self.route(block).softmax(-1)
-            first=route@rows
-            related=(route@links)@rows
+            read_rows=rows.roll(1,0) if foreign else rows
+            read_links=links.roll(1,0) if foreign else links
+            first=route@read_rows
+            related=(route@read_links)@read_rows
             output.append(self.readout(torch.cat([first,related],-1)))
             total=total+block.sum(1)
             used+=block.size(1)
@@ -216,7 +220,7 @@ class LM(nn.Module):
             new.append(s)
         h=self.norm(h)
         if self.c.arm in ('cog','slots') and intervention not in ('no_slots','no_memory'):
-            r,bank=self.bank(h,bank)
+            r,bank=self.bank(h,bank,foreign=intervention=="foreign_slots")
             h=h+r
         logp=F.log_softmax(F.linear(h,self.emb.weight),-1)
         if self.c.arm in ('cog','episode') and intervention not in ('no_episode','no_memory'):
