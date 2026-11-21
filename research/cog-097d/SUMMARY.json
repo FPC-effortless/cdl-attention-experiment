@@ -1,0 +1,155 @@
+{
+  "missing_evidence": {
+    "abstain_action_present": false,
+    "false_answer_count_per_seed_by_design": 23,
+    "unseen_absent_queries": 23
+  },
+  "observed_unique_queries": {
+    "outcome_feedback_fresh": 161,
+    "self_supervised": 64
+  },
+  "outcome_feedback": {
+    "after_feedback": {
+      "correct": 35,
+      "per_seed": [
+        11,
+        12,
+        12
+      ],
+      "trials_with_repeated_queries": 483
+    },
+    "before_feedback": {
+      "correct": 44,
+      "per_seed": [
+        12,
+        13,
+        19
+      ],
+      "trials_with_repeated_queries": 483
+    },
+    "char_tfidf": {
+      "correct": 216,
+      "per_seed": [
+        72,
+        72,
+        72
+      ],
+      "trials_with_repeated_queries": 483
+    },
+    "shuffled_feedback": {
+      "correct": 36,
+      "per_seed": [
+        13,
+        10,
+        13
+      ],
+      "trials_with_repeated_queries": 483
+    },
+    "word_tfidf": {
+      "correct": 171,
+      "per_seed": [
+        57,
+        57,
+        57
+      ],
+      "trials_with_repeated_queries": 483
+    }
+  },
+  "protocol_note": "097d original leakage audit excluded one duplicated cross-source docstring. 097d2 fresh modules were fixed before first 097d2 scoring. Results describe retrieval subsystems only.",
+  "research_cycle": "COG-ATTN-097d raw experience and 097d2 outcome training",
+  "seeds": [
+    1701,
+    1707,
+    1711
+  ],
+  "self_supervised": {
+    "char_tfidf": {
+      "correct": 60,
+      "per_seed": [
+        20,
+        20,
+        20
+      ],
+      "trials_with_repeated_queries": 192
+    },
+    "mismatched_experiences": {
+      "correct": 19,
+      "per_seed": [
+        9,
+        7,
+        3
+      ],
+      "trials_with_repeated_queries": 192
+    },
+    "self_supervised": {
+      "correct": 24,
+      "per_seed": [
+        7,
+        10,
+        7
+      ],
+      "trials_with_repeated_queries": 192
+    },
+    "untrained": {
+      "correct": 26,
+      "per_seed": [
+        12,
+        7,
+        7
+      ],
+      "trials_with_repeated_queries": 192
+    },
+    "word_tfidf": {
+      "correct": 69,
+      "per_seed": [
+        23,
+        23,
+        23
+      ],
+      "trials_with_repeated_queries": 192
+    }
+  },
+  "software_versions": {
+    "numpy": "2.3.5",
+    "pytest": "9.0.2",
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "scikit_learn": "1.8.0",
+    "torch": "2.10.0+cpu"
+  },
+  "status": "negative result; actual train/freeze/eval; NOT full COG-ATTN",
+  "timing": {
+    "feedback_acquisition_policy_ms_per_seed": [
+      670.72,
+      511.13,
+      328.49
+    ],
+    "feedback_training_ms_per_seed": [
+      10675.68,
+      9163.3,
+      8232.96
+    ],
+    "fresh_query_index_ms_mean": {
+      "after_feedback": 77.492,
+      "before_feedback": 117.465,
+      "char_tfidf": 170.686,
+      "shuffled_feedback": 94.247,
+      "word_tfidf": 25.77
+    },
+    "fresh_query_inference_ms_mean": {
+      "after_feedback": 12.498,
+      "before_feedback": 13.8,
+      "char_tfidf": 17.911,
+      "shuffled_feedback": 11.704,
+      "word_tfidf": 20.538
+    }
+  },
+  "training": {
+    "contrastive_updates_per_seed": 104,
+    "epochs": 8,
+    "feedback_attempts_per_seed": 591,
+    "feedback_episodes_per_seed": 297,
+    "feedback_updates_per_seed": 152,
+    "successful_outcome_bits_per_seed": 196,
+    "train_documents": 297
+  }
+}
