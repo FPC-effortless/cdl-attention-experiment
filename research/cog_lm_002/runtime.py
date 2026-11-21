@@ -8,8 +8,9 @@ from architecture import Readout, Successors, InferenceCache, backbone, features
 
 
 class Runtime:
-    def __init__(self, model, head, disabled=False):
+    def __init__(self, model, head, disabled=False, mask_read=False):
         self.model, self.head, self.disabled = model, head, disabled
+        self.mask_read = mask_read
 
     @classmethod
     def load(cls, base, adapter, disabled=False):
@@ -37,7 +38,7 @@ class Runtime:
             for part in pieces:
                 h, layers = features(self.model, part, layers)
                 ids = successor_ids(part, self.model.c.capacity, table)
-                pred, bank = self.head(h, ids, self.model.emb.weight, bank, self.disabled, last_only)
+                pred, bank = self.head(h, ids, self.model.emb.weight, bank, self.disabled, last_only, self.mask_read)
                 if last_only:
                     outputs = [pred]
                 else:

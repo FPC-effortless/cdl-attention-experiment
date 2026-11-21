@@ -62,6 +62,7 @@ def changed_facts(system, data):
         doc = int(long_docs[i])
         pos = bounds[doc]+64
         filler = tokens[pos:pos+DISTANCES[-1]]
+        paired_states = {}
         for flip in (0, 1):
             old, new = (a,b) if flip == 0 else (b,a)
             prefix = ' '.join((literal.format(first)+' '+old+'.', literal.format(second)+' '+new+'.',
@@ -73,6 +74,17 @@ def changed_facts(system, data):
                     seq = torch.from_numpy(filler[seen:distance].astype('int64'))[None]
                     _, state = system.advance(seq, state, last_only=True)
                 seen = distance
+                bank = state[1]
+                delta = {}
+                if bank is not None:
+                    # Compare the same stream after changing only the initial assignments.
+                    keys, values, _ = bank
+                    if flip == 0:
+                        paired_states[distance] = (keys.clone(),values.clone())
+                    else:
+                        old_keys, old_values = paired_states[distance]
+                        delta = dict(key_max_delta=(keys-old_keys).abs().max().item(),
+                                     value_max_delta=(values-old_values).abs().max().item())
                 for entity, gold, stale in ((first,new,old),(second,old,new)):
                     for kind, phrasing in (('literal',literal),('paraphrase',reword)):
                         query = torch.tensor([tok.encode(' '+phrasing.format(entity)).ids])
@@ -81,7 +93,7 @@ def changed_facts(system, data):
                         foil, = tok.encode(' '+stale).ids
                         logp = scores[0,-1]
                         table = queried[2][0]
-                        rows.append(dict(template=i, entity=entity, flip=flip, doc=doc, delay=distance,
+                        rows.append(dict(**delta, template=i, entity=entity, flip=flip, doc=doc, delay=distance,
                             kind=kind, target=target, stale=foil, top=int(logp.argmax()),
                             logodds=float(logp[target]-logp[foil]),
                             lookup=table.table.get(table.tail,-1), context=len(tok.encode(prefix).ids)+distance+query.size(1)))

@@ -1,4 +1,3 @@
-import copy
 import io
 
 import torch
@@ -56,3 +55,17 @@ def test_revision_competes_and_gets_gradients():
     other[:,7:] *= -1
     changed, _ = bank(other)
     torch.testing.assert_close(pred[:,:7],changed[:,:7])
+
+
+@torch.inference_mode()
+def test_cost_matched_bank_intervention():
+    torch.manual_seed(9)
+    m = LM(Config('local')).eval()
+    head = Readout(m.c.width, True).eval()
+    x = torch.randint(0, 2048, (2, 83))
+    active, _ = Runtime(m,head).advance(x)
+    off, off_state = Runtime(m,head,disabled=True).advance(x)
+    masked, masked_state = Runtime(m,head,mask_read=True).advance(x)
+    torch.testing.assert_close(masked,off,rtol=0,atol=0)
+    assert off_state[1] is None and masked_state[1] is not None
+    assert (active-masked).abs().max() > 0

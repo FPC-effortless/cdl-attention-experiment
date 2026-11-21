@@ -64,11 +64,11 @@ class Readout(nn.Module):
         nn.init.constant_(self.gate.bias, -1.5)
         self.bank = RevisionBank(width) if revision else None
 
-    def forward(self, h, index, embedding, bank=None, disabled=False, last_only=False):
+    def forward(self, h, index, embedding, bank=None, disabled=False, last_only=False, mask_read=False):
         h = h + self.up(F.gelu(self.down(h)))
         if self.bank is not None and not disabled:
             read, bank = self.bank(h, bank)
-            h = h + read
+            h = h + (read * 0 if mask_read else read)
         if last_only:
             h, index = h[:, -1:], index[:, -1:]
         logp = F.log_softmax(F.linear(h, embedding), -1)

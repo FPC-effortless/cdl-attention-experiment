@@ -1,5 +1,6 @@
 """Train the same late-introduced modules with the entire backbone unfrozen."""
 import argparse
+import hashlib
 import json
 import math
 import time
@@ -52,7 +53,7 @@ def fit(a):
     path.with_suffix('.json').write_text(json.dumps(dict(name=path.name, parent=a.base.name,
         parent_sha256=digest(a.base),adapter_sha256=digest(hpath),base_sha256=digest(bpath),
         trainable=sum(p.numel() for p in parameters),total_targets=2097152,steps=len(order),
-        offsets_sha256=__import__('hashlib').sha256(order.tobytes()).hexdigest(),
+        offsets_sha256=hashlib.sha256(order.tobytes()).hexdigest(),
         wall_s=time.perf_counter()-start,loss=curve))+'\n')
 
 
