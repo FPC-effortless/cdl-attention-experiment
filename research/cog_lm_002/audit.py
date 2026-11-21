@@ -7,6 +7,7 @@ from pathlib import Path
 
 import numpy as np
 import torch
+from tokenizers import Tokenizer
 from adapt import digest
 from data import corpus,train_offsets
 from runtime import Runtime
@@ -35,6 +36,7 @@ def run(a):
     targets=(order[:,None]+np.arange(1,129)).ravel()
     assert len(np.unique(targets))==len(targets)==1572864
     exposure[targets]=True
+    tokenizer=Tokenizer.from_file(str(a.data/'tokenizer.json'))
     test,offsets=corpus(a.data,'test')
     x=torch.tensor(test[offsets[0]+48:offsets[0]+145].astype('int64'))[None]
     result=dict(distinct_parent_positions=first,distinct_total_positions=int(exposure.sum()),
@@ -57,7 +59,19 @@ def run(a):
             replay,_=m.advance(x[:,32:],copy.deepcopy(state))
             err=float((native[:,32:]-replay).abs().max())
             assert err < .00012,(name,err)
-            result['replay'][name]=dict(max_abs_logp=err,generated=m.generate(x,16))
+            samples=[]
+            for prompt in ('The history of the city','When the rain stopped,','The customer asked'):
+                generator=torch.Generator().manual_seed(31)
+                logp,stream=m.advance(torch.tensor([tokenizer.encode(prompt).ids]),last_only=True)
+                ids=[]
+                for _ in range(48):
+                    nxt=torch.multinomial((logp[:,-1]/.8).softmax(-1),1,generator=generator)
+                    ids.append(nxt.item())
+                    if nxt.item()==0:
+                        break
+                    logp,stream=m.advance(nxt,stream,last_only=True)
+                samples.append(dict(prompt=prompt,ids=ids,completion=tokenizer.decode(ids)))
+            result['replay'][name]=dict(max_abs_logp=err,generated=m.generate(x,16),samples=samples)
     a.out.write_text(json.dumps(result,indent=2)+'\n')
 
 
