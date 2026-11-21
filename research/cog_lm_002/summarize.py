@@ -52,8 +52,20 @@ def probes(rows):
     return out
 
 
+def dialogues(rows):
+    before = np.array([r['before_new_logp']-r['before_old_logp'] for r in rows])
+    after = np.array([r['after_new_logp']-r['after_old_logp'] for r in rows])
+    return dict(cases=len(rows),dialogues=len({r['dialogue'] for r in rows}),
+        before_prefers_old=int(sum(before<0)),after_prefers_new=int(sum(after>0)),
+        switched_correctly=int(sum((before<0)&(after>0))),switched_backwards=int(sum((before>0)&(after<0))),
+        positive_shift=int(sum(after>before)),median_logodds_shift=float(np.median(after-before)),
+        exact_after=sum(r['after_new_exact'] for r in rows),
+        literal_after=sum(r['after_literal_prefers_new'] for r in rows),
+        literal_switch=sum(not r['before_literal_prefers_new'] and r['after_literal_prefers_new'] for r in rows))
+
+
 def build(root,joint):
-    result=dict(scores={},paired={},probes={},contexts={},costs={},fits={})
+    result=dict(scores={},paired={},probes={},contexts={},costs={},fits={},dialogues={},matched={})
     for prefix,train_root in [('',root),('joint_',joint)]:
         for arm in ARMS:
             name=prefix+arm
@@ -71,6 +83,14 @@ def build(root,joint):
             if not arm.endswith('_off'):
                 f=read(train_root/(name+'.json'))
                 result['fits'][name]={k:v for k,v in f.items() if k!='loss'}
+            if prefix == 'joint_':
+                result['dialogues'][name]=dialogues(read(root/(name+'.dialogue.json')))
+            if arm == 'cog_revision':
+                probes_matched=read(root/(name+'.matched.json'))
+                result['matched'][name]=dict(windows=len(probes_matched),
+                    masked_disabled_max_delta=max(r['masked_disabled_max_delta'] for r in probes_matched),
+                    full_nll=sum(r['full_nll'] for r in probes_matched)/(128*len(probes_matched)),
+                    masked_nll=sum(r['masked_nll'] for r in probes_matched)/(128*len(probes_matched)))
             cost=root/(name+'.cost.json')
             if cost.exists():
                 record=read(cost)
