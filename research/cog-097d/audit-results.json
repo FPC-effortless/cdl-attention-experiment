@@ -1,0 +1,124 @@
+{
+  "checkpoint_replayed": false,
+  "counts": {
+    "d1": {
+      "dev": 48,
+      "test": 64,
+      "train": 297,
+      "unknown": 23
+    },
+    "d2": {
+      "feedback_events": 591,
+      "fresh_test": 161,
+      "train": 297,
+      "unknown": 23
+    }
+  },
+  "results": {
+    "d1": {
+      "char_tfidf": {
+        "correct_total": 60,
+        "mean_accuracy": 0.3125,
+        "seed_counts": [
+          20,
+          20,
+          20
+        ],
+        "trial_total": 192
+      },
+      "mismatched_experiences": {
+        "correct_total": 19,
+        "mean_accuracy": 0.09895833333333333,
+        "seed_counts": [
+          9,
+          7,
+          3
+        ],
+        "trial_total": 192
+      },
+      "self_supervised": {
+        "correct_total": 24,
+        "mean_accuracy": 0.125,
+        "seed_counts": [
+          7,
+          10,
+          7
+        ],
+        "trial_total": 192
+      },
+      "untrained": {
+        "correct_total": 26,
+        "mean_accuracy": 0.13541666666666666,
+        "seed_counts": [
+          12,
+          7,
+          7
+        ],
+        "trial_total": 192
+      },
+      "word_tfidf": {
+        "correct_total": 69,
+        "mean_accuracy": 0.359375,
+        "seed_counts": [
+          23,
+          23,
+          23
+        ],
+        "trial_total": 192
+      }
+    },
+    "d2": {
+      "after_feedback": {
+        "correct_total": 35,
+        "mean_accuracy": 0.07246376811594203,
+        "seed_counts": [
+          11,
+          12,
+          12
+        ],
+        "trial_total": 483
+      },
+      "before_feedback": {
+        "correct_total": 44,
+        "mean_accuracy": 0.09109730848861283,
+        "seed_counts": [
+          12,
+          13,
+          19
+        ],
+        "trial_total": 483
+      },
+      "char_tfidf": {
+        "correct_total": 216,
+        "mean_accuracy": 0.4472049689440994,
+        "seed_counts": [
+          72,
+          72,
+          72
+        ],
+        "trial_total": 483
+      },
+      "shuffled_feedback": {
+        "correct_total": 36,
+        "mean_accuracy": 0.07453416149068323,
+        "seed_counts": [
+          13,
+          10,
+          13
+        ],
+        "trial_total": 483
+      },
+      "word_tfidf": {
+        "correct_total": 171,
+        "mean_accuracy": 0.35403726708074534,
+        "seed_counts": [
+          57,
+          57,
+          57
+        ],
+        "trial_total": 483
+      }
+    }
+  },
+  "status": "audit passed"
+}
