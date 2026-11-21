@@ -1,0 +1,62 @@
+{
+  "training": {
+    "name": "scale-mamba2-17-continued",
+    "config": {
+      "arm": "mamba2",
+      "scale": "scale",
+      "vocab": 2048,
+      "slots": 8,
+      "bank_dim": 32,
+      "period": 16,
+      "capacity": 256
+    },
+    "torch": "2.10.0+cpu",
+    "seed": 17,
+    "steps": 896,
+    "tokens": 458752,
+    "total_tokens": 524288,
+    "parent_sha256": "3fe14254b47505101be2abdeb5db14ad8df8a71432976bcbcc3746fe8902b4c5",
+    "windows": 3583,
+    "offsets_sha256": "a06d02c2c87c4011455821f8d7528a3d72545c4ddce313389a10a4083e6a7e76",
+    "train_s": 1252.6655679629985,
+    "tokens_per_s": 366.2206511718782,
+    "parameters": 31273600,
+    "checkpoint_sha256": "e4bfff5b54671899e0313e50c86d3cf13824583176e178d53869bbae23db341c",
+    "rss_kib": 1938168,
+    "threads": 2
+  },
+  "validation_alpha": 0.35,
+  "baseline": "2ea77dd26969bcb60191b79eb7b66202d03beed808e276aa08884a00493d5814",
+  "panels": {
+    "test": {
+      "targets": 15616,
+      "mamba_nll": 4.2954294876974135,
+      "mamba_lookup_nll": 4.179702704070045,
+      "mamba_lookup_ppl": 65.34642310028131,
+      "legacy_cog_nll": 4.6376704505232516,
+      "mamba_lookup_minus_legacy_cog": {
+        "delta": -0.45796774645320704,
+        "ci95": [
+          -0.4893980339413784,
+          -0.4268705883475601
+        ],
+        "articles": 61
+      }
+    },
+    "transfer": {
+      "targets": 12288,
+      "mamba_nll": 6.434171671668689,
+      "mamba_lookup_nll": 5.897907629609108,
+      "mamba_lookup_ppl": 364.2744727885216,
+      "legacy_cog_nll": 6.1642826696236925,
+      "mamba_lookup_minus_legacy_cog": {
+        "delta": -0.26637504001458484,
+        "ci95": [
+          -0.28799316187699636,
+          -0.2450291412572066
+        ],
+        "articles": 96
+      }
+    }
+  }
+}
