@@ -29,7 +29,7 @@ This is a single-CPU local diagnostic. Performance and source hashes depend on P
 
 ## Reproduce
 
-Python 3.13.5; see `requirements.txt`. This package includes the vendored 097c corpus extraction source to make the source code self-contained. The authors' underlying Python stdlib sources are loaded from the local Python installation; match module SHA-256 hashes in `result-*.json` and `feedback-*.json` for a same-input replay. No binary corpus snapshots are included; exact data reproduction requires the pinned interpreter sources.
+Python 3.13.5; see `requirements.txt`. This package includes the vendored 097c corpus extraction source to make the source code self-contained. The authors' underlying Python stdlib sources are loaded from the local Python installation; match module SHA-256 hashes in `result-*.json` and `feedback-*.json` for a same-input replay. No binary corpus snapshots are included; exact data reproduction requires the pinned interpreter sources. The GitHub draft publishes code, protocols and compact per-query evidence, **but not the 48 MB of frozen weights or full raw feedback traces**; those are included in the separately downloadable complete archive. The GitHub `reproduce.sh` script regenerates them. Public source-hash checking is provided by `audit_compact.py`.
 
 ```bash
 export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
@@ -40,7 +40,7 @@ python -m pytest -q test_experiment.py test_feedback.py
 sha256sum -c SHA256SUMS
 ```
 
-Repeat for seeds 1707 and 1711. `audit.py --replay` reloads the **actual saved frozen model weights** and independently rescored fresh queries; the audit was completed successfully. After regeneration, expect model-file bytes and timing receipts to vary by host even if fixed-seed predictions match. The manifest applies to original published snapshots, not overwritten regenerations. `SUMMARY.json` contains independently recomputed totals.
+The one-command source checkout route is `bash reproduce.sh`: it checks exact source hashes, trains and scores all three seeds, and replays checkpoints. Repeat for seeds 1707 and 1711 when running individual commands. `audit.py --replay` reloads the **actual saved frozen model weights** and independently rescored fresh queries; the audit was completed successfully. After regeneration, expect model-file bytes and timing receipts to vary by host even if fixed-seed predictions match. The manifest applies to original published snapshots, not overwritten regenerations. `SUMMARY.json` contains independently recomputed totals.
 
 ## Research conclusion
 
