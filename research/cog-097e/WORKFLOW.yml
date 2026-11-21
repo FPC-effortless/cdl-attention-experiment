@@ -1,0 +1,31 @@
+name: COG-ATTN-097e frozen outcome-learning replay
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/cog-097e/**'
+      - '.github/workflows/cog-097e.yml'
+jobs:
+  cpu-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - run: python -m pip install -r requirements.txt
+        working-directory: research/cog-097e
+      - name: Train, audit, and retain failed qualification as expected
+        working-directory: research/cog-097e
+        run: bash reproduce.sh
+      - name: Upload machine replay receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cog-097e-replay
+          path: |
+            research/cog-097e/result-*.json
+            research/cog-097e/097e-*.pt
+            research/cog-097e/SUMMARY.json
+            research/cog-097e/AUDIT.json
