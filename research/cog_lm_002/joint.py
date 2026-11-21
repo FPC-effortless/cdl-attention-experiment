@@ -1,6 +1,7 @@
 """Train the same late-introduced modules with the entire backbone unfrozen."""
 import argparse
 import hashlib
+import fcntl
 import json
 import math
 import time
@@ -48,14 +49,17 @@ def fit(a):
         gain = min(1.,(step+1)/32) * (.2+.4*(1+math.cos(math.pi*step/len(order))))
         for group, rate in zip(opt.param_groups,(.00015,.001)):
             group['lr'] = rate * gain
-        h,_ = features(m,x)
-        logp,_ = head(h,successor_ids(x,m.c.capacity),m.emb.weight)
-        loss = F.nll_loss(logp.flatten(0,1),y.reshape(-1))
         opt.zero_grad(set_to_none=True)
-        loss.backward()
+        total_loss = 0.
+        for inputs, labels in zip(x.split(a.microbatch), y.split(a.microbatch)):
+            h,_ = features(m,inputs)
+            logp,_ = head(h,successor_ids(inputs,m.c.capacity),m.emb.weight)
+            loss = F.nll_loss(logp.flatten(0,1),labels.reshape(-1),reduction='sum') / y.numel()
+            loss.backward()
+            total_loss += float(loss.detach())
         torch.nn.utils.clip_grad_norm_(parameters,1.,error_if_nonfinite=True)
         opt.step()
-        curve.append(float(loss.detach()))
+        curve.append(total_loss)
         if (step+1)%64 == 0 or step == 0:
             print(step+1,round(curve[-1],4),round(time.perf_counter()-start,1),flush=True)
         if a.save_progress and (step+1)%256 == 0 and step+1<len(order):
@@ -70,7 +74,7 @@ def fit(a):
     torch.save(head.state_dict(),hpath)
     path.with_suffix('.json').write_text(json.dumps(dict(name=path.name, parent=a.base.name,
         parent_sha256=digest(a.base),adapter_sha256=digest(hpath),base_sha256=digest(bpath),
-        trainable=sum(p.numel() for p in parameters),total_targets=2097152,steps=len(order),
+        microbatch=a.microbatch,trainable=sum(p.numel() for p in parameters),total_targets=2097152,steps=len(order),
         offsets_sha256=hashlib.sha256(order.tobytes()).hexdigest(),
         wall_s=elapsed+time.perf_counter()-start,loss=curve))+'\n')
     progress.unlink(missing_ok=True)
@@ -81,6 +85,18 @@ if __name__ == '__main__':
     for k in ('base','data','out'):
         p.add_argument('--'+k,type=Path,required=True)
     p.add_argument('--arm',choices=('cog_lookup','cog_revision','mamba_lookup'),required=True)
+    p.add_argument('--microbatch',type=int,choices=(1,2,4,8),default=8)
     p.add_argument('--save-progress', action=argparse.BooleanOptionalAction,default=True)
     p.add_argument('--threads',type=int,default=2)
-    fit(p.parse_args())
+    args=p.parse_args()
+    args.out.mkdir(parents=True,exist_ok=True)
+    path=args.out/('joint_'+args.arm)
+    with path.with_suffix('.lock').open('a') as lock:
+        fcntl.flock(lock,fcntl.LOCK_EX)
+        if path.with_suffix('.json').exists():
+            record=json.loads(path.with_suffix('.json').read_text())
+            if (digest(args.base)!=record['parent_sha256'] or digest(path.with_suffix('.pt'))!=record['adapter_sha256']
+                    or digest(path.with_suffix('.base.pt'))!=record['base_sha256']):
+                raise ValueError('completed fit identity mismatch')
+        else:
+            fit(args)

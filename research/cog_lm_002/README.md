@@ -29,8 +29,9 @@ done
 for arm in cog_revision cog_lookup mamba_lookup; do
   base="$cog"
   threads=2
-  if [ "$arm" = mamba_lookup ]; then base="$mamba"; threads=3; fi
-  "$py" "$new/joint.py" --arm "$arm" --base "$base" --data "$data" --out "$joint" --threads "$threads"
+  microbatch=8
+  if [ "$arm" = mamba_lookup ]; then base="$mamba"; microbatch=4; fi
+  "$py" "$new/joint.py" --arm "$arm" --base "$base" --data "$data" --out "$joint" --threads "$threads" --microbatch "$microbatch"
   for regime in frozen joint; do
     head="$raw/$arm.pt"
     trained_base="$base"
@@ -44,6 +45,7 @@ for arm in cog_revision cog_lookup mamba_lookup; do
     if [ "$regime" = joint ]; then
       "$py" "$new/dialogue.py" "${args[@]}" --dialogue "$dialogue"
       if [ "$arm" = cog_revision ]; then "$py" "$new/dialogue.py" "${args[@]}" --dialogue "$dialogue" --disabled; fi
+      "$py" "$new/cold_request.py" "${args[@]}" --tokenizer "$data/tokenizer.json"
       "$py" "$new/economics.py" "${args[@]}"
       if [ "$arm" = cog_revision ]; then "$py" "$new/economics.py" "${args[@]}" --disabled; fi
     fi
