@@ -1,6 +1,7 @@
 """Replay frozen model decisions on another CPU and check the original shift control."""
 import json
-from copy import deepcopy
+from diagnose import run as diagnose
+from partial import run as partial
 from audit import read,summarize
 from panel import run
 from shifts import run as shifts
@@ -13,6 +14,8 @@ def strip(value):
 def main():
     for p in ('held','rep'):
         assert strip(run(p))==strip(read(p+'.json')),p
+    assert strip(diagnose())==strip(read('paired-state-diagnostic.json'))
+    assert strip(partial())==strip(read('partial.json'))
     assert strip(shifts())==strip(read('shifts.json'))
     assert strip(score())==strip(read('subgoal.json'))
     assert summarize()==read('summary.json')
