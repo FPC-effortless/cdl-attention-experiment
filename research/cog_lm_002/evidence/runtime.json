@@ -1,0 +1,22 @@
+{
+  "deterministic_seed": 17,
+  "python": "3.12",
+  "torch": "2.10.0+cpu",
+  "format": "float32",
+  "cpu": "Intel Xeon Platinum 8573C",
+  "training_threads": {
+    "matched_mamba_continuation": 2,
+    "frozen_all": 3,
+    "joint_cog_revision": 3,
+    "joint_cog_lookup": 3,
+    "joint_mamba_lookup": 2
+  },
+  "full_parameter_microbatch": {
+    "joint_cog_revision": 4,
+    "joint_cog_lookup": 4,
+    "joint_mamba_lookup": 2
+  },
+  "joint_targets_per_update": 1024,
+  "inference_threads": 2,
+  "source_revision_001": "ad66f04609b07b8029b317a4450d3896b57af519"
+}

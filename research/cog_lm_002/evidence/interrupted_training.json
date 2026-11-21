@@ -1,0 +1,16 @@
+{
+  "reason": "Memory pressure during simultaneous full-parameter fits. Shell exit 137 for all three.",
+  "completed_results": false,
+  "last_logged_steps": {
+    "cog_revision": 576,
+    "cog_lookup": 256,
+    "mamba_lookup": 0
+  },
+  "restarted_from_original_parents": true,
+  "effective_batch_targets": 1024,
+  "successful_microbatch": {
+    "cog_revision": 4,
+    "cog_lookup": 4,
+    "mamba_lookup": 2
+  }
+}
