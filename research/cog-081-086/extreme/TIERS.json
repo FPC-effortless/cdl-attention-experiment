@@ -1,0 +1,132 @@
+{
+  "name": "COG-ATTN-087–090 graded puzzle research protocol",
+  "status": "reference environment locally implemented; GitHub code upload pending",
+  "split": {
+    "development": [
+      8701,
+      8707
+    ],
+    "reserved": [
+      9701,
+      9707
+    ]
+  },
+  "tiers": [
+    {
+      "level": 1,
+      "name": "Novice",
+      "maze_size": 7,
+      "sudoku_size_and_requested_blanks": "4x4/4",
+      "eight_puzzle_exact_moves": 2,
+      "hanoi_discs": 2,
+      "chess_restricted_forced_mate_white_moves": 1
+    },
+    {
+      "level": 2,
+      "name": "Easy",
+      "maze_size": 9,
+      "sudoku_size_and_requested_blanks": "4x4/7",
+      "eight_puzzle_exact_moves": 4,
+      "hanoi_discs": 3,
+      "chess_restricted_forced_mate_white_moves": 1
+    },
+    {
+      "level": 3,
+      "name": "Foundation",
+      "maze_size": 11,
+      "sudoku_size_and_requested_blanks": "4x4/9",
+      "eight_puzzle_exact_moves": 6,
+      "hanoi_discs": 4,
+      "chess_restricted_forced_mate_white_moves": 1
+    },
+    {
+      "level": 4,
+      "name": "Intermediate",
+      "maze_size": 15,
+      "sudoku_size_and_requested_blanks": "9x9/35",
+      "eight_puzzle_exact_moves": 8,
+      "hanoi_discs": 5,
+      "chess_restricted_forced_mate_white_moves": 2
+    },
+    {
+      "level": 5,
+      "name": "Challenging",
+      "maze_size": 21,
+      "sudoku_size_and_requested_blanks": "9x9/42",
+      "eight_puzzle_exact_moves": 12,
+      "hanoi_discs": 7,
+      "chess_restricted_forced_mate_white_moves": 2
+    },
+    {
+      "level": 6,
+      "name": "Advanced",
+      "maze_size": 31,
+      "sudoku_size_and_requested_blanks": "9x9/47",
+      "eight_puzzle_exact_moves": 16,
+      "hanoi_discs": 9,
+      "chess_restricted_forced_mate_white_moves": 2
+    },
+    {
+      "level": 7,
+      "name": "Expert",
+      "maze_size": 45,
+      "sudoku_size_and_requested_blanks": "9x9/50",
+      "eight_puzzle_exact_moves": 20,
+      "hanoi_discs": 12,
+      "chess_restricted_forced_mate_white_moves": 3
+    },
+    {
+      "level": 8,
+      "name": "Master",
+      "maze_size": 65,
+      "sudoku_size_and_requested_blanks": "9x9/53",
+      "eight_puzzle_exact_moves": 24,
+      "hanoi_discs": 15,
+      "chess_restricted_forced_mate_white_moves": 3
+    },
+    {
+      "level": 9,
+      "name": "Extreme",
+      "maze_size": 95,
+      "sudoku_size_and_requested_blanks": "9x9/55",
+      "eight_puzzle_exact_moves": 28,
+      "hanoi_discs": 18,
+      "chess_restricted_forced_mate_white_moves": 4
+    },
+    {
+      "level": 10,
+      "name": "Frontier",
+      "maze_size": 151,
+      "sudoku_size_and_requested_blanks": "9x9/up-to-58",
+      "eight_puzzle_exact_moves": 31,
+      "hanoi_discs": 22,
+      "chess_restricted_forced_mate_white_moves": 4
+    }
+  ],
+  "extra": {
+    "levels_8_to_10": {
+      "maze_shift": true,
+      "fifteen_puzzle_scramble_walks": [
+        24,
+        48,
+        96
+      ],
+      "sliding4_optimal_depth_certified": false
+    }
+  },
+  "caveats": {
+    "chess": "KQK/KRK only; not full chess",
+    "sudoku": "actual blanks and MRV work used; requested 58 not always reached",
+    "hanoi": "million-step minimum symbolic only",
+    "sliding3": "distance 31 has exactly two states; no duplicates",
+    "action_policy": "no full COG-ATTN model evaluated"
+  },
+  "local_evidence": {
+    "cases": 210,
+    "non_hanoi_unique": 170,
+    "tests_passed": 10,
+    "known_exclusions": 2,
+    "dataset_sha256": "41db350a4da54578ece56622827a82fb9e231be0392a4b27db23ff59b98c1c2d",
+    "reference_sha256": "297c6409c867589befec639d6c302180102a77054f586dfb043cfdf9160c96a3"
+  }
+}

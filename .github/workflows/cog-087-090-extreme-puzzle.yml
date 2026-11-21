@@ -1,0 +1,34 @@
+name: COG-ATTN 087-090 extreme puzzle replay
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/cog-087-090-extreme-puzzles
+    paths:
+      - 'research/cog-081-086/extreme/**'
+      - '.github/workflows/cog-087-090-extreme-puzzle.yml'
+  pull_request:
+    paths:
+      - 'research/cog-081-086/extreme/**'
+      - '.github/workflows/cog-087-090-extreme-puzzle.yml'
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Rebuild all 210 puzzles from locked seeds
+        run: |
+          cd research/cog-081-086/extreme
+          python run_ladder.py --output results
+      - name: Verify exact deterministic case and reference digests
+        run: |
+          cd research/cog-081-086/extreme
+          sha256sum -c CASE_SHA256SUMS
+      - name: Score protocol regressions
+        run: |
+          cd research/cog-081-086/extreme
+          python -m unittest test_ladder -v
