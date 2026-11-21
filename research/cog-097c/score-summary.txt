@@ -1,0 +1,78 @@
+{
+  "n": 219,
+  "modules": {
+    "argparse": 5,
+    "subprocess": 9,
+    "collections": 7,
+    "typing": 36,
+    "http.client": 10,
+    "email.message": 17,
+    "unittest.case": 14,
+    "asyncio.base_events": 11,
+    "urllib.request": 9,
+    "logging": 23,
+    "inspect": 28,
+    "pydoc": 4,
+    "tarfile": 11,
+    "zipfile": 5,
+    "json.encoder": 3,
+    "xml.etree.ElementTree": 15,
+    "contextlib": 8,
+    "tempfile": 4
+  },
+  "corpus_sha256": "8308ad734e4b4ca6442fe92a344636af23e07c35867adb8b3b270d0731c66dbc",
+  "results": {
+    "bm25": {
+      "correct": 83,
+      "n": 219,
+      "accuracy": 0.3789954337899543,
+      "median_query_ms": 0.1669,
+      "total_query_ms": 38.848,
+      "build_ms": 6.809,
+      "total_ms": 45.657,
+      "total_with_corpus_ingest_ms": 463.874,
+      "unanswerable_false_answers": 71,
+      "unanswerable_n": 71,
+      "unanswerable_query_ms": 12.708
+    },
+    "word_tfidf": {
+      "correct": 78,
+      "n": 219,
+      "accuracy": 0.3561643835616438,
+      "median_query_ms": 0.6042,
+      "total_query_ms": 144.671,
+      "build_ms": 26.404,
+      "total_ms": 171.075,
+      "total_with_corpus_ingest_ms": 589.292,
+      "unanswerable_false_answers": 71,
+      "unanswerable_n": 71,
+      "unanswerable_query_ms": 54.364
+    },
+    "char_tfidf": {
+      "correct": 100,
+      "n": 219,
+      "accuracy": 0.45662100456621,
+      "median_query_ms": 2.4393,
+      "total_query_ms": 548.251,
+      "build_ms": 193.094,
+      "total_ms": 741.345,
+      "total_with_corpus_ingest_ms": 1159.562,
+      "unanswerable_false_answers": 71,
+      "unanswerable_n": 71,
+      "unanswerable_query_ms": 196.721
+    },
+    "lsa": {
+      "correct": 72,
+      "n": 219,
+      "accuracy": 0.3287671232876712,
+      "median_query_ms": 1.3324,
+      "total_query_ms": 306.681,
+      "build_ms": 190.597,
+      "total_ms": 497.277,
+      "total_with_corpus_ingest_ms": 915.494,
+      "unanswerable_false_answers": 71,
+      "unanswerable_n": 71,
+      "unanswerable_query_ms": 111.363
+    }
+  }
+}

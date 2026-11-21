@@ -1,0 +1,47 @@
+name: COG 097c zero-label retrieval replay
+on:
+  push:
+    paths:
+      - 'research/cog-097c/**'
+      - '.github/workflows/cog-097c-replay.yml'
+  pull_request:
+    paths:
+      - 'research/cog-097c/**'
+      - '.github/workflows/cog-097c-replay.yml'
+  workflow_dispatch:
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Install pinned dependencies
+        run: python -m pip install -r research/cog-097c/requirements.txt
+      - name: Source integrity and invariants
+        working-directory: research/cog-097c
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+        run: |
+          sha256sum -c SHA256SUMS
+          python -m pytest -q test_experiment.py
+      - name: Re-execute independent evaluation
+        working-directory: research/cog-097c
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+        run: |
+          python experiment.py --out ci-replay.json
+          python - <<'PY'
+          import json
+          old=json.load(open('097c-results.json'))
+          new=json.load(open('ci-replay.json'))
+          assert new['corpus_sha256']==old['corpus_sha256'], 'Python stdlib source changed'
+          assert new['source_sha256']==old['source_sha256'], 'Source files changed'
+          for arm in old['results']:
+              for field in ('correct','n','unanswerable_false_answers','unanswerable_n'):
+                  assert new['results'][arm][field]==old['results'][arm][field], (arm,field)
+          print('Replay matched all non-timing scoring and source hashes')
+          PY
