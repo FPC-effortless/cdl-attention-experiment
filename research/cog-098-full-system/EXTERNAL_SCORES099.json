@@ -1,0 +1,95 @@
+{
+  "1": {
+    "node": "tests/test_chinese.py::test_chinese",
+    "canonical_preflight": false,
+    "compatibility_preflight": true,
+    "buggy": {
+      "tests.test_chinese::test_chinese": "failure"
+    },
+    "fixed": {
+      "tests.test_chinese::test_chinese": "passed"
+    },
+    "complete_candidate_pool": 164,
+    "offered": 64,
+    "passing": 0,
+    "unassisted_cog": [
+      {
+        "seed": 1701,
+        "attempts": 5,
+        "solved": false
+      },
+      {
+        "seed": 1707,
+        "attempts": 5,
+        "solved": false
+      },
+      {
+        "seed": 1711,
+        "attempts": 5,
+        "solved": false
+      }
+    ]
+  },
+  "2": {
+    "node": "tests/test_pysnooper.py::test_custom_repr_single",
+    "canonical_preflight": false,
+    "compatibility_preflight": true,
+    "buggy": {
+      "tests.test_pysnooper::test_custom_repr_single": "failure"
+    },
+    "fixed": {
+      "tests.test_pysnooper::test_custom_repr_single": "passed"
+    },
+    "complete_candidate_pool": 164,
+    "offered": 64,
+    "passing": 0,
+    "unassisted_cog": [
+      {
+        "seed": 1701,
+        "attempts": 5,
+        "solved": false
+      },
+      {
+        "seed": 1707,
+        "attempts": 5,
+        "solved": false
+      },
+      {
+        "seed": 1711,
+        "attempts": 5,
+        "solved": false
+      }
+    ]
+  },
+  "3": {
+    "node": "tests/test_pysnooper.py::test_file_output",
+    "canonical_preflight": true,
+    "compatibility_preflight": true,
+    "buggy": {
+      "tests.test_pysnooper::test_file_output": "failure"
+    },
+    "fixed": {
+      "tests.test_pysnooper::test_file_output": "passed"
+    },
+    "complete_candidate_pool": 52,
+    "offered": 52,
+    "passing": 0,
+    "unassisted_cog": [
+      {
+        "seed": 1701,
+        "attempts": 5,
+        "solved": false
+      },
+      {
+        "seed": 1707,
+        "attempts": 5,
+        "solved": false
+      },
+      {
+        "seed": 1711,
+        "attempts": 5,
+        "solved": false
+      }
+    ]
+  }
+}

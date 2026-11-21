@@ -45,7 +45,7 @@ def check(py, root, node='tests'):
 
 
 class RealRepair:
-    def __init__(self,root,py,node,initial,fixed_cases):
+    def __init__(self,root,py,node,initial,fixed_cases,tail=False):
         self.root,self.py,self.node,self.fixed_cases = root,py,node,fixed_cases
         self.public_error = '\n'.join(line for line in initial['log'].splitlines() if 'xml file:' not in line and not re.search(r'in [0-9.]+s', line))
         self.public_error = re.sub(r'0x[0-9a-fA-F]+', '0xADDR', self.public_error)
@@ -80,7 +80,8 @@ class RealRepair:
                     candidates.append((proximity,overlap,action,rel,candidate))
         candidates.sort(key=lambda x:(-x[0],-x[1],x[2]))
         self.pool_size = len(candidates)
-        self.menu = {a:(rel,code) for _,_,a,rel,code in candidates[:64]}
+        window = candidates[64:] if tail else candidates[:64]
+        self.menu = {a:(rel,code) for _,_,a,rel,code in window}
         self.tried = []
         self.passed = False
         self.selected = None
@@ -126,6 +127,8 @@ def run(cfg):
     if subprocess.check_output(['git','-C',str(bench),'rev-parse','HEAD'],text=True).strip()!=BENCH:
         raise ValueError('wrong BugsInPy revision')
     receipt = cfg.out / ('bugsinpy-compat.json' if cfg.compat else 'bugsinpy.json')
+    if cfg.diagnose:
+        receipt = cfg.out/('bugsinpy-tail-audit.json' if cfg.tail else 'bugsinpy-menu-audit.json')
     for i in (1,2,3):
         folder = bench/'projects/PySnooper/bugs'/str(i)
         info = dict(re.findall(r'(\w+)="([^"]+)"',(folder/'bug.info').read_text()))
@@ -153,6 +156,17 @@ def run(cfg):
             if not valid:
                 receipt.write_text(json.dumps(out,indent=2)+'\n')
                 continue
+            if cfg.diagnose:
+                env = RealRepair(buggy,cfg.python,node,fail,suite['cases'],tail=cfg.tail)
+                for candidate in tuple(env.menu):
+                    env.selected = None
+                    env.step(candidate)
+                    if env.passed:
+                        row.setdefault('suite_checks', {})[candidate] = env.result()['suite']
+                row['all_candidates'] = env.tried
+                row['pool_size'] = env.pool_size
+                receipt.write_text(json.dumps(out,indent=2)+'\n')
+                continue
             for arm in ('heuristic','cog','attention'):
                 for seed in ((1701,) if arm=='heuristic' else (1701,1707,1711)):
                     start = time.perf_counter()
@@ -176,6 +190,10 @@ if __name__=='__main__':
     for field in ('data','out','python'):
         p.add_argument('--'+field,type=Path,required=True)
     p.add_argument('--compat',action='store_true',help='post-preflight fixture and locale sensitivity')
+    p.add_argument('--diagnose',action='store_true',help='post-hoc evaluator-only exhaustive candidate audit')
+    p.add_argument('--tail',action='store_true',help='diagnose the portion beyond the offered 64 candidates')
     cfg = p.parse_args()
+    if cfg.tail and not cfg.diagnose:
+        p.error('--tail requires --diagnose')
     cfg.data = cfg.data.resolve()
     run(cfg)

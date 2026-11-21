@@ -111,8 +111,12 @@ def test_frozen_agent_uses_native_planner_and_signed_ledger(tmp_path,policy):
     permitted = {(i, op) for i in range(4) for op in OPERATIONS} if policy!='denied' else set()
     env = IssueWorkflow(tmp_path/'issues.db', 'Please label ticket two', permitted, explicit=True)
     try:
-        snapshot = Path(__file__).parent/'results099/cog-1701.pt'
-        agent = FullCOGAgent.restore(torch.load(snapshot,weights_only=True))
+        agent = FullCOGAgent()
+        decide(agent, Echo())
+        agent.learn(True,None,True)
+        agent.finish()
+        agent.freeze()
+        agent = FullCOGAgent.restore(agent.snapshot())
         agent.observe(*env.public())
         agent.propose()
         if policy=='stale':
