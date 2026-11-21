@@ -1,0 +1,32 @@
+{
+  "archive_sha256": "4183c261f5309c551834c59ddb8245aa5167516f7d02a7b2d8eea0d5f1f40eea",
+  "files": {
+    ".github/workflows/cog-092-095-puzzle-learning.yml": "42eeca6fb02df7428964b01069076b748d791f4dfe6174ec9bad5073693027ca",
+    "research/cog-081-086/bridge/cog066_source.py": "b7db6adbfd8656c9c289adf46586d5ffbb7e833202ca53a36aa464fa8ca46abe",
+    "research/cog-081-086/extreme/difficulty.py": "3aa3a0eccb6ae57d44b3793ba675d49a646fb8c1a27d6d1ef114084a8d659a0a",
+    "research/cog-081-086/extreme/followup_092_095/PROTOCOL.md": "81e0367d0d1f2d9a7105bad062ecda243996189ff78111440235712a3cb384d8",
+    "research/cog-081-086/extreme/followup_092_095/README.md": "c1b2275bceef7e2bad809e989741fd000000aee4d4df9a8984c2295e00d6a83f",
+    "research/cog-081-086/extreme/followup_092_095/REPORT.md": "9d8c3b8b7529d3109311904e59894d81ab48ad7628c4c52636c4d437dc6977e0",
+    "research/cog-081-086/extreme/followup_092_095/REPRODUCE.md": "14d115ccc94beda781b6cd28ec8a47372c4265550626f7e27edbfa682aa49547",
+    "research/cog-081-086/extreme/followup_092_095/STABLE_SHA256.json": "b6c4c5bbac8fc33ca43b46c347be74753839fb9369e9d31103fad5cebeb507eb",
+    "research/cog-081-086/extreme/followup_092_095/chess_095.py": "354532ee84d8352025e46776a655059fc8591a3225f430113d1b05a181b24793",
+    "research/cog-081-086/extreme/followup_092_095/maze_092.py": "af5f338e09c165cd69a01f7f519cd6e27b675fa172aafc7ab7954b03e337e5d0",
+    "research/cog-081-086/extreme/followup_092_095/results/chess-095.json": "1b1a6916f881471fa7db4f15f7047bddc8fed60e8f3cc0000f5f7ea7d5527d15",
+    "research/cog-081-086/extreme/followup_092_095/results/maze-092.json": "099ee588727d5225cd7e9520b338f0e02a2f623e408fe213c497794e76fb6ab9",
+    "research/cog-081-086/extreme/followup_092_095/results/sliding-093.json": "d217d5f0bc5cbb4afc26f08f9cf184a8c1bcce7c52b51a74e64d2ae2d9cfd797",
+    "research/cog-081-086/extreme/followup_092_095/results/sliding-093b.json": "5062d2cdde51c0b89def3bc4e936535684fd38bf4a46441e7e7882961cebc903",
+    "research/cog-081-086/extreme/followup_092_095/results/sliding-093c.json": "a080f1f39ff4f80e8e12a032923bab7a3804cd54d8552f04ccd12429591a28c7",
+    "research/cog-081-086/extreme/followup_092_095/results/sudoku-094.json": "c0dacaed7b5c29d7568977c565e4df0972fd10a7d7ce45671d8a7a10f3b04569",
+    "research/cog-081-086/extreme/followup_092_095/sliding_093.py": "091de3aee2feae62693fe7d819564fd43897f67f80f2e85f0a70e6d34dd2b01b",
+    "research/cog-081-086/extreme/followup_092_095/sliding_fast_093b.py": "5ce0c36640705eb25b2b40a38f6031f3a1b32b82c7dc08cce0e541d6f3f46615",
+    "research/cog-081-086/extreme/followup_092_095/sliding_fresh_093c.py": "016fbc98b40d31f6c1abf432ce80a517e9035c216f30905ec01f5b94f3a2e6b0",
+    "research/cog-081-086/extreme/followup_092_095/sudoku_094.py": "c748f557c2210617ef9e805836da506da1f7c1ddab118982931285d64c6ea622",
+    "research/cog-081-086/extreme/followup_092_095/test_092_095.py": "8f0f4def4ed654d23d1dfd5bf07bee062738e6ce552bc69dd6dbc9fe38de4522",
+    "research/cog-081-086/extreme/followup_092_095/verify_stable.py": "e243c5cd63d1cfc11da0fa7dd1f71b7a1e244ec9c42b14c571ed44e203a0a3fe",
+    "research/cog-081-086/extreme/learning/PROTOCOL.md": "ba3ee9feb1914c0b85c4f92b3914a21ed73b47e38e7ffe537769fdffe05673e8",
+    "research/cog-081-086/extreme/learning/maze_transfer_091.py": "67cdd4953abe9c58d4bcc4e067f6c710e95aff64b58ad5ff8bdf46a8f1ddbbd3",
+    "research/cog-081-086/extreme/results/cases.jsonl": "41db350a4da54578ece56622827a82fb9e231be0392a4b27db23ff59b98c1c2d",
+    "research/cog-081-086/extreme/score_ladder.py": "559ee62b5d00f3c6674a7fe033d7477e746cd25dd3f2cd96c7d374fc94ea7537",
+    "research/cog-081-086/puzzles.py": "dd2096220391c1f4a348259e1a15f714c90d813afd189617091756ce72e2cc1f"
+  }
+}

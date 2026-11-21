@@ -1,0 +1,2217 @@
+{
+  "controls": [
+    "primitive exact A*",
+    "same-frequency rotated-action learned table"
+  ],
+  "experiment": "COG-093b fused offline-learned tie priority in exact A*",
+  "limitations": [
+    "scoped algorithmic optimization, not an independently learned search algorithm",
+    "memory, training and compilation charged separately",
+    "CPU variability and three repeats insufficient for robust hardware claims"
+  ],
+  "matched_evaluation_repetitions": 3,
+  "model_precomputation_from_training_only": true,
+  "rows": [
+    {
+      "actions": 2,
+      "arm": "primitive",
+      "attempts": 7,
+      "domain": "sliding3",
+      "expanded": 3,
+      "id": "reserved/9701/sliding3/L01",
+      "learned_tiebreaks": 0,
+      "level": 1,
+      "solved": true
+    },
+    {
+      "actions": 2,
+      "arm": "shuffled",
+      "attempts": 7,
+      "domain": "sliding3",
+      "expanded": 3,
+      "id": "reserved/9701/sliding3/L01",
+      "learned_tiebreaks": 0,
+      "level": 1,
+      "solved": true
+    },
+    {
+      "actions": 2,
+      "arm": "learned",
+      "attempts": 7,
+      "domain": "sliding3",
+      "expanded": 3,
+      "id": "reserved/9701/sliding3/L01",
+      "learned_tiebreaks": 2,
+      "level": 1,
+      "solved": true
+    },
+    {
+      "actions": 4,
+      "arm": "learned",
+      "attempts": 12,
+      "domain": "sliding3",
+      "expanded": 5,
+      "id": "reserved/9701/sliding3/L02",
+      "learned_tiebreaks": 6,
+      "level": 2,
+      "solved": true
+    },
+    {
+      "actions": 4,
+      "arm": "shuffled",
+      "attempts": 12,
+      "domain": "sliding3",
+      "expanded": 5,
+      "id": "reserved/9701/sliding3/L02",
+      "learned_tiebreaks": 0,
+      "level": 2,
+      "solved": true
+    },
+    {
+      "actions": 4,
+      "arm": "primitive",
+      "attempts": 12,
+      "domain": "sliding3",
+      "expanded": 5,
+      "id": "reserved/9701/sliding3/L02",
+      "learned_tiebreaks": 0,
+      "level": 2,
+      "solved": true
+    },
+    {
+      "actions": 6,
+      "arm": "learned",
+      "attempts": 20,
+      "domain": "sliding3",
+      "expanded": 8,
+      "id": "reserved/9701/sliding3/L03",
+      "learned_tiebreaks": 9,
+      "level": 3,
+      "solved": true
+    },
+    {
+      "actions": 6,
+      "arm": "primitive",
+      "attempts": 20,
+      "domain": "sliding3",
+      "expanded": 8,
+      "id": "reserved/9701/sliding3/L03",
+      "learned_tiebreaks": 0,
+      "level": 3,
+      "solved": true
+    },
+    {
+      "actions": 6,
+      "arm": "shuffled",
+      "attempts": 20,
+      "domain": "sliding3",
+      "expanded": 8,
+      "id": "reserved/9701/sliding3/L03",
+      "learned_tiebreaks": 0,
+      "level": 3,
+      "solved": true
+    },
+    {
+      "actions": 8,
+      "arm": "shuffled",
+      "attempts": 22,
+      "domain": "sliding3",
+      "expanded": 9,
+      "id": "reserved/9701/sliding3/L04",
+      "learned_tiebreaks": 0,
+      "level": 4,
+      "solved": true
+    },
+    {
+      "actions": 8,
+      "arm": "primitive",
+      "attempts": 22,
+      "domain": "sliding3",
+      "expanded": 9,
+      "id": "reserved/9701/sliding3/L04",
+      "learned_tiebreaks": 0,
+      "level": 4,
+      "solved": true
+    },
+    {
+      "actions": 8,
+      "arm": "learned",
+      "attempts": 22,
+      "domain": "sliding3",
+      "expanded": 9,
+      "id": "reserved/9701/sliding3/L04",
+      "learned_tiebreaks": 12,
+      "level": 4,
+      "solved": true
+    },
+    {
+      "actions": 12,
+      "arm": "learned",
+      "attempts": 56,
+      "domain": "sliding3",
+      "expanded": 21,
+      "id": "reserved/9701/sliding3/L05",
+      "learned_tiebreaks": 24,
+      "level": 5,
+      "solved": true
+    },
+    {
+      "actions": 12,
+      "arm": "shuffled",
+      "attempts": 100,
+      "domain": "sliding3",
+      "expanded": 37,
+      "id": "reserved/9701/sliding3/L05",
+      "learned_tiebreaks": 0,
+      "level": 5,
+      "solved": true
+    },
+    {
+      "actions": 12,
+      "arm": "primitive",
+      "attempts": 107,
+      "domain": "sliding3",
+      "expanded": 39,
+      "id": "reserved/9701/sliding3/L05",
+      "learned_tiebreaks": 0,
+      "level": 5,
+      "solved": true
+    },
+    {
+      "actions": 16,
+      "arm": "shuffled",
+      "attempts": 160,
+      "domain": "sliding3",
+      "expanded": 60,
+      "id": "reserved/9701/sliding3/L06",
+      "learned_tiebreaks": 0,
+      "level": 6,
+      "solved": true
+    },
+    {
+      "actions": 16,
+      "arm": "learned",
+      "attempts": 160,
+      "domain": "sliding3",
+      "expanded": 60,
+      "id": "reserved/9701/sliding3/L06",
+      "learned_tiebreaks": 74,
+      "level": 6,
+      "solved": true
+    },
+    {
+      "actions": 16,
+      "arm": "primitive",
+      "attempts": 160,
+      "domain": "sliding3",
+      "expanded": 60,
+      "id": "reserved/9701/sliding3/L06",
+      "learned_tiebreaks": 0,
+      "level": 6,
+      "solved": true
+    },
+    {
+      "actions": 20,
+      "arm": "primitive",
+      "attempts": 1379,
+      "domain": "sliding3",
+      "expanded": 515,
+      "id": "reserved/9701/sliding3/L07",
+      "learned_tiebreaks": 0,
+      "level": 7,
+      "solved": true
+    },
+    {
+      "actions": 20,
+      "arm": "shuffled",
+      "attempts": 1374,
+      "domain": "sliding3",
+      "expanded": 514,
+      "id": "reserved/9701/sliding3/L07",
+      "learned_tiebreaks": 0,
+      "level": 7,
+      "solved": true
+    },
+    {
+      "actions": 20,
+      "arm": "learned",
+      "attempts": 911,
+      "domain": "sliding3",
+      "expanded": 334,
+      "id": "reserved/9701/sliding3/L07",
+      "learned_tiebreaks": 364,
+      "level": 7,
+      "solved": true
+    },
+    {
+      "actions": 24,
+      "arm": "shuffled",
+      "attempts": 2168,
+      "domain": "sliding3",
+      "expanded": 822,
+      "id": "reserved/9701/sliding3/L08",
+      "learned_tiebreaks": 0,
+      "level": 8,
+      "solved": true
+    },
+    {
+      "actions": 24,
+      "arm": "primitive",
+      "attempts": 2368,
+      "domain": "sliding3",
+      "expanded": 898,
+      "id": "reserved/9701/sliding3/L08",
+      "learned_tiebreaks": 0,
+      "level": 8,
+      "solved": true
+    },
+    {
+      "actions": 24,
+      "arm": "learned",
+      "attempts": 899,
+      "domain": "sliding3",
+      "expanded": 336,
+      "id": "reserved/9701/sliding3/L08",
+      "learned_tiebreaks": 390,
+      "level": 8,
+      "solved": true
+    },
+    {
+      "actions": 22,
+      "arm": "shuffled",
+      "attempts": 3675,
+      "domain": "sliding4",
+      "expanded": 1197,
+      "id": "reserved/9701/sliding4/L08",
+      "learned_tiebreaks": 0,
+      "level": 8,
+      "solved": true
+    },
+    {
+      "actions": 22,
+      "arm": "primitive",
+      "attempts": 3675,
+      "domain": "sliding4",
+      "expanded": 1197,
+      "id": "reserved/9701/sliding4/L08",
+      "learned_tiebreaks": 0,
+      "level": 8,
+      "solved": true
+    },
+    {
+      "actions": 22,
+      "arm": "learned",
+      "attempts": 3675,
+      "domain": "sliding4",
+      "expanded": 1197,
+      "id": "reserved/9701/sliding4/L08",
+      "learned_tiebreaks": 0,
+      "level": 8,
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "primitive",
+      "attempts": 24929,
+      "domain": "sliding3",
+      "expanded": 9373,
+      "id": "reserved/9701/sliding3/L09",
+      "learned_tiebreaks": 0,
+      "level": 9,
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "shuffled",
+      "attempts": 23886,
+      "domain": "sliding3",
+      "expanded": 8981,
+      "id": "reserved/9701/sliding3/L09",
+      "learned_tiebreaks": 0,
+      "level": 9,
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "learned",
+      "attempts": 11445,
+      "domain": "sliding3",
+      "expanded": 4277,
+      "id": "reserved/9701/sliding3/L09",
+      "learned_tiebreaks": 4844,
+      "level": 9,
+      "solved": true
+    },
+    {
+      "actions": 0,
+      "arm": "primitive",
+      "attempts": 31178,
+      "domain": "sliding4",
+      "expanded": 10000,
+      "id": "reserved/9701/sliding4/L09",
+      "learned_tiebreaks": 0,
+      "level": 9,
+      "solved": false
+    },
+    {
+      "actions": 0,
+      "arm": "shuffled",
+      "attempts": 31178,
+      "domain": "sliding4",
+      "expanded": 10000,
+      "id": "reserved/9701/sliding4/L09",
+      "learned_tiebreaks": 0,
+      "level": 9,
+      "solved": false
+    },
+    {
+      "actions": 0,
+      "arm": "learned",
+      "attempts": 31178,
+      "domain": "sliding4",
+      "expanded": 10000,
+      "id": "reserved/9701/sliding4/L09",
+      "learned_tiebreaks": 0,
+      "level": 9,
+      "solved": false
+    },
+    {
+      "actions": 31,
+      "arm": "shuffled",
+      "attempts": 53737,
+      "domain": "sliding3",
+      "expanded": 20371,
+      "id": "reserved/9701/sliding3/L10",
+      "learned_tiebreaks": 0,
+      "level": 10,
+      "solved": true
+    },
+    {
+      "actions": 31,
+      "arm": "primitive",
+      "attempts": 53571,
+      "domain": "sliding3",
+      "expanded": 20291,
+      "id": "reserved/9701/sliding3/L10",
+      "learned_tiebreaks": 0,
+      "level": 10,
+      "solved": true
+    },
+    {
+      "actions": 31,
+      "arm": "learned",
+      "attempts": 20520,
+      "domain": "sliding3",
+      "expanded": 7789,
+      "id": "reserved/9701/sliding3/L10",
+      "learned_tiebreaks": 9459,
+      "level": 10,
+      "solved": true
+    },
+    {
+      "actions": 0,
+      "arm": "shuffled",
+      "attempts": 29989,
+      "domain": "sliding4",
+      "expanded": 10000,
+      "id": "reserved/9701/sliding4/L10",
+      "learned_tiebreaks": 0,
+      "level": 10,
+      "solved": false
+    },
+    {
+      "actions": 0,
+      "arm": "primitive",
+      "attempts": 29989,
+      "domain": "sliding4",
+      "expanded": 10000,
+      "id": "reserved/9701/sliding4/L10",
+      "learned_tiebreaks": 0,
+      "level": 10,
+      "solved": false
+    },
+    {
+      "actions": 0,
+      "arm": "learned",
+      "attempts": 29989,
+      "domain": "sliding4",
+      "expanded": 10000,
+      "id": "reserved/9701/sliding4/L10",
+      "learned_tiebreaks": 0,
+      "level": 10,
+      "solved": false
+    },
+    {
+      "actions": 2,
+      "arm": "primitive",
+      "attempts": 5,
+      "domain": "sliding3",
+      "expanded": 3,
+      "id": "reserved/9707/sliding3/L01",
+      "learned_tiebreaks": 0,
+      "level": 1,
+      "solved": true
+    },
+    {
+      "actions": 2,
+      "arm": "shuffled",
+      "attempts": 5,
+      "domain": "sliding3",
+      "expanded": 3,
+      "id": "reserved/9707/sliding3/L01",
+      "learned_tiebreaks": 0,
+      "level": 1,
+      "solved": true
+    },
+    {
+      "actions": 2,
+      "arm": "learned",
+      "attempts": 5,
+      "domain": "sliding3",
+      "expanded": 3,
+      "id": "reserved/9707/sliding3/L01",
+      "learned_tiebreaks": 4,
+      "level": 1,
+      "solved": true
+    },
+    {
+      "actions": 4,
+      "arm": "learned",
+      "attempts": 12,
+      "domain": "sliding3",
+      "expanded": 5,
+      "id": "reserved/9707/sliding3/L02",
+      "learned_tiebreaks": 5,
+      "level": 2,
+      "solved": true
+    },
+    {
+      "actions": 4,
+      "arm": "shuffled",
+      "attempts": 12,
+      "domain": "sliding3",
+      "expanded": 5,
+      "id": "reserved/9707/sliding3/L02",
+      "learned_tiebreaks": 0,
+      "level": 2,
+      "solved": true
+    },
+    {
+      "actions": 4,
+      "arm": "primitive",
+      "attempts": 12,
+      "domain": "sliding3",
+      "expanded": 5,
+      "id": "reserved/9707/sliding3/L02",
+      "learned_tiebreaks": 0,
+      "level": 2,
+      "solved": true
+    },
+    {
+      "actions": 6,
+      "arm": "learned",
+      "attempts": 17,
+      "domain": "sliding3",
+      "expanded": 7,
+      "id": "reserved/9707/sliding3/L03",
+      "learned_tiebreaks": 7,
+      "level": 3,
+      "solved": true
+    },
+    {
+      "actions": 6,
+      "arm": "primitive",
+      "attempts": 17,
+      "domain": "sliding3",
+      "expanded": 7,
+      "id": "reserved/9707/sliding3/L03",
+      "learned_tiebreaks": 0,
+      "level": 3,
+      "solved": true
+    },
+    {
+      "actions": 6,
+      "arm": "shuffled",
+      "attempts": 17,
+      "domain": "sliding3",
+      "expanded": 7,
+      "id": "reserved/9707/sliding3/L03",
+      "learned_tiebreaks": 0,
+      "level": 3,
+      "solved": true
+    },
+    {
+      "actions": 8,
+      "arm": "shuffled",
+      "attempts": 26,
+      "domain": "sliding3",
+      "expanded": 10,
+      "id": "reserved/9707/sliding3/L04",
+      "learned_tiebreaks": 0,
+      "level": 4,
+      "solved": true
+    },
+    {
+      "actions": 8,
+      "arm": "primitive",
+      "attempts": 26,
+      "domain": "sliding3",
+      "expanded": 10,
+      "id": "reserved/9707/sliding3/L04",
+      "learned_tiebreaks": 0,
+      "level": 4,
+      "solved": true
+    },
+    {
+      "actions": 8,
+      "arm": "learned",
+      "attempts": 26,
+      "domain": "sliding3",
+      "expanded": 10,
+      "id": "reserved/9707/sliding3/L04",
+      "learned_tiebreaks": 10,
+      "level": 4,
+      "solved": true
+    },
+    {
+      "actions": 12,
+      "arm": "learned",
+      "attempts": 44,
+      "domain": "sliding3",
+      "expanded": 17,
+      "id": "reserved/9707/sliding3/L05",
+      "learned_tiebreaks": 20,
+      "level": 5,
+      "solved": true
+    },
+    {
+      "actions": 12,
+      "arm": "shuffled",
+      "attempts": 44,
+      "domain": "sliding3",
+      "expanded": 17,
+      "id": "reserved/9707/sliding3/L05",
+      "learned_tiebreaks": 0,
+      "level": 5,
+      "solved": true
+    },
+    {
+      "actions": 12,
+      "arm": "primitive",
+      "attempts": 44,
+      "domain": "sliding3",
+      "expanded": 17,
+      "id": "reserved/9707/sliding3/L05",
+      "learned_tiebreaks": 0,
+      "level": 5,
+      "solved": true
+    },
+    {
+      "actions": 16,
+      "arm": "shuffled",
+      "attempts": 357,
+      "domain": "sliding3",
+      "expanded": 133,
+      "id": "reserved/9707/sliding3/L06",
+      "learned_tiebreaks": 0,
+      "level": 6,
+      "solved": true
+    },
+    {
+      "actions": 16,
+      "arm": "learned",
+      "attempts": 223,
+      "domain": "sliding3",
+      "expanded": 81,
+      "id": "reserved/9707/sliding3/L06",
+      "learned_tiebreaks": 94,
+      "level": 6,
+      "solved": true
+    },
+    {
+      "actions": 16,
+      "arm": "primitive",
+      "attempts": 359,
+      "domain": "sliding3",
+      "expanded": 134,
+      "id": "reserved/9707/sliding3/L06",
+      "learned_tiebreaks": 0,
+      "level": 6,
+      "solved": true
+    },
+    {
+      "actions": 20,
+      "arm": "primitive",
+      "attempts": 1207,
+      "domain": "sliding3",
+      "expanded": 452,
+      "id": "reserved/9707/sliding3/L07",
+      "learned_tiebreaks": 0,
+      "level": 7,
+      "solved": true
+    },
+    {
+      "actions": 20,
+      "arm": "shuffled",
+      "attempts": 1207,
+      "domain": "sliding3",
+      "expanded": 452,
+      "id": "reserved/9707/sliding3/L07",
+      "learned_tiebreaks": 0,
+      "level": 7,
+      "solved": true
+    },
+    {
+      "actions": 20,
+      "arm": "learned",
+      "attempts": 762,
+      "domain": "sliding3",
+      "expanded": 280,
+      "id": "reserved/9707/sliding3/L07",
+      "learned_tiebreaks": 301,
+      "level": 7,
+      "solved": true
+    },
+    {
+      "actions": 24,
+      "arm": "shuffled",
+      "attempts": 4853,
+      "domain": "sliding3",
+      "expanded": 1819,
+      "id": "reserved/9707/sliding3/L08",
+      "learned_tiebreaks": 0,
+      "level": 8,
+      "solved": true
+    },
+    {
+      "actions": 24,
+      "arm": "primitive",
+      "attempts": 5353,
+      "domain": "sliding3",
+      "expanded": 2002,
+      "id": "reserved/9707/sliding3/L08",
+      "learned_tiebreaks": 0,
+      "level": 8,
+      "solved": true
+    },
+    {
+      "actions": 24,
+      "arm": "learned",
+      "attempts": 2371,
+      "domain": "sliding3",
+      "expanded": 884,
+      "id": "reserved/9707/sliding3/L08",
+      "learned_tiebreaks": 983,
+      "level": 8,
+      "solved": true
+    },
+    {
+      "actions": 18,
+      "arm": "shuffled",
+      "attempts": 1739,
+      "domain": "sliding4",
+      "expanded": 559,
+      "id": "reserved/9707/sliding4/L08",
+      "learned_tiebreaks": 0,
+      "level": 8,
+      "solved": true
+    },
+    {
+      "actions": 18,
+      "arm": "primitive",
+      "attempts": 1739,
+      "domain": "sliding4",
+      "expanded": 559,
+      "id": "reserved/9707/sliding4/L08",
+      "learned_tiebreaks": 0,
+      "level": 8,
+      "solved": true
+    },
+    {
+      "actions": 18,
+      "arm": "learned",
+      "attempts": 1739,
+      "domain": "sliding4",
+      "expanded": 559,
+      "id": "reserved/9707/sliding4/L08",
+      "learned_tiebreaks": 0,
+      "level": 8,
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "primitive",
+      "attempts": 21599,
+      "domain": "sliding3",
+      "expanded": 8122,
+      "id": "reserved/9707/sliding3/L09",
+      "learned_tiebreaks": 0,
+      "level": 9,
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "shuffled",
+      "attempts": 22105,
+      "domain": "sliding3",
+      "expanded": 8326,
+      "id": "reserved/9707/sliding3/L09",
+      "learned_tiebreaks": 0,
+      "level": 9,
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "learned",
+      "attempts": 9757,
+      "domain": "sliding3",
+      "expanded": 3657,
+      "id": "reserved/9707/sliding3/L09",
+      "learned_tiebreaks": 3911,
+      "level": 9,
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "primitive",
+      "attempts": 1144,
+      "domain": "sliding4",
+      "expanded": 385,
+      "id": "reserved/9707/sliding4/L09",
+      "learned_tiebreaks": 0,
+      "level": 9,
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "shuffled",
+      "attempts": 1144,
+      "domain": "sliding4",
+      "expanded": 385,
+      "id": "reserved/9707/sliding4/L09",
+      "learned_tiebreaks": 0,
+      "level": 9,
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "learned",
+      "attempts": 1144,
+      "domain": "sliding4",
+      "expanded": 385,
+      "id": "reserved/9707/sliding4/L09",
+      "learned_tiebreaks": 0,
+      "level": 9,
+      "solved": true
+    },
+    {
+      "actions": 0,
+      "arm": "shuffled",
+      "attempts": 30555,
+      "domain": "sliding4",
+      "expanded": 10000,
+      "id": "reserved/9707/sliding4/L10",
+      "learned_tiebreaks": 0,
+      "level": 10,
+      "solved": false
+    },
+    {
+      "actions": 0,
+      "arm": "primitive",
+      "attempts": 30555,
+      "domain": "sliding4",
+      "expanded": 10000,
+      "id": "reserved/9707/sliding4/L10",
+      "learned_tiebreaks": 0,
+      "level": 10,
+      "solved": false
+    },
+    {
+      "actions": 0,
+      "arm": "learned",
+      "attempts": 30555,
+      "domain": "sliding4",
+      "expanded": 10000,
+      "id": "reserved/9707/sliding4/L10",
+      "learned_tiebreaks": 0,
+      "level": 10,
+      "solved": false
+    }
+  ],
+  "summary": {
+    "learned": {
+      "attempts": 145549,
+      "expanded": 49927,
+      "n": 25,
+      "solved": 22,
+      "total_ms_median": 422.472
+    },
+    "primitive": {
+      "attempts": 209477,
+      "expanded": 74094,
+      "n": 25,
+      "solved": 22,
+      "total_ms_median": 535.009
+    },
+    "shuffled": {
+      "attempts": 208392,
+      "expanded": 73723,
+      "n": 25,
+      "solved": 22,
+      "total_ms_median": 575.108
+    }
+  },
+  "timings": [
+    {
+      "arm": "primitive",
+      "elapsed_ns": 46971,
+      "id": "reserved/9701/sliding3/L01",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 31747,
+      "id": "reserved/9701/sliding3/L01",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 24401,
+      "id": "reserved/9701/sliding3/L01",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 84188,
+      "id": "reserved/9701/sliding3/L02",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 35327,
+      "id": "reserved/9701/sliding3/L02",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 30582,
+      "id": "reserved/9701/sliding3/L02",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 57480,
+      "id": "reserved/9701/sliding3/L03",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 61666,
+      "id": "reserved/9701/sliding3/L03",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 53509,
+      "id": "reserved/9701/sliding3/L03",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 60581,
+      "id": "reserved/9701/sliding3/L04",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 53855,
+      "id": "reserved/9701/sliding3/L04",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 55822,
+      "id": "reserved/9701/sliding3/L04",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 128928,
+      "id": "reserved/9701/sliding3/L05",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 289932,
+      "id": "reserved/9701/sliding3/L05",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 209125,
+      "id": "reserved/9701/sliding3/L05",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 429250,
+      "id": "reserved/9701/sliding3/L06",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 407228,
+      "id": "reserved/9701/sliding3/L06",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 337908,
+      "id": "reserved/9701/sliding3/L06",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 2652089,
+      "id": "reserved/9701/sliding3/L07",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 2686788,
+      "id": "reserved/9701/sliding3/L07",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 2142779,
+      "id": "reserved/9701/sliding3/L07",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 4550614,
+      "id": "reserved/9701/sliding3/L08",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 4570910,
+      "id": "reserved/9701/sliding3/L08",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 1772220,
+      "id": "reserved/9701/sliding3/L08",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 10871832,
+      "id": "reserved/9701/sliding4/L08",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 9892521,
+      "id": "reserved/9701/sliding4/L08",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 10105784,
+      "id": "reserved/9701/sliding4/L08",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 51910214,
+      "id": "reserved/9701/sliding3/L09",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 55187392,
+      "id": "reserved/9701/sliding3/L09",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 25015545,
+      "id": "reserved/9701/sliding3/L09",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 99147164,
+      "id": "reserved/9701/sliding4/L09",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 99073451,
+      "id": "reserved/9701/sliding4/L09",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 99578829,
+      "id": "reserved/9701/sliding4/L09",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 133110208,
+      "id": "reserved/9701/sliding3/L10",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 118646996,
+      "id": "reserved/9701/sliding3/L10",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 47567683,
+      "id": "reserved/9701/sliding3/L10",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 154190552,
+      "id": "reserved/9701/sliding4/L10",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 87354878,
+      "id": "reserved/9701/sliding4/L10",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 90901438,
+      "id": "reserved/9701/sliding4/L10",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 37159,
+      "id": "reserved/9707/sliding3/L01",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 22206,
+      "id": "reserved/9707/sliding3/L01",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 18701,
+      "id": "reserved/9707/sliding3/L01",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 40421,
+      "id": "reserved/9707/sliding3/L02",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 35212,
+      "id": "reserved/9707/sliding3/L02",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 31379,
+      "id": "reserved/9707/sliding3/L02",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 49518,
+      "id": "reserved/9707/sliding3/L03",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 42333,
+      "id": "reserved/9707/sliding3/L03",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 45450,
+      "id": "reserved/9707/sliding3/L03",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 69010,
+      "id": "reserved/9707/sliding3/L04",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 78605,
+      "id": "reserved/9707/sliding3/L04",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 69096,
+      "id": "reserved/9707/sliding3/L04",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 108563,
+      "id": "reserved/9707/sliding3/L05",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 104849,
+      "id": "reserved/9707/sliding3/L05",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 95928,
+      "id": "reserved/9707/sliding3/L05",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 822888,
+      "id": "reserved/9707/sliding3/L06",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 451806,
+      "id": "reserved/9707/sliding3/L06",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 641656,
+      "id": "reserved/9707/sliding3/L06",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 2419916,
+      "id": "reserved/9707/sliding3/L07",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 2737577,
+      "id": "reserved/9707/sliding3/L07",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 2070732,
+      "id": "reserved/9707/sliding3/L07",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 10336099,
+      "id": "reserved/9707/sliding3/L08",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 9727222,
+      "id": "reserved/9707/sliding3/L08",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 5360706,
+      "id": "reserved/9707/sliding3/L08",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 5351848,
+      "id": "reserved/9707/sliding4/L08",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 4468243,
+      "id": "reserved/9707/sliding4/L08",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 4426435,
+      "id": "reserved/9707/sliding4/L08",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 46606213,
+      "id": "reserved/9707/sliding3/L09",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 50357311,
+      "id": "reserved/9707/sliding3/L09",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 21603284,
+      "id": "reserved/9707/sliding3/L09",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 3511746,
+      "id": "reserved/9707/sliding4/L09",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 3140706,
+      "id": "reserved/9707/sliding4/L09",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 3180080,
+      "id": "reserved/9707/sliding4/L09",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 96800084,
+      "id": "reserved/9707/sliding4/L10",
+      "rep": 0
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 94523089,
+      "id": "reserved/9707/sliding4/L10",
+      "rep": 0
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 107250568,
+      "id": "reserved/9707/sliding4/L10",
+      "rep": 0
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 46008,
+      "id": "reserved/9701/sliding3/L01",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 25788,
+      "id": "reserved/9701/sliding3/L01",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 20950,
+      "id": "reserved/9701/sliding3/L01",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 37020,
+      "id": "reserved/9701/sliding3/L02",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 31645,
+      "id": "reserved/9701/sliding3/L02",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 33381,
+      "id": "reserved/9701/sliding3/L02",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 52858,
+      "id": "reserved/9701/sliding3/L03",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 51856,
+      "id": "reserved/9701/sliding3/L03",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 50265,
+      "id": "reserved/9701/sliding3/L03",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 60211,
+      "id": "reserved/9701/sliding3/L04",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 58105,
+      "id": "reserved/9701/sliding3/L04",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 212806,
+      "id": "reserved/9701/sliding3/L04",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 222615,
+      "id": "reserved/9701/sliding3/L05",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 161657,
+      "id": "reserved/9701/sliding3/L05",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 209421,
+      "id": "reserved/9701/sliding3/L05",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 401532,
+      "id": "reserved/9701/sliding3/L06",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 346261,
+      "id": "reserved/9701/sliding3/L06",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 304435,
+      "id": "reserved/9701/sliding3/L06",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 2827089,
+      "id": "reserved/9701/sliding3/L07",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 1765921,
+      "id": "reserved/9701/sliding3/L07",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 3366461,
+      "id": "reserved/9701/sliding3/L07",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 1767839,
+      "id": "reserved/9701/sliding3/L08",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 5104310,
+      "id": "reserved/9701/sliding3/L08",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 4612916,
+      "id": "reserved/9701/sliding3/L08",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 11174142,
+      "id": "reserved/9701/sliding4/L08",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 9104072,
+      "id": "reserved/9701/sliding4/L08",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 10256989,
+      "id": "reserved/9701/sliding4/L08",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 51616380,
+      "id": "reserved/9701/sliding3/L09",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 50981453,
+      "id": "reserved/9701/sliding3/L09",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 25938012,
+      "id": "reserved/9701/sliding3/L09",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 93711760,
+      "id": "reserved/9701/sliding4/L09",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 102916382,
+      "id": "reserved/9701/sliding4/L09",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 96103200,
+      "id": "reserved/9701/sliding4/L09",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 130237672,
+      "id": "reserved/9701/sliding3/L10",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 116652352,
+      "id": "reserved/9701/sliding3/L10",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 44939445,
+      "id": "reserved/9701/sliding3/L10",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 100620061,
+      "id": "reserved/9701/sliding4/L10",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 87744043,
+      "id": "reserved/9701/sliding4/L10",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 93353064,
+      "id": "reserved/9701/sliding4/L10",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 81056,
+      "id": "reserved/9707/sliding3/L01",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 19898,
+      "id": "reserved/9707/sliding3/L01",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 16026,
+      "id": "reserved/9707/sliding3/L01",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 39413,
+      "id": "reserved/9707/sliding3/L02",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 32149,
+      "id": "reserved/9707/sliding3/L02",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 33808,
+      "id": "reserved/9707/sliding3/L02",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 47376,
+      "id": "reserved/9707/sliding3/L03",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 64923,
+      "id": "reserved/9707/sliding3/L03",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 44593,
+      "id": "reserved/9707/sliding3/L03",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 69557,
+      "id": "reserved/9707/sliding3/L04",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 62136,
+      "id": "reserved/9707/sliding3/L04",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 63157,
+      "id": "reserved/9707/sliding3/L04",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 104163,
+      "id": "reserved/9707/sliding3/L05",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 197986,
+      "id": "reserved/9707/sliding3/L05",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 107022,
+      "id": "reserved/9707/sliding3/L05",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 746509,
+      "id": "reserved/9707/sliding3/L06",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 428009,
+      "id": "reserved/9707/sliding3/L06",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 643987,
+      "id": "reserved/9707/sliding3/L06",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 2362105,
+      "id": "reserved/9707/sliding3/L07",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 1460561,
+      "id": "reserved/9707/sliding3/L07",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 2312847,
+      "id": "reserved/9707/sliding3/L07",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 4605969,
+      "id": "reserved/9707/sliding3/L08",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 10746281,
+      "id": "reserved/9707/sliding3/L08",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 10722791,
+      "id": "reserved/9707/sliding3/L08",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 5406448,
+      "id": "reserved/9707/sliding4/L08",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 4938129,
+      "id": "reserved/9707/sliding4/L08",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 4959002,
+      "id": "reserved/9707/sliding4/L08",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 43525105,
+      "id": "reserved/9707/sliding3/L09",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 49747118,
+      "id": "reserved/9707/sliding3/L09",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 20734027,
+      "id": "reserved/9707/sliding3/L09",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 3068488,
+      "id": "reserved/9707/sliding4/L09",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 3021425,
+      "id": "reserved/9707/sliding4/L09",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 2959884,
+      "id": "reserved/9707/sliding4/L09",
+      "rep": 1
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 99938022,
+      "id": "reserved/9707/sliding4/L10",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 91922498,
+      "id": "reserved/9707/sliding4/L10",
+      "rep": 1
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 94149608,
+      "id": "reserved/9707/sliding4/L10",
+      "rep": 1
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 44142,
+      "id": "reserved/9701/sliding3/L01",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 24875,
+      "id": "reserved/9701/sliding3/L01",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 23785,
+      "id": "reserved/9701/sliding3/L01",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 37233,
+      "id": "reserved/9701/sliding3/L02",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 34551,
+      "id": "reserved/9701/sliding3/L02",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 30347,
+      "id": "reserved/9701/sliding3/L02",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 188370,
+      "id": "reserved/9701/sliding3/L03",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 51940,
+      "id": "reserved/9701/sliding3/L03",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 52030,
+      "id": "reserved/9701/sliding3/L03",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 123133,
+      "id": "reserved/9701/sliding3/L04",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 59256,
+      "id": "reserved/9701/sliding3/L04",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 57533,
+      "id": "reserved/9701/sliding3/L04",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 225053,
+      "id": "reserved/9701/sliding3/L05",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 146814,
+      "id": "reserved/9701/sliding3/L05",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 233294,
+      "id": "reserved/9701/sliding3/L05",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 333400,
+      "id": "reserved/9701/sliding3/L06",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 329076,
+      "id": "reserved/9701/sliding3/L06",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 316413,
+      "id": "reserved/9701/sliding3/L06",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 2103402,
+      "id": "reserved/9701/sliding3/L07",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 2673182,
+      "id": "reserved/9701/sliding3/L07",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 2478871,
+      "id": "reserved/9701/sliding3/L07",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 4227916,
+      "id": "reserved/9701/sliding3/L08",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 4343722,
+      "id": "reserved/9701/sliding3/L08",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 1881066,
+      "id": "reserved/9701/sliding3/L08",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 10300292,
+      "id": "reserved/9701/sliding4/L08",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 9975175,
+      "id": "reserved/9701/sliding4/L08",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 9902784,
+      "id": "reserved/9701/sliding4/L08",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 57608756,
+      "id": "reserved/9701/sliding3/L09",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 54262853,
+      "id": "reserved/9701/sliding3/L09",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 25245546,
+      "id": "reserved/9701/sliding3/L09",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 96812008,
+      "id": "reserved/9701/sliding4/L09",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 96187831,
+      "id": "reserved/9701/sliding4/L09",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 108860038,
+      "id": "reserved/9701/sliding4/L09",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 48594333,
+      "id": "reserved/9701/sliding3/L10",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 118963516,
+      "id": "reserved/9701/sliding3/L10",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 131489684,
+      "id": "reserved/9701/sliding3/L10",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 97496115,
+      "id": "reserved/9701/sliding4/L10",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 89087350,
+      "id": "reserved/9701/sliding4/L10",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 99400310,
+      "id": "reserved/9701/sliding4/L10",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 37000,
+      "id": "reserved/9707/sliding3/L01",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 19633,
+      "id": "reserved/9707/sliding3/L01",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 17572,
+      "id": "reserved/9707/sliding3/L01",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 38635,
+      "id": "reserved/9707/sliding3/L02",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 35630,
+      "id": "reserved/9707/sliding3/L02",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 31112,
+      "id": "reserved/9707/sliding3/L02",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 50068,
+      "id": "reserved/9707/sliding3/L03",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 65109,
+      "id": "reserved/9707/sliding3/L03",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 45754,
+      "id": "reserved/9707/sliding3/L03",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 64290,
+      "id": "reserved/9707/sliding3/L04",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 64925,
+      "id": "reserved/9707/sliding3/L04",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 63902,
+      "id": "reserved/9707/sliding3/L04",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 110892,
+      "id": "reserved/9707/sliding3/L05",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 113617,
+      "id": "reserved/9707/sliding3/L05",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 96719,
+      "id": "reserved/9707/sliding3/L05",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 465518,
+      "id": "reserved/9707/sliding3/L06",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 694965,
+      "id": "reserved/9707/sliding3/L06",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 639183,
+      "id": "reserved/9707/sliding3/L06",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 1625421,
+      "id": "reserved/9707/sliding3/L07",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 2597353,
+      "id": "reserved/9707/sliding3/L07",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 2392890,
+      "id": "reserved/9707/sliding3/L07",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 10393035,
+      "id": "reserved/9707/sliding3/L08",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 10410052,
+      "id": "reserved/9707/sliding3/L08",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 4507799,
+      "id": "reserved/9707/sliding3/L08",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 5288430,
+      "id": "reserved/9707/sliding4/L08",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 5304059,
+      "id": "reserved/9707/sliding4/L08",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 4518632,
+      "id": "reserved/9707/sliding4/L08",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 51599555,
+      "id": "reserved/9707/sliding3/L09",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 42562671,
+      "id": "reserved/9707/sliding3/L09",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 20204024,
+      "id": "reserved/9707/sliding3/L09",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 3472992,
+      "id": "reserved/9707/sliding4/L09",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 2958365,
+      "id": "reserved/9707/sliding4/L09",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 3551168,
+      "id": "reserved/9707/sliding4/L09",
+      "rep": 2
+    },
+    {
+      "arm": "learned",
+      "elapsed_ns": 96850239,
+      "id": "reserved/9707/sliding4/L10",
+      "rep": 2
+    },
+    {
+      "arm": "primitive",
+      "elapsed_ns": 94172202,
+      "id": "reserved/9707/sliding4/L10",
+      "rep": 2
+    },
+    {
+      "arm": "shuffled",
+      "elapsed_ns": 95356822,
+      "id": "reserved/9707/sliding4/L10",
+      "rep": 2
+    }
+  ],
+  "train_ms": 238.894
+}

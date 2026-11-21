@@ -1,0 +1,3356 @@
+{
+  "cohort": "32 novel states distinct from original 210-case suite",
+  "comparisons": [
+    {
+      "depth": 4,
+      "lost": false,
+      "ratio": 1.0,
+      "seed": 11003,
+      "won": false
+    },
+    {
+      "depth": 6,
+      "lost": false,
+      "ratio": 0.875,
+      "seed": 11003,
+      "won": true
+    },
+    {
+      "depth": 8,
+      "lost": false,
+      "ratio": 0.6875,
+      "seed": 11003,
+      "won": true
+    },
+    {
+      "depth": 12,
+      "lost": false,
+      "ratio": 0.4857142857142857,
+      "seed": 11003,
+      "won": true
+    },
+    {
+      "depth": 16,
+      "lost": false,
+      "ratio": 0.5794392523364486,
+      "seed": 11003,
+      "won": true
+    },
+    {
+      "depth": 20,
+      "lost": false,
+      "ratio": 0.47574626865671643,
+      "seed": 11003,
+      "won": true
+    },
+    {
+      "depth": 24,
+      "lost": false,
+      "ratio": 0.5057183702644746,
+      "seed": 11003,
+      "won": true
+    },
+    {
+      "depth": 28,
+      "lost": false,
+      "ratio": 0.3899392302498312,
+      "seed": 11003,
+      "won": true
+    },
+    {
+      "depth": 4,
+      "lost": false,
+      "ratio": 1.0,
+      "seed": 11027,
+      "won": false
+    },
+    {
+      "depth": 6,
+      "lost": false,
+      "ratio": 1.0,
+      "seed": 11027,
+      "won": false
+    },
+    {
+      "depth": 8,
+      "lost": false,
+      "ratio": 1.0,
+      "seed": 11027,
+      "won": false
+    },
+    {
+      "depth": 12,
+      "lost": false,
+      "ratio": 0.8275862068965517,
+      "seed": 11027,
+      "won": true
+    },
+    {
+      "depth": 16,
+      "lost": false,
+      "ratio": 0.907608695652174,
+      "seed": 11027,
+      "won": true
+    },
+    {
+      "depth": 20,
+      "lost": false,
+      "ratio": 0.5488372093023256,
+      "seed": 11027,
+      "won": true
+    },
+    {
+      "depth": 24,
+      "lost": false,
+      "ratio": 0.456490727532097,
+      "seed": 11027,
+      "won": true
+    },
+    {
+      "depth": 28,
+      "lost": false,
+      "ratio": 0.33666032953105196,
+      "seed": 11027,
+      "won": true
+    },
+    {
+      "depth": 4,
+      "lost": false,
+      "ratio": 1.0,
+      "seed": 11057,
+      "won": false
+    },
+    {
+      "depth": 6,
+      "lost": false,
+      "ratio": 1.0,
+      "seed": 11057,
+      "won": false
+    },
+    {
+      "depth": 8,
+      "lost": false,
+      "ratio": 1.0,
+      "seed": 11057,
+      "won": false
+    },
+    {
+      "depth": 12,
+      "lost": false,
+      "ratio": 0.65625,
+      "seed": 11057,
+      "won": true
+    },
+    {
+      "depth": 16,
+      "lost": false,
+      "ratio": 0.65625,
+      "seed": 11057,
+      "won": true
+    },
+    {
+      "depth": 20,
+      "lost": false,
+      "ratio": 0.410828025477707,
+      "seed": 11057,
+      "won": true
+    },
+    {
+      "depth": 24,
+      "lost": false,
+      "ratio": 0.36818473380372035,
+      "seed": 11057,
+      "won": true
+    },
+    {
+      "depth": 28,
+      "lost": false,
+      "ratio": 0.45549242424242425,
+      "seed": 11057,
+      "won": true
+    },
+    {
+      "depth": 4,
+      "lost": false,
+      "ratio": 1.0,
+      "seed": 11071,
+      "won": false
+    },
+    {
+      "depth": 6,
+      "lost": false,
+      "ratio": 1.0,
+      "seed": 11071,
+      "won": false
+    },
+    {
+      "depth": 8,
+      "lost": false,
+      "ratio": 1.0,
+      "seed": 11071,
+      "won": false
+    },
+    {
+      "depth": 12,
+      "lost": false,
+      "ratio": 0.7068965517241379,
+      "seed": 11071,
+      "won": true
+    },
+    {
+      "depth": 16,
+      "lost": false,
+      "ratio": 0.5172413793103449,
+      "seed": 11071,
+      "won": true
+    },
+    {
+      "depth": 20,
+      "lost": false,
+      "ratio": 0.3917525773195876,
+      "seed": 11071,
+      "won": true
+    },
+    {
+      "depth": 24,
+      "lost": false,
+      "ratio": 0.4354243542435424,
+      "seed": 11071,
+      "won": true
+    },
+    {
+      "depth": 28,
+      "lost": false,
+      "ratio": 0.6378005556087748,
+      "seed": 11071,
+      "won": true
+    }
+  ],
+  "depths": [
+    4,
+    6,
+    8,
+    12,
+    16,
+    20,
+    24,
+    28
+  ],
+  "equal_states": 10,
+  "experiment": "COG-093c disjoint exact-depth 8-puzzle replication",
+  "improved_states": 22,
+  "limitations": [
+    "known exact distances are task-generation metadata only, never used by A* control",
+    "the 32 tasks share the 8-puzzle transition rules and training domain",
+    "no prospective human trial, full neural controller, or general reasoning certification",
+    "CPU times include search but not training or puzzle generation"
+  ],
+  "model_frozen_from_093": true,
+  "model_support_features": 34,
+  "rows": [
+    {
+      "actions": 4,
+      "arm": "learned",
+      "attempts": 12,
+      "depth": 4,
+      "expanded": 5,
+      "learned_tiebreaks": 4,
+      "seed": 11003,
+      "sha": "575e6f8e2bd385a523b411ea91ce7a0da76ff3c4e6b7b1b318865bd933ee8d63",
+      "solved": true
+    },
+    {
+      "actions": 4,
+      "arm": "primitive",
+      "attempts": 12,
+      "depth": 4,
+      "expanded": 5,
+      "learned_tiebreaks": 0,
+      "seed": 11003,
+      "sha": "575e6f8e2bd385a523b411ea91ce7a0da76ff3c4e6b7b1b318865bd933ee8d63",
+      "solved": true
+    },
+    {
+      "actions": 4,
+      "arm": "shuffled",
+      "attempts": 12,
+      "depth": 4,
+      "expanded": 5,
+      "learned_tiebreaks": 0,
+      "seed": 11003,
+      "sha": "575e6f8e2bd385a523b411ea91ce7a0da76ff3c4e6b7b1b318865bd933ee8d63",
+      "solved": true
+    },
+    {
+      "actions": 6,
+      "arm": "primitive",
+      "attempts": 20,
+      "depth": 6,
+      "expanded": 8,
+      "learned_tiebreaks": 0,
+      "seed": 11003,
+      "sha": "e93b4df45208bbf4ffb969b6b4a12888075ba141a75f0e930947664e9d3afaf2",
+      "solved": true
+    },
+    {
+      "actions": 6,
+      "arm": "learned",
+      "attempts": 17,
+      "depth": 6,
+      "expanded": 7,
+      "learned_tiebreaks": 9,
+      "seed": 11003,
+      "sha": "e93b4df45208bbf4ffb969b6b4a12888075ba141a75f0e930947664e9d3afaf2",
+      "solved": true
+    },
+    {
+      "actions": 6,
+      "arm": "shuffled",
+      "attempts": 20,
+      "depth": 6,
+      "expanded": 8,
+      "learned_tiebreaks": 0,
+      "seed": 11003,
+      "sha": "e93b4df45208bbf4ffb969b6b4a12888075ba141a75f0e930947664e9d3afaf2",
+      "solved": true
+    },
+    {
+      "actions": 8,
+      "arm": "primitive",
+      "attempts": 42,
+      "depth": 8,
+      "expanded": 16,
+      "learned_tiebreaks": 0,
+      "seed": 11003,
+      "sha": "d75ce1ddb76bdddb4c59c55d47823fbdc6f1ef122f6dcbbb14456b8382157f57",
+      "solved": true
+    },
+    {
+      "actions": 8,
+      "arm": "shuffled",
+      "attempts": 42,
+      "depth": 8,
+      "expanded": 16,
+      "learned_tiebreaks": 0,
+      "seed": 11003,
+      "sha": "d75ce1ddb76bdddb4c59c55d47823fbdc6f1ef122f6dcbbb14456b8382157f57",
+      "solved": true
+    },
+    {
+      "actions": 8,
+      "arm": "learned",
+      "attempts": 29,
+      "depth": 8,
+      "expanded": 11,
+      "learned_tiebreaks": 12,
+      "seed": 11003,
+      "sha": "d75ce1ddb76bdddb4c59c55d47823fbdc6f1ef122f6dcbbb14456b8382157f57",
+      "solved": true
+    },
+    {
+      "actions": 12,
+      "arm": "shuffled",
+      "attempts": 93,
+      "depth": 12,
+      "expanded": 35,
+      "learned_tiebreaks": 0,
+      "seed": 11003,
+      "sha": "8c97f5c5f386bb34fc1076262f719c7b3889a5f4e382de56d71069b7b9b11895",
+      "solved": true
+    },
+    {
+      "actions": 12,
+      "arm": "primitive",
+      "attempts": 93,
+      "depth": 12,
+      "expanded": 35,
+      "learned_tiebreaks": 0,
+      "seed": 11003,
+      "sha": "8c97f5c5f386bb34fc1076262f719c7b3889a5f4e382de56d71069b7b9b11895",
+      "solved": true
+    },
+    {
+      "actions": 12,
+      "arm": "learned",
+      "attempts": 44,
+      "depth": 12,
+      "expanded": 17,
+      "learned_tiebreaks": 20,
+      "seed": 11003,
+      "sha": "8c97f5c5f386bb34fc1076262f719c7b3889a5f4e382de56d71069b7b9b11895",
+      "solved": true
+    },
+    {
+      "actions": 16,
+      "arm": "primitive",
+      "attempts": 285,
+      "depth": 16,
+      "expanded": 107,
+      "learned_tiebreaks": 0,
+      "seed": 11003,
+      "sha": "d8a834f4770d5a8e5f21df305257b5d2594543443d24596bd8266f07a435f2e2",
+      "solved": true
+    },
+    {
+      "actions": 16,
+      "arm": "shuffled",
+      "attempts": 285,
+      "depth": 16,
+      "expanded": 107,
+      "learned_tiebreaks": 0,
+      "seed": 11003,
+      "sha": "d8a834f4770d5a8e5f21df305257b5d2594543443d24596bd8266f07a435f2e2",
+      "solved": true
+    },
+    {
+      "actions": 16,
+      "arm": "learned",
+      "attempts": 168,
+      "depth": 16,
+      "expanded": 62,
+      "learned_tiebreaks": 64,
+      "seed": 11003,
+      "sha": "d8a834f4770d5a8e5f21df305257b5d2594543443d24596bd8266f07a435f2e2",
+      "solved": true
+    },
+    {
+      "actions": 20,
+      "arm": "shuffled",
+      "attempts": 1431,
+      "depth": 20,
+      "expanded": 535,
+      "learned_tiebreaks": 0,
+      "seed": 11003,
+      "sha": "245c3476a30a0af4a851294cc029dedf58cc3947e2b1239dbbab94a436f4735a",
+      "solved": true
+    },
+    {
+      "actions": 20,
+      "arm": "learned",
+      "attempts": 688,
+      "depth": 20,
+      "expanded": 255,
+      "learned_tiebreaks": 249,
+      "seed": 11003,
+      "sha": "245c3476a30a0af4a851294cc029dedf58cc3947e2b1239dbbab94a436f4735a",
+      "solved": true
+    },
+    {
+      "actions": 20,
+      "arm": "primitive",
+      "attempts": 1434,
+      "depth": 20,
+      "expanded": 536,
+      "learned_tiebreaks": 0,
+      "seed": 11003,
+      "sha": "245c3476a30a0af4a851294cc029dedf58cc3947e2b1239dbbab94a436f4735a",
+      "solved": true
+    },
+    {
+      "actions": 24,
+      "arm": "shuffled",
+      "attempts": 7235,
+      "depth": 24,
+      "expanded": 2714,
+      "learned_tiebreaks": 0,
+      "seed": 11003,
+      "sha": "2494cb4631c27fcd0e438c35d4dc952948a02cfe78ede09ba711411388e15bfe",
+      "solved": true
+    },
+    {
+      "actions": 24,
+      "arm": "learned",
+      "attempts": 3845,
+      "depth": 24,
+      "expanded": 1415,
+      "learned_tiebreaks": 1458,
+      "seed": 11003,
+      "sha": "2494cb4631c27fcd0e438c35d4dc952948a02cfe78ede09ba711411388e15bfe",
+      "solved": true
+    },
+    {
+      "actions": 24,
+      "arm": "primitive",
+      "attempts": 7462,
+      "depth": 24,
+      "expanded": 2798,
+      "learned_tiebreaks": 0,
+      "seed": 11003,
+      "sha": "2494cb4631c27fcd0e438c35d4dc952948a02cfe78ede09ba711411388e15bfe",
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "shuffled",
+      "attempts": 15317,
+      "depth": 28,
+      "expanded": 5785,
+      "learned_tiebreaks": 0,
+      "seed": 11003,
+      "sha": "346772c39c7746ea191514299e4796d2ed870f4332bcce1a651cc33945be0cc4",
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "primitive",
+      "attempts": 15686,
+      "depth": 28,
+      "expanded": 5924,
+      "learned_tiebreaks": 0,
+      "seed": 11003,
+      "sha": "346772c39c7746ea191514299e4796d2ed870f4332bcce1a651cc33945be0cc4",
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "learned",
+      "attempts": 6097,
+      "depth": 28,
+      "expanded": 2310,
+      "learned_tiebreaks": 2788,
+      "seed": 11003,
+      "sha": "346772c39c7746ea191514299e4796d2ed870f4332bcce1a651cc33945be0cc4",
+      "solved": true
+    },
+    {
+      "actions": 4,
+      "arm": "primitive",
+      "attempts": 12,
+      "depth": 4,
+      "expanded": 5,
+      "learned_tiebreaks": 0,
+      "seed": 11027,
+      "sha": "0aaf615c1b786304241a4eb296800718e14e235ecc187f118da3f7152dee0dd6",
+      "solved": true
+    },
+    {
+      "actions": 4,
+      "arm": "learned",
+      "attempts": 12,
+      "depth": 4,
+      "expanded": 5,
+      "learned_tiebreaks": 5,
+      "seed": 11027,
+      "sha": "0aaf615c1b786304241a4eb296800718e14e235ecc187f118da3f7152dee0dd6",
+      "solved": true
+    },
+    {
+      "actions": 4,
+      "arm": "shuffled",
+      "attempts": 12,
+      "depth": 4,
+      "expanded": 5,
+      "learned_tiebreaks": 0,
+      "seed": 11027,
+      "sha": "0aaf615c1b786304241a4eb296800718e14e235ecc187f118da3f7152dee0dd6",
+      "solved": true
+    },
+    {
+      "actions": 6,
+      "arm": "shuffled",
+      "attempts": 24,
+      "depth": 6,
+      "expanded": 9,
+      "learned_tiebreaks": 0,
+      "seed": 11027,
+      "sha": "551fb91cae98f465d9d8622c81e68000011d7b2f388d010e1fa51ddb49864379",
+      "solved": true
+    },
+    {
+      "actions": 6,
+      "arm": "primitive",
+      "attempts": 24,
+      "depth": 6,
+      "expanded": 9,
+      "learned_tiebreaks": 0,
+      "seed": 11027,
+      "sha": "551fb91cae98f465d9d8622c81e68000011d7b2f388d010e1fa51ddb49864379",
+      "solved": true
+    },
+    {
+      "actions": 6,
+      "arm": "learned",
+      "attempts": 24,
+      "depth": 6,
+      "expanded": 9,
+      "learned_tiebreaks": 9,
+      "seed": 11027,
+      "sha": "551fb91cae98f465d9d8622c81e68000011d7b2f388d010e1fa51ddb49864379",
+      "solved": true
+    },
+    {
+      "actions": 8,
+      "arm": "learned",
+      "attempts": 22,
+      "depth": 8,
+      "expanded": 9,
+      "learned_tiebreaks": 10,
+      "seed": 11027,
+      "sha": "4bb7ebf916baafafeeb15746f509edbadb95720acfdb699ef3e63ae346538e42",
+      "solved": true
+    },
+    {
+      "actions": 8,
+      "arm": "primitive",
+      "attempts": 22,
+      "depth": 8,
+      "expanded": 9,
+      "learned_tiebreaks": 0,
+      "seed": 11027,
+      "sha": "4bb7ebf916baafafeeb15746f509edbadb95720acfdb699ef3e63ae346538e42",
+      "solved": true
+    },
+    {
+      "actions": 8,
+      "arm": "shuffled",
+      "attempts": 22,
+      "depth": 8,
+      "expanded": 9,
+      "learned_tiebreaks": 0,
+      "seed": 11027,
+      "sha": "4bb7ebf916baafafeeb15746f509edbadb95720acfdb699ef3e63ae346538e42",
+      "solved": true
+    },
+    {
+      "actions": 12,
+      "arm": "primitive",
+      "attempts": 79,
+      "depth": 12,
+      "expanded": 29,
+      "learned_tiebreaks": 0,
+      "seed": 11027,
+      "sha": "5493171b8d937f5b9a5a30adca80a9042169fd988966da5bb157fdf1babe28d5",
+      "solved": true
+    },
+    {
+      "actions": 12,
+      "arm": "learned",
+      "attempts": 65,
+      "depth": 12,
+      "expanded": 24,
+      "learned_tiebreaks": 29,
+      "seed": 11027,
+      "sha": "5493171b8d937f5b9a5a30adca80a9042169fd988966da5bb157fdf1babe28d5",
+      "solved": true
+    },
+    {
+      "actions": 12,
+      "arm": "shuffled",
+      "attempts": 79,
+      "depth": 12,
+      "expanded": 29,
+      "learned_tiebreaks": 0,
+      "seed": 11027,
+      "sha": "5493171b8d937f5b9a5a30adca80a9042169fd988966da5bb157fdf1babe28d5",
+      "solved": true
+    },
+    {
+      "actions": 16,
+      "arm": "primitive",
+      "attempts": 499,
+      "depth": 16,
+      "expanded": 184,
+      "learned_tiebreaks": 0,
+      "seed": 11027,
+      "sha": "9496c6d9d717df059764804cfb8c10762277eb3b18109928b1e0cee2a1ece7ed",
+      "solved": true
+    },
+    {
+      "actions": 16,
+      "arm": "learned",
+      "attempts": 454,
+      "depth": 16,
+      "expanded": 167,
+      "learned_tiebreaks": 163,
+      "seed": 11027,
+      "sha": "9496c6d9d717df059764804cfb8c10762277eb3b18109928b1e0cee2a1ece7ed",
+      "solved": true
+    },
+    {
+      "actions": 16,
+      "arm": "shuffled",
+      "attempts": 490,
+      "depth": 16,
+      "expanded": 181,
+      "learned_tiebreaks": 0,
+      "seed": 11027,
+      "sha": "9496c6d9d717df059764804cfb8c10762277eb3b18109928b1e0cee2a1ece7ed",
+      "solved": true
+    },
+    {
+      "actions": 20,
+      "arm": "learned",
+      "attempts": 318,
+      "depth": 20,
+      "expanded": 118,
+      "learned_tiebreaks": 153,
+      "seed": 11027,
+      "sha": "380c5042fac07c5f7bf955a1dcdac1198119343d6d3c22bff2832c03dd405fb2",
+      "solved": true
+    },
+    {
+      "actions": 20,
+      "arm": "shuffled",
+      "attempts": 564,
+      "depth": 20,
+      "expanded": 212,
+      "learned_tiebreaks": 0,
+      "seed": 11027,
+      "sha": "380c5042fac07c5f7bf955a1dcdac1198119343d6d3c22bff2832c03dd405fb2",
+      "solved": true
+    },
+    {
+      "actions": 20,
+      "arm": "primitive",
+      "attempts": 573,
+      "depth": 20,
+      "expanded": 215,
+      "learned_tiebreaks": 0,
+      "seed": 11027,
+      "sha": "380c5042fac07c5f7bf955a1dcdac1198119343d6d3c22bff2832c03dd405fb2",
+      "solved": true
+    },
+    {
+      "actions": 24,
+      "arm": "learned",
+      "attempts": 853,
+      "depth": 24,
+      "expanded": 320,
+      "learned_tiebreaks": 396,
+      "seed": 11027,
+      "sha": "9616f0dff0f536d044a98d6f7d2bafeb460fb585d1e2d052d1451c4fc2fbae05",
+      "solved": true
+    },
+    {
+      "actions": 24,
+      "arm": "primitive",
+      "attempts": 1849,
+      "depth": 24,
+      "expanded": 701,
+      "learned_tiebreaks": 0,
+      "seed": 11027,
+      "sha": "9616f0dff0f536d044a98d6f7d2bafeb460fb585d1e2d052d1451c4fc2fbae05",
+      "solved": true
+    },
+    {
+      "actions": 24,
+      "arm": "shuffled",
+      "attempts": 1842,
+      "depth": 24,
+      "expanded": 699,
+      "learned_tiebreaks": 0,
+      "seed": 11027,
+      "sha": "9616f0dff0f536d044a98d6f7d2bafeb460fb585d1e2d052d1451c4fc2fbae05",
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "shuffled",
+      "attempts": 16390,
+      "depth": 28,
+      "expanded": 6198,
+      "learned_tiebreaks": 0,
+      "seed": 11027,
+      "sha": "b7138fd070b68ec1199196b83fed0c8d5c1cc0bef6e70115015942b5cb257bb8",
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "primitive",
+      "attempts": 16705,
+      "depth": 28,
+      "expanded": 6312,
+      "learned_tiebreaks": 0,
+      "seed": 11027,
+      "sha": "b7138fd070b68ec1199196b83fed0c8d5c1cc0bef6e70115015942b5cb257bb8",
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "learned",
+      "attempts": 5629,
+      "depth": 28,
+      "expanded": 2125,
+      "learned_tiebreaks": 2573,
+      "seed": 11027,
+      "sha": "b7138fd070b68ec1199196b83fed0c8d5c1cc0bef6e70115015942b5cb257bb8",
+      "solved": true
+    },
+    {
+      "actions": 4,
+      "arm": "learned",
+      "attempts": 10,
+      "depth": 4,
+      "expanded": 5,
+      "learned_tiebreaks": 6,
+      "seed": 11057,
+      "sha": "52399b63ea7c71ff627bfb751b49aded550485558b429f865c7b4a0167efd577",
+      "solved": true
+    },
+    {
+      "actions": 4,
+      "arm": "shuffled",
+      "attempts": 10,
+      "depth": 4,
+      "expanded": 5,
+      "learned_tiebreaks": 0,
+      "seed": 11057,
+      "sha": "52399b63ea7c71ff627bfb751b49aded550485558b429f865c7b4a0167efd577",
+      "solved": true
+    },
+    {
+      "actions": 4,
+      "arm": "primitive",
+      "attempts": 10,
+      "depth": 4,
+      "expanded": 5,
+      "learned_tiebreaks": 0,
+      "seed": 11057,
+      "sha": "52399b63ea7c71ff627bfb751b49aded550485558b429f865c7b4a0167efd577",
+      "solved": true
+    },
+    {
+      "actions": 6,
+      "arm": "primitive",
+      "attempts": 15,
+      "depth": 6,
+      "expanded": 7,
+      "learned_tiebreaks": 0,
+      "seed": 11057,
+      "sha": "8bf38d4dd663025ec75a4780f865e00c21bfd4c56cb6d6a0351262b7ffe6bf33",
+      "solved": true
+    },
+    {
+      "actions": 6,
+      "arm": "shuffled",
+      "attempts": 15,
+      "depth": 6,
+      "expanded": 7,
+      "learned_tiebreaks": 0,
+      "seed": 11057,
+      "sha": "8bf38d4dd663025ec75a4780f865e00c21bfd4c56cb6d6a0351262b7ffe6bf33",
+      "solved": true
+    },
+    {
+      "actions": 6,
+      "arm": "learned",
+      "attempts": 15,
+      "depth": 6,
+      "expanded": 7,
+      "learned_tiebreaks": 9,
+      "seed": 11057,
+      "sha": "8bf38d4dd663025ec75a4780f865e00c21bfd4c56cb6d6a0351262b7ffe6bf33",
+      "solved": true
+    },
+    {
+      "actions": 8,
+      "arm": "shuffled",
+      "attempts": 29,
+      "depth": 8,
+      "expanded": 11,
+      "learned_tiebreaks": 0,
+      "seed": 11057,
+      "sha": "76e35a8e74cf67ffd0af047ced571ff31f7fdf96e0ca6f21cc39f52597bdcb9b",
+      "solved": true
+    },
+    {
+      "actions": 8,
+      "arm": "primitive",
+      "attempts": 29,
+      "depth": 8,
+      "expanded": 11,
+      "learned_tiebreaks": 0,
+      "seed": 11057,
+      "sha": "76e35a8e74cf67ffd0af047ced571ff31f7fdf96e0ca6f21cc39f52597bdcb9b",
+      "solved": true
+    },
+    {
+      "actions": 8,
+      "arm": "learned",
+      "attempts": 29,
+      "depth": 8,
+      "expanded": 11,
+      "learned_tiebreaks": 11,
+      "seed": 11057,
+      "sha": "76e35a8e74cf67ffd0af047ced571ff31f7fdf96e0ca6f21cc39f52597bdcb9b",
+      "solved": true
+    },
+    {
+      "actions": 12,
+      "arm": "primitive",
+      "attempts": 87,
+      "depth": 12,
+      "expanded": 32,
+      "learned_tiebreaks": 0,
+      "seed": 11057,
+      "sha": "c6bf67a07bc8bd3f103c580ab4d1d7cbc2a52b7e1ad635e14295fc6087f107c5",
+      "solved": true
+    },
+    {
+      "actions": 12,
+      "arm": "learned",
+      "attempts": 56,
+      "depth": 12,
+      "expanded": 21,
+      "learned_tiebreaks": 24,
+      "seed": 11057,
+      "sha": "c6bf67a07bc8bd3f103c580ab4d1d7cbc2a52b7e1ad635e14295fc6087f107c5",
+      "solved": true
+    },
+    {
+      "actions": 12,
+      "arm": "shuffled",
+      "attempts": 83,
+      "depth": 12,
+      "expanded": 31,
+      "learned_tiebreaks": 0,
+      "seed": 11057,
+      "sha": "c6bf67a07bc8bd3f103c580ab4d1d7cbc2a52b7e1ad635e14295fc6087f107c5",
+      "solved": true
+    },
+    {
+      "actions": 16,
+      "arm": "primitive",
+      "attempts": 258,
+      "depth": 16,
+      "expanded": 96,
+      "learned_tiebreaks": 0,
+      "seed": 11057,
+      "sha": "f1d55b660779ddc42f29f0442fddb6b19767492e2c798e294c84e6ef225e0672",
+      "solved": true
+    },
+    {
+      "actions": 16,
+      "arm": "learned",
+      "attempts": 172,
+      "depth": 16,
+      "expanded": 63,
+      "learned_tiebreaks": 68,
+      "seed": 11057,
+      "sha": "f1d55b660779ddc42f29f0442fddb6b19767492e2c798e294c84e6ef225e0672",
+      "solved": true
+    },
+    {
+      "actions": 16,
+      "arm": "shuffled",
+      "attempts": 258,
+      "depth": 16,
+      "expanded": 96,
+      "learned_tiebreaks": 0,
+      "seed": 11057,
+      "sha": "f1d55b660779ddc42f29f0442fddb6b19767492e2c798e294c84e6ef225e0672",
+      "solved": true
+    },
+    {
+      "actions": 20,
+      "arm": "primitive",
+      "attempts": 843,
+      "depth": 20,
+      "expanded": 314,
+      "learned_tiebreaks": 0,
+      "seed": 11057,
+      "sha": "35c31ab6a1f303af7909441ac46666c5f9d229d1f990a4bc83b4007b82a6293c",
+      "solved": true
+    },
+    {
+      "actions": 20,
+      "arm": "learned",
+      "attempts": 348,
+      "depth": 20,
+      "expanded": 129,
+      "learned_tiebreaks": 159,
+      "seed": 11057,
+      "sha": "35c31ab6a1f303af7909441ac46666c5f9d229d1f990a4bc83b4007b82a6293c",
+      "solved": true
+    },
+    {
+      "actions": 20,
+      "arm": "shuffled",
+      "attempts": 756,
+      "depth": 20,
+      "expanded": 282,
+      "learned_tiebreaks": 0,
+      "seed": 11057,
+      "sha": "35c31ab6a1f303af7909441ac46666c5f9d229d1f990a4bc83b4007b82a6293c",
+      "solved": true
+    },
+    {
+      "actions": 24,
+      "arm": "learned",
+      "attempts": 1528,
+      "depth": 24,
+      "expanded": 574,
+      "learned_tiebreaks": 694,
+      "seed": 11057,
+      "sha": "26d596c619d6542b96e3f151742bc850e9d24c462b64e512a292657b7065f612",
+      "solved": true
+    },
+    {
+      "actions": 24,
+      "arm": "primitive",
+      "attempts": 4145,
+      "depth": 24,
+      "expanded": 1559,
+      "learned_tiebreaks": 0,
+      "seed": 11057,
+      "sha": "26d596c619d6542b96e3f151742bc850e9d24c462b64e512a292657b7065f612",
+      "solved": true
+    },
+    {
+      "actions": 24,
+      "arm": "shuffled",
+      "attempts": 4069,
+      "depth": 24,
+      "expanded": 1531,
+      "learned_tiebreaks": 0,
+      "seed": 11057,
+      "sha": "26d596c619d6542b96e3f151742bc850e9d24c462b64e512a292657b7065f612",
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "learned",
+      "attempts": 10247,
+      "depth": 28,
+      "expanded": 3848,
+      "learned_tiebreaks": 4310,
+      "seed": 11057,
+      "sha": "49a61972f62d80b60ad6b54aac1c502098cf3693b3ad7a1796313b92085eca19",
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "primitive",
+      "attempts": 22509,
+      "depth": 28,
+      "expanded": 8448,
+      "learned_tiebreaks": 0,
+      "seed": 11057,
+      "sha": "49a61972f62d80b60ad6b54aac1c502098cf3693b3ad7a1796313b92085eca19",
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "shuffled",
+      "attempts": 21310,
+      "depth": 28,
+      "expanded": 7996,
+      "learned_tiebreaks": 0,
+      "seed": 11057,
+      "sha": "49a61972f62d80b60ad6b54aac1c502098cf3693b3ad7a1796313b92085eca19",
+      "solved": true
+    },
+    {
+      "actions": 4,
+      "arm": "learned",
+      "attempts": 12,
+      "depth": 4,
+      "expanded": 5,
+      "learned_tiebreaks": 5,
+      "seed": 11071,
+      "sha": "39865aa4ede87fd6638296db75aec6438cbdacb05e0461c87cb7ddda5c493ad5",
+      "solved": true
+    },
+    {
+      "actions": 4,
+      "arm": "shuffled",
+      "attempts": 12,
+      "depth": 4,
+      "expanded": 5,
+      "learned_tiebreaks": 0,
+      "seed": 11071,
+      "sha": "39865aa4ede87fd6638296db75aec6438cbdacb05e0461c87cb7ddda5c493ad5",
+      "solved": true
+    },
+    {
+      "actions": 4,
+      "arm": "primitive",
+      "attempts": 12,
+      "depth": 4,
+      "expanded": 5,
+      "learned_tiebreaks": 0,
+      "seed": 11071,
+      "sha": "39865aa4ede87fd6638296db75aec6438cbdacb05e0461c87cb7ddda5c493ad5",
+      "solved": true
+    },
+    {
+      "actions": 6,
+      "arm": "shuffled",
+      "attempts": 24,
+      "depth": 6,
+      "expanded": 9,
+      "learned_tiebreaks": 0,
+      "seed": 11071,
+      "sha": "887120c12d5eb0da750408f8f39f781f9e79443b5d3fd0f8c9d0cbfe7cc2243b",
+      "solved": true
+    },
+    {
+      "actions": 6,
+      "arm": "learned",
+      "attempts": 24,
+      "depth": 6,
+      "expanded": 9,
+      "learned_tiebreaks": 9,
+      "seed": 11071,
+      "sha": "887120c12d5eb0da750408f8f39f781f9e79443b5d3fd0f8c9d0cbfe7cc2243b",
+      "solved": true
+    },
+    {
+      "actions": 6,
+      "arm": "primitive",
+      "attempts": 24,
+      "depth": 6,
+      "expanded": 9,
+      "learned_tiebreaks": 0,
+      "seed": 11071,
+      "sha": "887120c12d5eb0da750408f8f39f781f9e79443b5d3fd0f8c9d0cbfe7cc2243b",
+      "solved": true
+    },
+    {
+      "actions": 8,
+      "arm": "shuffled",
+      "attempts": 22,
+      "depth": 8,
+      "expanded": 9,
+      "learned_tiebreaks": 0,
+      "seed": 11071,
+      "sha": "22cdfdefb8e5df074d8db671e89d42a7ec99a48b2675e3d8bd2b4905814370c6",
+      "solved": true
+    },
+    {
+      "actions": 8,
+      "arm": "primitive",
+      "attempts": 22,
+      "depth": 8,
+      "expanded": 9,
+      "learned_tiebreaks": 0,
+      "seed": 11071,
+      "sha": "22cdfdefb8e5df074d8db671e89d42a7ec99a48b2675e3d8bd2b4905814370c6",
+      "solved": true
+    },
+    {
+      "actions": 8,
+      "arm": "learned",
+      "attempts": 22,
+      "depth": 8,
+      "expanded": 9,
+      "learned_tiebreaks": 10,
+      "seed": 11071,
+      "sha": "22cdfdefb8e5df074d8db671e89d42a7ec99a48b2675e3d8bd2b4905814370c6",
+      "solved": true
+    },
+    {
+      "actions": 12,
+      "arm": "shuffled",
+      "attempts": 153,
+      "depth": 12,
+      "expanded": 58,
+      "learned_tiebreaks": 0,
+      "seed": 11071,
+      "sha": "d62f480ff661061dccf898e2a42f722565dddda2d85f06df51ff792122380da2",
+      "solved": true
+    },
+    {
+      "actions": 12,
+      "arm": "primitive",
+      "attempts": 153,
+      "depth": 12,
+      "expanded": 58,
+      "learned_tiebreaks": 0,
+      "seed": 11071,
+      "sha": "d62f480ff661061dccf898e2a42f722565dddda2d85f06df51ff792122380da2",
+      "solved": true
+    },
+    {
+      "actions": 12,
+      "arm": "learned",
+      "attempts": 113,
+      "depth": 12,
+      "expanded": 41,
+      "learned_tiebreaks": 40,
+      "seed": 11071,
+      "sha": "d62f480ff661061dccf898e2a42f722565dddda2d85f06df51ff792122380da2",
+      "solved": true
+    },
+    {
+      "actions": 16,
+      "arm": "learned",
+      "attempts": 78,
+      "depth": 16,
+      "expanded": 30,
+      "learned_tiebreaks": 40,
+      "seed": 11071,
+      "sha": "9ff297c5a4f428fa60485a33213d8a5bae041415f7d9185089c9e41cacad9fa5",
+      "solved": true
+    },
+    {
+      "actions": 16,
+      "arm": "shuffled",
+      "attempts": 132,
+      "depth": 16,
+      "expanded": 51,
+      "learned_tiebreaks": 0,
+      "seed": 11071,
+      "sha": "9ff297c5a4f428fa60485a33213d8a5bae041415f7d9185089c9e41cacad9fa5",
+      "solved": true
+    },
+    {
+      "actions": 16,
+      "arm": "primitive",
+      "attempts": 152,
+      "depth": 16,
+      "expanded": 58,
+      "learned_tiebreaks": 0,
+      "seed": 11071,
+      "sha": "9ff297c5a4f428fa60485a33213d8a5bae041415f7d9185089c9e41cacad9fa5",
+      "solved": true
+    },
+    {
+      "actions": 20,
+      "arm": "shuffled",
+      "attempts": 513,
+      "depth": 20,
+      "expanded": 194,
+      "learned_tiebreaks": 0,
+      "seed": 11071,
+      "sha": "b63e9415f5b7ecde0b14e20dc20b82d7d9db209f9d337a0e2682d5b584331fb1",
+      "solved": true
+    },
+    {
+      "actions": 20,
+      "arm": "primitive",
+      "attempts": 513,
+      "depth": 20,
+      "expanded": 194,
+      "learned_tiebreaks": 0,
+      "seed": 11071,
+      "sha": "b63e9415f5b7ecde0b14e20dc20b82d7d9db209f9d337a0e2682d5b584331fb1",
+      "solved": true
+    },
+    {
+      "actions": 20,
+      "arm": "learned",
+      "attempts": 203,
+      "depth": 20,
+      "expanded": 76,
+      "learned_tiebreaks": 95,
+      "seed": 11071,
+      "sha": "b63e9415f5b7ecde0b14e20dc20b82d7d9db209f9d337a0e2682d5b584331fb1",
+      "solved": true
+    },
+    {
+      "actions": 24,
+      "arm": "primitive",
+      "attempts": 2159,
+      "depth": 24,
+      "expanded": 813,
+      "learned_tiebreaks": 0,
+      "seed": 11071,
+      "sha": "bec60befdac4b19e358df0959ad32f994d1321c5fd28f84db02d213f53f1b73f",
+      "solved": true
+    },
+    {
+      "actions": 24,
+      "arm": "shuffled",
+      "attempts": 2138,
+      "depth": 24,
+      "expanded": 806,
+      "learned_tiebreaks": 0,
+      "seed": 11071,
+      "sha": "bec60befdac4b19e358df0959ad32f994d1321c5fd28f84db02d213f53f1b73f",
+      "solved": true
+    },
+    {
+      "actions": 24,
+      "arm": "learned",
+      "attempts": 930,
+      "depth": 24,
+      "expanded": 354,
+      "learned_tiebreaks": 445,
+      "seed": 11071,
+      "sha": "bec60befdac4b19e358df0959ad32f994d1321c5fd28f84db02d213f53f1b73f",
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "shuffled",
+      "attempts": 27385,
+      "depth": 28,
+      "expanded": 10306,
+      "learned_tiebreaks": 0,
+      "seed": 11071,
+      "sha": "7befa8e6aa9473e46670fcdaf2bfb12633034dd9336853de06576ed6dd507f83",
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "primitive",
+      "attempts": 27782,
+      "depth": 28,
+      "expanded": 10439,
+      "learned_tiebreaks": 0,
+      "seed": 11071,
+      "sha": "7befa8e6aa9473e46670fcdaf2bfb12633034dd9336853de06576ed6dd507f83",
+      "solved": true
+    },
+    {
+      "actions": 28,
+      "arm": "learned",
+      "attempts": 18133,
+      "depth": 28,
+      "expanded": 6658,
+      "learned_tiebreaks": 6984,
+      "seed": 11071,
+      "sha": "7befa8e6aa9473e46670fcdaf2bfb12633034dd9336853de06576ed6dd507f83",
+      "solved": true
+    }
+  ],
+  "seeds": [
+    11003,
+    11027,
+    11057,
+    11071
+  ],
+  "summary": {
+    "learned": {
+      "attempts": 50197,
+      "expanded": 18699,
+      "n": 32,
+      "solved": 32,
+      "total_ms_median": 110.241
+    },
+    "primitive": {
+      "attempts": 103510,
+      "expanded": 38950,
+      "n": 32,
+      "solved": 32,
+      "total_ms_median": 213.84
+    },
+    "shuffled": {
+      "attempts": 100767,
+      "expanded": 37944,
+      "n": 32,
+      "solved": 32,
+      "total_ms_median": 223.67
+    }
+  },
+  "timings": [
+    {
+      "arm": "learned",
+      "depth": 4,
+      "elapsed_ns": 76620,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 4,
+      "elapsed_ns": 36983,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 4,
+      "elapsed_ns": 41596,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 6,
+      "elapsed_ns": 51790,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 6,
+      "elapsed_ns": 47134,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 6,
+      "elapsed_ns": 51924,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 8,
+      "elapsed_ns": 93300,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 8,
+      "elapsed_ns": 96839,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 8,
+      "elapsed_ns": 71777,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 12,
+      "elapsed_ns": 299768,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 12,
+      "elapsed_ns": 186330,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 12,
+      "elapsed_ns": 104346,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 16,
+      "elapsed_ns": 667630,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 16,
+      "elapsed_ns": 590750,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 16,
+      "elapsed_ns": 430522,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 20,
+      "elapsed_ns": 3593677,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 20,
+      "elapsed_ns": 1409841,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 20,
+      "elapsed_ns": 2808022,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 24,
+      "elapsed_ns": 15863671,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 24,
+      "elapsed_ns": 7405287,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 24,
+      "elapsed_ns": 14161800,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 28,
+      "elapsed_ns": 89918765,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 28,
+      "elapsed_ns": 34024030,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 28,
+      "elapsed_ns": 13216872,
+      "rep": 0,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 4,
+      "elapsed_ns": 63070,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 4,
+      "elapsed_ns": 36242,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 4,
+      "elapsed_ns": 36404,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 6,
+      "elapsed_ns": 65320,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 6,
+      "elapsed_ns": 56846,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 6,
+      "elapsed_ns": 58926,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 8,
+      "elapsed_ns": 58348,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 8,
+      "elapsed_ns": 53124,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 8,
+      "elapsed_ns": 57469,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 12,
+      "elapsed_ns": 166176,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 12,
+      "elapsed_ns": 146776,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 12,
+      "elapsed_ns": 188625,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 16,
+      "elapsed_ns": 909084,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 16,
+      "elapsed_ns": 868137,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 16,
+      "elapsed_ns": 985617,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 20,
+      "elapsed_ns": 644001,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 20,
+      "elapsed_ns": 1111382,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 20,
+      "elapsed_ns": 1035067,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 24,
+      "elapsed_ns": 1814578,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 24,
+      "elapsed_ns": 3547905,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 24,
+      "elapsed_ns": 3644920,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 28,
+      "elapsed_ns": 34548625,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 28,
+      "elapsed_ns": 34858813,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 28,
+      "elapsed_ns": 13007115,
+      "rep": 0,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 4,
+      "elapsed_ns": 39861,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 4,
+      "elapsed_ns": 31930,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 4,
+      "elapsed_ns": 27518,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 6,
+      "elapsed_ns": 41012,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 6,
+      "elapsed_ns": 41378,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 6,
+      "elapsed_ns": 40029,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 8,
+      "elapsed_ns": 74757,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 8,
+      "elapsed_ns": 67587,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 8,
+      "elapsed_ns": 70734,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 12,
+      "elapsed_ns": 206016,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 12,
+      "elapsed_ns": 128653,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 12,
+      "elapsed_ns": 196448,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 16,
+      "elapsed_ns": 483682,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 16,
+      "elapsed_ns": 347220,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 16,
+      "elapsed_ns": 544109,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 20,
+      "elapsed_ns": 1525338,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 20,
+      "elapsed_ns": 715149,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 20,
+      "elapsed_ns": 1485403,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 24,
+      "elapsed_ns": 3055297,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 24,
+      "elapsed_ns": 8357122,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 24,
+      "elapsed_ns": 8399986,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 28,
+      "elapsed_ns": 23625284,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 28,
+      "elapsed_ns": 49381134,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 28,
+      "elapsed_ns": 48584331,
+      "rep": 0,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 4,
+      "elapsed_ns": 50339,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 4,
+      "elapsed_ns": 36841,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 4,
+      "elapsed_ns": 33496,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 6,
+      "elapsed_ns": 65980,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 6,
+      "elapsed_ns": 61041,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 6,
+      "elapsed_ns": 58033,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 8,
+      "elapsed_ns": 61513,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 8,
+      "elapsed_ns": 54322,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 8,
+      "elapsed_ns": 57433,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 12,
+      "elapsed_ns": 348661,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 12,
+      "elapsed_ns": 285583,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 12,
+      "elapsed_ns": 227447,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 16,
+      "elapsed_ns": 176094,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 16,
+      "elapsed_ns": 311701,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 16,
+      "elapsed_ns": 369651,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 20,
+      "elapsed_ns": 1075249,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 20,
+      "elapsed_ns": 978062,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 20,
+      "elapsed_ns": 422474,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 24,
+      "elapsed_ns": 3960925,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 24,
+      "elapsed_ns": 4521170,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 24,
+      "elapsed_ns": 1913942,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 28,
+      "elapsed_ns": 65748550,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 28,
+      "elapsed_ns": 58523534,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 28,
+      "elapsed_ns": 39913298,
+      "rep": 0,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 4,
+      "elapsed_ns": 47366,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 4,
+      "elapsed_ns": 34033,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 4,
+      "elapsed_ns": 37462,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 6,
+      "elapsed_ns": 51507,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 6,
+      "elapsed_ns": 171924,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 6,
+      "elapsed_ns": 48737,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 8,
+      "elapsed_ns": 91090,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 8,
+      "elapsed_ns": 92762,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 8,
+      "elapsed_ns": 176390,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 12,
+      "elapsed_ns": 189202,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 12,
+      "elapsed_ns": 224449,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 12,
+      "elapsed_ns": 104662,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 16,
+      "elapsed_ns": 377437,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 16,
+      "elapsed_ns": 789787,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 16,
+      "elapsed_ns": 584072,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 20,
+      "elapsed_ns": 2912365,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 20,
+      "elapsed_ns": 2647053,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 20,
+      "elapsed_ns": 1417150,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 24,
+      "elapsed_ns": 15017732,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 24,
+      "elapsed_ns": 8403584,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 24,
+      "elapsed_ns": 15001915,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 28,
+      "elapsed_ns": 33675942,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 28,
+      "elapsed_ns": 33593350,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 28,
+      "elapsed_ns": 14883878,
+      "rep": 1,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 4,
+      "elapsed_ns": 46322,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 4,
+      "elapsed_ns": 35071,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 4,
+      "elapsed_ns": 32037,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 6,
+      "elapsed_ns": 59237,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 6,
+      "elapsed_ns": 60579,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 6,
+      "elapsed_ns": 60757,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 8,
+      "elapsed_ns": 60783,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 8,
+      "elapsed_ns": 54244,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 8,
+      "elapsed_ns": 56967,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 12,
+      "elapsed_ns": 149140,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 12,
+      "elapsed_ns": 163612,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 12,
+      "elapsed_ns": 172309,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 16,
+      "elapsed_ns": 1486007,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 16,
+      "elapsed_ns": 950531,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 16,
+      "elapsed_ns": 908838,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 20,
+      "elapsed_ns": 1407435,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 20,
+      "elapsed_ns": 666434,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 20,
+      "elapsed_ns": 1188407,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 24,
+      "elapsed_ns": 3701903,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 24,
+      "elapsed_ns": 4052437,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 24,
+      "elapsed_ns": 1948346,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 28,
+      "elapsed_ns": 12455843,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 28,
+      "elapsed_ns": 33725026,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 28,
+      "elapsed_ns": 35557402,
+      "rep": 1,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 4,
+      "elapsed_ns": 37983,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 4,
+      "elapsed_ns": 126254,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 4,
+      "elapsed_ns": 32044,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 6,
+      "elapsed_ns": 41022,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 6,
+      "elapsed_ns": 51552,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 6,
+      "elapsed_ns": 42106,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 8,
+      "elapsed_ns": 100879,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 8,
+      "elapsed_ns": 73532,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 8,
+      "elapsed_ns": 70999,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 12,
+      "elapsed_ns": 130181,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 12,
+      "elapsed_ns": 177553,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 12,
+      "elapsed_ns": 202816,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 16,
+      "elapsed_ns": 500459,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 16,
+      "elapsed_ns": 348113,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 16,
+      "elapsed_ns": 625938,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 20,
+      "elapsed_ns": 713695,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 20,
+      "elapsed_ns": 1671948,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 20,
+      "elapsed_ns": 1549174,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 24,
+      "elapsed_ns": 3081762,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 24,
+      "elapsed_ns": 9234562,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 24,
+      "elapsed_ns": 9588443,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 28,
+      "elapsed_ns": 22380772,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 28,
+      "elapsed_ns": 47037835,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 28,
+      "elapsed_ns": 47209890,
+      "rep": 1,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 4,
+      "elapsed_ns": 51045,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 4,
+      "elapsed_ns": 35832,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 4,
+      "elapsed_ns": 32604,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 6,
+      "elapsed_ns": 63137,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 6,
+      "elapsed_ns": 62778,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 6,
+      "elapsed_ns": 56564,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 8,
+      "elapsed_ns": 61364,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 8,
+      "elapsed_ns": 55298,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 8,
+      "elapsed_ns": 56744,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 12,
+      "elapsed_ns": 251669,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 12,
+      "elapsed_ns": 310365,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 12,
+      "elapsed_ns": 351482,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 16,
+      "elapsed_ns": 316359,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 16,
+      "elapsed_ns": 175755,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 16,
+      "elapsed_ns": 279183,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 20,
+      "elapsed_ns": 966644,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 20,
+      "elapsed_ns": 1020769,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 20,
+      "elapsed_ns": 416549,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 24,
+      "elapsed_ns": 5183647,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 24,
+      "elapsed_ns": 1966460,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 24,
+      "elapsed_ns": 3979483,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 28,
+      "elapsed_ns": 55162220,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 28,
+      "elapsed_ns": 40668238,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 28,
+      "elapsed_ns": 60022398,
+      "rep": 1,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 4,
+      "elapsed_ns": 53155,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 4,
+      "elapsed_ns": 37488,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 4,
+      "elapsed_ns": 32587,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 6,
+      "elapsed_ns": 48929,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 6,
+      "elapsed_ns": 53163,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 6,
+      "elapsed_ns": 48362,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 8,
+      "elapsed_ns": 93661,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 8,
+      "elapsed_ns": 100637,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 8,
+      "elapsed_ns": 99278,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 12,
+      "elapsed_ns": 150845,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 12,
+      "elapsed_ns": 274478,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 12,
+      "elapsed_ns": 399185,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 16,
+      "elapsed_ns": 810496,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 16,
+      "elapsed_ns": 540735,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 16,
+      "elapsed_ns": 574730,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 20,
+      "elapsed_ns": 3108227,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 20,
+      "elapsed_ns": 1709863,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 20,
+      "elapsed_ns": 3281935,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 24,
+      "elapsed_ns": 8399322,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 24,
+      "elapsed_ns": 13919812,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 24,
+      "elapsed_ns": 15491171,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "shuffled",
+      "depth": 28,
+      "elapsed_ns": 32122400,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 28,
+      "elapsed_ns": 13032274,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "primitive",
+      "depth": 28,
+      "elapsed_ns": 33917766,
+      "rep": 2,
+      "seed": 11003
+    },
+    {
+      "arm": "learned",
+      "depth": 4,
+      "elapsed_ns": 52909,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 4,
+      "elapsed_ns": 37612,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 4,
+      "elapsed_ns": 31957,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 6,
+      "elapsed_ns": 60326,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 6,
+      "elapsed_ns": 60470,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 6,
+      "elapsed_ns": 60593,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 8,
+      "elapsed_ns": 60945,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 8,
+      "elapsed_ns": 54294,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 8,
+      "elapsed_ns": 56852,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 12,
+      "elapsed_ns": 193262,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 12,
+      "elapsed_ns": 241578,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 12,
+      "elapsed_ns": 176103,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 16,
+      "elapsed_ns": 1016408,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 16,
+      "elapsed_ns": 1121581,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 16,
+      "elapsed_ns": 895804,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 20,
+      "elapsed_ns": 1122008,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 20,
+      "elapsed_ns": 650107,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 20,
+      "elapsed_ns": 1058094,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 24,
+      "elapsed_ns": 3370975,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 24,
+      "elapsed_ns": 2061183,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 24,
+      "elapsed_ns": 4032214,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "shuffled",
+      "depth": 28,
+      "elapsed_ns": 37471750,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "learned",
+      "depth": 28,
+      "elapsed_ns": 12123769,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 28,
+      "elapsed_ns": 36484143,
+      "rep": 2,
+      "seed": 11027
+    },
+    {
+      "arm": "primitive",
+      "depth": 4,
+      "elapsed_ns": 38843,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 4,
+      "elapsed_ns": 32073,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 4,
+      "elapsed_ns": 29350,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 6,
+      "elapsed_ns": 43815,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 6,
+      "elapsed_ns": 39254,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 6,
+      "elapsed_ns": 41321,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 8,
+      "elapsed_ns": 75328,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 8,
+      "elapsed_ns": 86019,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 8,
+      "elapsed_ns": 67385,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 12,
+      "elapsed_ns": 177823,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 12,
+      "elapsed_ns": 128862,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 12,
+      "elapsed_ns": 192587,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 16,
+      "elapsed_ns": 356581,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 16,
+      "elapsed_ns": 475502,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 16,
+      "elapsed_ns": 534598,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 20,
+      "elapsed_ns": 801427,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 20,
+      "elapsed_ns": 1527937,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 20,
+      "elapsed_ns": 1565110,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 24,
+      "elapsed_ns": 3018393,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 24,
+      "elapsed_ns": 9392566,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 24,
+      "elapsed_ns": 8089974,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "primitive",
+      "depth": 28,
+      "elapsed_ns": 44858420,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 28,
+      "elapsed_ns": 47621101,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "learned",
+      "depth": 28,
+      "elapsed_ns": 22015152,
+      "rep": 2,
+      "seed": 11057
+    },
+    {
+      "arm": "shuffled",
+      "depth": 4,
+      "elapsed_ns": 50237,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 4,
+      "elapsed_ns": 58832,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 4,
+      "elapsed_ns": 35653,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 6,
+      "elapsed_ns": 60952,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 6,
+      "elapsed_ns": 61144,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 6,
+      "elapsed_ns": 61949,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 8,
+      "elapsed_ns": 57855,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 8,
+      "elapsed_ns": 59211,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 8,
+      "elapsed_ns": 56964,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 12,
+      "elapsed_ns": 290852,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 12,
+      "elapsed_ns": 324815,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 12,
+      "elapsed_ns": 228966,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 16,
+      "elapsed_ns": 291650,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 16,
+      "elapsed_ns": 173004,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 16,
+      "elapsed_ns": 307410,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 20,
+      "elapsed_ns": 1017432,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 20,
+      "elapsed_ns": 414512,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 20,
+      "elapsed_ns": 949156,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 24,
+      "elapsed_ns": 4450587,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 24,
+      "elapsed_ns": 2038914,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 24,
+      "elapsed_ns": 4165529,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "primitive",
+      "depth": 28,
+      "elapsed_ns": 58310945,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "learned",
+      "depth": 28,
+      "elapsed_ns": 39830110,
+      "rep": 2,
+      "seed": 11071
+    },
+    {
+      "arm": "shuffled",
+      "depth": 28,
+      "elapsed_ns": 61705978,
+      "rep": 2,
+      "seed": 11071
+    }
+  ],
+  "worsened_states": 0
+}
