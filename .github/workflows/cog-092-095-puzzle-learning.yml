@@ -1,0 +1,45 @@
+name: COG-ATTN 092-095 puzzle learning replay
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'research/cog-081-086/extreme/followup_092_095/**'
+      - '.github/workflows/cog-092-095-puzzle-learning.yml'
+  pull_request:
+    paths:
+      - 'research/cog-081-086/extreme/followup_092_095/**'
+      - '.github/workflows/cog-092-095-puzzle-learning.yml'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Restore frozen source puzzle inputs
+        run: |
+          cd research/cog-081-086
+          python - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          p=Path('extreme/artifacts/puzzle-087-090-cases-evidence.zip')
+          with ZipFile(p) as z:
+              z.extract('results/cases.jsonl',path='extreme')
+          assert Path('extreme/results/cases.jsonl').is_file()
+          PY
+      - name: Replay 092-095 decisions and independent checks
+        env:
+          PYTHONHASHSEED: '0'
+          PYTHONUNBUFFERED: '1'
+        run: |
+          cd research/cog-081-086/extreme/followup_092_095
+          python maze_092.py
+          python sliding_093.py
+          python sliding_fast_093b.py
+          python sliding_fresh_093c.py
+          python sudoku_094.py
+          python chess_095.py
+          python verify_stable.py
+          python -m unittest -v test_092_095.py
