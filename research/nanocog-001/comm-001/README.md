@@ -26,4 +26,4 @@ PYTHONPATH=.. OMP_NUM_THREADS=1 python -m pytest -q cog_comm
 PYTHONPATH=.. OMP_NUM_THREADS=1 python -m cog_comm.geometry --fixture
 ```
 
-Both compact test receipts are preflight only. An optimizer fit needs independently reviewed actual group/role custody, enough supported fit and calibration exposure, an easy learnable control, real-shape work limits and exact TrainLab admission. Neither software parity nor the age calculation can authorize a model fit.
+Both compact test receipts are preflight only. See [DATA results and remaining gates](RESULTS_PREFIT.md). An optimizer fit needs independently reviewed actual group/role custody, enough supported fit and calibration exposure, an easy learnable control, real-shape work limits and exact TrainLab admission. Neither software parity nor the age calculation can authorize a model fit.
