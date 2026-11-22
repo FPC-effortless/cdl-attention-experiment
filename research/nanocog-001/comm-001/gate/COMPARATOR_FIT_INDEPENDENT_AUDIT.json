@@ -1,0 +1,297 @@
+{
+  "model_forwards_by_auditor": 0,
+  "optimizer_updates_by_auditor": 0,
+  "outcome": "FIT_INTEGRITY_CHECKED_ONLY",
+  "prediction_outcomes_inspected": false,
+  "runs": {
+    "attention32-1171": {
+      "endpoints": {
+        "128": {
+          "checkpoint_sha256": "3c63a84ac2f1d2e68a691d248402e04101dc667e2445a3f2db1ae462571549c3",
+          "optimizer_step": 128,
+          "state_sha256": "4f58e40870d12495d58e85e24721d4773ffebb6d2510c50b7b1f3b07c541f651"
+        },
+        "1280": {
+          "checkpoint_sha256": "2b30ffb2b8be047796f9ce365466b724b53dbcf8326a16750701e32c04147ab6",
+          "optimizer_step": 1280,
+          "state_sha256": "a8b5dd57dd2e1ed20c3937de4ba6873aebaa9b6243c36f88559a7f1cfddc9b5e"
+        }
+      },
+      "parameters": 37414,
+      "qualification": "NOT_QUALIFIED",
+      "research_adequacy": "EXECUTED_CRITERIA_MET",
+      "run_id": "20261122T160735-3d351309faa8",
+      "run_sha256": "1ea5099cc0a5bd99b1523208304d4cccacb7d09710643ec4ee8dc7ef372fd662",
+      "runtime": {
+        "deterministic": true,
+        "dtype": "float32",
+        "executable_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "threads": 1,
+        "torch": "2.10.0+cpu"
+      },
+      "schedule_sha256": "4e81f7c6fed8880cc623cbb22d8f38e9d6c3a0976f2a2ca7d7c761eb4f5e7a40",
+      "subprocess_elapsed_seconds": 8.570694,
+      "trace_steps": 1280,
+      "train_sha256": "02607c19e760e164989865a54422eb7cd78fed7d117a7fa2ff6c4df9d700f9f8",
+      "verification": "valid"
+    },
+    "attention32-1271": {
+      "endpoints": {
+        "128": {
+          "checkpoint_sha256": "116f3a12a5bd04e814677d1f3466241f00730beb85409e9c00f8ba74070621a0",
+          "optimizer_step": 128,
+          "state_sha256": "59ee59f21c3564027dc7bc6e196e6cadac5bb93731ead577b24f2d5b121e1a63"
+        },
+        "1280": {
+          "checkpoint_sha256": "0ba9b729f7709e864288a0c35345b09b07e304d41d73a60f5804e954c9c112e9",
+          "optimizer_step": 1280,
+          "state_sha256": "9fe9f728062f57a8f15d931642d47a534c9724530e54a04354000dd8447e5dd6"
+        }
+      },
+      "parameters": 37414,
+      "qualification": "NOT_QUALIFIED",
+      "research_adequacy": "EXECUTED_CRITERIA_MET",
+      "run_id": "20261122T160743-ce40446dc723",
+      "run_sha256": "0bfbabce6fcc15b516787fb8d3fab854662f8008ee92d4d68f2239814114a700",
+      "runtime": {
+        "deterministic": true,
+        "dtype": "float32",
+        "executable_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "threads": 1,
+        "torch": "2.10.0+cpu"
+      },
+      "schedule_sha256": "50bbf2da591acfa92c7253fc1740f5f447a65c8a231a0d77c64616502e96d1b7",
+      "subprocess_elapsed_seconds": 8.258183,
+      "trace_steps": 1280,
+      "train_sha256": "02607c19e760e164989865a54422eb7cd78fed7d117a7fa2ff6c4df9d700f9f8",
+      "verification": "valid"
+    },
+    "attention32-1371": {
+      "endpoints": {
+        "128": {
+          "checkpoint_sha256": "713ffda9e3fa110a2b95081d8f288bce4597ddc9740a246fb3b0bb81ef243d4e",
+          "optimizer_step": 128,
+          "state_sha256": "2efcf2f946fb78f1a54439278c0dd08ca66ea78e74700a6a4e40c99e5652db92"
+        },
+        "1280": {
+          "checkpoint_sha256": "c34441798d694e30824a81446c22a709e8c9c1ba07668ff15117e0f3b2f80fb2",
+          "optimizer_step": 1280,
+          "state_sha256": "cab3ae6c9e5d2f01bd1f76c4417849a64c7c1e29ccd13b672813511820ae003c"
+        }
+      },
+      "parameters": 37414,
+      "qualification": "NOT_QUALIFIED",
+      "research_adequacy": "EXECUTED_CRITERIA_MET",
+      "run_id": "20261122T160752-ff1e79e236c7",
+      "run_sha256": "3bf828a33fb5f02643ca7ef2b5a2fa4675912202e496e3948a1a38e59ccccf2c",
+      "runtime": {
+        "deterministic": true,
+        "dtype": "float32",
+        "executable_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "threads": 1,
+        "torch": "2.10.0+cpu"
+      },
+      "schedule_sha256": "b1399cd961246a291916a0e9e19a83af9c7201af86bdf06a84e5c5dfb2e617f1",
+      "subprocess_elapsed_seconds": 8.50163,
+      "trace_steps": 1280,
+      "train_sha256": "02607c19e760e164989865a54422eb7cd78fed7d117a7fa2ff6c4df9d700f9f8",
+      "verification": "valid"
+    },
+    "gated48-1171": {
+      "endpoints": {
+        "128": {
+          "checkpoint_sha256": "909b3cfd6a90f57c9748618766c7d4ebc15c10c0d2c582b82826459c92931c77",
+          "optimizer_step": 128,
+          "state_sha256": "57f8c218fc3761331459fa215e11d9511f113da810d428650970a43c8314e1c5"
+        },
+        "1280": {
+          "checkpoint_sha256": "80bd107949e0ad319d817ba48b9f16a279b7c3cf4085225ccf0706870d20ec73",
+          "optimizer_step": 1280,
+          "state_sha256": "f2a0efcff4e44d61493ed35254fcb5d0c396ab5ba7ace1c2582214c2e20bb950"
+        }
+      },
+      "parameters": 69926,
+      "qualification": "NOT_QUALIFIED",
+      "research_adequacy": "EXECUTED_CRITERIA_MET",
+      "run_id": "20261122T160800-5112a636bcac",
+      "run_sha256": "0a5d5132ba87936f054875bfc47490697f6edd678701b73b1c09916297e190ae",
+      "runtime": {
+        "deterministic": true,
+        "dtype": "float32",
+        "executable_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "threads": 1,
+        "torch": "2.10.0+cpu"
+      },
+      "schedule_sha256": "4e81f7c6fed8880cc623cbb22d8f38e9d6c3a0976f2a2ca7d7c761eb4f5e7a40",
+      "subprocess_elapsed_seconds": 8.25235,
+      "trace_steps": 1280,
+      "train_sha256": "02607c19e760e164989865a54422eb7cd78fed7d117a7fa2ff6c4df9d700f9f8",
+      "verification": "valid"
+    },
+    "gated48-1271": {
+      "endpoints": {
+        "128": {
+          "checkpoint_sha256": "4f7903d441c7f5568648f0045591a97ec252d1452382a74afa1089c9c991f2b3",
+          "optimizer_step": 128,
+          "state_sha256": "28ffdb3f33ebffc3815b6a0b8bd395e2cf3bc29a66b00b2a6684fd0d96ac9bc7"
+        },
+        "1280": {
+          "checkpoint_sha256": "d00c1cc54462734293bdba5156e6e3f8c1aa4d5fa1f8ee89200212006dc0128b",
+          "optimizer_step": 1280,
+          "state_sha256": "ad6fdf1e37dc409233fd2bfcf47f45f72c812507dab0c86de47b52dbaa138433"
+        }
+      },
+      "parameters": 69926,
+      "qualification": "NOT_QUALIFIED",
+      "research_adequacy": "EXECUTED_CRITERIA_MET",
+      "run_id": "20261122T160809-cec2226693db",
+      "run_sha256": "4aa0fd0b640feff2417771bf51b82ee78f421730e4fb820742735b862111a5b9",
+      "runtime": {
+        "deterministic": true,
+        "dtype": "float32",
+        "executable_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "threads": 1,
+        "torch": "2.10.0+cpu"
+      },
+      "schedule_sha256": "50bbf2da591acfa92c7253fc1740f5f447a65c8a231a0d77c64616502e96d1b7",
+      "subprocess_elapsed_seconds": 9.202087,
+      "trace_steps": 1280,
+      "train_sha256": "02607c19e760e164989865a54422eb7cd78fed7d117a7fa2ff6c4df9d700f9f8",
+      "verification": "valid"
+    },
+    "gated48-1371": {
+      "endpoints": {
+        "128": {
+          "checkpoint_sha256": "b9b12fe6625febcbc9e5509a4c0baaf7e795e151a58754cc73fab49c1664ecd6",
+          "optimizer_step": 128,
+          "state_sha256": "e450997c3e121910ec78dbd1a2ad3c96e155359f9da6d5627a6de0a4721ec0b3"
+        },
+        "1280": {
+          "checkpoint_sha256": "8466337088adb7e97c765aa09e3cfce2cfa1830e0fe2cdb1d5354a0bed33c474",
+          "optimizer_step": 1280,
+          "state_sha256": "83de4b26e4e846f427ffb378a49214f0e3b7a43e5aab72d6772a229677e114d8"
+        }
+      },
+      "parameters": 69926,
+      "qualification": "NOT_QUALIFIED",
+      "research_adequacy": "EXECUTED_CRITERIA_MET",
+      "run_id": "20261122T160818-bce4a72dac96",
+      "run_sha256": "e7d36bb72f2d78fd03cccc5dfbe64d5a6b722e1cee09997714d7b7c06ca9212d",
+      "runtime": {
+        "deterministic": true,
+        "dtype": "float32",
+        "executable_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "threads": 1,
+        "torch": "2.10.0+cpu"
+      },
+      "schedule_sha256": "b1399cd961246a291916a0e9e19a83af9c7201af86bdf06a84e5c5dfb2e617f1",
+      "subprocess_elapsed_seconds": 8.95098,
+      "trace_steps": 1280,
+      "train_sha256": "02607c19e760e164989865a54422eb7cd78fed7d117a7fa2ff6c4df9d700f9f8",
+      "verification": "valid"
+    },
+    "static32-1171": {
+      "endpoints": {
+        "128": {
+          "checkpoint_sha256": "60ec14b48f1c1d5fa41d4634768821827bf5e2b27e193d52d83e0d16ae5cdfbb",
+          "optimizer_step": 128,
+          "state_sha256": "2e0dadabac75a8d0fc8a2cd09aa0d013c8225a83e3c1dd1aa99c64f8d3bf5f41"
+        },
+        "1280": {
+          "checkpoint_sha256": "78a22fd7f405f9979c6270e5508c4027935debacdd2a366a70bc24e9fb50377a",
+          "optimizer_step": 1280,
+          "state_sha256": "13093b63a927f5f5472162eccadcff3473a5679cab06c6d11f4bad40334f023d"
+        }
+      },
+      "parameters": 37158,
+      "qualification": "NOT_QUALIFIED",
+      "research_adequacy": "EXECUTED_CRITERIA_MET",
+      "run_id": "20261122T160827-efc3c03889c9",
+      "run_sha256": "ac389bc02dc9522c34a25de0f4b2ba5e0af4f76dc46b9408f5d36de360d78d32",
+      "runtime": {
+        "deterministic": true,
+        "dtype": "float32",
+        "executable_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "threads": 1,
+        "torch": "2.10.0+cpu"
+      },
+      "schedule_sha256": "4e81f7c6fed8880cc623cbb22d8f38e9d6c3a0976f2a2ca7d7c761eb4f5e7a40",
+      "subprocess_elapsed_seconds": 7.534586,
+      "trace_steps": 1280,
+      "train_sha256": "02607c19e760e164989865a54422eb7cd78fed7d117a7fa2ff6c4df9d700f9f8",
+      "verification": "valid"
+    },
+    "static32-1271": {
+      "endpoints": {
+        "128": {
+          "checkpoint_sha256": "8b0ff2b4ac6b3fa58c224b2633a67cd8e76d2c13c7d2943885a2206523cd996e",
+          "optimizer_step": 128,
+          "state_sha256": "4ffa480f539277f787f80af89b576beebd594ebaf44130ae31c6ce0b2169ad13"
+        },
+        "1280": {
+          "checkpoint_sha256": "8d5bb633775f3640fc9d9e12611e90cd52d877b793303b425dc7ea6ddce4dcc8",
+          "optimizer_step": 1280,
+          "state_sha256": "af66f87c7d5f5e7263866c4f97af936337fd56b1d13a1a37df7d943391ef0e9d"
+        }
+      },
+      "parameters": 37158,
+      "qualification": "NOT_QUALIFIED",
+      "research_adequacy": "EXECUTED_CRITERIA_MET",
+      "run_id": "20261122T160835-e2267b12f1d1",
+      "run_sha256": "187eaf7f7e91d20088641d90374cc427875d870137747b601b6b657cbb630d43",
+      "runtime": {
+        "deterministic": true,
+        "dtype": "float32",
+        "executable_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "threads": 1,
+        "torch": "2.10.0+cpu"
+      },
+      "schedule_sha256": "50bbf2da591acfa92c7253fc1740f5f447a65c8a231a0d77c64616502e96d1b7",
+      "subprocess_elapsed_seconds": 7.329954,
+      "trace_steps": 1280,
+      "train_sha256": "02607c19e760e164989865a54422eb7cd78fed7d117a7fa2ff6c4df9d700f9f8",
+      "verification": "valid"
+    },
+    "static32-1371": {
+      "endpoints": {
+        "128": {
+          "checkpoint_sha256": "ffdd35273a84b65baf3f920c4df48f52591d71f51f16576ef96ebc7acfdbcbf8",
+          "optimizer_step": 128,
+          "state_sha256": "0b5336fc3259bac68b2b0f897fb21c923ac3af56a02efd32bb37e2a2bb937c21"
+        },
+        "1280": {
+          "checkpoint_sha256": "79043a771fc7b807e89a2aef3a07013a42afc1f4f9f00f902f29b03a607b6302",
+          "optimizer_step": 1280,
+          "state_sha256": "5270cbb63821d6855d79e62130dd39dd31481e2a83edc2474d6186ed71f56f8d"
+        }
+      },
+      "parameters": 37158,
+      "qualification": "NOT_QUALIFIED",
+      "research_adequacy": "EXECUTED_CRITERIA_MET",
+      "run_id": "20261122T160842-41b770f54d86",
+      "run_sha256": "055a6abc0410ed60e62458f9b8617978211115b55e96bb42da2df023d0b5043b",
+      "runtime": {
+        "deterministic": true,
+        "dtype": "float32",
+        "executable_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "threads": 1,
+        "torch": "2.10.0+cpu"
+      },
+      "schedule_sha256": "b1399cd961246a291916a0e9e19a83af9c7201af86bdf06a84e5c5dfb2e617f1",
+      "subprocess_elapsed_seconds": 7.73753,
+      "trace_steps": 1280,
+      "train_sha256": "02607c19e760e164989865a54422eb7cd78fed7d117a7fa2ff6c4df9d700f9f8",
+      "verification": "valid"
+    }
+  },
+  "schema": "cog-comm-role-001.independent-fit-audit.v1"
+}
