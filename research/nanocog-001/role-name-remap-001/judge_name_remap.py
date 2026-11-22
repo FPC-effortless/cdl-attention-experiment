@@ -68,9 +68,8 @@ def score_model(p,actor,blocks):
     dose=sum(x!=y for x,y in zip(vmap[i],vmap[j]))
     need(dose==(2 if c['queried']=='focal' else 1),'substitution dose changed')
    diff[typ].append((hits['R0']+hits['R1']-hits['F0']-hits['F1'])/2)
-   for f in ('F0','F1'):
-    for r in ('R0','R1'):
-     paired[typ]['cross_'+flip_class(hits[f],hits[r])]+=1
+   for f,r in (('F0','R0'),('F1','R1')):
+    paired[typ]['cross_'+flip_class(hits[f],hits[r])]+=1
    paired[typ]['within_fragile_disagree']+=hits['F0']!=hits['F1']
    paired[typ]['within_robust_disagree']+=hits['R0']!=hits['R1']
   for t,v in diff.items():
@@ -89,7 +88,8 @@ def score(ad,runs,pin,seal_path,seal_pin,out):
   p=read(d/'output/predictions.json',sg['predictions_sha256'])
   need(rr['artifacts']['predictions.json']==sg['predictions_sha256'] and
        p['actor_sha256']==A and p['backbone_sha256']==BASE and
-       p['adapter_sha256'] in ('none',ADP),'wrong exact bindings')
+       ((p['arm'],p['seed'],p['updates'],p['adapter_sha256'])==
+        (('native',1371,0,'none') if lab=='remap-native-1371' else ('tap_compare',1471,1280,ADP))),'wrong exact bindings')
   result[lab]=score_model(p,actor,block)
  need(len(result)==2,'scope')
  common=all(x['robust_minus_fragile']['focal_second']['bootstrap_95'][0]>0 for x in result.values())
