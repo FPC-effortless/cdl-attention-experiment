@@ -1,0 +1,18 @@
+{
+  "ledger_sha256": "2a364701848636d70e40719b9f85ab1a8bba7f93666954f9280d69f212b06828",
+  "original_trace_seal_sha256": "f868706de68fd723e0e87388969468763cd9274d5fae4739d173cb6107f262df",
+  "runs": {
+    "readout-1171": {
+      "id": "20261122T182444-8c9d1d2672ad",
+      "pre_output_sha256": "ff18847f893e5a46a84e5e1d138a073b1b1c003b01d42bed8545ba84144618ac",
+      "prediction_sha256": "0e221b389df39b1abeefb40e48ead2eb8254ea7ce607ecc4dedb9bbc80acdbf4",
+      "receipt_sha256": "51e55b96b9e24812e62faf82f7d09b6ada474c3686bd3f0bcdc3586f034046dc"
+    },
+    "readout-1371": {
+      "id": "20261122T182448-1db7db8c68ed",
+      "pre_output_sha256": "4ad8cafeb0d2519930b7cda55d20ecf3584030418a69c0c8205a9dfc718e6071",
+      "prediction_sha256": "e0266d96e535a3af78514b37d7b79eda2c430ae8f15db4a39c8fda2adc5bcaa6",
+      "receipt_sha256": "1474b3763ef1d5357a2d647b5aecc81394d6d9d79074dfc44cedddccc06be628"
+    }
+  }
+}
