@@ -1,0 +1,90 @@
+{
+  "fits": {
+    "gated32-1171": {
+      "inputs": {
+        "ROLE_003_PROTOCOL.md": "6c3acffa215e6c0c61fe8a14e08ac2aaa0d31dd5ae3981bea874d42e20cc43bd",
+        "adequacy.json": "dbba815da7f5bee8f637a9a2679e3f404cf6e01598c02d846160743310d87fca",
+        "audit.json": "674e5125633ed84a4d252763916f24893036e1a956fb85f4a3193731f00c583b",
+        "cog_comm/__init__.py": "9e7525e906a0a631d697fa0662bc88ad58213f4700a44f3352cb20873ec3b94a",
+        "cog_comm/fit.py": "a5a41ec2464001ba11cb6655e27065a5e4049d4c9ad647482ef0226c81a39dcc",
+        "cog_comm/mix.py": "801b1928654ff6922d7fc2e68ae844fdfcc44d6593dc4f9242b110eb963f5417",
+        "cog_comm/model.py": "3d4bb18f8138627717e48af63e9afdc80ff3a7e950956842775ea2f531d735ed",
+        "cog_comm/objective.py": "b8ddabcd50054664c0811615f5c2ec9a53c0740fbf73f002d4e451daa1e2e481",
+        "cog_comm/role_control.py": "7042a565628ee9772eceac11694d6fd775cd5e68a3727ab89ec4bfef6c55f688",
+        "cog_comm/role_fit.py": "154798ce7128282f2ec5d2ca6b8dfe83f078db26471c96220ba3ddf185a3ed4d",
+        "cog_comm/role_mixers.py": "b409765a7a0f496eb81bc9423dd5f9b370a8ca36853f6ad590157f6f36a2627d",
+        "cog_comm/role_panel.py": "3b5fb12ff6ebc07f65e4440ef10d41e9454a16f043f1cb9dd0dbbbd8e36a698b",
+        "cog_comm/router.py": "264397fa4e83bdd722ea9f04deb0ee284eeed1406386cec49a27d70d534dda33",
+        "forge-receipt.json": "0488fbfdbdad9bdf6956ae6d19a9c2d1013792391361f391f749bea1f9d19467",
+        "nanocog/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "nanocog/model.py": "b9ae1000992dbd9e103de5f2365b88fb0c2a674e9acc9cfc0c9ac2ba7b599ab3",
+        "observe_fit.py": "0bd918ea17478518a055932f23a6a29ef1f0741c06d72484f3172b64a82ad598",
+        "preflight.json": "064218c4e4afab24334e33d500740dfa65371b6ee8832a8715547ceea56b27e3",
+        "train.json": "02607c19e760e164989865a54422eb7cd78fed7d117a7fa2ff6c4df9d700f9f8"
+      },
+      "recipe_sha256": "42bcf41a2290387a562ea4dc7b4d87186e224953f924484b6de28f039e056609",
+      "status": "DECLARED_CRITERIA_MET"
+    },
+    "gated32-1271": {
+      "inputs": {
+        "ROLE_003_PROTOCOL.md": "6c3acffa215e6c0c61fe8a14e08ac2aaa0d31dd5ae3981bea874d42e20cc43bd",
+        "adequacy.json": "d71083a3947e31bb652b050a32f97a43a8d7d785e0e50f915ca8cc17d1ff9f03",
+        "audit.json": "674e5125633ed84a4d252763916f24893036e1a956fb85f4a3193731f00c583b",
+        "cog_comm/__init__.py": "9e7525e906a0a631d697fa0662bc88ad58213f4700a44f3352cb20873ec3b94a",
+        "cog_comm/fit.py": "a5a41ec2464001ba11cb6655e27065a5e4049d4c9ad647482ef0226c81a39dcc",
+        "cog_comm/mix.py": "801b1928654ff6922d7fc2e68ae844fdfcc44d6593dc4f9242b110eb963f5417",
+        "cog_comm/model.py": "3d4bb18f8138627717e48af63e9afdc80ff3a7e950956842775ea2f531d735ed",
+        "cog_comm/objective.py": "b8ddabcd50054664c0811615f5c2ec9a53c0740fbf73f002d4e451daa1e2e481",
+        "cog_comm/role_control.py": "7042a565628ee9772eceac11694d6fd775cd5e68a3727ab89ec4bfef6c55f688",
+        "cog_comm/role_fit.py": "154798ce7128282f2ec5d2ca6b8dfe83f078db26471c96220ba3ddf185a3ed4d",
+        "cog_comm/role_mixers.py": "b409765a7a0f496eb81bc9423dd5f9b370a8ca36853f6ad590157f6f36a2627d",
+        "cog_comm/role_panel.py": "3b5fb12ff6ebc07f65e4440ef10d41e9454a16f043f1cb9dd0dbbbd8e36a698b",
+        "cog_comm/router.py": "264397fa4e83bdd722ea9f04deb0ee284eeed1406386cec49a27d70d534dda33",
+        "forge-receipt.json": "0488fbfdbdad9bdf6956ae6d19a9c2d1013792391361f391f749bea1f9d19467",
+        "nanocog/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "nanocog/model.py": "b9ae1000992dbd9e103de5f2365b88fb0c2a674e9acc9cfc0c9ac2ba7b599ab3",
+        "observe_fit.py": "0bd918ea17478518a055932f23a6a29ef1f0741c06d72484f3172b64a82ad598",
+        "preflight.json": "064218c4e4afab24334e33d500740dfa65371b6ee8832a8715547ceea56b27e3",
+        "train.json": "02607c19e760e164989865a54422eb7cd78fed7d117a7fa2ff6c4df9d700f9f8"
+      },
+      "recipe_sha256": "11809b6e8c3660663a9bc4d056692ddfc54dcaaa5d1589aef8c3ca147c7b4687",
+      "status": "DECLARED_CRITERIA_MET"
+    },
+    "gated32-1371": {
+      "inputs": {
+        "ROLE_003_PROTOCOL.md": "6c3acffa215e6c0c61fe8a14e08ac2aaa0d31dd5ae3981bea874d42e20cc43bd",
+        "adequacy.json": "447f39fceb2eb65570b1649a5146454c49e2b18d098f849b8ddc32c8e28430b7",
+        "audit.json": "674e5125633ed84a4d252763916f24893036e1a956fb85f4a3193731f00c583b",
+        "cog_comm/__init__.py": "9e7525e906a0a631d697fa0662bc88ad58213f4700a44f3352cb20873ec3b94a",
+        "cog_comm/fit.py": "a5a41ec2464001ba11cb6655e27065a5e4049d4c9ad647482ef0226c81a39dcc",
+        "cog_comm/mix.py": "801b1928654ff6922d7fc2e68ae844fdfcc44d6593dc4f9242b110eb963f5417",
+        "cog_comm/model.py": "3d4bb18f8138627717e48af63e9afdc80ff3a7e950956842775ea2f531d735ed",
+        "cog_comm/objective.py": "b8ddabcd50054664c0811615f5c2ec9a53c0740fbf73f002d4e451daa1e2e481",
+        "cog_comm/role_control.py": "7042a565628ee9772eceac11694d6fd775cd5e68a3727ab89ec4bfef6c55f688",
+        "cog_comm/role_fit.py": "154798ce7128282f2ec5d2ca6b8dfe83f078db26471c96220ba3ddf185a3ed4d",
+        "cog_comm/role_mixers.py": "b409765a7a0f496eb81bc9423dd5f9b370a8ca36853f6ad590157f6f36a2627d",
+        "cog_comm/role_panel.py": "3b5fb12ff6ebc07f65e4440ef10d41e9454a16f043f1cb9dd0dbbbd8e36a698b",
+        "cog_comm/router.py": "264397fa4e83bdd722ea9f04deb0ee284eeed1406386cec49a27d70d534dda33",
+        "forge-receipt.json": "0488fbfdbdad9bdf6956ae6d19a9c2d1013792391361f391f749bea1f9d19467",
+        "nanocog/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "nanocog/model.py": "b9ae1000992dbd9e103de5f2365b88fb0c2a674e9acc9cfc0c9ac2ba7b599ab3",
+        "observe_fit.py": "0bd918ea17478518a055932f23a6a29ef1f0741c06d72484f3172b64a82ad598",
+        "preflight.json": "064218c4e4afab24334e33d500740dfa65371b6ee8832a8715547ceea56b27e3",
+        "train.json": "02607c19e760e164989865a54422eb7cd78fed7d117a7fa2ff6c4df9d700f9f8"
+      },
+      "recipe_sha256": "180c0409a1cc84e7f209c507f451ba28416f5aba3530ecd4a9f903a6f6f0cc88",
+      "status": "DECLARED_CRITERIA_MET"
+    }
+  },
+  "scope": "candidate only awaiting independent FIT admission; no fits/scoring",
+  "sources": {
+    "ROLE_003_PROTOCOL.md": "6c3acffa215e6c0c61fe8a14e08ac2aaa0d31dd5ae3981bea874d42e20cc43bd",
+    "cog_comm/role_fit.py": "154798ce7128282f2ec5d2ca6b8dfe83f078db26471c96220ba3ddf185a3ed4d",
+    "fresh_panel.py": "1bc8231598174fce91d2dc436390f082f47cb9b811632867027757f790288743",
+    "observe_fit.py": "0bd918ea17478518a055932f23a6a29ef1f0741c06d72484f3172b64a82ad598",
+    "panel/confirm_actor.json": "536ba918ab5122549cd1142df0c02789fb406731a2fdf4928db75ac04a1c1555",
+    "panel/confirm_judge.json": "edade4df767fff4ce0321d09c4e5511514f3944e8ea5f52077539402b7f4de84",
+    "panel/panel_receipt.json": "26e4fc6f7e79adf8d4fc55091c02a10c45456de8b8b594e07d96461017ee1a8f",
+    "role_admit.py": "106d3a70d92534960301cf8aeb7132ff9d7848d8094d41e84c3950ccad9b7cc0"
+  }
+}
