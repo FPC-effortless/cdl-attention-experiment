@@ -1,0 +1,21 @@
+{
+  "ledger_sha256": "d6d1b4fd5328f408659786699c45de860bf41b329ba82c9a3d76e1c6a5ddd729",
+  "results": {
+    "rank-1171": {
+      "artifacts": {
+        "FEATURES.f32le": "1e8cecaad5dca14dc1a4843544b1ac1bd0ae0d84d6cba465d2afc763a7af5621",
+        "geometry.json": "461b1cf4801ea50d7a4deb22848a36e5b41992cbedb369d04c247436a2e0b53c"
+      },
+      "id": "20261122T174332-c6a5c3663b6c",
+      "receipt_sha256": "4a3375792c75beef886b6adf83b4d7748ccc8a47976ce9a568cf178ca4b3b767"
+    },
+    "rank-1371": {
+      "artifacts": {
+        "FEATURES.f32le": "d3fc18769e3343014d9714d09bffd6260efd210f56155d62d6d4f5836db5a2fc",
+        "geometry.json": "0af2da803472bb36f75a8e5d54f4704544c8253ceae8e71f9da8aeca52ab6e84"
+      },
+      "id": "20261122T174336-ae58707d64d6",
+      "receipt_sha256": "798c0518323000531cc09ffe28a65d71155200de5c25b42f38b957ee40bfde8e"
+    }
+  }
+}
