@@ -1,0 +1,35 @@
+{
+  "kind": "RETROSPECTIVE_ROLE_ORACLE_NOT_A_LEARNED_POLICY",
+  "scores": {
+    "literal_control-1471": {
+      "strict_families": 95,
+      "strict_histories": 450,
+      "strict_worlds": 930
+    },
+    "literal_control-1571": {
+      "strict_families": 96,
+      "strict_histories": 451,
+      "strict_worlds": 931
+    },
+    "literal_control-1671": {
+      "strict_families": 97,
+      "strict_histories": 452,
+      "strict_worlds": 932
+    },
+    "tap_compare-1471": {
+      "strict_families": 97,
+      "strict_histories": 453,
+      "strict_worlds": 933
+    },
+    "tap_compare-1571": {
+      "strict_families": 98,
+      "strict_histories": 455,
+      "strict_worlds": 935
+    },
+    "tap_compare-1671": {
+      "strict_families": 100,
+      "strict_histories": 457,
+      "strict_worlds": 937
+    }
+  }
+}
