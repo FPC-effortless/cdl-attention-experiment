@@ -1,0 +1,101 @@
+{
+  "backbone_invocations": 0,
+  "exact_receipts": 2,
+  "held_coordinates_exact": true,
+  "pre_output_bitwise_rows_per_checkpoint": 1536,
+  "probe_fits": 0,
+  "realized_probes_equal": true,
+  "recomputed": {
+    "readout-1171": {
+      "checkpoint_sha256": "b2cbd5aa6cb1acd345f54bd562ece11e6d85d696b86cd87adc4cb13f8d3c810c",
+      "matching": {
+        "eight": {
+          "damages": 0,
+          "first_damages": 0,
+          "first_rescues": 0,
+          "native_ce_nats": 0.030885087562115103,
+          "native_correct": 509,
+          "probe_ce_nats": 0.029529163022459032,
+          "probe_correct": 510,
+          "probe_minus_native_ce_grouped_95_nats": [
+            -0.005124706909246369,
+            0.001352883799112401
+          ],
+          "rescues": 1,
+          "second_damages": 0,
+          "second_rescues": 1
+        },
+        "two": {
+          "damages": 0,
+          "first_damages": 0,
+          "first_rescues": 0,
+          "native_ce_nats": 0.019824385372696388,
+          "native_correct": 509,
+          "probe_ce_nats": 0.017617849525127877,
+          "probe_correct": 510,
+          "probe_minus_native_ce_grouped_95_nats": [
+            -0.006100780338179032,
+            0.00034666921007488297
+          ],
+          "rescues": 1,
+          "second_damages": 0,
+          "second_rescues": 1
+        }
+      },
+      "native_full_ce_nats": 0.04091832534086536,
+      "native_strict_287_correct": 509,
+      "pre_output_parity_sha256": "ff18847f893e5a46a84e5e1d138a073b1b1c003b01d42bed8545ba84144618ac",
+      "rows": 512
+    },
+    "readout-1371": {
+      "checkpoint_sha256": "517c990e5834a1648524b59bd287f97f472583fa642ce0e5a8dc95270536e890",
+      "matching": {
+        "eight": {
+          "damages": 1,
+          "first_damages": 0,
+          "first_rescues": 0,
+          "native_ce_nats": 0.37725812018849003,
+          "native_correct": 434,
+          "probe_ce_nats": 0.36432855139971365,
+          "probe_correct": 433,
+          "probe_minus_native_ce_grouped_95_nats": [
+            -0.028305287574149927,
+            -0.0007474269466024557
+          ],
+          "rescues": 0,
+          "second_damages": 1,
+          "second_rescues": 0
+        },
+        "two": {
+          "damages": 1,
+          "first_damages": 0,
+          "first_rescues": 0,
+          "native_ce_nats": 0.33733647922450744,
+          "native_correct": 434,
+          "probe_ce_nats": 0.3155447390673656,
+          "probe_correct": 433,
+          "probe_minus_native_ce_grouped_95_nats": [
+            -0.03597657776572236,
+            -0.009677527121701042
+          ],
+          "rescues": 0,
+          "second_damages": 1,
+          "second_rescues": 0
+        }
+      },
+      "native_full_ce_nats": 0.3898567516012055,
+      "native_strict_287_correct": 434,
+      "pre_output_parity_sha256": "4ad8cafeb0d2519930b7cda55d20ecf3584030418a69c0c8205a9dfc718e6071",
+      "rows": 512
+    }
+  },
+  "seal_pins": {
+    "INFO001_VALUE_PROBE_HELD.json": "c1fbb4533107868f33c274a38f4cdc130cfbcc563251250fcadb82c12926de99",
+    "NATIVE_READOUT_COMPARISON.json": "b454964f874de06e73fc0500b924797f54bf0acbd94831dd39aff78db2ee4ffb",
+    "READOUT_SEAL.json": "b8d2bbb188bfb389a39026a5f05a6d79e779212606ec63fb8420397463721fd4",
+    "TRACE_SEAL.json": "f868706de68fd723e0e87388969468763cd9274d5fae4739d173cb6107f262df",
+    "readout_admissions/ledger.json": "2a364701848636d70e40719b9f85ab1a8bba7f93666954f9280d69f212b06828",
+    "trace_panel/actor.json": "653460a4ead17c87e5b17de9a10b7bb17cdfdedff131a3afca2a182528030b35",
+    "trace_panel/judging_contract.json": "0ce6f4cb86daa3edd9f09271c564fe9f28320e25f78941db56f9356f62b28391"
+  }
+}
