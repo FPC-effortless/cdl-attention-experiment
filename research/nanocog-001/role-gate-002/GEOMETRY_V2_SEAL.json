@@ -1,0 +1,15 @@
+{
+  "ledger_sha256": "5f998d9680c416e1b192667b55864b8039593b1dd275d3989aced408eb6c933e",
+  "receipts": {
+    "geometry-1171": {
+      "geometry_sha256": "449ef0cc4f2b5c302cdb4799efa16f263ebb10857128f33490aefad575d24399",
+      "run_id": "20261122T173107-8646a2fde8aa",
+      "run_sha256": "e5bd8d24062454c9dc6e71cc60f5e61343a6465b76099abf36b9617a20510252"
+    },
+    "geometry-1371": {
+      "geometry_sha256": "3d157881fdc38b91e302e6acb7f1e7fa8be97f7dfe86505b2034a2d5b49804d7",
+      "run_id": "20261122T173111-434d61640074",
+      "run_sha256": "2d15fb6616d2e5badc606206577c8fc1359cc4c9e7a9443bf56562523a17992b"
+    }
+  }
+}
