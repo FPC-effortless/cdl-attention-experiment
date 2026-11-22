@@ -1,0 +1,458 @@
+{
+  "clip1-1171-128": {
+    "all": {
+      "assignment_both_exact": 8,
+      "clause_order_both_exact": 45,
+      "exact_families": 0,
+      "exact_worlds": 148,
+      "families": 120,
+      "query_both_exact": 2,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 478,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "assignment_both_exact": 8,
+      "clause_order_both_exact": 43,
+      "exact_families": 0,
+      "exact_worlds": 144,
+      "families": 117,
+      "query_both_exact": 2,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 466,
+      "worlds": 936
+    },
+    "unseen_name_pair": {
+      "assignment_both_exact": 0,
+      "clause_order_both_exact": 2,
+      "exact_families": 0,
+      "exact_worlds": 4,
+      "families": 3,
+      "query_both_exact": 0,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 12,
+      "worlds": 24
+    }
+  },
+  "clip1-1171-1280": {
+    "all": {
+      "assignment_both_exact": 475,
+      "clause_order_both_exact": 473,
+      "exact_families": 115,
+      "exact_worlds": 953,
+      "families": 120,
+      "query_both_exact": 473,
+      "two_color_families": 115,
+      "two_color_ties": 0,
+      "two_color_worlds": 953,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "assignment_both_exact": 463,
+      "clause_order_both_exact": 461,
+      "exact_families": 112,
+      "exact_worlds": 929,
+      "families": 117,
+      "query_both_exact": 461,
+      "two_color_families": 112,
+      "two_color_ties": 0,
+      "two_color_worlds": 929,
+      "worlds": 936
+    },
+    "unseen_name_pair": {
+      "assignment_both_exact": 12,
+      "clause_order_both_exact": 12,
+      "exact_families": 3,
+      "exact_worlds": 24,
+      "families": 3,
+      "query_both_exact": 12,
+      "two_color_families": 3,
+      "two_color_ties": 0,
+      "two_color_worlds": 24,
+      "worlds": 24
+    }
+  },
+  "clip1-1271-128": {
+    "all": {
+      "assignment_both_exact": 1,
+      "clause_order_both_exact": 44,
+      "exact_families": 0,
+      "exact_worlds": 109,
+      "families": 120,
+      "query_both_exact": 1,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 479,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "assignment_both_exact": 1,
+      "clause_order_both_exact": 44,
+      "exact_families": 0,
+      "exact_worlds": 109,
+      "families": 117,
+      "query_both_exact": 1,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 466,
+      "worlds": 936
+    },
+    "unseen_name_pair": {
+      "assignment_both_exact": 0,
+      "clause_order_both_exact": 0,
+      "exact_families": 0,
+      "exact_worlds": 0,
+      "families": 3,
+      "query_both_exact": 0,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 13,
+      "worlds": 24
+    }
+  },
+  "clip1-1271-1280": {
+    "all": {
+      "assignment_both_exact": 474,
+      "clause_order_both_exact": 474,
+      "exact_families": 114,
+      "exact_worlds": 954,
+      "families": 120,
+      "query_both_exact": 474,
+      "two_color_families": 114,
+      "two_color_ties": 0,
+      "two_color_worlds": 954,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "assignment_both_exact": 462,
+      "clause_order_both_exact": 462,
+      "exact_families": 111,
+      "exact_worlds": 930,
+      "families": 117,
+      "query_both_exact": 462,
+      "two_color_families": 111,
+      "two_color_ties": 0,
+      "two_color_worlds": 930,
+      "worlds": 936
+    },
+    "unseen_name_pair": {
+      "assignment_both_exact": 12,
+      "clause_order_both_exact": 12,
+      "exact_families": 3,
+      "exact_worlds": 24,
+      "families": 3,
+      "query_both_exact": 12,
+      "two_color_families": 3,
+      "two_color_ties": 0,
+      "two_color_worlds": 24,
+      "worlds": 24
+    }
+  },
+  "clip1-1371-128": {
+    "all": {
+      "assignment_both_exact": 8,
+      "clause_order_both_exact": 57,
+      "exact_families": 0,
+      "exact_worlds": 199,
+      "families": 120,
+      "query_both_exact": 8,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 474,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "assignment_both_exact": 7,
+      "clause_order_both_exact": 57,
+      "exact_families": 0,
+      "exact_worlds": 196,
+      "families": 117,
+      "query_both_exact": 8,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 462,
+      "worlds": 936
+    },
+    "unseen_name_pair": {
+      "assignment_both_exact": 1,
+      "clause_order_both_exact": 0,
+      "exact_families": 0,
+      "exact_worlds": 3,
+      "families": 3,
+      "query_both_exact": 0,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 12,
+      "worlds": 24
+    }
+  },
+  "clip1-1371-1280": {
+    "all": {
+      "assignment_both_exact": 409,
+      "clause_order_both_exact": 369,
+      "exact_families": 62,
+      "exact_worlds": 842,
+      "families": 120,
+      "query_both_exact": 364,
+      "two_color_families": 62,
+      "two_color_ties": 0,
+      "two_color_worlds": 842,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "assignment_both_exact": 398,
+      "clause_order_both_exact": 359,
+      "exact_families": 60,
+      "exact_worlds": 820,
+      "families": 117,
+      "query_both_exact": 354,
+      "two_color_families": 60,
+      "two_color_ties": 0,
+      "two_color_worlds": 820,
+      "worlds": 936
+    },
+    "unseen_name_pair": {
+      "assignment_both_exact": 11,
+      "clause_order_both_exact": 10,
+      "exact_families": 2,
+      "exact_worlds": 22,
+      "families": 3,
+      "query_both_exact": 10,
+      "two_color_families": 2,
+      "two_color_ties": 0,
+      "two_color_worlds": 22,
+      "worlds": 24
+    }
+  },
+  "clip2-1171-128": {
+    "all": {
+      "assignment_both_exact": 8,
+      "clause_order_both_exact": 45,
+      "exact_families": 0,
+      "exact_worlds": 148,
+      "families": 120,
+      "query_both_exact": 2,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 478,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "assignment_both_exact": 8,
+      "clause_order_both_exact": 43,
+      "exact_families": 0,
+      "exact_worlds": 144,
+      "families": 117,
+      "query_both_exact": 2,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 466,
+      "worlds": 936
+    },
+    "unseen_name_pair": {
+      "assignment_both_exact": 0,
+      "clause_order_both_exact": 2,
+      "exact_families": 0,
+      "exact_worlds": 4,
+      "families": 3,
+      "query_both_exact": 0,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 12,
+      "worlds": 24
+    }
+  },
+  "clip2-1171-1280": {
+    "all": {
+      "assignment_both_exact": 477,
+      "clause_order_both_exact": 476,
+      "exact_families": 118,
+      "exact_worlds": 956,
+      "families": 120,
+      "query_both_exact": 476,
+      "two_color_families": 118,
+      "two_color_ties": 0,
+      "two_color_worlds": 956,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "assignment_both_exact": 465,
+      "clause_order_both_exact": 464,
+      "exact_families": 115,
+      "exact_worlds": 932,
+      "families": 117,
+      "query_both_exact": 464,
+      "two_color_families": 115,
+      "two_color_ties": 0,
+      "two_color_worlds": 932,
+      "worlds": 936
+    },
+    "unseen_name_pair": {
+      "assignment_both_exact": 12,
+      "clause_order_both_exact": 12,
+      "exact_families": 3,
+      "exact_worlds": 24,
+      "families": 3,
+      "query_both_exact": 12,
+      "two_color_families": 3,
+      "two_color_ties": 0,
+      "two_color_worlds": 24,
+      "worlds": 24
+    }
+  },
+  "clip2-1271-128": {
+    "all": {
+      "assignment_both_exact": 1,
+      "clause_order_both_exact": 44,
+      "exact_families": 0,
+      "exact_worlds": 109,
+      "families": 120,
+      "query_both_exact": 1,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 479,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "assignment_both_exact": 1,
+      "clause_order_both_exact": 44,
+      "exact_families": 0,
+      "exact_worlds": 109,
+      "families": 117,
+      "query_both_exact": 1,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 466,
+      "worlds": 936
+    },
+    "unseen_name_pair": {
+      "assignment_both_exact": 0,
+      "clause_order_both_exact": 0,
+      "exact_families": 0,
+      "exact_worlds": 0,
+      "families": 3,
+      "query_both_exact": 0,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 13,
+      "worlds": 24
+    }
+  },
+  "clip2-1271-1280": {
+    "all": {
+      "assignment_both_exact": 476,
+      "clause_order_both_exact": 476,
+      "exact_families": 116,
+      "exact_worlds": 956,
+      "families": 120,
+      "query_both_exact": 476,
+      "two_color_families": 116,
+      "two_color_ties": 0,
+      "two_color_worlds": 956,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "assignment_both_exact": 464,
+      "clause_order_both_exact": 464,
+      "exact_families": 113,
+      "exact_worlds": 932,
+      "families": 117,
+      "query_both_exact": 464,
+      "two_color_families": 113,
+      "two_color_ties": 0,
+      "two_color_worlds": 932,
+      "worlds": 936
+    },
+    "unseen_name_pair": {
+      "assignment_both_exact": 12,
+      "clause_order_both_exact": 12,
+      "exact_families": 3,
+      "exact_worlds": 24,
+      "families": 3,
+      "query_both_exact": 12,
+      "two_color_families": 3,
+      "two_color_ties": 0,
+      "two_color_worlds": 24,
+      "worlds": 24
+    }
+  },
+  "clip2-1371-128": {
+    "all": {
+      "assignment_both_exact": 8,
+      "clause_order_both_exact": 57,
+      "exact_families": 0,
+      "exact_worlds": 199,
+      "families": 120,
+      "query_both_exact": 8,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 474,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "assignment_both_exact": 7,
+      "clause_order_both_exact": 57,
+      "exact_families": 0,
+      "exact_worlds": 196,
+      "families": 117,
+      "query_both_exact": 8,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 462,
+      "worlds": 936
+    },
+    "unseen_name_pair": {
+      "assignment_both_exact": 1,
+      "clause_order_both_exact": 0,
+      "exact_families": 0,
+      "exact_worlds": 3,
+      "families": 3,
+      "query_both_exact": 0,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 12,
+      "worlds": 24
+    }
+  },
+  "clip2-1371-1280": {
+    "all": {
+      "assignment_both_exact": 409,
+      "clause_order_both_exact": 349,
+      "exact_families": 58,
+      "exact_worlds": 828,
+      "families": 120,
+      "query_both_exact": 348,
+      "two_color_families": 58,
+      "two_color_ties": 0,
+      "two_color_worlds": 828,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "assignment_both_exact": 398,
+      "clause_order_both_exact": 339,
+      "exact_families": 56,
+      "exact_worlds": 806,
+      "families": 117,
+      "query_both_exact": 338,
+      "two_color_families": 56,
+      "two_color_ties": 0,
+      "two_color_worlds": 806,
+      "worlds": 936
+    },
+    "unseen_name_pair": {
+      "assignment_both_exact": 11,
+      "clause_order_both_exact": 10,
+      "exact_families": 2,
+      "exact_worlds": 22,
+      "families": 3,
+      "query_both_exact": 10,
+      "two_color_families": 2,
+      "two_color_ties": 0,
+      "two_color_worlds": 22,
+      "worlds": 24
+    }
+  }
+}
