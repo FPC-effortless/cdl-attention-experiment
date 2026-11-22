@@ -1,0 +1,210 @@
+{
+  "audit_model_invocations": 0,
+  "results": {
+    "probe-1171": {
+      "bootstrap95": [
+        9.670062202888403,
+        10.309396360928076
+      ],
+      "branches": {
+        "native": {
+          "damages": 0,
+          "damages_slot1": 0,
+          "damages_slot2": 0,
+          "first_second_mean_margin": {
+            "1": 6.242029331286176,
+            "2": 5.881745149439666
+          },
+          "first_strict": 127,
+          "mean_first_slot_bias": 0.18014209092325473,
+          "mean_signed_pair_response": 6.061887240362921,
+          "relative_worlds": 255,
+          "rescues": 0,
+          "rescues_slot1": 0,
+          "rescues_slot2": 0,
+          "same_color_query_pairs": 1,
+          "second_strict": 128,
+          "strict_both_queries": 127,
+          "strict_complete_family": 31,
+          "strict_worlds": 255,
+          "top1_changes": 0
+        },
+        "opposite": {
+          "damages": 253,
+          "damages_slot1": 126,
+          "damages_slot2": 127,
+          "first_second_mean_margin": {
+            "1": -5.695522437337786,
+            "2": -6.1489676064275045
+          },
+          "first_strict": 1,
+          "mean_first_slot_bias": 0.22672258454485927,
+          "mean_signed_pair_response": -5.922245021882645,
+          "relative_worlds": 2,
+          "rescues": 0,
+          "rescues_slot1": 0,
+          "rescues_slot2": 0,
+          "same_color_query_pairs": 2,
+          "second_strict": 1,
+          "strict_both_queries": 0,
+          "strict_complete_family": 0,
+          "strict_worlds": 2,
+          "top1_changes": 253
+        },
+        "sham": {
+          "damages": 77,
+          "damages_slot1": 7,
+          "damages_slot2": 70,
+          "first_second_mean_margin": {
+            "1": 5.565020148344047,
+            "2": 2.58906473472598
+          },
+          "first_strict": 121,
+          "mean_first_slot_bias": 1.4879777068090334,
+          "mean_signed_pair_response": 4.0770424415350135,
+          "relative_worlds": 228,
+          "rescues": 1,
+          "rescues_slot1": 1,
+          "rescues_slot2": 0,
+          "same_color_query_pairs": 28,
+          "second_strict": 58,
+          "strict_both_queries": 51,
+          "strict_complete_family": 0,
+          "strict_worlds": 179,
+          "top1_changes": 78
+        }
+      },
+      "collinear": 0,
+      "dose": {
+        "opposite_prob_l2": {
+          "max": 1.3823062181472778,
+          "median": 1.2738521099090576,
+          "min": 0.5265838503837585
+        },
+        "score_l2": {
+          "max": 9.055444717407227,
+          "median": 6.0298240184783936,
+          "min": 2.2993390560150146
+        },
+        "sham_abs_cos": {
+          "max": 0.16750174760818481,
+          "median": 0.015253640245646238,
+          "min": 1.1863205600093352e-06
+        },
+        "sham_prob_l2": {
+          "max": 1.3197822570800781,
+          "median": 0.4772278964519501,
+          "min": 0.012802877463400364
+        }
+      },
+      "elapsed_seconds": 3.732135,
+      "opposite_loss_vs_native": 11.984132262245566,
+      "opposite_vs_sham_loss": 9.999287463417659,
+      "sham_loss_vs_native": 1.9848447988279077,
+      "zero_dose": 0
+    },
+    "probe-1371": {
+      "bootstrap95": [
+        5.263802857722112,
+        6.93457469230998
+      ],
+      "branches": {
+        "native": {
+          "damages": 0,
+          "damages_slot1": 0,
+          "damages_slot2": 0,
+          "first_second_mean_margin": {
+            "1": 4.617716227425262,
+            "2": 3.2747062566922978
+          },
+          "first_strict": 128,
+          "mean_first_slot_bias": 0.6715049853664823,
+          "mean_signed_pair_response": 3.94621124205878,
+          "relative_worlds": 223,
+          "rescues": 0,
+          "rescues_slot1": 0,
+          "rescues_slot2": 0,
+          "same_color_query_pairs": 33,
+          "second_strict": 95,
+          "strict_both_queries": 95,
+          "strict_complete_family": 16,
+          "strict_worlds": 223,
+          "top1_changes": 0
+        },
+        "opposite": {
+          "damages": 190,
+          "damages_slot1": 96,
+          "damages_slot2": 94,
+          "first_second_mean_margin": {
+            "1": -2.995917091266165,
+            "2": -4.42129495885456
+          },
+          "first_strict": 32,
+          "mean_first_slot_bias": 0.7126889337941975,
+          "mean_signed_pair_response": -3.7086060250603623,
+          "relative_worlds": 33,
+          "rescues": 0,
+          "rescues_slot1": 0,
+          "rescues_slot2": 0,
+          "same_color_query_pairs": 33,
+          "second_strict": 1,
+          "strict_both_queries": 0,
+          "strict_complete_family": 0,
+          "strict_worlds": 33,
+          "top1_changes": 190
+        },
+        "sham": {
+          "damages": 82,
+          "damages_slot1": 81,
+          "damages_slot2": 1,
+          "first_second_mean_margin": {
+            "1": 2.0708211424353067,
+            "2": 2.6463106238516048
+          },
+          "first_strict": 47,
+          "mean_first_slot_bias": -0.28774474070814904,
+          "mean_signed_pair_response": 2.3585658831434557,
+          "relative_worlds": 204,
+          "rescues": 2,
+          "rescues_slot1": 0,
+          "rescues_slot2": 2,
+          "same_color_query_pairs": 50,
+          "second_strict": 96,
+          "strict_both_queries": 18,
+          "strict_complete_family": 0,
+          "strict_worlds": 143,
+          "top1_changes": 85
+        }
+      },
+      "collinear": 0,
+      "dose": {
+        "opposite_prob_l2": {
+          "max": 1.3817460536956787,
+          "median": 1.1566708087921143,
+          "min": 0.11791354417800903
+        },
+        "score_l2": {
+          "max": 7.7909836769104,
+          "median": 4.622212648391724,
+          "min": 0.696113109588623
+        },
+        "sham_abs_cos": {
+          "max": 0.6976194977760315,
+          "median": 0.22520798444747925,
+          "min": 0.013554081320762634
+        },
+        "sham_prob_l2": {
+          "max": 1.3652656078338623,
+          "median": 0.2603791654109955,
+          "min": 0.004555159248411655
+        }
+      },
+      "elapsed_seconds": 2.345585,
+      "opposite_loss_vs_native": 7.654817267119142,
+      "opposite_vs_sham_loss": 6.067171908203818,
+      "sham_loss_vs_native": 1.5876453589153243,
+      "zero_dose": 0
+    }
+  },
+  "verified_seal_sha256": "430460c8260d09537940a1c5efbd034df411baf3f0d801400121e9d67483d766"
+}
