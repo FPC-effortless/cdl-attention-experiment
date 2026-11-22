@@ -12,6 +12,8 @@ Public results index · 22 November 2026. Aggregates and source pointers; not a 
 
 **COG-PULSE-006: direct current-event access improved writes, not reliable answers.** Ten CPU fits compared two equal-size variants across five matched seeds on 480 synthetic paired families. Address accuracy rose from 61.1% to 69.6%; joint address, commit and value accuracy rose from 38.8% to 43.4%. Strict paired answers were 8/2,400 versus 6/2,400, a +0.08 percentage point difference with a paired 95% interval of −0.21 to +0.38. Neither arm solved a long-history pair (0/600 each). The prescribed promotion rule failed. Same-host restore reproduced the primary predictions; cross-machine replay is not established. These results motivate a stable-reader diagnostic, not an assumption that it will fix the model.
 
+**PULSE-006 frozen reader follow-up:** [Results and verification](PULSE_006_FROZEN_READ_RESULTS.md). Supplying both annotated record slots recovered **0/21 EVENT** and **0/5 CONTEXT** complete pairs in the subset where the retained chain already decoded correctly. Second-slot assistance rescued a few other pairs and harmed others. Do not scale a stable-key-only retrofit from this diagnostic.
+
 ## Existing GitHub evidence and gaps
 
 - [COG-ATTN handoff](../cog-attn-handoff/README.md): early reports and protocols, with incomplete binary custody for the ten original archives. [Continuation index](../cog-attn-handoff/continuation/README.md) points to later source and evidence.
