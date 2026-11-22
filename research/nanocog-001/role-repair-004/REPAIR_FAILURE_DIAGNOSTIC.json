@@ -1,0 +1,3684 @@
+Warning: truncated output (original token count: 97979)
+Total output lines: 14926
+
+{
+  "cases": {
+    "literal_control-1471-1280": {
+      "preserve_native_first": {
+        "both_queries": 450,
+        "errors_per_family": {
+          "0": 95,
+          "1": 20,
+          "2": 5
+        },
+        "failed_families": 25,
+        "families_by_pair_concentration": {
+          "color": {
+            "cofailed_among_repeated": 17,
+            "groups": 28,
+            "repeated_pairs": 252,
+            "totals_by_group": {
+              "blue|gold": {
+                "errors": 0,
+                "total": 3
+              },
+              "blue|green": {
+                "errors": false,
+                "total": 1
+              },
+              "blue|orange": {
+                "errors": 0,
+                "total": 2
+              },
+              "blue|pink": {
+                "errors": 0,
+                "total": 7
+              },
+              "blue|purple": {
+                "errors": 2,
+                "total": 5
+              },
+              "blue|red": {
+                "errors": 2,
+                "total": 7
+              },
+              "blue|white": {
+                "errors": 0,
+                "total": 5
+              },
+              "gold|green": {
+                "errors": 0,
+                "total": 8
+              },
+              "gold|orange": {
+                "errors": 2,
+                "total": 4
+              },
+              "gold|pink": {
+                "errors": 1,
+                "total": 3
+              },
+              "gold|purple": {
+                "errors": 2,
+                "total": 3
+              },
+              "gold|red": {
+                "errors": 1,
+                "total": 5
+              },
+              "gold|white": {
+                "errors": 0,
+                "total": 4
+              },
+              "green|orange": {
+                "errors": 4,
+                "total": 6
+              },
+              "green|pink": {
+                "errors": 1,
+                "total": 7
+              },
+              "green|purple": {
+                "errors": 2,
+                "total": 7
+              },
+              "green|red": {
+                "errors": 4,
+                "total": 7
+              },
+              "green|white": {
+                "errors": 1,
+                "total": 4
+              },
+              "orange|pink": {
+                "errors": 1,
+                "total": 5
+              },
+              "orange|purple": {
+                "errors": 1,
+                "total": 2
+              },
+              "orange|red": {
+                "errors": 0,
+                "total": 3
+              },
+              "orange|white": {
+                "errors": false,
+                "total": 1
+              },
+              "pink|purple": {
+                "errors": 0,
+                "total": 3
+              },
+              "pink|red": {
+                "errors": 0,
+                "total": 5
+              },
+              "pink|white": {
+                "errors": 0,
+                "total": 5
+              },
+              "purple|red": {
+                "errors": false,
+                "total": 1
+              },
+              "purple|white": {
+                "errors": 0,
+                "total": 4
+              },
+              "red|white": {
+                "errors": 1,
+                "total": 3
+              }
+            },
+            "with_failure": 14
+          },
+          "name": {
+            "cofailed_among_repeated": 3,
+            "groups": 79,
+            "repeated_pairs": 50,
+            "totals_by_group": {
+              "ada|ben": {
+                "errors": 0,
+                "total": 2
+              },
+              "ada|cy": {
+                "errors": 0,
+                "total": 3
+              },
+              "ada|di": {
+                "errors": false,
+                "total": 1
+              },
+              "ada|eli": {
+                "errors": false,
+                "total": 1
+              },
+              "ada|hal": {
+                "errors": 0,
+                "total": 2
+              },
+              "ada|jay": {
+                "errors": true,
+                "total": 1
+              },
+              "ada|kai": {
+                "errors": 1,
+                "total": 2
+              },
+              "ada|lou": {
+                "errors": 0,
+                "total": 2
+              },
+              "ada|nik": {
+                "errors": false,
+                "total": 1
+              },
+              "ben|cy": {
+                "errors": 0,
+                "total": 2
+              },
+              "ben|di": {
+                "errors": false,
+                "total": 1
+              },
+              "ben|fay": {
+                "errors": 0,
+                "total": 2
+              },
+              "ben|hal": {
+                "errors": 0,
+                "total": 2
+              },
+              "ben|jay": {
+                "errors": false,
+                "total": 1
+              },
+              "ben|kai": {
+                "errors": false,
+                "total": 1
+              },
+              "ben|nik": {
+                "errors": false,
+                "total": 1
+              },
+              "ben|pam": {
+                "errors": false,
+                "total": 1
+              },
+              "cy|di": {
+                "errors": 0,
+                "total": 2
+              },
+              "cy|eli": {
+                "errors": 2,
+                "total": 2
+              },
+              "cy|hal": {
+                "errors": false,
+                "total": 1
+              },
+              "cy|ivy": {
+                "errors": 0,
+                "total": 4
+              },
+              "cy|kai": {
+                "errors": false,
+                "total": 1
+              },
+              "cy|lou": {
+                "errors": false,
+                "total": 1
+              },
+              "cy|mia": {
+                "errors": 0,
+                "total": 2
+              },
+              "cy|nik": {
+                "errors": 0,
+                "total": 2
+              },
+              "cy|pam": {
+                "errors": 0,
+                "total": 2
+              },
+              "di|fay": {
+                "errors": false,
+                "total": 1
+              },
+              "di|gio": {
+                "errors": true,
+                "total": 1
+              },
+              "di|hal": {
+                "errors": false,
+                "total": 1
+              },
+              "di|ivy": {
+                "errors": 0,
+                "total": 3
+              },
+              "di|jay": {
+                "errors": true,
+                "total": 1
+              },
+              "di|kai": {
+                "errors": false,
+                "total": 1
+              },
+              "di|mia": {
+                "errors": false,
+                "total": 1
+              },
+              "eli|fay": {
+                "errors": 0,
+                "total": 2
+              },
+              "eli|gio": {
+                "errors": true,
+                "total": 1
+              },
+              "eli|hal": {
+                "errors": 0,
+                "total": 2
+              },
+              "eli|jay": {
+                "errors": false,
+                "total": 1
+              },
+              "eli|nik": {
+                "errors": 0,
+                "total": 2
+              },
+              "eli|ola": {
+                "errors": 1,
+                "total": 2
+              },
+              "eli|pam": {
+                "errors": 0,
+                "total": 3
+              },
+              "fay|gio": {
+                "errors": false,
+                "total": 1
+              },
+              "fay|hal": {
+                "errors": false,
+                "total": 1
+              },
+              "fay|ivy": {
+                "errors": 0,
+                "total": 2
+              },
+              "fay|jay": {
+                "errors": false,
+                "total": 1
+              },
+              "fay|kai": {
+                "errors": true,
+                "total": 1
+              },
+              "fay|mia": {
+                "errors": false,
+                "total": 1
+              },
+              "fay|nik": {
+                "errors": false,
+                "total": 1
+              },
+              "fay|pam": {
+                "errors": false,
+                "total": 1
+              },
+              "gio|ivy": {
+                "errors": false,
+                "total": 1
+              },
+              "gio|jay": {
+                "errors": true,
+                "total": 1
+              },
+              "gio|mia": {
+                "errors": true,
+                "total": 1
+              },
+              "gio|ola": {
+                "errors": true,
+                "total": 1
+              },
+              "hal|ivy": {
+                "errors": 0,
+                "total": 2
+              },
+              "hal|jay": {
+                "errors": false,
+                "total": 1
+              },
+              "hal|kai": {
+                "errors": false,
+                "total": 1
+              },
+              "hal|lou": {
+                "errors": false,
+                "total": 1
+              },
+              "hal|mia": {
+                "errors": false,
+                "total": 1
+              },
+              "hal|ola": {
+                "errors": 2,
+                "total": 4
+              },
+              "hal|pam": {
+                "errors": 0,
+                "total": 2
+              },
+              "ivy|jay": {
+                "errors": true,
+                "total": 1
+              },
+              "ivy|kai": {
+                "errors": false,
+                "total": 1
+              },
+              "ivy|lou": {
+                "errors": 0,
+                "total": 2
+              },
+              "ivy|mia": {
+                "errors": false,
+                "total": 1
+              },
+              "jay|mia": {
+                "errors": true,
+                "total": 1
+              },
+              "jay|nik": {
+                "errors": 1,
+                "total": 2
+              },
+              "jay|ola": {
+                "errors": true,
+                "total": 1
+              },
+              "jay|pam": {
+                "errors": true,
+                "total": 1
+              },
+              "kai|lou": {
+                "errors": 1,
+                "total": 2
+              },
+              "kai|ola": {
+                "errors": 1,
+                "total": 2
+              },
+              "kai|pam": {
+                "errors": 1,
+                "total": 2
+              },
+              "lou|mia": {
+                "errors": false,
+                "total": 1
+              },
+              "lou|nik": {
+                "errors": false,
+                "total": 1
+              },
+              "lou|ola": {
+                "errors": false,
+                "total": 1
+              },
+              "lou|pam": {
+                "errors": 0,
+                "total": 2
+              },
+              "mia|nik": {
+                "errors": 0,
+                "total": 2
+              },
+              "mia|ola": {
+                "errors": 2,
+                "total": 2
+              },
+              "mia|pam": {
+                "errors": 0,
+                "total": 2
+              },
+              "nik|ola": {
+                "errors": 1,
+                "total": 2
+              },
+              "nik|pam": {
+                "errors": false,
+                "total": 1
+              }
+            },
+            "with_failure": 22
+          }
+        },
+        "groups": {
+          "ada": {
+            "errors": 0,
+            "total": 60,
+            "two_color_errors": 0
+          },
+          "ben": {
+            "errors": 0,
+            "total": 52,
+            "two_color_errors": 0
+          },
+          "canonical": {
+            "errors": 21,
+            "total": 480,
+            "two_color_errors": 21
+          },
+          "cy": {
+            "errors": 4,
+            "total": 88,
+            "two_color_errors": 4
+          },
+          "di": {
+            "errors": 0,
+            "total": 52,
+            "two_color_errors": 0
+          },
+          "eli": {
+            "errors": 0,
+            "total": 64,
+            "two_color_errors": 0
+          },
+          "fay": {
+            "errors": 0,
+            "total": 56,
+            "two_color_errors": 0
+          },
+          "first": {
+            "errors": 5,
+            "total": 480,
+            "two_color_errors": 5
+          },
+          "first/canonical/first_key_name": {
+            "errors": 4,
+            "total": 240,
+            "two_color_errors": 4
+          },
+          "first/canonical/query=ada": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=ben": {
+            "errors": 0,
+            "total": 22,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=cy": {
+            "errors": 4,
+            "total": 34,
+            "two_color_errors": 4
+          },
+          "first/canonical/query=di": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=eli": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=fay": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=gio": {
+            "errors": 0,
+            "total": 8,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=hal": {
+            "errors": 0,
+            "total": 24,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=ivy": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=jay": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=kai": {
+            "errors": 0,
+            "total": 12,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=lou": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=mia": {
+            "errors": 0,
+            "total": 12,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=nik": {
+            "errors": 0,
+            "total": 6,
+            "two_color_errors": 0
+          },
+          "first/query=ada": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "first/query=ben": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "first/query=cy": {
+            "errors": 4,
+            "total": 44,
+            "two_color_errors": 4
+          },
+          "first/query=di": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "first/query=eli": {
+            "errors": 0,
+            "total": 32,
+            "two_color_errors": 0
+          },
+          "first/query=fay": {
+            "errors": 0,
+            "total": 28,
+            "two_color_errors": 0
+          },
+          "first/query=gio": {
+            "errors": 0,
+            "total": 14,
+            "two_color_errors": 0
+          },
+          "first/query=hal": {
+            "errors": 0,
+            "total": 42,
+            "two_color_errors": 0
+          },
+          "first/query=ivy": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "first/query=jay": {
+            "errors": 1,
+            "total": 26,
+            "two_color_errors": 1
+          },
+          "first/query=kai": {
+            "errors": 0,
+            "total": 28,
+            "two_color_errors": 0
+          },
+          "first/query=lou": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "first/query=mia": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "first/query=nik": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "first/query=ola": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "first/query=pam": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=ben": {
+            "errors": 0,
+            "total": 4,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=cy": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=di": {
+            "errors": 0,
+            "total": 8,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=eli": {
+            "errors": 0,
+            "total": 6,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=fay": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=gio": {
+            "errors": 0,
+            "total": 6,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=hal": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=ivy": {
+            "errors": 0,
+            "total": 24,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=jay": {
+            "errors": 1,
+            "total": 16,
+            "two_color_errors": 1
+          },
+          "first/reversed/query=kai": {
+            "errors": 0,
+            "total": 16,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=lou": {
+            "errors": 0,
+            "total": 16,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=mia": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=nik": {
+            "errors": 0,
+            "total": 24,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=ola": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=pam": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "first/reversed/second_key_name": {
+            "errors": 1,
+            "total": 240,
+            "two_color_errors": 1
+          },
+          "gio": {
+            "errors": 4,
+            "total": 28,
+            "two_color_errors": 4
+          },
+          "hal": {
+            "errors": 0,
+            "total": 84,
+            "two_color_errors": 0
+          },
+          "ivy": {
+            "errors": 0,
+            "total": 68,
+            "two_color_errors": 0
+          },
+          "jay": {
+            "errors": 8,
+            "total": 52,
+            "two_color_errors": 8
+          },
+          "kai": {
+            "errors": 5,
+            "total": 56,
+            "two_color_errors": 5
+          },
+          "lou": {
+            "errors": 0,
+            "total": 52,
+            "two_color_errors": 0
+          },
+          "mia": {
+            "errors": 0,
+            "total": 60,
+            "two_color_errors": 0
+          },
+          "nik": {
+            "errors": 0,
+            "total": 60,
+            "two_color_errors": 0
+          },
+          "ola": {
+            "errors": 9,
+            "total": 60,
+            "two_color_errors": 9
+          },
+          "pam": {
+            "errors": 0,
+            "total": 68,
+            "two_color_errors": 0
+          },
+          "reversed": {
+            "errors": 9,
+            "total": 480,
+            "two_color_errors": 9
+          },
+          "second": {
+            "errors": 25,
+            "total": 480,
+            "two_color_errors": 25
+          },
+          "second/canonical/query=ben": {
+            "errors": 0,
+            "total": 4,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=cy": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=di": {
+            "errors": 0,
+            "total": 8,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=eli": {
+            "errors": 0,
+            "total": 6,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=fay": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=gio": {
+            "errors": 2,
+            "total": 6,
+            "two_color_errors": 2
+          },
+          "second/canonical/query=hal": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=ivy": {
+            "errors": 0,
+            "total": 24,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=jay": {
+            "errors": 4,
+            "total": 16,
+            "two_color_errors": 4
+          },
+          "second/canonical/query=kai": {
+            "errors": 2,
+            "total": 16,
+            "two_color_errors": 2
+          },
+          "second/canonical/query=lou": {
+            "errors": 0,
+            "total": 16,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=mia": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=nik": {
+            "errors": 0,
+            "total": 24,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=ola": {
+            "errors": 9,
+            "total": 30,
+            "two_color_errors": 9
+          },
+          "second/canonical/query=pam": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "second/canonical/second_key_name": {
+            "errors": 17,
+            "total": 240,
+            "two_color_errors": 17
+          },
+          "second/query=ada": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "second/query=ben": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "second/query=cy": {
+            "errors": 0,
+            "total": 44,
+            "two_color_errors": 0
+          },
+          "second/query=di": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "second/query=eli": {
+            "errors": 0,
+            "total": 32,
+            "two_color_errors": 0
+          },
+          "second/query=fay": {
+            "errors": 0,
+            "total": 28,
+            "two_color_errors": 0
+          },
+          "second/query=gio": {
+            "errors": 4,
+            "total": 14,
+            "two_color_errors": 4
+          },
+          "second/query=hal": {
+            "errors": 0,
+            "total": 42,
+            "two_color_errors": 0
+          },
+          "second/query=ivy": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "second/query=jay": {
+            "errors": 7,
+            "total": 26,
+            "two_color_errors": 7
+          },
+          "second/query=kai": {
+            "errors": 5,
+            "total": 28,
+            "two_color_errors": 5
+          },
+          "second/query=lou": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "second/query=mia": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "second/query=nik": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "second/query=ola": {
+            "errors": 9,
+            "total": 30,
+            "two_color_errors": 9
+          },
+          "second/query=pam": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "second/reversed/first_key_name": {
+            "errors": 8,
+            "total": 240,
+            "two_color_errors": 8
+          },
+          "second/reversed/query=ada": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=ben": {
+            "errors": 0,
+            "total": 22,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=cy": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=di": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=eli": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=fay": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=gio": {
+            "errors": 2,
+            "total": 8,
+            "two_color_errors": 2
+          },
+          "second/reversed/query=hal": {
+            "errors": 0,
+            "total": 24,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=ivy": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=jay": {
+            "errors": 3,
+            "total": 10,
+            "two_color_errors": 3
+          },
+          "second/reversed/query=kai": {
+            "errors": 3,
+            "total": 12,
+            "two_color_errors": 3
+          },
+          "second/reversed/query=lou": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=mia": {
+            "errors": 0,
+            "total": 12,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=nik": {
+            "errors": 0,
+            "total": 6,
+            "two_color_errors": 0
+          }
+        },
+        "relative_not_strict": 0,
+        "total_errors": 30
+      },
+      "raw": {
+        "both_queries": 416,
+        "errors_per_family": {
+          "0": 79,
+          "1": 22,
+          "2": 16,
+          "3": 1,
+          "4": 2
+        },
+        "failed_families": 41,
+        "families_by_pair_concentration": {
+          "color": {
+            "cofailed_among_repeated": 29,
+            "groups": 28,
+            "repeated_pairs": 252,
+            "totals_by_group": {
+              "blue|gold": {
+                "errors": 2,
+                "total": 3
+              },
+              "blue|green": {
+                "errors": false,
+                "total": 1
+              },
+              "blue|orange": {
+                "errors": 0,
+                "total": 2
+              },
+              "blue|pink": {
+                "errors": 1,
+                "total": 7
+              },
+              "blue|purple": {
+                "errors": 2,
+                "total": 5
+              },
+              "blue|red": {
+                "errors": 2,
+                "total": 7
+              },
+              "blue|white": {
+                "errors": 1,
+                "total": 5
+              },
+              "gold|green": {
+                "errors": 3,
+                "total": 8
+              },
+              "gold|orange": {
+                "errors": 2,
+                "total": 4
+              },
+              "gold|pink": {
+                "errors": 2,
+                "total": 3
+              },
+              "gold|purple": {
+                "errors": 2,
+                "total": 3
+              },
+              "gold|red": {
+                "errors": 2,
+                "total": 5
+              },
+              "gold|white": {
+                "errors": 1,
+                "total": 4
+              },
+              "green|orange": {
+                "errors": 4,
+                "total": 6
+              },
+              "green|pink": {
+                "errors": 2,
+                "total": 7
+              },
+              "green|purple": {
+                "errors": 3,
+                "total": 7
+              },
+              "green|red": {
+                "errors": 4,
+                "total": 7
+              },
+              "green|white": {
+                "errors": 1,
+                "total": 4
+              },
+              "orange|pink": {
+                "errors": 1,
+                "total": 5
+              },
+              "orange|purple": {
+                "errors": 1,
+                "total": 2
+              },
+              "orange|red": {
+                "errors": 0,
+                "total": 3
+              },
+              "orange|white": {
+                "errors": false,
+                "total": 1
+              },
+              "pink|purple": {
+                "errors": 1,
+                "total": 3
+              },
+              "pink|red": {
+                "errors": 0,
+                "total": 5
+              },
+              "pink|white": {
+                "errors": 3,
+                "total": 5
+              },
+              "purple|red": {
+                "errors": false,
+                "total": 1
+              },
+              "purple|white": {
+                "errors": 0,
+                "total": 4
+              },
+              "red|white": {
+                "errors": 1,
+                "total": 3
+              }
+            },
+            "with_failure": 21
+          },
+          "name": {
+            "cofailed_among_repeated": 10,
+            "groups": 79,
+            "repeated_pairs": 50,
+            "totals_by_group": {
+              "ada|ben": {
+                "errors": 0,
+                "total": 2
+              },
+              "ada|cy": {
+                "errors": 0,
+                "total": 3
+              },
+              "ada|di": {
+                "errors": false,
+                "total": 1
+              },
+              "ada|eli": {
+                "errors": false,
+                "total": 1
+              },
+              "ada|hal": {
+                "errors": 0,
+                "total": 2
+              },
+              "ada|jay": {
+                "errors": true,
+                "total": 1
+              },
+              "ada|kai": {
+                "errors": 1,
+                "total": 2
+              },
+              "ada|lou": {
+                "errors": 0,
+                "total": 2
+              },
+              "ada|nik": {
+                "errors": false,
+                "total": 1
+              },
+              "ben|cy": {
+                "errors": 0,
+                "total": 2
+              },
+              "ben|di": {
+                "errors": false,
+                "total": 1
+              },
+              "ben|fay": {
+                "errors": 0,
+                "total": 2
+              },
+              "ben|hal": {
+                "errors": 0,
+                "total": 2
+              },
+              "ben|jay": {
+                "errors": true,
+                "total": 1
+              },
+              "ben|kai": {
+                "errors": false,
+                "total": 1
+              },
+              "ben|nik": {
+                "errors": false,
+                "total": 1
+              },
+              "ben|pam": {
+                "errors": false,
+                "total": 1
+              },
+              "cy|di": {
+                "errors": 0,
+                "total": 2
+              },
+              "cy|eli": {
+                "errors": 2,
+                "total": 2
+              },
+              "cy|hal": {
+                "errors": false,
+                "total": 1
+              },
+              "cy|ivy": {
+                "errors": 0,
+                "total": 4
+              },
+              "cy|kai": {
+                "errors": true,
+                "total": 1
+              },
+              "cy|lou": {
+                "errors": false,
+                "total": 1
+              },
+              "cy|mia": {
+                "errors": 0,
+                "total": 2
+              },
+              "cy|nik": {
+                "errors": 0,
+                "total": 2
+              },
+              "cy|pam": {
+                "errors": 0,
+                "total": 2
+              },
+              "di|fay": {
+                "errors": false,
+                "total": 1
+              },
+              "di|gio": {
+                "errors": true,
+                "total": 1
+              },
+              "di|hal": {
+                "errors": false,
+                "total": 1
+              },
+              "di|ivy": {
+                "errors": 0,
+                "total": 3
+              },
+              "di|jay": {
+                "errors": true,
+                "total": 1
+              },
+              "di|kai": {
+                "errors": true,
+                "total": 1
+              },
+              "di|mia": {
+                "errors": false,
+                "total": 1
+              },
+              "eli|fay": {
+                "errors": 0,
+                "total": 2
+              },
+              "eli|gio": {
+                "errors": true,
+                "total": 1
+              },
+              "eli|hal": {
+                "errors": 0,
+                "total": 2
+              },
+              "eli|jay": {
+                "errors": true,
+                "total": 1
+              },
+              "eli|nik": {
+                "errors": 0,
+                "total": 2
+              },
+              "eli|ola": {
+                "errors": 2,
+                "total": 2
+              },
+              "eli|pam": {
+                "errors": 0,
+                "total": 3
+              },
+              "fay|gio": {
+                "errors": false,
+                "total": 1
+              },
+              "fay|hal": {
+                "errors": false,
+                "total": 1
+              },
+              "fay|ivy": {
+                "errors": 0,
+                "total": 2
+              },
+              "fay|jay": {
+                "errors": true,
+                "total": 1
+              },
+              "fay|kai": {
+                "errors": true,
+                "total": 1
+              },
+              "fay|mia": {
+                "errors": false,
+                "total": 1
+              },
+              "fay|nik": {
+                "errors": false,
+                "total": 1
+              },
+              "fay|pam": {
+                "errors": false,
+                "total": 1
+              },
+              "gio|ivy": {
+                "errors": true,
+                "total": 1
+              },
+              "gio|jay": {
+                "errors": true,
+                "total": 1
+              },
+              "gio|mia": {
+                "errors": true,
+                "total": 1
+              },
+              "gio|ola": {
+                "errors": true,
+                "total": 1
+              },
+              "hal|ivy": {
+                "errors": 0,
+                "total": 2
+              },
+              "hal|jay": {
+                "errors": true,
+                "total": 1
+              },
+              "hal|kai": {
+                "errors": true,
+                "total": 1
+              },
+              "hal|lou": {
+                "errors": false,
+                "total": 1
+              },
+              "hal|mia": {
+                "errors": false,
+                "total": 1
+              },
+              "hal|ola": {
+                "errors": 3,
+                "total": 4
+              },
+              "hal|pam": {
+                "errors": 0,
+                "total": 2
+              },
+              "ivy|jay": {
+                "errors": true,
+                "total": 1
+              },
+              "ivy|kai": {
+                "errors": true,
+                "total": 1
+              },
+              "ivy|lou": {
+                "errors": 0,
+                "total": 2
+              },
+              "ivy|mia": {
+                "errors": false,
+                "total": 1
+              },
+              "jay|mia": {
+                "errors": true,
+                "total": 1
+              },
+              "jay|nik": {
+                "errors": 2,
+                "total": 2
+              },
+              "jay|ola": {
+                "errors": true,
+                "total": 1
+              },
+              "jay|pam": {
+                "errors": true,
+                "total": 1
+              },
+              "kai|lou": {
+                "errors": 2,
+                "total": 2
+              },
+              "kai|ola": {
+                "errors": 2,
+                "total": 2
+              },
+              "kai|pam": {
+                "errors": 2,
+                "total": 2
+              },
+              "lou|mia": {
+                "errors": false,
+                "total": 1
+              },
+              "lou|nik": {
+                "errors": false,
+                "total": 1
+              },
+              "lou|ola": {
+                "errors": true,
+                "total": 1
+              },
+              "lou|pam": {
+                "errors": 0,
+                "total": 2
+              },
+              "mia|nik": {
+                "errors": 0,
+                "total": 2
+              },
+              "mia|ola": {
+                "errors": 2,
+                "total": 2
+              },
+              "mia|pam": {
+                "errors": 0,
+                "total": 2
+              },
+              "nik|ola": {
+                "errors": 1,
+                "total": 2
+              },
+              "nik|pam": {
+                "errors": false,
+                "total": 1
+              }
+            },
+            "with_failure": 32
+          }
+        },
+        "groups": {
+          "ada": {
+            "errors": 0,
+            "total": 60,
+            "two_color_errors": 0
+          },
+          "ben": {
+            "errors": 0,
+            "total": 52,
+            "two_color_errors": 0
+          },
+          "canonical": {
+            "errors": 34,
+            "total": 480,
+            "two_color_errors": 34
+          },
+          "cy": {
+            "errors": 4,
+            "total": 88,
+            "two_color_errors": 4
+          },
+          "di": {
+            "errors": 0,
+            "total": 52,
+            "two_color_errors": 0
+          },
+          "eli": {
+            "errors": 0,
+            "total": 64,
+            "two_color_errors": 0
+          },
+          "fay": {
+            "errors": 0,
+            "total": 56,
+            "two_color_errors": 0
+          },
+          "first": {
+            "errors": 40,
+            "total": 480,
+            "two_color_errors": 40
+          },
+          "first/canonical/first_key_name": {
+            "errors": 17,
+            "total": 240,
+            "two_color_errors": 17
+          },
+          "first/canonical/query=ada": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=ben": {
+            "errors": 0,
+            "total": 22,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=cy": {
+            "errors": 4,
+            "total": 34,
+            "two_color_errors": 4
+          },
+          "first/canonical/query=di": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=eli": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=fay": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=gio": {
+            "errors": 4,
+            "total": 8,
+            "two_color_errors": 4
+          },
+          "first/canonical/query=hal": {
+            "errors": 0,
+            "total": 24,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=ivy": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=jay": {
+            "errors": 4,
+            "total": 10,
+            "two_color_errors": 4
+          },
+          "first/canonical/query=kai": {
+            "errors": 5,
+            "total": 12,
+            "two_color_errors": 5
+          },
+          "first/canonical/query=lou": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=mia": {
+            "errors": 0,
+            "total": 12,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=nik": {
+            "errors": 0,
+            "total": 6,
+            "two_color_errors": 0
+          },
+          "first/query=ada": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "first/query=ben": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "first/query=cy": {
+            "errors": 4,
+            "total": 44,
+            "two_color_errors": 4
+          },
+          "first/query=di": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "first/query=eli": {
+            "errors": 0,
+            "total": 32,
+            "two_color_errors": 0
+          },
+          "first/query=fay": {
+            "errors": 0,
+            "total": 28,
+            "two_color_errors": 0
+          },
+          "first/query=gio": {
+            "errors": 5,
+            "total": 14,
+            "two_color_errors": 5
+          },
+          "first/query=hal": {
+            "errors": 0,
+            "total": 42,
+            "two_color_errors": 0
+          },
+          "first/query=ivy": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "first/query=jay": {
+            "errors": 11,
+            "total": 26,
+            "two_color_errors": 11
+          },
+          "first/query=kai": {
+            "errors": 10,
+            "total": 28,
+            "two_color_errors": 10
+          },
+          "first/query=lou": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "first/query=mia": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "first/query=nik": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "first/query=ola": {
+            "errors": 10,
+            "total": 30,
+            "two_color_errors": 10
+          },
+          "first/query=pam": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=ben": {
+            "errors": 0,
+            "total": 4,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=cy": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=di": {
+            "errors": 0,
+            "total": 8,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=eli": {
+            "errors": 0,
+            "total": 6,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=fay": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=gio": {
+            "errors": 1,
+            "total": 6,
+            "two_color_errors": 1
+          },
+          "first/reversed/query=hal": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=ivy": {
+            "errors": 0,
+            "total": 24,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=jay": {
+            "errors": 7,
+            "total": 16,
+            "two_color_errors": 7
+          },
+          "first/reversed/query=kai": {
+            "errors": 5,
+            "total": 16,
+            "two_color_errors": 5
+          },
+          "first/reversed/query=lou": {
+            "errors": 0,
+            "total": 16,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=mia": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=nik": {
+            "errors": 0,
+            "total": 24,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=ola": {
+            "errors": 10,
+            "total": 30,
+            "two_color_errors": 10
+          },
+          "first/reversed/query=pam": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "first/reversed/second_key_name": {
+            "errors": 23,
+            "total": 240,
+            "two_color_errors": 23
+          },
+          "gio": {
+            "errors": 9,
+            "total": 28,
+            "two_color_errors": 9
+          },
+          "hal": {
+            "errors": 0,
+            "total": 84,
+            "two_color_errors": 0
+          },
+          "ivy": {
+            "errors": 0,
+            "total": 68,
+            "two_color_errors": 0
+          },
+          "jay": {
+            "errors": 18,
+            "total": 52,
+            "two_color_errors": 18
+          },
+          "kai": {
+            "errors": 15,
+            "total": 56,
+            "two_color_errors": 15
+          },
+          "lou": {
+            "errors": 0,
+            "total": 52,
+            "two_color_errors": 0
+          },
+          "mia": {
+            "errors": 0,
+            "total": 60,
+            "two_color_errors": 0
+          },
+          "nik": {
+            "errors": 0,
+            "total": 60,
+            "two_color_errors": 0
+          },
+          "ola": {
+            "errors": 19,
+            "total": 60,
+            "two_color_errors": 19
+          },
+          "pam": {
+            "errors": 0,
+            "total": 68,
+            "two_color_errors": 0
+          },
+          "reversed": {
+            "errors": 31,
+            "total": 480,
+            "two_color_errors": 31
+          },
+          "second": {
+            "errors": 25,
+            "total": 480,
+            "two_color_errors": 25
+          },
+          "second/canonical/query=ben": {
+            "errors": 0,
+            "total": 4,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=cy": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=di": {
+            "errors": 0,
+            "total": 8,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=eli": {
+            "errors": 0,
+            "total": 6,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=fay": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=gio": {
+            "errors": 2,
+            "total": 6,
+            "two_color_errors": 2
+          },
+          "second/canonical/query=hal": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=ivy": {
+            "errors": 0,
+            "total": 24,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=jay": {
+            "errors": 4,
+            "total": 16,
+            "two_color_errors": 4
+          },
+          "second/canonical/query=kai": {
+            "errors": 2,
+            "total": 16,
+            "two_color_errors": 2
+          },
+          "second/canonical/query=lou": {
+            "errors": 0,
+            "total": 16,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=mia": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=nik": {
+            "errors": 0,
+            "total": 24,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=ola": {
+            "errors": 9,
+            "total": 30,
+            "two_color_errors": 9
+          },
+          "second/canonical/query=pam": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "second/canonical/second_key_name": {
+            "errors": 17,
+            "total": 240,
+            "two_color_errors": 17
+          },
+          "second/query=ada": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "second/query=ben": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "second/query=cy": {
+            "errors": 0,
+            "total": 44,
+            "two_color_errors": 0
+          },
+          "second/query=di": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "second/query=eli": {
+            "errors": 0,
+            "total": 32,
+            "two_color_errors": 0
+          },
+          "seco…72979 tokens truncated…: 10,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=di": {
+            "errors": 0,
+            "total": 8,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=eli": {
+            "errors": 0,
+            "total": 6,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=fay": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=gio": {
+            "errors": 2,
+            "total": 6,
+            "two_color_errors": 2
+          },
+          "second/canonical/query=hal": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=ivy": {
+            "errors": 0,
+            "total": 24,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=jay": {
+            "errors": 2,
+            "total": 16,
+            "two_color_errors": 2
+          },
+          "second/canonical/query=kai": {
+            "errors": 1,
+            "total": 16,
+            "two_color_errors": 1
+          },
+          "second/canonical/query=lou": {
+            "errors": 0,
+            "total": 16,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=mia": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=nik": {
+            "errors": 0,
+            "total": 24,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=ola": {
+            "errors": 9,
+            "total": 30,
+            "two_color_errors": 9
+          },
+          "second/canonical/query=pam": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "second/canonical/second_key_name": {
+            "errors": 14,
+            "total": 240,
+            "two_color_errors": 14
+          },
+          "second/query=ada": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "second/query=ben": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "second/query=cy": {
+            "errors": 0,
+            "total": 44,
+            "two_color_errors": 0
+          },
+          "second/query=di": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "second/query=eli": {
+            "errors": 0,
+            "total": 32,
+            "two_color_errors": 0
+          },
+          "second/query=fay": {
+            "errors": 0,
+            "total": 28,
+            "two_color_errors": 0
+          },
+          "second/query=gio": {
+            "errors": 3,
+            "total": 14,
+            "two_color_errors": 3
+          },
+          "second/query=hal": {
+            "errors": 0,
+            "total": 42,
+            "two_color_errors": 0
+          },
+          "second/query=ivy": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "second/query=jay": {
+            "errors": 3,
+            "total": 26,
+            "two_color_errors": 3
+          },
+          "second/query=kai": {
+            "errors": 3,
+            "total": 28,
+            "two_color_errors": 3
+          },
+          "second/query=lou": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "second/query=mia": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "second/query=nik": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "second/query=ola": {
+            "errors": 9,
+            "total": 30,
+            "two_color_errors": 9
+          },
+          "second/query=pam": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "second/reversed/first_key_name": {
+            "errors": 4,
+            "total": 240,
+            "two_color_errors": 4
+          },
+          "second/reversed/query=ada": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=ben": {
+            "errors": 0,
+            "total": 22,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=cy": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=di": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=eli": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=fay": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=gio": {
+            "errors": 1,
+            "total": 8,
+            "two_color_errors": 1
+          },
+          "second/reversed/query=hal": {
+            "errors": 0,
+            "total": 24,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=ivy": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=jay": {
+            "errors": 1,
+            "total": 10,
+            "two_color_errors": 1
+          },
+          "second/reversed/query=kai": {
+            "errors": 2,
+            "total": 12,
+            "two_color_errors": 2
+          },
+          "second/reversed/query=lou": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=mia": {
+            "errors": 0,
+            "total": 12,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=nik": {
+            "errors": 0,
+            "total": 6,
+            "two_color_errors": 0
+          }
+        },
+        "relative_not_strict": 0,
+        "total_errors": 23
+      },
+      "raw": {
+        "both_queries": 416,
+        "errors_per_family": {
+          "0": 83,
+          "1": 14,
+          "2": 20,
+          "3": 2,
+          "4": 1
+        },
+        "failed_families": 37,
+        "families_by_pair_concentration": {
+          "color": {
+            "cofailed_among_repeated": 28,
+            "groups": 28,
+            "repeated_pairs": 252,
+            "totals_by_group": {
+              "blue|gold": {
+                "errors": 2,
+                "total": 3
+              },
+              "blue|green": {
+                "errors": false,
+                "total": 1
+              },
+              "blue|orange": {
+                "errors": 0,
+                "total": 2
+              },
+              "blue|pink": {
+                "errors": 3,
+                "total": 7
+              },
+              "blue|purple": {
+                "errors": 2,
+                "total": 5
+              },
+              "blue|red": {
+                "errors": 1,
+                "total": 7
+              },
+              "blue|white": {
+                "errors": 1,
+                "total": 5
+              },
+              "gold|green": {
+                "errors": 3,
+                "total": 8
+              },
+              "gold|orange": {
+                "errors": 2,
+                "total": 4
+              },
+              "gold|pink": {
+                "errors": 0,
+                "total": 3
+              },
+              "gold|purple": {
+                "errors": 1,
+                "total": 3
+              },
+              "gold|red": {
+                "errors": 1,
+                "total": 5
+              },
+              "gold|white": {
+                "errors": 1,
+                "total": 4
+              },
+              "green|orange": {
+                "errors": 4,
+                "total": 6
+              },
+              "green|pink": {
+                "errors": 2,
+                "total": 7
+              },
+              "green|purple": {
+                "errors": 3,
+                "total": 7
+              },
+              "green|red": {
+                "errors": 4,
+                "total": 7
+              },
+              "green|white": {
+                "errors": 0,
+                "total": 4
+              },
+              "orange|pink": {
+                "errors": 1,
+                "total": 5
+              },
+              "orange|purple": {
+                "errors": 1,
+                "total": 2
+              },
+              "orange|red": {
+                "errors": 0,
+                "total": 3
+              },
+              "orange|white": {
+                "errors": false,
+                "total": 1
+              },
+              "pink|purple": {
+                "errors": 1,
+                "total": 3
+              },
+              "pink|red": {
+                "errors": 0,
+                "total": 5
+              },
+              "pink|white": {
+                "errors": 3,
+                "total": 5
+              },
+              "purple|red": {
+                "errors": false,
+                "total": 1
+              },
+              "purple|white": {
+                "errors": 0,
+                "total": 4
+              },
+              "red|white": {
+                "errors": 1,
+                "total": 3
+              }
+            },
+            "with_failure": 19
+          },
+          "name": {
+            "cofailed_among_repeated": 9,
+            "groups": 79,
+            "repeated_pairs": 50,
+            "totals_by_group": {
+              "ada|ben": {
+                "errors": 0,
+                "total": 2
+              },
+              "ada|cy": {
+                "errors": 0,
+                "total": 3
+              },
+              "ada|di": {
+                "errors": false,
+                "total": 1
+              },
+              "ada|eli": {
+                "errors": false,
+                "total": 1
+              },
+              "ada|hal": {
+                "errors": 0,
+                "total": 2
+              },
+              "ada|jay": {
+                "errors": true,
+                "total": 1
+              },
+              "ada|kai": {
+                "errors": 1,
+                "total": 2
+              },
+              "ada|lou": {
+                "errors": 0,
+                "total": 2
+              },
+              "ada|nik": {
+                "errors": false,
+                "total": 1
+              },
+              "ben|cy": {
+                "errors": 0,
+                "total": 2
+              },
+              "ben|di": {
+                "errors": false,
+                "total": 1
+              },
+              "ben|fay": {
+                "errors": 0,
+                "total": 2
+              },
+              "ben|hal": {
+                "errors": 0,
+                "total": 2
+              },
+              "ben|jay": {
+                "errors": true,
+                "total": 1
+              },
+              "ben|kai": {
+                "errors": false,
+                "total": 1
+              },
+              "ben|nik": {
+                "errors": false,
+                "total": 1
+              },
+              "ben|pam": {
+                "errors": false,
+                "total": 1
+              },
+              "cy|di": {
+                "errors": 0,
+                "total": 2
+              },
+              "cy|eli": {
+                "errors": 2,
+                "total": 2
+              },
+              "cy|hal": {
+                "errors": false,
+                "total": 1
+              },
+              "cy|ivy": {
+                "errors": 0,
+                "total": 4
+              },
+              "cy|kai": {
+                "errors": false,
+                "total": 1
+              },
+              "cy|lou": {
+                "errors": false,
+                "total": 1
+              },
+              "cy|mia": {
+                "errors": 0,
+                "total": 2
+              },
+              "cy|nik": {
+                "errors": 0,
+                "total": 2
+              },
+              "cy|pam": {
+                "errors": 0,
+                "total": 2
+              },
+              "di|fay": {
+                "errors": false,
+                "total": 1
+              },
+              "di|gio": {
+                "errors": true,
+                "total": 1
+              },
+              "di|hal": {
+                "errors": false,
+                "total": 1
+              },
+              "di|ivy": {
+                "errors": 0,
+                "total": 3
+              },
+              "di|jay": {
+                "errors": true,
+                "total": 1
+              },
+              "di|kai": {
+                "errors": true,
+                "total": 1
+              },
+              "di|mia": {
+                "errors": false,
+                "total": 1
+              },
+              "eli|fay": {
+                "errors": 0,
+                "total": 2
+              },
+              "eli|gio": {
+                "errors": true,
+                "total": 1
+              },
+              "eli|hal": {
+                "errors": 0,
+                "total": 2
+              },
+              "eli|jay": {
+                "errors": true,
+                "total": 1
+              },
+              "eli|nik": {
+                "errors": 0,
+                "total": 2
+              },
+              "eli|ola": {
+                "errors": 2,
+                "total": 2
+              },
+              "eli|pam": {
+                "errors": 0,
+                "total": 3
+              },
+              "fay|gio": {
+                "errors": false,
+                "total": 1
+              },
+              "fay|hal": {
+                "errors": false,
+                "total": 1
+              },
+              "fay|ivy": {
+                "errors": 0,
+                "total": 2
+              },
+              "fay|jay": {
+                "errors": true,
+                "total": 1
+              },
+              "fay|kai": {
+                "errors": false,
+                "total": 1
+              },
+              "fay|mia": {
+                "errors": false,
+                "total": 1
+              },
+              "fay|nik": {
+                "errors": false,
+                "total": 1
+              },
+              "fay|pam": {
+                "errors": false,
+                "total": 1
+              },
+              "gio|ivy": {
+                "errors": true,
+                "total": 1
+              },
+              "gio|jay": {
+                "errors": true,
+                "total": 1
+              },
+              "gio|mia": {
+                "errors": true,
+                "total": 1
+              },
+              "gio|ola": {
+                "errors": true,
+                "total": 1
+              },
+              "hal|ivy": {
+                "errors": 0,
+                "total": 2
+              },
+              "hal|jay": {
+                "errors": true,
+                "total": 1
+              },
+              "hal|kai": {
+                "errors": false,
+                "total": 1
+              },
+              "hal|lou": {
+                "errors": false,
+                "total": 1
+              },
+              "hal|mia": {
+                "errors": false,
+                "total": 1
+              },
+              "hal|ola": {
+                "errors": 3,
+                "total": 4
+              },
+              "hal|pam": {
+                "errors": 0,
+                "total": 2
+              },
+              "ivy|jay": {
+                "errors": true,
+                "total": 1
+              },
+              "ivy|kai": {
+                "errors": true,
+                "total": 1
+              },
+              "ivy|lou": {
+                "errors": 0,
+                "total": 2
+              },
+              "ivy|mia": {
+                "errors": false,
+                "total": 1
+              },
+              "jay|mia": {
+                "errors": true,
+                "total": 1
+              },
+              "jay|nik": {
+                "errors": 2,
+                "total": 2
+              },
+              "jay|ola": {
+                "errors": true,
+                "total": 1
+              },
+              "jay|pam": {
+                "errors": true,
+                "total": 1
+              },
+              "kai|lou": {
+                "errors": 1,
+                "total": 2
+              },
+              "kai|ola": {
+                "errors": 2,
+                "total": 2
+              },
+              "kai|pam": {
+                "errors": 2,
+                "total": 2
+              },
+              "lou|mia": {
+                "errors": false,
+                "total": 1
+              },
+              "lou|nik": {
+                "errors": false,
+                "total": 1
+              },
+              "lou|ola": {
+                "errors": true,
+                "total": 1
+              },
+              "lou|pam": {
+                "errors": 0,
+                "total": 2
+              },
+              "mia|nik": {
+                "errors": 0,
+                "total": 2
+              },
+              "mia|ola": {
+                "errors": 1,
+                "total": 2
+              },
+              "mia|pam": {
+                "errors": 0,
+                "total": 2
+              },
+              "nik|ola": {
+                "errors": 2,
+                "total": 2
+              },
+              "nik|pam": {
+                "errors": false,
+                "total": 1
+              }
+            },
+            "with_failure": 29
+          }
+        },
+        "groups": {
+          "ada": {
+            "errors": 0,
+            "total": 60,
+            "two_color_errors": 0
+          },
+          "ben": {
+            "errors": 0,
+            "total": 52,
+            "two_color_errors": 0
+          },
+          "canonical": {
+            "errors": 34,
+            "total": 480,
+            "two_color_errors": 34
+          },
+          "cy": {
+            "errors": 4,
+            "total": 88,
+            "two_color_errors": 4
+          },
+          "di": {
+            "errors": 0,
+            "total": 52,
+            "two_color_errors": 0
+          },
+          "eli": {
+            "errors": 0,
+            "total": 64,
+            "two_color_errors": 0
+          },
+          "fay": {
+            "errors": 0,
+            "total": 56,
+            "two_color_errors": 0
+          },
+          "first": {
+            "errors": 46,
+            "total": 480,
+            "two_color_errors": 46
+          },
+          "first/canonical/first_key_name": {
+            "errors": 20,
+            "total": 240,
+            "two_color_errors": 20
+          },
+          "first/canonical/query=ada": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=ben": {
+            "errors": 0,
+            "total": 22,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=cy": {
+            "errors": 4,
+            "total": 34,
+            "two_color_errors": 4
+          },
+          "first/canonical/query=di": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=eli": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=fay": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=gio": {
+            "errors": 4,
+            "total": 8,
+            "two_color_errors": 4
+          },
+          "first/canonical/query=hal": {
+            "errors": 0,
+            "total": 24,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=ivy": {
+            "errors": 1,
+            "total": 10,
+            "two_color_errors": 1
+          },
+          "first/canonical/query=jay": {
+            "errors": 6,
+            "total": 10,
+            "two_color_errors": 6
+          },
+          "first/canonical/query=kai": {
+            "errors": 5,
+            "total": 12,
+            "two_color_errors": 5
+          },
+          "first/canonical/query=lou": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=mia": {
+            "errors": 0,
+            "total": 12,
+            "two_color_errors": 0
+          },
+          "first/canonical/query=nik": {
+            "errors": 0,
+            "total": 6,
+            "two_color_errors": 0
+          },
+          "first/query=ada": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "first/query=ben": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "first/query=cy": {
+            "errors": 4,
+            "total": 44,
+            "two_color_errors": 4
+          },
+          "first/query=di": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "first/query=eli": {
+            "errors": 0,
+            "total": 32,
+            "two_color_errors": 0
+          },
+          "first/query=fay": {
+            "errors": 0,
+            "total": 28,
+            "two_color_errors": 0
+          },
+          "first/query=gio": {
+            "errors": 5,
+            "total": 14,
+            "two_color_errors": 5
+          },
+          "first/query=hal": {
+            "errors": 0,
+            "total": 42,
+            "two_color_errors": 0
+          },
+          "first/query=ivy": {
+            "errors": 1,
+            "total": 34,
+            "two_color_errors": 1
+          },
+          "first/query=jay": {
+            "errors": 17,
+            "total": 26,
+            "two_color_errors": 17
+          },
+          "first/query=kai": {
+            "errors": 9,
+            "total": 28,
+            "two_color_errors": 9
+          },
+          "first/query=lou": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "first/query=mia": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "first/query=nik": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "first/query=ola": {
+            "errors": 10,
+            "total": 30,
+            "two_color_errors": 10
+          },
+          "first/query=pam": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=ben": {
+            "errors": 0,
+            "total": 4,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=cy": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=di": {
+            "errors": 0,
+            "total": 8,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=eli": {
+            "errors": 0,
+            "total": 6,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=fay": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=gio": {
+            "errors": 1,
+            "total": 6,
+            "two_color_errors": 1
+          },
+          "first/reversed/query=hal": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=ivy": {
+            "errors": 0,
+            "total": 24,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=jay": {
+            "errors": 11,
+            "total": 16,
+            "two_color_errors": 11
+          },
+          "first/reversed/query=kai": {
+            "errors": 4,
+            "total": 16,
+            "two_color_errors": 4
+          },
+          "first/reversed/query=lou": {
+            "errors": 0,
+            "total": 16,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=mia": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=nik": {
+            "errors": 0,
+            "total": 24,
+            "two_color_errors": 0
+          },
+          "first/reversed/query=ola": {
+            "errors": 10,
+            "total": 30,
+            "two_color_errors": 10
+          },
+          "first/reversed/query=pam": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "first/reversed/second_key_name": {
+            "errors": 26,
+            "total": 240,
+            "two_color_errors": 26
+          },
+          "gio": {
+            "errors": 8,
+            "total": 28,
+            "two_color_errors": 8
+          },
+          "hal": {
+            "errors": 0,
+            "total": 84,
+            "two_color_errors": 0
+          },
+          "ivy": {
+            "errors": 1,
+            "total": 68,
+            "two_color_errors": 1
+          },
+          "jay": {
+            "errors": 20,
+            "total": 52,
+            "two_color_errors": 20
+          },
+          "kai": {
+            "errors": 12,
+            "total": 56,
+            "two_color_errors": 12
+          },
+          "lou": {
+            "errors": 0,
+            "total": 52,
+            "two_color_errors": 0
+          },
+          "mia": {
+            "errors": 0,
+            "total": 60,
+            "two_color_errors": 0
+          },
+          "nik": {
+            "errors": 0,
+            "total": 60,
+            "two_color_errors": 0
+          },
+          "ola": {
+            "errors": 19,
+            "total": 60,
+            "two_color_errors": 19
+          },
+          "pam": {
+            "errors": 0,
+            "total": 68,
+            "two_color_errors": 0
+          },
+          "reversed": {
+            "errors": 30,
+            "total": 480,
+            "two_color_errors": 30
+          },
+          "second": {
+            "errors": 18,
+            "total": 480,
+            "two_color_errors": 18
+          },
+          "second/canonical/query=ben": {
+            "errors": 0,
+            "total": 4,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=cy": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=di": {
+            "errors": 0,
+            "total": 8,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=eli": {
+            "errors": 0,
+            "total": 6,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=fay": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=gio": {
+            "errors": 2,
+            "total": 6,
+            "two_color_errors": 2
+          },
+          "second/canonical/query=hal": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=ivy": {
+            "errors": 0,
+            "total": 24,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=jay": {
+            "errors": 2,
+            "total": 16,
+            "two_color_errors": 2
+          },
+          "second/canonical/query=kai": {
+            "errors": 1,
+            "total": 16,
+            "two_color_errors": 1
+          },
+          "second/canonical/query=lou": {
+            "errors": 0,
+            "total": 16,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=mia": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=nik": {
+            "errors": 0,
+            "total": 24,
+            "two_color_errors": 0
+          },
+          "second/canonical/query=ola": {
+            "errors": 9,
+            "total": 30,
+            "two_color_errors": 9
+          },
+          "second/canonical/query=pam": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "second/canonical/second_key_name": {
+            "errors": 14,
+            "total": 240,
+            "two_color_errors": 14
+          },
+          "second/query=ada": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "second/query=ben": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "second/query=cy": {
+            "errors": 0,
+            "total": 44,
+            "two_color_errors": 0
+          },
+          "second/query=di": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "second/query=eli": {
+            "errors": 0,
+            "total": 32,
+            "two_color_errors": 0
+          },
+          "second/query=fay": {
+            "errors": 0,
+            "total": 28,
+            "two_color_errors": 0
+          },
+          "second/query=gio": {
+            "errors": 3,
+            "total": 14,
+            "two_color_errors": 3
+          },
+          "second/query=hal": {
+            "errors": 0,
+            "total": 42,
+            "two_color_errors": 0
+          },
+          "second/query=ivy": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "second/query=jay": {
+            "errors": 3,
+            "total": 26,
+            "two_color_errors": 3
+          },
+          "second/query=kai": {
+            "errors": 3,
+            "total": 28,
+            "two_color_errors": 3
+          },
+          "second/query=lou": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "second/query=mia": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "second/query=nik": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "second/query=ola": {
+            "errors": 9,
+            "total": 30,
+            "two_color_errors": 9
+          },
+          "second/query=pam": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "second/reversed/first_key_name": {
+            "errors": 4,
+            "total": 240,
+            "two_color_errors": 4
+          },
+          "second/reversed/query=ada": {
+            "errors": 0,
+            "total": 30,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=ben": {
+            "errors": 0,
+            "total": 22,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=cy": {
+            "errors": 0,
+            "total": 34,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=di": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=eli": {
+            "errors": 0,
+            "total": 26,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=fay": {
+            "errors": 0,
+            "total": 18,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=gio": {
+            "errors": 1,
+            "total": 8,
+            "two_color_errors": 1
+          },
+          "second/reversed/query=hal": {
+            "errors": 0,
+            "total": 24,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=ivy": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=jay": {
+            "errors": 1,
+            "total": 10,
+            "two_color_errors": 1
+          },
+          "second/reversed/query=kai": {
+            "errors": 2,
+            "total": 12,
+            "two_color_errors": 2
+          },
+          "second/reversed/query=lou": {
+            "errors": 0,
+            "total": 10,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=mia": {
+            "errors": 0,
+            "total": 12,
+            "two_color_errors": 0
+          },
+          "second/reversed/query=nik": {
+            "errors": 0,
+            "total": 6,
+            "two_color_errors": 0
+          }
+        },
+        "relative_not_strict": 0,
+        "total_errors": 64
+      }
+    }
+  },
+  "exact_actor_seal_sha256": "0971d030ad7b74f7456e5eabdfa39b87dcd3641d90b6c2dfbf9e31e51366f1da",
+  "model_invocations": 0,
+  "native_audited_receipts": 13,
+  "official_result_sha256": "32954364574988fb6fbe21b11e490177d40f375014102eb0377e85401a544873",
+  "overlap": {
+    "preserve_native_first": {
+      "clusters": {
+        "all_adapters": {
+          "family_failure_multiplicity": {
+            "0": 91,
+            "1": 2,
+            "2": 1,
+            "3": 7,
+            "5": 2,
+            "6": 17
+          },
+          "intersection_families": 17,
+          "intersection_new_families": 0,
+          "intersection_new_rows": 0,
+          "intersection_rows": 16,
+          "row_failure_multiplicity": {
+            "0": 922,
+            "1": 2,
+            "2": 1,
+            "3": 16,
+            "4": 1,
+            "5": 2,
+            "6": 16
+          },
+          "union_families": 29,
+          "union_new_rows": 0,
+          "union_rows": 38
+        },
+        "literal_control": {
+          "family_failure_multiplicity": {
+            "0": 95,
+            "1": 1,
+            "2": 1,
+            "3": 23
+          },
+          "intersection_families": 23,
+          "intersection_new_families": 0,
+          "intersection_new_rows": 0,
+          "intersection_rows": 28,
+          "row_failure_multiplicity": {
+            "0": 930,
+            "1": 1,
+            "2": 1,
+            "3": 28
+          },
+          "union_families": 25,
+          "union_new_rows": 0,
+          "union_rows": 30
+        },
+        "tap_compare": {
+          "family_failure_multiplicity": {
+            "0": 97,
+            "1": 1,
+            "2": 2,
+            "3": 20
+          },
+          "intersection_families": 20,
+          "intersection_new_families": 0,
+          "intersection_new_rows": 0,
+          "intersection_rows": 23,
+          "row_failure_multiplicity": {
+            "0": 933,
+            "1": 2,
+            "2": 2,
+            "3": 23
+          },
+          "union_families": 23,
+          "union_new_rows": 0,
+          "union_rows": 27
+        }
+      },
+      "pairwise": {
+        "literal_control-1471-1280/literal_control-1571-1280": {
+          "expected_if_fixed_margins_independent": 5.0,
+          "family_intersection": 24,
+          "family_jaccard": 0.96,
+          "family_union": 25,
+          "row_intersection": 29,
+          "row_union": 30
+        },
+        "literal_control-1471-1280/literal_control-1671-1280": {
+          "expected_if_fixed_margins_independent": 4.791666666666667,
+          "family_intersection": 23,
+          "family_jaccard": 0.92,
+          "family_union": 25,
+          "row_intersection": 28,
+          "row_union": 30
+        },
+        "literal_control-1471-1280/native-1371-0": {
+          "expected_if_fixed_margins_independent": 9.166666666666666,
+          "family_intersection": 25,
+          "family_jaccard": 0.5681818181818182,
+          "family_union": 44,
+          "row_intersection": 30,
+          "row_union": 89
+        },
+        "literal_control-1471-1280/tap_compare-1471-1280": {
+          "expected_if_fixed_margins_independent": 4.791666666666667,
+          "family_intersection": 19,
+          "family_jaccard": 0.6551724137931034,
+          "family_union": 29,
+          "row_intersection": 19,
+          "row_union": 38
+        },
+        "literal_control-1471-1280/tap_compare-1571-1280": {
+          "expected_if_fixed_margins_independent": 4.583333333333333,
+          "family_intersection": 19,
+          "family_jaccard": 0.6785714285714286,
+          "family_union": 28,
+          "row_intersection": 18,
+          "row_union": 37
+        },
+        "literal_control-1471-1280/tap_compare-1671-1280": {
+          "expected_if_fixed_margins_independent": 4.166666666666667,
+          "family_intersection": 18,
+          "family_jaccard": 0.6666666666666666,
+          "family_union": 27,
+          "row_intersection": 17,
+          "row_union": 36
+        },
+        "literal_control-1571-1280/literal_control-1671-1280": {
+          "expected_if_fixed_margins_independent": 4.6,
+          "family_intersection": 23,
+          "family_jaccard": 0.9583333333333334,
+          "family_union": 24,
+          "row_intersection": 28,
+          "row_union": 29
+        },
+        "literal_control-1571-1280/native-1371-0": {
+          "expected_if_fixed_margins_independent": 8.8,
+          "family_intersection": 24,
+          "family_jaccard": 0.5454545454545454,
+          "family_union": 44,
+          "row_intersection": 29,
+          "row_union": 89
+        },
+        "literal_control-1571-1280/tap_compare-1471-1280": {
+          "expected_if_fixed_margins_independent": 4.6,
+          "family_intersection": 19,
+          "family_jaccard": 0.6785714285714286,
+          "family_union": 28,
+          "row_intersection": 19,
+          "row_union": 37
+        },
+        "literal_control-1571-1280/tap_compare-1571-1280": {
+          "expected_if_fixed_margins_independent": 4.4,
+          "family_intersection": 19,
+          "family_jaccard": 0.7037037037037037,
+          "family_union": 27,
+          "row_intersection": 18,
+          "row_union": 36
+        },
+        "literal_control-1571-1280/tap_compare-1671-1280": {
+          "expected_if_fixed_margins_independent": 4.0,
+          "family_intersection": 18,
+          "family_jaccard": 0.6923076923076923,
+          "family_union": 26,
+          "row_intersection": 17,
+          "row_union": 35
+        },
+        "literal_control-1671-1280/native-1371-0": {
+          "expected_if_fixed_margins_independent": 8.433333333333334,
+          "family_intersection": 23,
+          "family_jaccard": 0.5227272727272727,
+          "family_union": 44,
+          "row_intersection": 28,
+          "row_union": 89
+        },
+        "literal_control-1671-1280/tap_compare-1471-1280": {
+          "expected_if_fixed_margins_independent": 4.408333333333333,
+          "family_intersection": 18,
+          "family_jaccard": 0.6428571428571429,
+          "family_union": 28,
+          "row_intersection": 18,
+          "row_union": 37
+        },
+        "literal_control-1671-1280/tap_compare-1571-1280": {
+          "expected_if_fixed_margins_independent": 4.216666666666667,
+          "family_intersection": 18,
+          "family_jaccard": 0.6666666666666666,
+          "family_union": 27,
+          "row_intersection": 17,
+          "row_union": 36
+        },
+        "literal_control-1671-1280/tap_compare-1671-1280": {
+          "expected_if_fixed_margins_independent": 3.8333333333333335,
+          "family_intersection": 17,
+          "family_jaccard": 0.6538461538461539,
+          "family_union": 26,
+          "row_intersection": 16,
+          "row_union": 35
+        },
+        "native-1371-0/tap_compare-1471-1280": {
+          "expected_if_fixed_margins_independent": 8.433333333333334,
+          "family_intersection": 23,
+          "family_jaccard": 0.5227272727272727,
+          "family_union": 44,
+          "row_intersection": 27,
+          "row_union": 89
+        },
+        "native-1371-0/tap_compare-1571-1280": {
+          "expected_if_fixed_margins_independent": 8.066666666666666,
+          "family_intersection": 22,
+          "family_jaccard": 0.5,
+          "family_union": 44,
+          "row_intersection": 25,
+          "row_union": 89
+        },
+        "native-1371-0/tap_compare-1671-1280": {
+          "expected_if_fixed_margins_independent": 7.333333333333333,
+          "family_intersection": 20,
+          "family_jaccard": 0.45454545454545453,
+          "family_union": 44,
+          "row_intersection": 23,
+          "row_union": 89
+        },
+        "tap_compare-1471-1280/tap_compare-1571-1280": {
+          "expected_if_fixed_margins_independent": 4.216666666666667,
+          "family_intersection": 22,
+          "family_jaccard": 0.9565217391304348,
+          "family_union": 23,
+          "row_intersection": 25,
+          "row_union": 27
+        },
+        "tap_compare-1471-1280/tap_compare-1671-1280": {
+          "expected_if_fixed_margins_independent": 3.8333333333333335,
+          "family_intersection": 20,
+          "family_jaccard": 0.8695652173913043,
+          "family_union": 23,
+          "row_intersection": 23,
+          "row_union": 27
+        },
+        "tap_compare-1571-1280/tap_compare-1671-1280": {
+          "expected_if_fixed_margins_independent": 3.6666666666666665,
+          "family_intersection": 20,
+          "family_jaccard": 0.9090909090909091,
+          "family_union": 22,
+          "row_intersection": 23,
+          "row_union": 25
+        }
+      }
+    },
+    "raw": {
+      "clusters": {
+        "all_adapters": {
+          "family_failure_multiplicity": {
+            "0": 77,
+            "3": 8,
+            "5": 1,
+            "6": 34
+          },
+          "intersection_families": 34,
+          "intersection_new_families": 2,
+          "intersection_new_rows": 23,
+          "intersection_rows": 39,
+          "row_failure_multiplicity": {
+            "0": 869,
+            "1": 2,
+            "2": 3,
+            "3": 37,
+            "4": 8,
+            "5": 2,
+            "6": 39
+          },
+          "union_families": 43,
+          "union_new_rows": 53,
+          "union_rows": 91
+        },
+        "literal_control": {
+          "family_failure_multiplicity": {
+            "0": 79,
+            "2": 1,
+            "3": 40
+          },
+          "intersection_families": 40,
+          "intersection_new_families": 2,
+          "intersection_new_rows": 35,
+          "intersection_rows": 63,
+          "row_failure_multiplicity": {
+            "0": 889,
+            "1": 6,
+            "2": 2,
+            "3": 63
+          },
+          "union_families": 41,
+          "union_new_rows": 41,
+          "union_rows": 71
+        },
+        "tap_compare": {
+          "family_failure_multiplicity": {
+            "0": 83,
+            "3": 37
+          },
+          "intersection_families": 37,
+          "intersection_new_families": 2,
+          "intersection_new_rows": 38,
+          "intersection_rows": 61,
+          "row_failure_multiplicity": {
+            "0": 890,
+            "1": 5,
+            "2": 4,
+            "3": 61
+          },
+          "union_families": 37,
+          "union_new_rows": 43,
+          "union_rows": 70
+        }
+      },
+      "pairwise": {
+        "literal_control-1471-1280/literal_control-1571-1280": {
+          "expected_if_fixed_margins_independent": 14.008333333333333,
+          "family_intersection": 41,
+          "family_jaccard": 1.0,
+          "family_union": 41,
+          "row_intersection": 64,
+          "row_union": 68
+        },
+        "literal_control-1471-1280/literal_control-1671-1280": {
+          "expected_if_fixed_margins_independent": 13.666666666666666,
+          "family_intersection": 40,
+          "family_jaccard": 0.975609756097561,
+          "family_union": 41,
+          "row_intersection": 63,
+          "row_union": 69
+        },
+        "literal_control-1471-1280/native-1371-0": {
+          "expected_if_fixed_margins_independent": 15.033333333333333,
+          "family_intersection": 39,
+          "family_jaccard": 0.8478260869565217,
+          "family_union": 46,
+          "row_intersection": 30,
+          "row_union": 124
+        },
+        "literal_control-1471-1280/tap_compare-1471-1280": {
+          "expected_if_fixed_margins_independent": 12.641666666666667,
+          "family_intersection": 35,
+          "family_jaccard": 0.813953488372093,
+          "family_union": 43,
+          "row_intersection": 42,
+          "row_union": 88
+        },
+        "literal_control-1471-1280/tap_compare-1571-1280": {
+          "expected_if_fixed_margins_independent": 12.641666666666667,
+          "family_intersection": 35,
+          "family_jaccard": 0.813953488372093,
+          "family_union": 43,
+          "row_intersection": 43,
+          "row_union": 89
+        },
+        "literal_control-1471-1280/tap_compare-1671-1280": {
+          "expected_if_fixed_margins_independent": 12.641666666666667,
+          "family_intersection": 35,
+          "family_jaccard": 0.813953488372093,
+          "family_union": 43,
+          "row_intersection": 41,
+          "row_union": 88
+        },
+        "literal_control-1571-1280/literal_control-1671-1280": {
+          "expected_if_fixed_margins_independent": 13.666666666666666,
+          "family_intersection": 40,
+          "family_jaccard": 0.975609756097561,
+          "family_union": 41,
+          "row_intersection": 64,
+          "row_union": 70
+        },
+        "literal_control-1571-1280/native-1371-0": {
+          "expected_if_fixed_margins_independent": 15.033333333333333,
+          "family_intersection": 39,
+          "family_jaccard": 0.8478260869565217,
+          "family_union": 46,
+          "row_intersection": 29,
+          "row_union": 127
+        },
+        "literal_control-1571-1280/tap_compare-1471-1280": {
+          "expected_if_fixed_margins_independent": 12.641666666666667,
+          "family_intersection": 35,
+          "family_jaccard": 0.813953488372093,
+          "family_union": 43,
+          "row_intersection": 43,
+          "row_union": 89
+        },
+        "literal_control-1571-1280/tap_compare-1571-1280": {
+          "expected_if_fixed_margins_independent": 12.641666666666667,
+          "family_intersection": 35,
+          "family_jaccard": 0.813953488372093,
+          "family_union": 43,
+          "row_intersection": 45,
+          "row_union": 89
+        },
+        "literal_control-1571-1280/tap_compare-1671-1280": {
+          "expected_if_fixed_margins_independent": 12.641666666666667,
+          "family_intersection": 35,
+          "family_jaccard": 0.813953488372093,
+          "family_union": 43,
+          "row_intersection": 43,
+          "row_union": 88
+        },
+        "literal_control-1671-1280/native-1371-0": {
+          "expected_if_fixed_margins_independent": 14.666666666666666,
+          "family_intersection": 38,
+          "family_jaccard": 0.8260869565217391,
+          "family_union": 46,
+          "row_intersection": 28,
+          "row_union": 128
+        },
+        "literal_control-1671-1280/tap_compare-1471-1280": {
+          "expected_if_fixed_margins_independent": 12.333333333333334,
+          "family_intersection": 34,
+          "family_jaccard": 0.7906976744186046,
+          "family_union": 43,
+          "row_intersection": 44,
+          "row_union": 88
+        },
+        "literal_control-1671-1280/tap_compare-1571-1280": {
+          "expected_if_fixed_margins_independent": 12.333333333333334,
+          "family_intersection": 34,
+          "family_jaccard": 0.7906976744186046,
+          "family_union": 43,
+          "row_intersection": 45,
+          "row_union": 89
+        },
+        "literal_control-1671-1280/tap_compare-1671-1280": {
+          "expected_if_fixed_margins_independent": 12.333333333333334,
+          "family_intersection": 34,
+          "family_jaccard": 0.7906976744186046,
+          "family_union": 43,
+          "row_intersection": 43,
+          "row_union": 88
+        },
+        "native-1371-0/tap_compare-1471-1280": {
+          "expected_if_fixed_margins_independent": 13.566666666666666,
+          "family_intersection": 35,
+          "family_jaccard": 0.7608695652173914,
+          "family_union": 46,
+          "row_intersection": 27,
+          "row_union": 127
+        },
+        "native-1371-0/tap_compare-1571-1280": {
+          "expected_if_fixed_margins_independent": 13.566666666666666,
+          "family_intersection": 35,
+          "family_jaccard": 0.7608695652173914,
+          "family_union": 46,
+          "row_intersection": 25,
+          "row_union": 131
+        },
+        "native-1371-0/tap_compare-1671-1280": {
+          "expected_if_fixed_margins_independent": 13.566666666666666,
+          "family_intersection": 35,
+          "family_jaccard": 0.7608695652173914,
+          "family_union": 46,
+          "row_intersection": 23,
+          "row_union": 130
+        },
+        "tap_compare-1471-1280/tap_compare-1571-1280": {
+          "expected_if_fixed_margins_independent": 11.408333333333333,
+          "family_intersection": 37,
+          "family_jaccard": 1.0,
+          "family_union": 37,
+          "row_intersection": 63,
+          "row_union": 69
+        },
+        "tap_compare-1471-1280/tap_compare-1671-1280": {
+          "expected_if_fixed_margins_independent": 11.408333333333333,
+          "family_intersection": 37,
+          "family_jaccard": 1.0,
+          "family_union": 37,
+          "row_intersection": 61,
+          "row_union": 68
+        },
+        "tap_compare-1571-1280/tap_compare-1671-1280": {
+          "expected_if_fixed_margins_independent": 11.408333333333333,
+          "family_intersection": 37,
+          "family_jaccard": 1.0,
+          "family_union": 37,
+          "row_intersection": 63,
+          "row_union": 68
+        }
+      }
+    }
+  },
+  "restriction": "Retrospective synthetic held-output selection, not a learned policy or new gate."
+}
