@@ -1,0 +1,351 @@
+{
+  "experiment": "COG-WEIGHT-019",
+  "status": "posthoc frozen representation probe",
+  "selection": "regularization chosen on 017 development ONLY",
+  "notes": [
+    "No original model weights updated.",
+    "Test panels previously examined in earlier cycles; not an untouched confirmation.",
+    "Probe knows synthetic binary support labels at training time; not an unlabeled learned verifier."
+  ],
+  "data_hashes": {
+    "train": "dfdd1285a968e74d4d9f2d78c1f570a5616ea744c34f3c045ce1c056bf576e7f",
+    "dev": "aa5aa6e31ca723ece20884f9f7b0c2408d659bf91bbb7be4cbaa812ba15b56e3",
+    "groups": {
+      "old_matched_test": "265cfe63d5e2a187ee3c8a973344acb9ac0edf8d0e0c2a950861bf748061dede",
+      "old_history_test": "3a17b9d6a5d1833d9aa2fbaf48657ec612a028d5a542815d479965e4bbce6357",
+      "old_roles_test": "0776560995df1198f1cb771352cd6f06a693c81567a062558750ac2a59d396bd",
+      "old_unseen_test": "a650817bd6d445f8d6f69de128e44e144873153acde0c7149d765a2145a2834c",
+      "old_paraphrase_test": "951c7809db013ff31dae3014c82f73f6aeeed0d57ba9512b397ead344b12af4d",
+      "unseen_fresh": "4f37bcc9a758d1bfa41c8da0ec06ba5dd8468cd9dabbdf4fa226efec2f37baa7",
+      "history_ood_fresh": "796c546055e796e18d3e7e79d9a8e06e04a1bc660d7f30e2feebe53ec1840094",
+      "history_long_fresh": "32342dc794e150618bf57a98ee5ced4c9364666780062ff288726d51eb4ae3e4",
+      "new_syntax": "771926b72f4fb47a6544cf1bb38c06949f02fff675353a2491c593c467f427ca",
+      "new_history": "3dc7b9f741656cf7a691cbd4815fa58ef44196ebd593358216b848c748234f56",
+      "new_negation": "a35c96e94a96e1c4e06be6454761f9c9e5e3fa41f0323b0bcd1388780a886f3f"
+    }
+  },
+  "seeds": {
+    "1701": {
+      "parent_sha256": "f46f39c18cb9a45e97b3dcae00b63d765394f40fa77cfab45f489d3c768c1117",
+      "selected_C": 10,
+      "dev_candidate_auc": 0.9968996565999719,
+      "test": {
+        "old_matched_test": {
+          "rows": 800,
+          "known": 400,
+          "absent": 400,
+          "candidate_auc": 0.9998979166666666,
+          "presence_auc": 0.9997125,
+          "rank_top1": 400,
+          "raw_rank_top1": 400
+        },
+        "old_history_test": {
+          "rows": 500,
+          "known": 328,
+          "absent": 172,
+          "candidate_auc": 0.9242886178861788,
+          "presence_auc": 0.7346142938173568,
+          "rank_top1": 328,
+          "raw_rank_top1": 328
+        },
+        "old_roles_test": {
+          "rows": 500,
+          "known": 311,
+          "absent": 189,
+          "candidate_auc": 0.9922297565323713,
+          "presence_auc": 0.9850797053369401,
+          "rank_top1": 310,
+          "raw_rank_top1": 310
+        },
+        "old_unseen_test": {
+          "rows": 500,
+          "known": 298,
+          "absent": 202,
+          "candidate_auc": 0.589815292835427,
+          "presence_auc": 0.46958269652468604,
+          "rank_top1": 213,
+          "raw_rank_top1": 217
+        },
+        "old_paraphrase_test": {
+          "rows": 900,
+          "known": 450,
+          "absent": 450,
+          "candidate_auc": 0.9115325102880658,
+          "presence_auc": 0.8977209876543211,
+          "rank_top1": 449,
+          "raw_rank_top1": 449
+        },
+        "unseen_fresh": {
+          "rows": 900,
+          "known": 450,
+          "absent": 450,
+          "candidate_auc": 0.5922353909465021,
+          "presence_auc": 0.592837037037037,
+          "rank_top1": 335,
+          "raw_rank_top1": 348
+        },
+        "history_ood_fresh": {
+          "rows": 700,
+          "known": 395,
+          "absent": 305,
+          "candidate_auc": 0.6342011461678948,
+          "presence_auc": 0.55743515252127,
+          "rank_top1": 331,
+          "raw_rank_top1": 325
+        },
+        "history_long_fresh": {
+          "rows": 700,
+          "known": 365,
+          "absent": 335,
+          "candidate_auc": 0.9098511018463371,
+          "presence_auc": 0.7450909834389696,
+          "rank_top1": 365,
+          "raw_rank_top1": 365
+        },
+        "new_syntax": {
+          "rows": 680,
+          "known": 340,
+          "absent": 340,
+          "candidate_auc": 0.5957295271049596,
+          "presence_auc": 0.536431660899654,
+          "rank_top1": 302,
+          "raw_rank_top1": 299
+        },
+        "new_history": {
+          "rows": 500,
+          "known": 297,
+          "absent": 203,
+          "candidate_auc": 0.9254852939063465,
+          "presence_auc": 0.7537277537277538,
+          "rank_top1": 297,
+          "raw_rank_top1": 297
+        },
+        "new_negation": {
+          "rows": 480,
+          "known": 240,
+          "absent": 240,
+          "candidate_auc": 0.9940567129629629,
+          "presence_auc": 0.9822395833333334,
+          "rank_top1": 240,
+          "raw_rank_top1": 240
+        }
+      },
+      "elapsed_seconds": 1.857
+    },
+    "1707": {
+      "parent_sha256": "979388b33ab4871168d315bda4bbefcf86e12b8fe7e835553e164bd6fc58b359",
+      "selected_C": 0.1,
+      "dev_candidate_auc": 0.9963545917804593,
+      "test": {
+        "old_matched_test": {
+          "rows": 800,
+          "known": 400,
+          "absent": 400,
+          "candidate_auc": 0.9998166666666667,
+          "presence_auc": 0.99968125,
+          "rank_top1": 400,
+          "raw_rank_top1": 400
+        },
+        "old_history_test": {
+          "rows": 500,
+          "known": 328,
+          "absent": 172,
+          "candidate_auc": 0.9516006097560976,
+          "presence_auc": 0.8245710436755531,
+          "rank_top1": 328,
+          "raw_rank_top1": 328
+        },
+        "old_roles_test": {
+          "rows": 500,
+          "known": 311,
+          "absent": 189,
+          "candidate_auc": 0.9938584742321925,
+          "presence_auc": 0.991629663655387,
+          "rank_top1": 311,
+          "raw_rank_top1": 311
+        },
+        "old_unseen_test": {
+          "rows": 500,
+          "known": 298,
+          "absent": 202,
+          "candidate_auc": 0.7351765808141648,
+          "presence_auc": 0.786381154894013,
+          "rank_top1": 215,
+          "raw_rank_top1": 206
+        },
+        "old_paraphrase_test": {
+          "rows": 900,
+          "known": 450,
+          "absent": 450,
+          "candidate_auc": 0.8207456790123457,
+          "presence_auc": 0.7981506172839505,
+          "rank_top1": 404,
+          "raw_rank_top1": 397
+        },
+        "unseen_fresh": {
+          "rows": 900,
+          "known": 450,
+          "absent": 450,
+          "candidate_auc": 0.4454814814814815,
+          "presence_auc": 0.5188864197530864,
+          "rank_top1": 229,
+          "raw_rank_top1": 239
+        },
+        "history_ood_fresh": {
+          "rows": 700,
+          "known": 395,
+          "absent": 305,
+          "candidate_auc": 0.7274966937464575,
+          "presence_auc": 0.6309690807221414,
+          "rank_top1": 312,
+          "raw_rank_top1": 319
+        },
+        "history_long_fresh": {
+          "rows": 700,
+          "known": 365,
+          "absent": 335,
+          "candidate_auc": 0.9317583217523658,
+          "presence_auc": 0.7985033735432427,
+          "rank_top1": 365,
+          "raw_rank_top1": 365
+        },
+        "new_syntax": {
+          "rows": 680,
+          "known": 340,
+          "absent": 340,
+          "candidate_auc": 0.547964244521338,
+          "presence_auc": 0.541803633217993,
+          "rank_top1": 256,
+          "raw_rank_top1": 257
+        },
+        "new_history": {
+          "rows": 500,
+          "known": 297,
+          "absent": 203,
+          "candidate_auc": 0.9414103098313625,
+          "presence_auc": 0.8022922160853195,
+          "rank_top1": 297,
+          "raw_rank_top1": 297
+        },
+        "new_negation": {
+          "rows": 480,
+          "known": 240,
+          "absent": 240,
+          "candidate_auc": 0.9650173611111111,
+          "presence_auc": 0.899201388888889,
+          "rank_top1": 239,
+          "raw_rank_top1": 240
+        }
+      },
+      "elapsed_seconds": 1.766
+    },
+    "1711": {
+      "parent_sha256": "e5f9dcd4a9aafe186492f7997502993c044cbff7425c1fcb02fe57580d5d90e3",
+      "selected_C": 1,
+      "dev_candidate_auc": 0.990641981572581,
+      "test": {
+        "old_matched_test": {
+          "rows": 800,
+          "known": 400,
+          "absent": 400,
+          "candidate_auc": 0.9982145833333333,
+          "presence_auc": 0.9958750000000001,
+          "rank_top1": 400,
+          "raw_rank_top1": 400
+        },
+        "old_history_test": {
+          "rows": 500,
+          "known": 328,
+          "absent": 172,
+          "candidate_auc": 0.9325185104529616,
+          "presence_auc": 0.7543604651162791,
+          "rank_top1": 328,
+          "raw_rank_top1": 328
+        },
+        "old_roles_test": {
+          "rows": 500,
+          "known": 311,
+          "absent": 189,
+          "candidate_auc": 0.9987912954605911,
+          "presence_auc": 0.9990302659112948,
+          "rank_top1": 311,
+          "raw_rank_top1": 311
+        },
+        "old_unseen_test": {
+          "rows": 500,
+          "known": 298,
+          "absent": 202,
+          "candidate_auc": 0.7188521769058682,
+          "presence_auc": 0.7282709814605621,
+          "rank_top1": 216,
+          "raw_rank_top1": 209
+        },
+        "old_paraphrase_test": {
+          "rows": 900,
+          "known": 450,
+          "absent": 450,
+          "candidate_auc": 0.748241975308642,
+          "presence_auc": 0.7212987654320988,
+          "rank_top1": 373,
+          "raw_rank_top1": 350
+        },
+        "unseen_fresh": {
+          "rows": 900,
+          "known": 450,
+          "absent": 450,
+          "candidate_auc": 0.4358716049382716,
+          "presence_auc": 0.5117432098765432,
+          "rank_top1": 164,
+          "raw_rank_top1": 165
+        },
+        "history_ood_fresh": {
+          "rows": 700,
+          "known": 395,
+          "absent": 305,
+          "candidate_auc": 0.6279413061275899,
+          "presence_auc": 0.6258559867192364,
+          "rank_top1": 239,
+          "raw_rank_top1": 257
+        },
+        "history_long_fresh": {
+          "rows": 700,
+          "known": 365,
+          "absent": 335,
+          "candidate_auc": 0.9158652637151744,
+          "presence_auc": 0.7793498262114087,
+          "rank_top1": 362,
+          "raw_rank_top1": 361
+        },
+        "new_syntax": {
+          "rows": 680,
+          "known": 340,
+          "absent": 340,
+          "candidate_auc": 0.4903777393310265,
+          "presence_auc": 0.507590830449827,
+          "rank_top1": 137,
+          "raw_rank_top1": 146
+        },
+        "new_history": {
+          "rows": 500,
+          "known": 297,
+          "absent": 203,
+          "candidate_auc": 0.9229899756215545,
+          "presence_auc": 0.7796686072548141,
+          "rank_top1": 294,
+          "raw_rank_top1": 293
+        },
+        "new_negation": {
+          "rows": 480,
+          "known": 240,
+          "absent": 240,
+          "candidate_auc": 0.9465335648148148,
+          "presence_auc": 0.8548090277777778,
+          "rank_top1": 240,
+          "raw_rank_top1": 240
+        }
+      },
+      "elapsed_seconds": 1.742
+    }
+  },
+  "elapsed_seconds": 5.482
+}
