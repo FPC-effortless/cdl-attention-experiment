@@ -18,7 +18,6 @@ Public results index · 22 November 2026. Aggregates and source pointers; not a 
 - [Research Lab 18-lane ledger](https://github.com/FPC-effortless/veritas/issues/482) and [Research Council ledger](https://github.com/FPC-effortless/veritas/issues/495) retain source-backed outcomes and failed experiments across lines. A ledger entry is not a complete reproduction bundle.
 
 - **Available now:** public Veritas ledger summaries above; related COG-LM precursors are available as open draft PRs [#85](https://github.com/FPC-effortless/cdl-attention-experiment/pull/85), [#86](https://github.com/FPC-effortless/cdl-attention-experiment/pull/86), and [#87](https://github.com/FPC-effortless/cdl-attention-experiment/pull/87). They are LM-001 through LM-003, not LM-004.
-- **Earlier INTERACT handoff:** the public repository lists an [INTERACT 001–014 handoff branch](https://github.com/FPC-effortless/cdl-attention-experiment/tree/research/cog-interact-001-014-handoff). This is a predecessor, not the exact 015/016 publication.
 - **Not verified:** a standalone public exact-source/results branch, PR, or release for INTERACT-015, INTERACT-016, BIND-SYN-001, or LM-004. BIND-SYN-001 also had no matching public status entry in the checked ledgers. The draft therefore does not claim public reproducibility for these four records.
 
 Scope: this is a navigable record of the listed research, not a complete audit of all historical work. No raw predictions, labels, protected evaluation data, original checkpoint bytes, or restricted archive links are included.
