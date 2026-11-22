@@ -162,6 +162,14 @@ def metadata(data,plan,order,tok):
             "schedule_sha256":sha256(json.dumps(order,separators=(',',':')).encode()).hexdigest()}
 
 
+def merge_fit_counters(pre,counters):
+    """Keep a single copy of each shared field only when its values agree."""
+    for key in sorted(pre.keys() & counters.keys()):
+        require(type(pre[key]) is type(counters[key]) and pre[key]==counters[key],
+                "planned and observed counter disagree: "+key)
+    return {**pre,**counters}
+
+
 def stable_tensor_hash(state,include):
     h=sha256()
     for name in sorted(state):
@@ -256,7 +264,7 @@ def execute(train,vocab,out,train_sha256,vocab_sha256,plan):
         total_parameters=total,trainable_parameters=trainable,
         gradient_path_parameters=sum(named[k].numel() for k in active),
         nonzero_gradient_parameters=sum(named[k].numel() for k in nonzero))
-    summary=dict(plan=asdict(plan),**pre,**counters,common_initial_sha256=common,
+    summary=dict(plan=asdict(plan),**merge_fit_counters(pre,counters),common_initial_sha256=common,
         summary_initial_sha256=summary_init,all_initial_sha256=all_init,
         train_sha256=train_sha256,vocab_sha256=vocab_sha256,checkpoint_sha256=digest(out/"checkpoint.pt"),
         torch_version=torch.__version__,threads=torch.get_num_threads(),dtype="float32",
