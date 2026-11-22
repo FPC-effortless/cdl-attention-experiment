@@ -1,0 +1,86 @@
+{
+  "scope": "local archive inventory; publication not verified",
+  "archives": [
+    {
+      "filename": "COG_WEIGHT_001_Direct_Edit_20261122.zip",
+      "bytes": 21024544,
+      "sha256": "0c4c8340b3587168f739987470ad3de43c45819e047b52f6dc46ed38d87a2767",
+      "zip_integrity": "pass",
+      "members": 25,
+      "python": 11,
+      "checkpoints": 3
+    },
+    {
+      "filename": "COG_WEIGHT_002_003_Diagnosis_Corrections_20261122.zip",
+      "bytes": 18296258,
+      "sha256": "aa6cd5c1ed09a6bf5f7d25039fb36d8dad4b21d74027ce82ed9caaf34151c929",
+      "zip_integrity": "pass",
+      "members": 36,
+      "python": 15,
+      "checkpoints": 9
+    },
+    {
+      "filename": "COG_WEIGHT_004_007_Diagnosis_and_Repairs_20261122.zip",
+      "bytes": 12574947,
+      "sha256": "e44a6ed41118acaa639f7f4699347f81dcf3673fe3211f7014331f5de8d60ada",
+      "zip_integrity": "pass",
+      "members": 34,
+      "python": 12,
+      "checkpoints": 9
+    },
+    {
+      "filename": "COG_WEIGHT_008_011_Diagnosis_and_Corrections_20261122.zip",
+      "bytes": 7177621,
+      "sha256": "bcd36ffe324d98b0a0ef26776df467dd3084e8e1618cbb386a66335567e9428b",
+      "zip_integrity": "pass",
+      "members": 57,
+      "python": 12,
+      "checkpoints": 12
+    },
+    {
+      "filename": "COG_WEIGHT_012_015_Weight_Diagnosis_and_Corrections_20261122.zip",
+      "bytes": 7380126,
+      "sha256": "ffed311c6015391e6768ca187320318135f71d04ea99f7ee98f3d5d8d6de566d",
+      "zip_integrity": "pass",
+      "members": 67,
+      "python": 18,
+      "checkpoints": 18
+    },
+    {
+      "filename": "COG_WEIGHT_016_Selective_Plasticity_Reproducible_20261122.zip",
+      "bytes": 8013845,
+      "sha256": "f3efc960a55358cb41220d0c20aa82b2c36e33ff8bb60f091ddfc5352cf10ca8",
+      "zip_integrity": "pass",
+      "members": 81,
+      "python": 21,
+      "checkpoints": 24
+    },
+    {
+      "filename": "COG_WEIGHT_017_Relationship_Verification_20261122.zip",
+      "bytes": 8871767,
+      "sha256": "1526610c5361737b5ce3b6097a9dad2c073e38ad0a3ae2d274beda22cc764aa4",
+      "zip_integrity": "pass",
+      "members": 23,
+      "python": 3,
+      "checkpoints": 6
+    },
+    {
+      "filename": "COG_WEIGHT_018_Circuit_Repair_20261122_Reproducible.zip",
+      "bytes": 9405403,
+      "sha256": "bd3394a32f405c75e0c4af70b368dadeab5898ac6d849c446b38726c98e28b8e",
+      "zip_integrity": "pass",
+      "members": 44,
+      "python": 6,
+      "checkpoints": 12
+    },
+    {
+      "filename": "COG_WEIGHT_018_Direct_Circuit_Repair_20261122.zip",
+      "bytes": 17322749,
+      "sha256": "ede51dbf839fd185b35a7765d738f6516508e9c8b3e878a74a3fc9cd028ec939",
+      "zip_integrity": "pass",
+      "members": 26,
+      "python": 3,
+      "checkpoints": 6
+    }
+  ]
+}
