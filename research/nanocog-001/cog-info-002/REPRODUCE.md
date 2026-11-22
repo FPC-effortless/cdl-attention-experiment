@@ -22,3 +22,15 @@ Report divergences instead of selecting a rerun. Never overwrite the
 original native outputs. The packaged score should be exactly reproducible
 from sealed, already generated logits without installing Torch or loading
 the checkpoints.
+
+For source-level or byte-for-byte checks, the postrun score-only command is:
+`python score_info002.py score 538f1abd5cdea45bc0b8a3912a1ed2df071d132a2e8f14d33bcc755db71aac7e`.
+Use a clean copy containing the exact sealed run receipts, outputs, and
+judging files; the scorer requires a new results path. Expected original
+result SHA-256:
+`b1e31411f1661bf708a722974b9d305964d9d89993805b26e90a5965bb028fe8`.
+For a fresh native replay, run `python score_info002.py seal` first and
+use the newly printed seal. Expect numerical intervention parity where
+the pinned CPU runtime reproduces the logits; a new seal digest will
+change the results file's digest. All held MAIN or TEST assets remain out
+of scope.
