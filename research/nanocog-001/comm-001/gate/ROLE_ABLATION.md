@@ -15,14 +15,14 @@ same budget. No packet store, recurrence, or global routing in any arm.
 |---|---|---:|
 | gated32 | Original Arm A, two width-32 blocks, four causal taps per layer | 37,414 |
 | static32 | Same taps and trunk; trained position weights replace input-conditioned gate | 37,158 |
-| attention32 | Same width and trunk; two causal attention mixers, rank 10 with learned relative lag; matched active parameter budget | 37,420 |
+| attention32 | Same width and trunk; two four-tap causal attention mixers, rank 10 with learned relative lag; exact active parameter budget | 37,414 |
 | gated48 | Same gated family and depth with width 48; capacity intentionally increases | 69,926 |
 
 Static weights start at the same logits as setting the gated model's input
 weights to zero. They are still trained. The comparison includes removal of
 256 active weights, not dummy capacity; at fixed vocabulary the difference
-in total parameters is 0.68%. Causal attention is six parameters (0.016%)
-above the width-32 reference. Equal parameters are not equal computation.
+in total parameters is 0.68%. Causal attention matches the parameter count
+of the width-32 reference. Equal parameters are not equal computation.
 If narrow attention also fails, that is not evidence that standard
 Transformers cannot solve the task. Attention changes graph, projection,
 position encoding and parameterization together; the contrast is for
