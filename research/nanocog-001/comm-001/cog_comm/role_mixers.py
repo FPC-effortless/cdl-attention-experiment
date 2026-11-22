@@ -21,14 +21,14 @@ class StaticTaps(nn.Module):
         return self.logits.expand(*x.shape[:-1], -1)
 
 class LocalAttention(nn.Module):
-    """Seven-token batch-only causal competence control, with active rank 10."""
+    """Four-tap batch-only causal competence control, with active rank 10."""
     def __init__(self, width):
         super().__init__()
         self.key = nn.Linear(width, 10, bias=False)
         self.query = nn.Linear(width, 10, bias=False)
         self.value = nn.Linear(width, 10, bias=False)
         self.project = nn.Linear(10, width, bias=False)
-        self.relative = nn.Parameter(torch.zeros(7))
+        self.relative = nn.Parameter(torch.zeros(4))
 
     def forward(self, x, state=None):
         if state is not None or not 1 <= x.size(1) <= 7:
@@ -36,7 +36,7 @@ class LocalAttention(nn.Module):
         idx = torch.arange(x.size(1), device=x.device)
         lag = idx[:, None] - idx[None, :]
         score = (self.query(x) @ self.key(x).transpose(-2, -1)) / (10**0.5)
-        score = (score + self.relative[lag.clamp_min(0)]).masked_fill(lag < 0, -torch.inf)
+        score = (score + self.relative[lag.clamp(0, 3)]).masked_fill((lag < 0) | (lag > 3), -torch.inf)
         return self.project(score.softmax(dim=-1) @ self.value(x)), None
 
 def new_mixer(width, arm):
@@ -79,7 +79,7 @@ class MixerTests(unittest.TestCase):
 
     def test_active_parameter_budget(self):
         counts = {a: sum(p.numel() for p in build_arm(287,a,1171).parameters()) for a in ARMS}
-        self.assertEqual(counts, dict(gated32=37414, static32=37158, attention32=37420, gated48=69926))
+        self.assertEqual(counts, dict(gated32=37414, static32=37158, attention32=37414, gated48=69926))
 
     def test_strict_batch_causality(self):
         x = torch.tensor([[262,263,264,265,266,267,268]], dtype=torch.long)
