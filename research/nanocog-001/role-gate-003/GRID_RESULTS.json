@@ -1,0 +1,514 @@
+{
+  "grid-1171": {
+    "native_bit_exact_previous": true,
+    "relative": {
+      "any_candidate_only_cannot_rescue": 0,
+      "fixed": {
+        "corner_0": {
+          "families": 0,
+          "first_worlds": 128,
+          "histories": 0,
+          "second_worlds": 0,
+          "worlds": 128,
+          "worlds_damaged": 128,
+          "worlds_rescued": 1
+        },
+        "corner_1": {
+          "families": 0,
+          "first_worlds": 84,
+          "histories": 12,
+          "second_worlds": 52,
+          "worlds": 136,
+          "worlds_damaged": 120,
+          "worlds_rescued": 1
+        },
+        "corner_2": {
+          "families": 0,
+          "first_worlds": 0,
+          "histories": 0,
+          "second_worlds": 128,
+          "worlds": 128,
+          "worlds_damaged": 127,
+          "worlds_rescued": 0
+        },
+        "corner_3": {
+          "families": 0,
+          "first_worlds": 0,
+          "histories": 0,
+          "second_worlds": 128,
+          "worlds": 128,
+          "worlds_damaged": 127,
+          "worlds_rescued": 0
+        },
+        "mid_0_1": {
+          "families": 0,
+          "first_worlds": 128,
+          "histories": 0,
+          "second_worlds": 0,
+          "worlds": 128,
+          "worlds_damaged": 128,
+          "worlds_rescued": 1
+        },
+        "mid_0_2": {
+          "families": 0,
+          "first_worlds": 25,
+          "histories": 2,
+          "second_worlds": 98,
+          "worlds": 123,
+          "worlds_damaged": 133,
+          "worlds_rescued": 1
+        },
+        "mid_0_3": {
+          "families": 1,
+          "first_worlds": 108,
+          "histories": 46,
+          "second_worlds": 63,
+          "worlds": 171,
+          "worlds_damaged": 85,
+          "worlds_rescued": 1
+        },
+        "mid_1_2": {
+          "families": 0,
+          "first_worlds": 0,
+          "histories": 0,
+          "second_worlds": 128,
+          "worlds": 128,
+          "worlds_damaged": 127,
+          "worlds_rescued": 0
+        },
+        "mid_1_3": {
+          "families": 0,
+          "first_worlds": 5,
+          "histories": 5,
+          "second_worlds": 128,
+          "worlds": 133,
+          "worlds_damaged": 122,
+          "worlds_rescued": 0
+        },
+        "mid_2_3": {
+          "families": 0,
+          "first_worlds": 0,
+          "histories": 0,
+          "second_worlds": 128,
+          "worlds": 128,
+          "worlds_damaged": 127,
+          "worlds_rescued": 0
+        },
+        "native": {
+          "families": 31,
+          "first_worlds": 127,
+          "histories": 127,
+          "second_worlds": 128,
+          "worlds": 255,
+          "worlds_damaged": 0,
+          "worlds_rescued": 0
+        },
+        "uniform": {
+          "families": 0,
+          "first_worlds": 5,
+          "histories": 4,
+          "second_worlds": 125,
+          "worlds": 130,
+          "worlds_damaged": 125,
+          "worlds_rescued": 0
+        }
+      },
+      "native": {
+        "families": 31,
+        "histories": 127,
+        "worlds": 255
+      },
+      "oracle_failed_first_worlds_rescued": 1,
+      "oracle_failed_second_worlds_rescued": 0,
+      "oracle_failed_worlds_rescued": 1,
+      "oracle_four_shared_pair_gates_families": 31,
+      "oracle_grid_only_both_queries": 58,
+      "oracle_row_worlds": 256,
+      "oracle_same_gate_all_8": 31,
+      "oracle_same_gate_both_queries": 127
+    },
+    "run_id": "20261122T173618-57887e9441a3",
+    "strict": {
+      "any_candidate_only_cannot_rescue": 0,
+      "fixed": {
+        "corner_0": {
+          "families": 0,
+          "first_worlds": 128,
+          "histories": 0,
+          "second_worlds": 0,
+          "worlds": 128,
+          "worlds_damaged": 128,
+          "worlds_rescued": 1
+        },
+        "corner_1": {
+          "families": 0,
+          "first_worlds": 0,
+          "histories": 0,
+          "second_worlds": 0,
+          "worlds": 0,
+          "worlds_damaged": 255,
+          "worlds_rescued": 0
+        },
+        "corner_2": {
+          "families": 0,
+          "first_worlds": 0,
+          "histories": 0,
+          "second_worlds": 128,
+          "worlds": 128,
+          "worlds_damaged": 127,
+          "worlds_rescued": 0
+        },
+        "corner_3": {
+          "families": 0,
+          "first_worlds": 0,
+          "histories": 0,
+          "second_worlds": 125,
+          "worlds": 125,
+          "worlds_damaged": 130,
+          "worlds_rescued": 0
+        },
+        "mid_0_1": {
+          "families": 0,
+          "first_worlds": 120,
+          "histories": 0,
+          "second_worlds": 0,
+          "worlds": 120,
+          "worlds_damaged": 136,
+          "worlds_rescued": 1
+        },
+        "mid_0_2": {
+          "families": 0,
+          "first_worlds": 25,
+          "histories": 2,
+          "second_worlds": 98,
+          "worlds": 123,
+          "worlds_damaged": 133,
+          "worlds_rescued": 1
+        },
+        "mid_0_3": {
+          "families": 1,
+          "first_worlds": 108,
+          "histories": 43,
+          "second_worlds": 59,
+          "worlds": 167,
+          "worlds_damaged": 89,
+          "worlds_rescued": 1
+        },
+        "mid_1_2": {
+          "families": 0,
+          "first_worlds": 0,
+          "histories": 0,
+          "second_worlds": 128,
+          "worlds": 128,
+          "worlds_damaged": 127,
+          "worlds_rescued": 0
+        },
+        "mid_1_3": {
+          "families": 0,
+          "first_worlds": 2,
+          "histories": 2,
+          "second_worlds": 94,
+          "worlds": 96,
+          "worlds_damaged": 159,
+          "worlds_rescued": 0
+        },
+        "mid_2_3": {
+          "families": 0,
+          "first_worlds": 0,
+          "histories": 0,
+          "second_worlds": 128,
+          "worlds": 128,
+          "worlds_damaged": 127,
+          "worlds_rescued": 0
+        },
+        "native": {
+          "families": 31,
+          "first_worlds": 127,
+          "histories": 127,
+          "second_worlds": 128,
+          "worlds": 255,
+          "worlds_damaged": 0,
+          "worlds_rescued": 0
+        },
+        "uniform": {
+          "families": 0,
+          "first_worlds": 5,
+          "histories": 4,
+          "second_worlds": 125,
+          "worlds": 130,
+          "worlds_damaged": 125,
+          "worlds_rescued": 0
+        }
+      },
+      "native": {
+        "families": 31,
+        "histories": 127,
+        "worlds": 255
+      },
+      "oracle_failed_first_worlds_rescued": 1,
+      "oracle_failed_second_worlds_rescued": 0,
+      "oracle_failed_worlds_rescued": 1,
+      "oracle_four_shared_pair_gates_families": 31,
+      "oracle_grid_only_both_queries": 48,
+      "oracle_row_worlds": 256,
+      "oracle_same_gate_all_8": 31,
+      "oracle_same_gate_both_queries": 127
+    }
+  },
+  "grid-1371": {
+    "native_bit_exact_previous": true,
+    "relative": {
+      "any_candidate_only_cannot_rescue": 0,
+      "fixed": {
+        "corner_0": {
+          "families": 0,
+          "first_worlds": 81,
+          "histories": 7,
+          "second_worlds": 39,
+          "worlds": 120,
+          "worlds_damaged": 114,
+          "worlds_rescued": 11
+        },
+        "corner_1": {
+          "families": 0,
+          "first_worlds": 128,
+          "histories": 0,
+          "second_worlds": 0,
+          "worlds": 128,
+          "worlds_damaged": 95,
+          "worlds_rescued": 0
+        },
+        "corner_2": {
+          "families": 0,
+          "first_worlds": 0,
+          "histories": 0,
+          "second_worlds": 128,
+          "worlds": 128,
+          "worlds_damaged": 128,
+          "worlds_rescued": 33
+        },
+        "corner_3": {
+          "families": 0,
+          "first_worlds": 52,
+          "histories": 28,
+          "second_worlds": 93,
+          "worlds": 145,
+          "worlds_damaged": 98,
+          "worlds_rescued": 20
+        },
+        "mid_0_1": {
+          "families": 0,
+          "first_worlds": 128,
+          "histories": 0,
+          "second_worlds": 0,
+          "worlds": 128,
+          "worlds_damaged": 95,
+          "worlds_rescued": 0
+        },
+        "mid_0_2": {
+          "families": 0,
+          "first_worlds": 1,
+          "histories": 1,
+          "second_worlds": 127,
+          "worlds": 128,
+          "worlds_damaged": 128,
+          "worlds_rescued": 33
+        },
+        "mid_0_3": {
+          "families": 0,
+          "first_worlds": 65,
+          "histories": 18,
+          "second_worlds": 69,
+          "worlds": 134,
+          "worlds_damaged": 104,
+          "worlds_rescued": 15
+        },
+        "mid_1_2": {
+          "families": 0,
+          "first_worlds": 35,
+          "histories": 16,
+          "second_worlds": 95,
+          "worlds": 130,
+          "worlds_damaged": 119,
+          "worlds_rescued": 26
+        },
+        "mid_1_3": {
+          "families": 0,
+          "first_worlds": 128,
+          "histories": 1,
+          "second_worlds": 1,
+          "worlds": 129,
+          "worlds_damaged": 94,
+          "worlds_rescued": 0
+        },
+        "mid_2_3": {
+          "families": 0,
+          "first_worlds": 0,
+          "histories": 0,
+          "second_worlds": 128,
+          "worlds": 128,
+          "worlds_damaged": 128,
+          "worlds_rescued": 33
+        },
+        "native": {
+          "families": 16,
+          "first_worlds": 128,
+          "histories": 95,
+          "second_worlds": 95,
+          "worlds": 223,
+          "worlds_damaged": 0,
+          "worlds_rescued": 0
+        },
+        "uniform": {
+          "families": 0,
+          "first_worlds": 62,
+          "histories": 29,
+          "second_worlds": 78,
+          "worlds": 140,
+          "worlds_damaged": 103,
+          "worlds_rescued": 20
+        }
+      },
+      "native": {
+        "families": 16,
+        "histories": 95,
+        "worlds": 223
+      },
+      "oracle_failed_first_worlds_rescued": 0,
+      "oracle_failed_second_worlds_rescued": 33,
+      "oracle_failed_worlds_rescued": 33,
+      "oracle_four_shared_pair_gates_families": 17,
+      "oracle_grid_only_both_queries": 49,
+      "oracle_row_worlds": 256,
+      "oracle_same_gate_all_8": 16,
+      "oracle_same_gate_both_queries": 105
+    },
+    "run_id": "20261122T173621-632799071225",
+    "strict": {
+      "any_candidate_only_cannot_rescue": 0,
+      "fixed": {
+        "corner_0": {
+          "families": 0,
+          "first_worlds": 0,
+          "histories": 0,
+          "second_worlds": 0,
+          "worlds": 0,
+          "worlds_damaged": 223,
+          "worlds_rescued": 0
+        },
+        "corner_1": {
+          "families": 0,
+          "first_worlds": 128,
+          "histories": 0,
+          "second_worlds": 0,
+          "worlds": 128,
+          "worlds_damaged": 95,
+          "worlds_rescued": 0
+        },
+        "corner_2": {
+          "families": 0,
+          "first_worlds": 0,
+          "histories": 0,
+          "second_worlds": 128,
+          "worlds": 128,
+          "worlds_damaged": 128,
+          "worlds_rescued": 33
+        },
+        "corner_3": {
+          "families": 0,
+          "first_worlds": 0,
+          "histories": 0,
+          "second_worlds": 0,
+          "worlds": 0,
+          "worlds_damaged": 223,
+          "worlds_rescued": 0
+        },
+        "mid_0_1": {
+          "families": 0,
+          "first_worlds": 78,
+          "histories": 0,
+          "second_worlds": 0,
+          "worlds": 78,
+          "worlds_damaged": 145,
+          "worlds_rescued": 0
+        },
+        "mid_0_2": {
+          "families": 0,
+          "first_worlds": 0,
+          "histories": 0,
+          "second_worlds": 70,
+          "worlds": 70,
+          "worlds_damaged": 166,
+          "worlds_rescued": 13
+        },
+        "mid_0_3": {
+          "families": 0,
+          "first_worlds": 0,
+          "histories": 0,
+          "second_worlds": 0,
+          "worlds": 0,
+          "worlds_damaged": 223,
+          "worlds_rescued": 0
+        },
+        "mid_1_2": {
+          "families": 0,
+          "first_worlds": 35,
+          "histories": 16,
+          "second_worlds": 95,
+          "worlds": 130,
+          "worlds_damaged": 119,
+          "worlds_rescued": 26
+        },
+        "mid_1_3": {
+          "families": 0,
+          "first_worlds": 65,
+          "histories": 0,
+          "second_worlds": 0,
+          "worlds": 65,
+          "worlds_damaged": 158,
+          "worlds_rescued": 0
+        },
+        "mid_2_3": {
+          "families": 0,
+          "first_worlds": 0,
+          "histories": 0,
+          "second_worlds": 52,
+          "worlds": 52,
+          "worlds_damaged": 179,
+          "worlds_rescued": 8
+        },
+        "native": {
+          "families": 16,
+          "first_worlds": 128,
+          "histories": 95,
+          "second_worlds": 95,
+          "worlds": 223,
+          "worlds_damaged": 0,
+          "worlds_rescued": 0
+        },
+        "uniform": {
+          "families": 0,
+          "first_worlds": 24,
+          "histories": 6,
+          "second_worlds": 18,
+          "worlds": 42,
+          "worlds_damaged": 184,
+          "worlds_rescued": 3
+        }
+      },
+      "native": {
+        "families": 16,
+        "histories": 95,
+        "worlds": 223
+      },
+      "oracle_failed_first_worlds_rescued": 0,
+      "oracle_failed_second_worlds_rescued": 33,
+      "oracle_failed_worlds_rescued": 33,
+      "oracle_four_shared_pair_gates_families": 16,
+      "oracle_grid_only_both_queries": 18,
+      "oracle_row_worlds": 256,
+      "oracle_same_gate_all_8": 16,
+      "oracle_same_gate_both_queries": 97
+    }
+  }
+}
