@@ -1,0 +1,616 @@
+{
+  "declared_common_recurrence": true,
+  "dose_checks": {
+    "('distractor_first', 'cross_class', 1)": 192,
+    "('distractor_first', 'same_class', 1)": 96,
+    "('distractor_second', 'cross_class', 1)": 192,
+    "('distractor_second', 'same_class', 1)": 96,
+    "('focal_first', 'cross_class', 2)": 192,
+    "('focal_first', 'same_class', 2)": 96,
+    "('focal_second', 'cross_class', 2)": 192,
+    "('focal_second', 'same_class', 2)": 96
+  },
+  "exact_pins": {
+    "NAME_REMAP_PROTOCOL.md": "422e83beec44d8aaab1f2fd1293fbcb6f63ffb3ec4c89082b22c185d499a3f67",
+    "REMAP_SEAL.json": "06a9bb8c5f8054162242727b78be6def06a8fa9f952b89b99aeb7c2868ad8c70",
+    "panel/actor.json": "0775d4358384f12486d616988aefa8a764888ece48e8942f96c617754ff07514",
+    "panel/judge.json": "3e1eecfc644f11bad7c722cce6280a39f2650fe93d750a1a9fb52a0bc7d42947",
+    "remap_admissions_v2/ledger.json": "da49b2fc81352c08e3bffe0bc0b7c71f8c933e69dbd3b2bc80812559c46d00cb"
+  },
+  "model_invocations": 0,
+  "natural_outputs_scored": 1536,
+  "receipts": 2,
+  "results": {
+    "remap-native-1371": {
+      "by_focal_name": {
+        "di": {
+          "distractor_first_correct": 24,
+          "distractor_first_total": 24,
+          "distractor_second_correct": 24,
+          "distractor_second_total": 24,
+          "focal_first_correct": 24,
+          "focal_first_total": 24,
+          "focal_second_correct": 24,
+          "focal_second_total": 24
+        },
+        "eli": {
+          "distractor_first_correct": 24,
+          "distractor_first_total": 24,
+          "distractor_second_correct": 23,
+          "distractor_second_total": 24,
+          "focal_first_correct": 24,
+          "focal_first_total": 24,
+          "focal_second_correct": 24,
+          "focal_second_total": 24
+        },
+        "gio": {
+          "distractor_first_correct": 24,
+          "distractor_first_total": 24,
+          "distractor_second_correct": 24,
+          "distractor_second_total": 24,
+          "focal_first_correct": 24,
+          "focal_first_total": 24,
+          "focal_second_correct": 0,
+          "focal_second_total": 24
+        },
+        "jay": {
+          "distractor_first_correct": 24,
+          "distractor_first_total": 24,
+          "distractor_second_correct": 24,
+          "distractor_second_total": 24,
+          "focal_first_correct": 22,
+          "focal_first_total": 24,
+          "focal_second_correct": 11,
+          "focal_second_total": 24
+        },
+        "kai": {
+          "distractor_first_correct": 24,
+          "distractor_first_total": 24,
+          "distractor_second_correct": 24,
+          "distractor_second_total": 24,
+          "focal_first_correct": 24,
+          "focal_first_total": 24,
+          "focal_second_correct": 0,
+          "focal_second_total": 24
+        },
+        "lou": {
+          "distractor_first_correct": 24,
+          "distractor_first_total": 24,
+          "distractor_second_correct": 24,
+          "distractor_second_total": 24,
+          "focal_first_correct": 24,
+          "focal_first_total": 24,
+          "focal_second_correct": 24,
+          "focal_second_total": 24
+        },
+        "ola": {
+          "distractor_first_correct": 24,
+          "distractor_first_total": 24,
+          "distractor_second_correct": 24,
+          "distractor_second_total": 24,
+          "focal_first_correct": 24,
+          "focal_first_total": 24,
+          "focal_second_correct": 0,
+          "focal_second_total": 24
+        },
+        "pam": {
+          "distractor_first_correct": 24,
+          "distractor_first_total": 24,
+          "distractor_second_correct": 24,
+          "distractor_second_total": 24,
+          "focal_first_correct": 24,
+          "focal_first_total": 24,
+          "focal_second_correct": 24,
+          "focal_second_total": 24
+        }
+      },
+      "paired": {
+        "distractor_first": {
+          "cross_both_correct": 96,
+          "within_fragile_disagree": 0,
+          "within_robust_disagree": 0
+        },
+        "distractor_second": {
+          "cross_both_correct": 95,
+          "cross_damaged": 1,
+          "within_fragile_disagree": 0,
+          "within_robust_disagree": 1
+        },
+        "focal_first": {
+          "cross_both_correct": 94,
+          "cross_rescued": 2,
+          "within_fragile_disagree": 2,
+          "within_robust_disagree": 0
+        },
+        "focal_second": {
+          "cross_both_correct": 11,
+          "cross_rescued": 85,
+          "within_fragile_disagree": 11,
+          "within_robust_disagree": 0
+        }
+      },
+      "robust_minus_fragile": {
+        "distractor_first": {
+          "blocks": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "effect": 0.0
+        },
+        "distractor_second": {
+          "blocks": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.25,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bootstrap_95": [
+            -0.03125,
+            0.0
+          ],
+          "effect": -0.010416666666666666
+        },
+        "focal_first": {
+          "blocks": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.25,
+            0.0,
+            0.25,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bootstrap_95": [
+            0.0,
+            0.052083333333333336
+          ],
+          "effect": 0.020833333333333332
+        },
+        "focal_second": {
+          "blocks": [
+            0.75,
+            0.75,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.75,
+            0.5,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "bootstrap_95": [
+            0.8229166666666666,
+            0.9375
+          ],
+          "effect": 0.8854166666666666
+        }
+      },
+      "strict_by_stratum": {
+        "distractor_first": {
+          "fragile_correct": 96,
+          "fragile_total": 96,
+          "robust_correct": 96,
+          "robust_total": 96
+        },
+        "distractor_second": {
+          "fragile_correct": 96,
+          "fragile_total": 96,
+          "robust_correct": 95,
+          "robust_total": 96
+        },
+        "focal_first": {
+          "fragile_correct": 94,
+          "fragile_total": 96,
+          "robust_correct": 96,
+          "robust_total": 96
+        },
+        "focal_second": {
+          "fragile_correct": 11,
+          "fragile_total": 96,
+          "robust_correct": 96,
+          "robust_total": 96
+        }
+      },
+      "two_color_by_stratum": {
+        "distractor_first": {
+          "fragile_correct": 96,
+          "fragile_total": 96,
+          "robust_correct": 96,
+          "robust_total": 96
+        },
+        "distractor_second": {
+          "fragile_correct": 96,
+          "fragile_total": 96,
+          "robust_correct": 95,
+          "robust_total": 96
+        },
+        "focal_first": {
+          "fragile_correct": 94,
+          "fragile_total": 96,
+          "robust_correct": 96,
+          "robust_total": 96
+        },
+        "focal_second": {
+          "fragile_correct": 11,
+          "fragile_total": 96,
+          "robust_correct": 96,
+          "robust_total": 96
+        }
+      }
+    },
+    "remap-tap-1471": {
+      "by_focal_name": {
+        "di": {
+          "distractor_first_correct": 24,
+          "distractor_first_total": 24,
+          "distractor_second_correct": 24,
+          "distractor_second_total": 24,
+          "focal_first_correct": 24,
+          "focal_first_total": 24,
+          "focal_second_correct": 24,
+          "focal_second_total": 24
+        },
+        "eli": {
+          "distractor_first_correct": 24,
+          "distractor_first_total": 24,
+          "distractor_second_correct": 22,
+          "distractor_second_total": 24,
+          "focal_first_correct": 24,
+          "focal_first_total": 24,
+          "focal_second_correct": 24,
+          "focal_second_total": 24
+        },
+        "gio": {
+          "distractor_first_correct": 24,
+          "distractor_first_total": 24,
+          "distractor_second_correct": 24,
+          "distractor_second_total": 24,
+          "focal_first_correct": 20,
+          "focal_first_total": 24,
+          "focal_second_correct": 17,
+          "focal_second_total": 24
+        },
+        "jay": {
+          "distractor_first_correct": 24,
+          "distractor_first_total": 24,
+          "distractor_second_correct": 24,
+          "distractor_second_total": 24,
+          "focal_first_correct": 16,
+          "focal_first_total": 24,
+          "focal_second_correct": 18,
+          "focal_second_total": 24
+        },
+        "kai": {
+          "distractor_first_correct": 24,
+          "distractor_first_total": 24,
+          "distractor_second_correct": 22,
+          "distractor_second_total": 24,
+          "focal_first_correct": 20,
+          "focal_first_total": 24,
+          "focal_second_correct": 23,
+          "focal_second_total": 24
+        },
+        "lou": {
+          "distractor_first_correct": 24,
+          "distractor_first_total": 24,
+          "distractor_second_correct": 24,
+          "distractor_second_total": 24,
+          "focal_first_correct": 24,
+          "focal_first_total": 24,
+          "focal_second_correct": 24,
+          "focal_second_total": 24
+        },
+        "ola": {
+          "distractor_first_correct": 24,
+          "distractor_first_total": 24,
+          "distractor_second_correct": 24,
+          "distractor_second_total": 24,
+          "focal_first_correct": 16,
+          "focal_first_total": 24,
+          "focal_second_correct": 17,
+          "focal_second_total": 24
+        },
+        "pam": {
+          "distractor_first_correct": 24,
+          "distractor_first_total": 24,
+          "distractor_second_correct": 24,
+          "distractor_second_total": 24,
+          "focal_first_correct": 24,
+          "focal_first_total": 24,
+          "focal_second_correct": 24,
+          "focal_second_total": 24
+        }
+      },
+      "paired": {
+        "distractor_first": {
+          "cross_both_correct": 96,
+          "within_fragile_disagree": 0,
+          "within_robust_disagree": 0
+        },
+        "distractor_second": {
+          "cross_both_correct": 92,
+          "cross_damaged": 2,
+          "cross_rescued": 2,
+          "within_fragile_disagree": 2,
+          "within_robust_disagree": 2
+        },
+        "focal_first": {
+          "cross_both_correct": 72,
+          "cross_rescued": 24,
+          "within_fragile_disagree": 12,
+          "within_robust_disagree": 0
+        },
+        "focal_second": {
+          "cross_both_correct": 75,
+          "cross_rescued": 21,
+          "within_fragile_disagree": 9,
+          "within_robust_disagree": 0
+        }
+      },
+      "robust_minus_fragile": {
+        "distractor_first": {
+          "blocks": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "effect": 0.0
+        },
+        "distractor_second": {
+          "blocks": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bootstrap_95": [
+            -0.0625,
+            0.0625
+          ],
+          "effect": 0.0
+        },
+        "focal_first": {
+          "blocks": [
+            0.25,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.25,
+            0.0,
+            0.0,
+            0.5,
+            0.25,
+            0.25,
+            0.0,
+            1.0,
+            0.25,
+            0.25,
+            0.5,
+            0.5,
+            0.0,
+            0.5,
+            0.0,
+            0.5,
+            0.0,
+            0.0
+          ],
+          "bootstrap_95": [
+            0.13541666666666666,
+            0.375
+          ],
+          "effect": 0.25
+        },
+        "focal_second": {
+          "blocks": [
+            0.0,
+            0.5,
+            0.75,
+            0.75,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.25,
+            0.25,
+            0.0,
+            0.0,
+            0.25,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.25,
+            0.0,
+            0.5,
+            0.25
+          ],
+          "bootstrap_95": [
+            0.11458333333333333,
+            0.3333333333333333
+          ],
+          "effect": 0.21875
+        }
+      },
+      "strict_by_stratum": {
+        "distractor_first": {
+          "fragile_correct": 96,
+          "fragile_total": 96,
+          "robust_correct": 96,
+          "robust_total": 96
+        },
+        "distractor_second": {
+          "fragile_correct": 94,
+          "fragile_total": 96,
+          "robust_correct": 94,
+          "robust_total": 96
+        },
+        "focal_first": {
+          "fragile_correct": 72,
+          "fragile_total": 96,
+          "robust_correct": 96,
+          "robust_total": 96
+        },
+        "focal_second": {
+          "fragile_correct": 75,
+          "fragile_total": 96,
+          "robust_correct": 96,
+          "robust_total": 96
+        }
+      },
+      "two_color_by_stratum": {
+        "distractor_first": {
+          "fragile_correct": 96,
+          "fragile_total": 96,
+          "robust_correct": 96,
+          "robust_total": 96
+        },
+        "distractor_second": {
+          "fragile_correct": 94,
+          "fragile_total": 96,
+          "robust_correct": 94,
+          "robust_total": 96
+        },
+        "focal_first": {
+          "fragile_correct": 72,
+          "fragile_total": 96,
+          "robust_correct": 96,
+          "robust_total": 96
+        },
+        "focal_second": {
+          "fragile_correct": 75,
+          "fragile_total": 96,
+          "robust_correct": 96,
+          "robust_total": 96
+        }
+      }
+    }
+  }
+}
