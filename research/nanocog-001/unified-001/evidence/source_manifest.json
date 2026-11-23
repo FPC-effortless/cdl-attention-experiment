@@ -1,0 +1,186 @@
+{
+  "study": "COG-UNIFIED-001",
+  "scope": "Source-backed mechanism selection and continuity map; not an exhaustive migration of all historical artifacts",
+  "prepared_date": "2026-11-22",
+  "prepared_timezone": "America/Los_Angeles",
+  "source_snapshot": {
+    "nanoCOG_observed_current_head": "39be434ff160d4e6507df8d2114979ba5529caff",
+    "comparison_proposal_head": "1a91168b216a49543cc839153fa299a262320730",
+    "earlier_audited_nanoCOG_head": "8374f72ba9324fa4a11d0d3ecb40a6db0e311c73"
+  },
+  "records": [
+    {
+      "id": "agents",
+      "repository": "FPC-effortless/cdl-attention-experiment",
+      "commit": "1a91168b216a49543cc839153fa299a262320730",
+      "path": "AGENTS.md",
+      "git_blob_sha": "57ac17b8bd3d9f65f6a1525e94d88a440eecd19a",
+      "url": "https://github.com/FPC-effortless/cdl-attention-experiment/blob/1a91168b216a49543cc839153fa299a262320730/AGENTS.md",
+      "read_scope": "complete UTF-8 report/source text",
+      "original_experiment_rerun": false
+    },
+    {
+      "id": "skill",
+      "repository": "FPC-effortless/cdl-attention-experiment",
+      "commit": "1a91168b216a49543cc839153fa299a262320730",
+      "path": ".agents/skills/fpc-universal/SKILL.md",
+      "git_blob_sha": "b8e1ae48d21a30c527c5b7a7e32738de5dd81ced",
+      "url": "https://github.com/FPC-effortless/cdl-attention-experiment/blob/1a91168b216a49543cc839153fa299a262320730/.agents/skills/fpc-universal/SKILL.md",
+      "read_scope": "complete UTF-8 report/source text",
+      "original_experiment_rerun": false
+    },
+    {
+      "id": "state",
+      "repository": "FPC-effortless/cdl-attention-experiment",
+      "commit": "1a91168b216a49543cc839153fa299a262320730",
+      "path": "research/nanocog-001/nanocog/state/STATE_CONTRACT.md",
+      "git_blob_sha": "356fde3910fa795b7338db61e1515bd41e775332",
+      "url": "https://github.com/FPC-effortless/cdl-attention-experiment/blob/1a91168b216a49543cc839153fa299a262320730/research/nanocog-001/nanocog/state/STATE_CONTRACT.md",
+      "read_scope": "complete UTF-8 report/source text",
+      "original_experiment_rerun": false
+    },
+    {
+      "id": "qualification",
+      "repository": "FPC-effortless/cdl-attention-experiment",
+      "commit": "1a91168b216a49543cc839153fa299a262320730",
+      "path": "research/nanocog-001/QUALIFICATION.md",
+      "git_blob_sha": "54180d3cbc892dbfbbcc459019da17bbda9e99cf",
+      "url": "https://github.com/FPC-effortless/cdl-attention-experiment/blob/1a91168b216a49543cc839153fa299a262320730/research/nanocog-001/QUALIFICATION.md",
+      "read_scope": "complete UTF-8 report/source text",
+      "original_experiment_rerun": false
+    },
+    {
+      "id": "protocol",
+      "repository": "FPC-effortless/cdl-attention-experiment",
+      "commit": "1a91168b216a49543cc839153fa299a262320730",
+      "path": "research/nanocog-001/attention-comparison-001/PROTOCOL.md",
+      "git_blob_sha": "6779c6905371846cf894ee696f014d85b9c67ed3",
+      "url": "https://github.com/FPC-effortless/cdl-attention-experiment/blob/1a91168b216a49543cc839153fa299a262320730/research/nanocog-001/attention-comparison-001/PROTOCOL.md",
+      "read_scope": "complete UTF-8 report/source text",
+      "original_experiment_rerun": false
+    },
+    {
+      "id": "readiness",
+      "repository": "FPC-effortless/cdl-attention-experiment",
+      "commit": "1a91168b216a49543cc839153fa299a262320730",
+      "path": "research/nanocog-001/attention-comparison-001/READINESS.md",
+      "git_blob_sha": "858d287d22fa40bc035cca57a8107256d34691ee",
+      "url": "https://github.com/FPC-effortless/cdl-attention-experiment/blob/1a91168b216a49543cc839153fa299a262320730/research/nanocog-001/attention-comparison-001/READINESS.md",
+      "read_scope": "complete UTF-8 report/source text",
+      "original_experiment_rerun": false
+    },
+    {
+      "id": "index",
+      "repository": "FPC-effortless/cdl-attention-experiment",
+      "commit": "1a91168b216a49543cc839153fa299a262320730",
+      "path": "research/nanocog-001/RESULTS_INDEX.md",
+      "git_blob_sha": "e61d68bdb10bbd9a4cd3f32f3597caf48d62c1db",
+      "url": "https://github.com/FPC-effortless/cdl-attention-experiment/blob/1a91168b216a49543cc839153fa299a262320730/research/nanocog-001/RESULTS_INDEX.md",
+      "read_scope": "complete UTF-8 report/source text",
+      "original_experiment_rerun": false
+    },
+    {
+      "id": "nano_readme",
+      "repository": "FPC-effortless/cdl-attention-experiment",
+      "commit": "1a91168b216a49543cc839153fa299a262320730",
+      "path": "research/nanocog-001/README.md",
+      "git_blob_sha": "c008db4dc8b631d475c22cd6a4ed37d44db06276",
+      "url": "https://github.com/FPC-effortless/cdl-attention-experiment/blob/1a91168b216a49543cc839153fa299a262320730/research/nanocog-001/README.md",
+      "read_scope": "complete UTF-8 report/source text",
+      "original_experiment_rerun": false
+    },
+    {
+      "id": "typed",
+      "repository": "FPC-effortless/cdl-attention-experiment",
+      "commit": "1a91168b216a49543cc839153fa299a262320730",
+      "path": "research/cog-attn-handoff/continuation/cog-047-050/README.md",
+      "git_blob_sha": "2b0b72b61fd9b3484dad498bb078e5b673e31d3d",
+      "url": "https://github.com/FPC-effortless/cdl-attention-experiment/blob/1a91168b216a49543cc839153fa299a262320730/research/cog-attn-handoff/continuation/cog-047-050/README.md",
+      "read_scope": "complete UTF-8 report/source text",
+      "original_experiment_rerun": false
+    },
+    {
+      "id": "grounded",
+      "repository": "FPC-effortless/cdl-attention-experiment",
+      "commit": "1a91168b216a49543cc839153fa299a262320730",
+      "path": "research/cog-attn-handoff/continuation/cog-051-060/README.md",
+      "git_blob_sha": "576992c0540ba76bd57f3c04809c613ba3317c33",
+      "url": "https://github.com/FPC-effortless/cdl-attention-experiment/blob/1a91168b216a49543cc839153fa299a262320730/research/cog-attn-handoff/continuation/cog-051-060/README.md",
+      "read_scope": "complete UTF-8 report/source text",
+      "original_experiment_rerun": false
+    },
+    {
+      "id": "bind_a",
+      "repository": "FPC-effortless/cdl-attention-experiment",
+      "commit": "1a91168b216a49543cc839153fa299a262320730",
+      "path": "research/nanocog-001/cog-bind-001a/RESULT.md",
+      "git_blob_sha": "82b18e9a49b93668527b6cf9852a9c6ccc525c08",
+      "url": "https://github.com/FPC-effortless/cdl-attention-experiment/blob/1a91168b216a49543cc839153fa299a262320730/research/nanocog-001/cog-bind-001a/RESULT.md",
+      "read_scope": "complete UTF-8 report/source text",
+      "original_experiment_rerun": false
+    },
+    {
+      "id": "bind_b",
+      "repository": "FPC-effortless/cdl-attention-experiment",
+      "commit": "1a91168b216a49543cc839153fa299a262320730",
+      "path": "research/nanocog-001/cog-bind-001b/RESULT.md",
+      "git_blob_sha": "dfec87cd178c29c95f87fda1c527356fb0011d70",
+      "url": "https://github.com/FPC-effortless/cdl-attention-experiment/blob/1a91168b216a49543cc839153fa299a262320730/research/nanocog-001/cog-bind-001b/RESULT.md",
+      "read_scope": "complete UTF-8 report/source text",
+      "original_experiment_rerun": false
+    },
+    {
+      "id": "bind_d",
+      "repository": "FPC-effortless/cdl-attention-experiment",
+      "commit": "1a91168b216a49543cc839153fa299a262320730",
+      "path": "research/nanocog-001/cog-bind-001d/RESULT.md",
+      "git_blob_sha": "8be779f572c4f59a923ffa95e17a7c29ad8d113a",
+      "url": "https://github.com/FPC-effortless/cdl-attention-experiment/blob/1a91168b216a49543cc839153fa299a262320730/research/nanocog-001/cog-bind-001d/RESULT.md",
+      "read_scope": "complete UTF-8 report/source text",
+      "original_experiment_rerun": false
+    },
+    {
+      "id": "lm2",
+      "repository": "FPC-effortless/cdl-attention-experiment",
+      "commit": "45aad6d8d3540215794e8ce5edd43a5b4ab8ee3d",
+      "path": "research/cog_lm_002/REPORT.md",
+      "git_blob_sha": "dc15705b9d9d2fde8f2657c75199a86c47fe0d05",
+      "url": "https://github.com/FPC-effortless/cdl-attention-experiment/blob/45aad6d8d3540215794e8ce5edd43a5b4ab8ee3d/research/cog_lm_002/REPORT.md",
+      "read_scope": "complete UTF-8 report/source text",
+      "original_experiment_rerun": false
+    },
+    {
+      "id": "lm3",
+      "repository": "FPC-effortless/cdl-attention-experiment",
+      "commit": "186d577e7783bd6b8daa13b8d0028c0b174bf849",
+      "path": "research/cog_lm_003/REPORT.md",
+      "git_blob_sha": "f951f299b3af0f288a2ca9ebda50ddb25ea62b0d",
+      "url": "https://github.com/FPC-effortless/cdl-attention-experiment/blob/186d577e7783bd6b8daa13b8d0028c0b174bf849/research/cog_lm_003/REPORT.md",
+      "read_scope": "complete UTF-8 report/source text",
+      "original_experiment_rerun": false
+    },
+    {
+      "id": "search",
+      "repository": "FPC-effortless/cdl-attention-experiment",
+      "commit": "a4dfa94b28d8e8afa05a6a50570d584567c7a5c1",
+      "path": "research/cog-081-086/extreme/followup_092_095/REPORT.md",
+      "git_blob_sha": "3805ca73bb93121d25f8836e39e893fcbfca048c",
+      "url": "https://github.com/FPC-effortless/cdl-attention-experiment/blob/a4dfa94b28d8e8afa05a6a50570d584567c7a5c1/research/cog-081-086/extreme/followup_092_095/REPORT.md",
+      "read_scope": "complete UTF-8 report/source text",
+      "original_experiment_rerun": false
+    },
+    {
+      "id": "pulse_source_milestone",
+      "repository": "FPC-effortless/veritas",
+      "issue": 482,
+      "comment_id": 7071453328,
+      "url": "https://github.com/FPC-effortless/veritas/issues/482#issuecomment-7071453328",
+      "created_at": "2026-11-22T00:17:50Z",
+      "updated_at": "2026-11-22T00:17:50Z",
+      "read_scope": "complete ledger comment; underlying private source/proofs not recovered in this subtask",
+      "original_experiment_rerun": false,
+      "reported_local_source_commit": "e66e3d253634136e0f4f79513d4e91accc8d8365",
+      "reported_model_sha256": "909219a03b141d9eceedaad86be645841fe124aba1e752278b6eb5b9401128eb"
+    }
+  ]
+}

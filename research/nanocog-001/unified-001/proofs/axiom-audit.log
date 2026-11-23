@@ -1,0 +1,46 @@
+'COGUnified.write_read_same' depends on axioms: [propext]
+'COGUnified.write_read_other' depends on axioms: [propext]
+'COGUnified.write_overwrite' depends on axioms: [propext, Quot.sound]
+'COGUnified.distinct_writes_commute' depends on axioms: [propext, Quot.sound]
+'COGUnified.rejected_commit_preserves' does not depend on any axioms
+'COGUnified.accepted_commit_uses_proposal' does not depend on any axioms
+'COGUnified.grounded_read_is_correct' does not depend on any axioms
+'COGUnified.protected_cells_preserved' depends on axioms: [propext]
+'COGUnified.written_version_strictly_increases' depends on axioms: [propext]
+'COGUnified.version_monotone' depends on axioms: [propext]
+'COGUnified.dependency_cache_sound' does not depend on any axioms
+'COGUnified.cache_requires_same_reader_epoch' does not depend on any axioms
+'COGUnified.local_dependency_cache_sound' does not depend on any axioms
+'COGUnified.local_epoch_cache_sound' does not depend on any axioms
+'COGUnified.dependency_preserving_write' depends on axioms: [propext]
+'COGUnified.affine_composition_action' depends on axioms: [propext]
+'COGUnified.affine_composition_associative' depends on axioms: [propext]
+'COGUnified.affine_left_identity' depends on axioms: [propext]
+'COGUnified.affine_right_identity' depends on axioms: [propext]
+'COGUnified.run_append' does not depend on any axioms
+'COGUnified.run_preserves_simulation' does not depend on any axioms
+'COGUnified.simulated_run_has_same_readout' does not depend on any axioms
+'COGUnified.prefix_output_independent_of_suffix' depends on axioms: [propext]
+'COGUnified.edit_preserves_iff_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'COGUnified.protected_domain_preserved' depends on axioms: [propext]
+'COGUnified.isolated_adapter_preserves_outside_route' depends on axioms: [propext]
+'COGUnified.isolated_adapter_preserves_declared_domain' depends on axioms: [propext]
+'COGUnified.finite_regression_passes' depends on axioms: [propext, Quot.sound]
+'COGUnified.finite_regression_still_changes_output' depends on axioms: [propext]
+'COGUnified.unchanged_read_path_preserves_resolution' depends on axioms: [propext]
+'COGUnified.bounded_link_reader_locally_depends_on_path' depends on axioms: [propext]
+'COGUnified.set_record_reads_value' depends on axioms: [propext]
+'COGUnified.deleted_record_reads_none' depends on axioms: [propext]
+'COGUnified.delete_preserves_other_cell' depends on axioms: [propext]
+'COGUnified.live_link_dereferences_current_state' depends on axioms: [propext]
+'COGUnified.snapshot_copy_materializes_value' depends on axioms: [propext]
+'COGUnified.snapshot_copy_refuses_unresolved' depends on axioms: [propext]
+'COGUnified.snapshot_value_survives_other_write' depends on axioms: [propext]
+'COGUnified.link_cell_preserved' does not depend on any axioms
+'COGUnified.live_link_answer_changed' does not depend on any axioms
+'COGUnified.link_reads_bounded_by_fuel' depends on axioms: [propext, Quot.sound]
+'COGUnified.disjoint_targets_still_interfere' does not depend on any axioms
+'COGUnified.omitted_candidate_is_unread' depends on axioms: [propext]
+'COGUnified.concrete_sparse_miss' depends on axioms: [propext]
+'COGUnified.three_histories_two_states_collide' depends on axioms: [propext]
+'COGUnified.encoding_collision_blocks_exact_recall' does not depend on any axioms
