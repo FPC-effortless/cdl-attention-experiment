@@ -1,0 +1,50 @@
+# Checked theorem inventory
+
+All 46 statements below were checked on the source identified in verification.json.
+
+1. `COGUnified.write_read_same`
+2. `COGUnified.write_read_other`
+3. `COGUnified.write_overwrite`
+4. `COGUnified.distinct_writes_commute`
+5. `COGUnified.rejected_commit_preserves`
+6. `COGUnified.accepted_commit_uses_proposal`
+7. `COGUnified.grounded_read_is_correct`
+8. `COGUnified.protected_cells_preserved`
+9. `COGUnified.written_version_strictly_increases`
+10. `COGUnified.version_monotone`
+11. `COGUnified.dependency_cache_sound`
+12. `COGUnified.cache_requires_same_reader_epoch`
+13. `COGUnified.local_dependency_cache_sound`
+14. `COGUnified.local_epoch_cache_sound`
+15. `COGUnified.dependency_preserving_write`
+16. `COGUnified.affine_composition_action`
+17. `COGUnified.affine_composition_associative`
+18. `COGUnified.affine_left_identity`
+19. `COGUnified.affine_right_identity`
+20. `COGUnified.run_append`
+21. `COGUnified.run_preserves_simulation`
+22. `COGUnified.simulated_run_has_same_readout`
+23. `COGUnified.prefix_output_independent_of_suffix`
+24. `COGUnified.edit_preserves_iff_zero`
+25. `COGUnified.protected_domain_preserved`
+26. `COGUnified.isolated_adapter_preserves_outside_route`
+27. `COGUnified.isolated_adapter_preserves_declared_domain`
+28. `COGUnified.finite_regression_passes`
+29. `COGUnified.finite_regression_still_changes_output`
+30. `COGUnified.unchanged_read_path_preserves_resolution`
+31. `COGUnified.bounded_link_reader_locally_depends_on_path`
+32. `COGUnified.set_record_reads_value`
+33. `COGUnified.deleted_record_reads_none`
+34. `COGUnified.delete_preserves_other_cell`
+35. `COGUnified.live_link_dereferences_current_state`
+36. `COGUnified.snapshot_copy_materializes_value`
+37. `COGUnified.snapshot_copy_refuses_unresolved`
+38. `COGUnified.snapshot_value_survives_other_write`
+39. `COGUnified.link_cell_preserved`
+40. `COGUnified.live_link_answer_changed`
+41. `COGUnified.link_reads_bounded_by_fuel`
+42. `COGUnified.disjoint_targets_still_interfere`
+43. `COGUnified.omitted_candidate_is_unread`
+44. `COGUnified.concrete_sparse_miss`
+45. `COGUnified.three_histories_two_states_collide`
+46. `COGUnified.encoding_collision_blocks_exact_recall`

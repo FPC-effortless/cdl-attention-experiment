@@ -1,0 +1,46 @@
+{
+  "study": "COG-UNIFIED-001",
+  "status": "FORMAL_SPECIFICATION_AND_REFERENCE_CHECKS",
+  "user_facing_date": "2026-11-22",
+  "observed_utc": "2026-11-23T05:18:07.548175+00:00",
+  "source_base": "1a91168b216a49543cc839153fa299a262320730",
+  "inspected_nanocog": "8374f72ba9324fa4a11d0d3ecb40a6db0e311c73",
+  "observed_active_nanocog": "39be434ff160d4e6507df8d2114979ba5529caff",
+  "reviewed_sha256": {
+    "ARCHITECTURE.md": "a8af3f9cf48c5302e1b1e143fd286d0c47a311de15aa03941c4fe787f82059c6",
+    "MATHEMATICS.md": "63ea2dc485309de50663b78fe00683ae73c318fab718c100be2f4c38c163801c",
+    "proofs/UnifiedLaws.lean": "2df339e39910803713498132af1c66185900acb5d7b71f1eafb5f9709a3118ff",
+    "reference/semantic_kernel.py": "5ef3aeddf9112056c18fba90a35cbd0a69aba782ce131445f054223a339d0776"
+  },
+  "formal": {
+    "theorems": 46,
+    "compiler": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+    "author_compile_exit": 0,
+    "independent_compile_exit": 0,
+    "custom_axioms": [],
+    "placeholders": [],
+    "scope": "abstract contracts only; no Python/neural refinement"
+  },
+  "reference": {
+    "author_checks": 48,
+    "independent_checks": 34,
+    "status": "PASS",
+    "preserved_failed_receipt": "review/reference_independent_epoch_probe.json",
+    "scope": "constructed typed semantics; no trained models or benchmark data"
+  },
+  "new_neural_fits": 0,
+  "protected_evaluation_reads": 0,
+  "paid_jobs": 0,
+  "measured_model_speedups": 0,
+  "deployment": false,
+  "scientific_promotion": false,
+  "open_obligations": [
+    "native learned token/event/key/readout integration",
+    "Python and optimized kernel refinement",
+    "shared-interface training and TRAIN/CAL adequacy",
+    "fresh generalization and retention evidence",
+    "matched-quality full-serving cost",
+    "aggregate cache/snapshot/session memory limits",
+    "production index and restore/fork identity contract"
+  ]
+}

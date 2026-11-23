@@ -1,0 +1,209 @@
+{
+  "study": "COG-UNIFIED-001",
+  "kind": "constructed semantic checks",
+  "checks": 48,
+  "status": "PASS",
+  "trained_models": 0,
+  "protected_data_reads": 0,
+  "latency_claims": 0,
+  "limits": [
+    "not Python-to-Lean refinement",
+    "not learned binding",
+    "not distributed or crash-consistent storage",
+    "not real workload accuracy"
+  ],
+  "results": [
+    {
+      "name": "set_reads_exactly",
+      "status": "PASS"
+    },
+    {
+      "name": "overwrite_replaces_old_value",
+      "status": "PASS"
+    },
+    {
+      "name": "unwritten_cell_identical",
+      "status": "PASS"
+    },
+    {
+      "name": "old_snapshot_immutable",
+      "status": "PASS"
+    },
+    {
+      "name": "revision_strictly_increases",
+      "status": "PASS"
+    },
+    {
+      "name": "copy_is_snapshot",
+      "status": "PASS"
+    },
+    {
+      "name": "link_is_live",
+      "status": "PASS"
+    },
+    {
+      "name": "raw_cell_preservation_does_not_preserve_link_answer",
+      "status": "PASS"
+    },
+    {
+      "name": "delete_is_explicit",
+      "status": "PASS"
+    },
+    {
+      "name": "dangling_link_is_not_a_value",
+      "status": "PASS"
+    },
+    {
+      "name": "deletion_does_not_reset_version",
+      "status": "PASS"
+    },
+    {
+      "name": "initial_cache_miss",
+      "status": "PASS"
+    },
+    {
+      "name": "transitive_source_update_invalidates_cache",
+      "status": "PASS"
+    },
+    {
+      "name": "unrelated_change_keeps_pure_read_cache",
+      "status": "PASS"
+    },
+    {
+      "name": "absent_dependency_insertion_invalidates",
+      "status": "PASS"
+    },
+    {
+      "name": "cache_epoch_stream",
+      "status": "PASS"
+    },
+    {
+      "name": "cache_epoch_authority",
+      "status": "PASS"
+    },
+    {
+      "name": "cache_epoch_policy",
+      "status": "PASS"
+    },
+    {
+      "name": "cache_epoch_schema",
+      "status": "PASS"
+    },
+    {
+      "name": "cache_epoch_model",
+      "status": "PASS"
+    },
+    {
+      "name": "cache_epoch_tokenizer",
+      "status": "PASS"
+    },
+    {
+      "name": "stale_transitive_copy_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "rejected_authority_preserves_whole_snapshot",
+      "status": "PASS"
+    },
+    {
+      "name": "protected_key_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "failed_batch_has_no_partial_write",
+      "status": "PASS"
+    },
+    {
+      "name": "transaction_epoch_authority",
+      "status": "PASS"
+    },
+    {
+      "name": "transaction_epoch_policy",
+      "status": "PASS"
+    },
+    {
+      "name": "transaction_epoch_schema",
+      "status": "PASS"
+    },
+    {
+      "name": "transaction_epoch_model",
+      "status": "PASS"
+    },
+    {
+      "name": "transaction_epoch_tokenizer",
+      "status": "PASS"
+    },
+    {
+      "name": "transaction_epoch_stream",
+      "status": "PASS"
+    },
+    {
+      "name": "independent_transactions_commute",
+      "status": "PASS"
+    },
+    {
+      "name": "read_write_conflict_rejects_write_skew",
+      "status": "PASS"
+    },
+    {
+      "name": "cycle_explicit",
+      "status": "PASS"
+    },
+    {
+      "name": "hop_budget_rejects_long_chain",
+      "status": "PASS"
+    },
+    {
+      "name": "sufficient_hop_budget_resolves",
+      "status": "PASS"
+    },
+    {
+      "name": "capacity_exhaustion_preserves_old_facts",
+      "status": "PASS"
+    },
+    {
+      "name": "version_overflow_rejects_without_wrap",
+      "status": "PASS"
+    },
+    {
+      "name": "write_without_version_guard_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "read_before_current_write",
+      "status": "PASS"
+    },
+    {
+      "name": "perfect_store_does_not_fix_wrong_predicted_key",
+      "status": "PASS"
+    },
+    {
+      "name": "correct_retrieval_does_not_force_neural_output",
+      "status": "PASS"
+    },
+    {
+      "name": "729_exact_affine_associativity_instances",
+      "status": "PASS"
+    },
+    {
+      "name": "324_exact_affine_action_instances",
+      "status": "PASS"
+    },
+    {
+      "name": "finite_regression_can_miss_new_error",
+      "status": "PASS"
+    },
+    {
+      "name": "bounded_candidates_can_omit_required_record",
+      "status": "PASS"
+    },
+    {
+      "name": "fixed_state_collision_witness",
+      "status": "PASS"
+    },
+    {
+      "name": "neural_output_requires_causal_state_identity",
+      "status": "PASS"
+    }
+  ]
+}

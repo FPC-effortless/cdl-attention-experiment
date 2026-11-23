@@ -1,0 +1,247 @@
+{
+  "study": "COG-UNIFIED-001",
+  "reviewer": "unified_mechanisms",
+  "scope": "independent constructed semantic adversaries; no neural model execution",
+  "utc_finished": "2026-11-23T05:16:26Z",
+  "source_sha256": "5ef3aeddf9112056c18fba90a35cbd0a69aba782ce131445f054223a339d0776",
+  "review_script_sha256": "4483fec373ba7aa81772509b3915933bd1436079aa67c7422215556709340972",
+  "architecture_sha256": "a8af3f9cf48c5302e1b1e143fd286d0c47a311de15aa03941c4fe787f82059c6",
+  "checks": 34,
+  "passed": 34,
+  "failed": 0,
+  "results": [
+    {
+      "name": "legacy_revision_only_fork_counterexample",
+      "status": "PASS",
+      "detail": {
+        "old_rule_would_accept": true,
+        "same_revision": 2,
+        "cached_branch_value": "green",
+        "actual_other_branch_value": "blue",
+        "execution_scope": "reconstructed old revision-only predicate; valid current API states"
+      }
+    },
+    {
+      "name": "divergent_valid_forks_cannot_share_incompatible_cache",
+      "status": "PASS",
+      "detail": {
+        "hit": false,
+        "answer": "blue"
+      }
+    },
+    {
+      "name": "transitive_copy_rejects_equal_counter_different_value_fork",
+      "status": "PASS",
+      "detail": {
+        "status": "version_conflict",
+        "read_keys": [
+          "('scope', 'alice', 'holder')",
+          "('scope', 'carol', 'holder')",
+          "('scope', 'dave', 'holder')",
+          "('scope', 'eve', 'holder')"
+        ]
+      }
+    },
+    {
+      "name": "predicate_read_rejects_equal_counter_different_value_fork",
+      "status": "PASS",
+      "detail": "version_conflict"
+    },
+    {
+      "name": "batch_copy_reads_original_snapshot_not_prior_operation",
+      "status": "PASS",
+      "detail": {
+        "written": "new",
+        "copied": "red"
+      }
+    },
+    {
+      "name": "hop_cap_is_part_of_cache_contract",
+      "status": "PASS",
+      "detail": {
+        "larger_cap_hit": false,
+        "value": "red"
+      }
+    },
+    {
+      "name": "delete_and_same_value_restore_invalidates_observation",
+      "status": "PASS",
+      "detail": {
+        "old_revision": 1,
+        "new_revision": 3
+      }
+    },
+    {
+      "name": "absence_predicate_conflict_preserves_entire_batch",
+      "status": "PASS",
+      "detail": "version_conflict"
+    },
+    {
+      "name": "revision_exhaustion_on_one_member_rejects_whole_batch",
+      "status": "PASS",
+      "detail": "revision_exhausted"
+    },
+    {
+      "name": "capacity_failure_cannot_half_delete_or_silently_evict",
+      "status": "PASS",
+      "detail": {
+        "status": "capacity_exhausted",
+        "note": "tombstones do not silently free a key identity"
+      }
+    },
+    {
+      "name": "mutable_inner_store_entry_rejected",
+      "status": "PASS",
+      "detail": true
+    },
+    {
+      "name": "non_epoch_object_rejected",
+      "status": "PASS",
+      "detail": true
+    },
+    {
+      "name": "epoch_fields_have_immutable_typed_domains",
+      "status": "PASS",
+      "detail": {
+        "rejected_cases": 8
+      }
+    },
+    {
+      "name": "malformed_expected_row_returns_rejection",
+      "status": "PASS",
+      "detail": "malformed"
+    },
+    {
+      "name": "malformed_write_row_returns_rejection",
+      "status": "PASS",
+      "detail": "malformed"
+    },
+    {
+      "name": "mutable_expected_row_rejected",
+      "status": "PASS",
+      "detail": "malformed"
+    },
+    {
+      "name": "cache_hit_does_not_accept_boolean_hop_cap",
+      "status": "PASS",
+      "detail": {
+        "rejected": "True"
+      }
+    },
+    {
+      "name": "cache_hit_does_not_accept_float_hop_cap",
+      "status": "PASS",
+      "detail": {
+        "rejected": "1.0"
+      }
+    },
+    {
+      "name": "malformed_value_proposal_preserves_output_and_state",
+      "status": "PASS",
+      "detail": "invalid_proposal"
+    },
+    {
+      "name": "truthy_integer_is_not_policy_authorization",
+      "status": "PASS",
+      "detail": "not_authorized"
+    },
+    {
+      "name": "query_does_not_observe_its_incoming_copy",
+      "status": "PASS",
+      "detail": {
+        "prewrite_output": "UNRESOLVED:missing",
+        "postwrite_value": "red"
+      }
+    },
+    {
+      "name": "empty_string_value_is_not_missing_or_deleted",
+      "status": "PASS",
+      "detail": "valid empty value differs from unresolved"
+    },
+    {
+      "name": "protected_link_cell_does_not_imply_answer_preservation",
+      "status": "PASS",
+      "detail": "raw-cell protection intentionally does not protect a live dependent answer"
+    },
+    {
+      "name": "equivalent_reconstructed_pure_snapshot_remains_correct",
+      "status": "PASS",
+      "detail": {
+        "hit": true,
+        "note": "exact equivalent pure-read inputs may safely reuse"
+      }
+    },
+    {
+      "name": "resolution_covers_transitive_and_missing_terminal_dependencies",
+      "status": "PASS",
+      "detail": {
+        "full_chain_dependencies": 3,
+        "missing_terminal_recorded": true
+      }
+    },
+    {
+      "name": "schema_epoch_change_does_not_reinterpret_old_payload",
+      "status": "PASS",
+      "detail": "incompatible"
+    },
+    {
+      "name": "boolean_cell_revision_cannot_alias_valid_integer_observation",
+      "status": "PASS",
+      "detail": "malformed"
+    },
+    {
+      "name": "float_cell_revision_cannot_alias_valid_integer_observation",
+      "status": "PASS",
+      "detail": "malformed"
+    },
+    {
+      "name": "boolean_transaction_authority_epoch_cannot_alias_integer",
+      "status": "PASS",
+      "detail": "malformed"
+    },
+    {
+      "name": "operation_count_budget_stops_generator_consumption",
+      "status": "PASS",
+      "detail": {
+        "elements_pulled": 17,
+        "note": "assumes each iterator step terminates"
+      }
+    },
+    {
+      "name": "declared_read_budget_stops_generator_consumption",
+      "status": "PASS",
+      "detail": {
+        "elements_pulled": 257
+      }
+    },
+    {
+      "name": "store_metadata_and_capacity_bounds_are_enforced",
+      "status": "PASS",
+      "detail": {
+        "oversized_cases_rejected": 3
+      }
+    },
+    {
+      "name": "one_step_loop_forwards_protected_record_policy",
+      "status": "PASS",
+      "detail": "protected_write"
+    },
+    {
+      "name": "prepare_validates_hop_cap_even_without_copy",
+      "status": "PASS",
+      "detail": {
+        "invalid_caps_rejected": 4
+      }
+    }
+  ],
+  "trained_models": 0,
+  "protected_data_reads": 0,
+  "performance_claims": 0,
+  "limits": [
+    "finite constructed cases, not an exhaustive proof",
+    "no Python-to-Lean refinement proof",
+    "cache object is trusted internal data, not an authenticated external certificate",
+    "old revision-only predicate is reconstructed, not an old full-source rerun"
+  ],
+  "status": "PASS"
+}

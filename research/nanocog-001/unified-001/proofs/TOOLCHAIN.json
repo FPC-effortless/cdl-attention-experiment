@@ -1,0 +1,12 @@
+{
+  "source": "official leanprover/lean4 GitHub release v4.19.0",
+  "release_url": "https://github.com/leanprover/lean4/releases/tag/v4.19.0",
+  "download_url": "https://github.com/leanprover/lean4/releases/download/v4.19.0/lean-4.19.0-linux.tar.zst",
+  "archive_size_bytes": 343842845,
+  "archive_sha256": "6fe3ce97a58f44e2b3567d455b994eacec5bfe9ae7774f2a573444480ba813fe",
+  "vendor_digest_available": false,
+  "compiler_version": "Lean 4.19.0 (6caaee842e94, Release)",
+  "machine": "x86_64",
+  "mathlib_used": false,
+  "archive_in_deliverable": false
+}
