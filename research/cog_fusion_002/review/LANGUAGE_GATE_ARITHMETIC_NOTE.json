@@ -1,0 +1,28 @@
+{
+  "held_model_scores_inspected": false,
+  "illustration": {
+    "allowed_relative_increase": 0.05,
+    "candidate_nll": 2.1,
+    "computed_relative_increase": 0.050000000000000044,
+    "literal_inclusive_comparison": true,
+    "locked_comparison": false,
+    "reference_nll": 2.0
+  },
+  "issue": "Subtracting one after dividing binary floating-point NLL values may round an exact inclusive boundary slightly upward.",
+  "language_protocol_sha256": "5f067ab4708de01737c797c9e889cd458a52c842eb678f8b1dfb42e0f21bab5f",
+  "literal_criteria": {
+    "original_full_recovery": "candidate_mean_nll <= original_full_mean_nll * (1 + 0.10)",
+    "paired_parent_nondegradation": "candidate_mean_nll <= own_paired_parent_mean_nll * (1 + 0.05)"
+  },
+  "locked_evaluation_source_changed": false,
+  "locked_flags_preserved": true,
+  "locked_preservation_eval_sha256": "63eb2e89afcb623aa6898cbbae1ccddc28cf9c420ba4b18220708d21f2d6b776",
+  "model_parameters_changed": false,
+  "protocol_thresholds_changed": false,
+  "reporting": "The independent summarizer will recompute these literal inclusive criteria from raw NLL metrics, retain the original flags and report any disagreement explicitly. Relative NLL change remains a descriptive quantity.",
+  "schema": "cog-fusion-002-language-gate-arithmetic-note-v1",
+  "scope": "prospective arithmetic clarification after training lock and before any held scoring",
+  "time_utc": "2026-11-23T22:20:41.055046+00:00",
+  "training_lock_sha256": "5460c2341f59f924fdedc5f3eaf9e639bd988aa53491b655d00a57bd9e3eae9f",
+  "training_sources_changed": false
+}

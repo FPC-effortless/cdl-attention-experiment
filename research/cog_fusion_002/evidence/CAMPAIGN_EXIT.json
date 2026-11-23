@@ -1,0 +1,32 @@
+[
+  {
+    "arm": "continuous",
+    "returncode": -9,
+    "seed": 17
+  },
+  {
+    "arm": "reset_training",
+    "returncode": 0,
+    "seed": 17
+  },
+  {
+    "arm": "continuous",
+    "returncode": 0,
+    "seed": 29
+  },
+  {
+    "arm": "reset_training",
+    "returncode": 0,
+    "seed": 29
+  },
+  {
+    "arm": "continuous",
+    "returncode": 0,
+    "seed": 41
+  },
+  {
+    "arm": "reset_training",
+    "returncode": 0,
+    "seed": 41
+  }
+]

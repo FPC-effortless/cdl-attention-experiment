@@ -1,0 +1,15 @@
+{
+  "schema": "cog-fusion-002-execution-handle-observation-v1",
+  "observed_at_utc": "2026-11-23 23:21:53 UTC",
+  "operation": {
+    "tool": "write_stdin",
+    "session_id": 80197,
+    "chars": "",
+    "yield_time_ms": 1000
+  },
+  "observation": {
+    "error": "write_stdin failed: Unknown process id 80197"
+  },
+  "interpretation": "The execution handle is unavailable. This is a tool-control observation, not an operating-system exit receipt; terminal process state and cause remain unestablished.",
+  "reported_exit_code": null
+}

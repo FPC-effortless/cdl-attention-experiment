@@ -1,0 +1,17 @@
+__pycache__/
+.pytest_cache/
+*.pt
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+evidence/data/
+evidence/runs/
+evidence/evaluation/
+evidence/calibration/
+evidence/regression/
+evidence/runtime/
+evidence/state_interventions/
+evidence/failed_attempts/
+evidence/incomplete_snapshots/
+evidence/logs/
+evidence/*.png

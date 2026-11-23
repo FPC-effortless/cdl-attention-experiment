@@ -1,0 +1,106 @@
+{
+  "jobs": [
+    {
+      "arm": "continuous",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/8a38c309f797/cog-fusion/research/cog_fusion_002/train.py",
+        "--parent",
+        "/workspace/scratch/8a38c309f797/cog-fusion/research/cog_fusion_001/evidence/runs/memory_seed17/final.pt",
+        "--train-data",
+        "/workspace/scratch/8a38c309f797/cog-fusion/research/cog_fusion_002/evidence/data/train.json",
+        "--shakespeare",
+        "/workspace/scratch/8a38c309f797/cog-fusion/research/cog_fusion_001/evidence/reproduction_inputs/train.bin",
+        "--output",
+        "/workspace/scratch/8a38c309f797/cog-fusion/research/cog_fusion_002/evidence/runs/continuous_seed17",
+        "--arm",
+        "continuous",
+        "--seed",
+        "17",
+        "--steps",
+        "1200",
+        "--teacher-steps",
+        "100",
+        "--pairs",
+        "4",
+        "--threads",
+        "1",
+        "--cpu-cap",
+        "3600",
+        "--native-lr",
+        ".000075",
+        "--lr",
+        ".0005"
+      ],
+      "failed_attempt": "evidence/failed_attempts/continuous_seed17",
+      "name": "continuous_seed17",
+      "original_identity_mtime_ns": 1795472387370097091,
+      "original_log_bytes": 1072,
+      "original_log_sha256": "266c8991d1ef58fcbcaa2a355e31374b8755a40f08cc638255d98ae39f27aacd",
+      "original_returncode": -9,
+      "original_run_manifest": {
+        "IDENTITY.json": {
+          "bytes": 2569,
+          "mtime_ns": 1795472387370097091,
+          "sha256": "baccefebfc9bda3645d993d7a36de0a75614b4a7063e0854058fbe868e319138"
+        },
+        "train.jsonl": {
+          "bytes": 13863,
+          "mtime_ns": 1795472438141632503,
+          "sha256": "f6bad4aacb2974db15818d6759704240bcc92f4ba851cd9160e2e0b302ac3b51"
+        }
+      },
+      "original_signal": "SIGKILL",
+      "original_trace": {
+        "completed_updates": 13,
+        "first_reported": {
+          "cpu_seconds": 3.8890142159999996,
+          "step": 1,
+          "wall_seconds": 4.098123923002277
+        },
+        "last_reported": {
+          "cpu_seconds": 48.195140857000005,
+          "step": 13,
+          "wall_seconds": 49.538681851001456
+        },
+        "reported_counters_lower_bound": {
+          "answer_boundaries_reset": 0,
+          "answer_targets": 1745,
+          "first_post_answer_write_exact": 173,
+          "first_post_answer_write_total": 208,
+          "generated_answer_exact": 312,
+          "generated_answer_total": 312,
+          "generated_chars": 1745,
+          "generation_decoder_calls": 331,
+          "generation_prefix_chars": 2808,
+          "input_chars": 35765,
+          "input_physical_positions": 45376,
+          "physical_token_positions": 61417,
+          "post_answer_write_exact": 470,
+          "post_answer_write_total": 520,
+          "query_exact": 289,
+          "query_total": 312,
+          "rehearsal_calls": 13,
+          "rehearsal_physical_positions": 6656,
+          "rehearsal_targets": 6656,
+          "semantic_encoder_calls": 143,
+          "teacher_decode_chars": 4241,
+          "teacher_decode_physical_positions": 4832,
+          "teacher_decoder_calls": 39,
+          "write_exact": 766,
+          "write_total": 832
+        },
+        "scope": "reported training-loop CPU lower bound; excludes unreported interrupted work and initialization",
+        "trailing_partial_line_bytes": 0,
+        "training_loop_cpu_seconds_lower_bound": 48.195140857000005
+      },
+      "original_trace_mtime_ns": 1795472438141632503,
+      "pid": 5,
+      "seed": 17
+    }
+  ],
+  "original_campaign_exit_mtime_ns": 1795475044795911660,
+  "original_campaign_exit_sha256": "f3be6f4563ac78477b2c00aebc9c8817289eb527f8c0397dfa3805e0031b48e7",
+  "recovery_protocol_sha256": "6e14188e624d6b09cd42201be628eb67156a46bd0ae8775aacef7f45bb378127",
+  "time_utc": "2026-11-23T23:04:14.146101+00:00"
+}

@@ -1,0 +1,53 @@
+{
+  "accepted_for_incomplete_study_record": true,
+  "campaign_complete": false,
+  "completed_endpoint_integrity_passes": 5,
+  "engineering_fixture_counts": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 111
+  },
+  "figure_review": {
+    "observed_progress_matches_audit": true,
+    "parameter_count_not_frozen_weight_claim": true,
+    "readable_without_clipped_labels": true,
+    "training_only_loss_curves": true
+  },
+  "frozen_summary_unchanged": true,
+  "held_model_inference_calls_by_reviewer": 0,
+  "independent_reconciliation_pass": true,
+  "independently_checked_log_rows": 6120,
+  "independently_verified_bound_input_hashes": 53,
+  "known_limits": [
+    "Missing continuous_seed17 endpoint; five individual passes do not satisfy the original all-six gate.",
+    "Replacement process status and cause remain unknown; unavailable control handle and stable snapshot are not OS terminal evidence.",
+    "The independent second review binds and source-checks the tensor audit, without repeating weight deserialization.",
+    "Unsaved generated strings cannot be independently reconstructed from the logs.",
+    "Training-loop CPU and token totals omit unreported work and startup; incomplete attempts supply lower bounds.",
+    "Training losses and numerical parameter updates do not establish the unrun adequacy, repair, generalization or preservation gates."
+  ],
+  "learned_qualification_evaluated": false,
+  "locked_source_count_verified_unchanged": 22,
+  "reviewed_at_utc": "2026-11-23T23:29:03.873861+00:00",
+  "reviewer_method": "Independent TRAIN draw, raw JSON/log, denominator, dynamic-bound and hash reconciliation; source review of the real tensor audit; final report read and figure visually inspected.",
+  "schema": "cog-fusion-002-final-independent-incomplete-review-v1",
+  "source_and_artifact_sha256": {
+    "RESULT.md": "825261966308cf5e5ed681f5b180f9e175deb76810f5b0bc25764b500a5c2921",
+    "evidence/COG_FUSION_002_LEARNING.png": "2f25e8e2433d090057db02c39629743c67d6fbe665bd9091467c0386d939a18c",
+    "evidence/EXECUTION_HANDLE_OBSERVATION.json": "7fc70133ebaaf8b73e7cb3289f76217cf1459b345a8233ec5ec1ce57b212f561",
+    "evidence/INCOMPLETE_CAMPAIGN_AUDIT.json": "80189911d4fdd9508e11775a960eac223794150b91f978eb91ea34b23283accf",
+    "evidence/TRAINING_LOCK.json": "5460c2341f59f924fdedc5f3eaf9e639bd988aa53491b655d00a57bd9e3eae9f",
+    "evidence/final_incomplete_engineering_tests.xml": "a337c2b8e7ef971c29ef2840fc6cccaa937b53a0a5507523c72deb4d7e9f467e",
+    "make_incomplete_report.py": "cdbf9895b00df44b819207358ff77b540364bb3d933ffa4ee52d55216bf067f3",
+    "plot_incomplete_learning.py": "409f92499c8636a7f7c8cc176bc59e1cae6627a85de8091ef252d9a1add4dacb",
+    "review/INCOMPLETE_AUDIT_TESTS.xml": "d30f9f89b69efe7b022f146da775da37780ef55bc7358b7d1aca24f5cc045e9d",
+    "review/INCOMPLETE_EVIDENCE_RECONCILIATION.json": "4f6df1ed03e35ecc79d6db62037aa65605713b49979a405b3ecec259fb4045ff",
+    "review/INCOMPLETE_FINAL_REVIEW.md": "7323b96eaae1990698a50dcb1f5bc6c6b110264a4176b71fd4332cb5d8aedddb",
+    "review/INTERRUPTION_DISPOSITION_REVIEW.md": "5d843c4526fd5a4269fb074b330584d461d026fcafbb41cabde0b57638422e90",
+    "review/audit_incomplete_campaign.py": "15d9ee9dd6cb1051175543795f12d3935bbe050a95174a96e4f395679744c5b8",
+    "review/reconcile_incomplete_evidence.py": "22cd92e856f0a218e2ee5c49837dab415d60d24a6393f3226a6e6fa4e8beef48",
+    "summarize.py": "dbe5be3c7aba00b257022f0f38239eb4b5d44125e2c5b718ee684eaa32d74392"
+  },
+  "tensor_payloads_deserialized_again_by_reviewer": false
+}

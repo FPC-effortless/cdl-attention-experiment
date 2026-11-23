@@ -1,0 +1,11 @@
+{
+  "scope": "random small engineering fixture; no fitted endpoint or learned scores inspected",
+  "checks": {
+    "completed": true,
+    "token_accounting_correct": true,
+    "all_restarts_exact": true,
+    "historical_replay_correct": true,
+    "neural_tensor_bytes_min": 1040,
+    "neural_tensor_bytes_max": 1040
+  }
+}

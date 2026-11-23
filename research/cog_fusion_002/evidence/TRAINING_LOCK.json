@@ -1,0 +1,52 @@
+{
+  "arms": [
+    "continuous",
+    "reset_training"
+  ],
+  "batch_families": 4,
+  "cpu_cap_seconds_per_fit": 3600,
+  "held_evaluation_before_this_lock": false,
+  "interface_lr": 0.0005,
+  "native_lr": 7.5e-05,
+  "parallel_fits": 6,
+  "parent_sha256": {
+    "17": "69180f8e9d05574eff19c78cf003f7e4aa21e5442e45a90ec2c09bffff553421",
+    "29": "5f9699aa14f44c2bbb30f176d9a1886767e971a48235d7e5dab435a13f6d7522",
+    "41": "5640ccce618b25c434b664934fc7e63986629cd6ec7bc5a790f785cfb7ee4332"
+  },
+  "schema": "cog-fusion-002-lock-v1",
+  "seeds": [
+    17,
+    29,
+    41
+  ],
+  "selected_checkpoint": "fixed_final_update",
+  "source_sha256": {
+    "cog_fusion_001/fusion/data.py": "90dc3fa5edf8ead83e4608caece0707e7d14bfdacde90257ccdf3031bad2f6aa",
+    "cog_fusion_001/fusion/engine.py": "12490b65df1426454631902d500e3cd83314d34757d189e7f3d8b33da75d8606",
+    "cog_fusion_001/fusion/model.py": "805d5dcfe172ecaebd6398501e5da1193855c2f532abcb3102f350cafcfcb215",
+    "cog_fusion_001/fusion/native/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cog_fusion_001/fusion/native/base_model.py": "f96bd967b4bc4ece9d2750a5cf1afdf1cc819a6b007e2d638af633376c7eccaa",
+    "cog_fusion_001/fusion/native/model.py": "f15e7d5430bd1df83a1264ebbec63576b818733386d6fb0f1d8c1e2a930370f9",
+    "cog_fusion_001/fusion/native/scripted_core.py": "6c00b2c4425a5309927fb3aba4e53add670e79c88a7b051fbe963b6b060f99e3",
+    "cog_fusion_001/fusion/train.py": "4f3be0afbc9c0c3e9ed077487264f521681001ea9e9ea386cc3a947648bd3dfb",
+    "cog_fusion_002/PROTOCOL.md": "e1e9b88823f956cdf9bc54e25ba7c797054f8e159bc79f8ee67cafd5f8d1fa7c",
+    "cog_fusion_002/common.py": "67cf8f95dabb312964a616fb2e8e8de69c27270f06a759c8f043002070c750e7",
+    "cog_fusion_002/data.py": "fe19323be7066b4e3d83835ddcac813e697ffd87d541795be1a5c60c9f8e8df2",
+    "cog_fusion_002/evaluate.py": "76e000c2f2965bfd196bc3db7dc150997ae938a8ae6e040b0b0b39e4ce6bd2a7",
+    "cog_fusion_002/evidence/LANGUAGE_PROTOCOL.json": "5f067ab4708de01737c797c9e889cd458a52c842eb678f8b1dfb42e0f21bab5f",
+    "cog_fusion_002/evidence/PRETRAIN_REVIEW.json": "830b163bad42578d2608d34f84671ad7d1a2e0fb81de5fc7dcdd89098f91a9b2",
+    "cog_fusion_002/evidence/RUNTIME_PROTOCOL.json": "308b9939194fd4ba262cf07efa37f38bd33f9798a8448ff9d03b7ef60447375d",
+    "cog_fusion_002/evidence/data/DATA_MANIFEST.json": "dac1e25a062e515eb69920107153d1fe9aca7f6ecf3edbdc194e215033438386",
+    "cog_fusion_002/evidence/data/train.json": "7f26daa3cad7100d2352564c5dc5dd1fbe1db409ae0c0bcbc4cfa4ddf5bda966",
+    "cog_fusion_002/preservation_eval.py": "63eb2e89afcb623aa6898cbbae1ccddc28cf9c420ba4b18220708d21f2d6b776",
+    "cog_fusion_002/run_campaign.py": "e70002dc5d93c2c0b2b761d38315b120b419cbdccaaf6f6f78d74d9189ea3dda",
+    "cog_fusion_002/runtime_eval.py": "f600fb652de20fa1bd1dbddd6e54556f29f7a8b555c0c2deac1efdb4f2cbe65a",
+    "cog_fusion_002/state_interventions.py": "eec5c56813478880394d29cfa4a68aaaa2821e7b619b48e2dc5bd9556f697df9",
+    "cog_fusion_002/train.py": "056cb5523932b0700a1d7498ce66be63c2c9b5bf39a7a3dab95330166106be1c"
+  },
+  "teacher_updates": 100,
+  "threads_per_fit": 1,
+  "time_utc": "2026-11-23T22:19:43Z",
+  "updates": 1200
+}

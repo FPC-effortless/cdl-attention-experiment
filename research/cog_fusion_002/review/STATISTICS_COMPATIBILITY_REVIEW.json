@@ -1,0 +1,118 @@
+{
+  "audit_author_final_fixture_tests": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 38
+  },
+  "audit_scope": "source, pure-Python draw replay, and fixtures only; no architecture or learned-accuracy verdict",
+  "coverage_scope": "Expected draws from the fixed sampler; final actual trace/RNG reconciliation is deferred until six completed endpoints are admitted. All 128 TRAIN-pool probe families and thresholds remain fixed.",
+  "evaluation_lock_present_at_review": false,
+  "held_panels_scored": 0,
+  "independent_audit_fixture_tests_before_final_clock_check": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 37
+  },
+  "learned_model_inference_calls": 0,
+  "pass": true,
+  "real_checkpoints_loaded": 0,
+  "reviewed_at_utc": "2026-11-23T22:56:30.009035+00:00",
+  "schema": "cog-fusion-002-independent-audit-source-review-v1",
+  "source_and_evidence_sha256": {
+    "evidence/TRAINING_LOCK.json": "5460c2341f59f924fdedc5f3eaf9e639bd988aa53491b655d00a57bd9e3eae9f",
+    "evidence/data/train.json": "7f26daa3cad7100d2352564c5dc5dd1fbe1db409ae0c0bcbc4cfa4ddf5bda966",
+    "evidence/data/train_probe.json": "49c53e49209e37d9099dcf10c037c1066f3698a44d64d4fac1496cfbdcd4f4fa",
+    "review/STATISTICS_COMPATIBILITY_TESTS.xml": "0c55843a6151cb7c0a9b30b879ca6a23f76247b82bcdd422cd103f1bc86f156b",
+    "review/TRAINING_AUDIT_FIXTURE_REVIEW.xml": "b2928a6e8373cb77556fd41884d15a77a4d007aaf9d1a7c38b18484fdbee05dd",
+    "review/TRAINING_AUDIT_REVIEW.md": "3d40094d6ba08a7503cf3277ea77f8008fd2e9671ccc01be727bc58235b6650c",
+    "review/TRAINING_AUDIT_TESTS.xml": "e86a8f20feb0b5615281e88d5ac0a8bd40c8886f11e6403827ccd2c4dddc43ce",
+    "review/audit_training.py": "ef966e9a809f7c75168bd4665dce8939cdf173a4594468e8218c932c509fc556",
+    "state_interventions.py": "eec5c56813478880394d29cfa4a68aaaa2821e7b619b48e2dc5bd9556f697df9",
+    "summarize.py": "dbe5be3c7aba00b257022f0f38239eb4b5d44125e2c5b718ee684eaa32d74392",
+    "tests/test_statistics.py": "ff315878f07fc58a49bd57ad8734839a2ac1b7bebe3bb10bc22055738c4a1df8",
+    "tests/test_training_audit_002.py": "7a7d13aae29a5f9bc387fafd48744318eeaeea438616fd30deb2ffe1774ed55f"
+  },
+  "state_interventions_scope": "Only meaningful SET/DELETE rows support entity margins; diagnostic branches are discarded and natural history continues.",
+  "statistics_fixture_tests": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 15
+  },
+  "summary_change": "Accept only a final unterminated partial archived line; reject malformed complete/interior lines; reconcile retained counts and lower-bound CPU with original_trace.",
+  "train_pool_probe_draw_replay": {
+    "17": {
+      "batch_trace_sha256": "27c9bfe1595471accbd41b43c3e5893a36f0c6bbc2d7cd5208f65de4fc947f83",
+      "distinct_training_families_seen": 1834,
+      "total_family_draws": 4800,
+      "train_probe_families": 128,
+      "train_probe_families_sampled": 113,
+      "train_probe_families_sampled_during_predicted_execution": 110,
+      "train_probe_families_unsampled": 15,
+      "train_probe_unsampled_indices": [
+        1,
+        20,
+        22,
+        23,
+        30,
+        52,
+        62,
+        65,
+        66,
+        83,
+        90,
+        99,
+        115,
+        119,
+        127
+      ]
+    },
+    "29": {
+      "batch_trace_sha256": "d89577990d46feca60aacebb612a30f8dd353e4015f44e003ee565bea97d9653",
+      "distinct_training_families_seen": 1842,
+      "total_family_draws": 4800,
+      "train_probe_families": 128,
+      "train_probe_families_sampled": 119,
+      "train_probe_families_sampled_during_predicted_execution": 117,
+      "train_probe_families_unsampled": 9,
+      "train_probe_unsampled_indices": [
+        6,
+        39,
+        55,
+        58,
+        64,
+        66,
+        72,
+        107,
+        108
+      ]
+    },
+    "41": {
+      "batch_trace_sha256": "f97221a2e83f526df6c939a380fb3902ee6618e231e18d3b6d738aea9de04d2e",
+      "distinct_training_families_seen": 1864,
+      "total_family_draws": 4800,
+      "train_probe_families": 128,
+      "train_probe_families_sampled": 115,
+      "train_probe_families_sampled_during_predicted_execution": 113,
+      "train_probe_families_unsampled": 13,
+      "train_probe_unsampled_indices": [
+        15,
+        20,
+        32,
+        51,
+        60,
+        62,
+        66,
+        73,
+        83,
+        108,
+        113,
+        120,
+        126
+      ]
+    }
+  },
+  "training_lock_sources_unchanged": true
+}

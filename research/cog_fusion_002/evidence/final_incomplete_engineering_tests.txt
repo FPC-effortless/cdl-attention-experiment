@@ -1,0 +1,11 @@
+........................................................................ [ 64%]
+.......................................                                  [100%]
+=============================== warnings summary ===============================
+../../../../../../home/agent/.local/lib/python3.12/site-packages/torch/jit/_script.py:1480
+../../../../../../home/agent/.local/lib/python3.12/site-packages/torch/jit/_script.py:1480
+  /home/agent/.local/lib/python3.12/site-packages/torch/jit/_script.py:1480: DeprecationWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /workspace/scratch/8a38c309f797/cog-fusion/research/cog_fusion_002/evidence/final_incomplete_engineering_tests.xml -
+111 passed, 2 warnings in 5.92s

@@ -1,0 +1,48 @@
+{
+  "method": "independently loaded parents; recomputed all stored tensor digests; compared both fit identities",
+  "pass": true,
+  "rows": [
+    {
+      "actual_parent_tensor_sha256": "bfbb5e7db6e32f8e0ad2bdf1da5cd18d24031836f0af94546e2e81b6a792434c",
+      "both_initial_tensors_match_parent": true,
+      "parameters": {
+        "active": 997674,
+        "inactive_native_board": 80160,
+        "native": 993574,
+        "new_interfaces": 84260,
+        "total": 1077834
+      },
+      "parent_checkpoint_sha256": "69180f8e9d05574eff19c78cf003f7e4aa21e5442e45a90ec2c09bffff553421",
+      "seed": 17,
+      "tensor_count": 114
+    },
+    {
+      "actual_parent_tensor_sha256": "88b0b587efe3be6c4b3c05a0883077086c9e42942b3dc85443258c7ca117708a",
+      "both_initial_tensors_match_parent": true,
+      "parameters": {
+        "active": 997674,
+        "inactive_native_board": 80160,
+        "native": 993574,
+        "new_interfaces": 84260,
+        "total": 1077834
+      },
+      "parent_checkpoint_sha256": "5f9699aa14f44c2bbb30f176d9a1886767e971a48235d7e5dab435a13f6d7522",
+      "seed": 29,
+      "tensor_count": 114
+    },
+    {
+      "actual_parent_tensor_sha256": "2ccbaaec4953984cf8d8bbfcf80170f287116f00b7c315c0bcd5b3f2943e422c",
+      "both_initial_tensors_match_parent": true,
+      "parameters": {
+        "active": 997674,
+        "inactive_native_board": 80160,
+        "native": 993574,
+        "new_interfaces": 84260,
+        "total": 1077834
+      },
+      "parent_checkpoint_sha256": "5640ccce618b25c434b664934fc7e63986629cd6ec7bc5a790f785cfb7ee4332",
+      "seed": 41,
+      "tensor_count": 114
+    }
+  ]
+}
