@@ -1,0 +1,1711 @@
+{
+  "17": {
+    "checkpoint_sha256": "69180f8e9d05574eff19c78cf003f7e4aa21e5442e45a90ec2c09bffff553421",
+    "transcript": [
+      {
+        "type": "observe",
+        "input": "Amara owns the chest.",
+        "result": {
+          "key": [
+            "world",
+            "chest",
+            "owner"
+          ],
+          "predicted_operation": [
+            1,
+            8,
+            0,
+            0
+          ],
+          "record_updated": true,
+          "status": "committed",
+          "request_id": "owner-initial",
+          "revision": 1,
+          "branch_id": "b47cc81b18e4486687fa5066ab21441c",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "observe",
+        "input": "The coin is in the chest.",
+        "result": {
+          "key": [
+            "world",
+            "coin",
+            "container"
+          ],
+          "predicted_operation": [
+            1,
+            12,
+            1,
+            8
+          ],
+          "record_updated": true,
+          "status": "committed",
+          "request_id": "link-initial",
+          "revision": 2,
+          "branch_id": "b47cc81b18e4486687fa5066ab21441c",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the container holding the coin?",
+        "expected": "Amara.",
+        "correct": true,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "f018a663b6ac896a7aee94164a583ec9239e5a44266fcdeaefb973325ce91f2d",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "34163e3137004e10d2dbad0c12c49db63c5411add08d3d667f1e7ca02d48471d",
+              "version": 1
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest",
+            "Amara"
+          ],
+          "status": "generated",
+          "text": "Amara.",
+          "request_id": "first-question",
+          "revision": 3,
+          "branch_id": "b47cc81b18e4486687fa5066ab21441c",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "observe",
+        "input": "Cora owns the crate.",
+        "result": {
+          "key": [
+            "world",
+            "crate",
+            "owner"
+          ],
+          "predicted_operation": [
+            1,
+            9,
+            0,
+            2
+          ],
+          "record_updated": true,
+          "status": "committed",
+          "request_id": "irrelevant",
+          "revision": 4,
+          "branch_id": "b47cc81b18e4486687fa5066ab21441c",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the container holding the coin?",
+        "expected": "Amara.",
+        "correct": true,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "f018a663b6ac896a7aee94164a583ec9239e5a44266fcdeaefb973325ce91f2d",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "34163e3137004e10d2dbad0c12c49db63c5411add08d3d667f1e7ca02d48471d",
+              "version": 1
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest",
+            "Amara"
+          ],
+          "status": "generated",
+          "text": "Amara.",
+          "request_id": "after-irrelevant",
+          "revision": 5,
+          "branch_id": "b47cc81b18e4486687fa5066ab21441c",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "observe",
+        "input": "The chest belongs to Bela.",
+        "result": {
+          "key": [
+            "world",
+            "box",
+            "owner"
+          ],
+          "predicted_operation": [
+            1,
+            10,
+            0,
+            1
+          ],
+          "record_updated": true,
+          "status": "committed",
+          "request_id": "correction",
+          "revision": 6,
+          "branch_id": "b47cc81b18e4486687fa5066ab21441c",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the container holding the coin?",
+        "expected": "Bela.",
+        "correct": false,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "f018a663b6ac896a7aee94164a583ec9239e5a44266fcdeaefb973325ce91f2d",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "34163e3137004e10d2dbad0c12c49db63c5411add08d3d667f1e7ca02d48471d",
+              "version": 1
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest",
+            "Amara"
+          ],
+          "status": "generated",
+          "text": "Amara.",
+          "request_id": "after-restart",
+          "revision": 7,
+          "branch_id": "b47cc81b18e4486687fa5066ab21441c",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Name the owner of whatever holds the coin.",
+        "expected": "Bela.",
+        "correct": false,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "f018a663b6ac896a7aee94164a583ec9239e5a44266fcdeaefb973325ce91f2d",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "34163e3137004e10d2dbad0c12c49db63c5411add08d3d667f1e7ca02d48471d",
+              "version": 1
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest",
+            "Amara"
+          ],
+          "status": "generated",
+          "text": "Amara.",
+          "request_id": "unfamiliar-question",
+          "revision": 8,
+          "branch_id": "b47cc81b18e4486687fa5066ab21441c",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the container holding the coin?",
+        "expected": "pending",
+        "correct": true,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "f018a663b6ac896a7aee94164a583ec9239e5a44266fcdeaefb973325ce91f2d",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "pending",
+              "token": "f30e45ee6530cc7e7237fc7fe0253cf92c82cdcdac54fbb766341c6a0983228d",
+              "version": 1
+            }
+          ],
+          "evidence_status": "pending",
+          "generation_mode": "runtime_policy",
+          "pending_ids": [
+            "pending-owner"
+          ],
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest"
+          ],
+          "status": "pending",
+          "text": "pending",
+          "request_id": "pending-question",
+          "revision": 10,
+          "branch_id": "b47cc81b18e4486687fa5066ab21441c",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the crate?",
+        "expected": "Cora.",
+        "correct": true,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "crate",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "89c297b463c58f2e5c4221cf2ed8941f335c3082a33b35d679c0b88f2c8404b1",
+              "version": 1
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "crate",
+          "query_plan": 0,
+          "records_read": 1,
+          "selected_values": [
+            "Cora"
+          ],
+          "status": "generated",
+          "text": "Cora.",
+          "request_id": "unrelated-during-pending",
+          "revision": 11,
+          "branch_id": "b47cc81b18e4486687fa5066ab21441c",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "observe",
+        "input": "Hadi owns the chest.",
+        "result": {
+          "key": [
+            "world",
+            "chest",
+            "owner"
+          ],
+          "predicted_operation": [
+            1,
+            8,
+            0,
+            7
+          ],
+          "record_updated": true,
+          "status": "committed",
+          "request_id": "resolve-pending",
+          "revision": 12,
+          "branch_id": "b47cc81b18e4486687fa5066ab21441c",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the container holding the coin?",
+        "expected": "Hadi.",
+        "correct": true,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "f018a663b6ac896a7aee94164a583ec9239e5a44266fcdeaefb973325ce91f2d",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "a9d57e323badeb3c5737ee6d77d17000720868612fa7e091e520fa678f1d1e6c",
+              "version": 2
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest",
+            "Hadi"
+          ],
+          "status": "generated",
+          "text": "Hadi.",
+          "request_id": "after-pending-retry",
+          "revision": 13,
+          "branch_id": "b47cc81b18e4486687fa5066ab21441c",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "historical_receipt_replay",
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "f018a663b6ac896a7aee94164a583ec9239e5a44266fcdeaefb973325ce91f2d",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "34163e3137004e10d2dbad0c12c49db63c5411add08d3d667f1e7ca02d48471d",
+              "version": 1
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest",
+            "Amara"
+          ],
+          "status": "generated",
+          "text": "Amara.",
+          "request_id": "first-question",
+          "revision": 3,
+          "branch_id": "b47cc81b18e4486687fa5066ab21441c",
+          "replayed": true,
+          "historical_receipt": true
+        },
+        "tokens_unchanged": true,
+        "expected_historical_text": "Amara."
+      },
+      {
+        "type": "observe",
+        "input": "The owner of the chest is unknown.",
+        "result": {
+          "key": [
+            "world",
+            "box",
+            "owner"
+          ],
+          "predicted_operation": [
+            2,
+            10,
+            0,
+            4
+          ],
+          "record_updated": true,
+          "status": "committed",
+          "request_id": "delete-owner",
+          "revision": 14,
+          "branch_id": "b47cc81b18e4486687fa5066ab21441c",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the container holding the coin?",
+        "expected": "unknown.",
+        "correct": false,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "f018a663b6ac896a7aee94164a583ec9239e5a44266fcdeaefb973325ce91f2d",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "a9d57e323badeb3c5737ee6d77d17000720868612fa7e091e520fa678f1d1e6c",
+              "version": 2
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest",
+            "Hadi"
+          ],
+          "status": "generated",
+          "text": "Hadi.",
+          "request_id": "after-delete",
+          "revision": 15,
+          "branch_id": "b47cc81b18e4486687fa5066ab21441c",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      }
+    ],
+    "counters": {
+      "input_tokens": 461,
+      "emitted_tokens": 39,
+      "control_tokens": 63,
+      "requests": 14,
+      "observations": 6,
+      "questions": 8,
+      "record_updates": 6,
+      "historical_tokens_replayed": 0
+    },
+    "neural_tensor_bytes": 10592,
+    "snapshot_blob_bytes": 15859,
+    "database_bytes": 143360,
+    "learned_question_count": 7,
+    "learned_questions_correct": 4,
+    "pending_policy_correct": true,
+    "scope": "predeclared multi-turn extrapolation, with held-wording question; no training selection"
+  },
+  "29": {
+    "checkpoint_sha256": "5f9699aa14f44c2bbb30f176d9a1886767e971a48235d7e5dab435a13f6d7522",
+    "transcript": [
+      {
+        "type": "observe",
+        "input": "Amara owns the chest.",
+        "result": {
+          "key": [
+            "world",
+            "chest",
+            "owner"
+          ],
+          "predicted_operation": [
+            1,
+            8,
+            0,
+            0
+          ],
+          "record_updated": true,
+          "status": "committed",
+          "request_id": "owner-initial",
+          "revision": 1,
+          "branch_id": "debdab12e4f34f2ab671c4d7ece285a0",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "observe",
+        "input": "The coin is in the chest.",
+        "result": {
+          "key": [
+            "world",
+            "coin",
+            "container"
+          ],
+          "predicted_operation": [
+            1,
+            12,
+            1,
+            8
+          ],
+          "record_updated": true,
+          "status": "committed",
+          "request_id": "link-initial",
+          "revision": 2,
+          "branch_id": "debdab12e4f34f2ab671c4d7ece285a0",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the container holding the coin?",
+        "expected": "Amara.",
+        "correct": true,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "de647b4fd4f48208a92133b8462130bdb7bdae0420f870690e55325be692eea3",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "606a58fbecaf4091bac69ecc186f059f74dce9924388a715801e9709169316ba",
+              "version": 1
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest",
+            "Amara"
+          ],
+          "status": "generated",
+          "text": "Amara.",
+          "request_id": "first-question",
+          "revision": 3,
+          "branch_id": "debdab12e4f34f2ab671c4d7ece285a0",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "observe",
+        "input": "Cora owns the crate.",
+        "result": {
+          "key": [
+            "world",
+            "crate",
+            "owner"
+          ],
+          "predicted_operation": [
+            1,
+            9,
+            0,
+            2
+          ],
+          "record_updated": true,
+          "status": "committed",
+          "request_id": "irrelevant",
+          "revision": 4,
+          "branch_id": "debdab12e4f34f2ab671c4d7ece285a0",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the container holding the coin?",
+        "expected": "Amara.",
+        "correct": true,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "de647b4fd4f48208a92133b8462130bdb7bdae0420f870690e55325be692eea3",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "606a58fbecaf4091bac69ecc186f059f74dce9924388a715801e9709169316ba",
+              "version": 1
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest",
+            "Amara"
+          ],
+          "status": "generated",
+          "text": "Amara.",
+          "request_id": "after-irrelevant",
+          "revision": 5,
+          "branch_id": "debdab12e4f34f2ab671c4d7ece285a0",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "observe",
+        "input": "The chest belongs to Bela.",
+        "result": {
+          "key": [
+            "world",
+            "box",
+            "owner"
+          ],
+          "predicted_operation": [
+            1,
+            10,
+            0,
+            1
+          ],
+          "record_updated": true,
+          "status": "committed",
+          "request_id": "correction",
+          "revision": 6,
+          "branch_id": "debdab12e4f34f2ab671c4d7ece285a0",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the container holding the coin?",
+        "expected": "Bela.",
+        "correct": false,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "de647b4fd4f48208a92133b8462130bdb7bdae0420f870690e55325be692eea3",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "606a58fbecaf4091bac69ecc186f059f74dce9924388a715801e9709169316ba",
+              "version": 1
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest",
+            "Amara"
+          ],
+          "status": "generated",
+          "text": "Amara.",
+          "request_id": "after-restart",
+          "revision": 7,
+          "branch_id": "debdab12e4f34f2ab671c4d7ece285a0",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Name the owner of whatever holds the coin.",
+        "expected": "Bela.",
+        "correct": false,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "de647b4fd4f48208a92133b8462130bdb7bdae0420f870690e55325be692eea3",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "606a58fbecaf4091bac69ecc186f059f74dce9924388a715801e9709169316ba",
+              "version": 1
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest",
+            "Amara"
+          ],
+          "status": "generated",
+          "text": "Amara.",
+          "request_id": "unfamiliar-question",
+          "revision": 8,
+          "branch_id": "debdab12e4f34f2ab671c4d7ece285a0",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the container holding the coin?",
+        "expected": "pending",
+        "correct": true,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "de647b4fd4f48208a92133b8462130bdb7bdae0420f870690e55325be692eea3",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "pending",
+              "token": "d7f5154f98dacedf242d13b7c508688b72cb49fafc31e168c23d6c4976b6e911",
+              "version": 1
+            }
+          ],
+          "evidence_status": "pending",
+          "generation_mode": "runtime_policy",
+          "pending_ids": [
+            "pending-owner"
+          ],
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest"
+          ],
+          "status": "pending",
+          "text": "pending",
+          "request_id": "pending-question",
+          "revision": 10,
+          "branch_id": "debdab12e4f34f2ab671c4d7ece285a0",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the crate?",
+        "expected": "Cora.",
+        "correct": true,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "crate",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "6d65ee425bf66d11833c7c0dfff2b980050ddcebe10e04e3ec6ed935a3ec335d",
+              "version": 1
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "crate",
+          "query_plan": 0,
+          "records_read": 1,
+          "selected_values": [
+            "Cora"
+          ],
+          "status": "generated",
+          "text": "Cora.",
+          "request_id": "unrelated-during-pending",
+          "revision": 11,
+          "branch_id": "debdab12e4f34f2ab671c4d7ece285a0",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "observe",
+        "input": "Hadi owns the chest.",
+        "result": {
+          "key": [
+            "world",
+            "chest",
+            "owner"
+          ],
+          "predicted_operation": [
+            1,
+            8,
+            0,
+            7
+          ],
+          "record_updated": true,
+          "status": "committed",
+          "request_id": "resolve-pending",
+          "revision": 12,
+          "branch_id": "debdab12e4f34f2ab671c4d7ece285a0",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the container holding the coin?",
+        "expected": "Hadi.",
+        "correct": true,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "de647b4fd4f48208a92133b8462130bdb7bdae0420f870690e55325be692eea3",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "2c0a64297010fc5995c3a68bb339eaa2e4e3bb654d398e23e68d9769ecf61e8b",
+              "version": 2
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest",
+            "Hadi"
+          ],
+          "status": "generated",
+          "text": "Hadi.",
+          "request_id": "after-pending-retry",
+          "revision": 13,
+          "branch_id": "debdab12e4f34f2ab671c4d7ece285a0",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "historical_receipt_replay",
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "de647b4fd4f48208a92133b8462130bdb7bdae0420f870690e55325be692eea3",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "606a58fbecaf4091bac69ecc186f059f74dce9924388a715801e9709169316ba",
+              "version": 1
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest",
+            "Amara"
+          ],
+          "status": "generated",
+          "text": "Amara.",
+          "request_id": "first-question",
+          "revision": 3,
+          "branch_id": "debdab12e4f34f2ab671c4d7ece285a0",
+          "replayed": true,
+          "historical_receipt": true
+        },
+        "tokens_unchanged": true,
+        "expected_historical_text": "Amara."
+      },
+      {
+        "type": "observe",
+        "input": "The owner of the chest is unknown.",
+        "result": {
+          "key": [
+            "world",
+            "chest",
+            "owner"
+          ],
+          "predicted_operation": [
+            2,
+            8,
+            0,
+            4
+          ],
+          "record_updated": true,
+          "status": "committed",
+          "request_id": "delete-owner",
+          "revision": 14,
+          "branch_id": "debdab12e4f34f2ab671c4d7ece285a0",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the container holding the coin?",
+        "expected": "unknown.",
+        "correct": true,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "de647b4fd4f48208a92133b8462130bdb7bdae0420f870690e55325be692eea3",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "deleted",
+              "token": "9a3fac647584cce072a9cff32daa6924b4119ed3546566031a4fb65641c768a7",
+              "version": 3
+            }
+          ],
+          "evidence_status": "deleted",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest"
+          ],
+          "status": "generated",
+          "text": "unknown.",
+          "request_id": "after-delete",
+          "revision": 15,
+          "branch_id": "debdab12e4f34f2ab671c4d7ece285a0",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      }
+    ],
+    "counters": {
+      "input_tokens": 461,
+      "emitted_tokens": 42,
+      "control_tokens": 63,
+      "requests": 14,
+      "observations": 6,
+      "questions": 8,
+      "record_updates": 6,
+      "historical_tokens_replayed": 0
+    },
+    "neural_tensor_bytes": 10592,
+    "snapshot_blob_bytes": 15859,
+    "database_bytes": 143360,
+    "learned_question_count": 7,
+    "learned_questions_correct": 5,
+    "pending_policy_correct": true,
+    "scope": "predeclared multi-turn extrapolation, with held-wording question; no training selection"
+  },
+  "41": {
+    "checkpoint_sha256": "5640ccce618b25c434b664934fc7e63986629cd6ec7bc5a790f785cfb7ee4332",
+    "transcript": [
+      {
+        "type": "observe",
+        "input": "Amara owns the chest.",
+        "result": {
+          "key": [
+            "world",
+            "chest",
+            "owner"
+          ],
+          "predicted_operation": [
+            1,
+            8,
+            0,
+            0
+          ],
+          "record_updated": true,
+          "status": "committed",
+          "request_id": "owner-initial",
+          "revision": 1,
+          "branch_id": "1c3d80a795d94c8995fd4d4e40a6664d",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "observe",
+        "input": "The coin is in the chest.",
+        "result": {
+          "key": [
+            "world",
+            "coin",
+            "container"
+          ],
+          "predicted_operation": [
+            1,
+            12,
+            1,
+            8
+          ],
+          "record_updated": true,
+          "status": "committed",
+          "request_id": "link-initial",
+          "revision": 2,
+          "branch_id": "1c3d80a795d94c8995fd4d4e40a6664d",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the container holding the coin?",
+        "expected": "Amara.",
+        "correct": true,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "96e7cf64e83d4787608b840dbe308d6374de720f6f0a07d579c0e36dbc8768a3",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "db918baba55fb64332360e7b0ada9829a5bd453a3959865ff0ca5f51a9f91163",
+              "version": 1
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest",
+            "Amara"
+          ],
+          "status": "generated",
+          "text": "Amara.",
+          "request_id": "first-question",
+          "revision": 3,
+          "branch_id": "1c3d80a795d94c8995fd4d4e40a6664d",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "observe",
+        "input": "Cora owns the crate.",
+        "result": {
+          "key": [
+            "world",
+            "crate",
+            "owner"
+          ],
+          "predicted_operation": [
+            1,
+            9,
+            0,
+            0
+          ],
+          "record_updated": true,
+          "status": "committed",
+          "request_id": "irrelevant",
+          "revision": 4,
+          "branch_id": "1c3d80a795d94c8995fd4d4e40a6664d",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the container holding the coin?",
+        "expected": "Amara.",
+        "correct": true,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "96e7cf64e83d4787608b840dbe308d6374de720f6f0a07d579c0e36dbc8768a3",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "db918baba55fb64332360e7b0ada9829a5bd453a3959865ff0ca5f51a9f91163",
+              "version": 1
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest",
+            "Amara"
+          ],
+          "status": "generated",
+          "text": "Amara.",
+          "request_id": "after-irrelevant",
+          "revision": 5,
+          "branch_id": "1c3d80a795d94c8995fd4d4e40a6664d",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "observe",
+        "input": "The chest belongs to Bela.",
+        "result": {
+          "key": [
+            "world",
+            "box",
+            "owner"
+          ],
+          "predicted_operation": [
+            1,
+            10,
+            0,
+            1
+          ],
+          "record_updated": true,
+          "status": "committed",
+          "request_id": "correction",
+          "revision": 6,
+          "branch_id": "1c3d80a795d94c8995fd4d4e40a6664d",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the container holding the coin?",
+        "expected": "Bela.",
+        "correct": false,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "96e7cf64e83d4787608b840dbe308d6374de720f6f0a07d579c0e36dbc8768a3",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "db918baba55fb64332360e7b0ada9829a5bd453a3959865ff0ca5f51a9f91163",
+              "version": 1
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest",
+            "Amara"
+          ],
+          "status": "generated",
+          "text": "Amara.",
+          "request_id": "after-restart",
+          "revision": 7,
+          "branch_id": "1c3d80a795d94c8995fd4d4e40a6664d",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Name the owner of whatever holds the coin.",
+        "expected": "Bela.",
+        "correct": false,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "96e7cf64e83d4787608b840dbe308d6374de720f6f0a07d579c0e36dbc8768a3",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "db918baba55fb64332360e7b0ada9829a5bd453a3959865ff0ca5f51a9f91163",
+              "version": 1
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest",
+            "Amara"
+          ],
+          "status": "generated",
+          "text": "Amara.",
+          "request_id": "unfamiliar-question",
+          "revision": 8,
+          "branch_id": "1c3d80a795d94c8995fd4d4e40a6664d",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the container holding the coin?",
+        "expected": "pending",
+        "correct": true,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "96e7cf64e83d4787608b840dbe308d6374de720f6f0a07d579c0e36dbc8768a3",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "pending",
+              "token": "5b24c265bd813fd61d1b50155369f06631ff97bf6e42a355b486f2f19c832634",
+              "version": 1
+            }
+          ],
+          "evidence_status": "pending",
+          "generation_mode": "runtime_policy",
+          "pending_ids": [
+            "pending-owner"
+          ],
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest"
+          ],
+          "status": "pending",
+          "text": "pending",
+          "request_id": "pending-question",
+          "revision": 10,
+          "branch_id": "1c3d80a795d94c8995fd4d4e40a6664d",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the crate?",
+        "expected": "Cora.",
+        "correct": false,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "crate",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "bbd6473f8f3cd5d0f8bd64cdfc389cda91a316e891ec411b5372448bcb8f6587",
+              "version": 1
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "crate",
+          "query_plan": 0,
+          "records_read": 1,
+          "selected_values": [
+            "Amara"
+          ],
+          "status": "generated",
+          "text": "Amara.",
+          "request_id": "unrelated-during-pending",
+          "revision": 11,
+          "branch_id": "1c3d80a795d94c8995fd4d4e40a6664d",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "observe",
+        "input": "Hadi owns the chest.",
+        "result": {
+          "key": [
+            "world",
+            "chest",
+            "owner"
+          ],
+          "predicted_operation": [
+            1,
+            8,
+            0,
+            7
+          ],
+          "record_updated": true,
+          "status": "committed",
+          "request_id": "resolve-pending",
+          "revision": 12,
+          "branch_id": "1c3d80a795d94c8995fd4d4e40a6664d",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the container holding the coin?",
+        "expected": "Hadi.",
+        "correct": true,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "96e7cf64e83d4787608b840dbe308d6374de720f6f0a07d579c0e36dbc8768a3",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "3f8fbd818582e13ecff936871499761aa4037a0c627e671220afeaf24c6ea365",
+              "version": 2
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest",
+            "Hadi"
+          ],
+          "status": "generated",
+          "text": "Hadi.",
+          "request_id": "after-pending-retry",
+          "revision": 13,
+          "branch_id": "1c3d80a795d94c8995fd4d4e40a6664d",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "historical_receipt_replay",
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "96e7cf64e83d4787608b840dbe308d6374de720f6f0a07d579c0e36dbc8768a3",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "db918baba55fb64332360e7b0ada9829a5bd453a3959865ff0ca5f51a9f91163",
+              "version": 1
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest",
+            "Amara"
+          ],
+          "status": "generated",
+          "text": "Amara.",
+          "request_id": "first-question",
+          "revision": 3,
+          "branch_id": "1c3d80a795d94c8995fd4d4e40a6664d",
+          "replayed": true,
+          "historical_receipt": true
+        },
+        "tokens_unchanged": true,
+        "expected_historical_text": "Amara."
+      },
+      {
+        "type": "observe",
+        "input": "The owner of the chest is unknown.",
+        "result": {
+          "key": [
+            "world",
+            "box",
+            "owner"
+          ],
+          "predicted_operation": [
+            2,
+            10,
+            0,
+            6
+          ],
+          "record_updated": true,
+          "status": "committed",
+          "request_id": "delete-owner",
+          "revision": 14,
+          "branch_id": "1c3d80a795d94c8995fd4d4e40a6664d",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      },
+      {
+        "type": "ask",
+        "input": "Who owns the container holding the coin?",
+        "expected": "unknown.",
+        "correct": false,
+        "result": {
+          "dependencies": [
+            {
+              "key": [
+                "world",
+                "coin",
+                "container"
+              ],
+              "status": "ok",
+              "token": "96e7cf64e83d4787608b840dbe308d6374de720f6f0a07d579c0e36dbc8768a3",
+              "version": 1
+            },
+            {
+              "key": [
+                "world",
+                "chest",
+                "owner"
+              ],
+              "status": "ok",
+              "token": "3f8fbd818582e13ecff936871499761aa4037a0c627e671220afeaf24c6ea365",
+              "version": 2
+            }
+          ],
+          "evidence_status": "ok",
+          "generation_mode": "neural",
+          "query_entity": "coin",
+          "query_plan": 2,
+          "records_read": 2,
+          "selected_values": [
+            "chest",
+            "Hadi"
+          ],
+          "status": "generated",
+          "text": "Hadi.",
+          "request_id": "after-delete",
+          "revision": 15,
+          "branch_id": "1c3d80a795d94c8995fd4d4e40a6664d",
+          "replayed": false,
+          "historical_receipt": true
+        }
+      }
+    ],
+    "counters": {
+      "input_tokens": 461,
+      "emitted_tokens": 40,
+      "control_tokens": 63,
+      "requests": 14,
+      "observations": 6,
+      "questions": 8,
+      "record_updates": 6,
+      "historical_tokens_replayed": 0
+    },
+    "neural_tensor_bytes": 10592,
+    "snapshot_blob_bytes": 15859,
+    "database_bytes": 143360,
+    "learned_question_count": 7,
+    "learned_questions_correct": 3,
+    "pending_policy_correct": true,
+    "scope": "predeclared multi-turn extrapolation, with held-wording question; no training selection"
+  }
+}

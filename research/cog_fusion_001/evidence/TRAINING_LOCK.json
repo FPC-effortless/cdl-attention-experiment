@@ -1,0 +1,29 @@
+{
+  "time_utc": "2026-11-23T21:07:46Z",
+  "source_sha256": {
+    "PROTOCOL.md": "b65168c040fbe94e1fce25e354f15d810c6ed71b85a9aab78381bb8851c48e88",
+    "evidence/DATA_MANIFEST.json": "0fc9da07b92ebd8a9df95b9fdc1298695d62ac1d87df7a1fca6d492d7c423965",
+    "evidence/corpus.json": "3b4133d81db7b13b6779b478373b405a997d6a0f6d7c94c5cad530d7fd308c98",
+    "fusion/model.py": "805d5dcfe172ecaebd6398501e5da1193855c2f532abcb3102f350cafcfcb215",
+    "fusion/data.py": "90dc3fa5edf8ead83e4608caece0707e7d14bfdacde90257ccdf3031bad2f6aa",
+    "fusion/train.py": "4f3be0afbc9c0c3e9ed077487264f521681001ea9e9ea386cc3a947648bd3dfb",
+    "fusion/engine.py": "12490b65df1426454631902d500e3cd83314d34757d189e7f3d8b33da75d8606",
+    "fusion/native/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "fusion/native/base_model.py": "f96bd967b4bc4ece9d2750a5cf1afdf1cc819a6b007e2d638af633376c7eccaa",
+    "fusion/native/model.py": "f15e7d5430bd1df83a1264ebbec63576b818733386d6fb0f1d8c1e2a930370f9",
+    "fusion/native/scripted_core.py": "6c00b2c4425a5309927fb3aba4e53add670e79c88a7b051fbe963b6b060f99e3"
+  },
+  "seeds": [
+    17,
+    29,
+    41
+  ],
+  "arms": [
+    "memory",
+    "no_memory"
+  ],
+  "updates": 1000,
+  "teacher_updates": 250,
+  "cpu_cap_seconds_per_fit": 1800,
+  "parallel_fits": 6
+}

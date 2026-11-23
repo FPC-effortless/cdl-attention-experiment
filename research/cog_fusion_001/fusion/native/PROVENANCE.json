@@ -1,0 +1,10 @@
+{
+  "origin": "COG_CONNECTED_1M_003 selected native sources",
+  "native_checkpoint_sha256": "d8bab3d1d99a43dfb6cca2257f2caae4d3a7282d62b079c92874ce736a44ec3c",
+  "source_sha256": {
+    "base_model.py": "f96bd967b4bc4ece9d2750a5cf1afdf1cc819a6b007e2d638af633376c7eccaa",
+    "model.py": "f15e7d5430bd1df83a1264ebbec63576b818733386d6fb0f1d8c1e2a930370f9",
+    "scripted_core.py": "6c00b2c4425a5309927fb3aba4e53add670e79c88a7b051fbe963b6b060f99e3"
+  },
+  "policy": "Files copied without modification; new wrappers live in ../model.py."
+}

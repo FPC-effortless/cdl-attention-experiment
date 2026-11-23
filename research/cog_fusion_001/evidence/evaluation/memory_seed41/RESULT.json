@@ -1,0 +1,613 @@
+{
+  "checkpoint_sha256": "5640ccce618b25c434b664934fc7e63986629cd6ec7bc5a790f785cfb7ee4332",
+  "corpus_sha256": "3b4133d81db7b13b6779b478373b405a997d6a0f6d7c94c5cad530d7fd308c98",
+  "model_identity": "15ac6d5596f72b25b317aa2bc8a7d266b767a04dcb028b1b298927c4f5008812",
+  "parameters": {
+    "total": 1077834,
+    "native": 993574,
+    "new_interfaces": 84260,
+    "inactive_native_board": 80160,
+    "active": 997674
+  },
+  "state_tensor_bytes": 10592,
+  "panels": {
+    "test": {
+      "worlds": 256,
+      "families": 128,
+      "operations_exact": 1280,
+      "operations_total": 1280,
+      "all_operations_exact": 256,
+      "all_post_event_ledgers_exact": 256,
+      "query_exact": 256,
+      "modes": {
+        "acute_memory_off": {
+          "exact_answers": 24,
+          "complete_pairs": 3,
+          "strict_whole_history_pairs": 3,
+          "answer_changing_complete": 0,
+          "answer_changing_total": 80,
+          "invariant_complete": 3,
+          "invariant_total": 48,
+          "support_exact": 256,
+          "max_candidates_per_query": 2,
+          "by_kind": {
+            "direct": {
+              "pairs": 16,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 3
+            },
+            "twohop": {
+              "pairs": 16,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 5
+            },
+            "correction": {
+              "pairs": 16,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 5
+            },
+            "irrelevant": {
+              "pairs": 16,
+              "complete_pairs": 1,
+              "strict_pairs": 1,
+              "exact_answers": 2
+            },
+            "retraction": {
+              "pairs": 16,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 3
+            },
+            "bridge": {
+              "pairs": 16,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 2
+            },
+            "missing": {
+              "pairs": 16,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "cancelled": {
+              "pairs": 16,
+              "complete_pairs": 2,
+              "strict_pairs": 2,
+              "exact_answers": 4
+            }
+          }
+        },
+        "hybrid": {
+          "exact_answers": 238,
+          "complete_pairs": 113,
+          "strict_whole_history_pairs": 96,
+          "answer_changing_complete": 69,
+          "answer_changing_total": 80,
+          "invariant_complete": 44,
+          "invariant_total": 48,
+          "support_exact": 208,
+          "max_candidates_per_query": 3,
+          "by_kind": {
+            "direct": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            },
+            "twohop": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            },
+            "correction": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            },
+            "irrelevant": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            },
+            "retraction": {
+              "pairs": 16,
+              "complete_pairs": 5,
+              "strict_pairs": 0,
+              "exact_answers": 21
+            },
+            "bridge": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            },
+            "missing": {
+              "pairs": 16,
+              "complete_pairs": 12,
+              "strict_pairs": 0,
+              "exact_answers": 25
+            },
+            "cancelled": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            }
+          }
+        },
+        "strict": {
+          "exact_answers": 256,
+          "complete_pairs": 128,
+          "strict_whole_history_pairs": 128,
+          "answer_changing_complete": 80,
+          "answer_changing_total": 80,
+          "invariant_complete": 48,
+          "invariant_total": 48,
+          "support_exact": 256,
+          "max_candidates_per_query": 2,
+          "by_kind": {
+            "direct": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            },
+            "twohop": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            },
+            "correction": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            },
+            "irrelevant": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            },
+            "retraction": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            },
+            "bridge": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            },
+            "missing": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            },
+            "cancelled": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            }
+          }
+        },
+        "supplied_reference_evidence": {
+          "exact_answers": 256,
+          "complete_pairs": 128,
+          "strict_whole_history_pairs": 128,
+          "answer_changing_complete": 80,
+          "answer_changing_total": 80,
+          "invariant_complete": 48,
+          "invariant_total": 48,
+          "support_exact": 256,
+          "max_candidates_per_query": 0,
+          "by_kind": {
+            "direct": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            },
+            "twohop": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            },
+            "correction": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            },
+            "irrelevant": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            },
+            "retraction": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            },
+            "bridge": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            },
+            "missing": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            },
+            "cancelled": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 16,
+              "exact_answers": 32
+            }
+          }
+        }
+      }
+    },
+    "fresh": {
+      "worlds": 256,
+      "families": 128,
+      "operations_exact": 934,
+      "operations_total": 1280,
+      "all_operations_exact": 70,
+      "all_post_event_ledgers_exact": 71,
+      "query_exact": 188,
+      "modes": {
+        "acute_memory_off": {
+          "exact_answers": 24,
+          "complete_pairs": 3,
+          "strict_whole_history_pairs": 1,
+          "answer_changing_complete": 1,
+          "answer_changing_total": 80,
+          "invariant_complete": 2,
+          "invariant_total": 48,
+          "support_exact": 124,
+          "max_candidates_per_query": 2,
+          "by_kind": {
+            "direct": {
+              "pairs": 16,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 4
+            },
+            "twohop": {
+              "pairs": 16,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 2
+            },
+            "correction": {
+              "pairs": 16,
+              "complete_pairs": 1,
+              "strict_pairs": 0,
+              "exact_answers": 7
+            },
+            "irrelevant": {
+              "pairs": 16,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "retraction": {
+              "pairs": 16,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 4
+            },
+            "bridge": {
+              "pairs": 16,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 2
+            },
+            "missing": {
+              "pairs": 16,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "cancelled": {
+              "pairs": 16,
+              "complete_pairs": 2,
+              "strict_pairs": 1,
+              "exact_answers": 5
+            }
+          }
+        },
+        "hybrid": {
+          "exact_answers": 102,
+          "complete_pairs": 36,
+          "strict_whole_history_pairs": 15,
+          "answer_changing_complete": 22,
+          "answer_changing_total": 80,
+          "invariant_complete": 14,
+          "invariant_total": 48,
+          "support_exact": 83,
+          "max_candidates_per_query": 4,
+          "by_kind": {
+            "direct": {
+              "pairs": 16,
+              "complete_pairs": 3,
+              "strict_pairs": 1,
+              "exact_answers": 16
+            },
+            "twohop": {
+              "pairs": 16,
+              "complete_pairs": 6,
+              "strict_pairs": 5,
+              "exact_answers": 13
+            },
+            "correction": {
+              "pairs": 16,
+              "complete_pairs": 10,
+              "strict_pairs": 5,
+              "exact_answers": 20
+            },
+            "irrelevant": {
+              "pairs": 16,
+              "complete_pairs": 2,
+              "strict_pairs": 2,
+              "exact_answers": 4
+            },
+            "retraction": {
+              "pairs": 16,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 10
+            },
+            "bridge": {
+              "pairs": 16,
+              "complete_pairs": 3,
+              "strict_pairs": 1,
+              "exact_answers": 11
+            },
+            "missing": {
+              "pairs": 16,
+              "complete_pairs": 9,
+              "strict_pairs": 0,
+              "exact_answers": 21
+            },
+            "cancelled": {
+              "pairs": 16,
+              "complete_pairs": 3,
+              "strict_pairs": 1,
+              "exact_answers": 7
+            }
+          }
+        },
+        "strict": {
+          "exact_answers": 98,
+          "complete_pairs": 39,
+          "strict_whole_history_pairs": 17,
+          "answer_changing_complete": 19,
+          "answer_changing_total": 80,
+          "invariant_complete": 20,
+          "invariant_total": 48,
+          "support_exact": 124,
+          "max_candidates_per_query": 2,
+          "by_kind": {
+            "direct": {
+              "pairs": 16,
+              "complete_pairs": 1,
+              "strict_pairs": 1,
+              "exact_answers": 3
+            },
+            "twohop": {
+              "pairs": 16,
+              "complete_pairs": 5,
+              "strict_pairs": 5,
+              "exact_answers": 12
+            },
+            "correction": {
+              "pairs": 16,
+              "complete_pairs": 9,
+              "strict_pairs": 5,
+              "exact_answers": 19
+            },
+            "irrelevant": {
+              "pairs": 16,
+              "complete_pairs": 2,
+              "strict_pairs": 2,
+              "exact_answers": 4
+            },
+            "retraction": {
+              "pairs": 16,
+              "complete_pairs": 1,
+              "strict_pairs": 0,
+              "exact_answers": 13
+            },
+            "bridge": {
+              "pairs": 16,
+              "complete_pairs": 3,
+              "strict_pairs": 1,
+              "exact_answers": 10
+            },
+            "missing": {
+              "pairs": 16,
+              "complete_pairs": 15,
+              "strict_pairs": 2,
+              "exact_answers": 30
+            },
+            "cancelled": {
+              "pairs": 16,
+              "complete_pairs": 3,
+              "strict_pairs": 1,
+              "exact_answers": 7
+            }
+          }
+        },
+        "supplied_reference_evidence": {
+          "exact_answers": 256,
+          "complete_pairs": 128,
+          "strict_whole_history_pairs": 17,
+          "answer_changing_complete": 80,
+          "answer_changing_total": 80,
+          "invariant_complete": 48,
+          "invariant_total": 48,
+          "support_exact": 256,
+          "max_candidates_per_query": 0,
+          "by_kind": {
+            "direct": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 1,
+              "exact_answers": 32
+            },
+            "twohop": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 5,
+              "exact_answers": 32
+            },
+            "correction": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 5,
+              "exact_answers": 32
+            },
+            "irrelevant": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 2,
+              "exact_answers": 32
+            },
+            "retraction": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 0,
+              "exact_answers": 32
+            },
+            "bridge": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 1,
+              "exact_answers": 32
+            },
+            "missing": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 2,
+              "exact_answers": 32
+            },
+            "cancelled": {
+              "pairs": 16,
+              "complete_pairs": 16,
+              "strict_pairs": 1,
+              "exact_answers": 32
+            }
+          }
+        }
+      }
+    },
+    "long": {
+      "worlds": 64,
+      "families": 32,
+      "operations_exact": 4416,
+      "operations_total": 4416,
+      "all_operations_exact": 64,
+      "all_post_event_ledgers_exact": 64,
+      "query_exact": 64,
+      "modes": {
+        "strict": {
+          "exact_answers": 64,
+          "complete_pairs": 32,
+          "strict_whole_history_pairs": 32,
+          "answer_changing_complete": 20,
+          "answer_changing_total": 20,
+          "invariant_complete": 12,
+          "invariant_total": 12,
+          "support_exact": 64,
+          "max_candidates_per_query": 2,
+          "by_kind": {
+            "direct": {
+              "pairs": 4,
+              "complete_pairs": 4,
+              "strict_pairs": 4,
+              "exact_answers": 8
+            },
+            "twohop": {
+              "pairs": 4,
+              "complete_pairs": 4,
+              "strict_pairs": 4,
+              "exact_answers": 8
+            },
+            "correction": {
+              "pairs": 4,
+              "complete_pairs": 4,
+              "strict_pairs": 4,
+              "exact_answers": 8
+            },
+            "irrelevant": {
+              "pairs": 4,
+              "complete_pairs": 4,
+              "strict_pairs": 4,
+              "exact_answers": 8
+            },
+            "retraction": {
+              "pairs": 4,
+              "complete_pairs": 4,
+              "strict_pairs": 4,
+              "exact_answers": 8
+            },
+            "bridge": {
+              "pairs": 4,
+              "complete_pairs": 4,
+              "strict_pairs": 4,
+              "exact_answers": 8
+            },
+            "missing": {
+              "pairs": 4,
+              "complete_pairs": 4,
+              "strict_pairs": 4,
+              "exact_answers": 8
+            },
+            "cancelled": {
+              "pairs": 4,
+              "complete_pairs": 4,
+              "strict_pairs": 4,
+              "exact_answers": 8
+            }
+          }
+        }
+      }
+    }
+  },
+  "interventions": {
+    "relevant": {
+      "pairs": 32,
+      "both_correct": 32,
+      "directional_pairs": 64,
+      "directional_pairs_correct": 64,
+      "outputs_changed": 32
+    },
+    "invariant": {
+      "pairs": 32,
+      "both_correct": 32,
+      "directional_pairs": 64,
+      "directional_pairs_correct": 64,
+      "outputs_changed": 0
+    }
+  }
+}

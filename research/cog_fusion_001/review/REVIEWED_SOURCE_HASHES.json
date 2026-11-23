@@ -1,0 +1,12 @@
+{
+  "fusion/model.py": "805d5dcfe172ecaebd6398501e5da1193855c2f532abcb3102f350cafcfcb215",
+  "fusion/data.py": "90dc3fa5edf8ead83e4608caece0707e7d14bfdacde90257ccdf3031bad2f6aa",
+  "fusion/train.py": "4f3be0afbc9c0c3e9ed077487264f521681001ea9e9ea386cc3a947648bd3dfb",
+  "fusion/engine.py": "12490b65df1426454631902d500e3cd83314d34757d189e7f3d8b33da75d8606",
+  "fusion/evaluate.py": "a3ed7d4532ce730cec610278f9d17623fd8a4a4f14352095e5183802c4ed6461",
+  "fusion/session.py": "83ff0c1a60dc482638f019911dd7ea0fb674eca2a8ac109b37b4b45cfd4dfa29",
+  "fusion/store.py": "006c88fcc02152ed8fe444aeb15e8001e01cdba1770b7408ec162041aeafea56",
+  "tests/test_review.py": "7719e9b770313baaae1b7b93d6f81360a8a01862cf2c7185529201eeb51483af",
+  "review/review_data.py": "9a0308a0e61915eb9e038fb26b7cd879694f8e71f15b455948566e544d9f90a6",
+  "review/REVIEW.md": "23a9905775a00757e8aad6542a78dab85e2f577bc4048b5842049d103f89fcf3"
+}

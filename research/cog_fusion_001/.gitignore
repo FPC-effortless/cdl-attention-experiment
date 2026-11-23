@@ -1,0 +1,13 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+*.sqlite
+*.sqlite-journal
+*.pt
+evidence/calibration/
+evidence/reproduction_inputs/
+evidence/*_JOBS.json
+evidence/runs/*/console.log
+evidence/evaluation/*/console.log
+evidence/composition*/**/*.npz
+*.zip

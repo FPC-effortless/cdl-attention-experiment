@@ -1,0 +1,53 @@
+{
+  "schema": "cog-fusion-initial-pair-parity-v1",
+  "method": "Independently rebuild each arm for each locked seed and compare every named tensor with torch.equal; independently compute the trainer tensor digest.",
+  "seeds": [
+    {
+      "seed": 17,
+      "all_named_tensors_exactly_equal": true,
+      "tensor_count": 114,
+      "tensor_sha256": "6e5222676397ffc5843cb7c21a751a69e5e3596a7cdda22612df6ce2618c070d",
+      "memory_model_identity": "e1a300dd9ae8fc86a13b034089fe2b12ae03811fad86071a5ade852676aa5f98",
+      "no_memory_model_identity": "887dbdd710a70d0f034f804a7fcb2dce018946e2a69b12359edb887594932174",
+      "parameters": {
+        "total": 1077834,
+        "native": 993574,
+        "new_interfaces": 84260,
+        "inactive_native_board": 80160,
+        "active": 997674
+      }
+    },
+    {
+      "seed": 29,
+      "all_named_tensors_exactly_equal": true,
+      "tensor_count": 114,
+      "tensor_sha256": "0f74ab1bbc781442de4e33c82b3fb2e60422193335aad4b01b097597878084f3",
+      "memory_model_identity": "bb19df33f35f76d868a24848a353b1fd4d0a4ffd7a972c8819a32e45379b9b6d",
+      "no_memory_model_identity": "1fb6b89240b2b39eb026aa1edfa2e644d54b0d69baa35b83169106c9ac202a0d",
+      "parameters": {
+        "total": 1077834,
+        "native": 993574,
+        "new_interfaces": 84260,
+        "inactive_native_board": 80160,
+        "active": 997674
+      }
+    },
+    {
+      "seed": 41,
+      "all_named_tensors_exactly_equal": true,
+      "tensor_count": 114,
+      "tensor_sha256": "79b1ff43b1e8691150c8a4bc1d4f8d62cfa17d85be476c6bc122ef7484cd1095",
+      "memory_model_identity": "03af038ee9d16358b62787c696e8b23f70feb04594c014b1be2f9a3af6693973",
+      "no_memory_model_identity": "e54e4aa346aaba1cbb6ffb8afe41bb7139f161c24f3b861ecba9cff727bccb04",
+      "parameters": {
+        "total": 1077834,
+        "native": 993574,
+        "new_interfaces": 84260,
+        "inactive_native_board": 80160,
+        "active": 997674
+      }
+    }
+  ],
+  "actual_run_identities_verified": 6,
+  "fixed_engine_source_verified_in_all_runs": true
+}

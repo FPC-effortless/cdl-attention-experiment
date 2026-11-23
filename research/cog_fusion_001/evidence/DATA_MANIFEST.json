@@ -1,0 +1,146 @@
+{
+  "schema": "cog-fusion-data-v1",
+  "sha256": "3b4133d81db7b13b6779b478373b405a997d6a0f6d7c94c5cad530d7fd308c98",
+  "entities": [
+    "Amara",
+    "Bela",
+    "Cora",
+    "Davi",
+    "Eren",
+    "Faye",
+    "Gita",
+    "Hadi",
+    "chest",
+    "crate",
+    "box",
+    "vault",
+    "coin",
+    "gem",
+    "ring",
+    "key"
+  ],
+  "relations": [
+    "owner",
+    "container"
+  ],
+  "unknown": 16,
+  "family_counts": {
+    "train": 1024,
+    "dev": 64,
+    "test": 128,
+    "fresh": 128,
+    "long": 32
+  },
+  "world_counts": {
+    "train": 2048,
+    "dev": 128,
+    "test": 256,
+    "fresh": 256,
+    "long": 64
+  },
+  "split_hashes": {
+    "train": "4ecf658cf22faf78c833d0fb6d39a4225a39c68ede11205b24070b52a2b4d928",
+    "dev": "dc9ea8188d471711d836215e6ad474d54a1673785dd5b312b5c7ec5d96851d3a",
+    "test": "71e2e9103241b7bdad23fe8f3050267601e0ce986f484c24cce22f08ba1c23d6",
+    "fresh": "bb40b916bcda9dcce674acb3f329b2a7e2107a25f2814e18f0b5d5b0b7c03bfa",
+    "long": "c0867336c4b44c334eb03d9b58a8c8bc110e760b895163bea5f2b0b7ea0f26d4"
+  },
+  "training_templates": {
+    "owner": [
+      "{v} owns the {e}.",
+      "The {e} belongs to {v}.",
+      "The owner of the {e} is {v}."
+    ],
+    "container": [
+      "The {e} is in the {v}.",
+      "The {v} contains the {e}.",
+      "The {e} is kept inside the {v}."
+    ],
+    "delete": [
+      "The owner of the {e} is unknown.",
+      "Forget who owns the {e}.",
+      "Retract the owner of the {e}."
+    ],
+    "cancelled": [
+      "The {e} might belong to {v}, but no change happened.",
+      "A transfer of the {e} to {v} was cancelled.",
+      "They planned to give the {e} to {v}, then cancelled it."
+    ],
+    "q_owner": [
+      "Who owns the {e}?",
+      "Who is the owner of the {e}?",
+      "To whom does the {e} belong?"
+    ],
+    "q_container": [
+      "Where is the {e}?",
+      "What contains the {e}?",
+      "In which container is the {e}?"
+    ],
+    "q_twohop": [
+      "Who owns the container holding the {e}?",
+      "Who owns what contains the {e}?",
+      "Who is the owner of the container with the {e}?"
+    ]
+  },
+  "held_syntax_templates": {
+    "owner": [
+      "Ownership of the {e} rests with {v}.",
+      "For the {e}, the owner is {v}."
+    ],
+    "container": [
+      "Inside the {v} lies the {e}.",
+      "The {e} has the {v} as its container."
+    ],
+    "delete": [
+      "The ownership record for the {e} has been withdrawn.",
+      "There is no accepted owner for the {e}."
+    ],
+    "cancelled": [
+      "Giving the {e} to {v} never took place.",
+      "The proposal that {v} own the {e} was abandoned."
+    ],
+    "q_owner": [
+      "Name the person who possesses the {e}.",
+      "Identify the current owner of the {e}."
+    ],
+    "q_container": [
+      "Name the container that holds the {e}.",
+      "Identify the container of the {e}."
+    ],
+    "q_twohop": [
+      "Name the owner of whatever holds the {e}.",
+      "Identify who owns the thing containing the {e}."
+    ]
+  },
+  "cross_split_duplicate_histories": 0,
+  "cross_split_duplicate_semantic_worlds": 0,
+  "regenerated_families": 3,
+  "pair_counts": {
+    "train": {
+      "answer_changing": 640,
+      "invariant_or_unknown": 384
+    },
+    "dev": {
+      "answer_changing": 40,
+      "invariant_or_unknown": 24
+    },
+    "test": {
+      "answer_changing": 80,
+      "invariant_or_unknown": 48
+    },
+    "fresh": {
+      "answer_changing": 80,
+      "invariant_or_unknown": 48
+    },
+    "long": {
+      "answer_changing": 20,
+      "invariant_or_unknown": 12
+    }
+  },
+  "limits": [
+    "fixed 16-identity vocabulary",
+    "controlled synthetic language",
+    "held wording combines lexical and syntactic shift; entity names stay fixed",
+    "long history has extra neutral filler, not new reasoning structure"
+  ]
+}
