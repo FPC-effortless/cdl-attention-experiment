@@ -1,0 +1,108 @@
+{
+  "version": "1",
+  "pip_version": "26.2.2",
+  "install": [
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/fb/69/77355ca8baf0c5023994b3f11304822d07116567ea47893f90267c086f87/rustbpe-0.1.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "archive_info": {
+          "hashes": {
+            "sha256": "2b0b77591c9e836df41ad0b30be9ec519a708c477cbf82eedaf839e7a9b10101"
+          },
+          "hash": "sha256=2b0b77591c9e836df41ad0b30be9ec519a708c477cbf82eedaf839e7a9b10101"
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "rustbpe",
+        "version": "0.1.0",
+        "summary": "A BPE (Byte Pair Encoding) tokenizer written in Rust with Python bindings",
+        "description": "# rustbpe\n\n> The missing tiktoken training code\n\nA lightweight Rust library for training GPT-style BPE tokenizers. The [tiktoken](https://github.com/openai/tiktoken) library is excellent for inference but doesn't support training. The HuggingFace [tokenizers](https://github.com/huggingface/tokenizers) library supports training but carries significant complexity from years of accumulated tokenizer variants. My [minbpe](https://github.com/karpathy/minbpe) library handles both training and inference, but only in Python and not optimized for speed.\n\n**rustbpe** fills this gap: a simple, efficient BPE training implementation in Rust with Python bindings. Train your tokenizer with rustbpe, then export to tiktoken for fast inference.\n\n## Features\n\n- Fast training with parallel processing (rayon)\n- GPT-4 style regex pre-tokenization by default\n- Direct export to tiktoken format\n- Python bindings via PyO3\n- Batch encoding with automatic parallelization\n\n## Installation\n\n### Python\n\n```bash\npip install rustbpe\n```\n\n### From source\n\n```bash\ngit clone https://github.com/karpathy/rustbpe.git\ncd rustbpe\nuv venv && source .venv/bin/activate\nuv pip install maturin\nmaturin develop --release\n```\n\n## Usage\n\n### Training\n\n```python\nimport rustbpe\n\n# Create tokenizer and train on your data\ntokenizer = rustbpe.Tokenizer()\ntokenizer.train_from_iterator(\n    [\"your\", \"training\", \"texts\", \"here\"],\n    vocab_size=4096\n)\n\n# Encode and decode\nids = tokenizer.encode(\"hello world\")\ntext = tokenizer.decode(ids)  # \"hello world\"\n\n# Check vocabulary size\nprint(tokenizer.vocab_size)  # 4096\n\n# Batch encode (parallel)\nall_ids = tokenizer.batch_encode([\"text one\", \"text two\", \"text three\"])\n```\n\n### Export to tiktoken\n\nThe main use case: train with rustbpe, inference with tiktoken.\n\n```python\nimport rustbpe\nimport tiktoken\n\n# Train\ntokenizer = rustbpe.Tokenizer()\ntokenizer.train_from_iterator(open(\"corpus.txt\"), vocab_size=8192)\n\n# Export to tiktoken\nenc = tiktoken.Encoding(\n    name=\"my_tokenizer\",\n    pat_str=tokenizer.get_pattern(),\n    mergeable_ranks={bytes(k): v for k, v in tokenizer.get_mergeable_ranks()},\n    special_tokens={},\n)\n\n# Fast inference with tiktoken\nids = enc.encode(\"hello world\")\ntext = enc.decode(ids)\n```\n\n### Custom regex pattern\n\nBy default, rustbpe uses the GPT-4 tokenization pattern. You can provide your own:\n\n```python\ntokenizer.train_from_iterator(\n    texts,\n    vocab_size=4096,\n    pattern=r\"[a-zA-Z]+|[0-9]+|\\s+\"  # custom pattern\n)\n```\n\n## API Reference\n\n### `Tokenizer`\n\n| Method | Description |\n|--------|-------------|\n| `Tokenizer()` | Create a new tokenizer |\n| `train_from_iterator(texts, vocab_size, buffer_size=8192, pattern=None)` | Train on an iterator of strings |\n| `encode(text)` | Encode a string to token IDs |\n| `decode(ids)` | Decode token IDs back to a string |\n| `batch_encode(texts)` | Encode multiple strings in parallel |\n| `vocab_size` | Property: vocabulary size (256 + number of merges) |\n| `get_pattern()` | Get the regex pattern used for pre-tokenization |\n| `get_mergeable_ranks()` | Get token bytes and ranks for tiktoken export |\n\n## Development\n\n### Prerequisites\n\n- Rust: https://rustup.rs/\n- uv: `curl -LsSf https://astral.sh/uv/install.sh | sh`\n\n### Setup\n\n```bash\ngit clone https://github.com/karpathy/rustbpe.git\ncd rustbpe\nuv venv && source .venv/bin/activate\nuv pip install maturin pytest\nmaturin develop\n```\n\n### Running tests\n\n```bash\n# Rust tests (fast, tests core algorithm)\ncargo test\n\n# Python tests (requires maturin develop first)\npytest tests/python/ -v -s\n\n# Both\ncargo test && pytest tests/python/ -v\n```\n\n### Project structure\n\n```\nrustbpe/\n├── Cargo.toml              # Rust package manifest\n├── pyproject.toml          # Python package manifest\n├── src/\n│   └── lib.rs              # Rust implementation + PyO3 bindings + tests\n└── tests/\n    └── python/\n        └── test_tokenizer.py\n```\n\n## How BPE works\n\nByte Pair Encoding builds a vocabulary iteratively:\n\n1. Start with 256 byte-level tokens (0x00-0xff)\n2. Count all adjacent token pairs in the corpus\n3. Merge the most frequent pair into a new token\n4. Repeat until reaching target vocabulary size\n\nThe result is a vocabulary that efficiently represents common patterns while being able to encode any input.\n\n## LLM Assistance note\n\nI wrote the Python reference code personally and from scratch and I am expert there and understand it fully. I then wrote the Rust code against this implementation with tests for equality. However, I am not a Rust developer by background so I had significant help from ChatGPT and Claude Code Opus 4.5. All the equality tests pass as far as I am aware, but I do apologize if some of the Rust code is not properly arranged, structured, or implemented. Please let me know in Issues/PRs if so and I am happy to adjust the code to make it better.\n\n## License\n\nMIT\n\n",
+        "description_content_type": "text/markdown; charset=UTF-8; variant=GFM",
+        "license": "MIT",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Programming Language :: Rust",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13"
+        ],
+        "requires_dist": [
+          "pytest>=8.0 ; extra == 'dev'",
+          "pytest-cov>=4.0 ; extra == 'dev'"
+        ],
+        "requires_python": ">=3.9",
+        "provides_extra": [
+          "dev"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/52/d5/a0dcdb40dd2ea357e83cb36258967f0ae96f5dd40c722d6e382ceee6bba9/tiktoken-0.11.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "archive_info": {
+          "hashes": {
+            "sha256": "7fb4effe60574675118b73c6fbfd3b5868e5d7a1f570d6cc0d18724b09ecf318"
+          },
+          "hash": "sha256=7fb4effe60574675118b73c6fbfd3b5868e5d7a1f570d6cc0d18724b09ecf318"
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "tiktoken",
+        "version": "0.11.0",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "tiktoken is a fast BPE tokeniser for use with OpenAI's models",
+        "description": "# ⏳ tiktoken\n\ntiktoken is a fast [BPE](https://en.wikipedia.org/wiki/Byte_pair_encoding) tokeniser for use with\nOpenAI's models.\n\n```python\nimport tiktoken\nenc = tiktoken.get_encoding(\"o200k_base\")\nassert enc.decode(enc.encode(\"hello world\")) == \"hello world\"\n\n# To get the tokeniser corresponding to a specific model in the OpenAI API:\nenc = tiktoken.encoding_for_model(\"gpt-4o\")\n```\n\nThe open source version of `tiktoken` can be installed from [PyPI](https://pypi.org/project/tiktoken):\n```\npip install tiktoken\n```\n\nThe tokeniser API is documented in `tiktoken/core.py`.\n\nExample code using `tiktoken` can be found in the\n[OpenAI Cookbook](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_count_tokens_with_tiktoken.ipynb).\n\n\n## Performance\n\n`tiktoken` is between 3-6x faster than a comparable open source tokeniser:\n\n![image](https://raw.githubusercontent.com/openai/tiktoken/main/perf.svg)\n\nPerformance measured on 1GB of text using the GPT-2 tokeniser, using `GPT2TokenizerFast` from\n`tokenizers==0.13.2`, `transformers==4.24.0` and `tiktoken==0.2.0`.\n\n\n## Getting help\n\nPlease post questions in the [issue tracker](https://github.com/openai/tiktoken/issues).\n\nIf you work at OpenAI, make sure to check the internal documentation or feel free to contact\n@shantanu.\n\n## What is BPE anyway?\n\nLanguage models don't see text like you and I, instead they see a sequence of numbers (known as tokens).\nByte pair encoding (BPE) is a way of converting text into tokens. It has a couple desirable\nproperties:\n1) It's reversible and lossless, so you can convert tokens back into the original text\n2) It works on arbitrary text, even text that is not in the tokeniser's training data\n3) It compresses the text: the token sequence is shorter than the bytes corresponding to the\n   original text. On average, in practice, each token corresponds to about 4 bytes.\n4) It attempts to let the model see common subwords. For instance, \"ing\" is a common subword in\n   English, so BPE encodings will often split \"encoding\" into tokens like \"encod\" and \"ing\"\n   (instead of e.g. \"enc\" and \"oding\"). Because the model will then see the \"ing\" token again and\n   again in different contexts, it helps models generalise and better understand grammar.\n\n`tiktoken` contains an educational submodule that is friendlier if you want to learn more about\nthe details of BPE, including code that helps visualise the BPE procedure:\n```python\nfrom tiktoken._educational import *\n\n# Train a BPE tokeniser on a small amount of text\nenc = train_simple_encoding()\n\n# Visualise how the GPT-4 encoder encodes text\nenc = SimpleBytePairEncoding.from_tiktoken(\"cl100k_base\")\nenc.encode(\"hello world aaaaaaaaaaaa\")\n```\n\n\n## Extending tiktoken\n\nYou may wish to extend `tiktoken` to support new encodings. There are two ways to do this.\n\n\n**Create your `Encoding` object exactly the way you want and simply pass it around.**\n\n```python\ncl100k_base = tiktoken.get_encoding(\"cl100k_base\")\n\n# In production, load the arguments directly instead of accessing private attributes\n# See openai_public.py for examples of arguments for specific encodings\nenc = tiktoken.Encoding(\n    # If you're changing the set of special tokens, make sure to use a different name\n    # It should be clear from the name what behaviour to expect.\n    name=\"cl100k_im\",\n    pat_str=cl100k_base._pat_str,\n    mergeable_ranks=cl100k_base._mergeable_ranks,\n    special_tokens={\n        **cl100k_base._special_tokens,\n        \"<|im_start|>\": 100264,\n        \"<|im_end|>\": 100265,\n    }\n)\n```\n\n**Use the `tiktoken_ext` plugin mechanism to register your `Encoding` objects with `tiktoken`.**\n\nThis is only useful if you need `tiktoken.get_encoding` to find your encoding, otherwise prefer\noption 1.\n\nTo do this, you'll need to create a namespace package under `tiktoken_ext`.\n\nLayout your project like this, making sure to omit the `tiktoken_ext/__init__.py` file:\n```\nmy_tiktoken_extension\n├── tiktoken_ext\n│   └── my_encodings.py\n└── setup.py\n```\n\n`my_encodings.py` should be a module that contains a variable named `ENCODING_CONSTRUCTORS`.\nThis is a dictionary from an encoding name to a function that takes no arguments and returns\narguments that can be passed to `tiktoken.Encoding` to construct that encoding. For an example, see\n`tiktoken_ext/openai_public.py`. For precise details, see `tiktoken/registry.py`.\n\nYour `setup.py` should look something like this:\n```python\nfrom setuptools import setup, find_namespace_packages\n\nsetup(\n    name=\"my_tiktoken_extension\",\n    packages=find_namespace_packages(include=['tiktoken_ext*']),\n    install_requires=[\"tiktoken\"],\n    ...\n)\n```\n\nThen simply `pip install ./my_tiktoken_extension` and you should be able to use your\ncustom encodings! Make sure **not** to use an editable install.\n\n",
+        "description_content_type": "text/markdown",
+        "author": "Shantanu Jain",
+        "author_email": "shantanu@openai.com",
+        "license": "MIT License\n\nCopyright (c) 2022 OpenAI, Shantanu Jain\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+        "license_file": [
+          "LICENSE"
+        ],
+        "requires_dist": [
+          "regex>=2022.1.18",
+          "requests>=2.26.0",
+          "blobfile>=2; extra == \"blobfile\""
+        ],
+        "requires_python": ">=3.9",
+        "project_url": [
+          "homepage, https://github.com/openai/tiktoken",
+          "repository, https://github.com/openai/tiktoken",
+          "changelog, https://github.com/openai/tiktoken/blob/main/CHANGELOG.md"
+        ],
+        "provides_extra": [
+          "blobfile"
+        ]
+      }
+    }
+  ],
+  "environment": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.13.16",
+    "os_name": "posix",
+    "platform_machine": "x86_64",
+    "platform_release": "6.18.55+",
+    "platform_system": "Linux",
+    "platform_version": "#1 SMP Thu Oct 22 16:37:21 UTC 2026",
+    "python_full_version": "3.13.16",
+    "platform_python_implementation": "CPython",
+    "python_version": "3.13",
+    "sys_platform": "linux"
+  }
+}

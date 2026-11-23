@@ -1,0 +1,19 @@
+{
+  "schema": "cog.molab-preparation-status.v1",
+  "prepared_utc": "2026-11-23T18:35:28.603020+00:00",
+  "status": "PREPARED_AUTHENTICATION_NOT_COMPLETED",
+  "notebook_uploaded": false,
+  "marimo_runtime_validation": "NOT_RUN",
+  "gpu_allocation_observed": false,
+  "environment_worker_execution": "NOT_RUN_ON_MOLAB",
+  "adapter_worker_execution": "NOT_RUN_ON_MOLAB",
+  "optimizer_updates": 0,
+  "scientific_comparison_admitted": false,
+  "browser_observation": "MoLab notebook catalog displays Sign In after the prior verification flow was cancelled. No authentication retry was made.",
+  "local_validation": [
+    "Exact embedded source/hash/AST checks",
+    "Independent standard-library synthetic process cleanup and export checks"
+  ],
+  "notebook_sha256": "ec79f2d856070caa1de574a2acc0d7e8d41a96e1fa50d135bd47db75ef88bc31",
+  "kaggle_original_versions": "Both COMPLETE; engineering receipts preserved under ../kaggle_results_001. No duplicate job was submitted."
+}

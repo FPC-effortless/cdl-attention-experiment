@@ -1,5 +1,11 @@
 # Resume the accepted Kaggle jobs
 
+**Completion update:** both original version 1 jobs are COMPLETE, and their
+downloaded evidence is preserved in [kaggle_results_001](../kaggle_results_001/README.md).
+Do not resubmit or cancel these terminal jobs. The commands below are retained for
+exact-version verification and evidence retrieval. The MoLab conversion is still
+[prepared with authentication incomplete](../molab_integration_001/EXECUTION_STATUS.json).
+
 Read EXECUTION_STATUS.json and both remote receipts before taking action. These
 jobs already exist; a queued job is not an absent job. Preserve their versions,
 private visibility, source hashes and resource envelopes.

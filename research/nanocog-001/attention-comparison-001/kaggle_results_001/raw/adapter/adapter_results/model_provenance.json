@@ -1,0 +1,4423 @@
+{
+  "status": "UNTRAINED_ENGINEERING_MODELS_ONLY",
+  "geometry": {
+    "vocab_size": 50257,
+    "width": 512,
+    "layers": 12,
+    "n_head": 8,
+    "n_kv_head": 2,
+    "max_seq_len": 1024
+  },
+  "initialization_seed": 1729,
+  "source_commit_declarations": {
+    "nanochat": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+    "nanocog": "39be434ff160d4e6507df8d2114979ba5529caff",
+    "comparison": "1a91168b216a49543cc839153fa299a262320730"
+  },
+  "source_files": {
+    "GPT": {
+      "filename": "gpt.py",
+      "sha256": "8cdedc2e418b9d4dc45884e07f59904fcdec066bb3d76664b2adf2d415f704e3"
+    },
+    "KVCache": {
+      "filename": "engine.py",
+      "sha256": "76636fc24228e72afdafe4747ff8e52a6cc60a5ec61c97205061f3bfed0a86fd"
+    },
+    "Decoder": {
+      "filename": "model.py",
+      "sha256": "b9ae1000992dbd9e103de5f2365b88fb0c2a674e9acc9cfc0c9ac2ba7b599ab3"
+    },
+    "PacketMixer": {
+      "filename": "interaction.py",
+      "sha256": "f6f9db16ead08fb837360051ec10920d5e410eb837453c02d93fb24057c0f1a8"
+    },
+    "PacketCommunication": {
+      "filename": "packet.py",
+      "sha256": "346505fc26654609c8d5f19f59376cb0ecff11c1aa572c51ae7f188d4eeb997b"
+    }
+  },
+  "initialization": "Unchanged GPT.init_weights; exact independent copies of mapped common tensors into candidate/local. Backend-specific parameters retain their native initialization.",
+  "shared_tensor_mapping": {
+    "embedding.weight": "transformer.wte.weight",
+    "output.weight": "lm_head.weight",
+    "resid": "resid_lambdas",
+    "x0_gain": "x0_lambdas",
+    "smear_gate.weight": "smear_gate.weight",
+    "smear_gain": "smear_lambda",
+    "backout": "backout_lambda",
+    "mlps.0.0.weight": "transformer.h.0.mlp.c_fc.weight",
+    "mlps.0.1.weight": "transformer.h.0.mlp.c_proj.weight",
+    "mlps.1.0.weight": "transformer.h.1.mlp.c_fc.weight",
+    "mlps.1.1.weight": "transformer.h.1.mlp.c_proj.weight",
+    "mlps.2.0.weight": "transformer.h.2.mlp.c_fc.weight",
+    "mlps.2.1.weight": "transformer.h.2.mlp.c_proj.weight",
+    "mlps.3.0.weight": "transformer.h.3.mlp.c_fc.weight",
+    "mlps.3.1.weight": "transformer.h.3.mlp.c_proj.weight",
+    "mlps.4.0.weight": "transformer.h.4.mlp.c_fc.weight",
+    "mlps.4.1.weight": "transformer.h.4.mlp.c_proj.weight",
+    "mlps.5.0.weight": "transformer.h.5.mlp.c_fc.weight",
+    "mlps.5.1.weight": "transformer.h.5.mlp.c_proj.weight",
+    "mlps.6.0.weight": "transformer.h.6.mlp.c_fc.weight",
+    "mlps.6.1.weight": "transformer.h.6.mlp.c_proj.weight",
+    "mlps.7.0.weight": "transformer.h.7.mlp.c_fc.weight",
+    "mlps.7.1.weight": "transformer.h.7.mlp.c_proj.weight",
+    "mlps.8.0.weight": "transformer.h.8.mlp.c_fc.weight",
+    "mlps.8.1.weight": "transformer.h.8.mlp.c_proj.weight",
+    "mlps.9.0.weight": "transformer.h.9.mlp.c_fc.weight",
+    "mlps.9.1.weight": "transformer.h.9.mlp.c_proj.weight",
+    "mlps.10.0.weight": "transformer.h.10.mlp.c_fc.weight",
+    "mlps.10.1.weight": "transformer.h.10.mlp.c_proj.weight",
+    "mlps.11.0.weight": "transformer.h.11.mlp.c_fc.weight",
+    "mlps.11.1.weight": "transformer.h.11.mlp.c_proj.weight"
+  },
+  "shared_scalar_layout_conversion": {
+    "smear_gain": "upstream [1] -> candidate []",
+    "backout": "upstream [1] -> candidate []"
+  },
+  "common_shell_equality_required": true,
+  "baseline": "Unchanged pinned GPT, explicit genuine GQA, window_pattern=L; attention value embeddings and rotary remain baseline-specific.",
+  "dtype": "float32",
+  "tokenizer_assets": null,
+  "data_manifest": null,
+  "optimizer_created": false,
+  "training_updates": 0,
+  "scientific_comparison_admitted": false,
+  "parameter_reports": {
+    "packet": {
+      "backend": "packet",
+      "total_unique_parameters": 81076562,
+      "trainable_parameters": 81076562,
+      "common_shell_parameters": 76677170,
+      "backend_specific_parameters": 4399392,
+      "parameter_storage_bytes": 324306248,
+      "buffer_storage_bytes": 0,
+      "entries": [
+        {
+          "name": "resid",
+          "shape": [
+            12
+          ],
+          "numel": 12,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_residual",
+          "common_shell": true,
+          "upstream_parameter": "resid_lambdas",
+          "optimizer_reference": "upstream AdamW residual group"
+        },
+        {
+          "name": "x0_gain",
+          "shape": [
+            12
+          ],
+          "numel": 12,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_x0",
+          "common_shell": true,
+          "upstream_parameter": "x0_lambdas",
+          "optimizer_reference": "upstream AdamW x0 group"
+        },
+        {
+          "name": "smear_gain",
+          "shape": [],
+          "numel": 1,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_smear_backout",
+          "common_shell": true,
+          "upstream_parameter": "smear_lambda",
+          "optimizer_reference": "upstream AdamW smear group"
+        },
+        {
+          "name": "backout",
+          "shape": [],
+          "numel": 1,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_smear_backout",
+          "common_shell": true,
+          "upstream_parameter": "backout_lambda",
+          "optimizer_reference": "upstream AdamW smear group"
+        },
+        {
+          "name": "embedding.weight",
+          "shape": [
+            50304,
+            512
+          ],
+          "numel": 25755648,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_embedding",
+          "common_shell": true,
+          "upstream_parameter": "transformer.wte.weight",
+          "optimizer_reference": "upstream AdamW embedding group"
+        },
+        {
+          "name": "mixers.0.packets.local_age",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.0.packets.packet_age",
+          "shape": [
+            4,
+            4
+          ],
+          "numel": 16,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.0.packets.local_out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.0.packets.publish.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.0.packets.publish.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.0.packets.write_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.0.packets.read_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.0.packets.payload.weight",
+          "shape": [
+            64,
+            512
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.0.packets.packet_out.weight",
+          "shape": [
+            512,
+            64
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.0.packets.packet_gain.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.0.packets.packet_gain.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.1.packets.local_age",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.1.packets.packet_age",
+          "shape": [
+            4,
+            4
+          ],
+          "numel": 16,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.1.packets.local_out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.1.packets.publish.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.1.packets.publish.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.1.packets.write_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.1.packets.read_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.1.packets.payload.weight",
+          "shape": [
+            64,
+            512
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.1.packets.packet_out.weight",
+          "shape": [
+            512,
+            64
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.1.packets.packet_gain.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.1.packets.packet_gain.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.2.packets.local_age",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.2.packets.packet_age",
+          "shape": [
+            4,
+            4
+          ],
+          "numel": 16,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.2.packets.local_out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.2.packets.publish.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.2.packets.publish.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.2.packets.write_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.2.packets.read_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.2.packets.payload.weight",
+          "shape": [
+            64,
+            512
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.2.packets.packet_out.weight",
+          "shape": [
+            512,
+            64
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.2.packets.packet_gain.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.2.packets.packet_gain.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.3.packets.local_age",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.3.packets.packet_age",
+          "shape": [
+            4,
+            4
+          ],
+          "numel": 16,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.3.packets.local_out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.3.packets.publish.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.3.packets.publish.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.3.packets.write_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.3.packets.read_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.3.packets.payload.weight",
+          "shape": [
+            64,
+            512
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.3.packets.packet_out.weight",
+          "shape": [
+            512,
+            64
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.3.packets.packet_gain.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.3.packets.packet_gain.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.4.packets.local_age",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.4.packets.packet_age",
+          "shape": [
+            4,
+            4
+          ],
+          "numel": 16,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.4.packets.local_out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.4.packets.publish.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.4.packets.publish.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.4.packets.write_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.4.packets.read_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.4.packets.payload.weight",
+          "shape": [
+            64,
+            512
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.4.packets.packet_out.weight",
+          "shape": [
+            512,
+            64
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.4.packets.packet_gain.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.4.packets.packet_gain.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.5.packets.local_age",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.5.packets.packet_age",
+          "shape": [
+            4,
+            4
+          ],
+          "numel": 16,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.5.packets.local_out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.5.packets.publish.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.5.packets.publish.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.5.packets.write_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.5.packets.read_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.5.packets.payload.weight",
+          "shape": [
+            64,
+            512
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.5.packets.packet_out.weight",
+          "shape": [
+            512,
+            64
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.5.packets.packet_gain.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.5.packets.packet_gain.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.6.packets.local_age",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.6.packets.packet_age",
+          "shape": [
+            4,
+            4
+          ],
+          "numel": 16,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.6.packets.local_out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.6.packets.publish.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.6.packets.publish.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.6.packets.write_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.6.packets.read_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.6.packets.payload.weight",
+          "shape": [
+            64,
+            512
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.6.packets.packet_out.weight",
+          "shape": [
+            512,
+            64
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.6.packets.packet_gain.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.6.packets.packet_gain.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.7.packets.local_age",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.7.packets.packet_age",
+          "shape": [
+            4,
+            4
+          ],
+          "numel": 16,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.7.packets.local_out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.7.packets.publish.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.7.packets.publish.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.7.packets.write_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.7.packets.read_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.7.packets.payload.weight",
+          "shape": [
+            64,
+            512
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.7.packets.packet_out.weight",
+          "shape": [
+            512,
+            64
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.7.packets.packet_gain.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.7.packets.packet_gain.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.8.packets.local_age",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.8.packets.packet_age",
+          "shape": [
+            4,
+            4
+          ],
+          "numel": 16,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.8.packets.local_out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.8.packets.publish.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.8.packets.publish.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.8.packets.write_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.8.packets.read_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.8.packets.payload.weight",
+          "shape": [
+            64,
+            512
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.8.packets.packet_out.weight",
+          "shape": [
+            512,
+            64
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.8.packets.packet_gain.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.8.packets.packet_gain.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.9.packets.local_age",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.9.packets.packet_age",
+          "shape": [
+            4,
+            4
+          ],
+          "numel": 16,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.9.packets.local_out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.9.packets.publish.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.9.packets.publish.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.9.packets.write_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.9.packets.read_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.9.packets.payload.weight",
+          "shape": [
+            64,
+            512
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.9.packets.packet_out.weight",
+          "shape": [
+            512,
+            64
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.9.packets.packet_gain.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.9.packets.packet_gain.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.10.packets.local_age",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.10.packets.packet_age",
+          "shape": [
+            4,
+            4
+          ],
+          "numel": 16,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.10.packets.local_out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.10.packets.publish.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.10.packets.publish.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.10.packets.write_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.10.packets.read_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.10.packets.payload.weight",
+          "shape": [
+            64,
+            512
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.10.packets.packet_out.weight",
+          "shape": [
+            512,
+            64
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.10.packets.packet_gain.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.10.packets.packet_gain.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.11.packets.local_age",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.11.packets.packet_age",
+          "shape": [
+            4,
+            4
+          ],
+          "numel": 16,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_age_weight",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.11.packets.local_out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.11.packets.publish.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.11.packets.publish.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.11.packets.write_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.11.packets.read_topic.weight",
+          "shape": [
+            32,
+            512
+          ],
+          "numel": 16384,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.11.packets.payload.weight",
+          "shape": [
+            64,
+            512
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.11.packets.packet_out.weight",
+          "shape": [
+            512,
+            64
+          ],
+          "numel": 32768,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.11.packets.packet_gain.weight",
+          "shape": [
+            4,
+            512
+          ],
+          "numel": 2048,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.11.packets.packet_gain.bias",
+          "shape": [
+            4
+          ],
+          "numel": 4,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_bias",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mlps.0.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.0.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.0.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.0.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.1.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.1.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.1.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.1.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.2.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.2.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.2.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.2.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.3.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.3.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.3.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.3.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.4.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.4.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.4.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.4.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.5.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.5.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.5.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.5.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.6.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.6.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.6.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.6.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.7.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.7.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.7.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.7.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.8.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.8.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.8.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.8.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.9.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.9.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.9.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.9.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.10.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.10.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.10.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.10.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.11.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.11.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.11.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.11.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "output.weight",
+          "shape": [
+            50304,
+            512
+          ],
+          "numel": 25755648,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_output",
+          "common_shell": true,
+          "upstream_parameter": "lm_head.weight",
+          "optimizer_reference": "upstream AdamW unembedding group"
+        },
+        {
+          "name": "smear_gate.weight",
+          "shape": [
+            1,
+            24
+          ],
+          "numel": 24,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_smear_backout",
+          "common_shell": true,
+          "upstream_parameter": "smear_gate.weight",
+          "optimizer_reference": "upstream AdamW smear group"
+        }
+      ],
+      "optimizer_admission": "PENDING_NO_OPTIMIZER_CREATED",
+      "active_gradient_or_quality_claim": false,
+      "capacity_matched": false
+    },
+    "local": {
+      "backend": "local",
+      "total_unique_parameters": 79841330,
+      "trainable_parameters": 79841330,
+      "common_shell_parameters": 76677170,
+      "backend_specific_parameters": 3164160,
+      "parameter_storage_bytes": 319365320,
+      "buffer_storage_bytes": 0,
+      "entries": [
+        {
+          "name": "resid",
+          "shape": [
+            12
+          ],
+          "numel": 12,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_residual",
+          "common_shell": true,
+          "upstream_parameter": "resid_lambdas",
+          "optimizer_reference": "upstream AdamW residual group"
+        },
+        {
+          "name": "x0_gain",
+          "shape": [
+            12
+          ],
+          "numel": 12,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_x0",
+          "common_shell": true,
+          "upstream_parameter": "x0_lambdas",
+          "optimizer_reference": "upstream AdamW x0 group"
+        },
+        {
+          "name": "smear_gain",
+          "shape": [],
+          "numel": 1,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_smear_backout",
+          "common_shell": true,
+          "upstream_parameter": "smear_lambda",
+          "optimizer_reference": "upstream AdamW smear group"
+        },
+        {
+          "name": "backout",
+          "shape": [],
+          "numel": 1,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_smear_backout",
+          "common_shell": true,
+          "upstream_parameter": "backout_lambda",
+          "optimizer_reference": "upstream AdamW smear group"
+        },
+        {
+          "name": "embedding.weight",
+          "shape": [
+            50304,
+            512
+          ],
+          "numel": 25755648,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_embedding",
+          "common_shell": true,
+          "upstream_parameter": "transformer.wte.weight",
+          "optimizer_reference": "upstream AdamW embedding group"
+        },
+        {
+          "name": "mixers.0.conv.weight",
+          "shape": [
+            512,
+            1,
+            3
+          ],
+          "numel": 1536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_depthwise_convolution",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.0.out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.1.conv.weight",
+          "shape": [
+            512,
+            1,
+            3
+          ],
+          "numel": 1536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_depthwise_convolution",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.1.out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.2.conv.weight",
+          "shape": [
+            512,
+            1,
+            3
+          ],
+          "numel": 1536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_depthwise_convolution",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.2.out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.3.conv.weight",
+          "shape": [
+            512,
+            1,
+            3
+          ],
+          "numel": 1536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_depthwise_convolution",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.3.out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.4.conv.weight",
+          "shape": [
+            512,
+            1,
+            3
+          ],
+          "numel": 1536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_depthwise_convolution",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.4.out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.5.conv.weight",
+          "shape": [
+            512,
+            1,
+            3
+          ],
+          "numel": 1536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_depthwise_convolution",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.5.out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.6.conv.weight",
+          "shape": [
+            512,
+            1,
+            3
+          ],
+          "numel": 1536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_depthwise_convolution",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.6.out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.7.conv.weight",
+          "shape": [
+            512,
+            1,
+            3
+          ],
+          "numel": 1536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_depthwise_convolution",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.7.out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.8.conv.weight",
+          "shape": [
+            512,
+            1,
+            3
+          ],
+          "numel": 1536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_depthwise_convolution",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.8.out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.9.conv.weight",
+          "shape": [
+            512,
+            1,
+            3
+          ],
+          "numel": 1536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_depthwise_convolution",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.9.out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.10.conv.weight",
+          "shape": [
+            512,
+            1,
+            3
+          ],
+          "numel": 1536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_depthwise_convolution",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.10.out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.11.conv.weight",
+          "shape": [
+            512,
+            1,
+            3
+          ],
+          "numel": 1536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_depthwise_convolution",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mixers.11.out.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "candidate_matrix",
+          "common_shell": false,
+          "upstream_parameter": null,
+          "optimizer_reference": "UNADMITTED: candidate-specific optimizer group required"
+        },
+        {
+          "name": "mlps.0.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.0.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.0.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.0.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.1.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.1.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.1.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.1.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.2.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.2.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.2.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.2.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.3.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.3.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.3.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.3.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.4.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.4.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.4.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.4.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.5.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.5.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.5.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.5.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.6.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.6.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.6.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.6.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.7.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.7.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.7.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.7.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.8.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.8.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.8.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.8.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.9.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.9.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.9.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.9.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.10.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.10.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.10.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.10.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.11.0.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.11.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "mlps.11.1.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.11.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "output.weight",
+          "shape": [
+            50304,
+            512
+          ],
+          "numel": 25755648,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_output",
+          "common_shell": true,
+          "upstream_parameter": "lm_head.weight",
+          "optimizer_reference": "upstream AdamW unembedding group"
+        },
+        {
+          "name": "smear_gate.weight",
+          "shape": [
+            1,
+            24
+          ],
+          "numel": 24,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_smear_backout",
+          "common_shell": true,
+          "upstream_parameter": "smear_gate.weight",
+          "optimizer_reference": "upstream AdamW smear group"
+        }
+      ],
+      "optimizer_admission": "PENDING_NO_OPTIMIZER_CREATED",
+      "active_gradient_or_quality_claim": false,
+      "capacity_matched": false
+    },
+    "gqa": {
+      "backend": "gqa",
+      "total_unique_parameters": 123175106,
+      "trainable_parameters": 123175106,
+      "common_shell_parameters": 76677170,
+      "backend_specific_parameters": 46497936,
+      "parameter_storage_bytes": 492700424,
+      "buffer_storage_bytes": 2621440,
+      "entries": [
+        {
+          "name": "resid_lambdas",
+          "shape": [
+            12
+          ],
+          "numel": 12,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_residual",
+          "common_shell": true,
+          "upstream_parameter": "resid_lambdas",
+          "optimizer_reference": "upstream AdamW residual group"
+        },
+        {
+          "name": "x0_lambdas",
+          "shape": [
+            12
+          ],
+          "numel": 12,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_x0",
+          "common_shell": true,
+          "upstream_parameter": "x0_lambdas",
+          "optimizer_reference": "upstream AdamW x0 group"
+        },
+        {
+          "name": "smear_lambda",
+          "shape": [
+            1
+          ],
+          "numel": 1,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_smear_backout",
+          "common_shell": true,
+          "upstream_parameter": "smear_lambda",
+          "optimizer_reference": "upstream AdamW smear group"
+        },
+        {
+          "name": "backout_lambda",
+          "shape": [
+            1
+          ],
+          "numel": 1,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_smear_backout",
+          "common_shell": true,
+          "upstream_parameter": "backout_lambda",
+          "optimizer_reference": "upstream AdamW smear group"
+        },
+        {
+          "name": "transformer.wte.weight",
+          "shape": [
+            50304,
+            512
+          ],
+          "numel": 25755648,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_embedding",
+          "common_shell": true,
+          "upstream_parameter": "transformer.wte.weight",
+          "optimizer_reference": "upstream AdamW embedding group"
+        },
+        {
+          "name": "transformer.h.0.attn.c_q.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.0.attn.c_q.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.0.attn.c_k.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.0.attn.c_k.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.0.attn.c_v.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.0.attn.c_v.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.0.attn.c_proj.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.0.attn.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.0.mlp.c_fc.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.0.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.0.mlp.c_proj.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.0.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.1.attn.c_q.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.1.attn.c_q.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.1.attn.c_k.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.1.attn.c_k.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.1.attn.c_v.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.1.attn.c_v.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.1.attn.c_proj.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.1.attn.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.1.attn.ve_gate.weight",
+          "shape": [
+            2,
+            12
+          ],
+          "numel": 24,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.1.attn.ve_gate.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.1.mlp.c_fc.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.1.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.1.mlp.c_proj.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.1.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.2.attn.c_q.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.2.attn.c_q.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.2.attn.c_k.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.2.attn.c_k.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.2.attn.c_v.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.2.attn.c_v.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.2.attn.c_proj.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.2.attn.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.2.mlp.c_fc.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.2.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.2.mlp.c_proj.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.2.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.3.attn.c_q.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.3.attn.c_q.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.3.attn.c_k.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.3.attn.c_k.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.3.attn.c_v.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.3.attn.c_v.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.3.attn.c_proj.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.3.attn.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.3.attn.ve_gate.weight",
+          "shape": [
+            2,
+            12
+          ],
+          "numel": 24,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.3.attn.ve_gate.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.3.mlp.c_fc.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.3.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.3.mlp.c_proj.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.3.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.4.attn.c_q.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.4.attn.c_q.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.4.attn.c_k.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.4.attn.c_k.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.4.attn.c_v.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.4.attn.c_v.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.4.attn.c_proj.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.4.attn.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.4.mlp.c_fc.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.4.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.4.mlp.c_proj.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.4.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.5.attn.c_q.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.5.attn.c_q.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.5.attn.c_k.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.5.attn.c_k.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.5.attn.c_v.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.5.attn.c_v.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.5.attn.c_proj.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.5.attn.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.5.attn.ve_gate.weight",
+          "shape": [
+            2,
+            12
+          ],
+          "numel": 24,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.5.attn.ve_gate.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.5.mlp.c_fc.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.5.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.5.mlp.c_proj.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.5.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.6.attn.c_q.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.6.attn.c_q.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.6.attn.c_k.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.6.attn.c_k.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.6.attn.c_v.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.6.attn.c_v.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.6.attn.c_proj.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.6.attn.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.6.mlp.c_fc.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.6.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.6.mlp.c_proj.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.6.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.7.attn.c_q.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.7.attn.c_q.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.7.attn.c_k.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.7.attn.c_k.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.7.attn.c_v.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.7.attn.c_v.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.7.attn.c_proj.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.7.attn.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.7.attn.ve_gate.weight",
+          "shape": [
+            2,
+            12
+          ],
+          "numel": 24,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.7.attn.ve_gate.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.7.mlp.c_fc.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.7.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.7.mlp.c_proj.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.7.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.8.attn.c_q.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.8.attn.c_q.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.8.attn.c_k.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.8.attn.c_k.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.8.attn.c_v.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.8.attn.c_v.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.8.attn.c_proj.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.8.attn.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.8.mlp.c_fc.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.8.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.8.mlp.c_proj.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.8.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.9.attn.c_q.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.9.attn.c_q.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.9.attn.c_k.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.9.attn.c_k.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.9.attn.c_v.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.9.attn.c_v.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.9.attn.c_proj.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.9.attn.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.9.attn.ve_gate.weight",
+          "shape": [
+            2,
+            12
+          ],
+          "numel": 24,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.9.attn.ve_gate.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.9.mlp.c_fc.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.9.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.9.mlp.c_proj.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.9.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.10.attn.c_q.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.10.attn.c_q.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.10.attn.c_k.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.10.attn.c_k.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.10.attn.c_v.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.10.attn.c_v.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.10.attn.c_proj.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.10.attn.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.10.mlp.c_fc.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.10.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.10.mlp.c_proj.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.10.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.11.attn.c_q.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.11.attn.c_q.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.11.attn.c_k.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.11.attn.c_k.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.11.attn.c_v.weight",
+          "shape": [
+            128,
+            512
+          ],
+          "numel": 65536,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.11.attn.c_v.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.11.attn.c_proj.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "numel": 262144,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.11.attn.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.11.attn.ve_gate.weight",
+          "shape": [
+            2,
+            12
+          ],
+          "numel": 24,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_matrix",
+          "common_shell": false,
+          "upstream_parameter": "transformer.h.11.attn.ve_gate.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.11.mlp.c_fc.weight",
+          "shape": [
+            2048,
+            512
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.11.mlp.c_fc.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "transformer.h.11.mlp.c_proj.weight",
+          "shape": [
+            512,
+            2048
+          ],
+          "numel": 1048576,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_mlp_matrix",
+          "common_shell": true,
+          "upstream_parameter": "transformer.h.11.mlp.c_proj.weight",
+          "optimizer_reference": "upstream Muon matrix group"
+        },
+        {
+          "name": "lm_head.weight",
+          "shape": [
+            50304,
+            512
+          ],
+          "numel": 25755648,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_output",
+          "common_shell": true,
+          "upstream_parameter": "lm_head.weight",
+          "optimizer_reference": "upstream AdamW unembedding group"
+        },
+        {
+          "name": "smear_gate.weight",
+          "shape": [
+            1,
+            24
+          ],
+          "numel": 24,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "common_smear_backout",
+          "common_shell": true,
+          "upstream_parameter": "smear_gate.weight",
+          "optimizer_reference": "upstream AdamW smear group"
+        },
+        {
+          "name": "value_embeds.1.weight",
+          "shape": [
+            50304,
+            128
+          ],
+          "numel": 6438912,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_value_embedding",
+          "common_shell": false,
+          "upstream_parameter": "value_embeds.1.weight",
+          "optimizer_reference": "upstream AdamW value-embedding group"
+        },
+        {
+          "name": "value_embeds.3.weight",
+          "shape": [
+            50304,
+            128
+          ],
+          "numel": 6438912,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_value_embedding",
+          "common_shell": false,
+          "upstream_parameter": "value_embeds.3.weight",
+          "optimizer_reference": "upstream AdamW value-embedding group"
+        },
+        {
+          "name": "value_embeds.5.weight",
+          "shape": [
+            50304,
+            128
+          ],
+          "numel": 6438912,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_value_embedding",
+          "common_shell": false,
+          "upstream_parameter": "value_embeds.5.weight",
+          "optimizer_reference": "upstream AdamW value-embedding group"
+        },
+        {
+          "name": "value_embeds.7.weight",
+          "shape": [
+            50304,
+            128
+          ],
+          "numel": 6438912,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_value_embedding",
+          "common_shell": false,
+          "upstream_parameter": "value_embeds.7.weight",
+          "optimizer_reference": "upstream AdamW value-embedding group"
+        },
+        {
+          "name": "value_embeds.9.weight",
+          "shape": [
+            50304,
+            128
+          ],
+          "numel": 6438912,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_value_embedding",
+          "common_shell": false,
+          "upstream_parameter": "value_embeds.9.weight",
+          "optimizer_reference": "upstream AdamW value-embedding group"
+        },
+        {
+          "name": "value_embeds.11.weight",
+          "shape": [
+            50304,
+            128
+          ],
+          "numel": 6438912,
+          "trainable": true,
+          "dtype": "torch.float32",
+          "role": "attention_value_embedding",
+          "common_shell": false,
+          "upstream_parameter": "value_embeds.11.weight",
+          "optimizer_reference": "upstream AdamW value-embedding group"
+        }
+      ],
+      "optimizer_admission": "PENDING_NO_OPTIMIZER_CREATED",
+      "active_gradient_or_quality_claim": false,
+      "capacity_matched": false
+    }
+  }
+}

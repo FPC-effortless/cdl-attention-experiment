@@ -1,7 +1,22 @@
-# Kaggle continuation: integration implemented, GPU jobs queued
+# Kaggle continuation: GPU engineering jobs completed
+
+**Latest outcome:** both original private version 1 jobs completed. All five GPU
+engineering check groups and all three bounded capacity probes passed. The packet
+implementation's single forward/backward observation was 33.07 seconds versus
+0.251 seconds for GQA, a resource-planning warning that requires profiling rather
+than an efficiency ranking. See the [retrieved results and limits](../kaggle_results_001/README.md),
+[independent result review](../kaggle_results_001/INDEPENDENT_RESULT_REVIEW.md), and
+[current status](EXECUTION_STATUS.json). No model fit or optimizer update occurred.
+
+The [MoLab conversion](../molab_integration_001/README.md) is prepared; authentication
+and execution there remain incomplete. The earlier submission account below is
+retained as a historical snapshot. Its queued/future-tense statements do not
+describe the current job status.
+
+## Original submission snapshot
 
 Status snapshot: **22 November 2026, America/Los_Angeles**. Exact UTC observations
-are in [EXECUTION_STATUS.json](EXECUTION_STATUS.json).
+are preserved in [SUBMISSION_STATUS_SNAPSHOT.json](../kaggle_results_001/SUBMISSION_STATUS_SNAPSHOT.json).
 
 The authorized Kaggle credential authenticated successfully. Two private version 1
 jobs were accepted, and their returned source bytes match the reviewed hashes.

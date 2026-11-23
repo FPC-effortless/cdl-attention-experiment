@@ -1,0 +1,25 @@
+{
+  "observed_utc": "2026-11-23T18:31:39.180302+00:00",
+  "requested_ref": "eweewee2/cog-attention-comparison-environment-001",
+  "requested_version": 1,
+  "metadata": {
+    "id": 146800560,
+    "ref": "eweewee2/cog-attention-comparison-environment-001",
+    "title": "COG Attention Comparison Environment 001",
+    "is_private": true,
+    "enable_gpu": true,
+    "enable_tpu": false,
+    "enable_internet": false,
+    "current_version_number": 1,
+    "docker_image": "gcr.io/kaggle-private-byod/python@sha256:fc720c15545eb096a510e1f085b17fc118387a007599424d953a4f327b71cacf",
+    "machine_shape": "NvidiaTeslaT4",
+    "dataset_data_sources": [],
+    "kernel_data_sources": [],
+    "competition_data_sources": [],
+    "model_data_sources": []
+  },
+  "status": "COMPLETE",
+  "failure_message": "",
+  "remote_source_sha256": "70c81e91d05c38a7cd487c2d6a74b639ff2ce1802ce4b27a93071a2ffefc7719",
+  "source_matches_reviewed": true
+}
