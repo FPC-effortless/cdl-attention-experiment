@@ -19,6 +19,17 @@ Tokens -> embedding + causal smear -> repeated blocks -> capped LM logits
 - Functional decoder state supports full-sequence and chunk reference calls, reset with no state, and reuse of an unchanged prefix state for alternate continuations. Batches require aligned stream boundaries. These checks do not establish continuous batching, mixed-document isolation through the upstream packer, model-state provenance across reload, or native nanochat cache compatibility.
 - Source-backed historical adapter: `nanocog/state/pulse_adapter.py` accepts an authorized already-instantiated PULSE-006 model. It reuses native current-event projections, publishes no predecessor implementation or weights and substitutes an explicitly engineered typed state/reader. Adapter test on exact historical source is optional; normal public tests use the local reference only.
 
+## Durable application memory
+
+The optional [durable memory runtime](nanocog/memory/README.md) now provides automatic
+cross-chat source capture/recall, accepted record revisions, source-dependent
+erasure, verified backup/restore, and exact-model single-stream decoder continuation
+across process restarts. It wraps the existing functional API without changing
+historical experiments or silently changing the ordinary `Decoder.forward` lifecycle.
+The host must integrate the session wrapper and use persistent storage. These are
+engineering guarantees at the application boundary, not improved learned writing,
+temporal understanding, native nanochat compatibility or a deployed chat service.
+
 ## Upstream and fair comparison
 
 Karpathy [nanochat at 92d63d4](https://github.com/karpathy/nanochat/tree/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd) is the baseline, with its license notice preserved. The reference decoder follows its common untied embedding/output, padded vocabulary, RMS normalization, embedding smear, per-layer residual scales, backout, ReLU² and logit soft cap. Rotary, attention-specific value embeddings, self-attention and KV state are not part of the candidate. Initialization, optimizer grouping, tokenizer loading, batching and full serving are **not** drop-in equivalents. Do not compare this reference directly to nanochat training or serving performance.
