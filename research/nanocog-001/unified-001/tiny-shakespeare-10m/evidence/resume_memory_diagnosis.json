@@ -1,0 +1,96 @@
+{
+  "time": 1795415118.8490498,
+  "vmstat": "pswpin 0\npswpout 0\npgmajfault 2203\noom_kill 2",
+  "meminfo": "MemTotal:       10206468 kB\nMemAvailable:    5601944 kB\nSwapCached:            0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nAnonPages:       2493652 kB\nShmem:           1272920 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB",
+  "step": 400,
+  "checkpoint_bytes": 116800203,
+  "groups": {
+    "model": {
+      "numel": 9725682,
+      "bytes": 38902728,
+      "subnormal": 0,
+      "zeros": 0,
+      "max_abs": 3.0219430923461914
+    },
+    "optimizer": {
+      "numel": 19451431,
+      "bytes": 77805724,
+      "subnormal": 0,
+      "zeros": 0,
+      "max_abs": 400.0
+    }
+  },
+  "subnormal_groups": [],
+  "write_query_weight_ranges": {
+    "record_board.norm.weight": {
+      "min": 0.9744959473609924,
+      "max": 1.030036449432373
+    },
+    "record_board.query_entity.weight": {
+      "min": -0.06728419661521912,
+      "max": 0.05670170485973358
+    },
+    "record_board.query_entity.bias": {
+      "min": -0.0037700277753174305,
+      "max": 0.003616423811763525
+    },
+    "record_board.query_relation.weight": {
+      "min": -0.0705530121922493,
+      "max": 0.06907477974891663
+    },
+    "record_board.query_relation.bias": {
+      "min": -0.0029325177893042564,
+      "max": 0.005817154422402382
+    },
+    "record_board.write_entity.weight": {
+      "min": -0.07412238419055939,
+      "max": 0.06579931825399399
+    },
+    "record_board.write_entity.bias": {
+      "min": -0.002599355997517705,
+      "max": 0.0005324504454620183
+    },
+    "record_board.write_relation.weight": {
+      "min": -0.07611847668886185,
+      "max": 0.05572540685534477
+    },
+    "record_board.write_relation.bias": {
+      "min": -0.0021958816796541214,
+      "max": 0.0015857656253501773
+    },
+    "record_board.write_commit.weight": {
+      "min": -0.05642961338162422,
+      "max": 0.05469174310564995
+    },
+    "record_board.write_commit.bias": {
+      "min": 0.9638526439666748,
+      "max": 0.9638526439666748
+    },
+    "record_board.write_value.weight": {
+      "min": -0.07543114572763443,
+      "max": 0.07311997562646866
+    },
+    "record_board.write_value.bias": {
+      "min": -0.009888487868010998,
+      "max": 0.009506389498710632
+    },
+    "record_board.read_value.weight": {
+      "min": -0.07970260083675385,
+      "max": 0.07653475552797318
+    },
+    "record_board.read_gate.weight": {
+      "min": -0.08320017904043198,
+      "max": 0.08810565620660782
+    },
+    "record_board.read_gate.bias": {
+      "min": -1.0549192428588867,
+      "max": -1.0549192428588867
+    }
+  },
+  "optimizer_storage_aliases": {
+    "tensors": 201,
+    "alias_original": 201,
+    "nonalias_bytes": 0
+  },
+  "max_rss_kib": 432056
+}

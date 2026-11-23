@@ -1,0 +1,34 @@
+{
+  "scope": "pure-stdlib archive consistency check only; no completed-run audit or neural inference",
+  "result": {
+    "passed": true,
+    "entries": [
+      {
+        "interruption_session": 21959,
+        "archive": "metrics_before_interruption_21959.jsonl",
+        "archive_sha256": "1f8b85f4dba59745550186982197dd2341dcff3ad3933a50cfffb4ef760f9175",
+        "discarded_tail": "discarded_metrics_21959.jsonl",
+        "discarded_tail_sha256": "5321aa8a1a07518c0262609d37130dc007810ec41179d2da13ac09128715c0a5",
+        "retained_checkpoint_step": 419,
+        "last_logged_discarded_step": 440,
+        "discarded_logged_train_records": 3,
+        "minimum_documented_discarded_completed_updates": 21,
+        "minimum_documented_discarded_target_presentations": 172032,
+        "recorded_optimizer_seconds_between_retained_and_last_discarded_log": 215.8644902560045,
+        "hashes_match_interruption_receipt": true,
+        "discarded_tail_matches_exact_original_records": true,
+        "canonical_retained_prefix_and_recovery_marker_match": true,
+        "declared_discarded_counts_match": true,
+        "passed": true,
+        "additional_uncheckpointed_work": "unknown"
+      }
+    ],
+    "archive_names": [
+      "discarded_metrics_21959.jsonl",
+      "metrics_before_interruption_21959.jsonl"
+    ],
+    "minimum_documented_discarded_completed_updates": 21,
+    "minimum_documented_discarded_target_presentations": 172032,
+    "unlogged_work_at_other_interruptions": "unknown"
+  }
+}

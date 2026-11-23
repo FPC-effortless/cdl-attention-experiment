@@ -1,0 +1,44 @@
+{
+  "additional_unlogged_work": "unknown",
+  "best_checkpoint_sha256": "60a01cc2aab00c96e0186ea211ecab6e83117f2efb86f0ec5f172b051c2cdeb8",
+  "bound_best_checkpoint_sha256": "60a01cc2aab00c96e0186ea211ecab6e83117f2efb86f0ec5f172b051c2cdeb8",
+  "checkpoint_and_log_mtimes": {
+    "best.pt": 1795420154.3496268,
+    "launcher_1795425698-2.log": 1795426426.9019837,
+    "launcher_sessions.jsonl": 1795425698.6894555,
+    "metrics.jsonl": 1795426426.9019837,
+    "resume.pt": 1795425909.1443536
+  },
+  "flock_executable": "/usr/bin/flock",
+  "former_exec_session_id": 48409,
+  "former_launcher_has_end_receipt": false,
+  "former_launcher_session_token": "1795425698-2",
+  "host_observation": {
+    "AnonPages": "1204028 kB",
+    "MemAvailable": "6962484 kB",
+    "SwapTotal": "0 kB"
+  },
+  "kind": "read_only_interrupted_worker_recovery_observation",
+  "last_logged_step": 1850,
+  "liveness_evidence_scope": "No prior agent or usable exec handle remains. Each exec sees its own PID namespace, so ps cannot inspect the old namespace. Logs/checkpoints have been unchanged far beyond the 900-second bound; the former ~3.9GiB active trainer footprint is absent. No process-specific exit receipt is available.",
+  "metrics_sha256_before_recovery": "8eaf83d5ae91e087e433055df8703a7b28c6db0e4f5e07833b914fdbda4a4fee",
+  "minimum_discarded_completed_updates": 50,
+  "minimum_discarded_target_presentations": 409600,
+  "mutations_to_run": false,
+  "observation_unix": 1795429308.434409,
+  "process_specific_exit_code": null,
+  "prospective_discarded_tail_records": 5,
+  "prospective_discarded_tail_sha256": "b3cf281eaa64db09fe8b7315de21db1f0c6e29986b751c5737ac0e3b977d514c",
+  "resume_checkpoint_status": "resumable",
+  "resume_sha256": "cad14eedca1be4803ae6f27f5dc1127e9640dd21b04a6d3d7a5295cbe754b957",
+  "resume_step": 1800,
+  "resume_training_seconds": 11245.222090018091,
+  "resume_training_targets_seen": 14745600,
+  "source_sha256": {
+    "data.py": "5c53755333460b7fdb35e0f9a5f88b2b3c7e3f37674ef92df506164728dad69d",
+    "model.py": "f96bd967b4bc4ece9d2750a5cf1afdf1cc819a6b007e2d638af633376c7eccaa",
+    "sample.py": "b8188e737856dacc67cbc948c2fc8a884007421397075d38f973e9b37e6207ba",
+    "train.py": "52751e1a7d383a8bb809835d1d528ee02fa4abbbe8439a5ef0918186ce3bedf6"
+  },
+  "termination_cause": "not established"
+}

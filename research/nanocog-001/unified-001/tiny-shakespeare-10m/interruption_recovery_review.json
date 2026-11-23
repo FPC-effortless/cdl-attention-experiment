@@ -1,0 +1,201 @@
+{
+  "scope": "Constructed no-Torch metadata/report checks and read-only archived-history binding; no training or model inference",
+  "passed": 22,
+  "total": 22,
+  "checks": [
+    {
+      "name": "two_recoveries_preserve_prefixes_and_sum_lower_bounds",
+      "passed": true
+    },
+    {
+      "name": "duplicate_interruption_rejected",
+      "passed": true
+    },
+    {
+      "name": "reused_archive_identity_rejected",
+      "passed": true
+    },
+    {
+      "name": "tampered_tail_fails",
+      "passed": true
+    },
+    {
+      "name": "missing_recovery_marker_fails",
+      "passed": true
+    },
+    {
+      "name": "changed_retained_prefix_fails",
+      "passed": true
+    },
+    {
+      "name": "wrong_discarded_count_fails",
+      "passed": true
+    },
+    {
+      "name": "invented_exit_code_fails",
+      "passed": true
+    },
+    {
+      "name": "missing_unobserved_launcher_fails",
+      "passed": true
+    },
+    {
+      "name": "observed_exit_disallows_unobserved_claim",
+      "passed": true
+    },
+    {
+      "name": "unmatched_launcher_keeps_unknown_resources",
+      "passed": true
+    },
+    {
+      "name": "unreceipted_start_rejected",
+      "passed": true
+    },
+    {
+      "name": "completed_old_launcher_rejected_as_unobserved",
+      "passed": true
+    },
+    {
+      "name": "duplicate_launcher_identity_rejected",
+      "passed": true
+    },
+    {
+      "name": "finalizer_rejects_fabricated_exit_code",
+      "passed": true
+    },
+    {
+      "name": "new_archives_are_required_and_hash_bound",
+      "passed": true
+    },
+    {
+      "name": "source_evidence_and_checker_are_whitelisted",
+      "passed": true
+    },
+    {
+      "name": "report_separates_intentional_unobserved_and_completed_receipts",
+      "passed": true
+    },
+    {
+      "name": "frozen_training_sources_unchanged",
+      "passed": true
+    },
+    {
+      "name": "finalizer_copies_identical",
+      "passed": true
+    },
+    {
+      "name": "torch_not_imported",
+      "passed": true
+    },
+    {
+      "name": "actual_archived_prefixes_and_counts_bind_without_inference",
+      "passed": true
+    }
+  ],
+  "actual_archived_history": {
+    "passed": true,
+    "entries": [
+      {
+        "interruption_type": "intentional_runtime_stop",
+        "interruption_session": 21959,
+        "launcher_session_token": null,
+        "observed_exit_code": 130,
+        "archive": "metrics_before_interruption_21959.jsonl",
+        "archive_sha256": "1f8b85f4dba59745550186982197dd2341dcff3ad3933a50cfffb4ef760f9175",
+        "discarded_tail": "discarded_metrics_21959.jsonl",
+        "discarded_tail_sha256": "5321aa8a1a07518c0262609d37130dc007810ec41179d2da13ac09128715c0a5",
+        "retained_checkpoint_step": 419,
+        "last_logged_discarded_step": 440,
+        "discarded_logged_train_records": 3,
+        "minimum_documented_discarded_completed_updates": 21,
+        "minimum_documented_discarded_target_presentations": 172032,
+        "recorded_optimizer_seconds_between_retained_and_last_discarded_log": 215.8644902560045,
+        "hashes_match_interruption_receipt": true,
+        "discarded_tail_matches_exact_original_records": true,
+        "canonical_retained_prefix_and_recovery_marker_match": true,
+        "declared_discarded_counts_match": true,
+        "unobserved_launcher_binding_verified": true,
+        "passed": true,
+        "additional_uncheckpointed_work": "unknown"
+      },
+      {
+        "interruption_type": "unobserved_runtime_stop",
+        "interruption_session": 48409,
+        "launcher_session_token": "1795425698-2",
+        "observed_exit_code": null,
+        "archive": "metrics_before_interruption_48409.jsonl",
+        "archive_sha256": "8eaf83d5ae91e087e433055df8703a7b28c6db0e4f5e07833b914fdbda4a4fee",
+        "discarded_tail": "discarded_metrics_48409.jsonl",
+        "discarded_tail_sha256": "b3cf281eaa64db09fe8b7315de21db1f0c6e29986b751c5737ac0e3b977d514c",
+        "retained_checkpoint_step": 1800,
+        "last_logged_discarded_step": 1850,
+        "discarded_logged_train_records": 5,
+        "minimum_documented_discarded_completed_updates": 50,
+        "minimum_documented_discarded_target_presentations": 409600,
+        "recorded_optimizer_seconds_between_retained_and_last_discarded_log": 517.736027687999,
+        "hashes_match_interruption_receipt": true,
+        "discarded_tail_matches_exact_original_records": true,
+        "canonical_retained_prefix_and_recovery_marker_match": true,
+        "declared_discarded_counts_match": true,
+        "unobserved_launcher_binding_verified": true,
+        "passed": true,
+        "additional_uncheckpointed_work": "unknown"
+      }
+    ],
+    "archive_names": [
+      "discarded_metrics_21959.jsonl",
+      "discarded_metrics_48409.jsonl",
+      "metrics_before_interruption_21959.jsonl",
+      "metrics_before_interruption_48409.jsonl"
+    ],
+    "minimum_documented_discarded_completed_updates": 71,
+    "minimum_documented_discarded_target_presentations": 581632,
+    "unlogged_work_at_other_interruptions": "unknown"
+  },
+  "frozen_source_sha256": {
+    "model.py": "f96bd967b4bc4ece9d2750a5cf1afdf1cc819a6b007e2d638af633376c7eccaa",
+    "train.py": "52751e1a7d383a8bb809835d1d528ee02fa4abbbe8439a5ef0918186ce3bedf6",
+    "data.py": "5c53755333460b7fdb35e0f9a5f88b2b3c7e3f37674ef92df506164728dad69d",
+    "sample.py": "b8188e737856dacc67cbc948c2fc8a884007421397075d38f973e9b37e6207ba"
+  },
+  "postfit_audit_sha256": "ba97ca1370779ebd65cbafa1b7b988083116d322b21a59796dd691462fa36a42",
+  "finalizer_sha256": "182b177180ca696cef78b9ac00e575ce017446689adee8a48df05326ebca9a71",
+  "check_script_sha256": "9279c745c9359c8cac1992d480c027a0e1b16e689a969cad7235f3a3230f6e2e",
+  "recovery_evidence_sha256": {
+    "evidence/recovery_observation_48409.json": "d60bf2375f8b8d4e223f47d5c2e38aa6a2025c991c6340569e845cb349776488",
+    "evidence/recovery_lock_receipt_48409.json": "b15f923b89ece6e49fa917543e17eb671859906386dd37f79fffdbb6709d676b"
+  },
+  "synthetic_report_scores_are_not_training_results": true,
+  "torch_imported": false,
+  "final_audit_or_finalizer_executed": false,
+  "external_finalizer_mirror_checked": true,
+  "independent_review": {
+    "reviewer": "separate recovery-accounting review agent",
+    "executed_review": {
+      "kind": "constructed metadata/report checker rerun with receipt redirected to a temporary file",
+      "passed": 22,
+      "total": 22,
+      "torch_imported": false,
+      "postfit_audit_sha256": "ba97ca1370779ebd65cbafa1b7b988083116d322b21a59796dd691462fa36a42",
+      "finalizer_sha256": "5157d8bb8914ef828f202c59010a55cc230df4b913cb4df7d07e9e30d4d86c03",
+      "checker_sha256": "c72e01cd6e71ea9e286f947f847290eb7dd8d4e04e4a4ca946915af8e8a0a003"
+    },
+    "final_static_review": {
+      "status": "PASS",
+      "postfit_audit_sha256": "ba97ca1370779ebd65cbafa1b7b988083116d322b21a59796dd691462fa36a42",
+      "finalizer_sha256": "182b177180ca696cef78b9ac00e575ce017446689adee8a48df05326ebca9a71",
+      "checker_sha256": "9279c745c9359c8cac1992d480c027a0e1b16e689a969cad7235f3a3230f6e2e",
+      "scope": "Reviewed subsequent source-ZIP portability fix and optional scalar-replay evidence inclusion/wording; both finalizer copies identical; no additional inference or numerical test campaign",
+      "portable_checker_note": "Local workspace checks22 include the external mirror comparison; an extracted package without that mirror performs21 and records mirror_checked=false."
+    },
+    "confirmed": [
+      "exact two-recovery prefixes and counts",
+      "duplicate archive/receipt rejection",
+      "unknown exit/end/duration/RSS preserved",
+      "both new archives required and input-hash-bound",
+      "recovery evidence included in source and resume archives",
+      "final successful launcher exit still required",
+      "frozen training sources unchanged"
+    ]
+  }
+}

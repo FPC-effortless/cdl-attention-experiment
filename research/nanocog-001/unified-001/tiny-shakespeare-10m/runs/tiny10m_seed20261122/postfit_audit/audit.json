@@ -1,0 +1,570 @@
+{
+  "scope": "post-fit artifact and trajectory audit; no additional training or model-ranking claim",
+  "run_directory": "/workspace/scratch/2a5ba884844e/cog_tiny_10m/runs/tiny10m_seed20261122",
+  "environment": {
+    "torch": "2.10.0+cpu",
+    "device": "cpu",
+    "threads": 2
+  },
+  "audit_script_sha256": "ba97ca1370779ebd65cbafa1b7b988083116d322b21a59796dd691462fa36a42",
+  "checks": [
+    {
+      "name": "discarded_trajectory_archives_and_recovery_verified",
+      "passed": true,
+      "interruption_archives": 2,
+      "minimum_discarded_updates": 71,
+      "minimum_discarded_presentations": 581632
+    },
+    {
+      "name": "source_identity_matches_frozen_run",
+      "passed": true,
+      "source_sha256": {
+        "model.py": "f96bd967b4bc4ece9d2750a5cf1afdf1cc819a6b007e2d638af633376c7eccaa",
+        "train.py": "52751e1a7d383a8bb809835d1d528ee02fa4abbbe8439a5ef0918186ce3bedf6",
+        "data.py": "5c53755333460b7fdb35e0f9a5f88b2b3c7e3f37674ef92df506164728dad69d"
+      }
+    },
+    {
+      "name": "dataset_and_tokenizer_identity",
+      "passed": true
+    },
+    {
+      "name": "training_only_vocabulary_and_exact_splits",
+      "passed": true,
+      "split_metadata": {
+        "train": {
+          "start_character_inclusive": 0,
+          "end_character_exclusive": 1003854,
+          "characters": 1003854,
+          "available_next_character_targets": 1003853,
+          "binary_sha256": "6ec305602a99ac2802745a134e1f5e33e2231b4855525b00b9aebb730ac2626f"
+        },
+        "val": {
+          "start_character_inclusive": 1003854,
+          "end_character_exclusive": 1059624,
+          "characters": 55770,
+          "available_next_character_targets": 55769,
+          "binary_sha256": "42586f62517e6504c04c45990fe22bf8ee50f49f45872a953cbbb645d3b9feae"
+        },
+        "test": {
+          "start_character_inclusive": 1059624,
+          "end_character_exclusive": 1115394,
+          "characters": 55770,
+          "available_next_character_targets": 55769,
+          "binary_sha256": "d31243866feba5c668b6918f8e73083b9f4fc55ba918bf5562f6d3d61c6d3f75"
+        }
+      },
+      "vocab_size": 65
+    },
+    {
+      "name": "actual_parameters_and_configuration",
+      "passed": true,
+      "actual_parameters": 9725682
+    },
+    {
+      "name": "checkpoint_parameters_are_finite",
+      "passed": true
+    },
+    {
+      "name": "best_checkpoint_hash_and_metadata",
+      "passed": true,
+      "best_checkpoint_sha256": "60a01cc2aab00c96e0186ea211ecab6e83117f2efb86f0ec5f172b051c2cdeb8"
+    },
+    {
+      "name": "completed_trajectory_matches_resume",
+      "passed": true
+    },
+    {
+      "name": "selected_checkpoint_matches_strict_validation_best",
+      "passed": true,
+      "selected_step": 1000,
+      "selected_validation_nll": 1.5325121856703297,
+      "validation_events": 11
+    },
+    {
+      "name": "stopping_reason_matches_declared_budget",
+      "passed": true,
+      "stop_reason": "validation_early_stopping",
+      "completed_updates": 2000
+    },
+    {
+      "name": "restored_trajectory_presentations_are_consistent",
+      "passed": true,
+      "effective_targets_per_update": 8192,
+      "restored_trajectory_targets": 16384000,
+      "selected_checkpoint_targets": 8192000,
+      "equivalent_training_passes": 16.321114744887947
+    },
+    {
+      "name": "skip_accounting_matches_precision_and_claim",
+      "passed": true,
+      "precision": "fp32",
+      "skipped_updates": 0,
+      "skip_events": 0
+    },
+    {
+      "name": "logged_training_steps_are_ordered",
+      "passed": true
+    },
+    {
+      "name": "heldout_summaries_and_denominators_are_consistent",
+      "passed": true,
+      "selected_validation": {
+        "mean_nll": 1.5325121856703297,
+        "character_perplexity": 4.629793124981099,
+        "bits_per_character": 2.210947730368491,
+        "next_character_accuracy": 0.5520271118363248,
+        "targets": 55769,
+        "seconds": 12.78256718099874,
+        "context_policy": "reset each nonoverlapping context-length window; all targets once"
+      },
+      "recorded_final_test": {
+        "mean_nll": 1.6925007418407632,
+        "character_perplexity": 5.433050387350044,
+        "bits_per_character": 2.441762426954561,
+        "next_character_accuracy": 0.5235883734691316,
+        "targets": 55769,
+        "seconds": 11.02247174000513,
+        "context_policy": "reset each nonoverlapping context-length window; all targets once"
+      }
+    },
+    {
+      "name": "initial_evaluation_receipt_matches_result",
+      "passed": true
+    },
+    {
+      "name": "saved_best_checkpoint_generates_reproducibly",
+      "passed": true
+    },
+    {
+      "name": "selected_native_validation_replays_within_tolerance",
+      "passed": true,
+      "nll_difference": 0.0,
+      "tolerance": 0.0001
+    }
+  ],
+  "sessions": [
+    {
+      "python": "3.12.14",
+      "torch": "2.10.0+cpu",
+      "device": "cpu",
+      "threads": 8,
+      "cuda_device": null,
+      "resume_step": 0,
+      "max_wall_seconds": 3600.0,
+      "wall_start_unix": 1795412792.9091134
+    },
+    {
+      "python": "3.12.14",
+      "torch": "2.10.0+cpu",
+      "device": "cpu",
+      "threads": 8,
+      "cuda_device": null,
+      "resume_step": 400,
+      "max_wall_seconds": 1200.0,
+      "wall_start_unix": 1795414707.6638875
+    },
+    {
+      "python": "3.12.14",
+      "torch": "2.10.0+cpu",
+      "device": "cpu",
+      "threads": 2,
+      "cuda_device": null,
+      "resume_step": 400,
+      "max_wall_seconds": 120.0,
+      "wall_start_unix": 1795415188.0666516
+    },
+    {
+      "python": "3.12.14",
+      "torch": "2.10.0+cpu",
+      "device": "cpu",
+      "threads": 8,
+      "cuda_device": null,
+      "resume_step": 419,
+      "max_wall_seconds": 1200.0,
+      "wall_start_unix": 1795415350.8954678
+    },
+    {
+      "python": "3.12.14",
+      "torch": "2.10.0+cpu",
+      "device": "cpu",
+      "threads": 4,
+      "cuda_device": null,
+      "resume_step": 419,
+      "max_wall_seconds": 120.0,
+      "wall_start_unix": 1795415907.7953455
+    },
+    {
+      "python": "3.12.14",
+      "torch": "2.10.0+cpu",
+      "device": "cpu",
+      "threads": 2,
+      "cuda_device": null,
+      "resume_step": 431,
+      "max_wall_seconds": 120.0,
+      "wall_start_unix": 1795416065.4475417
+    },
+    {
+      "python": "3.12.14",
+      "torch": "2.10.0+cpu",
+      "device": "cpu",
+      "threads": 2,
+      "cuda_device": null,
+      "resume_step": 442,
+      "max_wall_seconds": 900.0,
+      "wall_start_unix": 1795416269.5098007
+    },
+    {
+      "python": "3.12.14",
+      "torch": "2.10.0+cpu",
+      "device": "cpu",
+      "threads": 2,
+      "cuda_device": null,
+      "resume_step": 575,
+      "max_wall_seconds": 900.0,
+      "wall_start_unix": 1795417215.9602895
+    },
+    {
+      "python": "3.12.14",
+      "torch": "2.10.0+cpu",
+      "device": "cpu",
+      "threads": 2,
+      "cuda_device": null,
+      "resume_step": 718,
+      "max_wall_seconds": 900.0,
+      "wall_start_unix": 1795418145.3693342
+    },
+    {
+      "python": "3.12.14",
+      "torch": "2.10.0+cpu",
+      "device": "cpu",
+      "threads": 2,
+      "cuda_device": null,
+      "resume_step": 856,
+      "max_wall_seconds": 900.0,
+      "wall_start_unix": 1795419098.6637225
+    },
+    {
+      "python": "3.12.14",
+      "torch": "2.10.0+cpu",
+      "device": "cpu",
+      "threads": 2,
+      "cuda_device": null,
+      "resume_step": 986,
+      "max_wall_seconds": 900.0,
+      "wall_start_unix": 1795420033.0793507
+    },
+    {
+      "python": "3.12.14",
+      "torch": "2.10.0+cpu",
+      "device": "cpu",
+      "threads": 2,
+      "cuda_device": null,
+      "resume_step": 1116,
+      "max_wall_seconds": 900.0,
+      "wall_start_unix": 1795421008.5346014
+    },
+    {
+      "python": "3.12.14",
+      "torch": "2.10.0+cpu",
+      "device": "cpu",
+      "threads": 2,
+      "cuda_device": null,
+      "resume_step": 1260,
+      "max_wall_seconds": 900.0,
+      "wall_start_unix": 1795421941.6749396
+    },
+    {
+      "python": "3.12.14",
+      "torch": "2.10.0+cpu",
+      "device": "cpu",
+      "threads": 2,
+      "cuda_device": null,
+      "resume_step": 1405,
+      "max_wall_seconds": 900.0,
+      "wall_start_unix": 1795422870.7002153
+    },
+    {
+      "python": "3.12.14",
+      "torch": "2.10.0+cpu",
+      "device": "cpu",
+      "threads": 2,
+      "cuda_device": null,
+      "resume_step": 1527,
+      "max_wall_seconds": 900.0,
+      "wall_start_unix": 1795423823.5774305
+    },
+    {
+      "python": "3.12.14",
+      "torch": "2.10.0+cpu",
+      "device": "cpu",
+      "threads": 2,
+      "cuda_device": null,
+      "resume_step": 1659,
+      "max_wall_seconds": 900.0,
+      "wall_start_unix": 1795424778.1686313
+    },
+    {
+      "python": "3.12.14",
+      "torch": "2.10.0+cpu",
+      "device": "cpu",
+      "threads": 2,
+      "cuda_device": null,
+      "resume_step": 1785,
+      "max_wall_seconds": 900.0,
+      "wall_start_unix": 1795425704.4434364
+    },
+    {
+      "python": "3.12.14",
+      "torch": "2.10.0+cpu",
+      "device": "cpu",
+      "threads": 2,
+      "cuda_device": null,
+      "resume_step": 1800,
+      "max_wall_seconds": 900.0,
+      "wall_start_unix": 1795429407.9168398
+    },
+    {
+      "python": "3.12.14",
+      "torch": "2.10.0+cpu",
+      "device": "cpu",
+      "threads": 2,
+      "cuda_device": null,
+      "resume_step": 1956,
+      "max_wall_seconds": 900.0,
+      "wall_start_unix": 1795430350.8184693
+    }
+  ],
+  "interruption_events": [
+    {
+      "event": "process_interruption",
+      "observed_unix": 1795414710.1582341,
+      "session_id": 50586,
+      "exit_code": 137,
+      "cause": "not established; no trainer failure/result file written",
+      "last_persisted_training_step": 400,
+      "last_matching_checkpoint_step": 400,
+      "discarded_uncheckpointed_updates": "unknown; none logged after step400",
+      "recovery": "resume same optimizer/model/RNG/source/data state at400; reduce per-session wall cap from3600 to1200 seconds, preserving total2000 update budget",
+      "accounting_note": "Final counters cover the restored training trajectory; any discarded work before this kill is not measurable from available logs."
+    },
+    {
+      "event": "process_interruption",
+      "observed_unix": 1795415166.0990193,
+      "session_id": 77697,
+      "exit_code": 137,
+      "last_matching_checkpoint_step": 400,
+      "discarded_uncheckpointed_updates": "unknown; no update420 log",
+      "global_oom_kill_counter": 2,
+      "cause": "exit137 plus system OOM activity; process-specific kill attribution not available",
+      "recovery_plan": "unchanged source/data/training config;2 threads, MALLOC_ARENA_MAX=2,120s bounded continuation, per-update logging"
+    },
+    {
+      "event": "intentional_runtime_stop",
+      "observed_unix": 1795415871.5188208,
+      "session_id": 21959,
+      "tool_exit_code": 130,
+      "reason": "8-thread allocator-limited continuation stalled for several minutes without another10-update log; stopped for allocator recovery",
+      "last_retained_checkpoint_step": 419,
+      "last_logged_discarded_step": 440,
+      "discarded_logged_train_records": 3,
+      "minimum_discarded_completed_updates": 21,
+      "actual_discarded_uncheckpointed_updates": "unknown beyond last log",
+      "full_original_metrics_archive": "metrics_before_interruption_21959.jsonl",
+      "full_original_metrics_sha256": "1f8b85f4dba59745550186982197dd2341dcff3ad3933a50cfffb4ef760f9175",
+      "discarded_tail_file": "discarded_metrics_21959.jsonl",
+      "discarded_tail_sha256": "5321aa8a1a07518c0262609d37130dc007810ec41179d2da13ac09128715c0a5",
+      "canonical_metrics_policy": "Restore metrics to checkpoint419, retain exact original and discarded tail separately, append recovery event; do not count abandoned continuation in restored trajectory."
+    },
+    {
+      "actual_discarded_uncheckpointed_updates": "unknown beyond the last logged update",
+      "canonical_metrics_policy": "Preserve the exact original and discarded tail, restore canonical metrics through checkpoint1800, and append a recovery marker. Do not count abandoned updates in restored-trajectory totals.",
+      "cause": "Unknown; the original executor and terminal handle are unavailable and no launcher exit receipt was recorded.",
+      "discarded_logged_train_records": 5,
+      "discarded_tail_file": "discarded_metrics_48409.jsonl",
+      "discarded_tail_sha256": "b3cf281eaa64db09fe8b7315de21db1f0c6e29986b751c5737ac0e3b977d514c",
+      "event": "unobserved_runtime_stop",
+      "full_original_metrics_archive": "metrics_before_interruption_48409.jsonl",
+      "full_original_metrics_sha256": "8eaf83d5ae91e087e433055df8703a7b28c6db0e4f5e07833b914fdbda4a4fee",
+      "last_logged_discarded_step": 1850,
+      "last_recorded_training_seconds": 11762.95811770609,
+      "last_retained_checkpoint_step": 1800,
+      "launcher_session_token": "1795425698-2",
+      "minimum_discarded_completed_updates": 50,
+      "observed_unix": 1795429322.4341211,
+      "reason": "Previous worker unavailable after a conversation interruption; metrics/checkpoints remained unchanged for over45 minutes and the former trainer resident memory footprint was absent.",
+      "recorded_discarded_optimizer_seconds": 517.736027687999,
+      "recovery_config": "Same frozen source/data/model/optimizer/RNG configuration, original maximum2000 updates, two CPU threads, MALLOC_ARENA_MAX=2, bounded900-second segments.",
+      "recovery_liveness_evidence": {
+        "active_previous_agent": false,
+        "global_oom_kill_counter": 2,
+        "host_AnonPages_KiB": 748628,
+        "host_MemAvailable_KiB": 7456472,
+        "host_SwapTotal_KiB": 0,
+        "limits": "Separate execution PID namespaces prevent process-specific exit attribution; host memory observations are corroborating evidence.",
+        "unchanged_files_over_minutes": 45
+      },
+      "retained_best_checkpoint_sha256": "60a01cc2aab00c96e0186ea211ecab6e83117f2efb86f0ec5f172b051c2cdeb8",
+      "retained_checkpoint_training_seconds": 11245.222090018091,
+      "retained_resume_checkpoint_sha256": "cad14eedca1be4803ae6f27f5dc1127e9640dd21b04a6d3d7a5295cbe754b957",
+      "session_id": 48409,
+      "tool_exit_code": null
+    }
+  ],
+  "discarded_history_audit": {
+    "passed": true,
+    "entries": [
+      {
+        "interruption_type": "intentional_runtime_stop",
+        "interruption_session": 21959,
+        "launcher_session_token": null,
+        "observed_exit_code": 130,
+        "archive": "metrics_before_interruption_21959.jsonl",
+        "archive_sha256": "1f8b85f4dba59745550186982197dd2341dcff3ad3933a50cfffb4ef760f9175",
+        "discarded_tail": "discarded_metrics_21959.jsonl",
+        "discarded_tail_sha256": "5321aa8a1a07518c0262609d37130dc007810ec41179d2da13ac09128715c0a5",
+        "retained_checkpoint_step": 419,
+        "last_logged_discarded_step": 440,
+        "discarded_logged_train_records": 3,
+        "minimum_documented_discarded_completed_updates": 21,
+        "minimum_documented_discarded_target_presentations": 172032,
+        "recorded_optimizer_seconds_between_retained_and_last_discarded_log": 215.8644902560045,
+        "hashes_match_interruption_receipt": true,
+        "discarded_tail_matches_exact_original_records": true,
+        "canonical_retained_prefix_and_recovery_marker_match": true,
+        "declared_discarded_counts_match": true,
+        "unobserved_launcher_binding_verified": true,
+        "passed": true,
+        "additional_uncheckpointed_work": "unknown"
+      },
+      {
+        "interruption_type": "unobserved_runtime_stop",
+        "interruption_session": 48409,
+        "launcher_session_token": "1795425698-2",
+        "observed_exit_code": null,
+        "archive": "metrics_before_interruption_48409.jsonl",
+        "archive_sha256": "8eaf83d5ae91e087e433055df8703a7b28c6db0e4f5e07833b914fdbda4a4fee",
+        "discarded_tail": "discarded_metrics_48409.jsonl",
+        "discarded_tail_sha256": "b3cf281eaa64db09fe8b7315de21db1f0c6e29986b751c5737ac0e3b977d514c",
+        "retained_checkpoint_step": 1800,
+        "last_logged_discarded_step": 1850,
+        "discarded_logged_train_records": 5,
+        "minimum_documented_discarded_completed_updates": 50,
+        "minimum_documented_discarded_target_presentations": 409600,
+        "recorded_optimizer_seconds_between_retained_and_last_discarded_log": 517.736027687999,
+        "hashes_match_interruption_receipt": true,
+        "discarded_tail_matches_exact_original_records": true,
+        "canonical_retained_prefix_and_recovery_marker_match": true,
+        "declared_discarded_counts_match": true,
+        "unobserved_launcher_binding_verified": true,
+        "passed": true,
+        "additional_uncheckpointed_work": "unknown"
+      }
+    ],
+    "archive_names": [
+      "discarded_metrics_21959.jsonl",
+      "discarded_metrics_48409.jsonl",
+      "metrics_before_interruption_21959.jsonl",
+      "metrics_before_interruption_48409.jsonl"
+    ],
+    "minimum_documented_discarded_completed_updates": 71,
+    "minimum_documented_discarded_target_presentations": 581632,
+    "unlogged_work_at_other_interruptions": "unknown"
+  },
+  "accounting": {
+    "reported_presentations_scope": "restored training trajectory",
+    "reported_training_seconds_scope": "recorded optimizer-attempt time on restored trajectory; excludes evaluation and other overhead",
+    "discarded_uncheckpointed_work": "unknown",
+    "total_physical_compute_across_interruptions": "not established",
+    "session_start_records": 19,
+    "minimum_documented_discarded_completed_updates": 71,
+    "minimum_documented_discarded_target_presentations": 581632,
+    "total_physical_target_presentations_lower_bound": 16965632,
+    "note": "Restarting a saved model/optimizer/RNG trajectory is not an independent fit. No exact total physical work is inferred across uncheckpointed interruption."
+  },
+  "input_sha256": {
+    "allocator_recovery_receipt.json": "e7ce358eaf7e801e0412fc439c3505bbd76a959ad20cebb251b279a204633a24",
+    "best.pt": "60a01cc2aab00c96e0186ea211ecab6e83117f2efb86f0ec5f172b051c2cdeb8",
+    "discarded_metrics_21959.jsonl": "5321aa8a1a07518c0262609d37130dc007810ec41179d2da13ac09128715c0a5",
+    "discarded_metrics_48409.jsonl": "b3cf281eaa64db09fe8b7315de21db1f0c6e29986b751c5737ac0e3b977d514c",
+    "initial_evaluation.json": "d02a4c3af8e928f8446ae52c12cd6bad2cbe167687fec89014f239a7d35e2fb6",
+    "interruption_events.jsonl": "12da1c3d209bfd2562107a4388bf676f08864cc6aae752e63f7e11e60a8523d6",
+    "launcher_model_config.json": "74a4770181b5f58b642e4b1d8c0f1be19951b9459420575faef71a2716913ffa",
+    "launcher_sessions.jsonl": "f14249ddb1e140128e58f2db48de8a3c0a88cd4885097586bc5ff09a12c31c09",
+    "metrics.jsonl": "401a40def6704768875535c465299d80f7f455c3775b136baa749fe91be39afd",
+    "metrics_before_interruption_21959.jsonl": "1f8b85f4dba59745550186982197dd2341dcff3ad3933a50cfffb4ef760f9175",
+    "metrics_before_interruption_48409.jsonl": "8eaf83d5ae91e087e433055df8703a7b28c6db0e4f5e07833b914fdbda4a4fee",
+    "result.json": "aecb06416cf1404c6a4de605d563d7c688b01dfdc80b027e25dc91fd574cbe50",
+    "resume.pt": "10af912effceb16a64a52cbc2a21d2ef6ab619371ca34dba6629828ec0f1175e",
+    "run_config.json": "205d92a33ef6bfad5f781b6ccbd5a0e706da50256d52eb51f190374d81dce513",
+    "sessions.jsonl": "56e6148ffacc5c1bf95ab4336ab5532033161d8abec4265943fd8de32c5ec09c",
+    "tokenizer.json": "ce557fac821f26589a6d1d421f6c111b6c909458d9554c91171cb76be4a5383b"
+  },
+  "quality_observations": {
+    "initial_validation_nll": 4.268671427811239,
+    "selected_validation_nll": 1.5325121856703297,
+    "unigram_validation_nll": 3.33264327445069,
+    "recorded_final_test": {
+      "mean_nll": 1.6925007418407632,
+      "character_perplexity": 5.433050387350044,
+      "bits_per_character": 2.441762426954561,
+      "next_character_accuracy": 0.5235883734691316,
+      "targets": 55769,
+      "seconds": 11.02247174000513,
+      "context_policy": "reset each nonoverlapping context-length window; all targets once"
+    },
+    "test_recomputed_by_audit": false,
+    "selection_uses_validation_only": true
+  },
+  "passed": 17,
+  "total": 17,
+  "status": "PASS",
+  "elapsed_seconds": 36.659123970996006,
+  "sampling": {
+    "checkpoint_step": 1000,
+    "checkpoint_sha256": "60a01cc2aab00c96e0186ea211ecab6e83117f2efb86f0ec5f172b051c2cdeb8",
+    "prompts_fixed_in_audit_source_before_completion": true,
+    "samples_json_sha256": "86cd60100cafb79d052f001563c89fe2a0feb883860d92b7954f9078e57f56f2",
+    "samples_text_sha256": "cf160c7eef5ea7747d79e0027c10f669721edec45ce047f94b5e08f5ecb9b308"
+  },
+  "memory_intervention": {
+    "scope": "one validation-only matched CPU inference intervention on selected checkpoint; no retraining or attention comparator",
+    "checkpoint_step": 1000,
+    "checkpoint_sha256": "60a01cc2aab00c96e0186ea211ecab6e83117f2efb86f0ec5f172b051c2cdeb8",
+    "recorded_native_validation": {
+      "mean_nll": 1.5325121856703297,
+      "character_perplexity": 4.629793124981099,
+      "bits_per_character": 2.210947730368491,
+      "next_character_accuracy": 0.5520271118363248,
+      "targets": 55769,
+      "seconds": 12.78256718099874,
+      "context_policy": "reset each nonoverlapping context-length window; all targets once"
+    },
+    "native_cpu_replay": {
+      "mean_nll": 1.5325121856703297,
+      "character_perplexity": 4.629793124981099,
+      "bits_per_character": 2.210947730368491,
+      "next_character_accuracy": 0.5520271118363248,
+      "targets": 55769,
+      "seconds": 13.625696697999956,
+      "context_policy": "reset each nonoverlapping context-length window; all targets once"
+    },
+    "memory_disabled_cpu": {
+      "mean_nll": 1.5327010828159722,
+      "character_perplexity": 4.630667762292968,
+      "bits_per_character": 2.2112202513437476,
+      "next_character_accuracy": 0.5518657318582008,
+      "targets": 55769,
+      "seconds": 17.072584348999953,
+      "context_policy": "reset each nonoverlapping context-length window; all targets once"
+    },
+    "disabled_minus_native_nll": 0.00018889714564251925,
+    "disabled_minus_native_bits_per_character": 0.0002725209752565405,
+    "native_replay_minus_recorded_nll": 0.0,
+    "interpretation": "A positive disabled-minus-native NLL means this checkpoint loses validation prediction quality when its trained board contribution is removed. This is checkpoint dependence, not evidence that the architecture beats a separately trained local-only model or attention.",
+    "device": "cpu",
+    "precision": "fp32",
+    "threads": 2,
+    "test_set_evaluated": false
+  }
+}

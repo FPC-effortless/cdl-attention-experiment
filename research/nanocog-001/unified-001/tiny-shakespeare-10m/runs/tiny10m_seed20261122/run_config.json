@@ -1,0 +1,103 @@
+{
+  "study": "COG-UNIFIED-TINY-10M-001",
+  "scope": "single-seed exploratory character language model for user testing; no attention superiority or typed-semantic qualification",
+  "model_config": {
+    "vocab_size": 65,
+    "d_model": 400,
+    "n_layers": 6,
+    "ffn_mult": 2,
+    "n_entities": 4,
+    "n_relations": 4,
+    "memory_dim": 64,
+    "dropout": 0.1,
+    "architecture_id": "cog-unified-tiny-latent-v1"
+  },
+  "parameters": 9725682,
+  "trainable_parameters": 9725682,
+  "training_config": {
+    "seed": 20261122,
+    "batch_size": 16,
+    "gradient_accumulation": 2,
+    "context_length": 256,
+    "max_steps": 2000,
+    "learning_rate": 0.0003,
+    "min_lr_ratio": 0.03,
+    "warmup_steps": 100,
+    "weight_decay": 0.1,
+    "grad_clip": 1.0,
+    "eval_every": 200,
+    "patience": 6,
+    "minimum_steps": 1000,
+    "minimum_improvement": 0.001,
+    "precision": "fp32",
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "optimizer": "AdamW",
+    "train_state_policy": "reset for each sampled window",
+    "effective_targets_per_step": 8192
+  },
+  "dataset": {
+    "dataset": "Tiny Shakespeare",
+    "source_repository": "karpathy/char-rnn",
+    "source_commit": "370cbcd448eb7daf32f21a6be560b70e0b33c4e3",
+    "source_url": "https://raw.githubusercontent.com/karpathy/char-rnn/370cbcd448eb7daf32f21a6be560b70e0b33c4e3/data/tinyshakespeare/input.txt",
+    "input_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+    "input_bytes": 1115394,
+    "characters": 1115394,
+    "encoding": "utf-8",
+    "binary_encoding": "little-endian unsigned uint16",
+    "split_policy": "contiguous 90% train / 5% validation / 5% test",
+    "boundary_policy": "no training/evaluation target crosses a split boundary",
+    "tokenizer_fit": "training characters only",
+    "vocab_size": 65,
+    "tokenizer_sha256": "ce557fac821f26589a6d1d421f6c111b6c909458d9554c91171cb76be4a5383b",
+    "unknown_characters_by_split": {
+      "train": [],
+      "val": [],
+      "test": []
+    },
+    "heldout_text_usage": "character-coverage check only during preparation; no tokenizer fit",
+    "splits": {
+      "train": {
+        "start_character_inclusive": 0,
+        "end_character_exclusive": 1003854,
+        "characters": 1003854,
+        "available_next_character_targets": 1003853,
+        "binary_sha256": "6ec305602a99ac2802745a134e1f5e33e2231b4855525b00b9aebb730ac2626f"
+      },
+      "val": {
+        "start_character_inclusive": 1003854,
+        "end_character_exclusive": 1059624,
+        "characters": 55770,
+        "available_next_character_targets": 55769,
+        "binary_sha256": "42586f62517e6504c04c45990fe22bf8ee50f49f45872a953cbbb645d3b9feae"
+      },
+      "test": {
+        "start_character_inclusive": 1059624,
+        "end_character_exclusive": 1115394,
+        "characters": 55770,
+        "available_next_character_targets": 55769,
+        "binary_sha256": "d31243866feba5c668b6918f8e73083b9f4fc55ba918bf5562f6d3d61c6d3f75"
+      }
+    }
+  },
+  "source_sha256": {
+    "model.py": "f96bd967b4bc4ece9d2750a5cf1afdf1cc819a6b007e2d638af633376c7eccaa",
+    "train.py": "52751e1a7d383a8bb809835d1d528ee02fa4abbbe8439a5ef0918186ce3bedf6",
+    "data.py": "5c53755333460b7fdb35e0f9a5f88b2b3c7e3f37674ef92df506164728dad69d"
+  },
+  "training_authorized_by": "user request to train roughly10M model on Tiny Shakespeare",
+  "parameter_range_override": false,
+  "early_stopping": "validation only; patience evaluations with improvement threshold, gated by minimum steps",
+  "final_test_policy": "evaluate best validation checkpoint only after completed budget or declared early stopping",
+  "unigram_validation": {
+    "method": "maximum-likelihood character frequencies from training text only",
+    "mean_nll": 3.33264327445069,
+    "character_perplexity": 28.012288095305095,
+    "bits_per_character": 4.807987925101967,
+    "next_character_accuracy": 0.1520020082841722,
+    "targets": 55769
+  }
+}

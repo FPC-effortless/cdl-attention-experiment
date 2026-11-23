@@ -1,0 +1,179 @@
+{
+  "archived_tail_file": "discarded_metrics_48409.jsonl",
+  "archived_tail_sha256": "b3cf281eaa64db09fe8b7315de21db1f0c6e29986b751c5737ac0e3b977d514c",
+  "canonical_metrics_sha256_at_comparison": "0ad845737023ba49c78b129b88bf7a27295d9cdbecbb774c6ff2efd5ab2d084d",
+  "compared_fields_per_update": 7,
+  "compared_logged_updates": 5,
+  "comparisons": [
+    {
+      "all_compared_quantities_exactly_equal": true,
+      "equal_by_field": {
+        "attempted_updates": true,
+        "gradient_norm_before_clip": true,
+        "learning_rate": true,
+        "skipped_updates": true,
+        "targets_seen": true,
+        "train_loss": true,
+        "train_target_equivalent_passes": true
+      },
+      "original": {
+        "attempted_updates": 1810,
+        "gradient_norm_before_clip": 1.8656312227249146,
+        "learning_rate": 1.6128717013966208e-05,
+        "skipped_updates": 0,
+        "targets_seen": 14827520,
+        "train_loss": 0.9379886984825134,
+        "train_target_equivalent_passes": 14.770608844123592
+      },
+      "original_step_seconds": 11.5334433800017,
+      "replay": {
+        "attempted_updates": 1810,
+        "gradient_norm_before_clip": 1.8656312227249146,
+        "learning_rate": 1.6128717013966208e-05,
+        "skipped_updates": 0,
+        "targets_seen": 14827520,
+        "train_loss": 0.9379886984825134,
+        "train_target_equivalent_passes": 14.770608844123592
+      },
+      "replay_step_seconds": 5.505863069003681,
+      "step": 1810
+    },
+    {
+      "all_compared_quantities_exactly_equal": true,
+      "equal_by_field": {
+        "attempted_updates": true,
+        "gradient_norm_before_clip": true,
+        "learning_rate": true,
+        "skipped_updates": true,
+        "targets_seen": true,
+        "train_loss": true,
+        "train_target_equivalent_passes": true
+      },
+      "original": {
+        "attempted_updates": 1820,
+        "gradient_norm_before_clip": 1.9021880626678467,
+        "learning_rate": 1.5403482703910986e-05,
+        "skipped_updates": 0,
+        "targets_seen": 14909440,
+        "train_loss": 0.9641674160957336,
+        "train_target_equivalent_passes": 14.852214417848032
+      },
+      "original_step_seconds": 7.596712589998788,
+      "replay": {
+        "attempted_updates": 1820,
+        "gradient_norm_before_clip": 1.9021880626678467,
+        "learning_rate": 1.5403482703910986e-05,
+        "skipped_updates": 0,
+        "targets_seen": 14909440,
+        "train_loss": 0.9641674160957336,
+        "train_target_equivalent_passes": 14.852214417848032
+      },
+      "replay_step_seconds": 5.374936900996545,
+      "step": 1820
+    },
+    {
+      "all_compared_quantities_exactly_equal": true,
+      "equal_by_field": {
+        "attempted_updates": true,
+        "gradient_norm_before_clip": true,
+        "learning_rate": true,
+        "skipped_updates": true,
+        "targets_seen": true,
+        "train_loss": true,
+        "train_target_equivalent_passes": true
+      },
+      "original": {
+        "attempted_updates": 1830,
+        "gradient_norm_before_clip": 1.862464189529419,
+        "learning_rate": 1.4716316052576342e-05,
+        "skipped_updates": 0,
+        "targets_seen": 14991360,
+        "train_loss": 0.925099790096283,
+        "train_target_equivalent_passes": 14.933819991572472
+      },
+      "original_step_seconds": 28.49203962700267,
+      "replay": {
+        "attempted_updates": 1830,
+        "gradient_norm_before_clip": 1.862464189529419,
+        "learning_rate": 1.4716316052576342e-05,
+        "skipped_updates": 0,
+        "targets_seen": 14991360,
+        "train_loss": 0.925099790096283,
+        "train_target_equivalent_passes": 14.933819991572472
+      },
+      "replay_step_seconds": 4.7707080699983635,
+      "step": 1830
+    },
+    {
+      "all_compared_quantities_exactly_equal": true,
+      "equal_by_field": {
+        "attempted_updates": true,
+        "gradient_norm_before_clip": true,
+        "learning_rate": true,
+        "skipped_updates": true,
+        "targets_seen": true,
+        "train_loss": true,
+        "train_target_equivalent_passes": true
+      },
+      "original": {
+        "attempted_updates": 1840,
+        "gradient_norm_before_clip": 1.9222352504730225,
+        "learning_rate": 1.406740512236729e-05,
+        "skipped_updates": 0,
+        "targets_seen": 15073280,
+        "train_loss": 0.969325840473175,
+        "train_target_equivalent_passes": 15.01542556529691
+      },
+      "original_step_seconds": 11.060450830998889,
+      "replay": {
+        "attempted_updates": 1840,
+        "gradient_norm_before_clip": 1.9222352504730225,
+        "learning_rate": 1.406740512236729e-05,
+        "skipped_updates": 0,
+        "targets_seen": 15073280,
+        "train_loss": 0.969325840473175,
+        "train_target_equivalent_passes": 15.01542556529691
+      },
+      "replay_step_seconds": 4.8801688219973585,
+      "step": 1840
+    },
+    {
+      "all_compared_quantities_exactly_equal": true,
+      "equal_by_field": {
+        "attempted_updates": true,
+        "gradient_norm_before_clip": true,
+        "learning_rate": true,
+        "skipped_updates": true,
+        "targets_seen": true,
+        "train_loss": true,
+        "train_target_equivalent_passes": true
+      },
+      "original": {
+        "attempted_updates": 1850,
+        "gradient_norm_before_clip": 1.9888554811477661,
+        "learning_rate": 1.3456927505938992e-05,
+        "skipped_updates": 0,
+        "targets_seen": 15155200,
+        "train_loss": 0.9803393185138702,
+        "train_target_equivalent_passes": 15.09703113902135
+      },
+      "original_step_seconds": 10.647678665998683,
+      "replay": {
+        "attempted_updates": 1850,
+        "gradient_norm_before_clip": 1.9888554811477661,
+        "learning_rate": 1.3456927505938992e-05,
+        "skipped_updates": 0,
+        "targets_seen": 15155200,
+        "train_loss": 0.9803393185138702,
+        "train_target_equivalent_passes": 15.09703113902135
+      },
+      "replay_step_seconds": 4.8306032350010355,
+      "step": 1850
+    }
+  ],
+  "created_unix": 1795429755.2520943,
+  "kind": "read_only_comparison_of_authorized_checkpoint_continuation",
+  "resume_step": 1800,
+  "scope": "Exact equality of seven logged scalar model/trajectory quantities at five already authorized replayed updates. This is not an additional fit, a second seed, a full weight/RNG tensor identity proof, or a benchmark speedup claim. Timing quantities were intentionally not required to match.",
+  "status": "PASS"
+}

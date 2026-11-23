@@ -1,0 +1,24 @@
+{
+  "study": "COG-UNIFIED-TINY-10M-001",
+  "purpose": "User-requested approximately10M Tiny Shakespeare language model for text generation",
+  "authorization": "Current user request explicitly asks to train and test this model",
+  "model_parameters": 9725682,
+  "seed": 20261122,
+  "precision": "fp32",
+  "context_characters": 256,
+  "microbatch": 16,
+  "gradient_accumulation": 2,
+  "planned_updates": 2000,
+  "planned_target_presentations": 16384000,
+  "selection": "lowest validation NLL; final test after training only",
+  "compute": "local CPU,8threads; free Kaggle submission rejected because2existing batchGPU sessions occupy quota slots",
+  "paid_compute": false,
+  "training_wall_limit_per_session_seconds": 3600,
+  "source_sha256": {
+    "model.py": "f96bd967b4bc4ece9d2750a5cf1afdf1cc819a6b007e2d638af633376c7eccaa",
+    "train.py": "52751e1a7d383a8bb809835d1d528ee02fa4abbbe8439a5ef0918186ce3bedf6",
+    "data.py": "5c53755333460b7fdb35e0f9a5f88b2b3c7e3f37674ef92df506164728dad69d",
+    "sample.py": "b8188e737856dacc67cbc948c2fc8a884007421397075d38f973e9b37e6207ba"
+  },
+  "scope": "trainable text-only latent-record prototype; no semanticCOPY/LINK qualification or architecture superiority claim"
+}

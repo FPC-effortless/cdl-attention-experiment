@@ -1,0 +1,36 @@
+{
+  "actual_launcher_session_token": "1795429402-5",
+  "canonical_metrics_sha256_at_restart": "1d4c69d1aaa3ada4fb606cb298da9cc3033155f2855894f0a43e7a139a1040c8",
+  "command": [
+    "/usr/bin/flock",
+    "--nonblock",
+    "--conflict-exit-code",
+    "75",
+    "/workspace/scratch/2a5ba884844e/tiny10m_training_owner.lock",
+    "python3",
+    "-u",
+    "/workspace/scratch/2a5ba884844e/tiny_train_session.py",
+    "--threads",
+    "2",
+    "--max-wall-seconds",
+    "900",
+    "--allocator",
+    "glibc",
+    "--log-every",
+    "10"
+  ],
+  "created_unix": 1795429402.1998882,
+  "event": "recovery_lock_start_plan",
+  "exec_session_id": 11402,
+  "former_exec_session": 48409,
+  "launch_observed_unix": 1795429415.2703695,
+  "lock_path": "/workspace/scratch/2a5ba884844e/tiny10m_training_owner.lock",
+  "lock_probe": {
+    "after_owner_exit_returncode": 0,
+    "cross_exec_pid_namespaces": true,
+    "held_owner_conflict_returncode": 75
+  },
+  "restored_step": 1800,
+  "scope": "External process-owner lock only; frozen model, trainer, data, sample and recorded launcher bytes unchanged. Prior worker exit remains unobserved.",
+  "status": "running"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "source_and_inference_smoke_pass",
+  "checks": [
+    "Python syntax import/CLI",
+    "Pinned corpus SHA-256",
+    "Train-only65character vocabulary",
+    "Contiguous90/5/5 split metadata",
+    "Zero unknown validation/test characters",
+    "Random tiny checkpoint serialization and weights_only load",
+    "Seeded sample prefill chunk parity",
+    "Explicit out-of-vocabulary prompt rejection"
+  ],
+  "neural_training_runs": 0,
+  "sha256": {
+    "data.py": "5c53755333460b7fdb35e0f9a5f88b2b3c7e3f37674ef92df506164728dad69d",
+    "train.py": "52751e1a7d383a8bb809835d1d528ee02fa4abbbe8439a5ef0918186ce3bedf6",
+    "sample.py": "b8188e737856dacc67cbc948c2fc8a884007421397075d38f973e9b37e6207ba"
+  }
+}

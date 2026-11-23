@@ -1,0 +1,45 @@
+{
+  "dataset": "Tiny Shakespeare",
+  "source_repository": "karpathy/char-rnn",
+  "source_commit": "370cbcd448eb7daf32f21a6be560b70e0b33c4e3",
+  "source_url": "https://raw.githubusercontent.com/karpathy/char-rnn/370cbcd448eb7daf32f21a6be560b70e0b33c4e3/data/tinyshakespeare/input.txt",
+  "input_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+  "input_bytes": 1115394,
+  "characters": 1115394,
+  "encoding": "utf-8",
+  "binary_encoding": "little-endian unsigned uint16",
+  "split_policy": "contiguous 90% train / 5% validation / 5% test",
+  "boundary_policy": "no training/evaluation target crosses a split boundary",
+  "tokenizer_fit": "training characters only",
+  "vocab_size": 65,
+  "tokenizer_sha256": "ce557fac821f26589a6d1d421f6c111b6c909458d9554c91171cb76be4a5383b",
+  "unknown_characters_by_split": {
+    "train": [],
+    "val": [],
+    "test": []
+  },
+  "heldout_text_usage": "character-coverage check only during preparation; no tokenizer fit",
+  "splits": {
+    "train": {
+      "start_character_inclusive": 0,
+      "end_character_exclusive": 1003854,
+      "characters": 1003854,
+      "available_next_character_targets": 1003853,
+      "binary_sha256": "6ec305602a99ac2802745a134e1f5e33e2231b4855525b00b9aebb730ac2626f"
+    },
+    "val": {
+      "start_character_inclusive": 1003854,
+      "end_character_exclusive": 1059624,
+      "characters": 55770,
+      "available_next_character_targets": 55769,
+      "binary_sha256": "42586f62517e6504c04c45990fe22bf8ee50f49f45872a953cbbb645d3b9feae"
+    },
+    "test": {
+      "start_character_inclusive": 1059624,
+      "end_character_exclusive": 1115394,
+      "characters": 55770,
+      "available_next_character_targets": 55769,
+      "binary_sha256": "d31243866feba5c668b6918f8e73083b9f4fc55ba918bf5562f6d3d61c6d3f75"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "scope": "isolated synthetic write_in_place function fixtures only; no finalizer main, Torch, model inference, training, Library call or actual deliverable write",
+  "helper_sha256_at_fixture_import": "06da13da3a22c5fb2598b8cc77006fad21b8ca285245f8370682e3d6a979eed7",
+  "passed": 4,
+  "total": 4,
+  "checks": [
+    {
+      "name": "truncate_preserves_inode_xattrs_and_exact_bytes",
+      "passed": true
+    },
+    {
+      "name": "expand_preserves_inode_xattrs_and_exact_bytes",
+      "passed": true
+    },
+    {
+      "name": "new_file_exact_copy",
+      "passed": true
+    },
+    {
+      "name": "symlink_destination_rejected_without_mutation",
+      "passed": true
+    }
+  ],
+  "sensitive_metadata": "No real file identities or xattr values recorded; synthetic temporary files removed"
+}

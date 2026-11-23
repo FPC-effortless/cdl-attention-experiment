@@ -1,0 +1,36 @@
+{
+  "checkpoint_sha256": "60a01cc2aab00c96e0186ea211ecab6e83117f2efb86f0ec5f172b051c2cdeb8",
+  "checkpoint_step": 1000,
+  "samples": [
+    {
+      "prompt": "ROMEO:\n",
+      "seed": 42,
+      "temperature": 0.8,
+      "top_k": 0,
+      "text": "ROMEO:\nMy lord, shall show me fear to four father's country.\nBut then the hard, they take that God, not spite that it,\n\nEDWARD:\nSummmer'd minister like the former hands on hell!\nProve here, though he hath been envious,\nThat wice and the fairer undal reigns.\n\nYORK:\nI am witness to the queen, I thought they will be devise\nThe setting of the time from the poor souls countes\nTherefore,-- then",
+      "stats": {
+        "prompt_characters": 7,
+        "generated_characters": 384,
+        "seconds_including_prefill": 2.135476146999281,
+        "seed": 42,
+        "temperature": 0.8,
+        "top_k": 0
+      }
+    },
+    {
+      "prompt": "First Citizen:\n",
+      "seed": 43,
+      "temperature": 0.8,
+      "top_k": 0,
+      "text": "First Citizen:\nThe times peace to Angelo, sir, can nexture they the\narth voice the lip dike.\n\nANTITA:\nGo damnight to the people and by the stity\nThe tend what they have said to come a punish,\nLike sin the meins of your tears, and the\npartice our from his honour withal, they leave prove\nThe most ture to you another, for I perjured\nMys complain for this person and farewell;\nAnd, by some sorrow to-m",
+      "stats": {
+        "prompt_characters": 15,
+        "generated_characters": 384,
+        "seconds_including_prefill": 1.8656728870046209,
+        "seed": 43,
+        "temperature": 0.8,
+        "top_k": 0
+      }
+    }
+  ]
+}
