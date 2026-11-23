@@ -23,3 +23,8 @@ Public results index · 22 November 2026. Aggregates and source pointers; not a 
 - **Not verified:** a standalone public exact-source/results branch, PR, or release for INTERACT-015, INTERACT-016, BIND-SYN-001, or LM-004. BIND-SYN-001 also had no matching public status entry in the checked ledgers. The draft therefore does not claim public reproducibility for these four records.
 
 Scope: this is a navigable record of the listed research, not a complete audit of all historical work. No raw predictions, labels, protected evaluation data, original checkpoint bytes, or restricted archive links are included.
+
+## Prospective modern attention comparison
+
+**COG-ATTENTION-COMPARE-001 — proposed, not executed or scientifically admitted.** [Comparison protocol](attention-comparison-001/PROTOCOL.md) extends the existing qualification gates with separate common-data, training-budget and quality-constrained serving tracks. The planned learned comparators include GQA, MLA and an explicitly named KDA+GQA hybrid, with GDN/GDN2 challengers and conditional CSA2 admission. FlashAttention versions are backend choices. [Readiness](attention-comparison-001/READINESS.md), [planning manifest](attention-comparison-001/CAMPAIGN.json), [baseline admission](attention-comparison-001/BASELINE_ADMISSION.json) and [statistical review](attention-comparison-001/STATISTICAL_PLAN.md) preserve open integration, training-adequacy, statistical and resource requirements. No new model fit, protected evaluation or measured superiority is recorded. This entry adds the prospective campaign; it does not claim that the historical index is complete.
+

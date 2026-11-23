@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "scope": "Document and planning-JSON consistency only; not model or scientific validation",
+  "observed_at_utc": "2026-11-23T04:52:56.844144+00:00",
+  "checks": {
+    "planning_only": true,
+    "no_results": true,
+    "source_not_experiment": true,
+    "complete_roster_mapping": true,
+    "explicit_hybrids": true,
+    "no_false_baseline_execution": true,
+    "gates_open": true,
+    "historical_index_unchanged": true,
+    "superiority_bound_repaired": true,
+    "inherited_pulse_control": true,
+    "final_independent_review": true,
+    "margins_unfrozen": true
+  },
+  "files": {
+    "research/nanocog-001/RESULTS_INDEX.md": "6c9935a9feb0875e4c6d33c9a3361ef1916d77ed1bff1e0228b48639b4570407",
+    "research/nanocog-001/attention-comparison-001/SOURCES.md": "76517470bd6f113ae7a5866293a4358ede6a05c851f97830e44ee841e920064c",
+    "research/nanocog-001/attention-comparison-001/CAMPAIGN.json": "d69cac7c1d697e8dcba7f2bcafa8de7dfa4502038d50a1ef6f476cc7540c14e5",
+    "research/nanocog-001/attention-comparison-001/INDEPENDENT_REVIEW.md": "5ed43f58c473e5342d41bd475dbfd35c92ecba596a731c58a559923250f3c865",
+    "research/nanocog-001/attention-comparison-001/READINESS.md": "bb3193d5e71c54aa55a0cdba2c2b082c6bb75edbc64ef4ed366e05a9a73af6a2",
+    "research/nanocog-001/attention-comparison-001/PROTOCOL.md": "06e9534442697147bf321328f30e681cbe6c4bd44dd6fb9f6e77904263bc51c2",
+    "research/nanocog-001/attention-comparison-001/BASELINE_ADMISSION.json": "399961898ab8650ff9ca81e0d8b4b8f26e36f24c67b89f337f274d34cc38d1c8",
+    "research/nanocog-001/attention-comparison-001/STATISTICAL_PLAN.md": "be3c4f31ade0c697ae343f25169c1c6a72161460617399a5c353a920222360b2"
+  }
+}

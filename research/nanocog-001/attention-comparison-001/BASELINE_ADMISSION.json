@@ -1,0 +1,407 @@
+{
+  "schema_version": "1.0",
+  "inventory_kind": "source_review_only",
+  "review_date": "2026-11-22",
+  "local_execution": "UNRUN",
+  "local_installation_verified": false,
+  "source_commit": null,
+  "scope": "Proposed controlled comparisons; no architecture is admitted by this inventory and no local implementation has been installed or tested.",
+  "candidate": {
+    "id": "USER_CANDIDATE",
+    "owner": "user_research_program",
+    "inventory_agent_owns_definition": false,
+    "definition": "nanoCOG packet decoder; independently trained local-only ablation is separate",
+    "source_commit": null,
+    "local_execution": "UNRUN",
+    "admission": "PENDING",
+    "required": [
+      "Freeze actual experiment graph/configuration and checkpoint; reference source is not experimental admission.",
+      "Complete common tokenizer, optimizer, batching and serving integration."
+    ],
+    "reference_source_commit": "8374f72ba9324fa4a11d0d3ecb40a6db0e311c73",
+    "reference_path": "research/nanocog-001",
+    "experiment_source_commit": null
+  },
+  "shared_admission": {
+    "required_interfaces": [
+      "forward(tokens, document_boundaries) -> logits",
+      "prefill(tokens, initial_state) -> logits, state",
+      "step(token, state) -> logits, next_state",
+      "reset_state(...) -> state",
+      "state_bytes(state) -> owned storage bytes"
+    ],
+    "checks": [
+      "Freeze exact source revisions and dependency versions.",
+      "Verify causality, document isolation, reset behavior, finite gradients, and actual learning.",
+      "Verify reference, chunk, prefill, and incremental outputs within declared tolerances.",
+      "Qualify baseline competence at the chosen model size, training length, dataset, and regime before using a failure to support a claim.",
+      "Count embeddings, projections, gates, readout, indexers, and every retained state or external store.",
+      "Use equal-data and equal-compute panels separately; disclose total and non-embedding parameters and equal tuning budgets.",
+      "Measure complete sessions as well as prefill, cached decode, update/index costs, peak memory, and persistent state.",
+      "Report CPU and GPU results separately; record actual kernels, precision, batching, threads, warmup, compilation, and synchronization."
+    ],
+    "kernel_policy": "FA2 and FA4 are backend choices for an attention architecture, not separate architecture families. Backend availability and numerical equivalence require local verification. GPU speed claims do not transfer to CPU."
+  },
+  "baselines": [
+    {
+      "id": "GQA",
+      "admission": "PENDING",
+      "local_execution": "UNRUN",
+      "source_commit": null,
+      "proposed_comparable_configuration": "Train a causal GQA Transformer in the shared model scaffold; select dimensions and KV-head grouping under the declared parameter/data or compute budget.",
+      "released_checkpoint": {
+        "required": false,
+        "selected": null
+      },
+      "support_from_source": {
+        "train": "Differentiable SDPA available.",
+        "prefill": "SDPA available subject to backend constraints.",
+        "decode": "Requires explicit persistent KV-cache integration and position-aware masking."
+      },
+      "caveats": [
+        "Query-head count must be divisible by KV-head count; key and value head counts must agree.",
+        "SDPA non-square is_causal uses upper-left alignment; do not assume it is the correct cached-decode mask.",
+        "Disable SDPA dropout explicitly during evaluation.",
+        "FA2 supports Ampere/Ada/Hopper; FA4 targets Hopper/Blackwell. Confirm backend selection and supported shapes locally."
+      ],
+      "state_accounting": [
+        "K and V for every retained token/layer",
+        "position and sequence metadata",
+        "allocated cache capacity and any duplicated buffers"
+      ],
+      "sources": [
+        {
+          "url": "https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.scaled_dot_product_attention.html",
+          "documentation_date": null,
+          "date_note": "Live documentation; release pin not frozen."
+        },
+        {
+          "url": "https://github.com/Dao-AILab/flash-attention",
+          "documentation_date": null
+        },
+        {
+          "url": "https://arxiv.org/abs/2603.05451",
+          "documentation_date": "2026-03-05",
+          "date_note": "FA4 paper submission; not a GQA architecture release."
+        }
+      ]
+    },
+    {
+      "id": "MLA",
+      "admission": "PENDING",
+      "local_execution": "UNRUN",
+      "source_commit": null,
+      "proposed_comparable_configuration": "Train an MLA Transformer in the shared scaffold; freeze latent rank, head dimensions, positional treatment, and expanded-training/absorbed-inference equivalence.",
+      "released_checkpoint": {
+        "required": false,
+        "selected": null,
+        "note": "A scaled MLA module is not the complete DeepSeek-V3 system."
+      },
+      "support_from_source": {
+        "train": "A differentiable path must be selected and verified; the cited full-model inference forward is decorated with torch.inference_mode.",
+        "prefill": "Official inference source exposes naive and absorb modes.",
+        "decode": "Official absorbed path retains latent KV and positional-key caches indexed by start_pos."
+      },
+      "caveats": [
+        "Do not use inference-only code unchanged as a training implementation.",
+        "Verify naive/expanded and absorbed outputs before measuring cache savings.",
+        "An expanded-KV-only implementation cannot establish the efficiency of compressed-cache MLA."
+      ],
+      "state_accounting": [
+        "latent KV cache",
+        "positional-key cache",
+        "position metadata",
+        "expanded or transient cache copies and peak workspace"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/deepseek-ai/DeepSeek-V3/blob/main/inference/model.py",
+          "documentation_date": null,
+          "date_note": "Live source; exact commit not frozen."
+        }
+      ]
+    },
+    {
+      "id": "GDN_HYBRID",
+      "admission": "PENDING",
+      "local_execution": "UNRUN",
+      "source_commit": null,
+      "proposed_comparable_configuration": "Train Gated DeltaNet with declared periodic GQA or sliding-window attention in the common scaffold; freeze ratio, window, recurrent dimensions, and all ancillary layers.",
+      "released_checkpoint": {
+        "required": false,
+        "selected": null
+      },
+      "support_from_source": {
+        "train": "FLA layer selects chunk mode when gradients are enabled.",
+        "prefill": "Chunk path accepts an initial recurrent state and can return final state.",
+        "decode": "FLA selects fused_recurrent for short inference and updates recurrent plus convolution caches."
+      },
+      "caveats": [
+        "Hybrid attention type and ratio must be named; pure GDN and a hybrid are separate configurations.",
+        "FLA CPU installation lists Triton as import-only; optimized CPU execution is not established.",
+        "Portable reference recurrence timings must not be presented as optimized GPU performance."
+      ],
+      "state_accounting": [
+        "matrix recurrent state per recurrent layer",
+        "all short-convolution buffers",
+        "attention-layer KV caches",
+        "position and sequence metadata"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/NVlabs/GatedDeltaNet",
+          "documentation_date": null
+        },
+        {
+          "url": "https://github.com/fla-org/flash-linear-attention/blob/main/fla/layers/gated_deltanet.py",
+          "documentation_date": null
+        },
+        {
+          "url": "https://github.com/fla-org/flash-linear-attention/blob/main/INSTALL.md",
+          "documentation_date": null
+        }
+      ]
+    },
+    {
+      "id": "KDA_HYBRID",
+      "admission": "PENDING",
+      "local_execution": "UNRUN",
+      "source_commit": null,
+      "proposed_comparable_configuration": "Train configurable KDA with a declared periodic attention component; 3:1 KDA:MLA is the official Kimi Linear arrangement, while KDA:GQA or KDA:SWA must be labeled as different variants.",
+      "released_checkpoint": {
+        "required": false,
+        "selected": null,
+        "reference_only": "Kimi-Linear-48B-A3B Base/Instruct",
+        "total_parameters": 48000000000,
+        "active_parameters": 3000000000,
+        "reported_training_tokens": 5700000000000,
+        "note": "Released checkpoint is not an equal-training baseline for a newly trained small model."
+      },
+      "support_from_source": {
+        "train": "FLA provides configurable differentiable chunk-mode KDA.",
+        "prefill": "Chunk mode accepts initial_state and output_final_state.",
+        "decode": "Fused-recurrent path returns updated recurrent and convolution caches."
+      },
+      "caveats": [
+        "Preserve channelwise forget gates, gate normalization, convolution, and output gating.",
+        "Validate any small configuration; the released large-model quality and throughput claims do not automatically transfer.",
+        "CPU installation is not proof that optimized kernels execute on CPU."
+      ],
+      "state_accounting": [
+        "matrix recurrent state",
+        "short-convolution state",
+        "MLA latent plus positional caches or the chosen attention cache",
+        "sequence metadata"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/MoonshotAI/Kimi-Linear",
+          "documentation_date": null
+        },
+        {
+          "url": "https://arxiv.org/abs/2510.26692",
+          "documentation_date": "2025-10-30",
+          "date_note": "Paper submission date; code revision not frozen."
+        },
+        {
+          "url": "https://github.com/fla-org/flash-linear-attention/blob/main/fla/layers/kda.py",
+          "documentation_date": null
+        }
+      ]
+    },
+    {
+      "id": "GDN2_HYBRID",
+      "admission": "PENDING",
+      "local_execution": "UNRUN",
+      "source_commit": null,
+      "proposed_comparable_configuration": "Train configurable GDN2 with a declared attention ratio/window, preserving separate channelwise erase/write gates and channelwise decay; match the common budget and recurrent-state accounting.",
+      "released_checkpoint": {
+        "required": false,
+        "selected": null,
+        "original_study_parameters": 1300000000,
+        "original_study_training_tokens": 100000000000,
+        "original_study_dataset": "FineWeb-Edu",
+        "note": "Downscaled training does not reproduce the published 1.3B/100B-token result."
+      },
+      "support_from_source": {
+        "train": "NVlabs training code and FLA differentiable chunk implementation exist.",
+        "prefill": "FLA chunk_gdn2 accepts initial_state and can return final state.",
+        "decode": "FLA fused_recurrent_gdn2 updates recurrent and convolution caches."
+      },
+      "caveats": [
+        "Do not collapse erase/write gates into one scalar and still call it GDN2.",
+        "Source availability does not establish local execution or numerical correctness.",
+        "Confirm CPU/reference versus optimized accelerator path separately."
+      ],
+      "state_accounting": [
+        "matrix recurrent state",
+        "all short-convolution buffers",
+        "hybrid attention KV cache",
+        "sequence metadata and temporary workspaces"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/NVlabs/GatedDeltaNet-2",
+          "documentation_date": "2026-05-21",
+          "date_note": "README states this code-release date."
+        },
+        {
+          "url": "https://arxiv.org/abs/2605.22791",
+          "documentation_date": null
+        },
+        {
+          "url": "https://github.com/fla-org/flash-linear-attention/blob/main/fla/layers/gdn2.py",
+          "documentation_date": null
+        }
+      ]
+    },
+    {
+      "id": "CSA2",
+      "admission": "CONDITIONAL",
+      "local_execution": "UNRUN",
+      "source_commit": null,
+      "proposed_comparable_configuration": "Conditional faithful reduced CSA2 study only after defining indexer training, cross-layer sharing, compression, window behavior, quantization, and cached decode. Otherwise name the model CSA2-inspired and restrict the claim.",
+      "released_checkpoint": {
+        "required": false,
+        "selected": null,
+        "reference_only": "deepseek-ai/DeepSeek-V4.1-Flash",
+        "note": "A released large checkpoint may be a separately labeled practical-system reference; not an equal-data architecture control."
+      },
+      "support_from_source": {
+        "train": "NeMo offers differentiable full-sequence CSA2 with eager, SDPA, and TileLang; the released indexer remains frozen.",
+        "prefill": "Full-sequence attention supported; this alone does not certify a reusable decode cache.",
+        "decode": "KV-cache decoding explicitly unsupported by the cited NeMo training implementation; a separate inference path must be integrated and verified."
+      },
+      "blocking_conditions": [
+        "The released indexer is frozen because hard top-k supplies no LM gradient and the inference release lacks indexer distillation.",
+        "A from-scratch trainable selector protocol must be specified rather than silently using an untrained/frozen random selector.",
+        "Complete cached decoding must pass equivalence before session-cost admission."
+      ],
+      "caveats": [
+        "Faithfulness includes Full/Reindex/Reuse cross-layer modes and hierarchical sparse selection.",
+        "NeMo preserves FP8 window and FP4 compressed KV/indexer quantize/dequantize boundaries while dequantizing weights for training.",
+        "Full-model DeepSeek improvements also involve components beyond CSA2; do not attribute them all to attention."
+      ],
+      "state_accounting": [
+        "window KV",
+        "compressed shared KV",
+        "indexer keys",
+        "top-k selections and hierarchical candidate pools",
+        "cross-layer ownership and metadata",
+        "quantization scales",
+        "replay/reconstruction storage and cost"
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+          "documentation_date": null
+        },
+        {
+          "url": "https://docs.nvidia.com/nemo/automodel/nemo-automodel/nemo_automodel/components/models/deepseek_v41/attention",
+          "documentation_date": null,
+          "date_note": "Live Nightly/Beta documentation; no release/commit pinned."
+        }
+      ]
+    },
+    {
+      "id": "TRAINED_LOCAL_ONLY",
+      "admission": "PENDING",
+      "local_execution": "UNRUN",
+      "source_commit": null,
+      "reference_source_commit": "8374f72ba9324fa4a11d0d3ecb40a6db0e311c73",
+      "proposed_comparable_configuration": "Separately train the candidate local-only backbone under the same data, tuning and declared capacity policy; no packet memory in training or inference.",
+      "released_checkpoint": {
+        "required": false,
+        "selected": null
+      },
+      "support_from_source": {
+        "train": "Candidate README exposes LocalOnly; common training integration pending.",
+        "prefill": "Full decoder and state-adapter parity pending.",
+        "decode": "Local and previous-embedding state must be carried correctly."
+      },
+      "caveats": [
+        "Same-checkpoint packet masking is a causal intervention, not this retrained control.",
+        "Meaningful capacity differences must be reported without dead-parameter padding."
+      ],
+      "state_accounting": [
+        "Local convolution buffers",
+        "Previous embedding",
+        "Position, validity and session metadata"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/FPC-effortless/cdl-attention-experiment/blob/8374f72ba9324fa4a11d0d3ecb40a6db0e311c73/research/nanocog-001/README.md",
+          "documentation_date": null
+        }
+      ]
+    }
+  ],
+  "campaign_configuration_map": {
+    "NANOCOG_PACKET": {
+      "inventory_id": "USER_CANDIDATE",
+      "role": "candidate"
+    },
+    "TRAINED_LOCAL_ONLY": {
+      "inventory_id": "TRAINED_LOCAL_ONLY",
+      "role": "trained_ablation"
+    },
+    "GQA": {
+      "inventory_id": "GQA",
+      "role": "learned_baseline"
+    },
+    "MLA": {
+      "inventory_id": "MLA",
+      "role": "learned_baseline"
+    },
+    "KDA_GQA_3_TO_1": {
+      "inventory_id": "KDA_HYBRID",
+      "role": "learned_baseline",
+      "linear_to_attention_ratio": [
+        3,
+        1
+      ],
+      "attention_type": "GQA"
+    },
+    "GDN_GQA_3_TO_1": {
+      "inventory_id": "GDN_HYBRID",
+      "role": "challenger",
+      "linear_to_attention_ratio": [
+        3,
+        1
+      ],
+      "attention_type": "GQA"
+    },
+    "GDN2_GQA_3_TO_1": {
+      "inventory_id": "GDN2_HYBRID",
+      "role": "challenger",
+      "linear_to_attention_ratio": [
+        3,
+        1
+      ],
+      "attention_type": "GQA"
+    },
+    "CSA2": {
+      "inventory_id": "CSA2",
+      "role": "conditional_reference"
+    }
+  },
+  "inherited_diagnostic_controls": [
+    {
+      "id": "PULSE_006_REFERENCE",
+      "admission": "CONDITIONAL_EXACT_RECOVERY",
+      "local_execution": "UNRUN",
+      "purpose": "Preserve unchanged direct-event and matched-broker lineage where executable on a comparable relational diagnostic; not a general-LM competitor.",
+      "requirements": [
+        "Exact original source, weights, recipe and permitted comparable evaluation inputs.",
+        "Keep frozen snapshot replay distinct from retraining.",
+        "If unavailable, record UNAVAILABLE and narrow the claim; never silently substitute or drop the inherited control."
+      ]
+    },
+    {
+      "id": "TEXT_FACING_DETERMINISTIC_CONTROLS",
+      "admission": "PENDING",
+      "local_execution": "UNRUN",
+      "purpose": "Parser/exact store and tuned lexical/recency controls receive actor-visible text; parser errors and all costs count."
+    }
+  ]
+}
