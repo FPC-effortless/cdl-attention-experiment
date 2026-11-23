@@ -83,6 +83,7 @@ and rejects unsupported cached chunks. It does not silently fix or rename the ba
 ## Evidence and continuation
 
 - [Bounded execution protocol](RUN_PROTOCOL.md)
+- [CPU environment lock](CPU_ENVIRONMENT_LOCK.txt) and [Kaggle client lock](CLIENT_ENVIRONMENT_LOCK.txt)
 - [Adapter design and remaining limits](ADAPTER_DESIGN.md)
 - [Independent admission review](INDEPENDENT_ADMISSION_REVIEW.md)
 - [Independent bundle review](BUNDLE_REVIEW.md)

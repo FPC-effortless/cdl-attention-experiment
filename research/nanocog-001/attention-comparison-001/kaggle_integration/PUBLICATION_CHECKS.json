@@ -1,6 +1,6 @@
 {
   "status": "PASS_DOCUMENT_SOURCE_PACKAGE_ONLY",
-  "file_count": 28,
+  "file_count": 30,
   "json_and_python_syntax": "PASS",
   "credential_bytes_absent": "PASS",
   "index_original_prefix_preserved": "PASS",
@@ -63,9 +63,19 @@
       "size_bytes": 933
     },
     {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/CLIENT_ENVIRONMENT_LOCK.txt",
+      "sha256": "a823429d3c48d0343fcb49348bfdb0011457a02ae884b5544bb68b95a941f9cd",
+      "size_bytes": 647
+    },
+    {
       "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/CPU_CHECKS_ATTEMPT1.json",
       "sha256": "f91e77368bb296d10a9d0c6bce0007fa4863d7843891d0cb176d9f7d3c7dcec6",
       "size_bytes": 50111
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/CPU_ENVIRONMENT_LOCK.txt",
+      "sha256": "d62d98c7f7179b77aa6beb46a3ebc72f07411211f18635e889737e3fc9191293",
+      "size_bytes": 425
     },
     {
       "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/EXECUTION_STATUS.json",
@@ -79,8 +89,8 @@
     },
     {
       "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/README.md",
-      "sha256": "7940bfdfaf19061a749b1e18e4c3b0719baa206e2ced00142774fa62e8861966",
-      "size_bytes": 5953
+      "sha256": "6b34cb6ec2de79bcdbc5249ce63d7c2498687cd2462d6656684389861d6ba597",
+      "size_bytes": 6058
     },
     {
       "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/REMOTE_RECEIPT_ATTEMPT1.json",
