@@ -1,0 +1,67 @@
+{
+  "schema": "cog.kaggle-retrieved-evidence.v1",
+  "prepared_utc": "2026-11-23T18:35:28.603020+00:00",
+  "retrieval": "Official Kaggle CLI exact version 1 output; SDK source/privacy/status verification",
+  "files": [
+    {
+      "path": "raw/environment/environment.json",
+      "bytes": 1397,
+      "sha256": "d15c943e427f3c3f2340df606b2e5bfb36fea19f44cdd08d265cb34921d5a785"
+    },
+    {
+      "path": "raw/environment/cog-attention-comparison-environment-001.log",
+      "bytes": 5399,
+      "sha256": "5339a30e2399146589589bdb85b4015750bb1a66f3936f1616e3cad0404e0f08"
+    },
+    {
+      "path": "raw/environment_remote.json",
+      "bytes": 927,
+      "sha256": "93f6248d46d5ef8e979b554f1ca72e937eafb18bd6b4d022ec3e0826c74b41bd"
+    },
+    {
+      "path": "raw/adapter/adapter_results/adapter_checks.json",
+      "bytes": 49865,
+      "sha256": "425db5655920c1cb32fedc3e8221aeaa2d37447df9e31d3dd0d13bc75eff016c"
+    },
+    {
+      "path": "raw/adapter/adapter_results/model_provenance.json",
+      "bytes": 136565,
+      "sha256": "e238a6da2e489c2f06258a7aa974bbc8c001649ed9ca621453925cae478b055c"
+    },
+    {
+      "path": "raw/adapter/adapter_results/run_result.json",
+      "bytes": 77278,
+      "sha256": "8323868b4a0d74e15471d4ec4070ce6f88396f0905f5fc80ed6b27c3a2b0f094"
+    },
+    {
+      "path": "raw/adapter/bootstrap_result.json",
+      "bytes": 12938,
+      "sha256": "30f1cb26cf23f26e80ae03a57fc87ff33d0499395384bf2fcdd975e3f32c871d"
+    },
+    {
+      "path": "raw/adapter/dependency_install.json",
+      "bytes": 14872,
+      "sha256": "47e5c2c425aaa3b26cea735d0375028c3ddc9ada627e3f8f969aa4c27ecaad3b"
+    },
+    {
+      "path": "raw/adapter/run_source_manifest.json",
+      "bytes": 12055,
+      "sha256": "1e9d28df95eaf8fde4b003cc4164b9952fd50ff44467980c77a832766feebfeb"
+    },
+    {
+      "path": "raw/adapter/cog-attention-adapter-001.log",
+      "bytes": 3838,
+      "sha256": "3f412f1b75800b98214223318a082d902a2fcb2803b9508de9c2a859bb4a9fac"
+    },
+    {
+      "path": "raw/adapter_remote.json",
+      "bytes": 881,
+      "sha256": "0bb9b9e3009c27b4b7a296bda634051c8ef1a6ae8672bd1094a5bf71aa444be3"
+    }
+  ],
+  "files_count": 11,
+  "byte_for_byte_raw_copies": true,
+  "original_jobs_rerun": false,
+  "optimizer_updates": 0,
+  "scientific_comparison_admitted": false
+}

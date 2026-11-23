@@ -1,0 +1,19 @@
+{
+  "status": "SOURCE_CHECKS_ONLY_NO_JOB_EXECUTION",
+  "provider_context": "MoLab",
+  "environment_sha256": "70c81e91d05c38a7cd487c2d6a74b639ff2ce1802ce4b27a93071a2ffefc7719",
+  "kernel_sha256": "c7cd17d088294cf56f62a372328921ed4e29cf083f8bfc897f7040a374ee4a81",
+  "supervisor_sha256": "59b993b42176370380e1bd2d68fb0ef7f588f0f6efc8ffa07028a4210d229cfb",
+  "notebook_sha256": "ec79f2d856070caa1de574a2acc0d7e8d41a96e1fa50d135bd47db75ef88bc31",
+  "builder_sha256": "1e666165ec1abd9ef588e56f9ab4f68f639cd33c0730c896abdddb675642b5fe",
+  "archive_check": {
+    "members_verified": 33,
+    "archive_sha256": "65f19af445dc368e382faa32fd006941969c6df26f5c4b5330bd898472f555f5",
+    "archive_bytes": 476755
+  },
+  "native_imports": 0,
+  "optimizer_updates": 0,
+  "remote_calls": 0,
+  "runtime_marimo_validation": "NOT_RUN",
+  "notebook_bytes": 906745
+}

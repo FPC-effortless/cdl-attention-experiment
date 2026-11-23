@@ -1,0 +1,25 @@
+{
+  "observed_utc": "2026-11-23T05:35:30.919279+00:00",
+  "requested_ref": "eweewee2/cog-attention-adapter-001",
+  "requested_version": 1,
+  "metadata": {
+    "id": 146804272,
+    "ref": "eweewee2/cog-attention-adapter-001",
+    "title": "COG Attention Adapter 001",
+    "is_private": true,
+    "enable_gpu": true,
+    "enable_tpu": false,
+    "enable_internet": true,
+    "current_version_number": 1,
+    "docker_image": "",
+    "machine_shape": "NvidiaTeslaT4",
+    "dataset_data_sources": [],
+    "kernel_data_sources": [],
+    "competition_data_sources": [],
+    "model_data_sources": []
+  },
+  "status": "QUEUED",
+  "failure_message": "",
+  "remote_source_sha256": "c7cd17d088294cf56f62a372328921ed4e29cf083f8bfc897f7040a374ee4a81",
+  "source_matches_reviewed": true
+}

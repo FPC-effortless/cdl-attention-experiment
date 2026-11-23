@@ -1,0 +1,28 @@
+[{"stream_name":"stdout","time":3.059375606,"data":"Collecting rustbpe==0.1.0 (from -r /tmp/cog_source_zn1orp7z/integration/bootstrap-requirements.txt (line 1))\n"}
+,{"stream_name":"stdout","time":3.178663991,"data":"  Downloading rustbpe-0.1.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.1 MB)\n"}
+,{"stream_name":"stdout","time":3.30873352,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 9.9 MB/s  0:00:00\n"}
+,{"stream_name":"stdout","time":3.451286843,"data":"Collecting tiktoken==0.11.0 (from -r /tmp/cog_source_zn1orp7z/integration/bootstrap-requirements.txt (line 2))\n"}
+,{"stream_name":"stdout","time":3.468444962,"data":"  Downloading tiktoken-0.11.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.2 MB)\n"}
+,{"stream_name":"stdout","time":3.55889144,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 12.9 MB/s  0:00:00\n"}
+,{"stream_name":"stdout","time":3.611308742,"data":"Installing collected packages: tiktoken, rustbpe\n"}
+,{"stream_name":"stdout","time":3.6942731970000002,"data":"\n"}
+,{"stream_name":"stdout","time":3.695896436,"data":"Successfully installed rustbpe-0.1.0 tiktoken-0.11.0\n"}
+,{"stream_name":"stdout","time":18.755048185,"data":"Padding vocab_size from 97 to 128 for efficiency\n"}
+,{"stream_name":"stdout","time":20.765377914,"data":"Padding vocab_size from 97 to 128 for efficiency\n"}
+,{"stream_name":"stdout","time":21.228180883,"data":"Padding vocab_size from 97 to 128 for efficiency\n"}
+,{"stream_name":"stdout","time":21.36011759,"data":"Padding vocab_size from 97 to 128 for efficiency\n"}
+,{"stream_name":"stdout","time":21.406290546,"data":"Padding vocab_size from 97 to 128 for efficiency\n"}
+,{"stream_name":"stdout","time":21.933315394,"data":"Padding vocab_size from 50257 to 50304 for efficiency\n"}
+,{"stream_name":"stdout","time":25.690873623999998,"data":"{\"stage\": \"capacity\", \"arm\": \"gqa\", \"parameters\": 123175106, \"status\": \"PASS_CAPACITY_ONLY\"}\n"}
+,{"stream_name":"stdout","time":59.772146971,"data":"{\"stage\": \"capacity\", \"arm\": \"packet\", \"parameters\": 81076562, \"status\": \"PASS_CAPACITY_ONLY\"}\n"}
+,{"stream_name":"stdout","time":60.22828997,"data":"{\"stage\": \"capacity\", \"arm\": \"local\", \"parameters\": 79841330, \"status\": \"PASS_CAPACITY_ONLY\"}\n"}
+,{"stream_name":"stderr","time":60.23279567,"data":"/usr/local/lib/python3.13/dist-packages/torch/profiler/profiler.py:224: UserWarning: Warning: Profiler clears events at the end of each cycle.Only events from the current cycle will be reported.To keep events across cycles, set acc_events=True.\n"}
+,{"stream_name":"stderr","time":60.23282703,"data":"  _warn_once(\n"}
+,{"stream_name":"stdout","time":60.495697268,"data":"{\"run_id\": \"COG-ATTENTION-KAGGLE-ADAPTER-001\", \"status\": \"PASS_ENGINEERING_ONLY\", \"elapsed_seconds\": 56.71928797999999}\n"}
+,{"stream_name":"stderr","time":66.10843775,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":66.108469164,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":66.377686781,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":66.377712134,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":67.229206776,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":68.264145843,"data":"[NbConvertApp] Writing 936731 bytes to __results__.html\n"}
+]

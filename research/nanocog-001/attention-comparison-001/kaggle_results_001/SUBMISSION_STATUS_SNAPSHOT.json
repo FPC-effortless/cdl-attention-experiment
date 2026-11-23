@@ -1,0 +1,34 @@
+{
+  "schema": "cog.kaggle-continuation-status.v1",
+  "observed_utc": "2026-11-23T05:36:44.644481+00:00",
+  "cpu_engineering_checks": "PASS_5_GROUPS",
+  "tokenizer_offline_reload": "PASS",
+  "model_fits": 0,
+  "optimizer_updates": 0,
+  "head_to_head_results": [],
+  "scientific_comparison_admitted": false,
+  "runs": [
+    {
+      "stage": "environment",
+      "ref": "eweewee2/cog-attention-comparison-environment-001",
+      "kernel_id": 146800560,
+      "version": 1,
+      "status": "QUEUED",
+      "observed_utc": "2026-11-23T05:35:31.392575+00:00",
+      "is_private": true,
+      "source_matches_reviewed": true,
+      "source_sha256": "70c81e91d05c38a7cd487c2d6a74b639ff2ce1802ce4b27a93071a2ffefc7719"
+    },
+    {
+      "stage": "adapter_capacity",
+      "ref": "eweewee2/cog-attention-adapter-001",
+      "kernel_id": 146804272,
+      "version": 1,
+      "status": "QUEUED",
+      "observed_utc": "2026-11-23T05:35:30.919279+00:00",
+      "is_private": true,
+      "source_matches_reviewed": true,
+      "source_sha256": "c7cd17d088294cf56f62a372328921ed4e29cf083f8bfc897f7040a374ee4a81"
+    }
+  ]
+}

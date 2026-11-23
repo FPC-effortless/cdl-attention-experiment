@@ -1,0 +1,19 @@
+{
+  "schema": "cog.molab-and-kaggle-publication-checks.v1",
+  "checked_utc": "2026-11-23T18:38:21.576347+00:00",
+  "status": "PASS_PUBLICATION_CHECKS_WITH_SCOPE_LIMIT",
+  "candidate_files_checked": 28,
+  "utf8_files_checked": 28,
+  "json_files_parsed": 14,
+  "python_sources_ast_parsed": 3,
+  "relative_document_links_verified": 53,
+  "link_check_scope": "All new documents, updated Kaggle continuation README/RESUME, and appended RESULTS_INDEX section. Historical index links are outside this change.",
+  "earlier_broad_link_check": "Stopped at the pre-existing ../cog-attn-handoff/README.md link unavailable in this partial checkout; historical index text was not edited.",
+  "literal_known_credential_encodings_absent": true,
+  "exact_reviewed_molab_python_hashes_match": true,
+  "raw_evidence_manifest_matches": true,
+  "models_imported_or_run_in_publication_check": false,
+  "remote_jobs_started_in_publication_check": false,
+  "molab_execution": "NOT_RUN",
+  "scientific_comparison_admitted": false
+}

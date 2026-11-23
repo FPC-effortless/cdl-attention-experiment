@@ -1,0 +1,27 @@
+{
+  "run_id": "COG-ATTENTION-KAGGLE-ENV-001",
+  "attempt": 1,
+  "status": "ACCEPTED",
+  "returned_version": 1,
+  "returned_ref": "eweewee2/cog-attention-comparison-environment-001",
+  "returned_kernel_id": 146800560,
+  "returned_url": "https://www.kaggle.com/code/eweewee2/cog-attention-comparison-environment-001",
+  "requested_accelerator": "NvidiaTeslaT4",
+  "requested_timeout_seconds": 300,
+  "command_arguments": [
+    "kernels",
+    "push",
+    "-p",
+    "STAGED_REVIEWED_DIRECTORY",
+    "--accelerator",
+    "NvidiaTeslaT4",
+    "--timeout",
+    "300"
+  ],
+  "submitted_source_sha256": "70c81e91d05c38a7cd487c2d6a74b639ff2ce1802ce4b27a93071a2ffefc7719",
+  "requested_private": true,
+  "requested_internet": false,
+  "credential_included": false,
+  "model_fits": 0,
+  "note": "Service returned a title-derived slug different from the originally requested slug; use the returned ref. No duplicate environment submission."
+}
