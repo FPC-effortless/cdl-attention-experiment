@@ -21,6 +21,9 @@ import zipfile
 
 RUN_NAME = "tiny10m_seed20261122"
 ARCHIVE_ROOT = "COG_TINY10M"
+ARCHIVED_INTERRUPTION_EVENTS = frozenset({"intentional_runtime_stop", "unobserved_runtime_stop"})
+RECOVERY_EVIDENCE = ("evidence/recovery_observation_48409.json", "evidence/recovery_lock_receipt_48409.json")
+OPTIONAL_REPLAY_EVIDENCE = "evidence/resume_replay_48409.json"
 
 SOURCE_REQUIRED = (
     "model.py", "train.py", "data.py", "sample.py", "serve.py", "fetch_data.py",
@@ -28,15 +31,19 @@ SOURCE_REQUIRED = (
     "ARCHITECTURE_IMPLEMENTED.md", "NEURAL_GUARANTEES.md", "REVIEW.md", "RUN_PLAN.json",
     "review_checks.json", "pipeline_checks.json", "training_pipeline_checks.json",
     "web_tester_checks.json", "trained_web_tester_intermediate.json",
-    "remote_source_verification.json", "tools/tiny_train_session.py",
+    "remote_source_verification.json", "tools/tiny_train_session.py", "tools/verify_interruption_recovery.py",
+    "tools/finalize_delivery.py",
+    *RECOVERY_EVIDENCE,
     "data/dataset.json", "data/tokenizer.json", "data/source.json",
 )
-SOURCE_OPTIONAL = ("trained_web_tester_final.json", "postfit_archive_review.json", "finalizer_file_checks.json")
+SOURCE_OPTIONAL = ("trained_web_tester_final.json", "postfit_archive_review.json", "finalizer_file_checks.json",
+                   "interruption_recovery_review.json", OPTIONAL_REPLAY_EVIDENCE)
 RUN_REQUIRED = (
     "run_config.json", "result.json", "metrics.jsonl", "sessions.jsonl",
     "tokenizer.json", "initial_evaluation.json", "interruption_events.jsonl",
     "allocator_recovery_receipt.json", "launcher_sessions.jsonl",
     "metrics_before_interruption_21959.jsonl", "discarded_metrics_21959.jsonl",
+    "metrics_before_interruption_48409.jsonl", "discarded_metrics_48409.jsonl",
     "postfit_audit/audit.json", "postfit_audit/samples.json", "postfit_audit/samples.txt",
 )
 RUN_OPTIONAL = ("postfit_audit/memory_intervention.json", "launcher_model_config.json")
@@ -46,6 +53,7 @@ AUDITED_INPUTS_REQUIRED = {
     "tokenizer.json", "initial_evaluation.json", "interruption_events.jsonl",
     "allocator_recovery_receipt.json", "launcher_sessions.jsonl",
     "metrics_before_interruption_21959.jsonl", "discarded_metrics_21959.jsonl",
+    "metrics_before_interruption_48409.jsonl", "discarded_metrics_48409.jsonl",
     "best.pt", "resume.pt",
 }
 
@@ -77,6 +85,38 @@ def digest(path):
 
 def bytes_digest(data):
     return hashlib.sha256(data).hexdigest()
+
+
+def unmatched_launcher_receipts(launcher_rows, interruptions):
+    """Describe historical starts lacking exits without inventing resource receipts."""
+    starts = [row for row in launcher_rows if row.get("event") == "launcher_start"]
+    ends = [row for row in launcher_rows if row.get("event") == "launcher_end"]
+    require(all(isinstance(row.get("session_token"), str) and row["session_token"]
+                for row in starts + ends), "Launcher session token is missing")
+    start_tokens = [row["session_token"] for row in starts]
+    end_tokens = [row["session_token"] for row in ends]
+    require(len(start_tokens) == len(set(start_tokens)) and len(end_tokens) == len(set(end_tokens)),
+            "Duplicate launcher start/end identity")
+    require(set(end_tokens) <= set(start_tokens), "Launcher exit lacks its start receipt")
+    events = [event for event in interruptions if event.get("event") == "unobserved_runtime_stop"]
+    event_tokens = [event.get("launcher_session_token") for event in events]
+    require(all(isinstance(token, str) and token for token in event_tokens)
+            and len(event_tokens) == len(set(event_tokens)), "Unobserved-stop launcher binding is missing/duplicated")
+    require(set(start_tokens) - set(end_tokens) == set(event_tokens),
+            "Unmatched launcher starts differ from unobserved-stop receipts")
+    result = []
+    start_by_token = {row["session_token"]: row for row in starts}
+    for event in events:
+        require(event.get("tool_exit_code") is None and event.get("exit_code") is None,
+                "Unobserved stop may not claim an observed exit code")
+        row = start_by_token[event["launcher_session_token"]]
+        result.append({
+            "session_token": row["session_token"], "start_unix": row["start_unix"],
+            "log": Path(row["log"]).name, "interruption_session": event["session_id"],
+            "exit_status": "unknown", "observed_end_unix": None,
+            "observed_wall_duration_seconds": None, "max_child_rss_kib": None,
+        })
+    return result
 
 
 def validate_audit_binding(run, project, audit):
@@ -204,7 +244,8 @@ def cli_command(cfg, threads, cap, allocator_env=None):
     )
 
 
-def render_reports(manifest, result, audit, best, sessions, interruptions, launcher, allocator, hashes, remote):
+def render_reports(manifest, result, audit, best, sessions, interruptions, launcher, allocator, hashes, remote,
+                   unmatched_launchers=(), replay_evidence_present=False):
     cfg, mc, dataset = manifest["training_config"], manifest["model_config"], manifest["dataset"]
     selected = best["val"]
     final_test = result["test"]
@@ -221,6 +262,9 @@ def render_reports(manifest, result, audit, best, sessions, interruptions, launc
     exit137 = [event for event in interruptions if event.get("exit_code") == 137]
     optional = audit.get("memory_intervention")
     intentional = [event for event in interruptions if event.get("event") == "intentional_runtime_stop"]
+    unobserved = [event for event in interruptions if event.get("event") == "unobserved_runtime_stop"]
+    replay_text = ("The optional scalar-replay receipt in `evidence/resume_replay_48409.json` compares logged training quantities across recovery. Its scope is restricted to those logged scalars; it does not establish full weight/RNG tensor identity, a new independent fit, or a benchmark speedup."
+                   if replay_evidence_present else "")
 
     readme = f"""# COG Unified Tiny Shakespeare 10M
 
@@ -347,6 +391,14 @@ The source/evidence review is tracked in [PR #93](https://github.com/FPC-effortl
         f"- Intentional stop {i}: tool exit code **{event.get('tool_exit_code', 'unrecorded')}**, retained checkpoint **{event.get('last_retained_checkpoint_step', 'unrecorded')}**, last discarded logged update **{event.get('last_logged_discarded_step', 'unrecorded')}**. Reason: {event.get('reason', 'not recorded')}. At least **{event.get('minimum_discarded_completed_updates', 0)} completed updates** were abandoned; additional uncheckpointed work is {event.get('actual_discarded_uncheckpointed_updates', 'unknown')}. Exact original metrics: `{event.get('full_original_metrics_archive', 'unrecorded')}`; discarded tail: `{event.get('discarded_tail_file', 'unrecorded')}`."
         for i, event in enumerate(intentional, 1)
     )
+    unobserved_text = "\n".join(
+        f"- Unobserved stop {i}: launcher `{event['launcher_session_token']}` has no recorded exit receipt; its exit status and complete runtime cost are **unknown**. Retained checkpoint **{event['last_retained_checkpoint_step']}**; last discarded logged update **{event['last_logged_discarded_step']}**. Observations: {event.get('reason', 'not recorded')}. At least **{event['minimum_discarded_completed_updates']} completed updates** were abandoned; additional uncheckpointed work is {event.get('actual_discarded_uncheckpointed_updates', 'unknown')}. Exact original metrics: `{event['full_original_metrics_archive']}`; discarded tail: `{event['discarded_tail_file']}`."
+        for i, event in enumerate(unobserved, 1)
+    )
+    unmatched_text = "\n".join(
+        f"- Launcher `{row['session_token']}`: preserved start and log `{row['log']}`; no observed end time, exit code, complete wall duration, or peak child RSS. Its interruption receipt is session `{row['interruption_session']}`."
+        for row in unmatched_launchers
+    ) or "No unmatched launcher start is recorded."
     source_lines = "\n".join(f"| `{name}` | `{value}` |" for name, value in manifest["source_sha256"].items())
     memory_text = """No matched memory-removal diagnostic is included in this completed audit. No memory-benefit claim is inferred from the language loss alone."""
     if optional is not None:
@@ -428,11 +480,15 @@ There are **{len(intentional)} separately recorded intentional runtime stops**. 
 
 {intentional_text}
 
-The archived discarded tail preserves the abandoned logged updates, while canonical metrics were rolled back to the retained checkpoint and include a trajectory-recovery event. Discarded updates are excluded from the restored-trajectory counters above.
+There are **{len(unobserved)} separately recorded runtime stops without an observed exit status**. These are not assigned an exit-137 or intentional-stop classification:
+
+{unobserved_text}
+
+The archived discarded tails preserve the abandoned logged updates, while canonical metrics were rolled back to the corresponding retained checkpoints and include explicit trajectory-recovery events. Discarded updates are excluded from the restored-trajectory counters above.
 
 The independent archive audit establishes at least **{audit['accounting']['minimum_documented_discarded_completed_updates']:,} discarded completed updates**, or **{audit['accounting']['minimum_documented_discarded_target_presentations']:,} discarded target presentations**. Adding these documented discarded presentations to the restored trajectory yields a **lower bound of {audit['accounting']['total_physical_target_presentations_lower_bound']:,} physical target presentations**. This is a lower bound, not an exact total; additional unlogged work remains unknown.
 
-Both model/optimizer state and the saved Python, Torch, and batch-sampler RNG trajectory were restored from matching snapshots. Restarts are continuations of one selected seed, not independent fitted seeds. The intentional-stop receipt gives a lower bound on its discarded completed updates; any additional work after the last observed log is **unknown**. Work discarded around the earlier unlogged kills is also **unknown**. Total physical target presentations and compute time across those discarded attempts are therefore **not established**. The displayed exposure/time counters describe the restored trajectory only.
+Both model/optimizer state and the saved Python, Torch, and batch-sampler RNG trajectory were restored from matching snapshots. Restarts are continuations of one selected seed, not independent fitted seeds. The archive-backed interruption receipts give lower bounds on their discarded completed updates; any additional work after each last observed log is **unknown**. Work discarded around the earlier unlogged kills is also **unknown**. Total physical target presentations and compute time across those discarded attempts are therefore **not established**. The displayed exposure/time counters describe the restored trajectory only.
 
 The initial allocator-bounded recovery used `MALLOC_ARENA_MAX=2` without editing the frozen model, data, or trainer. A two-thread bounded continuation was observed before later launcher continuations; any later jemalloc configuration is reported directly from their environment receipts below. Successful return codes and measured maximum resident sizes belong to the individual receipts below; they are not a general OOM guarantee.
 
@@ -449,6 +505,16 @@ The initial allocator-bounded recovery used `MALLOC_ARENA_MAX=2` without editing
 {chr(10).join(wrapper_lines)}
 
 The wrapper durations include their observed command lifetime. They cover only these recorded invocations and must not be summed into an asserted whole-task or all-attempt compute bill. The final successful launcher receipt is included in the archive. `sessions.jsonl`, `launcher_sessions.jsonl`, `allocator_recovery_receipt.json`, `interruption_events.jsonl`, and `evidence/resume_memory_diagnosis.json` preserve the evidence.
+
+### Launchers without an exit receipt
+
+{unmatched_text}
+
+These preserved starts are excluded from the completed-wrapper table. No missing end receipt or resource measurement has been synthesized.
+
+The read-only recovery observations are preserved in `evidence/recovery_observation_48409.json`, including the limits of process visibility. `evidence/recovery_lock_receipt_48409.json` records the restart and the checked external process-owner lock. Its status was **running at capture**; it is runtime-guard evidence, not a completed-run receipt. The final successful launcher exit remains the completion evidence.
+
+{replay_text}
 
 The trainer's last-session wall-time field is **{result['session_wall_seconds']:.3f} seconds**, recorded before its final test evaluation. Use the final wrapper receipt for that command's full observed lifetime.
 
@@ -554,6 +620,41 @@ def main():
         require("return_code" in normalized and "end_unix" in normalized, "Unrecognized incomplete runtime receipt")
         launcher.append(normalized)
     run_files.extend(sorted(declared_logs))
+    unmatched_launchers = unmatched_launcher_receipts(launcher_raw, interruptions)
+    recovery_observation = read_json(project / RECOVERY_EVIDENCE[0])
+    recovery_lock = read_json(project / RECOVERY_EVIDENCE[1])
+    recovery_evidence_files = list(RECOVERY_EVIDENCE)
+    replay_evidence_present = (project / OPTIONAL_REPLAY_EVIDENCE).is_file()
+    if replay_evidence_present:
+        recovery_evidence_files.append(OPTIONAL_REPLAY_EVIDENCE)
+    recovered_events = [event for event in interruptions
+                        if event.get("event") == "unobserved_runtime_stop" and event.get("session_id") == 48409]
+    require(len(recovered_events) == 1, "Expected unobserved recovery receipt is missing/duplicated")
+    recovered = recovered_events[0]
+    observation_bindings = (
+        ("former_exec_session_id", "session_id"),
+        ("former_launcher_session_token", "launcher_session_token"),
+        ("metrics_sha256_before_recovery", "full_original_metrics_sha256"),
+        ("prospective_discarded_tail_sha256", "discarded_tail_sha256"),
+        ("resume_step", "last_retained_checkpoint_step"),
+        ("resume_sha256", "retained_resume_checkpoint_sha256"),
+        ("best_checkpoint_sha256", "retained_best_checkpoint_sha256"),
+        ("minimum_discarded_completed_updates", "minimum_discarded_completed_updates"),
+    )
+    require(all(recovery_observation[left] == recovered[right] for left, right in observation_bindings)
+            and recovery_observation["former_launcher_has_end_receipt"] is False
+            and recovery_observation["process_specific_exit_code"] is None,
+            "Recovery observation differs from preserved interruption evidence")
+    restart_starts = [row for row in launcher_raw if row.get("event") == "launcher_start"
+                      and row.get("session_token") == recovery_lock["actual_launcher_session_token"]]
+    require(len(restart_starts) == 1
+            and recovery_lock["actual_launcher_session_token"] != recovered["launcher_session_token"]
+            and recovery_lock["former_exec_session"] == recovered["session_id"]
+            and recovery_lock["restored_step"] == recovered["last_retained_checkpoint_step"]
+            and recovery_lock["status"] == "running"
+            and recovery_lock["lock_probe"]["held_owner_conflict_returncode"] == 75
+            and recovery_lock["lock_probe"]["after_owner_exit_returncode"] == 0,
+            "Restart/lock snapshot is missing or inconsistent; it is not a completion receipt")
     # Catch new evidence rather than quietly dropping it or copying an unreviewed file.
     observed_metadata = {p.relative_to(run).as_posix() for p in run.rglob("*")
                          if p.is_file() and p.suffix in (".json", ".jsonl", ".txt", ".log")}
@@ -564,7 +665,7 @@ def main():
         require(read_json(run / "launcher_model_config.json") == manifest["model_config"],
                 "Launcher model configuration differs from admitted run")
     for event in interruptions:
-        if event.get("event") == "intentional_runtime_stop":
+        if event.get("event") in ARCHIVED_INTERRUPTION_EVENTS:
             for path_key, hash_key in (("full_original_metrics_archive", "full_original_metrics_sha256"),
                                        ("discarded_tail_file", "discarded_tail_sha256")):
                 require(event[path_key] in run_files and digest(run / event[path_key]) == event[hash_key],
@@ -618,7 +719,8 @@ def main():
             "Checkpoint data/tokenizer identity differs")
     del resume
     readme, report, resume_command = render_reports(
-        manifest, result, audit, best, sessions, interruptions, launcher, allocator, hashes, remote)
+        manifest, result, audit, best, sessions, interruptions, launcher, allocator, hashes, remote,
+        unmatched_launchers, replay_evidence_present)
     del best
 
     metadata = {
@@ -634,6 +736,8 @@ def main():
         "audited_input_sha256": audited_inputs,
         "documented_discarded_targets_lower_bound": audit["accounting"]["minimum_documented_discarded_target_presentations"],
         "physical_targets_lower_bound": audit["accounting"]["total_physical_target_presentations_lower_bound"],
+        "launchers_without_observed_exit": unmatched_launchers,
+        "recovery_evidence_sha256": {rel: digest(project / rel) for rel in recovery_evidence_files},
         "frozen_source_sha256": manifest["source_sha256"],
         "verified_source_commit": remote["commit"],
         "corpus_sha256": dataset["input_sha256"],
@@ -671,9 +775,10 @@ Use the separate source package and fetch_data.py for the pinned corpus.
 Recovery command for a matching interrupted snapshot:
 {resume_command}
 
-This supplied snapshot is already completed. It contains the final optimizer/RNG state but does not extend the original 2,000-update plan. Recorded exposure/time counters cover the restored trajectory. Discarded work across exit-137 terminations remains unknown.
+This supplied snapshot is already completed. It contains the final optimizer/RNG state but does not extend the original 2,000-update plan. Recorded exposure/time counters cover the restored trajectory. The package preserves documented discarded-tail lower bounds; exact total discarded work across interruptions remains unknown.
 """.encode("utf-8")
     resume_entries = dict(run_entries)
+    resume_entries.update({rel: project / rel for rel in recovery_evidence_files})
     resume_entries.update({
         run_prefix + "best.pt": best_path,
         run_prefix + "resume.pt": resume_path,

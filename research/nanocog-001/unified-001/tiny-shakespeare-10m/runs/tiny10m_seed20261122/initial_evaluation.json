@@ -1,0 +1,12 @@
+{
+  "step": 0,
+  "val": {
+    "mean_nll": 4.268671427811239,
+    "character_perplexity": 71.42667705686101,
+    "bits_per_character": 6.158391100087686,
+    "next_character_accuracy": 0.013627642597141781,
+    "targets": 55769,
+    "seconds": 8.496933857997647,
+    "context_policy": "reset each nonoverlapping context-length window; all targets once"
+  }
+}

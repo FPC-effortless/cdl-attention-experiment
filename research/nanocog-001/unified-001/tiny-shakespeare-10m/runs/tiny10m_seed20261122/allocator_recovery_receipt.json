@@ -1,0 +1,43 @@
+{
+  "kind": "bounded_allocator_recovery",
+  "start_unix": 1795415183.563458,
+  "end_unix": 1795415314.776904,
+  "return_code": 0,
+  "max_child_rss_kib": 3933484,
+  "allocator_env": {
+    "MALLOC_ARENA_MAX": "2"
+  },
+  "argv": [
+    "python3",
+    "-u",
+    "train.py",
+    "--device",
+    "cpu",
+    "--precision",
+    "fp32",
+    "--threads",
+    "2",
+    "--batch-size",
+    "16",
+    "--gradient-accumulation",
+    "2",
+    "--context-length",
+    "256",
+    "--max-steps",
+    "2000",
+    "--eval-every",
+    "200",
+    "--minimum-steps",
+    "1000",
+    "--patience",
+    "6",
+    "--max-wall-seconds",
+    "120",
+    "--log-every",
+    "1",
+    "--out-dir",
+    "runs/tiny10m_seed20261122",
+    "--resume",
+    "runs/tiny10m_seed20261122/resume.pt"
+  ]
+}

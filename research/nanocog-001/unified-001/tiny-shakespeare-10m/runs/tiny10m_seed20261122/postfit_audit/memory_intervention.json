@@ -1,0 +1,40 @@
+{
+  "scope": "one validation-only matched CPU inference intervention on selected checkpoint; no retraining or attention comparator",
+  "checkpoint_step": 1000,
+  "checkpoint_sha256": "60a01cc2aab00c96e0186ea211ecab6e83117f2efb86f0ec5f172b051c2cdeb8",
+  "recorded_native_validation": {
+    "mean_nll": 1.5325121856703297,
+    "character_perplexity": 4.629793124981099,
+    "bits_per_character": 2.210947730368491,
+    "next_character_accuracy": 0.5520271118363248,
+    "targets": 55769,
+    "seconds": 12.78256718099874,
+    "context_policy": "reset each nonoverlapping context-length window; all targets once"
+  },
+  "native_cpu_replay": {
+    "mean_nll": 1.5325121856703297,
+    "character_perplexity": 4.629793124981099,
+    "bits_per_character": 2.210947730368491,
+    "next_character_accuracy": 0.5520271118363248,
+    "targets": 55769,
+    "seconds": 13.625696697999956,
+    "context_policy": "reset each nonoverlapping context-length window; all targets once"
+  },
+  "memory_disabled_cpu": {
+    "mean_nll": 1.5327010828159722,
+    "character_perplexity": 4.630667762292968,
+    "bits_per_character": 2.2112202513437476,
+    "next_character_accuracy": 0.5518657318582008,
+    "targets": 55769,
+    "seconds": 17.072584348999953,
+    "context_policy": "reset each nonoverlapping context-length window; all targets once"
+  },
+  "disabled_minus_native_nll": 0.00018889714564251925,
+  "disabled_minus_native_bits_per_character": 0.0002725209752565405,
+  "native_replay_minus_recorded_nll": 0.0,
+  "interpretation": "A positive disabled-minus-native NLL means this checkpoint loses validation prediction quality when its trained board contribution is removed. This is checkpoint dependence, not evidence that the architecture beats a separately trained local-only model or attention.",
+  "device": "cpu",
+  "precision": "fp32",
+  "threads": 2,
+  "test_set_evaluated": false
+}

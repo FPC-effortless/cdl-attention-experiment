@@ -1,0 +1,11 @@
+{
+  "architecture_id": "cog-unified-tiny-latent-v1",
+  "d_model": 400,
+  "dropout": 0.1,
+  "ffn_mult": 2,
+  "memory_dim": 64,
+  "n_entities": 4,
+  "n_layers": 6,
+  "n_relations": 4,
+  "vocab_size": 65
+}

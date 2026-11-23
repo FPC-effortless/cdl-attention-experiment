@@ -1,6 +1,6 @@
 # COG research results: retrieval, span choice, and state binding
 
-Public results index · 22 November 2026. Aggregates and source pointers; not a release or a claim of complete public reproduction.
+Public results index · updated 23 November 2026. Aggregates and source pointers; not a release or a claim of complete public reproduction.
 
 **COG-INTERACT-015: finding the paragraph was easier than extracting the answer.** In one 797-pair diagnostic, lexical retrieval found both source paragraphs in 640–641 pairs, but the lexical pipeline answered both questions exactly in 92 pairs. Supplying the annotated source paragraphs raised paired exact match to 100. The observed lexical–neural ranking was small and its paired interval included zero. This is evidence about this reader and this diagnostic, not a general ranking of retrievers. The separate frozen reader follow-up used a restricted panel: an annotation-based sentence mask changed paired exact match from 100 to 149 of 786 pairs. [Public engineering summary](https://github.com/FPC-effortless/veritas/issues/495#issuecomment-7070958805)
 
@@ -36,12 +36,23 @@ Scope: this is a navigable record of the listed research, not a complete audit o
 
 ## Tiny Shakespeare language-model prototype
 
-**COG-UNIFIED-TINY-10M-001 — EXPLORATORY FIT RUNNING; no architecture qualification.**
+**COG-UNIFIED-TINY-10M-001 — EXPLORATORY FIT COMPLETED; trained artifact, no architecture qualification.**
 
-The user requested an approximately 10M-parameter model trained on standard English Tiny Shakespeare for text generation. The implemented candidate has **9,725,682 active parameters**, six native causal recurrent blocks, a factorized 16-slot latent VALUE/HOLD board, and a 65-character training-only tokenizer. Contiguous train/validation/test splits contain 1,003,854 / 55,770 / 55,770 characters.
+The requested standard-English Tiny Shakespeare prototype has **9,725,682 trainable parameters**, six native causal recurrent blocks, a factorized 16-slot latent VALUE/HOLD board, and a 65-character tokenizer fitted on training text. Contiguous training/validation/test splits contain 1,003,854 / 55,770 / 55,770 characters.
 
-[Source and testing instructions](unified-001/tiny-shakespeare-10m/README.md), [enabled-component boundary](unified-001/tiny-shakespeare-10m/ARCHITECTURE_IMPLEMENTED.md), [run plan](unified-001/tiny-shakespeare-10m/RUN_PLAN.json), and [independent pre-fit review](unified-001/tiny-shakespeare-10m/REVIEW.md).
+The single-seed FP32 CPU trajectory completed **2,000 updates / 16,384,000 target presentations**. Validation selected update **1,000**, saved after **8,192,000 presentations**. Later training worsened validation loss. The validation patience rule fired at update 2,000, coinciding with the maximum budget.
 
-Independent pre-fit checks passed 13/13 neural-interface and 9/9 pipeline cases. The authorized single-seed FP32 fit is running on CPU after a free Kaggle submission was rejected because both GPU batch-session slots were occupied. The planned budget is 2,000 updates / 16,384,000 character-target presentations, with validation selection and a final test after stopping. Final checkpoint results remain pending in this source snapshot.
+| Selected checkpoint | Mean NLL, nats/character | Character perplexity | Next-character accuracy |
+|---|---:|---:|---:|
+| Validation | 1.532512 | 4.629793 | 55.203% |
+| Final test | 1.692501 | 5.433050 | 52.359% |
 
-Text-only training does not establish semantic entity binding, COPY/LINK/DELETE, provenance, transactions, archive retrieval, or attention superiority. This is a trainable subset of the unified architecture, not certification of every abstract guarantee.
+Each held-out split scores **55,769 next-character targets**, with reset state in nonoverlapping 256-character windows. The final test was evaluated once after stopping, using the validation-selected weights. Character perplexity is not directly comparable to subword perplexity.
+
+**The memory-board effect was very small.** Disabling the board at inference changed validation NLL from 1.532512186 to 1.532701083: **0.000188897 nats/character worse**. This provides no meaningful board-advantage result on this diagnostic. It is one selected-checkpoint intervention, not a retrained local-only or attention comparison. The single-pass evaluation times do not establish a speed comparison. Fixed-seed generated text has recognizable dialogue formatting but grammar and invented-word defects.
+
+[Source and local testing instructions](unified-001/tiny-shakespeare-10m/README.md), [completed results and recovery accounting](unified-001/tiny-shakespeare-10m/RESULTS.md), [implemented-component boundary](unified-001/tiny-shakespeare-10m/ARCHITECTURE_IMPLEMENTED.md), [neural guarantee study](unified-001/tiny-shakespeare-10m/NEURAL_GUARANTEES.md), and [post-fit audit](unified-001/tiny-shakespeare-10m/runs/tiny10m_seed20261122/postfit_audit/audit.json).
+
+Pre-fit admission passed 13 neural-interface and 9 pipeline cases. The completed post-fit audit passed **17/17 checks**, including exact replay of the recorded native validation loss and reproducible sampling. The preserved archives establish at least **71 discarded completed updates / 581,632 target presentations** across documented interrupted branches. Exact total physical compute remains unknown; the unmatched old launcher keeps an unknown exit status. The source and evidence are published; trained weights and optimizer recovery files were delivered separately.
+
+Text-only training does not establish semantic entity binding, COPY/LINK/DELETE, provenance, transactions, archive retrieval, universal recall, or attention superiority. This is a trainable neural subset of the unified architecture; the richer typed executor and its abstract proofs remain a separate implementation.

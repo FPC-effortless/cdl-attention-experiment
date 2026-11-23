@@ -1,0 +1,56 @@
+{
+  "status": "completed",
+  "stop_reason": "validation_early_stopping",
+  "step": 2000,
+  "planned_max_steps": 2000,
+  "parameters": 9725682,
+  "training_targets_seen": 16384000,
+  "attempted_updates": 2000,
+  "skipped_updates": 0,
+  "train_target_equivalent_passes": 16.321114744887947,
+  "training_seconds": 12407.71792465409,
+  "session_wall_seconds": 269.18910550400324,
+  "best_step": 1000,
+  "best_val_nll": 1.5325121856703297,
+  "test_evaluated": true,
+  "scope": "single-seed exploratory character language model for user testing; no attention superiority or typed-semantic qualification",
+  "unigram_validation": {
+    "method": "maximum-likelihood character frequencies from training text only",
+    "mean_nll": 3.33264327445069,
+    "character_perplexity": 28.012288095305095,
+    "bits_per_character": 4.807987925101967,
+    "next_character_accuracy": 0.1520020082841722,
+    "targets": 55769
+  },
+  "initial_evaluation": {
+    "step": 0,
+    "val": {
+      "mean_nll": 4.268671427811239,
+      "character_perplexity": 71.42667705686101,
+      "bits_per_character": 6.158391100087686,
+      "next_character_accuracy": 0.013627642597141781,
+      "targets": 55769,
+      "seconds": 8.496933857997647,
+      "context_policy": "reset each nonoverlapping context-length window; all targets once"
+    }
+  },
+  "test": {
+    "mean_nll": 1.6925007418407632,
+    "character_perplexity": 5.433050387350044,
+    "bits_per_character": 2.441762426954561,
+    "next_character_accuracy": 0.5235883734691316,
+    "targets": 55769,
+    "seconds": 11.02247174000513,
+    "context_policy": "reset each nonoverlapping context-length window; all targets once"
+  },
+  "unigram_test": {
+    "method": "maximum-likelihood character frequencies from training text only",
+    "mean_nll": 3.361967735810076,
+    "character_perplexity": 28.84589617330091,
+    "bits_per_character": 4.850294180081893,
+    "next_character_accuracy": 0.14595922465886066,
+    "targets": 55769
+  },
+  "best_checkpoint_sha256": "60a01cc2aab00c96e0186ea211ecab6e83117f2efb86f0ec5f172b051c2cdeb8",
+  "best_checkpoint_training_targets": 8192000
+}

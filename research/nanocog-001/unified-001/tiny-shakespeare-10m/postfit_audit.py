@@ -13,6 +13,8 @@ from pathlib import Path
 import sys
 import time
 
+ARCHIVED_INTERRUPTION_EVENTS = frozenset({"intentional_runtime_stop", "unobserved_runtime_stop"})
+
 
 def sha256(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
@@ -41,6 +43,8 @@ def audit_discarded_histories(run, interruptions, effective_targets):
     canonical = [(line, json.loads(line)) for line in canonical_raw.splitlines(keepends=True) if line.strip()]
     entries = []
     archive_names = []
+    seen_sessions, seen_archives = set(), set()
+    launcher_rows = None
 
     def safe_file(name):
         relative = Path(name)
@@ -52,9 +56,27 @@ def audit_discarded_histories(run, interruptions, effective_targets):
         return path
 
     for event in interruptions:
-        if event.get("event") != "intentional_runtime_stop":
+        if event.get("event") not in ARCHIVED_INTERRUPTION_EVENTS:
             continue
         archive_name, tail_name = event["full_original_metrics_archive"], event["discarded_tail_file"]
+        if (event["session_id"] in seen_sessions or archive_name == tail_name
+                or archive_name in seen_archives or tail_name in seen_archives):
+            raise ValueError("Duplicate interruption/archive identity would double-count discarded work")
+        seen_sessions.add(event["session_id"])
+        seen_archives.update((archive_name, tail_name))
+        unobserved_launcher_matches = True
+        if event["event"] == "unobserved_runtime_stop":
+            if launcher_rows is None:
+                launcher_rows = read_jsonl(run / "launcher_sessions.jsonl")
+            token = event.get("launcher_session_token")
+            starts = [row for row in launcher_rows
+                      if row.get("event") == "launcher_start" and row.get("session_token") == token]
+            ends = [row for row in launcher_rows
+                    if row.get("event") == "launcher_end" and row.get("session_token") == token]
+            unobserved_launcher_matches = (isinstance(token, str) and bool(token)
+                                           and len(starts) == 1 and not ends
+                                           and event.get("tool_exit_code") is None
+                                           and event.get("exit_code") is None)
         archived_path, tail_path = safe_file(archive_name), safe_file(tail_name)
         archive_names.extend((archive_name, tail_name))
         original = [(line, json.loads(line)) for line in archived_path.read_bytes().splitlines(keepends=True) if line.strip()]
@@ -87,7 +109,10 @@ def audit_discarded_histories(run, interruptions, effective_targets):
         if retained_train and tail_records:
             recorded_seconds = tail_records[-1]["training_seconds"] - retained_train[-1]["training_seconds"]
         entries.append({
+            "interruption_type": event["event"],
             "interruption_session": event["session_id"],
+            "launcher_session_token": event.get("launcher_session_token"),
+            "observed_exit_code": event.get("tool_exit_code", event.get("exit_code")),
             "archive": archive_name, "archive_sha256": sha256(archived_path),
             "discarded_tail": tail_name, "discarded_tail_sha256": sha256(tail_path),
             "retained_checkpoint_step": retained_step, "last_logged_discarded_step": last_step,
@@ -99,7 +124,9 @@ def audit_discarded_histories(run, interruptions, effective_targets):
             "discarded_tail_matches_exact_original_records": tail_matches,
             "canonical_retained_prefix_and_recovery_marker_match": retained_prefix_matches,
             "declared_discarded_counts_match": declared_counts_match,
-            "passed": identities_match and tail_matches and retained_prefix_matches and declared_counts_match,
+            "unobserved_launcher_binding_verified": unobserved_launcher_matches,
+            "passed": (identities_match and tail_matches and retained_prefix_matches
+                       and declared_counts_match and unobserved_launcher_matches),
             "additional_uncheckpointed_work": "unknown",
         })
     return {

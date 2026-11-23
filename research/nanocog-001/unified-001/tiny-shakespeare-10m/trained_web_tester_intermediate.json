@@ -1,0 +1,23 @@
+{
+  "status": 200,
+  "info": {
+    "parameters": 9725682,
+    "vocab_size": 65,
+    "checkpoint_step": 200,
+    "device": "cpu",
+    "architecture_id": "cog-unified-tiny-latent-v1"
+  },
+  "result": {
+    "text": "ROMEO:\nYou lord shad is not dight: but ",
+    "stats": {
+      "prompt_characters": 7,
+      "generated_characters": 32,
+      "seconds_including_prefill": 0.18419541099865455,
+      "seed": 42,
+      "temperature": 0.8,
+      "top_k": 0
+    }
+  },
+  "checkpoint_sha256": "331f4db74408cc853d2079bc04fc4b0e41ba817cfd5be4b8b057f1ccbad297a9",
+  "scope": "actual user web-tester request on trained update200 checkpoint; final selected checkpoint still pending"
+}
