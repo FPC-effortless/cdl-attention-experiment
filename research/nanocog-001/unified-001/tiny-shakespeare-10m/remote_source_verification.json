@@ -1,0 +1,34 @@
+{
+  "commit": "155bb47b7421965474acb4d67ac7edb3aad3f40c",
+  "repository": "FPC-effortless/cdl-attention-experiment",
+  "files": [
+    {
+      "file": "model.py",
+      "sha256": "f96bd967b4bc4ece9d2750a5cf1afdf1cc819a6b007e2d638af633376c7eccaa",
+      "remote_blob_sha": "c49efb9f3681b1fe7254c9899dc4ccebd4ba393a",
+      "local_blob_sha": "c49efb9f3681b1fe7254c9899dc4ccebd4ba393a",
+      "match": true
+    },
+    {
+      "file": "train.py",
+      "sha256": "52751e1a7d383a8bb809835d1d528ee02fa4abbbe8439a5ef0918186ce3bedf6",
+      "remote_blob_sha": "2749042e9d404e64557bbde9822afe8e9ea022c7",
+      "local_blob_sha": "2749042e9d404e64557bbde9822afe8e9ea022c7",
+      "match": true
+    },
+    {
+      "file": "data.py",
+      "sha256": "5c53755333460b7fdb35e0f9a5f88b2b3c7e3f37674ef92df506164728dad69d",
+      "remote_blob_sha": "7ce5455b58d79c8db551ad72e013adcb2e45154b",
+      "local_blob_sha": "7ce5455b58d79c8db551ad72e013adcb2e45154b",
+      "match": true
+    },
+    {
+      "file": "sample.py",
+      "sha256": "b8188e737856dacc67cbc948c2fc8a884007421397075d38f973e9b37e6207ba",
+      "remote_blob_sha": "819a297c82b4aa53edcf6ded7c8ac657595f14d9",
+      "local_blob_sha": "819a297c82b4aa53edcf6ded7c8ac657595f14d9",
+      "match": true
+    }
+  ]
+}

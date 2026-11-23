@@ -69,3 +69,7 @@ See [ARCHITECTURE_IMPLEMENTED.md](ARCHITECTURE_IMPLEMENTED.md) for the enabled-c
 
 This single-seed prototype does not establish superiority over attention or general semantic memory competence. Keep character perplexity distinct from subword perplexity in other experiments.
 
+[NEURAL_GUARANTEES.md](NEURAL_GUARANTEES.md) derives the conditional guarantees of the actual frozen neural source and gives concrete counterexamples to stronger claims. It separates exact-real algebra, finite numerical checks, learned behavior, and total resource use. The richer parent semantic executor is a separate implementation.
+
+The post-fit audit and delivery helpers are prepared but run only after the declared training stop and final-test evaluation. Runtime checkpoint continuation preserves the model, training configuration, data, and source identities; allocator/thread settings and discarded interrupted work are recorded separately.
+
