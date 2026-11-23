@@ -1,5 +1,12 @@
 # DURABLE-MEMORY-001: engineering verification
 
+**Historical initial verification, superseded by the broader
+[MEMORY-VALIDATION-002 audit](../../memory-validation-002/RESULT.md).** The tests
+below passed at the original commit, but the later audit found additional recall,
+startup, execution-identity, receipt-integrity and erasure-race defects. Preserve
+this record as evidence of the original testing boundary; it is not the complete
+current verification or a claim that those defects were absent.
+
 ## Result
 
 The complete local NanoCOG reference suite passed on 2026-11-23:

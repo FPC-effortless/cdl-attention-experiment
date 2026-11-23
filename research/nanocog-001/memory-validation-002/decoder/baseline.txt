@@ -1,0 +1,78 @@
+test_aggregate_tensor_budget_not_just_per_tensor (nanocog.memory.test_adversarial_decoder.AdversarialCodecTests.test_aggregate_tensor_budget_not_just_per_tensor) ... ok
+test_invalid_boolean_bytes_rejected_even_with_matching_hash (nanocog.memory.test_adversarial_decoder.AdversarialCodecTests.test_invalid_boolean_bytes_rejected_even_with_matching_hash) ... ok
+test_noncanonical_base64_rejected_even_with_matching_decoded_bytes (nanocog.memory.test_adversarial_decoder.AdversarialCodecTests.test_noncanonical_base64_rejected_even_with_matching_decoded_bytes) ... ok
+test_schema_extensions_are_not_silently_deserialized (nanocog.memory.test_adversarial_decoder.AdversarialCodecTests.test_schema_extensions_are_not_silently_deserialized) ... ok
+test_strided_tensor_values_roundtrip_without_storage_aliases (nanocog.memory.test_adversarial_decoder.AdversarialCodecTests.test_strided_tensor_values_roundtrip_without_storage_aliases) ... ok
+test_caller_token_mutation_after_inference_does_not_change_request_identity (nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_caller_token_mutation_after_inference_does_not_change_request_identity) ... ok
+test_changed_convolution_execution_geometry_rejected_live (nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_changed_convolution_execution_geometry_rejected_live) ... FAIL
+test_changed_convolution_execution_geometry_rejected_on_reopen (nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_changed_convolution_execution_geometry_rejected_on_reopen) ... FAIL
+test_corrupt_receipt_payload_is_rejected (nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_corrupt_receipt_payload_is_rejected) ... ok
+test_corrupt_receipt_revision_cannot_misreport_an_old_retry (nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_corrupt_receipt_revision_cannot_misreport_an_old_retry) ... FAIL
+test_deleted_session_blocks_a_first_checkpoint_in_flight (nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_deleted_session_blocks_a_first_checkpoint_in_flight) ... ok
+test_existing_checkpoint_cannot_resurrect_state_after_source_erasure (nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_existing_checkpoint_cannot_resurrect_state_after_source_erasure) ... ok
+test_first_checkpoint_cannot_resurrect_state_after_source_erasure (nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_first_checkpoint_cannot_resurrect_state_after_source_erasure) ... FAIL
+test_float64_continuation_for_all_three_supported_mixers (nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_float64_continuation_for_all_three_supported_mixers) ... ok
+test_global_forward_hook_cannot_change_persisted_inference (nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_global_forward_hook_cannot_change_persisted_inference) ... FAIL
+test_global_pre_hook_cannot_substitute_the_requested_tokens (nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_global_pre_hook_cannot_substitute_the_requested_tokens) ... FAIL
+test_invalid_input_bounds_never_create_a_checkpoint (nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_invalid_input_bounds_never_create_a_checkpoint) ... ok
+test_noncontiguous_valid_token_views_have_the_same_result (nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_noncontiguous_valid_token_views_have_the_same_result) ... ok
+test_returned_logits_do_not_alias_the_saved_receipt (nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_returned_logits_do_not_alias_the_saved_receipt) ... ok
+
+======================================================================
+FAIL: test_changed_convolution_execution_geometry_rejected_live (nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_changed_convolution_execution_geometry_rejected_live)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/nanocog/memory/test_adversarial_decoder.py", line 59, in test_changed_convolution_execution_geometry_rejected_live
+    with self.assertRaises((IntegrityError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'nanocog.memory.store.IntegrityError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_changed_convolution_execution_geometry_rejected_on_reopen (nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_changed_convolution_execution_geometry_rejected_on_reopen)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/nanocog/memory/test_adversarial_decoder.py", line 68, in test_changed_convolution_execution_geometry_rejected_on_reopen
+    with self.assertRaises((IntegrityError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'nanocog.memory.store.IntegrityError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_corrupt_receipt_revision_cannot_misreport_an_old_retry (nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_corrupt_receipt_revision_cannot_misreport_an_old_retry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/nanocog/memory/test_adversarial_decoder.py", line 152, in test_corrupt_receipt_revision_cannot_misreport_an_old_retry
+    with self.assertRaises(IntegrityError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IntegrityError not raised
+
+======================================================================
+FAIL: test_first_checkpoint_cannot_resurrect_state_after_source_erasure (nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_first_checkpoint_cannot_resurrect_state_after_source_erasure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/nanocog/memory/test_adversarial_decoder.py", line 113, in test_first_checkpoint_cannot_resurrect_state_after_source_erasure
+    with self.assertRaises((DeletedError, ConflictError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'nanocog.memory.store.DeletedError'>, <class 'nanocog.memory.store.ConflictError'>) not raised
+
+======================================================================
+FAIL: test_global_forward_hook_cannot_change_persisted_inference (nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_global_forward_hook_cannot_change_persisted_inference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/nanocog/memory/test_adversarial_decoder.py", line 81, in test_global_forward_hook_cannot_change_persisted_inference
+    with self.assertRaises((IntegrityError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'nanocog.memory.store.IntegrityError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_global_pre_hook_cannot_substitute_the_requested_tokens (nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_global_pre_hook_cannot_substitute_the_requested_tokens)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/nanocog/memory/test_adversarial_decoder.py", line 97, in test_global_pre_hook_cannot_substitute_the_requested_tokens
+    with self.assertRaises((IntegrityError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'nanocog.memory.store.IntegrityError'>, <class 'ValueError'>) not raised
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.294s
+
+FAILED (failures=6)

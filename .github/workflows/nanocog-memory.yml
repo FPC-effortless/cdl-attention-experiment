@@ -4,11 +4,13 @@ on:
   push:
     paths:
       - 'research/nanocog-001/nanocog/**'
+      - 'research/nanocog-001/memory-validation-002/**'
       - '.github/workflows/nanocog-memory.yml'
       - 'requirements.txt'
   pull_request:
     paths:
       - 'research/nanocog-001/nanocog/**'
+      - 'research/nanocog-001/memory-validation-002/**'
       - '.github/workflows/nanocog-memory.yml'
       - 'requirements.txt'
 
@@ -36,3 +38,9 @@ jobs:
           OMP_NUM_THREADS: '1'
           MKL_NUM_THREADS: '1'
         run: python -m pytest -q nanocog
+      - name: Exercise concurrent processes and interrupted transactions
+        working-directory: research/nanocog-001
+        env:
+          OMP_NUM_THREADS: '1'
+          MKL_NUM_THREADS: '1'
+        run: python memory-validation-002/storage/run_adversarial.py --output "$RUNNER_TEMP/nanocog-memory-system.json"

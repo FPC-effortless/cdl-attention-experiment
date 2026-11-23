@@ -11,6 +11,8 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 
 import torch
+from torch import nn
+from torch.nn.modules import module as torch_module
 
 from .. import model as model_source
 from .. import interaction as interaction_source
@@ -19,9 +21,27 @@ from ..comm.packet import PacketCommunication, PacketState
 from ..interaction import PacketAndTypedProbe, PacketMixer
 from ..model import DecodeState, Decoder, LocalOnly
 from ..state import records as records_source
-from ..state.records import RecordState
+from ..state.records import RecordState, StableRecordMemory, TypedRecordBoard
 from .codec import CodecError, CodecLimits, decode, encode, tensor_bytes
 from .store import ConflictError, IntegrityError, ReceiptExpiredError
+
+
+# The supported implementation is fixed when this trusted adapter is imported.
+# Disk source hashes alone cannot detect a later class-level monkeypatch. Keep
+# execution references as well; this is not protection against code controlling
+# the interpreter before import or modifying the validator itself.
+_EXECUTION_METHODS = {
+    Decoder: ("forward",), LocalOnly: ("forward",),
+    PacketMixer: ("forward",), PacketAndTypedProbe: ("forward",),
+    PacketCommunication: ("forward", "linear", "_pool", "_core", "_project", "_validate", "initial_state"),
+    StableRecordMemory: ("forward",),
+    TypedRecordBoard: ("apply", "read", "empty", "_shape", "validate_state"),
+    nn.Linear: ("forward",), nn.Conv1d: ("forward", "_conv_forward"), nn.Embedding: ("forward",),
+}
+_EXECUTION_BINDINGS = tuple(
+    (owner, name, getattr(owner, name)) for owner, names in _EXECUTION_METHODS.items() for name in names
+) + tuple((nn.Module, name, getattr(nn.Module, name)) for name in
+          ("__call__", "_call_impl", "_wrapped_call_impl")) + ((model_source, "norm", model_source.norm),)
 
 
 @dataclass(frozen=True)
@@ -45,13 +65,25 @@ def _checked_name(value, label):
 def _model_identity(model, tokenizer_id, session_id):
     if type(model) is not Decoder:
         raise TypeError("this adapter accepts the reference Decoder only")
+    if any(getattr(owner, name) is not original for owner, name, original in _EXECUTION_BINDINGS):
+        raise ValueError("patched reference execution methods are unsupported")
     if any(m.training for m in model.modules()):
         raise ValueError("persistent decoding requires model.eval()")
-    if any("forward" in m.__dict__ or m._forward_hooks or m._forward_pre_hooks
+    if torch_module._global_forward_hooks or torch_module._global_forward_pre_hooks:
+        raise ValueError("global inference hooks are unsupported")
+    if any(any(name in m.__dict__ for name in
+                   (*_EXECUTION_METHODS.get(type(m), ()), "_call_impl", "_wrapped_call_impl"))
+           or m._forward_hooks or m._forward_pre_hooks
+           or m._compiled_call_impl is not None
            for m in model.modules()):
-        raise ValueError("patched forwards and inference hooks are unsupported")
+        raise ValueError("patched forwards, compiled calls and inference hooks are unsupported")
     if any(type(m) not in (LocalOnly, PacketMixer, PacketAndTypedProbe) for m in model.mixers):
         raise TypeError("unsupported decoder mixer")
+    supported_modules = (Decoder, LocalOnly, PacketMixer, PacketAndTypedProbe,
+                         PacketCommunication, StableRecordMemory, TypedRecordBoard,
+                         nn.ModuleList, nn.Linear, nn.Conv1d, nn.Embedding)
+    if any(type(m) not in supported_modules for m in model.modules()):
+        raise TypeError("unsupported decoder submodule")
     params = tuple(model.parameters())
     device, dtype = model.embedding.weight.device, model.embedding.weight.dtype
     if any(p.device != device or p.dtype != dtype for p in params):
@@ -71,7 +103,15 @@ def _model_identity(model, tokenizer_id, session_id):
             schema_hash.update(header + b"\0" + raw)
     # Include non-tensor geometry and implementation bytes, not just compatible shapes.
     geometry = []
-    attributes = ("width", "lookback", "groups", "topics", "packet_width", "capacity", "local_window")
+    # Matching parameter shapes is insufficient: e.g. stride/dilation/padding
+    # can change a convolution while retaining the same output geometry. Bind
+    # every execution option of the supported reference modules. This is not a
+    # sandbox against arbitrary mutation of Python class/function definitions.
+    attributes = ("width", "lookback", "groups", "topics", "packet_width", "capacity", "local_window",
+                  "in_features", "out_features", "in_channels", "out_channels", "kernel_size",
+                  "stride", "padding", "dilation", "padding_mode", "transposed", "output_padding",
+                  "_reversed_padding_repeated_twice", "num_embeddings", "embedding_dim",
+                  "padding_idx", "max_norm", "norm_type", "scale_grad_by_freq", "sparse")
     for name, module in model.named_modules():
         geometry.append([name, type(module).__module__, type(module).__qualname__,
                          {a: getattr(module, a) for a in attributes if hasattr(module, a)}])
@@ -84,7 +124,7 @@ def _model_identity(model, tokenizer_id, session_id):
     config = asdict(model.cfg)
     identity = {"weights_sha256": state_hash.hexdigest(), "geometry": geometry,
                 "config": config, "implementation": sources}
-    return {"format": "nanocog-persistent-decoder", "version": 1,
+    return {"format": "nanocog-persistent-decoder", "version": 2,
             "model_sha256": hashlib.sha256(_json_bytes(identity)).hexdigest(),
             "schema_sha256": schema_hash.hexdigest(), "tokenizer_id": tokenizer_id,
             "session_id": session_id, "batch_size": 1, "config": config,
@@ -227,11 +267,18 @@ class PersistentDecoder:
         Concurrent sessions use database compare-and-swap. A losing stale writer
         raises ConflictError and must be retried deliberately with current state.
         No output is returned as successful before its state transaction commits.
+
+        New inference linearizes at its commit; an exact retry linearizes at its
+        receipt read. Erasure invalidates later reads and rejects in-flight new
+        commits, including the first commit. It cannot revoke an output already
+        read by an overlapping retry before that erasure committed.
         """
         with self._lock:
             request_id = _checked_name(request_id, "request_id")
+            erasure_generation = self.store.erasure_generation()
             self._check_model()
-            if (type(tokens) is not torch.Tensor or tokens.dtype != torch.long or tokens.ndim != 2
+            if (type(tokens) is not torch.Tensor or tokens.layout != torch.strided
+                    or tokens.dtype != torch.long or tokens.ndim != 2
                     or tokens.shape[0] != 1 or not 0 < tokens.shape[1] <= self.max_tokens_per_run
                     or tokens.device != self.model.embedding.weight.device):
                 raise ValueError("tokens must be bounded int64 [1,T] on the model device")
@@ -269,7 +316,8 @@ class PersistentDecoder:
                       "tokens_seen": updated.tokens_seen, "input_length": input_length}
             receipt = self.store.commit_checkpoint(
                 self.session_id, request_id=request_id, request_hash=request_hash,
-                expected_revision=revision, manifest=self._manifest, payload=payload, result=result)
+                expected_revision=revision, manifest=self._manifest, payload=payload, result=result,
+                expected_erasure_generation=erasure_generation)
             # A simultaneous identical request can win the transaction. Always
             # return the stored receipt, whose result is authoritative for retries.
             restored = self._replay(receipt, request_hash, input_length)

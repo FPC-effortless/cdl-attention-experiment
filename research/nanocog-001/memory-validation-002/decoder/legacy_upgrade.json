@@ -1,0 +1,142 @@
+{
+  "baseline_commit": "56cb4eeb04d68f5f6c210c756f0790f34cc2fd5f",
+  "trained": false,
+  "purpose": "actual v1 SQL migration and intentional native decoder identity break",
+  "source_sha256_before": {
+    "nanocog/memory/decoder.py": "65e5afb321dbab4014c8aa11d860b272f5003fb5758064dfe22e76a27c771b0a",
+    "nanocog/memory/store.py": "3bf7561d194e19cc32a6ab4377ca4656aea86800ce6d026fd0a291ab18ec47c1",
+    "nanocog/memory/codec.py": "15761577fef3dc0769e817b7da7a5a7d29a0d89b4e656f41e553de86204f112f"
+  },
+  "legacy_creation": {
+    "schema_version": 1,
+    "manifest": {
+      "batch_size": 1,
+      "config": {
+        "layers": 2,
+        "vocab_alignment": 64,
+        "vocab_size": 31,
+        "width": 32
+      },
+      "format": "nanocog-persistent-decoder",
+      "model_sha256": "dfb03fabafd489c583b61fe66a71c090e261f09dd9ba1104910b543fc46971a9",
+      "runtime": {
+        "device": "cpu",
+        "dtype": "torch.float32",
+        "torch": "2.10.0+cpu"
+      },
+      "schema_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "session_id": "legacy-stream",
+      "tokenizer_id": "synthetic-vocab31-v1",
+      "version": 1
+    },
+    "revision": 1,
+    "tokens_seen": 5,
+    "fact": "green"
+  },
+  "legacy_source_sha256": [
+    {
+      "path": "research/nanocog-001/nanocog/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/nanocog-001/nanocog/comm/__init__.py",
+      "sha256": "356b9684a3e34021696b06bfbd97175a4161241a3d86e78a148a83e2e6eccdc9"
+    },
+    {
+      "path": "research/nanocog-001/nanocog/comm/packet.py",
+      "sha256": "346505fc26654609c8d5f19f59376cb0ecff11c1aa572c51ae7f188d4eeb997b"
+    },
+    {
+      "path": "research/nanocog-001/nanocog/interaction.py",
+      "sha256": "f6f9db16ead08fb837360051ec10920d5e410eb837453c02d93fb24057c0f1a8"
+    },
+    {
+      "path": "research/nanocog-001/nanocog/memory/__init__.py",
+      "sha256": "cd0c94b6c7a07518a4f22b5790916df5d3479356f6d42cf3ac06d010a2f66301"
+    },
+    {
+      "path": "research/nanocog-001/nanocog/memory/__main__.py",
+      "sha256": "53fa073c5eb16e9ce68e65fcf98ba460b694a41a69d12ae545ebd2d82a0446ed"
+    },
+    {
+      "path": "research/nanocog-001/nanocog/memory/codec.py",
+      "sha256": "15761577fef3dc0769e817b7da7a5a7d29a0d89b4e656f41e553de86204f112f"
+    },
+    {
+      "path": "research/nanocog-001/nanocog/memory/decoder.py",
+      "sha256": "a1863ce60e1389c975d4b37bff86a17d77ae92dabe82f9e6ba4dd42e2b066d92"
+    },
+    {
+      "path": "research/nanocog-001/nanocog/memory/session.py",
+      "sha256": "ae2f109dfb7abcb64c2e7549eb7cdd94e99223b78a94c7b950ce15ad7ef389d6"
+    },
+    {
+      "path": "research/nanocog-001/nanocog/memory/store.py",
+      "sha256": "fe694bcd923a4167a97c237e5ae4bfb279e7cccc92b54d542943258ef413e3d7"
+    },
+    {
+      "path": "research/nanocog-001/nanocog/memory/temporal.py",
+      "sha256": "de29a2de0a71353c712638876669fb86487d5e05c19d399817506e5040592eca"
+    },
+    {
+      "path": "research/nanocog-001/nanocog/model.py",
+      "sha256": "b9ae1000992dbd9e103de5f2365b88fb0c2a674e9acc9cfc0c9ac2ba7b599ab3"
+    },
+    {
+      "path": "research/nanocog-001/nanocog/state/__init__.py",
+      "sha256": "6eec56cc553d7d3bad34efcaaaa4aacf6368b80e3f08bde044136e084e1a831f"
+    },
+    {
+      "path": "research/nanocog-001/nanocog/state/pulse_adapter.py",
+      "sha256": "d3d178c37b2f60c918fe00f115da7ff1e6d44bd014969c679c208e2d2cd965ac"
+    },
+    {
+      "path": "research/nanocog-001/nanocog/state/records.py",
+      "sha256": "6eb6950971538ec7991b669a6962112d89ce5a97be8b721be13268e3b9d1a502"
+    }
+  ],
+  "migration": {
+    "schema_version": 2,
+    "fact": "green",
+    "observation_retained": true,
+    "checkpoint_retained": true,
+    "old_state_shape_valid": true
+  },
+  "legacy_attach": {
+    "accepted": false,
+    "error": "IntegrityError",
+    "message": "decoder checkpoint model, tokenizer, schema, runtime, or session mismatch"
+  },
+  "fresh_stream": {
+    "manifest": {
+      "format": "nanocog-persistent-decoder",
+      "version": 2,
+      "model_sha256": "d00afa1edfc49e0d5b6a66fc1d0991f40b006af6ed32a4cc4d76d054d7fff064",
+      "schema_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tokenizer_id": "synthetic-vocab31-v1",
+      "session_id": "fresh-stream",
+      "batch_size": 1,
+      "config": {
+        "vocab_size": 31,
+        "width": 32,
+        "layers": 2,
+        "vocab_alignment": 64
+      },
+      "runtime": {
+        "torch": "2.10.0+cpu",
+        "device": "cpu",
+        "dtype": "torch.float32"
+      }
+    },
+    "tokens_seen": 2,
+    "revision": 1,
+    "replayed": false
+  },
+  "passed": true,
+  "source_sha256_after": {
+    "nanocog/memory/decoder.py": "65e5afb321dbab4014c8aa11d860b272f5003fb5758064dfe22e76a27c771b0a",
+    "nanocog/memory/store.py": "3bf7561d194e19cc32a6ab4377ca4656aea86800ce6d026fd0a291ab18ec47c1",
+    "nanocog/memory/codec.py": "15761577fef3dc0769e817b7da7a5a7d29a0d89b4e656f41e553de86204f112f"
+  },
+  "source_unchanged": true
+}

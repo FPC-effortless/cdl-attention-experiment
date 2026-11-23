@@ -1,0 +1,1035 @@
+{
+  "cases": [
+    {
+      "expectation": "Foreign-scope writes cannot change local retrieval ranking or return foreign content.",
+      "name": "ranking_interference",
+      "observations": [
+        {
+          "after": [
+            "b",
+            "a"
+          ],
+          "before": [
+            "b",
+            "a"
+          ],
+          "foreign_content_rows": 0,
+          "unchanged": true,
+          "variant": "foreign_principal"
+        },
+        {
+          "after": [
+            "b",
+            "a"
+          ],
+          "before": [
+            "b",
+            "a"
+          ],
+          "foreign_content_rows": 0,
+          "unchanged": true,
+          "variant": "foreign_namespace"
+        }
+      ],
+      "passed": true,
+      "seconds": 0.02960178500507027,
+      "status": "PASS",
+      "temporary_filesystem": "tmpfs"
+    },
+    {
+      "after": {
+        "accepted_facts": [
+          {
+            "authority": "synthetic-fixture",
+            "changed_at": "2026-11-23T18:11:07.764106+00:00",
+            "deleted": false,
+            "epistemic_status": "accepted_by_host",
+            "key": "orion.launch",
+            "proposal_id": "target",
+            "revision": 1,
+            "source_event_id": "source",
+            "value": "Thursday"
+          },
+          {
+            "authority": "synthetic-fixture",
+            "changed_at": "2026-11-23T18:11:07.766375+00:00",
+            "deleted": false,
+            "epistemic_status": "accepted_by_host",
+            "key": "stock.9",
+            "proposal_id": "stock-p9",
+            "revision": 1,
+            "source_event_id": "source",
+            "value": 19
+          },
+          {
+            "authority": "synthetic-fixture",
+            "changed_at": "2026-11-23T18:11:07.766242+00:00",
+            "deleted": false,
+            "epistemic_status": "accepted_by_host",
+            "key": "stock.8",
+            "proposal_id": "stock-p8",
+            "revision": 1,
+            "source_event_id": "source",
+            "value": 18
+          },
+          {
+            "authority": "synthetic-fixture",
+            "changed_at": "2026-11-23T18:11:07.766107+00:00",
+            "deleted": false,
+            "epistemic_status": "accepted_by_host",
+            "key": "stock.7",
+            "proposal_id": "stock-p7",
+            "revision": 1,
+            "source_event_id": "source",
+            "value": 17
+          },
+          {
+            "authority": "synthetic-fixture",
+            "changed_at": "2026-11-23T18:11:07.765971+00:00",
+            "deleted": false,
+            "epistemic_status": "accepted_by_host",
+            "key": "stock.6",
+            "proposal_id": "stock-p6",
+            "revision": 1,
+            "source_event_id": "source",
+            "value": 16
+          },
+          {
+            "authority": "synthetic-fixture",
+            "changed_at": "2026-11-23T18:11:07.765722+00:00",
+            "deleted": false,
+            "epistemic_status": "accepted_by_host",
+            "key": "stock.5",
+            "proposal_id": "stock-p5",
+            "revision": 1,
+            "source_event_id": "source",
+            "value": 15
+          },
+          {
+            "authority": "synthetic-fixture",
+            "changed_at": "2026-11-23T18:11:07.765559+00:00",
+            "deleted": false,
+            "epistemic_status": "accepted_by_host",
+            "key": "stock.4",
+            "proposal_id": "stock-p4",
+            "revision": 1,
+            "source_event_id": "source",
+            "value": 14
+          },
+          {
+            "authority": "synthetic-fixture",
+            "changed_at": "2026-11-23T18:11:07.765427+00:00",
+            "deleted": false,
+            "epistemic_status": "accepted_by_host",
+            "key": "stock.3",
+            "proposal_id": "stock-p3",
+            "revision": 1,
+            "source_event_id": "source",
+            "value": 13
+          }
+        ],
+        "schema_version": 1,
+        "truncated": true,
+        "unverified_observations": []
+      },
+      "before": {
+        "accepted_facts": [
+          {
+            "authority": "synthetic-fixture",
+            "changed_at": "2026-11-23T18:11:07.764106+00:00",
+            "deleted": false,
+            "epistemic_status": "accepted_by_host",
+            "key": "orion.launch",
+            "proposal_id": "target",
+            "revision": 1,
+            "source_event_id": "source",
+            "value": "Thursday"
+          }
+        ],
+        "schema_version": 1,
+        "truncated": false,
+        "unverified_observations": [
+          {
+            "content": "Orion launches Thursday. Stock item 0 has 10 units. Stock item 1 has 11 units. Stock item 2 has 12 units. Stock item 3 has 13 units. Stock item 4 has 14 units. Stock item 5 has 15 units. Stock item 6 has 16 units. Stock item 7 has 17 units. Stock item 8 has 18 units. Stock item 9 has 19 units.",
+            "created_at": "2026-11-23T18:11:07.763802+00:00",
+            "epistemic_status": "unverified_observation",
+            "event_id": "source",
+            "role": "user",
+            "seq": 1,
+            "session_id": "source-chat",
+            "source_event_id": "source"
+          }
+        ]
+      },
+      "expectation": "A directly query-matching accepted fact stays available after unrelated facts are added to its source.",
+      "ledger_corrupted": false,
+      "name": "unrelated_facts",
+      "passed": true,
+      "seconds": 0.008077202990534715,
+      "status": "PASS",
+      "stored_target": [
+        {
+          "authority": "synthetic-fixture",
+          "changed_at": "2026-11-23T18:11:07.764106+00:00",
+          "deleted": false,
+          "key": "orion.launch",
+          "proposal_id": "target",
+          "revision": 1,
+          "source_event_id": "source",
+          "value": "Thursday"
+        }
+      ],
+      "temporary_filesystem": "tmpfs",
+      "unrelated_writes": 10
+    },
+    {
+      "expectation": "Four OS writers plus one OS reader retain all acknowledged messages and accepted values without malformed reads.",
+      "fact_count": 400,
+      "message_count": 400,
+      "name": "multiprocess",
+      "passed": true,
+      "process_exitcodes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "seconds": 1.3585895269934554,
+      "sqlite_integrity": "ok",
+      "status": "PASS",
+      "temporary_filesystem": "tmpfs",
+      "worker_reports": [
+        {
+          "ok": true,
+          "seconds": 0.12957288698817138,
+          "worker": 2,
+          "writes": 100
+        },
+        {
+          "ok": true,
+          "seconds": 0.29792442299367394,
+          "worker": 0,
+          "writes": 100
+        },
+        {
+          "ok": true,
+          "seconds": 0.3404446179920342,
+          "worker": 1,
+          "writes": 100
+        },
+        {
+          "ok": true,
+          "seconds": 0.35087094600021373,
+          "worker": 3,
+          "writes": 100
+        },
+        {
+          "ok": true,
+          "read_rounds": 120,
+          "worker": "reader"
+        }
+      ]
+    },
+    {
+      "expectation": "Simultaneous initializers can open a new shared database and preserve each acknowledged write.",
+      "name": "concurrent_initialization",
+      "passed": true,
+      "seconds": 5.763680470001418,
+      "status": "PASS",
+      "temporary_filesystem": "tmpfs",
+      "trials": [
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 1
+            }
+          ],
+          "trial": 0
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 5
+            }
+          ],
+          "trial": 1
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 3
+            }
+          ],
+          "trial": 2
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 1
+            }
+          ],
+          "trial": 3
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 4
+            }
+          ],
+          "trial": 4
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 0
+            }
+          ],
+          "trial": 5
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 0
+            }
+          ],
+          "trial": 6
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 2
+            }
+          ],
+          "trial": 7
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 2
+            }
+          ],
+          "trial": 8
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 3
+            }
+          ],
+          "trial": 9
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 0
+            }
+          ],
+          "trial": 10
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 1
+            }
+          ],
+          "trial": 11
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 4
+            }
+          ],
+          "trial": 12
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 5
+            }
+          ],
+          "trial": 13
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 5
+            }
+          ],
+          "trial": 14
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 4
+            }
+          ],
+          "trial": 15
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 1
+            }
+          ],
+          "trial": 16
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 5
+            }
+          ],
+          "trial": 17
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 2
+            }
+          ],
+          "trial": 18
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 0
+            }
+          ],
+          "trial": 19
+        }
+      ]
+    },
+    {
+      "erased": {
+        "already_erased": false,
+        "derived_messages_erased": 36,
+        "erased": true,
+        "event_id": "source"
+      },
+      "expectation": "Erasing a root transitively removes cross-chat descendants, prevents exact old response retry, and leaves other namespaces intact.",
+      "foreign_namespace_survives": true,
+      "name": "dependency_erasure_and_retries",
+      "old_response_id": "turn:0ad49487041c53f56237759d2bc975d52e5e5c2a94b24c1439259c2cdd1b5762:assistant",
+      "passed": true,
+      "redacted_history": [
+        {
+          "authority": "synthetic-fixture",
+          "changed_at": "2026-11-23T18:11:14.900778+00:00",
+          "deleted": true,
+          "key": "derived.claim",
+          "proposal_id": "derived-proposal",
+          "revision": 1,
+          "source_event_id": "chain-29",
+          "value": null
+        },
+        {
+          "authority": "erasure",
+          "changed_at": "2026-11-23T18:11:14.905146+00:00",
+          "deleted": true,
+          "key": "derived.claim",
+          "proposal_id": null,
+          "revision": 2,
+          "source_event_id": null,
+          "value": null
+        }
+      ],
+      "retry_error": "DeletedError",
+      "seconds": 0.014877495996188372,
+      "status": "PASS",
+      "surviving_events": [
+        "turn:0ad49487041c53f56237759d2bc975d52e5e5c2a94b24c1439259c2cdd1b5762:user"
+      ],
+      "surviving_facts": [],
+      "temporary_filesystem": "tmpfs"
+    },
+    {
+      "expectation": "A second OS process changing recalled evidence before response commit rejects the stale reply.",
+      "name": "inflight_mutations",
+      "observations": [
+        {
+          "assistant_count": 0,
+          "mutation": "correction",
+          "outcome": {
+            "result": "ConflictError"
+          },
+          "passed": true
+        },
+        {
+          "assistant_count": 0,
+          "mutation": "erasure",
+          "outcome": {
+            "result": "DeletedError"
+          },
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "seconds": 0.2320160100061912,
+      "status": "PASS",
+      "temporary_filesystem": "tmpfs"
+    },
+    {
+      "expectation": "SIGKILL before COMMIT leaves no partial message/index/dependency; SIGKILL after acknowledgment preserves all three.",
+      "name": "crash_boundaries",
+      "observations": [
+        {
+          "dependency_edges": 0,
+          "exitcode": -9,
+          "fts_rows": 0,
+          "message_present": false,
+          "passed": true,
+          "reached": "before_commit",
+          "sqlite_integrity": "ok",
+          "stage": "before_commit"
+        },
+        {
+          "dependency_edges": 1,
+          "exitcode": -9,
+          "fts_rows": 1,
+          "message_present": true,
+          "passed": true,
+          "reached": "after_ack",
+          "sqlite_integrity": "ok",
+          "stage": "after_ack"
+        }
+      ],
+      "passed": true,
+      "seconds": 0.21078039999702014,
+      "status": "PASS",
+      "temporary_filesystem": "tmpfs"
+    },
+    {
+      "documented_limit": {
+        "meaning": "Old backups remain separate retained copies. No automatic propagation of later erasures is implemented.",
+        "pre_erasure_backup_restores_checkpoint": true,
+        "pre_erasure_backup_restores_source": true
+      },
+      "expectation": "Erasure removes checkpoint payloads; retries and post-erasure restore cannot silently recover the erased state.",
+      "invalidated_error": "DeletedError",
+      "name": "checkpoints_and_restore",
+      "passed": true,
+      "post_retry_error": "DeletedError",
+      "restored_checkpoint_error": "DeletedError",
+      "restored_receipt": {
+        "manifest": {
+          "model": "synthetic-state-only"
+        },
+        "request_hash": "c265336b540e09039b4eb4171eb1de43f518a7b0fdc24218f70987609497bc8c",
+        "request_id": "r1",
+        "result": null,
+        "revision": 1
+      },
+      "restored_source_error": "DeletedError",
+      "retry": {
+        "duplicate": true,
+        "manifest": {
+          "model": "synthetic-state-only"
+        },
+        "request_hash": "c265336b540e09039b4eb4171eb1de43f518a7b0fdc24218f70987609497bc8c",
+        "request_id": "r1",
+        "result": null,
+        "revision": 1
+      },
+      "seconds": 0.015930059991660528,
+      "status": "PASS",
+      "temporary_filesystem": "tmpfs"
+    },
+    {
+      "callback_calls": 2,
+      "expectation": "Exact committed request replay preserves its original answer; a fresh request sees the correction.",
+      "fresh_request": "Friday",
+      "interpretation": "An idempotent retry is not a fresh factual answer; callers must use a new request ID to request a new answer.",
+      "name": "correction_vs_exact_retry",
+      "old_retry": "Thursday",
+      "old_retry_replayed": true,
+      "original": "Thursday",
+      "passed": true,
+      "seconds": 0.031211164008709602,
+      "status": "PASS",
+      "temporary_filesystem": "tmpfs"
+    }
+  ],
+  "counts": {
+    "ERROR": 0,
+    "FAIL": 0,
+    "PASS": 9
+  },
+  "finished_utc": "2026-11-23T18:11:15Z",
+  "git_head": "56cb4eeb04d68f5f6c210c756f0790f34cc2fd5f",
+  "kind": "independent-synthetic-system-experiments",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.12.14",
+  "source_sha256": {
+    "session.py": "ae2f109dfb7abcb64c2e7549eb7cdd94e99223b78a94c7b950ce15ad7ef389d6",
+    "store.py": "3bf7561d194e19cc32a6ab4377ca4656aea86800ce6d026fd0a291ab18ec47c1"
+  },
+  "source_sha256_after": {
+    "session.py": "ae2f109dfb7abcb64c2e7549eb7cdd94e99223b78a94c7b950ce15ad7ef389d6",
+    "store.py": "3bf7561d194e19cc32a6ab4377ca4656aea86800ce6d026fd0a291ab18ec47c1"
+  },
+  "source_unchanged": true,
+  "sqlite": "3.53.1",
+  "started_utc": "2026-11-23T18:11:07Z"
+}

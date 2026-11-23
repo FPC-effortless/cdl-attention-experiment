@@ -1,7 +1,8 @@
 # Durable memory for NanoCOG
 
-This module adds **automatic cross-chat memory and restartable decoder sessions**
-to the existing research runtime. A successful operation is committed to disk
+This module adds **automatic conversation capture, cross-chat record recall and
+restartable decoder sessions** to the existing research runtime.
+A successful operation is committed to disk
 before it returns. There is no separate `save()` call to forget.
 
 It is an application component and a working local CLI. The host must route its
@@ -9,6 +10,14 @@ chat turns through `MemorySession`, or its reference decoder calls through
 `PersistentDecoder`. This does not change ChatGPT account settings, install a
 chat service, supply a trained language model, or make the experimental writer
 and event selector accurate.
+
+The archive and native decoder are separate interfaces. `MemorySession` passes
+retrieved records to the host's response callback; `PersistentDecoder` consumes
+only the tokens the host supplies. There is no built-in learned writer or
+automatic archive-to-native-decoder bridge. In the expanded validation, changing
+an accepted ledger value while holding decoder tokens fixed changed no logits.
+Cross-chat factual use by a trained model therefore remains unqualified; see
+[the measured integration boundary](../../memory-validation-002/decoder/REPORT.md).
 
 ## What is stored
 
@@ -83,6 +92,12 @@ including JSON/provenance overhead. It is not a tokenizer-specific token budget.
 Oversized records are omitted whole. Current input is excluded before retrieval
 limits, so it cannot hide the only older matching observation. Sources are found
 through SQLite full-text search; accepted keys/values are indexed separately.
+Direct accepted key/value matches are ranked ahead of facts linked only through
+the same source. Ranking uses each record's lexical overlap and length, so adding
+another principal's records cannot change this scope's order. Broad queries can
+still scan and score many matching records: the output budget is not a bound on
+search work. The measured correctness/performance tradeoff is in
+[MEMORY-VALIDATION-002](../../memory-validation-002/RESULT.md).
 This is lexical retrieval, not a trained relevance model or demonstrated
 constant-time access to a lifetime archive.
 
@@ -145,20 +160,26 @@ local, packet and typed state. It supports the reference `LocalOnly`,
 whole-history `forward()` already has a streaming state API.
 
 Model tensor contents, configuration, schema buffers, supported implementation
-source, tokenizer identity, session and runtime are fingerprinted. The tokenizer
+source, execution attributes, tokenizer identity, session and runtime are
+fingerprinted. The tokenizer
 digest is supplied by the host; this wrapper cannot verify assets it never sees.
 Changed weights, vocabulary identity, source implementation or runtime cannot
 silently reinterpret old slots. Start a new transient session after an upgrade;
 the separate reusable message/fact archive remains available.
 
-The v1 adapter accepts one stream (`B=1`), immutable eval weights, float32/float64,
-and no autocast, custom mixer or modified forward hooks. Identity is rechecked
+The adapter accepts one stream (`B=1`), immutable eval weights, float32/float64,
+and no autocast, custom mixer, compiled call replacement, modified execution
+methods or local/global inference hooks. Identity is rechecked
 each call. Safe JSON/base64 serialization accepts only known state classes and
 bounded finite tensors; it never loads Python pickle. Import checks include
 shape, dtype, occupancy, typed legality, revisions and chronology. Checksums
 detect damaged bytes, not an attacker who can replace both data and checksums.
 
 State, request identity and output commit atomically using an expected revision.
+The scope's erasure generation is captured before inference and checked in that
+same transaction. This also rejects a first checkpoint if a source was erased
+while it was computing. A retry reads an already committed receipt; deletion
+cannot revoke a result that an overlapping retry has already read.
 A duplicate request never consumes tokens twice. A stale competing continuation
 fails explicitly. Decode output replay is retained for at most 128 recent
 requests and a 32 MiB cache budget per session, with the newest receipt retained
@@ -206,9 +227,22 @@ Use a persistent encrypted disk and appropriate host access control for deployme
 Transactions use synchronous FULL. Fixed SQLite versions use WAL; older supported
 versions without the 2026 WAL-reset fix use rollback journaling. WAL requires a
 local filesystem, not a shared network filesystem. Unknown application/schema
-versions fail closed with an explicit migration requirement; this initial v1
-does not invent migrations for future formats. Readers never silently start an
+versions fail closed. Recognized storage schema v1 is atomically migrated to v2,
+which adds erasure generations and checkpoint identity checksums. Legacy payload
+checksums are checked before migration, but v1 metadata integrity cannot be
+established retrospectively. Legacy v1 backups can be restored and migrated when
+opened. Readers never silently start an
 empty replacement when a previous state exists but is incompatible.
+
+The stronger decoder execution fingerprint intentionally requires a new native
+decoder session for checkpoints written by the original PR 94 implementation.
+Accepted facts, observations and their revisions migrate; continuing the old
+native activation state transparently across this upgrade is not supported.
+Unknown future formats need separately implemented migrations. Model/runtime
+upgrades and stable factual records therefore have different compatibility rules.
+Stop old v1 writer processes before migration. Concurrent new-version migration
+is tested; running an already-connected old binary against the upgraded store
+cannot enforce the new erasure-generation rule and is unsupported.
 
 ## Time cues: represent the relationship that must govern selection
 
@@ -250,8 +284,10 @@ learned repair**. No fit, holdout tuning or model-performance claim accompanies 
 OMP_NUM_THREADS=1 python -m pytest -q nanocog
 ```
 
-See [VERIFICATION.md](VERIFICATION.md) for the executed checks and independent
-review findings. The tests use synthetic inert data and temporary databases.
+See [MEMORY-VALIDATION-002](../../memory-validation-002/RESULT.md) for the expanded
+adversarial tests, fixes, scale measurements and inference costs.
+[VERIFICATION.md](VERIFICATION.md) preserves the original, narrower verification
+record. The tests use synthetic inert data and temporary databases.
 They exercise real fresh processes, interrupted writes, lost acknowledgements,
 concurrent corrections, dependency erasure, corrupted backups, incompatible
 models and bounded retrieval, as well as the existing model/state regressions.

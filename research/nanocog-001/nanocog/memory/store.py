@@ -7,6 +7,7 @@ from __future__ import annotations
 
 from contextlib import contextmanager, closing
 from datetime import datetime, timezone
+from functools import lru_cache
 import hashlib
 import json
 import os
@@ -15,9 +16,11 @@ import re
 import sqlite3
 import stat
 import tempfile
+import time
 from typing import Any
+import unicodedata
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 APPLICATION_ID = 0x434F474D  # COGM; do not adopt unrelated SQLite files.
 MAX_JSON_BYTES = 64 * 1024 * 1024
 MAX_MESSAGE_BYTES = 1024 * 1024
@@ -73,6 +76,44 @@ def _digest(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
+def _word_tokens(text: str) -> list[str]:
+    # FTS remains the candidate matcher. Rank using local text, never corpus
+    # statistics from other principals. These are unicode61's usual boundaries.
+    folded = ''.join(c for c in unicodedata.normalize('NFD', text.casefold())
+                     if not unicodedata.combining(c))
+    return re.findall(r"[^\W_]+", folded, flags=re.UNICODE)
+
+
+@lru_cache(maxsize=64)
+def _rank_terms(query: str) -> frozenset[str]:
+    return frozenset(_word_tokens(query))
+
+
+def _lexical_score(content: str, query: str) -> float:
+    words = _word_tokens(content)
+    overlap = len(set(words).intersection(_rank_terms(query)))
+    # Distinct matching terms outrank fewer terms; density breaks coverage ties.
+    return overlap + overlap / (1 + len(words))
+
+
+def _checkpoint_identity(row) -> str:
+    try:
+        manifest = json.loads(row['manifest'])
+        if not isinstance(manifest, dict) or _json(manifest) != row['manifest']:
+            raise ValueError('noncanonical checkpoint manifest')
+        identity = dict(principal=row['principal'], namespace=row['namespace'],
+                        session=row['session'], request=row['request'],
+                        request_hash=row['request_hash'], revision=row['revision'],
+                        manifest=manifest)
+        if 'payload' in row.keys():
+            identity.update(payload_digest=row['digest'], result_digest=row['result_digest'])
+        else:
+            identity['result_digest'] = row['digest']
+        return _digest(_json(identity))
+    except (KeyError, ValueError, TypeError, RecursionError) as exc:
+        raise IntegrityError('invalid checkpoint identity metadata') from exc
+
+
 def _decode(text: str, digest: str) -> Any:
     if not isinstance(text, str) or _digest(text) != digest:
         raise IntegrityError("stored payload checksum mismatch")
@@ -98,7 +139,13 @@ def _revision(value: int) -> int:
 def _prepare_file(path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
     if not os.path.lexists(path):
-        _unused_database_path(path)
+        try:
+            _unused_database_path(path)
+        except FileExistsError:
+            # A peer initializer can create the live DB between these checks.
+            # Still refuse an absent database with stale SQLite sidecars.
+            if not os.path.lexists(path):
+                raise
     # Never follow an existing final-component symlink. Parent directories belong
     # to the caller; this local API is not a sandbox against that same OS user.
     fd = os.open(path, os.O_CREAT | os.O_RDWR | getattr(os, "O_NOFOLLOW", 0), 0o600)
@@ -156,6 +203,7 @@ def _write_new(path: Path, data: bytes) -> None:
 
 _SCHEMA = (
     "CREATE TABLE scopes (principal TEXT NOT NULL, namespace TEXT NOT NULL, "
+    "erasure_generation INTEGER NOT NULL DEFAULT 0 CHECK(erasure_generation>=0), "
     "PRIMARY KEY(principal, namespace))",
     "CREATE TABLE sessions (principal TEXT NOT NULL, namespace TEXT NOT NULL, "
     "session TEXT NOT NULL, created TEXT NOT NULL, deleted INTEGER NOT NULL DEFAULT 0, "
@@ -189,12 +237,14 @@ _SCHEMA = (
     "CREATE TABLE checkpoints (principal TEXT NOT NULL, namespace TEXT NOT NULL, session TEXT NOT NULL, "
     "revision INTEGER NOT NULL, manifest TEXT NOT NULL, payload TEXT NOT NULL, digest TEXT NOT NULL, "
     "request TEXT NOT NULL, request_hash TEXT NOT NULL, result TEXT NOT NULL, result_digest TEXT NOT NULL, "
+    "identity_digest TEXT NOT NULL, "
     "PRIMARY KEY(principal,namespace,session))",
     "CREATE TABLE checkpoint_requests (principal TEXT NOT NULL, namespace TEXT NOT NULL, "
     "session TEXT NOT NULL, request TEXT NOT NULL, request_hash TEXT NOT NULL, revision INTEGER NOT NULL, "
-    "manifest TEXT NOT NULL, result TEXT, digest TEXT NOT NULL, "
+    "manifest TEXT NOT NULL, result TEXT, digest TEXT NOT NULL, identity_digest TEXT NOT NULL, "
     "PRIMARY KEY(principal,namespace,session,request))",
     "CREATE INDEX checkpoint_revision ON checkpoint_requests(principal,namespace,session,revision)",
+    "CREATE INDEX checkpoint_live_outputs ON checkpoint_requests(principal,namespace,session,revision) WHERE result IS NOT NULL",
     "CREATE TABLE erasures (principal TEXT NOT NULL, namespace TEXT NOT NULL, event TEXT NOT NULL, "
     "erased TEXT NOT NULL, PRIMARY KEY(principal,namespace,event))",
 )
@@ -219,6 +269,7 @@ class MemoryStore:
         _prepare_file(self.path)
         self.db = sqlite3.connect(self.path, timeout=timeout, isolation_level=None)
         self.db.row_factory = sqlite3.Row
+        self.db.create_function('cog_lexical_score', 2, _lexical_score, deterministic=True)
         try:
             self.db.execute("PRAGMA foreign_keys=ON")
             self.db.execute("PRAGMA secure_delete=ON")
@@ -231,14 +282,38 @@ class MemoryStore:
                         self.db.execute(statement)
                     self.db.execute(f"PRAGMA application_id={APPLICATION_ID}")
                     self.db.execute(f"PRAGMA user_version={SCHEMA_VERSION}")
+                elif app == APPLICATION_ID and version == 1:
+                    self._migrate_v1()
+                    self.db.execute(f"PRAGMA user_version={SCHEMA_VERSION}")
                 elif app != APPLICATION_ID or version != SCHEMA_VERSION:
                     raise IntegrityError("unsupported memory database/schema; explicit migration required")
                 # Ordinary secure_delete does not erase stale FTS5 postings.
                 self.db.execute("INSERT INTO message_search(message_search,rank) VALUES('secure-delete',1)")
                 self.db.execute("INSERT INTO fact_search(fact_search,rank) VALUES('secure-delete',1)")
-                self.db.execute("INSERT OR IGNORE INTO scopes VALUES (?,?)", self.scope)
+                self.db.execute("INSERT OR IGNORE INTO scopes(principal,namespace) VALUES (?,?)", self.scope)
             requested = "WAL" if _patched_wal(sqlite3.sqlite_version_info) else "DELETE"
-            mode = self.db.execute(f"PRAGMA journal_mode={requested}").fetchone()[0]
+            # Journal changes can fail immediately with BUSY even when SQLite's
+            # busy_timeout is configured. Peers may still be finishing their
+            # first schema transaction. Retry only lock contention, outside any
+            # transaction, and preserve the caller's finite wait budget.
+            deadline = time.monotonic() + max(0.0, timeout)
+            configured_timeout = self.db.execute("PRAGMA busy_timeout").fetchone()[0]
+            self.db.execute("PRAGMA busy_timeout=0")
+            try:
+                while True:
+                    try:
+                        mode = self.db.execute("PRAGMA journal_mode").fetchone()[0]
+                        if mode.upper() != requested:
+                            mode = self.db.execute(f"PRAGMA journal_mode={requested}").fetchone()[0]
+                        break
+                    except sqlite3.OperationalError as exc:
+                        code = getattr(exc, 'sqlite_errorcode', None)
+                        remaining = deadline - time.monotonic()
+                        if code is None or (code & 255) not in {sqlite3.SQLITE_BUSY, sqlite3.SQLITE_LOCKED} or remaining <= 0:
+                            raise
+                        time.sleep(min(0.01, remaining))
+            finally:
+                self.db.execute(f"PRAGMA busy_timeout={configured_timeout}")
             if mode.upper() != requested:
                 raise IntegrityError("durable journaling unavailable")
             self.journal_mode=mode.lower()
@@ -247,6 +322,54 @@ class MemoryStore:
         except BaseException:
             self.db.close()
             raise
+
+    def _migrate_v1(self):
+        """Atomically migrate recognized v1 storage, preserving user records.
+
+        Legacy content checksums are verified before sealing identity metadata.
+        Version 1 did not authenticate metadata, so migration cannot prove its
+        earlier integrity retrospectively.
+        """
+        self.db.execute("ALTER TABLE scopes ADD COLUMN erasure_generation INTEGER NOT NULL DEFAULT 0 CHECK(erasure_generation>=0)")
+        self.db.execute("CREATE INDEX checkpoint_live_outputs ON checkpoint_requests(principal,namespace,session,revision) WHERE result IS NOT NULL")
+        for table in ('checkpoints', 'checkpoint_requests'):
+            self.db.execute(f"ALTER TABLE {table} ADD COLUMN identity_digest TEXT NOT NULL DEFAULT ''")
+            for row in self.db.execute(f"SELECT * FROM {table}"):
+                identity = _checkpoint_identity(row)
+                if table == 'checkpoints':
+                    envelope = _decode(row['payload'], row['digest'])
+                    if envelope['manifest'] != json.loads(row['manifest']):
+                        raise IntegrityError('legacy checkpoint manifest differs from sealed state')
+                    _decode(row['result'], row['result_digest'])
+                elif row['result'] is not None:
+                    _decode(row['result'], row['digest'])
+                self.db.execute(f"UPDATE {table} SET identity_digest=? WHERE principal=? AND namespace=? AND session=?"
+                                + (" AND request=?" if table == 'checkpoint_requests' else ''),
+                                (identity, row['principal'], row['namespace'], row['session'])
+                                + ((row['request'],) if table == 'checkpoint_requests' else ()))
+
+    def erasure_generation(self) -> int:
+        """O(1) scope generation for rejecting work started before an erasure."""
+        row = self.db.execute("SELECT erasure_generation FROM scopes WHERE principal=? AND namespace=?", self.scope).fetchone()
+        if row is None or type(row[0]) is not int or row[0] < 0:
+            raise IntegrityError('invalid scope erasure generation')
+        return row[0]
+
+    def _expire_checkpoint_outputs(self, where: str, args: tuple) -> None:
+        # Clear and re-seal only live outputs; retained request identities remain
+        # verifiable without retaining a digest of erased response text.
+        rows = self.db.execute("SELECT * FROM checkpoint_requests WHERE result IS NOT NULL AND "+where, args)
+        for row in rows:
+            if row['identity_digest'] != _checkpoint_identity(row):
+                raise IntegrityError('checkpoint receipt identity checksum mismatch')
+            expired = dict(row, result=None, digest='')
+            self.db.execute("UPDATE checkpoint_requests SET result=NULL,digest='',identity_digest=? "
+                            "WHERE principal=? AND namespace=? AND session=? AND request=?",
+                            (_checkpoint_identity(expired),row['principal'],row['namespace'],row['session'],row['request']))
+
+    def _invalidate_continuations(self) -> None:
+        self.db.execute("DELETE FROM checkpoints WHERE principal=? AND namespace=?", self.scope)
+        self._expire_checkpoint_outputs("principal=? AND namespace=?", self.scope)
 
     @contextmanager
     def _transaction(self):
@@ -375,8 +498,9 @@ class MemoryStore:
                 return []
             match = " OR ".join('"'+term.replace('"','""')+'"' for term in terms)
             sql = ("SELECT m.* FROM message_search JOIN messages m ON m.seq=message_search.rowid "
-                   "WHERE "+where+" AND message_search MATCH ? ORDER BY bm25(message_search),m.seq DESC LIMIT ?")
-            args.extend((match,limit))
+                   "WHERE "+where+" AND message_search MATCH ? "
+                   "ORDER BY cog_lexical_score(m.content,?) DESC,m.seq DESC LIMIT ?")
+            args.extend((match,query,limit))
         else:
             sql = "SELECT m.* FROM messages m WHERE "+where+" ORDER BY m.seq DESC LIMIT ?"
             args.append(limit)
@@ -494,26 +618,30 @@ class MemoryStore:
         if not isinstance(query,str) or len(query) > 16384:
             raise ValueError("invalid recall query")
         terms = set(re.findall(r"\w+",query.casefold()))
-        # Facts are exact durable assertions. Candidate retrieval uses an indexed
-        # source search, then exact key overlap; it never scans all raw history.
+        # Direct key/value matches outrank broad source-related fallback. A source
+        # can contain many independent facts; accepting an unrelated one must not
+        # displace the fact that actually matches this query.
         observations = self.messages(limit=limit,query=query if query.strip() else None,
                                      exclude_event_id=exclude_event_id)
         source_ids = [m["event_id"] for m in observations]
-        predicates = []
-        args: list[Any] = list(self.scope)
-        if source_ids:
-            predicates.append("source IN ("+",".join("?" for _ in source_ids)+")")
-            args.extend(source_ids)
-        if terms:
-            predicates.append("rowid IN (SELECT rowid FROM fact_search WHERE fact_search MATCH ?)")
-            args.append(' OR '.join('"'+term.replace('"','""')+'"' for term in sorted(terms)[:32]))
-        if not query.strip():
-            predicates.append("1")
         facts = []
-        if predicates:
-            sql = ("SELECT * FROM facts WHERE principal=? AND namespace=? AND deleted=0 AND ("+
-                   " OR ".join(predicates)+") ORDER BY changed DESC LIMIT ?")
-            facts = [self._fact(r) for r in self.db.execute(sql,(*args,limit))]
+        if terms:
+            match = ' OR '.join('"'+term.replace('"','""')+'"' for term in sorted(terms)[:32])
+            sql = ("SELECT * FROM facts WHERE principal=? AND namespace=? AND deleted=0 "
+                   "AND rowid IN (SELECT rowid FROM fact_search WHERE fact_search MATCH ?) "
+                   "ORDER BY cog_lexical_score(key||' '||value,?) DESC,changed DESC,key LIMIT ?")
+            facts = [self._fact(r) for r in self.db.execute(sql,(*self.scope,match,query,limit))]
+        if len(facts)<limit and (source_ids or not query.strip()):
+            where = "principal=? AND namespace=? AND deleted=0"
+            args: list[Any] = list(self.scope)
+            if query.strip():
+                where += " AND source IN ("+','.join('?' for _ in source_ids)+")"
+                args.extend(source_ids)
+            if facts:
+                where += " AND key NOT IN ("+','.join('?' for _ in facts)+")"
+                args.extend(f['key'] for f in facts)
+            sql = "SELECT * FROM facts WHERE "+where+" ORDER BY changed DESC,key LIMIT ?"
+            facts.extend(self._fact(r) for r in self.db.execute(sql,(*args,limit-len(facts))))
         result = dict(facts=[],observations=[],truncated=False)
         remaining = [("facts",f) for f in facts] + [("observations",m) for m in observations]
         for kind,value in remaining:
@@ -548,10 +676,7 @@ class MemoryStore:
         self.db.execute("UPDATE fact_history SET value=NULL,digest='',deleted=1 "
                         "WHERE principal=? AND namespace=? AND source=?",(*self.scope,event_id))
         self.db.execute("INSERT OR REPLACE INTO erasures VALUES (?,?,?,?)",(*self.scope,event_id,now))
-        # Decode state may encode this source. Conservatively erase all continuation
-        # caches in this scope; no old request may silently restore erased activations.
-        self.db.execute("DELETE FROM checkpoints WHERE principal=? AND namespace=?",self.scope)
-        self.db.execute("UPDATE checkpoint_requests SET result=NULL,digest='' WHERE principal=? AND namespace=?",self.scope)
+        self.db.execute("UPDATE scopes SET erasure_generation=erasure_generation+1 WHERE principal=? AND namespace=?",self.scope)
         return dict(event_id=event_id,erased=True,already_erased=False)
 
     def _forget_event(self, event_id: str) -> dict:
@@ -575,7 +700,12 @@ class MemoryStore:
     def forget_event(self, event_id: str) -> dict:
         _identifier(event_id,"event_id")
         with self._transaction():
+            generation = self.erasure_generation()
             result = self._forget_event(event_id)
+            if self.erasure_generation() != generation:
+                # Decode state may encode any erased source. Invalidate once per
+                # operation, including all transitively erased descendants.
+                self._invalidate_continuations()
         self.db.execute("PRAGMA wal_checkpoint(TRUNCATE)")
         return result
 
@@ -591,10 +721,10 @@ class MemoryStore:
                                                    (*self.scope,session_id))]
             for event in events:
                 self._forget_event(event)
-            self.db.execute("DELETE FROM checkpoints WHERE principal=? AND namespace=? AND session=?",(*self.scope,session_id))
-            self.db.execute("UPDATE checkpoint_requests SET result=NULL,digest='' WHERE principal=? AND namespace=? AND session=?",
-                            (*self.scope,session_id))
+            self._invalidate_continuations()
             self.db.execute("UPDATE sessions SET deleted=1 WHERE principal=? AND namespace=? AND session=?",(*self.scope,session_id))
+            # Retiring an empty decoder-only session is also an actual erasure.
+            self.db.execute("UPDATE scopes SET erasure_generation=erasure_generation+1 WHERE principal=? AND namespace=?",self.scope)
         self.db.execute("PRAGMA wal_checkpoint(TRUNCATE)")
         return dict(session_id=session_id,erased=True,messages=len(events))
 
@@ -613,6 +743,8 @@ class MemoryStore:
             if previous:
                 raise DeletedError("continuation state invalidated by erasure; start a new session")
             return None
+        if r['identity_digest'] != _checkpoint_identity(r):
+            raise IntegrityError('checkpoint identity checksum mismatch')
         envelope = _decode(r["payload"],r["digest"])
         manifest = json.loads(r["manifest"])
         if envelope["manifest"] != manifest:
@@ -627,14 +759,19 @@ class MemoryStore:
                             (*self.scope,session_id,request_id)).fetchone()
         if r is None:
             return None
+        if r['identity_digest'] != _checkpoint_identity(r):
+            raise IntegrityError('checkpoint receipt identity checksum mismatch')
         result = _decode(r["result"],r["digest"]) if r["result"] is not None else None
         return dict(request_id=request_id,request_hash=r["request_hash"],revision=r["revision"],
                     manifest=json.loads(r["manifest"]),result=result)
 
     def commit_checkpoint(self, session_id: str, *, request_id: str, request_hash: str,
-                          expected_revision: int, manifest: dict, payload: dict, result: dict) -> dict:
+                          expected_revision: int, manifest: dict, payload: dict, result: dict,
+                          expected_erasure_generation: int | None = None) -> dict:
         _identifier(session_id,"session_id"); _identifier(request_id,"request_id")
         _revision(expected_revision)
+        if expected_erasure_generation is not None:
+            _revision(expected_erasure_generation)
         if not isinstance(request_hash,str) or re.fullmatch(r"[0-9a-f]{64}",request_hash) is None:
             raise ValueError("request_hash must be a SHA-256 hex digest")
         if any(not isinstance(x,dict) for x in (manifest,payload,result)):
@@ -643,6 +780,9 @@ class MemoryStore:
         man = _json(manifest); output = _json(result)
         with self._transaction():
             self._session(session_id)
+            if (expected_erasure_generation is not None
+                    and self.erasure_generation() != expected_erasure_generation):
+                raise DeletedError('memory was erased while continuation was computing')
             old = self.checkpoint_receipt(session_id,request_id)
             if old:
                 if old["request_hash"] != request_hash or old["manifest"] != manifest:
@@ -655,13 +795,18 @@ class MemoryStore:
             if current and current["manifest"] != manifest:
                 raise ConflictError("checkpoint model/schema identity changed")
             revision += 1
-            self.db.execute("INSERT OR REPLACE INTO checkpoints VALUES (?,?,?,?,?,?,?,?,?,?,?)",
-                            (*self.scope,session_id,revision,man,encoded,_digest(encoded),request_id,request_hash,output,_digest(output)))
-            self.db.execute("INSERT INTO checkpoint_requests VALUES (?,?,?,?,?,?,?,?,?)",
-                            (*self.scope,session_id,request_id,request_hash,revision,man,output,_digest(output)))
-            self.db.execute("UPDATE checkpoint_requests SET result=NULL,digest='' "
-                            "WHERE principal=? AND namespace=? AND session=? AND revision<=?",
-                            (*self.scope,session_id,revision-CHECKPOINT_OUTPUTS))
+            checkpoint = dict(principal=self.principal_id,namespace=self.namespace,session=session_id,
+                              request=request_id,request_hash=request_hash,revision=revision,manifest=man,
+                              payload=encoded,digest=_digest(encoded),result_digest=_digest(output))
+            receipt = dict(checkpoint)
+            del receipt['payload']
+            receipt['digest'] = _digest(output)
+            self.db.execute("INSERT OR REPLACE INTO checkpoints VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
+                            (*self.scope,session_id,revision,man,encoded,_digest(encoded),request_id,request_hash,output,_digest(output),_checkpoint_identity(checkpoint)))
+            self.db.execute("INSERT INTO checkpoint_requests VALUES (?,?,?,?,?,?,?,?,?,?)",
+                            (*self.scope,session_id,request_id,request_hash,revision,man,output,_digest(output),_checkpoint_identity(receipt)))
+            self._expire_checkpoint_outputs("principal=? AND namespace=? AND session=? AND revision<=?",
+                                            (*self.scope,session_id,revision-CHECKPOINT_OUTPUTS))
             # Also bound retained output bytes. Keep the newest receipt even if a
             # caller explicitly supplied one result larger than the cache budget.
             outputs=self.db.execute("SELECT request,revision,length(CAST(result AS BLOB)) AS size "
@@ -671,8 +816,8 @@ class MemoryStore:
             for cached in outputs:
                 retained+=cached['size']
                 if retained>CHECKPOINT_OUTPUT_BYTES and cached['revision']!=revision:
-                    self.db.execute("UPDATE checkpoint_requests SET result=NULL,digest='' WHERE principal=? "
-                                    "AND namespace=? AND session=? AND request=?",(*self.scope,session_id,cached['request']))
+                    self._expire_checkpoint_outputs("principal=? AND namespace=? AND session=? AND request=?",
+                                                    (*self.scope,session_id,cached['request']))
             return dict(request_id=request_id,request_hash=request_hash,revision=revision,
                         manifest=manifest,result=result,duplicate=False)
 
@@ -755,7 +900,7 @@ class MemoryStore:
         with src.open("rb") as f:
             digest=hashlib.file_digest(f,"sha256").hexdigest()
         if (metadata.get("format") != "nanocog-memory-backup-v1" or metadata.get("sha256") != digest
-                or metadata.get("schema_version") != SCHEMA_VERSION or metadata.get("bytes") != src.stat().st_size):
+                or metadata.get("schema_version") not in {1, SCHEMA_VERSION} or metadata.get("bytes") != src.stat().st_size):
             raise IntegrityError("backup identity/bytes do not match manifest")
         # Copy once, validate the actual bytes being installed to avoid a source
         # changing between validation and use. No SQLite extensions or pickle load.
@@ -770,10 +915,10 @@ class MemoryStore:
                     raise IntegrityError("backup changed while restoring")
             with closing(sqlite3.connect(temp)) as check:
                 if (check.execute("PRAGMA application_id").fetchone()[0]!=APPLICATION_ID or
-                    check.execute("PRAGMA user_version").fetchone()[0]!=SCHEMA_VERSION or
+                    check.execute("PRAGMA user_version").fetchone()[0]!=metadata['schema_version'] or
                     check.execute("PRAGMA integrity_check").fetchone()[0]!="ok"):
                     raise IntegrityError("backup schema or SQLite integrity invalid")
             _publish_file(temp,dest)
-            return dict(path=str(dest),sha256=digest,schema_version=SCHEMA_VERSION)
+            return dict(path=str(dest),sha256=digest,schema_version=metadata['schema_version'])
         finally:
             temp.unlink(missing_ok=True)
