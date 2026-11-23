@@ -1,0 +1,68 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+__________ test_global_forward_hook_cannot_rewrite_a_factual_decision __________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-18/test_global_forward_hook_canno0')
+
+    def test_global_forward_hook_cannot_rewrite_a_factual_decision(tmp_path):
+        adapter = CallbackAdapter()
+        with MemoryStore(tmp_path / "hook.sqlite3", principal_id="review") as store:
+            memory = adapter_module.FactualMemory(store, adapter, session_id="chat", authority="review-host")
+            assert adapter.predict_events(["Amara holds the chest."]) == [adapter_module.operation(0, 0)]
+    
+            def corrupt_writer(module, args, output):
+                if module is adapter.writer:
+                    changed = torch.zeros_like(output)
+                    changed[:, adapter_module.operation(0, 1)] = 100
+                    return changed
+    
+            handle = torch.nn.modules.module.register_module_forward_hook(corrupt_writer)
+            try:
+>               with pytest.raises((IntegrityError, ValueError), match="model|hook"):
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               Failed: DID NOT RAISE any of (<class 'nanocog.memory.store.IntegrityError'>, <class 'ValueError'>)
+
+research/nanocog-001/memory-integration-003/review/test_adapter_review.py:107: Failed
+_______ test_write_does_not_rebase_onto_a_change_during_prediction[None] _______
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-18/test_write_does_not_rebase_ont0')
+initial_owner = None
+
+    @pytest.mark.parametrize("initial_owner", [None, 6])
+    def test_write_does_not_rebase_onto_a_change_during_prediction(tmp_path, initial_owner):
+        path = tmp_path / "writer-race.sqlite3"
+        with MemoryStore(path, principal_id="review") as store, \
+             MemoryStore(path, principal_id="review") as concurrent:
+            if initial_owner is not None:
+                accept_owner(store, initial_owner, "initial")
+            adapter = CallbackAdapter(lambda: accept_owner(concurrent, 1, "intervening"))
+            memory = adapter_module.FactualMemory(store, adapter, session_id="chat", authority="review-host")
+>           with pytest.raises(ConflictError, match="revision"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE <class 'nanocog.memory.store.ConflictError'>
+
+research/nanocog-001/memory-integration-003/review/test_adapter_review.py:123: Failed
+________ test_write_does_not_rebase_onto_a_change_during_prediction[6] _________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-18/test_write_does_not_rebase_ont1')
+initial_owner = 6
+
+    @pytest.mark.parametrize("initial_owner", [None, 6])
+    def test_write_does_not_rebase_onto_a_change_during_prediction(tmp_path, initial_owner):
+        path = tmp_path / "writer-race.sqlite3"
+        with MemoryStore(path, principal_id="review") as store, \
+             MemoryStore(path, principal_id="review") as concurrent:
+            if initial_owner is not None:
+                accept_owner(store, initial_owner, "initial")
+            adapter = CallbackAdapter(lambda: accept_owner(concurrent, 1, "intervening"))
+            memory = adapter_module.FactualMemory(store, adapter, session_id="chat", authority="review-host")
+>           with pytest.raises(ConflictError, match="revision"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE <class 'nanocog.memory.store.ConflictError'>
+
+research/nanocog-001/memory-integration-003/review/test_adapter_review.py:123: Failed
+=========================== short test summary info ============================
+FAILED research/nanocog-001/memory-integration-003/review/test_adapter_review.py::test_global_forward_hook_cannot_rewrite_a_factual_decision
+FAILED research/nanocog-001/memory-integration-003/review/test_adapter_review.py::test_write_does_not_rebase_onto_a_change_during_prediction[None]
+FAILED research/nanocog-001/memory-integration-003/review/test_adapter_review.py::test_write_does_not_rebase_onto_a_change_during_prediction[6]
+3 failed in 2.08s

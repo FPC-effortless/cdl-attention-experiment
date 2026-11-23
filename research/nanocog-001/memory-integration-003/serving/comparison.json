@@ -1,0 +1,46 @@
+{
+  "baseline_commit": "ffb842adc176496d8838b774d0fe412aec5d1d20",
+  "filesystem": "Filesystem     Type    1024-blocks     Used Available Capacity Mounted on\noverlay        overlay    66002476 20961548  41669104      34% /workspace",
+  "fixture_store": "frozen baseline v2 in both variants",
+  "harness_sha256": "86a6a33d8b38c904be2b4b10d5a97bc70433ae0f494474003fc8cf20b26fc73d",
+  "measured_trials": 5,
+  "models": [
+    {
+      "baseline_native_session_continues": true,
+      "complete_checkpoint_cases_equal": 4,
+      "kind": "local",
+      "manifest_equal": true,
+      "order": [
+        "baseline",
+        "candidate"
+      ],
+      "output_cases_equal": 4
+    },
+    {
+      "baseline_native_session_continues": true,
+      "complete_checkpoint_cases_equal": 4,
+      "kind": "packet",
+      "manifest_equal": true,
+      "order": [
+        "candidate",
+        "baseline"
+      ],
+      "output_cases_equal": 4
+    },
+    {
+      "baseline_native_session_continues": true,
+      "complete_checkpoint_cases_equal": 4,
+      "kind": "typed_packet",
+      "manifest_equal": true,
+      "order": [
+        "baseline",
+        "candidate"
+      ],
+      "output_cases_equal": 4
+    }
+  ],
+  "passed": true,
+  "trained": false,
+  "wall_seconds": 80.57994494598825,
+  "warmups": 1
+}

@@ -22,7 +22,7 @@ from ..interaction import PacketAndTypedProbe, PacketMixer
 from ..model import DecodeState, Decoder, LocalOnly
 from ..state import records as records_source
 from ..state.records import RecordState, StableRecordMemory, TypedRecordBoard
-from .codec import CodecError, CodecLimits, decode, encode, tensor_bytes
+from .codec import CodecError, CodecLimits, decode, encode, tensor_bytes, _tensor_buffer
 from .store import ConflictError, IntegrityError, ReceiptExpiredError
 
 
@@ -62,12 +62,14 @@ def _checked_name(value, label):
     return value
 
 
-def _model_identity(model, tokenizer_id, session_id):
+def _model_identity(model, tokenizer_id, session_id, *, check_finite=True):
     if type(model) is not Decoder:
         raise TypeError("this adapter accepts the reference Decoder only")
     if any(getattr(owner, name) is not original for owner, name, original in _EXECUTION_BINDINGS):
         raise ValueError("patched reference execution methods are unsupported")
-    if any(m.training for m in model.modules()):
+    named_modules = tuple(model.named_modules())
+    modules = tuple(m for _, m in named_modules)
+    if any(m.training for m in modules):
         raise ValueError("persistent decoding requires model.eval()")
     if torch_module._global_forward_hooks or torch_module._global_forward_pre_hooks:
         raise ValueError("global inference hooks are unsupported")
@@ -75,14 +77,14 @@ def _model_identity(model, tokenizer_id, session_id):
                    (*_EXECUTION_METHODS.get(type(m), ()), "_call_impl", "_wrapped_call_impl"))
            or m._forward_hooks or m._forward_pre_hooks
            or m._compiled_call_impl is not None
-           for m in model.modules()):
+           for m in modules):
         raise ValueError("patched forwards, compiled calls and inference hooks are unsupported")
     if any(type(m) not in (LocalOnly, PacketMixer, PacketAndTypedProbe) for m in model.mixers):
         raise TypeError("unsupported decoder mixer")
     supported_modules = (Decoder, LocalOnly, PacketMixer, PacketAndTypedProbe,
                          PacketCommunication, StableRecordMemory, TypedRecordBoard,
                          nn.ModuleList, nn.Linear, nn.Conv1d, nn.Embedding)
-    if any(type(m) not in supported_modules for m in model.modules()):
+    if any(type(m) not in supported_modules for m in modules):
         raise TypeError("unsupported decoder submodule")
     params = tuple(model.parameters())
     device, dtype = model.embedding.weight.device, model.embedding.weight.dtype
@@ -97,10 +99,16 @@ def _model_identity(model, tokenizer_id, session_id):
         if tensor.device != device:
             raise ValueError("model parameters and buffers must share one device")
         header = _json_bytes([name, str(tensor.dtype), list(tensor.shape)])
-        raw = tensor_bytes(tensor)
-        state_hash.update(header + b"\0" + raw)
+        raw = _tensor_buffer(tensor, check_finite=check_finite)
+        # Consecutive updates hash exactly the same byte stream without copying
+        # every model tensor into a concatenated header/data allocation.
+        state_hash.update(header)
+        state_hash.update(b"\0")
+        state_hash.update(raw)
         if name.endswith(".permits") or name.endswith(".links"):
-            schema_hash.update(header + b"\0" + raw)
+            schema_hash.update(header)
+            schema_hash.update(b"\0")
+            schema_hash.update(raw)
     # Include non-tensor geometry and implementation bytes, not just compatible shapes.
     geometry = []
     # Matching parameter shapes is insufficient: e.g. stride/dilation/padding
@@ -112,9 +120,19 @@ def _model_identity(model, tokenizer_id, session_id):
                   "stride", "padding", "dilation", "padding_mode", "transposed", "output_padding",
                   "_reversed_padding_repeated_twice", "num_embeddings", "embedding_dim",
                   "padding_idx", "max_norm", "norm_type", "scale_grad_by_freq", "sparse")
-    for name, module in model.named_modules():
+    class_attributes = {
+        cls: {key for owner in cls.__mro__ for key in vars(owner)}
+        for cls in {type(module) for module in modules}
+    }
+    for name, module in named_modules:
+        # Most listed attributes are absent on a given supported class. Probing
+        # every absence through nn.Module.__getattr__ raises thousands of hidden
+        # exceptions per check. Inspect presence first, but read present values
+        # normally so live class descriptors and geometry changes stay visible.
+        present = (vars(module).keys() | class_attributes[type(module)] |
+                   module._parameters.keys() | module._buffers.keys() | module._modules.keys())
         geometry.append([name, type(module).__module__, type(module).__qualname__,
-                         {a: getattr(module, a) for a in attributes if hasattr(module, a)}])
+                         {a: getattr(module, a) for a in attributes if a in present and hasattr(module, a)}])
     sources = {}
     for module in (model_source, interaction_source, packet_source, records_source):
         path = inspect.getsourcefile(module)
@@ -229,7 +247,11 @@ class PersistentDecoder:
     def _check_model(self):
         if torch.is_autocast_enabled("cpu") or torch.is_autocast_enabled("cuda"):
             raise ValueError("persistent reference decoding does not support autocast")
-        if _model_identity(self.model, self.tokenizer_id, self.session_id) != self._manifest:
+        # Attachment validated finite model contents. Complete byte equality to
+        # that identity proves those same finite contents; every byte is still
+        # hashed here, including .data mutations that bypass version counters.
+        if _model_identity(self.model, self.tokenizer_id, self.session_id,
+                           check_finite=False) != self._manifest:
             raise IntegrityError("model changed after persistent session attachment")
 
     def _load_state(self, payload):

@@ -1,0 +1,16 @@
+{
+  "arm": "candidate",
+  "lengths": [
+    8,
+    64
+  ],
+  "pairs_per_panel_length": 4,
+  "panels": [
+    "familiar_test",
+    "fresh_test"
+  ],
+  "raw_control": "same actual native/text heads with exact local typed ledger; no feature cache",
+  "seed": 17,
+  "selection": "first four family indices in each panel/length; fixed before TEST evaluation",
+  "timing_claim": "paired output-matched infrastructure overhead, not a model speedup"
+}

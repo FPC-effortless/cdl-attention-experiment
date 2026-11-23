@@ -1,0 +1,10 @@
+{"case": "ranking_interference", "status": "PASS", "seconds": 0.13}
+{"case": "unrelated_facts", "status": "PASS", "seconds": 0.041}
+{"case": "multiprocess", "status": "PASS", "seconds": 1.283}
+{"case": "concurrent_initialization", "status": "PASS", "seconds": 5.929}
+{"case": "dependency_erasure_and_retries", "status": "PASS", "seconds": 0.073}
+{"case": "inflight_mutations", "status": "PASS", "seconds": 0.266}
+{"case": "crash_boundaries", "status": "PASS", "seconds": 0.281}
+{"case": "checkpoints_and_restore", "status": "PASS", "seconds": 0.067}
+{"case": "correction_vs_exact_retry", "status": "PASS", "seconds": 0.027}
+{"PASS": 9, "FAIL": 0, "ERROR": 0}

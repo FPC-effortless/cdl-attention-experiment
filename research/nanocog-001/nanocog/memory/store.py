@@ -26,6 +26,7 @@ MAX_JSON_BYTES = 64 * 1024 * 1024
 MAX_MESSAGE_BYTES = 1024 * 1024
 CHECKPOINT_OUTPUTS = 128
 CHECKPOINT_OUTPUT_BYTES = 32 * 1024 * 1024
+_WORD_TOKEN_RE = re.compile(r"[^\W_]+", flags=re.UNICODE)
 
 
 class ConflictError(RuntimeError):
@@ -79,9 +80,13 @@ def _digest(text: str) -> str:
 def _word_tokens(text: str) -> list[str]:
     # FTS remains the candidate matcher. Rank using local text, never corpus
     # statistics from other principals. These are unicode61's usual boundaries.
-    folded = ''.join(c for c in unicodedata.normalize('NFD', text.casefold())
-                     if not unicodedata.combining(c))
-    return re.findall(r"[^\W_]+", folded, flags=re.UNICODE)
+    folded = text.casefold()
+    # NFD is the identity on ASCII and its combining classes are all zero.
+    # Avoid scanning those characters in Python for every matching record.
+    if not folded.isascii():
+        folded = ''.join(c for c in unicodedata.normalize('NFD', folded)
+                         if not unicodedata.combining(c))
+    return _WORD_TOKEN_RE.findall(folded)
 
 
 @lru_cache(maxsize=64)
@@ -459,7 +464,11 @@ class MemoryStore:
             for key,revision in expected_fact_revisions.items():
                 current=self.db.execute("SELECT revision,deleted FROM facts WHERE principal=? AND namespace=? AND key=?",
                                         (*self.scope,key)).fetchone()
-                if current is None or current["deleted"] or current["revision"]!=revision:
+                # Absence is revision zero. An erased row keeps its monotonically
+                # increasing revision, so a response based on stable absence can
+                # commit while an intervening insertion/recreation still fails.
+                observed_revision = current["revision"] if current is not None else 0
+                if observed_revision != revision:
                     raise ConflictError("a recalled fact changed before the response committed")
             now = _now()
             cur = self.db.execute("INSERT INTO messages(principal,namespace,event,session,role,content,digest,created) "
@@ -602,6 +611,20 @@ class MemoryStore:
         row = self.db.execute("SELECT revision FROM facts WHERE principal=? AND namespace=? AND key=?",
                               (*self.scope,_identifier(key,"key"))).fetchone()
         return row[0] if row else 0
+
+    def fact_snapshot(self, key: str) -> dict:
+        """Read one fact and its revision from the same SQLite snapshot.
+
+        ``record`` is None for a missing or erased fact. Missing keys have
+        revision zero; erased keys retain their deletion revision. Pass this
+        revision to ``append_message(expected_fact_revisions=...)`` so an answer
+        based on absence cannot commit after another writer inserts the fact.
+        """
+        key = _identifier(key, "key")
+        row = self.db.execute("SELECT * FROM facts WHERE principal=? AND namespace=? AND key=?",
+                              (*self.scope, key)).fetchone()
+        return dict(key=key, revision=row["revision"] if row is not None else 0,
+                    record=self._fact(row) if row is not None and not row["deleted"] else None)
 
     def history(self, key: str) -> list[dict]:
         return [self._fact(r) for r in self.db.execute(

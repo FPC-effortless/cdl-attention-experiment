@@ -1,0 +1,24 @@
+{
+  "mode": "experimental-categorical-factual-memory",
+  "unfamiliar_wording_qualified": false,
+  "result": {
+    "operation": 1,
+    "status": "written",
+    "decision_event_id": "factual:edf5ce67dbd54d082de20bd477d450e60ae5d0f5fd06e259c661b4055c08395f:result",
+    "fact": {
+      "key": "cog-factual:holder:chest",
+      "value": {
+        "kind": "owner",
+        "schema": "cog-factual-adapter-v1",
+        "value": "Amara"
+      },
+      "revision": 1,
+      "source_event_id": "factual:edf5ce67dbd54d082de20bd477d450e60ae5d0f5fd06e259c661b4055c08395f:result",
+      "proposal_id": "factual:edf5ce67dbd54d082de20bd477d450e60ae5d0f5fd06e259c661b4055c08395f:proposal",
+      "authority": "experimental-model-policy",
+      "changed_at": "2026-11-23T18:55:45.626386+00:00",
+      "deleted": false
+    },
+    "replayed": false
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "after": {
+    "nanocog/memory/codec.py": "195758561841b95cb67046b23a8e462f77fc47f36d7f5a988fd0601b4f0e23ff",
+    "nanocog/memory/decoder.py": "8380db65776f50329cfa15575211e7b72e2dc9629799174bc345addbd6f6b6e2",
+    "nanocog/memory/store.py": "89dc05ae971c52b73b65bf37df1349ef16473528d1f4a8c695a4c891f0ea6085",
+    "nanocog/memory/test_adversarial_decoder.py": "71019a82bd98e5e911d6b81e96eda1c7e30867f4d545be22c3998439140a5f52",
+    "nanocog/memory/test_decoder.py": "0a4b5dbb7446b64008d131ac6a0412ef9869f208fffd877ba01ebdbb55f8bb56",
+    "nanocog/memory/test_serving_optimization.py": "88826be705e98abd26da8dba15123db0b4dc5ed1fe206141f80e71d0fa1b0a9d"
+  },
+  "before": {
+    "nanocog/memory/codec.py": "195758561841b95cb67046b23a8e462f77fc47f36d7f5a988fd0601b4f0e23ff",
+    "nanocog/memory/decoder.py": "8380db65776f50329cfa15575211e7b72e2dc9629799174bc345addbd6f6b6e2",
+    "nanocog/memory/store.py": "89dc05ae971c52b73b65bf37df1349ef16473528d1f4a8c695a4c891f0ea6085",
+    "nanocog/memory/test_adversarial_decoder.py": "71019a82bd98e5e911d6b81e96eda1c7e30867f4d545be22c3998439140a5f52",
+    "nanocog/memory/test_decoder.py": "0a4b5dbb7446b64008d131ac6a0412ef9869f208fffd877ba01ebdbb55f8bb56",
+    "nanocog/memory/test_serving_optimization.py": "88826be705e98abd26da8dba15123db0b4dc5ed1fe206141f80e71d0fa1b0a9d"
+  },
+  "exit_code": 0
+}

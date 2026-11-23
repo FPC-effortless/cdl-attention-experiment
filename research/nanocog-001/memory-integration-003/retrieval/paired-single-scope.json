@@ -1,0 +1,319 @@
+{
+  "cpu_seconds": 47.497940348,
+  "database_bytes": 38350848,
+  "filesystem": "Filesystem     Type    1024-blocks     Used Available Capacity Mounted on\noverlay        overlay    66002476 20961852  41668800      34% /workspace",
+  "first_queries": [
+    {
+      "duration_ms": 1052.037191,
+      "implementation": "baseline",
+      "query": "synthetic",
+      "result_sha256": "fed09908d3d87b091ca3d306a6c95fcc0a5f3dc1d341476685054c3c7bebb898"
+    },
+    {
+      "duration_ms": 511.767774,
+      "implementation": "candidate",
+      "query": "synthetic",
+      "result_sha256": "fed09908d3d87b091ca3d306a6c95fcc0a5f3dc1d341476685054c3c7bebb898"
+    }
+  ],
+  "fixture_ingestion_seconds": 37.36770188300579,
+  "input_sha256": "e03edc6aac23b403806c2bc75bf4e1d07c88e935b2801b34ef1bf4875625c603",
+  "integrity": "ok",
+  "journal_mode": "wal",
+  "max_rss_kib": 19196,
+  "measured_trials": 5,
+  "models_or_training": false,
+  "n_sources": 50000,
+  "ordinary_sessions": 200,
+  "passed": true,
+  "purpose": "exact ranked-result equivalence and descriptive single-scope cost",
+  "python": "3.12.14",
+  "queries": [
+    {
+      "all_six_pairs_exact": true,
+      "baseline": {
+        "maximum_ms": 0.363476,
+        "median_ms": 0.161872,
+        "minimum_ms": 0.142729,
+        "samples_ms": [
+          0.363476,
+          0.182299,
+          0.161872,
+          0.151813,
+          0.142729
+        ]
+      },
+      "candidate": {
+        "maximum_ms": 0.207514,
+        "median_ms": 0.157011,
+        "minimum_ms": 0.128149,
+        "samples_ms": [
+          0.198576,
+          0.207514,
+          0.157011,
+          0.131228,
+          0.128149
+        ]
+      },
+      "label": "early-unique",
+      "query": "needle00001",
+      "result_sha256": "68b1b49c8b7fc4f16a24248c183b01857873a76fbbf1860644866bb5bc1b72fc"
+    },
+    {
+      "all_six_pairs_exact": true,
+      "baseline": {
+        "maximum_ms": 0.728393,
+        "median_ms": 0.476494,
+        "minimum_ms": 0.174365,
+        "samples_ms": [
+          0.245119,
+          0.728393,
+          0.174365,
+          0.540655,
+          0.476494
+        ]
+      },
+      "candidate": {
+        "maximum_ms": 0.624979,
+        "median_ms": 0.23344,
+        "minimum_ms": 0.168204,
+        "samples_ms": [
+          0.23344,
+          0.624979,
+          0.168204,
+          0.351626,
+          0.169926
+        ]
+      },
+      "label": "middle-unique",
+      "query": "needle25001",
+      "result_sha256": "c056a70b38736e2c908714df197cec509bc246cfd1809a477dd723a1c92e1f2a"
+    },
+    {
+      "all_six_pairs_exact": true,
+      "baseline": {
+        "maximum_ms": 0.233765,
+        "median_ms": 0.170263,
+        "minimum_ms": 0.151386,
+        "samples_ms": [
+          0.192432,
+          0.233765,
+          0.154266,
+          0.151386,
+          0.170263
+        ]
+      },
+      "candidate": {
+        "maximum_ms": 0.503642,
+        "median_ms": 0.165149,
+        "minimum_ms": 0.134339,
+        "samples_ms": [
+          0.503642,
+          0.165149,
+          0.145799,
+          0.134339,
+          0.170752
+        ]
+      },
+      "label": "late-unique",
+      "query": "needle49999",
+      "result_sha256": "9f5b2fb559318db1e70384d9be7f361640f47a958afba093de2580e30cc7227a"
+    },
+    {
+      "all_six_pairs_exact": true,
+      "baseline": {
+        "maximum_ms": 1113.369307,
+        "median_ms": 1066.247897,
+        "minimum_ms": 1006.864439,
+        "samples_ms": [
+          1006.864439,
+          1051.925857,
+          1066.247897,
+          1071.774531,
+          1113.369307
+        ]
+      },
+      "candidate": {
+        "maximum_ms": 557.347364,
+        "median_ms": 519.775517,
+        "minimum_ms": 470.20464,
+        "samples_ms": [
+          519.775517,
+          472.266565,
+          470.20464,
+          557.347364,
+          521.365015
+        ]
+      },
+      "label": "all-records-ascii",
+      "query": "synthetic",
+      "result_sha256": "fed09908d3d87b091ca3d306a6c95fcc0a5f3dc1d341476685054c3c7bebb898"
+    },
+    {
+      "all_six_pairs_exact": true,
+      "baseline": {
+        "maximum_ms": 1389.096765,
+        "median_ms": 1053.979158,
+        "minimum_ms": 1001.006718,
+        "samples_ms": [
+          1053.979158,
+          1001.006718,
+          1026.54169,
+          1389.096765,
+          1274.395095
+        ]
+      },
+      "candidate": {
+        "maximum_ms": 611.271925,
+        "median_ms": 538.399734,
+        "minimum_ms": 484.988623,
+        "samples_ms": [
+          495.636515,
+          538.399734,
+          484.988623,
+          583.310114,
+          611.271925
+        ]
+      },
+      "label": "all-records-multi-term",
+      "query": "synthetic project archive",
+      "result_sha256": "5db69c2a860a9b768602c9ead45ad734330f2979fa475f0a0fce2f9d45bb7894"
+    },
+    {
+      "all_six_pairs_exact": true,
+      "baseline": {
+        "maximum_ms": 15.959614,
+        "median_ms": 14.277548,
+        "minimum_ms": 12.705035,
+        "samples_ms": [
+          12.705035,
+          14.277548,
+          15.236325,
+          15.959614,
+          14.240513
+        ]
+      },
+      "candidate": {
+        "maximum_ms": 8.894549,
+        "median_ms": 8.257459,
+        "minimum_ms": 6.847175,
+        "samples_ms": [
+          8.721081,
+          8.894549,
+          7.229533,
+          8.257459,
+          6.847175
+        ]
+      },
+      "label": "selective-phrase",
+      "query": "Orion launch",
+      "result_sha256": "4589044c6f61498eed7e772cd93626ce703be22e20d56ade4b746dbb2638b316"
+    },
+    {
+      "all_six_pairs_exact": true,
+      "baseline": {
+        "maximum_ms": 172.569712,
+        "median_ms": 165.526607,
+        "minimum_ms": 163.069731,
+        "samples_ms": [
+          165.526607,
+          172.569712,
+          163.069731,
+          170.671275,
+          164.154413
+        ]
+      },
+      "candidate": {
+        "maximum_ms": 172.655941,
+        "median_ms": 162.694084,
+        "minimum_ms": 157.819119,
+        "samples_ms": [
+          172.655941,
+          157.819119,
+          162.266369,
+          171.565275,
+          162.694084
+        ]
+      },
+      "label": "unicode-subset",
+      "query": "Yor\u00f9b\u00e1 \u4e2d\u6587 caf\u00e9",
+      "result_sha256": "34eecdf6874bcc07ac2c44eda99cdce85fa1f65025e39fbed0fb88c02891248d"
+    },
+    {
+      "all_six_pairs_exact": true,
+      "baseline": {
+        "maximum_ms": 1197.107489,
+        "median_ms": 1021.564093,
+        "minimum_ms": 924.016383,
+        "samples_ms": [
+          1021.564093,
+          924.016383,
+          939.215972,
+          1041.185274,
+          1197.107489
+        ]
+      },
+      "candidate": {
+        "maximum_ms": 597.247716,
+        "median_ms": 507.211102,
+        "minimum_ms": 439.674581,
+        "samples_ms": [
+          597.247716,
+          478.575899,
+          439.674581,
+          519.130309,
+          507.211102
+        ]
+      },
+      "label": "mixed-broad",
+      "query": "cafe synthetic",
+      "result_sha256": "34eecdf6874bcc07ac2c44eda99cdce85fa1f65025e39fbed0fb88c02891248d"
+    },
+    {
+      "all_six_pairs_exact": true,
+      "baseline": {
+        "maximum_ms": 0.908857,
+        "median_ms": 0.351837,
+        "minimum_ms": 0.184888,
+        "samples_ms": [
+          0.184888,
+          0.908857,
+          0.328435,
+          0.378453,
+          0.351837
+        ]
+      },
+      "candidate": {
+        "maximum_ms": 0.368456,
+        "median_ms": 0.235452,
+        "minimum_ms": 0.15085,
+        "samples_ms": [
+          0.211641,
+          0.235452,
+          0.15085,
+          0.368456,
+          0.252086
+        ]
+      },
+      "label": "absent",
+      "query": "zzzznotpresentzzzz",
+      "result_sha256": "722ccd8f18ddbe436fd4a312cb49c22291c3c421640fd1c02cfb47c7ab6536c2"
+    }
+  ],
+  "scope": "finite lexical behavior only; no semantic or lifetime qualification",
+  "scopes": 1,
+  "source_sha256_after": {
+    "baseline": "3bf7561d194e19cc32a6ab4377ca4656aea86800ce6d026fd0a291ab18ec47c1",
+    "candidate": "3e701337c26bfad404bb98c882bfe0638efb88b826576b9725e6be715c428f3c",
+    "harness": "233df540dd4455e397fbcdd6644ac617020fe346cdcc766ebb777f06a23db796"
+  },
+  "source_sha256_before": {
+    "baseline": "3bf7561d194e19cc32a6ab4377ca4656aea86800ce6d026fd0a291ab18ec47c1",
+    "candidate": "3e701337c26bfad404bb98c882bfe0638efb88b826576b9725e6be715c428f3c",
+    "harness": "233df540dd4455e397fbcdd6644ac617020fe346cdcc766ebb777f06a23db796"
+  },
+  "sqlite": "3.53.1",
+  "unicode_sources": 5000,
+  "wall_seconds": 70.20151414698921,
+  "warmups": 1
+}

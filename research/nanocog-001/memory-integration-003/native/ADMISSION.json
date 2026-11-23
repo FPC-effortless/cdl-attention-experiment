@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "assets": [
+    {
+      "asset": "test_kit",
+      "archive_sha256": "baef6a83f86ebc7cf934699bb7eba8bb92dc1810eb2533493276452e5417587e",
+      "archive_bytes": 3731308,
+      "manifest_sha256": "b1b80e3197913868b5713b0e7b16fbb68c75ed059bad7df8d196fd9f1d2509ac",
+      "manifest_files_verified": 10,
+      "verified_file_bytes": 4078630,
+      "status": "PASS"
+    },
+    {
+      "asset": "research",
+      "archive_sha256": "8fbcf903e724de6cce41a16e6f37ce89f6fe428f20aef5776fa758e09695bb92",
+      "archive_bytes": 143417214,
+      "manifest_sha256": "486d9a1be9399e61a58976f3fd401d17f4f6b65a78d7cbbbb9f0b32bda40e5a2",
+      "manifest_files_verified": 218,
+      "verified_file_bytes": 162980356,
+      "status": "PASS"
+    }
+  ],
+  "checkpoint_loading": "torch.load(weights_only=True), strict state_dict, fixed architecture and tokenizer; see validate_native.py and learned/runner.py",
+  "privacy": "Original model weights and corpus remain outside public git."
+}

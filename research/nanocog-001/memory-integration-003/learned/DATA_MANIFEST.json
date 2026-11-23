@@ -1,0 +1,124 @@
+{
+  "corpus_sha256": "01901d188130e37a087e75bae1591a4b2dd7faaf1fc081b700eb485ebb8113d7",
+  "data_seed": 823197,
+  "family_counts": {
+    "dev": 128,
+    "familiar_test": 256,
+    "fresh_test": 256,
+    "train": 512
+  },
+  "fresh_syntax": [
+    "fresh_passive_delivery",
+    "fresh_status_front",
+    "fresh_retention_contrast",
+    "fresh_destination_first"
+  ],
+  "history_lengths": [
+    8,
+    24,
+    64
+  ],
+  "lineage_hashes": {
+    "dev": "d21bff5290dd83313133830c0d5f855b3359946e45b64a36db807a620a7adbab",
+    "familiar_test": "5d2f7fec1be8d5bc5d07859ef043947d79768e8a9f55cddaead7cb7a8841bb7c",
+    "fresh_test": "007570c2cfe51058729824e797fa34ecf2dd15dcec17363dd1298e620d147662",
+    "train": "fbb84d33af0a2e325ba2da20c3d6d2cc11ba888d039357067e757793a7e913fd"
+  },
+  "schema": 1,
+  "source_hashes": {
+    "research/nanocog-001/memory-integration-003/learned/PROTOCOL.md": "055a67a13c83a83abf191966722c422887ec0ea0a8f1a7b8d1afdc9d24a67495",
+    "research/nanocog-001/memory-integration-003/learned/dataset.py": "1a0059eab977e8e22f61aa981aa0c824e4d1f243d6a5da98b569e9d061aa1f61",
+    "research/nanocog-001/nanocog/memory/learned_archive.py": "49b5063d9add7ccebdd91dc0509e41994285c86cee8037d37fac65d17ad57aba"
+  },
+  "split_hashes": {
+    "candidate_train": "458dfa747aedebecf970d9fdf2b032f2b397fb6466523800b4afd0d48d72b20f",
+    "control_train": "108df0661b62ecc50cc86387c2dc40deec7fa8989376b1eeb139de90cb65409c",
+    "dev": "fff09fe5b2f4ef01fe7773cc387453db4f08dc680d61a3f1d05e1f2470ff020b",
+    "familiar_test": "64d9b2ec687393e646f465e2688d8ddabc40466f13d0bdd00194dfe2109c58e8",
+    "fresh_test": "559eed7daf143bb2efb4d2072754605ddf0139924b487a6d0940749a437e8987"
+  },
+  "syntax": {
+    "canonical": {
+      "item_init": "The {item} is in the {box}.",
+      "item_noop": "{actor} did not put the {item} in the {box}.",
+      "item_write": "{actor} put the {item} in the {box}.",
+      "owner_init": "{owner} holds the {box}.",
+      "owner_noop": "{source} did not give the {box} to {owner}.",
+      "owner_write": "{source} gave the {box} to {owner}.",
+      "query_box": "Who holds the {box}?",
+      "query_item": "Who holds the box with the {item}?"
+    },
+    "fresh_destination_first": {
+      "item_init": "The {box} is where the {item} can be found.",
+      "item_noop": "Into the {box} the {item} did not go when {actor} tried to move it.",
+      "item_write": "Into the {box} went the {item} when {actor} moved it.",
+      "owner_init": "{owner} is responsible for holding the {box}.",
+      "owner_noop": "To {owner} from {source}: the {box} did not change hands.",
+      "owner_write": "To {owner} from {source}: the {box} changed hands.",
+      "query_box": "Give the name of the person with the {box}.",
+      "query_item": "Give the name of the person with the box around the {item}."
+    },
+    "fresh_passive_delivery": {
+      "item_init": "The {item} is contained by the {box}.",
+      "item_noop": "Into the {box}, the {item} was not deposited by {actor}.",
+      "item_write": "Into the {box}, the {item} was deposited by {actor}.",
+      "owner_init": "The {box} is held by {owner}.",
+      "owner_noop": "From {source}, the {box} was not delivered to {owner}.",
+      "owner_write": "From {source}, the {box} was delivered to {owner}.",
+      "query_box": "By whom is the {box} held?",
+      "query_item": "By whom is the container holding the {item} owned?"
+    },
+    "fresh_retention_contrast": {
+      "item_init": "The {item} rests within the {box}.",
+      "item_noop": "{actor} abandoned moving the {item}; its intended destination was the {box}.",
+      "item_write": "{actor} finished moving the {item}; its destination was the {box}.",
+      "owner_init": "Possession of the {box} rests with {owner}.",
+      "owner_noop": "{source} retained the {box}; {owner} took no possession.",
+      "owner_write": "{source} released the {box}; {owner} took possession.",
+      "query_box": "Who has possession of the {box}?",
+      "query_item": "Who has possession of the box containing the {item}?"
+    },
+    "fresh_status_front": {
+      "item_init": "Current container of the {item}: the {box}.",
+      "item_noop": "Aborted placement: {actor} moved the {item} into the {box}.",
+      "item_write": "Successful placement: {actor} moved the {item} into the {box}.",
+      "owner_init": "Current holder of the {box}: {owner}.",
+      "owner_noop": "Aborted transfer: {source} to {owner}, carrying the {box}.",
+      "owner_write": "Successful transfer: {source} to {owner}, carrying the {box}.",
+      "query_box": "Identify the current holder of the {box}.",
+      "query_item": "Identify the current holder of the container with the {item}."
+    },
+    "matched_completion": {
+      "item_init": "The location of the {item} is the {box}.",
+      "item_noop": "{actor}'s placement of the {item} in the {box} was cancelled.",
+      "item_write": "{actor}'s placement of the {item} in the {box} was completed.",
+      "owner_init": "For the {box}, the owner is {owner}.",
+      "owner_noop": "The handover of the {box} from {source} to {owner} was cancelled.",
+      "owner_write": "The handover of the {box} from {source} to {owner} was completed.",
+      "query_box": "Which person owns the {box}?",
+      "query_item": "Which person owns the container that contains the {item}?"
+    },
+    "matched_recipient": {
+      "item_init": "Inside the {box} is the {item}.",
+      "item_noop": "The {item} never went into the {box}, despite {actor}'s plan.",
+      "item_write": "The {item} went into the {box}, placed by {actor}.",
+      "owner_init": "The {box} belongs to {owner}.",
+      "owner_noop": "{owner} never received the {box} from {source}.",
+      "owner_write": "{owner} received the {box} from {source}.",
+      "query_box": "Name the owner of the {box}.",
+      "query_item": "Name the owner of the container of the {item}."
+    }
+  },
+  "train_syntax": [
+    "canonical",
+    "matched_recipient",
+    "matched_completion"
+  ],
+  "unique_texts": {
+    "candidate_train": 2278,
+    "control_train": 760,
+    "dev": 745,
+    "familiar_test": 759,
+    "fresh_test": 2602
+  }
+}

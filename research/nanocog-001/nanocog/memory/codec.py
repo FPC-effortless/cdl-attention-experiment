@@ -45,17 +45,28 @@ _CLASSES = {
 }
 
 
-def tensor_bytes(tensor):
-    """Canonical bytes on supported little-endian hosts, with no pickle path."""
+def _tensor_buffer(tensor, *, check_finite=True):
+    """Canonical byte view, retained by its private array/tensor ownership chain.
+
+    The identity checker can omit a repeated finite scan only when it compares
+    the complete resulting digest to an identity whose finiteness was validated.
+    Serialization always uses the finite-checked public ``tensor_bytes`` path.
+    """
     if sys.byteorder != "little":
         raise CodecError("the v1 tensor format requires a little-endian host")
     if type(tensor) is not torch.Tensor or tensor.layout != torch.strided:
         raise CodecError("only ordinary dense tensors are supported")
     if str(tensor.dtype).removeprefix("torch.") not in _DTYPES:
         raise CodecError("unsupported tensor dtype")
-    if tensor.is_floating_point() and not torch.isfinite(tensor).all().item():
+    if check_finite and tensor.is_floating_point() and not torch.isfinite(tensor).all().item():
         raise CodecError("nonfinite tensor")
-    return tensor.detach().to("cpu").contiguous().reshape(-1).view(torch.uint8).numpy().tobytes()
+    array = tensor.detach().to("cpu").contiguous().reshape(-1).view(torch.uint8).numpy()
+    return memoryview(array).cast("B")
+
+
+def tensor_bytes(tensor):
+    """Canonical owned bytes on little-endian hosts, with no pickle path."""
+    return _tensor_buffer(tensor).tobytes()
 
 
 class _Budget:

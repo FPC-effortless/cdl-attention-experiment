@@ -11,13 +11,23 @@ chat turns through `MemorySession`, or its reference decoder calls through
 chat service, supply a trained language model, or make the experimental writer
 and event selector accurate.
 
-The archive and native decoder are separate interfaces. `MemorySession` passes
-retrieved records to the host's response callback; `PersistentDecoder` consumes
-only the tokens the host supplies. There is no built-in learned writer or
-automatic archive-to-native-decoder bridge. In the expanded validation, changing
-an accepted ledger value while holding decoder tokens fixed changed no logits.
-Cross-chat factual use by a trained model therefore remains unqualified; see
-[the measured integration boundary](../../memory-validation-002/decoder/REPORT.md).
+The archive and reference decoder remain separate interfaces. `MemorySession`
+passes retrieved records to the host's response callback; `PersistentDecoder`
+consumes only the tokens the host supplies. In the expanded validation, changing
+an accepted ledger value while holding reference-decoder tokens fixed changed no
+logits; see [that measured boundary](../../memory-validation-002/decoder/REPORT.md).
+
+`learned_archive.FactualMemory` now adds a separately opted-in experimental
+factual interface over the user's frozen COG_CONNECTED_1M model. Its learned
+writer and query/answer heads consume native post-board features and connect to
+the accepted archive. It supports a declared eight-record categorical schema,
+not arbitrary conversation facts or general language generation. All three head
+seeds passed 256/256 familiar complete-history counterfactual test pairs and
+scored 0/256 on fresh wording, in both matched training recipes. This mode is
+**not qualified for automatic factual interpretation of unfamiliar text**.
+The native language model weights and outputs remain unchanged. Full scope,
+methods and retained failures are in
+[MEMORY-INTEGRATION-003](../../memory-integration-003/RESULT.md).
 
 ## What is stored
 
@@ -100,6 +110,13 @@ search work. The measured correctness/performance tradeoff is in
 [MEMORY-VALIDATION-002](../../memory-validation-002/RESULT.md).
 This is lexical retrieval, not a trained relevance model or demonstrated
 constant-time access to a lifetime archive.
+
+The exact lexical fast path added in MEMORY-INTEGRATION-003 preserves the same
+ranked results while avoiding redundant ASCII normalization. The stronger 50k
+single-scope paired workload measured broad recall at about 520 ms versus
+1,066 ms before; Unicode-only cost barely changed. See the
+[retrieval report](../../memory-integration-003/retrieval/RESULT.md) for content,
+scope and filesystem boundaries. Output length still does not bound search work.
 
 The host must reuse the request ID for retries. A committed response is returned
 without running the callback again. If computation fails, the saved input

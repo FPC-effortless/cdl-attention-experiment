@@ -1,0 +1,3939 @@
+{
+  "checkpoint": "candidate-17.pt",
+  "checkpoint_sha256": "44ce15813edb9e1fc40cf8ef85ce23927a27be088b75e056f1c56623ee43dd4d",
+  "selection": "prespecified candidate seed17; no best-seed selection",
+  "model_identity": "49185a08b2b07c35c2b9999aa5205566776efb209ad814595c405eda64d38da1",
+  "causal": {
+    "scope": "correct accepted ledger supplied; writer excluded",
+    "groups": {
+      "canonical": {
+        "cases": 8,
+        "correct_routes": 8,
+        "relevant_owner_pairs": 8,
+        "irrelevant_invariants": 8,
+        "irrelevant_readset_invariants": 8,
+        "relevant_link_pairs": 4,
+        "link_cases": 4
+      },
+      "matched_recipient": {
+        "cases": 8,
+        "correct_routes": 8,
+        "relevant_owner_pairs": 8,
+        "irrelevant_invariants": 8,
+        "irrelevant_readset_invariants": 8,
+        "relevant_link_pairs": 4,
+        "link_cases": 4
+      },
+      "matched_completion": {
+        "cases": 8,
+        "correct_routes": 8,
+        "relevant_owner_pairs": 8,
+        "irrelevant_invariants": 8,
+        "irrelevant_readset_invariants": 8,
+        "relevant_link_pairs": 4,
+        "link_cases": 4
+      },
+      "fresh_passive_delivery": {
+        "cases": 8,
+        "correct_routes": 5,
+        "relevant_owner_pairs": 5,
+        "irrelevant_invariants": 7,
+        "irrelevant_readset_invariants": 7,
+        "relevant_link_pairs": 1,
+        "link_cases": 4
+      },
+      "fresh_status_front": {
+        "cases": 8,
+        "correct_routes": 8,
+        "relevant_owner_pairs": 8,
+        "irrelevant_invariants": 8,
+        "irrelevant_readset_invariants": 8,
+        "relevant_link_pairs": 4,
+        "link_cases": 4
+      },
+      "fresh_retention_contrast": {
+        "cases": 8,
+        "correct_routes": 8,
+        "relevant_owner_pairs": 8,
+        "irrelevant_invariants": 8,
+        "irrelevant_readset_invariants": 8,
+        "relevant_link_pairs": 4,
+        "link_cases": 4
+      },
+      "fresh_destination_first": {
+        "cases": 8,
+        "correct_routes": 8,
+        "relevant_owner_pairs": 8,
+        "irrelevant_invariants": 8,
+        "irrelevant_readset_invariants": 8,
+        "relevant_link_pairs": 4,
+        "link_cases": 4
+      }
+    },
+    "cases": [
+      {
+        "syntax": "canonical",
+        "route": 0,
+        "query": "Who holds the chest?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Amara",
+          "answer_index": 0,
+          "route": 0,
+          "read_value": 0,
+          "dependencies": {
+            "cog-factual:holder:chest": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 77.47053400089499
+        },
+        "relevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 0,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 34.26193899940699
+        },
+        "irrelevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 0,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 30.093674999079667
+        }
+      },
+      {
+        "syntax": "canonical",
+        "route": 1,
+        "query": "Who holds the crate?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Bela",
+          "answer_index": 1,
+          "route": 1,
+          "read_value": 1,
+          "dependencies": {
+            "cog-factual:holder:crate": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 22.148834003019147
+        },
+        "relevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 1,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 21.26201799546834
+        },
+        "irrelevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 1,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 21.855290004168637
+        }
+      },
+      {
+        "syntax": "canonical",
+        "route": 2,
+        "query": "Who holds the basket?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Cato",
+          "answer_index": 2,
+          "route": 2,
+          "read_value": 2,
+          "dependencies": {
+            "cog-factual:holder:basket": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 18.861673001083545
+        },
+        "relevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 2,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 29.510211999877356
+        },
+        "irrelevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 2,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 20.27758798794821
+        }
+      },
+      {
+        "syntax": "canonical",
+        "route": 3,
+        "query": "Who holds the trunk?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 3,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 21.138707001227885
+        },
+        "relevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 3,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 23.494240012951195
+        },
+        "irrelevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 3,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 18.67800699255895
+        }
+      },
+      {
+        "syntax": "canonical",
+        "route": 4,
+        "query": "Who holds the box with the coin?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Amara",
+          "answer_index": 0,
+          "route": 4,
+          "read_value": 0,
+          "dependencies": {
+            "cog-factual:container:coin": 1,
+            "cog-factual:holder:chest": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 21.1415770027088
+        },
+        "relevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 4,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:container:coin": 1,
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 28.11673399992287
+        },
+        "irrelevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 4,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:container:coin": 1,
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 28.781020009773783
+        },
+        "linked": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 4,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:container:coin": 2,
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 26.11057600006461
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "canonical",
+        "route": 5,
+        "query": "Who holds the box with the ring?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Bela",
+          "answer_index": 1,
+          "route": 5,
+          "read_value": 1,
+          "dependencies": {
+            "cog-factual:container:ring": 1,
+            "cog-factual:holder:crate": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 21.953435003524646
+        },
+        "relevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 5,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:container:ring": 1,
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 21.48296700033825
+        },
+        "irrelevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 5,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:container:ring": 1,
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 27.64927499811165
+        },
+        "linked": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 5,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:container:ring": 2,
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 25.540048009133898
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "canonical",
+        "route": 6,
+        "query": "Who holds the box with the watch?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Cato",
+          "answer_index": 2,
+          "route": 6,
+          "read_value": 2,
+          "dependencies": {
+            "cog-factual:container:watch": 1,
+            "cog-factual:holder:basket": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 20.35778200661298
+        },
+        "relevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 6,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:container:watch": 1,
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 21.58292398962658
+        },
+        "irrelevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 6,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:container:watch": 1,
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 25.172690002364106
+        },
+        "linked": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 6,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:watch": 2,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 22.339495000778697
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "canonical",
+        "route": 7,
+        "query": "Who holds the box with the key?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 7,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 32.12756499124225
+        },
+        "relevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 7,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 20.90492100978736
+        },
+        "irrelevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 7,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 21.16485999431461
+        },
+        "linked": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 7,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:container:key": 2,
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 39.27112200472038
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "matched_recipient",
+        "route": 0,
+        "query": "Name the owner of the chest.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Amara",
+          "answer_index": 0,
+          "route": 0,
+          "read_value": 0,
+          "dependencies": {
+            "cog-factual:holder:chest": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 17.23230700008571
+        },
+        "relevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 0,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 26.173474005190656
+        },
+        "irrelevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 0,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 26.873849987168796
+        }
+      },
+      {
+        "syntax": "matched_recipient",
+        "route": 1,
+        "query": "Name the owner of the crate.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Bela",
+          "answer_index": 1,
+          "route": 1,
+          "read_value": 1,
+          "dependencies": {
+            "cog-factual:holder:crate": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 25.202620003256015
+        },
+        "relevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 1,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 21.010743992519565
+        },
+        "irrelevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 1,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 21.015239995904267
+        }
+      },
+      {
+        "syntax": "matched_recipient",
+        "route": 2,
+        "query": "Name the owner of the basket.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Cato",
+          "answer_index": 2,
+          "route": 2,
+          "read_value": 2,
+          "dependencies": {
+            "cog-factual:holder:basket": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 21.220904993242584
+        },
+        "relevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 2,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 19.36204500088934
+        },
+        "irrelevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 2,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 24.74659399013035
+        }
+      },
+      {
+        "syntax": "matched_recipient",
+        "route": 3,
+        "query": "Name the owner of the trunk.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 3,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 20.14822199998889
+        },
+        "relevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 3,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 23.78685600706376
+        },
+        "irrelevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 3,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 27.71696899435483
+        }
+      },
+      {
+        "syntax": "matched_recipient",
+        "route": 4,
+        "query": "Name the owner of the container of the coin.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Amara",
+          "answer_index": 0,
+          "route": 4,
+          "read_value": 0,
+          "dependencies": {
+            "cog-factual:container:coin": 1,
+            "cog-factual:holder:chest": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 26.15219600556884
+        },
+        "relevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 4,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:container:coin": 1,
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 26.68608899693936
+        },
+        "irrelevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 4,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:container:coin": 1,
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 26.13612500135787
+        },
+        "linked": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 4,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:container:coin": 2,
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 22.614193992922083
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "matched_recipient",
+        "route": 5,
+        "query": "Name the owner of the container of the ring.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Bela",
+          "answer_index": 1,
+          "route": 5,
+          "read_value": 1,
+          "dependencies": {
+            "cog-factual:container:ring": 1,
+            "cog-factual:holder:crate": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 24.07872601179406
+        },
+        "relevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 5,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:container:ring": 1,
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 23.46640899486374
+        },
+        "irrelevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 5,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:container:ring": 1,
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 26.892606998444535
+        },
+        "linked": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 5,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:container:ring": 2,
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 27.084916000603698
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "matched_recipient",
+        "route": 6,
+        "query": "Name the owner of the container of the watch.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Cato",
+          "answer_index": 2,
+          "route": 6,
+          "read_value": 2,
+          "dependencies": {
+            "cog-factual:container:watch": 1,
+            "cog-factual:holder:basket": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 25.19745400059037
+        },
+        "relevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 6,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:container:watch": 1,
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 26.47654799511656
+        },
+        "irrelevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 6,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:container:watch": 1,
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 24.268808992928825
+        },
+        "linked": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 6,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:watch": 2,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 32.666819999576546
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "matched_recipient",
+        "route": 7,
+        "query": "Name the owner of the container of the key.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 7,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 25.243431009585038
+        },
+        "relevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 7,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 21.566555995377712
+        },
+        "irrelevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 7,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 25.449707012739964
+        },
+        "linked": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 7,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:container:key": 2,
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 26.62661499925889
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "matched_completion",
+        "route": 0,
+        "query": "Which person owns the chest?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Amara",
+          "answer_index": 0,
+          "route": 0,
+          "read_value": 0,
+          "dependencies": {
+            "cog-factual:holder:chest": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 18.920244998298585
+        },
+        "relevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 0,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 22.726643990608864
+        },
+        "irrelevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 0,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 27.43054399616085
+        }
+      },
+      {
+        "syntax": "matched_completion",
+        "route": 1,
+        "query": "Which person owns the crate?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Bela",
+          "answer_index": 1,
+          "route": 1,
+          "read_value": 1,
+          "dependencies": {
+            "cog-factual:holder:crate": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 21.10851999896113
+        },
+        "relevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 1,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 21.870006996323355
+        },
+        "irrelevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 1,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 23.105606000171974
+        }
+      },
+      {
+        "syntax": "matched_completion",
+        "route": 2,
+        "query": "Which person owns the basket?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Cato",
+          "answer_index": 2,
+          "route": 2,
+          "read_value": 2,
+          "dependencies": {
+            "cog-factual:holder:basket": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 19.908985996153206
+        },
+        "relevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 2,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 22.72066500154324
+        },
+        "irrelevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 2,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 24.280700003146194
+        }
+      },
+      {
+        "syntax": "matched_completion",
+        "route": 3,
+        "query": "Which person owns the trunk?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 3,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 19.328869006130844
+        },
+        "relevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 3,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 23.518035013694316
+        },
+        "irrelevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 3,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 23.109084999305196
+        }
+      },
+      {
+        "syntax": "matched_completion",
+        "route": 4,
+        "query": "Which person owns the container that contains the coin?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Amara",
+          "answer_index": 0,
+          "route": 4,
+          "read_value": 0,
+          "dependencies": {
+            "cog-factual:container:coin": 1,
+            "cog-factual:holder:chest": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 25.124040999799035
+        },
+        "relevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 4,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:container:coin": 1,
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 28.066247003152966
+        },
+        "irrelevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 4,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:container:coin": 1,
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 25.597404994186945
+        },
+        "linked": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 4,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:container:coin": 2,
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 24.376736997510307
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "matched_completion",
+        "route": 5,
+        "query": "Which person owns the container that contains the ring?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Bela",
+          "answer_index": 1,
+          "route": 5,
+          "read_value": 1,
+          "dependencies": {
+            "cog-factual:container:ring": 1,
+            "cog-factual:holder:crate": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 27.97408700280357
+        },
+        "relevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 5,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:container:ring": 1,
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 22.699414999806322
+        },
+        "irrelevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 5,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:container:ring": 1,
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 30.368718988029286
+        },
+        "linked": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 5,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:container:ring": 2,
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 53.83819200505968
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "matched_completion",
+        "route": 6,
+        "query": "Which person owns the container that contains the watch?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Cato",
+          "answer_index": 2,
+          "route": 6,
+          "read_value": 2,
+          "dependencies": {
+            "cog-factual:container:watch": 1,
+            "cog-factual:holder:basket": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 28.333080001175404
+        },
+        "relevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 6,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:container:watch": 1,
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 27.54517999710515
+        },
+        "irrelevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 6,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:container:watch": 1,
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 28.345992002869025
+        },
+        "linked": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 6,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:watch": 2,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 33.92314699885901
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "matched_completion",
+        "route": 7,
+        "query": "Which person owns the container that contains the key?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 7,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 27.807429010863416
+        },
+        "relevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 7,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 31.27245399809908
+        },
+        "irrelevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 7,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 25.249049998819828
+        },
+        "linked": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 7,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:container:key": 2,
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 21.884243993554264
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "fresh_passive_delivery",
+        "route": 0,
+        "query": "By whom is the chest held?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Amara",
+          "answer_index": 0,
+          "route": 0,
+          "read_value": 0,
+          "dependencies": {
+            "cog-factual:holder:chest": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 22.62404200155288
+        },
+        "relevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 0,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 20.16423299210146
+        },
+        "irrelevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 0,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 22.35767600359395
+        }
+      },
+      {
+        "syntax": "fresh_passive_delivery",
+        "route": 1,
+        "query": "By whom is the crate held?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Bela",
+          "answer_index": 1,
+          "route": 1,
+          "read_value": 1,
+          "dependencies": {
+            "cog-factual:holder:crate": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 21.529461999307387
+        },
+        "relevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 1,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 20.973006001440808
+        },
+        "irrelevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 1,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 24.25288599624764
+        }
+      },
+      {
+        "syntax": "fresh_passive_delivery",
+        "route": 2,
+        "query": "By whom is the basket held?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Cato",
+          "answer_index": 2,
+          "route": 2,
+          "read_value": 2,
+          "dependencies": {
+            "cog-factual:holder:basket": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 22.34653799678199
+        },
+        "relevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 2,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 24.938058995758183
+        },
+        "irrelevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 2,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 27.278886002022773
+        }
+      },
+      {
+        "syntax": "fresh_passive_delivery",
+        "route": 3,
+        "query": "By whom is the trunk held?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 3,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 23.688130007940345
+        },
+        "relevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 3,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 27.366873997380026
+        },
+        "irrelevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 3,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 23.74561200849712
+        }
+      },
+      {
+        "syntax": "fresh_passive_delivery",
+        "route": 4,
+        "query": "By whom is the container holding the coin owned?",
+        "correct_initial_route": false,
+        "relevant_owner_pair_correct": false,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 7,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 39.65695499209687
+        },
+        "relevant": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 7,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 26.599296994390897
+        },
+        "irrelevant": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 7,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 25.947381000150926
+        },
+        "linked": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 7,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 27.700539998477325
+        },
+        "relevant_link_pair_correct": false
+      },
+      {
+        "syntax": "fresh_passive_delivery",
+        "route": 5,
+        "query": "By whom is the container holding the ring owned?",
+        "correct_initial_route": false,
+        "relevant_owner_pair_correct": false,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 7,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 26.74701299110893
+        },
+        "relevant": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 7,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 38.04979000415187
+        },
+        "irrelevant": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 7,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 32.806275004986674
+        },
+        "linked": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 7,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 25.164267004583962
+        },
+        "relevant_link_pair_correct": false
+      },
+      {
+        "syntax": "fresh_passive_delivery",
+        "route": 6,
+        "query": "By whom is the container holding the watch owned?",
+        "correct_initial_route": false,
+        "relevant_owner_pair_correct": false,
+        "irrelevant_answer_invariant": false,
+        "irrelevant_readset_invariant": false,
+        "before": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 7,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 32.1200710022822
+        },
+        "relevant": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 7,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 25.335042999358848
+        },
+        "irrelevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 7,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 26.28411099431105
+        },
+        "linked": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 7,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 27.77929299918469
+        },
+        "relevant_link_pair_correct": false
+      },
+      {
+        "syntax": "fresh_passive_delivery",
+        "route": 7,
+        "query": "By whom is the container holding the key owned?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 7,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 29.436993005219847
+        },
+        "relevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 7,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 27.63471800426487
+        },
+        "irrelevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 7,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 25.15719000075478
+        },
+        "linked": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 7,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:container:key": 2,
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 28.081718992325477
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "fresh_status_front",
+        "route": 0,
+        "query": "Identify the current holder of the chest.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Amara",
+          "answer_index": 0,
+          "route": 0,
+          "read_value": 0,
+          "dependencies": {
+            "cog-factual:holder:chest": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 25.092385010793805
+        },
+        "relevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 0,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 23.19910300138872
+        },
+        "irrelevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 0,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 24.745761998929083
+        }
+      },
+      {
+        "syntax": "fresh_status_front",
+        "route": 1,
+        "query": "Identify the current holder of the crate.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Bela",
+          "answer_index": 1,
+          "route": 1,
+          "read_value": 1,
+          "dependencies": {
+            "cog-factual:holder:crate": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 23.448891006410122
+        },
+        "relevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 1,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 22.900127005414106
+        },
+        "irrelevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 1,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 26.31229099642951
+        }
+      },
+      {
+        "syntax": "fresh_status_front",
+        "route": 2,
+        "query": "Identify the current holder of the basket.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Cato",
+          "answer_index": 2,
+          "route": 2,
+          "read_value": 2,
+          "dependencies": {
+            "cog-factual:holder:basket": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 22.436811006627977
+        },
+        "relevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 2,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 26.318051997805014
+        },
+        "irrelevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 2,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 24.936467001680285
+        }
+      },
+      {
+        "syntax": "fresh_status_front",
+        "route": 3,
+        "query": "Identify the current holder of the trunk.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 3,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 33.77109199936967
+        },
+        "relevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 3,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 28.980385992326774
+        },
+        "irrelevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 3,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 24.385730997892097
+        }
+      },
+      {
+        "syntax": "fresh_status_front",
+        "route": 4,
+        "query": "Identify the current holder of the container with the coin.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Amara",
+          "answer_index": 0,
+          "route": 4,
+          "read_value": 0,
+          "dependencies": {
+            "cog-factual:container:coin": 1,
+            "cog-factual:holder:chest": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 36.56855199369602
+        },
+        "relevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 4,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:container:coin": 1,
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 30.393096996704116
+        },
+        "irrelevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 4,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:container:coin": 1,
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 32.17873099492863
+        },
+        "linked": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 4,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:container:coin": 2,
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 28.24650199909229
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "fresh_status_front",
+        "route": 5,
+        "query": "Identify the current holder of the container with the ring.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Bela",
+          "answer_index": 1,
+          "route": 5,
+          "read_value": 1,
+          "dependencies": {
+            "cog-factual:container:ring": 1,
+            "cog-factual:holder:crate": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 30.879199999617413
+        },
+        "relevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 5,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:container:ring": 1,
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 36.78934300842229
+        },
+        "irrelevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 5,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:container:ring": 1,
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 29.32196599431336
+        },
+        "linked": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 5,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:container:ring": 2,
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 31.340542001998983
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "fresh_status_front",
+        "route": 6,
+        "query": "Identify the current holder of the container with the watch.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Cato",
+          "answer_index": 2,
+          "route": 6,
+          "read_value": 2,
+          "dependencies": {
+            "cog-factual:container:watch": 1,
+            "cog-factual:holder:basket": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 30.384979996597394
+        },
+        "relevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 6,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:container:watch": 1,
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 33.646096009761095
+        },
+        "irrelevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 6,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:container:watch": 1,
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 27.5530459912261
+        },
+        "linked": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 6,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:watch": 2,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 29.513831992517225
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "fresh_status_front",
+        "route": 7,
+        "query": "Identify the current holder of the container with the key.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 7,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 25.767789004021324
+        },
+        "relevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 7,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 26.175446007982828
+        },
+        "irrelevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 7,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 26.501062005991116
+        },
+        "linked": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 7,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:container:key": 2,
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 32.32911499799229
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "fresh_retention_contrast",
+        "route": 0,
+        "query": "Who has possession of the chest?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Amara",
+          "answer_index": 0,
+          "route": 0,
+          "read_value": 0,
+          "dependencies": {
+            "cog-factual:holder:chest": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 20.88182199804578
+        },
+        "relevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 0,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 35.135844998876564
+        },
+        "irrelevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 0,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 33.76943100010976
+        }
+      },
+      {
+        "syntax": "fresh_retention_contrast",
+        "route": 1,
+        "query": "Who has possession of the crate?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Bela",
+          "answer_index": 1,
+          "route": 1,
+          "read_value": 1,
+          "dependencies": {
+            "cog-factual:holder:crate": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 22.097456007031724
+        },
+        "relevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 1,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 26.52601498994045
+        },
+        "irrelevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 1,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 33.18380800192244
+        }
+      },
+      {
+        "syntax": "fresh_retention_contrast",
+        "route": 2,
+        "query": "Who has possession of the basket?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Cato",
+          "answer_index": 2,
+          "route": 2,
+          "read_value": 2,
+          "dependencies": {
+            "cog-factual:holder:basket": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 24.827488989103585
+        },
+        "relevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 2,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 22.874691989272833
+        },
+        "irrelevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 2,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 28.35504499671515
+        }
+      },
+      {
+        "syntax": "fresh_retention_contrast",
+        "route": 3,
+        "query": "Who has possession of the trunk?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 3,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 30.607356005930342
+        },
+        "relevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 3,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 24.251729002571665
+        },
+        "irrelevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 3,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 28.05276701110415
+        }
+      },
+      {
+        "syntax": "fresh_retention_contrast",
+        "route": 4,
+        "query": "Who has possession of the box containing the coin?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Amara",
+          "answer_index": 0,
+          "route": 4,
+          "read_value": 0,
+          "dependencies": {
+            "cog-factual:container:coin": 1,
+            "cog-factual:holder:chest": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 29.979475002619438
+        },
+        "relevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 4,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:container:coin": 1,
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 31.920470006298274
+        },
+        "irrelevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 4,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:container:coin": 1,
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 51.299012993695214
+        },
+        "linked": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 4,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:container:coin": 2,
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 46.27205801079981
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "fresh_retention_contrast",
+        "route": 5,
+        "query": "Who has possession of the box containing the ring?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Bela",
+          "answer_index": 1,
+          "route": 5,
+          "read_value": 1,
+          "dependencies": {
+            "cog-factual:container:ring": 1,
+            "cog-factual:holder:crate": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 31.87707999313716
+        },
+        "relevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 5,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:container:ring": 1,
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 50.33404999994673
+        },
+        "irrelevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 5,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:container:ring": 1,
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 68.24764500197489
+        },
+        "linked": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 5,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:container:ring": 2,
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 64.7693039936712
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "fresh_retention_contrast",
+        "route": 6,
+        "query": "Who has possession of the box containing the watch?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Cato",
+          "answer_index": 2,
+          "route": 6,
+          "read_value": 2,
+          "dependencies": {
+            "cog-factual:container:watch": 1,
+            "cog-factual:holder:basket": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 61.20353500591591
+        },
+        "relevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 6,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:container:watch": 1,
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 72.93243298772722
+        },
+        "irrelevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 6,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:container:watch": 1,
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 70.13715300126933
+        },
+        "linked": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 6,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:watch": 2,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 81.90497101168148
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "fresh_retention_contrast",
+        "route": 7,
+        "query": "Who has possession of the box containing the key?",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 7,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 95.69972100143787
+        },
+        "relevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 7,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 93.29018800053746
+        },
+        "irrelevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 7,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 80.22660299320705
+        },
+        "linked": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 7,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:container:key": 2,
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 88.59041600953788
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "fresh_destination_first",
+        "route": 0,
+        "query": "Give the name of the person with the chest.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Amara",
+          "answer_index": 0,
+          "route": 0,
+          "read_value": 0,
+          "dependencies": {
+            "cog-factual:holder:chest": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 116.46487801044714
+        },
+        "relevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 0,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 104.51796698907856
+        },
+        "irrelevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 0,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 92.85433100012597
+        }
+      },
+      {
+        "syntax": "fresh_destination_first",
+        "route": 1,
+        "query": "Give the name of the person with the crate.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Bela",
+          "answer_index": 1,
+          "route": 1,
+          "read_value": 1,
+          "dependencies": {
+            "cog-factual:holder:crate": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 27.037313993787393
+        },
+        "relevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 1,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 23.583310001413338
+        },
+        "irrelevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 1,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 25.572047001332976
+        }
+      },
+      {
+        "syntax": "fresh_destination_first",
+        "route": 2,
+        "query": "Give the name of the person with the basket.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Cato",
+          "answer_index": 2,
+          "route": 2,
+          "read_value": 2,
+          "dependencies": {
+            "cog-factual:holder:basket": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 25.586878007743508
+        },
+        "relevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 2,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 36.289124996983446
+        },
+        "irrelevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 2,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 38.029411996831186
+        }
+      },
+      {
+        "syntax": "fresh_destination_first",
+        "route": 3,
+        "query": "Give the name of the person with the trunk.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 3,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 28.215404992806725
+        },
+        "relevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 3,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 26.236606994643807
+        },
+        "irrelevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 3,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 26.859864010475576
+        }
+      },
+      {
+        "syntax": "fresh_destination_first",
+        "route": 4,
+        "query": "Give the name of the person with the box around the coin.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Amara",
+          "answer_index": 0,
+          "route": 4,
+          "read_value": 0,
+          "dependencies": {
+            "cog-factual:container:coin": 1,
+            "cog-factual:holder:chest": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 57.56419101089705
+        },
+        "relevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 4,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:container:coin": 1,
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 26.671942992834374
+        },
+        "irrelevant": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 4,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:container:coin": 1,
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 29.613093996886164
+        },
+        "linked": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 4,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:container:coin": 2,
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 27.044247995945625
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "fresh_destination_first",
+        "route": 5,
+        "query": "Give the name of the person with the box around the ring.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Bela",
+          "answer_index": 1,
+          "route": 5,
+          "read_value": 1,
+          "dependencies": {
+            "cog-factual:container:ring": 1,
+            "cog-factual:holder:crate": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 30.14333099417854
+        },
+        "relevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 5,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:container:ring": 1,
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 28.96790399972815
+        },
+        "irrelevant": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 5,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:container:ring": 1,
+            "cog-factual:holder:crate": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 28.228971001226455
+        },
+        "linked": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 5,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:container:ring": 2,
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 54.390977005823515
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "fresh_destination_first",
+        "route": 6,
+        "query": "Give the name of the person with the box around the watch.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Cato",
+          "answer_index": 2,
+          "route": 6,
+          "read_value": 2,
+          "dependencies": {
+            "cog-factual:container:watch": 1,
+            "cog-factual:holder:basket": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 29.15377399767749
+        },
+        "relevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 6,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:container:watch": 1,
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 28.113690990721807
+        },
+        "irrelevant": {
+          "answer": "Gus",
+          "answer_index": 6,
+          "route": 6,
+          "read_value": 6,
+          "dependencies": {
+            "cog-factual:container:watch": 1,
+            "cog-factual:holder:basket": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 31.79338699555956
+        },
+        "linked": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 6,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:watch": 2,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 30.071172994212247
+        },
+        "relevant_link_pair_correct": true
+      },
+      {
+        "syntax": "fresh_destination_first",
+        "route": 7,
+        "query": "Give the name of the person with the box around the key.",
+        "correct_initial_route": true,
+        "relevant_owner_pair_correct": true,
+        "irrelevant_answer_invariant": true,
+        "irrelevant_readset_invariant": true,
+        "before": {
+          "answer": "Dina",
+          "answer_index": 3,
+          "route": 7,
+          "read_value": 3,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 1
+          },
+          "assistant_event_id": "factual:137fabba73df1151422948230d2517ba3bab3a08bec86990cf6eaf90f719588a:result",
+          "replayed": false,
+          "wall_ms": 33.04678499989677
+        },
+        "relevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 7,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:8ab509451fc15c15abe63cbd4a83289dc228fd6cd8bfd8bfeee1aac4796fd4d3:result",
+          "replayed": false,
+          "wall_ms": 30.330476991366595
+        },
+        "irrelevant": {
+          "answer": "Hana",
+          "answer_index": 7,
+          "route": 7,
+          "read_value": 7,
+          "dependencies": {
+            "cog-factual:container:key": 1,
+            "cog-factual:holder:trunk": 2
+          },
+          "assistant_event_id": "factual:cee03a7c0fb4e66f48acc7c49248d8d03881cebc1b00f12323297abd084a27db:result",
+          "replayed": false,
+          "wall_ms": 27.615740007604472
+        },
+        "linked": {
+          "answer": "Evan",
+          "answer_index": 4,
+          "route": 7,
+          "read_value": 4,
+          "dependencies": {
+            "cog-factual:container:key": 2,
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:4a87ee252b20da6151f775e1cf8be893ff76ca1eb402e726d06797a5b71e2bc8:result",
+          "replayed": false,
+          "wall_ms": 34.2080039990833
+        },
+        "relevant_link_pair_correct": true
+      }
+    ]
+  },
+  "manual_history_pair": {
+    "scope": "independent eight-event raw-text pair; not a statistical qualification set",
+    "strict_pair_correct": true,
+    "worlds": [
+      {
+        "name": "transfer",
+        "events": [
+          {
+            "index": 0,
+            "text": "Amara holds the chest.",
+            "expected_operation": 1,
+            "actual": {
+              "operation": 1,
+              "status": "written",
+              "decision_event_id": "factual:e2bafba8ad62418e0bca472bcfec87f12e1667292865ad9af1d16f8c65cbf9fc:result",
+              "fact": {
+                "key": "cog-factual:holder:chest",
+                "value": {
+                  "kind": "owner",
+                  "schema": "cog-factual-adapter-v1",
+                  "value": "Amara"
+                },
+                "revision": 1,
+                "source_event_id": "factual:e2bafba8ad62418e0bca472bcfec87f12e1667292865ad9af1d16f8c65cbf9fc:result",
+                "proposal_id": "factual:e2bafba8ad62418e0bca472bcfec87f12e1667292865ad9af1d16f8c65cbf9fc:proposal",
+                "authority": "learned-model-policy",
+                "changed_at": "2026-11-23T18:51:09.787918+00:00",
+                "deleted": false
+              },
+              "replayed": false
+            },
+            "correct_operation": true,
+            "complete_ledger_correct": true,
+            "expected_ledger": [
+              0,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12
+            ],
+            "actual_ledger": [
+              0,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12
+            ]
+          },
+          {
+            "index": 1,
+            "text": "Bela holds the crate.",
+            "expected_operation": 14,
+            "actual": {
+              "operation": 14,
+              "status": "written",
+              "decision_event_id": "factual:f18abc2b8fde07e3b15909f4493f8180c575920c46c54aec0bd772e97c5a2c27:result",
+              "fact": {
+                "key": "cog-factual:holder:crate",
+                "value": {
+                  "kind": "owner",
+                  "schema": "cog-factual-adapter-v1",
+                  "value": "Bela"
+                },
+                "revision": 1,
+                "source_event_id": "factual:f18abc2b8fde07e3b15909f4493f8180c575920c46c54aec0bd772e97c5a2c27:result",
+                "proposal_id": "factual:f18abc2b8fde07e3b15909f4493f8180c575920c46c54aec0bd772e97c5a2c27:proposal",
+                "authority": "learned-model-policy",
+                "changed_at": "2026-11-23T18:51:09.811492+00:00",
+                "deleted": false
+              },
+              "replayed": false
+            },
+            "correct_operation": true,
+            "complete_ledger_correct": true,
+            "expected_ledger": [
+              0,
+              1,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12
+            ],
+            "actual_ledger": [
+              0,
+              1,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12
+            ]
+          },
+          {
+            "index": 2,
+            "text": "Cato holds the basket.",
+            "expected_operation": 27,
+            "actual": {
+              "operation": 27,
+              "status": "written",
+              "decision_event_id": "factual:767da39327ee7c0899c45b06f91491316350789ca7e76ab66eb61e2f1eb0d65c:result",
+              "fact": {
+                "key": "cog-factual:holder:basket",
+                "value": {
+                  "kind": "owner",
+                  "schema": "cog-factual-adapter-v1",
+                  "value": "Cato"
+                },
+                "revision": 1,
+                "source_event_id": "factual:767da39327ee7c0899c45b06f91491316350789ca7e76ab66eb61e2f1eb0d65c:result",
+                "proposal_id": "factual:767da39327ee7c0899c45b06f91491316350789ca7e76ab66eb61e2f1eb0d65c:proposal",
+                "authority": "learned-model-policy",
+                "changed_at": "2026-11-23T18:51:09.836178+00:00",
+                "deleted": false
+              },
+              "replayed": false
+            },
+            "correct_operation": true,
+            "complete_ledger_correct": true,
+            "expected_ledger": [
+              0,
+              1,
+              2,
+              12,
+              12,
+              12,
+              12,
+              12
+            ],
+            "actual_ledger": [
+              0,
+              1,
+              2,
+              12,
+              12,
+              12,
+              12,
+              12
+            ]
+          },
+          {
+            "index": 3,
+            "text": "Dina holds the trunk.",
+            "expected_operation": 40,
+            "actual": {
+              "operation": 40,
+              "status": "written",
+              "decision_event_id": "factual:56698eee6861d82d6d6442deda05cd96d2d6fe92487088137ed065006b1c1ce5:result",
+              "fact": {
+                "key": "cog-factual:holder:trunk",
+                "value": {
+                  "kind": "owner",
+                  "schema": "cog-factual-adapter-v1",
+                  "value": "Dina"
+                },
+                "revision": 1,
+                "source_event_id": "factual:56698eee6861d82d6d6442deda05cd96d2d6fe92487088137ed065006b1c1ce5:result",
+                "proposal_id": "factual:56698eee6861d82d6d6442deda05cd96d2d6fe92487088137ed065006b1c1ce5:proposal",
+                "authority": "learned-model-policy",
+                "changed_at": "2026-11-23T18:51:09.857507+00:00",
+                "deleted": false
+              },
+              "replayed": false
+            },
+            "correct_operation": true,
+            "complete_ledger_correct": true,
+            "expected_ledger": [
+              0,
+              1,
+              2,
+              3,
+              12,
+              12,
+              12,
+              12
+            ],
+            "actual_ledger": [
+              0,
+              1,
+              2,
+              3,
+              12,
+              12,
+              12,
+              12
+            ]
+          },
+          {
+            "index": 4,
+            "text": "The coin is in the chest.",
+            "expected_operation": 57,
+            "actual": {
+              "operation": 57,
+              "status": "written",
+              "decision_event_id": "factual:3286fb1843f322bb8c4a6f57cf0d348b5d6d7195f7d9f3c2bb10b3a1d3079d13:result",
+              "fact": {
+                "key": "cog-factual:container:coin",
+                "value": {
+                  "kind": "box",
+                  "schema": "cog-factual-adapter-v1",
+                  "value": "chest"
+                },
+                "revision": 1,
+                "source_event_id": "factual:3286fb1843f322bb8c4a6f57cf0d348b5d6d7195f7d9f3c2bb10b3a1d3079d13:result",
+                "proposal_id": "factual:3286fb1843f322bb8c4a6f57cf0d348b5d6d7195f7d9f3c2bb10b3a1d3079d13:proposal",
+                "authority": "learned-model-policy",
+                "changed_at": "2026-11-23T18:51:09.880570+00:00",
+                "deleted": false
+              },
+              "replayed": false
+            },
+            "correct_operation": true,
+            "complete_ledger_correct": true,
+            "expected_ledger": [
+              0,
+              1,
+              2,
+              3,
+              8,
+              12,
+              12,
+              12
+            ],
+            "actual_ledger": [
+              0,
+              1,
+              2,
+              3,
+              8,
+              12,
+              12,
+              12
+            ]
+          },
+          {
+            "index": 5,
+            "text": "Evan did not put the ring in the basket.",
+            "expected_operation": 0,
+            "actual": {
+              "operation": 0,
+              "status": "noop",
+              "decision_event_id": "factual:d8522f36e97f54762f1e98923b40fd4e7631f4d10339785bd31da6606a39e2b7:result",
+              "fact": null,
+              "replayed": false
+            },
+            "correct_operation": true,
+            "complete_ledger_correct": true,
+            "expected_ledger": [
+              0,
+              1,
+              2,
+              3,
+              8,
+              12,
+              12,
+              12
+            ],
+            "actual_ledger": [
+              0,
+              1,
+              2,
+              3,
+              8,
+              12,
+              12,
+              12
+            ]
+          },
+          {
+            "index": 6,
+            "text": "Amara gave the chest to Fara.",
+            "expected_operation": 6,
+            "actual": {
+              "operation": 6,
+              "status": "written",
+              "decision_event_id": "factual:4599b485897d3116f64cf7b3ba991af88bdfc1f8822427d6f8ef447a4230567f:result",
+              "fact": {
+                "key": "cog-factual:holder:chest",
+                "value": {
+                  "kind": "owner",
+                  "schema": "cog-factual-adapter-v1",
+                  "value": "Fara"
+                },
+                "revision": 2,
+                "source_event_id": "factual:4599b485897d3116f64cf7b3ba991af88bdfc1f8822427d6f8ef447a4230567f:result",
+                "proposal_id": "factual:4599b485897d3116f64cf7b3ba991af88bdfc1f8822427d6f8ef447a4230567f:proposal",
+                "authority": "learned-model-policy",
+                "changed_at": "2026-11-23T18:51:09.926704+00:00",
+                "deleted": false
+              },
+              "replayed": false
+            },
+            "correct_operation": true,
+            "complete_ledger_correct": true,
+            "expected_ledger": [
+              5,
+              1,
+              2,
+              3,
+              8,
+              12,
+              12,
+              12
+            ],
+            "actual_ledger": [
+              5,
+              1,
+              2,
+              3,
+              8,
+              12,
+              12,
+              12
+            ]
+          },
+          {
+            "index": 7,
+            "text": "Bela gave the crate to Gus.",
+            "expected_operation": 19,
+            "actual": {
+              "operation": 19,
+              "status": "written",
+              "decision_event_id": "factual:ac3a1b39b6eac3b86ff056fef3c127eb6ba838d0a10e1473367f1faaccaf7162:result",
+              "fact": {
+                "key": "cog-factual:holder:crate",
+                "value": {
+                  "kind": "owner",
+                  "schema": "cog-factual-adapter-v1",
+                  "value": "Gus"
+                },
+                "revision": 2,
+                "source_event_id": "factual:ac3a1b39b6eac3b86ff056fef3c127eb6ba838d0a10e1473367f1faaccaf7162:result",
+                "proposal_id": "factual:ac3a1b39b6eac3b86ff056fef3c127eb6ba838d0a10e1473367f1faaccaf7162:proposal",
+                "authority": "learned-model-policy",
+                "changed_at": "2026-11-23T18:51:09.951530+00:00",
+                "deleted": false
+              },
+              "replayed": false
+            },
+            "correct_operation": true,
+            "complete_ledger_correct": true,
+            "expected_ledger": [
+              5,
+              6,
+              2,
+              3,
+              8,
+              12,
+              12,
+              12
+            ],
+            "actual_ledger": [
+              5,
+              6,
+              2,
+              3,
+              8,
+              12,
+              12,
+              12
+            ]
+          }
+        ],
+        "answer": {
+          "answer": "Fara",
+          "answer_index": 5,
+          "route": 4,
+          "read_value": 5,
+          "dependencies": {
+            "cog-factual:container:coin": 1,
+            "cog-factual:holder:chest": 2
+          },
+          "assistant_event_id": "factual:9e681c95189100da00eba1f3667ac63c6b55e046a6612591b4197e3b34ec9863:result",
+          "replayed": false,
+          "wall_ms": 23.89972000673879
+        },
+        "expected_answer": "Fara",
+        "answer_correct": true,
+        "all_operations_and_ledgers_correct": true
+      },
+      {
+        "name": "cancel",
+        "events": [
+          {
+            "index": 0,
+            "text": "Amara holds the chest.",
+            "expected_operation": 1,
+            "actual": {
+              "operation": 1,
+              "status": "written",
+              "decision_event_id": "factual:e2bafba8ad62418e0bca472bcfec87f12e1667292865ad9af1d16f8c65cbf9fc:result",
+              "fact": {
+                "key": "cog-factual:holder:chest",
+                "value": {
+                  "kind": "owner",
+                  "schema": "cog-factual-adapter-v1",
+                  "value": "Amara"
+                },
+                "revision": 1,
+                "source_event_id": "factual:e2bafba8ad62418e0bca472bcfec87f12e1667292865ad9af1d16f8c65cbf9fc:result",
+                "proposal_id": "factual:e2bafba8ad62418e0bca472bcfec87f12e1667292865ad9af1d16f8c65cbf9fc:proposal",
+                "authority": "learned-model-policy",
+                "changed_at": "2026-11-23T18:51:10.019024+00:00",
+                "deleted": false
+              },
+              "replayed": false
+            },
+            "correct_operation": true,
+            "complete_ledger_correct": true,
+            "expected_ledger": [
+              0,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12
+            ],
+            "actual_ledger": [
+              0,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12
+            ]
+          },
+          {
+            "index": 1,
+            "text": "Bela holds the crate.",
+            "expected_operation": 14,
+            "actual": {
+              "operation": 14,
+              "status": "written",
+              "decision_event_id": "factual:f18abc2b8fde07e3b15909f4493f8180c575920c46c54aec0bd772e97c5a2c27:result",
+              "fact": {
+                "key": "cog-factual:holder:crate",
+                "value": {
+                  "kind": "owner",
+                  "schema": "cog-factual-adapter-v1",
+                  "value": "Bela"
+                },
+                "revision": 1,
+                "source_event_id": "factual:f18abc2b8fde07e3b15909f4493f8180c575920c46c54aec0bd772e97c5a2c27:result",
+                "proposal_id": "factual:f18abc2b8fde07e3b15909f4493f8180c575920c46c54aec0bd772e97c5a2c27:proposal",
+                "authority": "learned-model-policy",
+                "changed_at": "2026-11-23T18:51:10.044414+00:00",
+                "deleted": false
+              },
+              "replayed": false
+            },
+            "correct_operation": true,
+            "complete_ledger_correct": true,
+            "expected_ledger": [
+              0,
+              1,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12
+            ],
+            "actual_ledger": [
+              0,
+              1,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12
+            ]
+          },
+          {
+            "index": 2,
+            "text": "Cato holds the basket.",
+            "expected_operation": 27,
+            "actual": {
+              "operation": 27,
+              "status": "written",
+              "decision_event_id": "factual:767da39327ee7c0899c45b06f91491316350789ca7e76ab66eb61e2f1eb0d65c:result",
+              "fact": {
+                "key": "cog-factual:holder:basket",
+                "value": {
+                  "kind": "owner",
+                  "schema": "cog-factual-adapter-v1",
+                  "value": "Cato"
+                },
+                "revision": 1,
+                "source_event_id": "factual:767da39327ee7c0899c45b06f91491316350789ca7e76ab66eb61e2f1eb0d65c:result",
+                "proposal_id": "factual:767da39327ee7c0899c45b06f91491316350789ca7e76ab66eb61e2f1eb0d65c:proposal",
+                "authority": "learned-model-policy",
+                "changed_at": "2026-11-23T18:51:10.071232+00:00",
+                "deleted": false
+              },
+              "replayed": false
+            },
+            "correct_operation": true,
+            "complete_ledger_correct": true,
+            "expected_ledger": [
+              0,
+              1,
+              2,
+              12,
+              12,
+              12,
+              12,
+              12
+            ],
+            "actual_ledger": [
+              0,
+              1,
+              2,
+              12,
+              12,
+              12,
+              12,
+              12
+            ]
+          },
+          {
+            "index": 3,
+            "text": "Dina holds the trunk.",
+            "expected_operation": 40,
+            "actual": {
+              "operation": 40,
+              "status": "written",
+              "decision_event_id": "factual:56698eee6861d82d6d6442deda05cd96d2d6fe92487088137ed065006b1c1ce5:result",
+              "fact": {
+                "key": "cog-factual:holder:trunk",
+                "value": {
+                  "kind": "owner",
+                  "schema": "cog-factual-adapter-v1",
+                  "value": "Dina"
+                },
+                "revision": 1,
+                "source_event_id": "factual:56698eee6861d82d6d6442deda05cd96d2d6fe92487088137ed065006b1c1ce5:result",
+                "proposal_id": "factual:56698eee6861d82d6d6442deda05cd96d2d6fe92487088137ed065006b1c1ce5:proposal",
+                "authority": "learned-model-policy",
+                "changed_at": "2026-11-23T18:51:10.098657+00:00",
+                "deleted": false
+              },
+              "replayed": false
+            },
+            "correct_operation": true,
+            "complete_ledger_correct": true,
+            "expected_ledger": [
+              0,
+              1,
+              2,
+              3,
+              12,
+              12,
+              12,
+              12
+            ],
+            "actual_ledger": [
+              0,
+              1,
+              2,
+              3,
+              12,
+              12,
+              12,
+              12
+            ]
+          },
+          {
+            "index": 4,
+            "text": "The coin is in the chest.",
+            "expected_operation": 57,
+            "actual": {
+              "operation": 57,
+              "status": "written",
+              "decision_event_id": "factual:3286fb1843f322bb8c4a6f57cf0d348b5d6d7195f7d9f3c2bb10b3a1d3079d13:result",
+              "fact": {
+                "key": "cog-factual:container:coin",
+                "value": {
+                  "kind": "box",
+                  "schema": "cog-factual-adapter-v1",
+                  "value": "chest"
+                },
+                "revision": 1,
+                "source_event_id": "factual:3286fb1843f322bb8c4a6f57cf0d348b5d6d7195f7d9f3c2bb10b3a1d3079d13:result",
+                "proposal_id": "factual:3286fb1843f322bb8c4a6f57cf0d348b5d6d7195f7d9f3c2bb10b3a1d3079d13:proposal",
+                "authority": "learned-model-policy",
+                "changed_at": "2026-11-23T18:51:10.121242+00:00",
+                "deleted": false
+              },
+              "replayed": false
+            },
+            "correct_operation": true,
+            "complete_ledger_correct": true,
+            "expected_ledger": [
+              0,
+              1,
+              2,
+              3,
+              8,
+              12,
+              12,
+              12
+            ],
+            "actual_ledger": [
+              0,
+              1,
+              2,
+              3,
+              8,
+              12,
+              12,
+              12
+            ]
+          },
+          {
+            "index": 5,
+            "text": "Evan did not put the ring in the basket.",
+            "expected_operation": 0,
+            "actual": {
+              "operation": 0,
+              "status": "noop",
+              "decision_event_id": "factual:d8522f36e97f54762f1e98923b40fd4e7631f4d10339785bd31da6606a39e2b7:result",
+              "fact": null,
+              "replayed": false
+            },
+            "correct_operation": true,
+            "complete_ledger_correct": true,
+            "expected_ledger": [
+              0,
+              1,
+              2,
+              3,
+              8,
+              12,
+              12,
+              12
+            ],
+            "actual_ledger": [
+              0,
+              1,
+              2,
+              3,
+              8,
+              12,
+              12,
+              12
+            ]
+          },
+          {
+            "index": 6,
+            "text": "Amara did not give the chest to Fara.",
+            "expected_operation": 0,
+            "actual": {
+              "operation": 0,
+              "status": "noop",
+              "decision_event_id": "factual:4599b485897d3116f64cf7b3ba991af88bdfc1f8822427d6f8ef447a4230567f:result",
+              "fact": null,
+              "replayed": false
+            },
+            "correct_operation": true,
+            "complete_ledger_correct": true,
+            "expected_ledger": [
+              0,
+              1,
+              2,
+              3,
+              8,
+              12,
+              12,
+              12
+            ],
+            "actual_ledger": [
+              0,
+              1,
+              2,
+              3,
+              8,
+              12,
+              12,
+              12
+            ]
+          },
+          {
+            "index": 7,
+            "text": "Bela gave the crate to Gus.",
+            "expected_operation": 19,
+            "actual": {
+              "operation": 19,
+              "status": "written",
+              "decision_event_id": "factual:ac3a1b39b6eac3b86ff056fef3c127eb6ba838d0a10e1473367f1faaccaf7162:result",
+              "fact": {
+                "key": "cog-factual:holder:crate",
+                "value": {
+                  "kind": "owner",
+                  "schema": "cog-factual-adapter-v1",
+                  "value": "Gus"
+                },
+                "revision": 2,
+                "source_event_id": "factual:ac3a1b39b6eac3b86ff056fef3c127eb6ba838d0a10e1473367f1faaccaf7162:result",
+                "proposal_id": "factual:ac3a1b39b6eac3b86ff056fef3c127eb6ba838d0a10e1473367f1faaccaf7162:proposal",
+                "authority": "learned-model-policy",
+                "changed_at": "2026-11-23T18:51:10.189832+00:00",
+                "deleted": false
+              },
+              "replayed": false
+            },
+            "correct_operation": true,
+            "complete_ledger_correct": true,
+            "expected_ledger": [
+              0,
+              6,
+              2,
+              3,
+              8,
+              12,
+              12,
+              12
+            ],
+            "actual_ledger": [
+              0,
+              6,
+              2,
+              3,
+              8,
+              12,
+              12,
+              12
+            ]
+          }
+        ],
+        "answer": {
+          "answer": "Amara",
+          "answer_index": 0,
+          "route": 4,
+          "read_value": 0,
+          "dependencies": {
+            "cog-factual:container:coin": 1,
+            "cog-factual:holder:chest": 1
+          },
+          "assistant_event_id": "factual:9e681c95189100da00eba1f3667ac63c6b55e046a6612591b4197e3b34ec9863:result",
+          "replayed": false,
+          "wall_ms": 32.49464799591806
+        },
+        "expected_answer": "Amara",
+        "answer_correct": true,
+        "all_operations_and_ledgers_correct": true
+      }
+    ]
+  },
+  "concurrent_changes": {
+    "scope": "actual fitted prediction with a deterministic concurrent storage mutation",
+    "passed": 3,
+    "total": 3,
+    "cases": [
+      {
+        "scenario": "correction",
+        "actual_predicted_route": 0,
+        "actual_fitted_answer_head_called": true,
+        "intervention_completed": true,
+        "exception": "ConflictError",
+        "stale_response_persisted": false,
+        "passed": true
+      },
+      {
+        "scenario": "erasure",
+        "actual_predicted_route": 0,
+        "actual_fitted_answer_head_called": true,
+        "intervention_completed": true,
+        "exception": "DeletedError",
+        "stale_response_persisted": false,
+        "passed": true
+      },
+      {
+        "scenario": "absent-insertion",
+        "actual_predicted_route": 0,
+        "actual_fitted_answer_head_called": true,
+        "intervention_completed": true,
+        "exception": "ConflictError",
+        "stale_response_persisted": false,
+        "passed": true
+      }
+    ]
+  },
+  "restart_and_retry": {
+    "same_request_replays_original_committed_receipt": true,
+    "fresh_process_new_chat_matches_fresh_answer": true,
+    "fresh_process_new_chat_matches_readset": true,
+    "semantic_original_correct": true,
+    "semantic_corrected_correct": true,
+    "first": {
+      "answer": "Amara",
+      "answer_index": 0,
+      "route": 0,
+      "read_value": 0,
+      "dependencies": {
+        "cog-factual:holder:chest": 1
+      },
+      "assistant_event_id": "factual:b464371d822a407e1796afc45193cf8f9798d8d2bb1c90e140b5d5a3117d6e80:result",
+      "replayed": false,
+      "wall_ms": 21.693360002245754
+    },
+    "replay": {
+      "answer": "Amara",
+      "answer_index": 0,
+      "route": 0,
+      "read_value": 0,
+      "dependencies": {
+        "cog-factual:holder:chest": 1
+      },
+      "assistant_event_id": "factual:b464371d822a407e1796afc45193cf8f9798d8d2bb1c90e140b5d5a3117d6e80:result",
+      "replayed": true,
+      "wall_ms": 5.623498000204563
+    },
+    "fresh": {
+      "answer": "Gus",
+      "answer_index": 6,
+      "route": 0,
+      "read_value": 6,
+      "dependencies": {
+        "cog-factual:holder:chest": 2
+      },
+      "assistant_event_id": "factual:e6daa88a295436c995dd0e95fe147ade4314ac4c543f02eedd904787a1e95db4:result",
+      "replayed": false,
+      "wall_ms": 19.519644003594294
+    },
+    "child": {
+      "answer": "Gus",
+      "answer_index": 6,
+      "route": 0,
+      "read_value": 6,
+      "dependencies": {
+        "cog-factual:holder:chest": 2
+      },
+      "assistant_event_id": "factual:aeb12223d41655bbed5575ce49f0b7c067cc7cbba8f9152f765a048a177e3af0:result",
+      "replayed": false,
+      "wall_ms": 69.170276998193
+    },
+    "child_exit_code": 0
+  },
+  "parent_cpu_seconds": 7.740436418,
+  "wall_seconds": 14.999118702005944,
+  "unchanged_model_identity": true,
+  "script_sha256": "acb8b1946cc413a3627abd84c1e68c47e51d6fd3c1dba556147f3b2fd5458d01",
+  "adapter_source_sha256": "25c043c7f83f12e38f506064cd79ebd85914227ac2b5ca7b9ab61acc6178034b",
+  "infrastructure_gate": {
+    "passed": true,
+    "checks": {
+      "all_concurrent_changes_rejected": true,
+      "unchanged_model_identity": true,
+      "same_request_replays_original_committed_receipt": true,
+      "fresh_process_new_chat_matches_fresh_answer": true,
+      "fresh_process_new_chat_matches_readset": true
+    }
+  },
+  "semantic_status": "Individual findings below; this audit does not replace the whole-history qualification gate."
+}

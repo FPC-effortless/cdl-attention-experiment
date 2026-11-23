@@ -1,0 +1,78 @@
+{
+  "baseline_commit": "ffb842adc176496d8838b774d0fe412aec5d1d20",
+  "cold_timing_boundary": "subprocess wall time: Python/PyTorch import, deterministic model construction, store opening, finite-checked attachment, continuation, checkpoint/output hash verification and evidence writing; database copy excluded",
+  "filesystem": "Filesystem     Type    1024-blocks     Used Available Capacity Mounted on\noverlay        overlay    66002476 20978988  41651664      34% /workspace",
+  "fixture_store": "frozen baseline v2 in both variants",
+  "harness_sha256": "f24b2f05c57de205542294501c1da6717e8188aaa4f546a3ee59f14a8834533c",
+  "measured_trials": 5,
+  "models": [
+    {
+      "baseline_native_session_continues": true,
+      "cold": {
+        "baseline": {
+          "inner_run_ms": 55.290757,
+          "process_wall_ms": 2130.097526
+        },
+        "candidate": {
+          "inner_run_ms": 43.370018,
+          "process_wall_ms": 2088.671311
+        }
+      },
+      "complete_checkpoint_cases_equal": 4,
+      "kind": "local",
+      "manifest_equal": true,
+      "order": [
+        "candidate",
+        "baseline"
+      ],
+      "output_cases_equal": 4
+    },
+    {
+      "baseline_native_session_continues": true,
+      "cold": {
+        "baseline": {
+          "inner_run_ms": 103.222511,
+          "process_wall_ms": 2229.687946
+        },
+        "candidate": {
+          "inner_run_ms": 61.057594,
+          "process_wall_ms": 2175.38248
+        }
+      },
+      "complete_checkpoint_cases_equal": 4,
+      "kind": "packet",
+      "manifest_equal": true,
+      "order": [
+        "baseline",
+        "candidate"
+      ],
+      "output_cases_equal": 4
+    },
+    {
+      "baseline_native_session_continues": true,
+      "cold": {
+        "baseline": {
+          "inner_run_ms": 107.231176,
+          "process_wall_ms": 2382.762606
+        },
+        "candidate": {
+          "inner_run_ms": 157.769022,
+          "process_wall_ms": 2762.137163
+        }
+      },
+      "complete_checkpoint_cases_equal": 4,
+      "kind": "typed_packet",
+      "manifest_equal": true,
+      "order": [
+        "candidate",
+        "baseline"
+      ],
+      "output_cases_equal": 4
+    }
+  ],
+  "passed": true,
+  "round": "one quiet reverse-order confirmation",
+  "trained": false,
+  "wall_seconds": 65.77386940800352,
+  "warmups": 1
+}

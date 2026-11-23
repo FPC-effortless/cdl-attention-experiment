@@ -5,12 +5,14 @@ on:
     paths:
       - 'research/nanocog-001/nanocog/**'
       - 'research/nanocog-001/memory-validation-002/**'
+      - 'research/nanocog-001/memory-integration-003/**'
       - '.github/workflows/nanocog-memory.yml'
       - 'requirements.txt'
   pull_request:
     paths:
       - 'research/nanocog-001/nanocog/**'
       - 'research/nanocog-001/memory-validation-002/**'
+      - 'research/nanocog-001/memory-integration-003/**'
       - '.github/workflows/nanocog-memory.yml'
       - 'requirements.txt'
 
