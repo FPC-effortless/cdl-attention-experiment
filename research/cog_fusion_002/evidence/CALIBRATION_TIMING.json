@@ -1,0 +1,49 @@
+{
+  "fit_updates": 0,
+  "model_checkpoint_sha256": "69180f8e9d05574eff19c78cf003f7e4aa21e5442e45a90ec2c09bffff553421",
+  "purpose": "TRAIN-only forward/backward resource admission; no optimizer update or model selection",
+  "rows": [
+    {
+      "arm": "continuous",
+      "cpu_seconds": 3.143913608,
+      "finite_gradients": true,
+      "loss": 2.1774654388427734,
+      "max_rss_kib": 710872,
+      "repeat": 0,
+      "wall_seconds": 3.1443405269965297
+    },
+    {
+      "arm": "reset_training",
+      "cpu_seconds": 1.6818068840000002,
+      "finite_gradients": true,
+      "loss": 1.3057191371917725,
+      "max_rss_kib": 844376,
+      "repeat": 0,
+      "wall_seconds": 1.6829247949935962
+    },
+    {
+      "arm": "continuous",
+      "cpu_seconds": 1.1411550210000012,
+      "finite_gradients": true,
+      "loss": 2.1774654388427734,
+      "max_rss_kib": 844376,
+      "repeat": 1,
+      "wall_seconds": 1.1417115570075111
+    },
+    {
+      "arm": "reset_training",
+      "cpu_seconds": 1.3169786830000003,
+      "finite_gradients": true,
+      "loss": 1.3057191371917725,
+      "max_rss_kib": 844376,
+      "repeat": 1,
+      "wall_seconds": 1.3201218050089665
+    }
+  ],
+  "training_families": [
+    0,
+    1,
+    2,
+    3
+  ]
+}

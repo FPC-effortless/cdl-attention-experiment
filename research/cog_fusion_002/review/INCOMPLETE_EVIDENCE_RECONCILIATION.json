@@ -1,0 +1,89 @@
+{
+  "audited_report_sha256": "80189911d4fdd9508e11775a960eac223794150b91f978eb91ea34b23283accf",
+  "bound_input_hashes_verified": 53,
+  "campaign_complete": false,
+  "canonical_rows_checked": 6000,
+  "completed_fit_reviews": [
+    {
+      "cpu_seconds": 2270.259846458,
+      "distinct_train_families": 1834,
+      "name": "reset_training_seed17",
+      "physical_token_positions": 5533470,
+      "probe_sampled_families": 113,
+      "probe_unsampled_families": 15,
+      "rows_checked": 1200
+    },
+    {
+      "cpu_seconds": 2395.07395533,
+      "distinct_train_families": 1842,
+      "name": "continuous_seed29",
+      "physical_token_positions": 5521215,
+      "probe_sampled_families": 119,
+      "probe_unsampled_families": 9,
+      "rows_checked": 1200
+    },
+    {
+      "cpu_seconds": 2262.215207951,
+      "distinct_train_families": 1842,
+      "name": "reset_training_seed29",
+      "physical_token_positions": 5521201,
+      "probe_sampled_families": 119,
+      "probe_unsampled_families": 9,
+      "rows_checked": 1200
+    },
+    {
+      "cpu_seconds": 2641.009679133,
+      "distinct_train_families": 1864,
+      "name": "continuous_seed41",
+      "physical_token_positions": 5525339,
+      "probe_sampled_families": 115,
+      "probe_unsampled_families": 13,
+      "rows_checked": 1200
+    },
+    {
+      "cpu_seconds": 2066.796605126,
+      "distinct_train_families": 1864,
+      "name": "reset_training_seed41",
+      "physical_token_positions": 5525375,
+      "probe_sampled_families": 115,
+      "probe_unsampled_families": 13,
+      "rows_checked": 1200
+    }
+  ],
+  "completed_training_loop_cpu_seconds": 11635.355293998,
+  "incomplete_attempt_reviews": [
+    {
+      "attempt": "original",
+      "cpu_seconds_lower_bound": 48.195140857000005,
+      "physical_positions_lower_bound": 61417,
+      "process_status": "terminated_by_recorded_signal",
+      "rows_checked": 13
+    },
+    {
+      "attempt": "permitted_retry",
+      "cpu_seconds_lower_bound": 197.215294733,
+      "physical_positions_lower_bound": 492043,
+      "process_status": "unknown",
+      "rows_checked": 107
+    }
+  ],
+  "incomplete_rows_checked": 120,
+  "incomplete_training_loop_cpu_seconds_lower_bound": 245.41043559000002,
+  "limits": [
+    "Tensor checks were source-reviewed and their saved claims and bound payload hashes reconciled; this second review does not deserialize the weights again.",
+    "Unsaved generated training strings are not reconstructed; dynamic counts receive internal-consistency checks.",
+    "Missing control and terminal receipts leave retry process status unknown.",
+    "CPU totals exclude initialization and unreported work; partial counts are observed lower bounds.",
+    "Individual artifact integrity does not qualify the incomplete campaign or establish learned performance."
+  ],
+  "locked_sources_verified": 22,
+  "method": "independent JSON/log/hash and Python-draw replay; no imported study/audit helpers or Torch",
+  "model_inference_calls": 0,
+  "observed_physical_token_positions_lower_bound": 28180060,
+  "observed_training_loop_cpu_seconds_lower_bound": 11880.765729588,
+  "pass": true,
+  "qualification_evaluated": false,
+  "reviewed_at_utc": "2026-11-23T23:24:56.612744+00:00",
+  "schema": "cog-fusion-002-independent-incomplete-evidence-reconciliation-v1",
+  "source_sha256": "22cd92e856f0a218e2ee5c49837dab415d60d24a6393f3226a6e6fa4e8beef48"
+}

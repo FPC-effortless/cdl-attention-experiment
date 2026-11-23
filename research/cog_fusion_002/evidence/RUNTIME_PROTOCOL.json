@@ -1,0 +1,247 @@
+{
+  "immutable_runtime_sha256": {
+    "engine.py": "12490b65df1426454631902d500e3cd83314d34757d189e7f3d8b33da75d8606",
+    "interaction.py": "67c7a7fac412cfaf6003059bdc431de8158633e5b589f4c7665fff2ec4317409",
+    "model.py": "805d5dcfe172ecaebd6398501e5da1193855c2f532abcb3102f350cafcfcb215",
+    "session.py": "83ff0c1a60dc482638f019911dd7ea0fb674eca2a8ac109b37b4b45cfd4dfa29",
+    "store.py": "006c88fcc02152ed8fe444aeb15e8001e01cdba1770b7408ec162041aeafea56"
+  },
+  "scenario": "new-schedule-familiar-wording",
+  "scope": "schedule/history shift; first asks after observations2/4/6; no learned-only threshold chosen after scoring",
+  "source_sha256": "f600fb652de20fa1bd1dbddd6e54556f29f7a8b555c0c2deac1efdb4f2cbe65a",
+  "steps": [
+    {
+      "expected_op": [
+        1,
+        "vault",
+        "owner",
+        "Faye"
+      ],
+      "id": "initial-owner",
+      "kind": "observe",
+      "text": "Faye owns the vault."
+    },
+    {
+      "expected_op": [
+        1,
+        "gem",
+        "container",
+        "vault"
+      ],
+      "id": "initial-link",
+      "kind": "observe",
+      "text": "The gem is in the vault."
+    },
+    {
+      "expected": "Faye.",
+      "id": "first-question",
+      "kind": "ask",
+      "text": "Who owns the container holding the gem?"
+    },
+    {
+      "expected_op": [
+        1,
+        "box",
+        "owner",
+        "Hadi"
+      ],
+      "id": "other-owner",
+      "kind": "observe",
+      "text": "Hadi owns the box."
+    },
+    {
+      "expected_op": [
+        1,
+        "vault",
+        "owner",
+        "Eren"
+      ],
+      "id": "relevant-correction",
+      "kind": "observe",
+      "text": "The vault belongs to Eren."
+    },
+    {
+      "expected": "Eren.",
+      "id": "after-correction",
+      "kind": "ask",
+      "text": "Who owns what contains the gem?"
+    },
+    {
+      "expected_op": [
+        1,
+        "crate",
+        "owner",
+        "Gita"
+      ],
+      "id": "unrelated-crate",
+      "kind": "observe",
+      "text": "Gita owns the crate."
+    },
+    {
+      "expected_op": [
+        1,
+        "box",
+        "owner",
+        "Cora"
+      ],
+      "id": "unrelated-box",
+      "kind": "observe",
+      "text": "The box belongs to Cora."
+    },
+    {
+      "expected": "Eren.",
+      "id": "after-unrelated",
+      "kind": "ask",
+      "text": "Who is the owner of the container with the gem?"
+    },
+    {
+      "expected_op": [
+        1,
+        "gem",
+        "container",
+        "box"
+      ],
+      "id": "bridge-change",
+      "kind": "observe",
+      "text": "The gem is in the box."
+    },
+    {
+      "expected_op": [
+        1,
+        "chest",
+        "owner",
+        "Davi"
+      ],
+      "id": "off-route-chest",
+      "kind": "observe",
+      "text": "Davi owns the chest."
+    },
+    {
+      "expected": "Cora.",
+      "id": "after-process-restart",
+      "kind": "ask",
+      "new_process": true,
+      "text": "Who owns the container holding the gem?"
+    },
+    {
+      "expected_op": [
+        0,
+        null,
+        null,
+        null
+      ],
+      "id": "cancelled-transfer",
+      "kind": "observe",
+      "text": "A transfer of the box to Hadi was cancelled."
+    },
+    {
+      "expected": "Cora.",
+      "id": "after-cancellation",
+      "kind": "ask",
+      "text": "Who owns what contains the gem?"
+    },
+    {
+      "id": "pending-box-owner",
+      "key": [
+        "world",
+        "box",
+        "owner"
+      ],
+      "kind": "pending"
+    },
+    {
+      "id": "restart-pending",
+      "kind": "restart"
+    },
+    {
+      "expected": "pending",
+      "id": "pending-question",
+      "kind": "ask",
+      "policy": true,
+      "text": "Who owns the container holding the gem?"
+    },
+    {
+      "expected": "Eren.",
+      "id": "unrelated-during-pending",
+      "kind": "ask",
+      "text": "Who owns the vault?"
+    },
+    {
+      "clear_pending": [
+        "pending-box-owner"
+      ],
+      "expected_op": [
+        1,
+        "box",
+        "owner",
+        "Bela"
+      ],
+      "id": "pending-retry",
+      "kind": "observe",
+      "text": "The box belongs to Bela."
+    },
+    {
+      "expected": "Bela.",
+      "id": "after-pending-retry",
+      "kind": "ask",
+      "text": "Who owns the container holding the gem?"
+    },
+    {
+      "expected_op": [
+        2,
+        "box",
+        "owner",
+        null
+      ],
+      "id": "retract-owner",
+      "kind": "observe",
+      "text": "The owner of the box is unknown."
+    },
+    {
+      "expected": "unknown.",
+      "id": "after-retraction",
+      "kind": "ask",
+      "text": "Who owns what contains the gem?"
+    },
+    {
+      "expected_op": [
+        1,
+        "box",
+        "owner",
+        "Hadi"
+      ],
+      "id": "reinstated-owner",
+      "kind": "observe",
+      "text": "Hadi owns the box."
+    },
+    {
+      "expected": "Hadi.",
+      "id": "after-reinstatement",
+      "kind": "ask",
+      "text": "Who owns what contains the gem?"
+    },
+    {
+      "expected_removed": [
+        "world",
+        "box",
+        "owner"
+      ],
+      "id": "erase-reinstatement",
+      "kind": "erase_source",
+      "source": "reinstated-owner"
+    },
+    {
+      "expected": "unknown.",
+      "id": "after-source-erasure",
+      "kind": "ask",
+      "text": "Who owns the container holding the gem?"
+    },
+    {
+      "id": "first-question",
+      "kind": "replay",
+      "text": "Who owns the container holding the gem?"
+    }
+  ],
+  "study": "COG-FUSION-002",
+  "typed_controls": "pending key and source erasure supplied; no gold writes or reads supplied"
+}

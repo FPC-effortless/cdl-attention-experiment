@@ -1,0 +1,520 @@
+{
+  "data": {
+    "dev": {
+      "answer_lengths_by_turn": [
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          4,
+          5,
+          6,
+          8
+        ],
+        [
+          4,
+          5,
+          6,
+          8
+        ]
+      ],
+      "answers": 384,
+      "families": 64,
+      "immediate_post_answer_observations": 256,
+      "kind_counts": {
+        "bridge": 8,
+        "cancelled": 8,
+        "correction": 8,
+        "direct": 8,
+        "irrelevant": 8,
+        "missing": 8,
+        "retraction": 8,
+        "twohop": 8
+      },
+      "meaningful_immediate_post_answer_observations": 224,
+      "meaningful_post_answer_observations": 516,
+      "observations": 1024,
+      "plans_by_turn": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "post_answer_observations": 640,
+      "query_entities_by_turn": [
+        [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      ],
+      "question_pairs_answer_changing": 96,
+      "question_pairs_invariant": 96,
+      "session_pairs_with_all_answers_invariant": 24,
+      "session_pairs_with_any_answer_change": 40,
+      "worlds": 128
+    },
+    "fresh": {
+      "answer_lengths_by_turn": [
+        [
+          4,
+          5,
+          6,
+          8
+        ],
+        [
+          4,
+          5,
+          6,
+          8
+        ],
+        [
+          4,
+          5,
+          6,
+          8
+        ]
+      ],
+      "answers": 768,
+      "families": 128,
+      "immediate_post_answer_observations": 512,
+      "kind_counts": {
+        "bridge": 16,
+        "cancelled": 16,
+        "correction": 16,
+        "direct": 16,
+        "irrelevant": 16,
+        "missing": 16,
+        "retraction": 16,
+        "twohop": 16
+      },
+      "meaningful_immediate_post_answer_observations": 448,
+      "meaningful_post_answer_observations": 1034,
+      "observations": 2048,
+      "plans_by_turn": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "post_answer_observations": 1280,
+      "query_entities_by_turn": [
+        [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      ],
+      "question_pairs_answer_changing": 192,
+      "question_pairs_invariant": 192,
+      "session_pairs_with_all_answers_invariant": 48,
+      "session_pairs_with_any_answer_change": 80,
+      "worlds": 256
+    },
+    "long": {
+      "answer_lengths_by_turn": [
+        [
+          4,
+          5,
+          6,
+          8
+        ],
+        [
+          4,
+          5,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          8
+        ]
+      ],
+      "answers": 192,
+      "families": 32,
+      "immediate_post_answer_observations": 128,
+      "kind_counts": {
+        "bridge": 4,
+        "cancelled": 4,
+        "correction": 4,
+        "direct": 4,
+        "irrelevant": 4,
+        "missing": 4,
+        "retraction": 4,
+        "twohop": 4
+      },
+      "meaningful_immediate_post_answer_observations": 0,
+      "meaningful_post_answer_observations": 258,
+      "observations": 4608,
+      "plans_by_turn": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "post_answer_observations": 4416,
+      "query_entities_by_turn": [
+        [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      ],
+      "question_pairs_answer_changing": 48,
+      "question_pairs_invariant": 48,
+      "session_pairs_with_all_answers_invariant": 12,
+      "session_pairs_with_any_answer_change": 20,
+      "worlds": 64
+    },
+    "test": {
+      "answer_lengths_by_turn": [
+        [
+          4,
+          5,
+          6,
+          8
+        ],
+        [
+          4,
+          5,
+          6,
+          8
+        ],
+        [
+          4,
+          5,
+          6,
+          8
+        ]
+      ],
+      "answers": 768,
+      "families": 128,
+      "immediate_post_answer_observations": 512,
+      "kind_counts": {
+        "bridge": 16,
+        "cancelled": 16,
+        "correction": 16,
+        "direct": 16,
+        "irrelevant": 16,
+        "missing": 16,
+        "retraction": 16,
+        "twohop": 16
+      },
+      "meaningful_immediate_post_answer_observations": 448,
+      "meaningful_post_answer_observations": 1034,
+      "observations": 2048,
+      "plans_by_turn": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "post_answer_observations": 1280,
+      "query_entities_by_turn": [
+        [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      ],
+      "question_pairs_answer_changing": 192,
+      "question_pairs_invariant": 192,
+      "session_pairs_with_all_answers_invariant": 48,
+      "session_pairs_with_any_answer_change": 80,
+      "worlds": 256
+    },
+    "train": {
+      "answer_lengths_by_turn": [
+        [
+          4,
+          5,
+          6,
+          8
+        ],
+        [
+          4,
+          5,
+          6,
+          8
+        ],
+        [
+          4,
+          5,
+          6,
+          8
+        ]
+      ],
+      "answers": 12288,
+      "families": 2048,
+      "immediate_post_answer_observations": 8192,
+      "kind_counts": {
+        "bridge": 256,
+        "cancelled": 256,
+        "correction": 256,
+        "direct": 256,
+        "irrelevant": 256,
+        "missing": 256,
+        "retraction": 256,
+        "twohop": 256
+      },
+      "meaningful_immediate_post_answer_observations": 7168,
+      "meaningful_post_answer_observations": 16554,
+      "observations": 32768,
+      "plans_by_turn": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "post_answer_observations": 20480,
+      "query_entities_by_turn": [
+        [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      ],
+      "question_pairs_answer_changing": 3072,
+      "question_pairs_invariant": 3072,
+      "session_pairs_with_all_answers_invariant": 768,
+      "session_pairs_with_any_answer_change": 1280,
+      "worlds": 4096
+    }
+  },
+  "duplicate_or_identical_pair_failures": 0,
+  "engineering_tests": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 6
+  },
+  "label_failures": 0,
+  "limits": [
+    "data use fixed identity vocabulary and eight structural kinds",
+    "TRAIN probe is an adequacy diagnostic, not a generalization panel",
+    "template/index semantic replay validates constructed synthetic intent, not unrestricted language truth"
+  ],
+  "old_locked_dependencies_unchanged": true,
+  "parent_models": {
+    "17": {
+      "active_parameters": 997674,
+      "sha256": "69180f8e9d05574eff19c78cf003f7e4aa21e5442e45a90ec2c09bffff553421",
+      "stored_parameters": 1077834
+    },
+    "29": {
+      "active_parameters": 997674,
+      "sha256": "5f9699aa14f44c2bbb30f176d9a1886767e971a48235d7e5dab435a13f6d7522",
+      "stored_parameters": 1077834
+    },
+    "41": {
+      "active_parameters": 997674,
+      "sha256": "5640ccce618b25c434b664934fc7e63986629cd6ec7bc5a790f785cfb7ee4332",
+      "stored_parameters": 1077834
+    }
+  },
+  "pass": true,
+  "schema": "cog-fusion-002-pretrain-review-v1",
+  "scope": "independent label/partition/provenance replay and reconciled engineering receipts; no held inference or fitting",
+  "source_sha256": {
+    "cog_fusion_002/PROTOCOL.md": "e1e9b88823f956cdf9bc54e25ba7c797054f8e159bc79f8ee67cafd5f8d1fa7c",
+    "cog_fusion_002/common.py": "67cf8f95dabb312964a616fb2e8e8de69c27270f06a759c8f043002070c750e7",
+    "cog_fusion_002/data.py": "fe19323be7066b4e3d83835ddcac813e697ffd87d541795be1a5c60c9f8e8df2",
+    "cog_fusion_002/evaluate.py": "76e000c2f2965bfd196bc3db7dc150997ae938a8ae6e040b0b0b39e4ce6bd2a7",
+    "cog_fusion_002/evidence/CALIBRATION_TIMING.json": "fd3fd364f91efca471b3e233fbb4fd878fef335ce5c8060caa01bda3472244ac",
+    "cog_fusion_002/evidence/data/DATA_MANIFEST.json": "dac1e25a062e515eb69920107153d1fe9aca7f6ecf3edbdc194e215033438386",
+    "cog_fusion_002/evidence/data/corpus.json": "ecce061cd3b1606d9615893299bc179d3d5ac931052fb3887099e4e799d03a67",
+    "cog_fusion_002/evidence/data/train.json": "7f26daa3cad7100d2352564c5dc5dd1fbe1db409ae0c0bcbc4cfa4ddf5bda966",
+    "cog_fusion_002/evidence/data/train_probe.json": "49c53e49209e37d9099dcf10c037c1066f3698a44d64d4fac1496cfbdcd4f4fa",
+    "cog_fusion_002/evidence/training_runtime_tests.xml": "0648a9695d8c574360e4c75762b7a54e2257034a4003bda91efa22a60ea82d3d",
+    "cog_fusion_002/review/audit_pretrain.py": "0cf425bc8463b8def7b40633253de7509c5f90786c84f3c07c80a14d122cd5db",
+    "cog_fusion_002/run_campaign.py": "bdfe028371a1ec7d28a6653c16109446dafb9d40ac953ab327423c86ece91c28",
+    "cog_fusion_002/runtime_eval.py": "f600fb652de20fa1bd1dbddd6e54556f29f7a8b555c0c2deac1efdb4f2cbe65a",
+    "cog_fusion_002/tests/test_training_runtime.py": "539a96ab95c05cbdc362186f22f10beb369f16200e7ebb819e8340245d0a8f9f",
+    "cog_fusion_002/train.py": "056cb5523932b0700a1d7498ce66be63c2c9b5bf39a7a3dab95330166106be1c"
+  },
+  "time_utc": "2026-11-23T22:17:33.250932+00:00",
+  "train_probe_first_128_balanced": true
+}

@@ -1,0 +1,64 @@
+{
+  "all_asks_after_observations": [
+    2,
+    4,
+    6,
+    8,
+    9,
+    9,
+    9,
+    10,
+    11,
+    12,
+    12
+  ],
+  "corpus_sha256": "ecce061cd3b1606d9615893299bc179d3d5ac931052fb3887099e4e799d03a67",
+  "declared_answer_disagreements": [],
+  "first_asks_after_observations": [
+    2,
+    4,
+    6
+  ],
+  "notes": [
+    "The complete sequence includes typed pending and source-erasure controls that are not language predictions.",
+    "Only the first three queries are used to establish the declared 2/4/6 schedule shift.",
+    "No accuracy threshold is added by this engineering admission check."
+  ],
+  "observation_count": 12,
+  "pass": true,
+  "question_count_including_policy": 11,
+  "runtime_protocol_sha256": "308b9939194fd4ba262cf07efa37f38bd33f9798a8448ff9d03b7ef60447375d",
+  "runtime_source_sha256": "f600fb652de20fa1bd1dbddd6e54556f29f7a8b555c0c2deac1efdb4f2cbe65a",
+  "schema": "cog-fusion-002-runtime-scenario-admission-v1",
+  "scope": "data/scorer admission only; no learned model inference or training",
+  "semantic_overlap_by_split": {
+    "dev": {
+      "complete_learned_history": false,
+      "first_three_queries": false
+    },
+    "fresh": {
+      "complete_learned_history": false,
+      "first_three_queries": false
+    },
+    "long": {
+      "complete_learned_history": false,
+      "first_three_queries": false
+    },
+    "test": {
+      "complete_learned_history": false,
+      "first_three_queries": false
+    },
+    "train": {
+      "complete_learned_history": false,
+      "first_three_queries": false
+    }
+  },
+  "semantic_signatures": {
+    "complete_learned_history": "b744141d4293c7614e943154fbc121cbe7154e4190a659dbabaf793fb82a4759",
+    "first_three_queries": "4b401054a297f2d67db8af38c90322ffca6b575d91f5fd2b448add1abd13009d"
+  },
+  "source_sha256": "f262cda67645929532948f13fc99e868e187ca683722ddf019b8a1a3094b1b55",
+  "time_utc": "2026-11-23T22:22:25.562864+00:00",
+  "unfamiliar_wording_step_ids": [],
+  "unknown_characters": []
+}
