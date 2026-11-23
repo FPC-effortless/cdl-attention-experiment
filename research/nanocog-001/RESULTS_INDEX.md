@@ -32,3 +32,16 @@ Scope: this is a navigable record of the listed research, not a complete audit o
 ## Unified architecture and mathematical guarantees
 
 **COG-UNIFIED-001 — FORMAL_SPECIFICATION_AND_REFERENCE_CHECKS; no trained-model qualification.** [Architecture and proposed ADR](unified-001/ARCHITECTURE.md) combines causal local processing, factorized learned binding, explicit support/write/value training signals, versioned exact records, bounded retrieval and dependency-aware reuse under shared interfaces. [Mathematical study](unified-001/MATHEMATICS.md) separates 46 Lean-checked abstract statements from written information/cost bounds and open learned behavior. [Independent review](unified-001/review/guarantee_analysis.md) reproduced the kernel check; [reference review](unified-001/review/reference_review.md) caught and repaired fork/counter identity and malformed-transaction defects. The final typed reference passed 48 author and 34 independent constructed checks. These are not statistical sample sizes, neural accuracy or an implementation refinement proof. [Evidence map](unified-001/evidence/mechanism_map.md), [verification](unified-001/VERIFICATION.json) and [reproduction](unified-001/README.md) preserve exact sources, negatives, assumptions and remaining obligations. No new neural fit, protected evaluation, benchmark speedup, deployment or scientific promotion ran. The existing attention-comparison campaign remains prospective. This entry adds the study without asserting that every historical result has been migrated.
+
+
+## Tiny Shakespeare language-model prototype
+
+**COG-UNIFIED-TINY-10M-001 — EXPLORATORY FIT RUNNING; no architecture qualification.**
+
+The user requested an approximately 10M-parameter model trained on standard English Tiny Shakespeare for text generation. The implemented candidate has **9,725,682 active parameters**, six native causal recurrent blocks, a factorized 16-slot latent VALUE/HOLD board, and a 65-character training-only tokenizer. Contiguous train/validation/test splits contain 1,003,854 / 55,770 / 55,770 characters.
+
+[Source and testing instructions](unified-001/tiny-shakespeare-10m/README.md), [enabled-component boundary](unified-001/tiny-shakespeare-10m/ARCHITECTURE_IMPLEMENTED.md), [run plan](unified-001/tiny-shakespeare-10m/RUN_PLAN.json), and [independent pre-fit review](unified-001/tiny-shakespeare-10m/REVIEW.md).
+
+Independent pre-fit checks passed 13/13 neural-interface and 9/9 pipeline cases. The authorized single-seed FP32 fit is running on CPU after a free Kaggle submission was rejected because both GPU batch-session slots were occupied. The planned budget is 2,000 updates / 16,384,000 character-target presentations, with validation selection and a final test after stopping. Final checkpoint results remain pending in this source snapshot.
+
+Text-only training does not establish semantic entity binding, COPY/LINK/DELETE, provenance, transactions, archive retrieval, or attention superiority. This is a trainable subset of the unified architecture, not certification of every abstract guarantee.

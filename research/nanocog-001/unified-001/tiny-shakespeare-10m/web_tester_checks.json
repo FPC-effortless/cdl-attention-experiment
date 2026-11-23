@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "scope": "one actual localhost HTTP generation with constructed random tiny checkpoint; no neural fit and no trained-model quality claim",
+  "html_status": 200,
+  "generation_status": 200,
+  "prompt_characters": 3,
+  "new_characters": 8,
+  "ui_contains_prompt_control": true,
+  "bind_host": "127.0.0.1",
+  "serve_py_sha256": "33a682c3acbdf6e6cdb1947df3de7cb3bc82e7f40cd6328c6db1e585875fab37"
+}

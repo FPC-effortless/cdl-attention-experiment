@@ -1,0 +1,84 @@
+{
+  "scope": "independent pipeline checks; constructed optimizer updates only, no corpus fit",
+  "sources": {
+    "model.py": "f96bd967b4bc4ece9d2750a5cf1afdf1cc819a6b007e2d638af633376c7eccaa",
+    "data.py": "5c53755333460b7fdb35e0f9a5f88b2b3c7e3f37674ef92df506164728dad69d",
+    "train.py": "52751e1a7d383a8bb809835d1d528ee02fa4abbbe8439a5ef0918186ce3bedf6",
+    "sample.py": "b8188e737856dacc67cbc948c2fc8a884007421397075d38f973e9b37e6207ba",
+    "verify_pipeline.py": "3239f87aedbc83d35e7887b00f458b3b286d80ef4ceb62ff1660e0c24316db7a"
+  },
+  "torch_version": "2.10.0+cpu",
+  "device": "cpu",
+  "threads": 2,
+  "elapsed_seconds": 1.551897284000006,
+  "passed": 9,
+  "total": 9,
+  "checks": [
+    {
+      "name": "pinned_source_identity",
+      "passed": true,
+      "bytes": 1115394,
+      "sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed"
+    },
+    {
+      "name": "vocabulary_is_training_characters_only",
+      "passed": true,
+      "vocab_size": 65,
+      "train_characters": 1003854
+    },
+    {
+      "name": "all_split_bytes_and_contiguous_boundaries_match",
+      "passed": true,
+      "next_character_targets": {
+        "train": 1003853,
+        "val": 55769,
+        "test": 55769
+      }
+    },
+    {
+      "name": "unseen_prompt_character_is_explicitly_rejected",
+      "passed": true
+    },
+    {
+      "name": "sampler_inputs_and_targets_stay_inside_split",
+      "passed": true,
+      "observed_min_start": 0,
+      "observed_max_start": 23,
+      "allowed_max_start": 23,
+      "sampled_windows": 4096
+    },
+    {
+      "name": "evaluation_covers_each_target_once_including_partial_window",
+      "passed": true,
+      "result": {
+        "mean_nll": 0.1816114666669265,
+        "character_perplexity": 1.1991481943127626,
+        "bits_per_character": 0.2620099623289462,
+        "next_character_accuracy": 1.0,
+        "targets": 23,
+        "seconds": 0.0012498860014602542,
+        "context_policy": "reset each nonoverlapping context-length window; all targets once"
+      },
+      "independently_computed_nll": 0.1816114666669265
+    },
+    {
+      "name": "checkpoint_restore_reproduces_next_optimizer_update",
+      "passed": true,
+      "loss_before_restore": 1.6072219610214233,
+      "loss_after_restore": 1.6072219610214233,
+      "parameter_max_abs_error": 0.0,
+      "fixture": "small same-architecture model; constructed integer sequence; two steps per path"
+    },
+    {
+      "name": "python_torch_and_sampler_rng_recovered",
+      "passed": true
+    },
+    {
+      "name": "sampling_entrypoint_reloads_and_repeats_seeded_generation",
+      "passed": true,
+      "characters": 33,
+      "generated_characters": 31,
+      "seed": 714
+    }
+  ]
+}

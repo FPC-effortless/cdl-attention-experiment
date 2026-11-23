@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.pt
+*.zip
+runs/
+data/*.bin
+data/input.txt
