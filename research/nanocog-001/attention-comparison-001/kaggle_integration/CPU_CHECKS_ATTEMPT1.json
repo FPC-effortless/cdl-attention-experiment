@@ -1,0 +1,1592 @@
+{
+  "status": "PASS",
+  "scope": "INERT_TENSOR_ENGINEERING_ONLY",
+  "device": "cpu",
+  "torch_version": "2.9.1+cpu",
+  "training_updates": 0,
+  "scientific_comparison_admitted": false,
+  "checks": [
+    {
+      "name": "check_common_initialization_and_loss",
+      "status": "PASS",
+      "details": {
+        "exact_independent_tensor_copies_checked": 22,
+        "loss_max_abs_errors": {
+          "packet": 0.0,
+          "local": 0.0,
+          "gqa": 0.0
+        },
+        "noncontiguous_next_token_target_max_abs_errors": {
+          "packet": 0.0,
+          "local": 0.0,
+          "gqa": 0.0
+        },
+        "parameter_counts": {
+          "packet": 39758,
+          "local": 26846,
+          "gqa": 32810
+        },
+        "initialization_status": "UNTRAINED_ENGINEERING_MODELS_ONLY",
+        "optimizer_updates": 0
+      }
+    },
+    {
+      "name": "check_causality_and_cache_parity",
+      "status": "PASS",
+      "details": {
+        "native_initialization": {
+          "packet": {
+            "full_vs_prefill_step_max_abs_error": 1.862645149230957e-09,
+            "final_position": 9,
+            "persistent_cache_storage_preserved": true,
+            "suffix_causality_max_abs_error": 0.0,
+            "native_candidate_chunk_max_abs_error": 0.0
+          },
+          "local": {
+            "full_vs_prefill_step_max_abs_error": 0.0,
+            "final_position": 9,
+            "persistent_cache_storage_preserved": "functional local state",
+            "suffix_causality_max_abs_error": 0.0,
+            "native_candidate_chunk_max_abs_error": 0.0
+          },
+          "gqa": {
+            "full_vs_prefill_step_max_abs_error": 0.0,
+            "final_position": 9,
+            "persistent_cache_storage_preserved": true,
+            "suffix_causality_max_abs_error": 0.0,
+            "cached_multitoken_rejection": "cached continuation accepts exactly one token per row"
+          }
+        },
+        "nonzero_smear_and_projection_fixture": {
+          "packet": {
+            "full_vs_prefill_step_max_abs_error": 3.725290298461914e-09,
+            "final_position": 9,
+            "persistent_cache_storage_preserved": true,
+            "suffix_causality_max_abs_error": 0.0,
+            "native_candidate_chunk_max_abs_error": 9.313225746154785e-10
+          },
+          "local": {
+            "full_vs_prefill_step_max_abs_error": 3.725290298461914e-09,
+            "final_position": 9,
+            "persistent_cache_storage_preserved": "functional local state",
+            "suffix_causality_max_abs_error": 0.0,
+            "native_candidate_chunk_max_abs_error": 0.0
+          },
+          "gqa": {
+            "full_vs_prefill_step_max_abs_error": 2.7939677238464355e-09,
+            "final_position": 9,
+            "persistent_cache_storage_preserved": true,
+            "suffix_causality_max_abs_error": 0.0,
+            "cached_multitoken_rejection": "cached continuation accepts exactly one token per row"
+          }
+        },
+        "activated_gqa_distant_history_max_logit_change": 0.00041231513023376465,
+        "fixture_is_training": false
+      }
+    },
+    {
+      "name": "check_fork_reset_ownership",
+      "status": "PASS",
+      "details": {
+        "packet": {
+          "fork_reference_max_abs_error": 2.7939677238464355e-09,
+          "parent_unchanged": true,
+          "whole_batch_reset": true,
+          "session_rejection": "session identifier/schema mismatch",
+          "padding_rejection": "padding/mixed row validity is unsupported"
+        },
+        "local": {
+          "fork_reference_max_abs_error": 1.862645149230957e-09,
+          "parent_unchanged": true,
+          "whole_batch_reset": true,
+          "session_rejection": "session identifier/schema mismatch",
+          "padding_rejection": "padding/mixed row validity is unsupported"
+        },
+        "gqa": {
+          "fork_reference_max_abs_error": 3.725290298461914e-09,
+          "parent_unchanged": true,
+          "whole_batch_reset": true,
+          "session_rejection": "session identifier/schema mismatch",
+          "padding_rejection": "padding/mixed row validity is unsupported"
+        },
+        "cross_model_rejection": "state belongs to another model/adapter",
+        "changed_weights_rejection": "model parameters/buffers/config changed after session creation",
+        "changed_buffer_rejection": "model parameters/buffers/config changed after session creation",
+        "owned_update_failure": "injected failure after partial cache mutation",
+        "poisoned_state_rejection": "session was invalidated by a failed owned update; create a new session"
+      }
+    },
+    {
+      "name": "check_state_accounting",
+      "status": "PASS",
+      "details": {
+        "packet": {
+          "state": {
+            "schema": "nanocog-kaggle-aligned-fp32-v1",
+            "backend": "packet",
+            "batch_size": 2,
+            "position": 3,
+            "declared_capacity_tokens": 16,
+            "tensor_logical_bytes": 36640,
+            "tensor_storage_bytes": 36640,
+            "python_tensor_wrapper_bytes_estimate": 720,
+            "python_metadata_bytes_estimate": 14591,
+            "retained_state_bytes_estimate": 51951,
+            "tensors": [
+              {
+                "name": "decoder.previous_embedding",
+                "shape": [
+                  2,
+                  1,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "logical_bytes": 256,
+                "retained_storage_bytes": 256
+              },
+              {
+                "name": "layer.0.local",
+                "shape": [
+                  2,
+                  3,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "logical_bytes": 768,
+                "retained_storage_bytes": 768
+              },
+              {
+                "name": "layer.0.packets",
+                "shape": [
+                  2,
+                  4,
+                  8,
+                  4,
+                  16
+                ],
+                "dtype": "torch.float32",
+                "logical_bytes": 16384,
+                "retained_storage_bytes": 16384
+              },
+              {
+                "name": "layer.0.present",
+                "shape": [
+                  2,
+                  4,
+                  8,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "logical_bytes": 1024,
+                "retained_storage_bytes": 1024
+              },
+              {
+                "name": "layer.0.positions",
+                "shape": [
+                  2
+                ],
+                "dtype": "torch.int64",
+                "logical_bytes": 16,
+                "retained_storage_bytes": 16
+              },
+              {
+                "name": "layer.1.local",
+                "shape": [
+                  2,
+                  3,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "logical_bytes": 768,
+                "retained_storage_bytes": 768
+              },
+              {
+                "name": "layer.1.packets",
+                "shape": [
+                  2,
+                  4,
+                  8,
+                  4,
+                  16
+                ],
+                "dtype": "torch.float32",
+                "logical_bytes": 16384,
+                "retained_storage_bytes": 16384
+              },
+              {
+                "name": "layer.1.present",
+                "shape": [
+                  2,
+                  4,
+                  8,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "logical_bytes": 1024,
+                "retained_storage_bytes": 1024
+              },
+              {
+                "name": "layer.1.positions",
+                "shape": [
+                  2
+                ],
+                "dtype": "torch.int64",
+                "logical_bytes": 16,
+                "retained_storage_bytes": 16
+              }
+            ],
+            "accounting": "Underlying tensor storages deduplicated, including allocated unused KV capacity and retained views. Python metadata uses recursive sys.getsizeof, including position, identity and model signature.",
+            "outside_retained_state": [
+              "model parameters/buffers (separate parameter report)",
+              "returned logits",
+              "temporary and fork/prefill copies",
+              "allocator reserve/fragmentation",
+              "peak process/device memory"
+            ]
+          },
+          "capacity_storage_delta_bytes": 0
+        },
+        "local": {
+          "state": {
+            "schema": "nanocog-kaggle-aligned-fp32-v1",
+            "backend": "local",
+            "batch_size": 2,
+            "position": 3,
+            "declared_capacity_tokens": 16,
+            "tensor_logical_bytes": 1280,
+            "tensor_storage_bytes": 1280,
+            "python_tensor_wrapper_bytes_estimate": 240,
+            "python_metadata_bytes_estimate": 7007,
+            "retained_state_bytes_estimate": 8527,
+            "tensors": [
+              {
+                "name": "decoder.previous_embedding",
+                "shape": [
+                  2,
+                  1,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "logical_bytes": 256,
+                "retained_storage_bytes": 256
+              },
+              {
+                "name": "layer.0.local",
+                "shape": [
+                  2,
+                  2,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "logical_bytes": 512,
+                "retained_storage_bytes": 512
+              },
+              {
+                "name": "layer.1.local",
+                "shape": [
+                  2,
+                  2,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "logical_bytes": 512,
+                "retained_storage_bytes": 512
+              }
+            ],
+            "accounting": "Underlying tensor storages deduplicated, including allocated unused KV capacity and retained views. Python metadata uses recursive sys.getsizeof, including position, identity and model signature.",
+            "outside_retained_state": [
+              "model parameters/buffers (separate parameter report)",
+              "returned logits",
+              "temporary and fork/prefill copies",
+              "allocator reserve/fragmentation",
+              "peak process/device memory"
+            ]
+          },
+          "capacity_storage_delta_bytes": 0
+        },
+        "gqa": {
+          "state": {
+            "schema": "nanocog-kaggle-aligned-fp32-v1",
+            "backend": "gqa",
+            "batch_size": 2,
+            "position": 3,
+            "declared_capacity_tokens": 16,
+            "tensor_logical_bytes": 8456,
+            "tensor_storage_bytes": 8968,
+            "python_tensor_wrapper_bytes_estimate": 320,
+            "python_metadata_bytes_estimate": 11335,
+            "retained_state_bytes_estimate": 20623,
+            "tensors": [
+              {
+                "name": "kv.k_cache",
+                "shape": [
+                  2,
+                  2,
+                  16,
+                  1,
+                  16
+                ],
+                "dtype": "torch.float32",
+                "logical_bytes": 4096,
+                "retained_storage_bytes": 4096
+              },
+              {
+                "name": "kv.v_cache",
+                "shape": [
+                  2,
+                  2,
+                  16,
+                  1,
+                  16
+                ],
+                "dtype": "torch.float32",
+                "logical_bytes": 4096,
+                "retained_storage_bytes": 4096
+              },
+              {
+                "name": "kv.cache_seqlens",
+                "shape": [
+                  2
+                ],
+                "dtype": "torch.int32",
+                "logical_bytes": 8,
+                "retained_storage_bytes": 8
+              },
+              {
+                "name": "kv.previous_embedding",
+                "shape": [
+                  2,
+                  1,
+                  32
+                ],
+                "dtype": "torch.float32",
+                "logical_bytes": 256,
+                "retained_storage_bytes": 768
+              }
+            ],
+            "accounting": "Underlying tensor storages deduplicated, including allocated unused KV capacity and retained views. Python metadata uses recursive sys.getsizeof, including position, identity and model signature.",
+            "outside_retained_state": [
+              "model parameters/buffers (separate parameter report)",
+              "returned logits",
+              "temporary and fork/prefill copies",
+              "allocator reserve/fragmentation",
+              "peak process/device memory"
+            ]
+          },
+          "capacity_storage_delta_bytes": 4096
+        }
+      }
+    },
+    {
+      "name": "check_gradient_connectivity",
+      "status": "PASS",
+      "details": {
+        "native_initialization": {
+          "packet": {
+            "loss_nats": 4.574249744415283,
+            "parameters": [
+              {
+                "name": "resid",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "x0_gain",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "smear_gain",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "backout",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "embedding.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.local_age",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.packet_age",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.local_out.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.publish.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.publish.bias",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.write_topic.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.read_topic.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.payload.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.packet_out.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.packet_gain.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.packet_gain.bias",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.local_age",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.packet_age",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.local_out.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.publish.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.publish.bias",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.write_topic.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.read_topic.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.payload.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.packet_out.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.packet_gain.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.packet_gain.bias",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.local_age",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.packet_age",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.local_out.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.publish.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.publish.bias",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.write_topic.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.read_topic.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.payload.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.packet_out.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.packet_gain.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.packet_gain.bias",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mlps.0.0.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "mlps.0.1.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mlps.1.0.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "mlps.1.1.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mlps.2.0.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "mlps.2.1.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "output.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "smear_gate.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              }
+            ],
+            "zero_gradient_names": [
+              "mlps.0.0.weight",
+              "mlps.1.0.weight",
+              "mlps.2.0.weight",
+              "smear_gate.weight"
+            ]
+          },
+          "local": {
+            "loss_nats": 4.574635028839111,
+            "parameters": [
+              {
+                "name": "resid",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "x0_gain",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "smear_gain",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "backout",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "embedding.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.conv.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.out.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.conv.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.out.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.conv.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.out.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mlps.0.0.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "mlps.0.1.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mlps.1.0.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "mlps.1.1.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mlps.2.0.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "mlps.2.1.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "output.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "smear_gate.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              }
+            ],
+            "zero_gradient_names": [
+              "mlps.0.0.weight",
+              "mlps.1.0.weight",
+              "mlps.2.0.weight",
+              "smear_gate.weight"
+            ]
+          },
+          "gqa": {
+            "loss_nats": 4.574402332305908,
+            "parameters": [
+              {
+                "name": "resid_lambdas",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "x0_lambdas",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "smear_lambda",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "backout_lambda",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.wte.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.0.attn.c_q.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "transformer.h.0.attn.c_k.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "transformer.h.0.attn.c_v.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "transformer.h.0.attn.c_proj.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.0.attn.ve_gate.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "transformer.h.0.mlp.c_fc.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "transformer.h.0.mlp.c_proj.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.1.attn.c_q.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "transformer.h.1.attn.c_k.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "transformer.h.1.attn.c_v.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "transformer.h.1.attn.c_proj.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.1.mlp.c_fc.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "transformer.h.1.mlp.c_proj.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.2.attn.c_q.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "transformer.h.2.attn.c_k.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "transformer.h.2.attn.c_v.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "transformer.h.2.attn.c_proj.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.2.attn.ve_gate.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "transformer.h.2.mlp.c_fc.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "transformer.h.2.mlp.c_proj.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "lm_head.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "smear_gate.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "value_embeds.0.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              },
+              {
+                "name": "value_embeds.2.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": false
+              }
+            ],
+            "zero_gradient_names": [
+              "transformer.h.0.attn.c_q.weight",
+              "transformer.h.0.attn.c_k.weight",
+              "transformer.h.0.attn.c_v.weight",
+              "transformer.h.0.attn.ve_gate.weight",
+              "transformer.h.0.mlp.c_fc.weight",
+              "transformer.h.1.attn.c_q.weight",
+              "transformer.h.1.attn.c_k.weight",
+              "transformer.h.1.attn.c_v.weight",
+              "transformer.h.1.mlp.c_fc.weight",
+              "transformer.h.2.attn.c_q.weight",
+              "transformer.h.2.attn.c_k.weight",
+              "transformer.h.2.attn.c_v.weight",
+              "transformer.h.2.attn.ve_gate.weight",
+              "transformer.h.2.mlp.c_fc.weight",
+              "smear_gate.weight",
+              "value_embeds.0.weight",
+              "value_embeds.2.weight"
+            ]
+          }
+        },
+        "intervened_connectivity_fixture": {
+          "packet": {
+            "loss_nats": 4.574247360229492,
+            "parameters": [
+              {
+                "name": "resid",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "x0_gain",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "smear_gain",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "backout",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "embedding.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.local_age",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.packet_age",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.local_out.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.publish.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.publish.bias",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.write_topic.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.read_topic.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.payload.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.packet_out.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.packet_gain.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.packets.packet_gain.bias",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.local_age",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.packet_age",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.local_out.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.publish.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.publish.bias",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.write_topic.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.read_topic.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.payload.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.packet_out.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.packet_gain.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.packets.packet_gain.bias",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.local_age",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.packet_age",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.local_out.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.publish.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.publish.bias",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.write_topic.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.read_topic.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.payload.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.packet_out.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.packet_gain.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.packets.packet_gain.bias",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mlps.0.0.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mlps.0.1.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mlps.1.0.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mlps.1.1.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mlps.2.0.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mlps.2.1.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "output.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "smear_gate.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              }
+            ],
+            "zero_gradient_names": []
+          },
+          "local": {
+            "loss_nats": 4.574545383453369,
+            "parameters": [
+              {
+                "name": "resid",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "x0_gain",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "smear_gain",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "backout",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "embedding.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.conv.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.0.out.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.conv.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.1.out.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.conv.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mixers.2.out.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mlps.0.0.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mlps.0.1.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mlps.1.0.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mlps.1.1.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mlps.2.0.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "mlps.2.1.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "output.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "smear_gate.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              }
+            ],
+            "zero_gradient_names": []
+          },
+          "gqa": {
+            "loss_nats": 4.574377536773682,
+            "parameters": [
+              {
+                "name": "resid_lambdas",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "x0_lambdas",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "smear_lambda",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "backout_lambda",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.wte.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.0.attn.c_q.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.0.attn.c_k.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.0.attn.c_v.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.0.attn.c_proj.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.0.attn.ve_gate.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.0.mlp.c_fc.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.0.mlp.c_proj.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.1.attn.c_q.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.1.attn.c_k.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.1.attn.c_v.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.1.attn.c_proj.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.1.mlp.c_fc.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.1.mlp.c_proj.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.2.attn.c_q.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.2.attn.c_k.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.2.attn.c_v.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.2.attn.c_proj.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.2.attn.ve_gate.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.2.mlp.c_fc.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "transformer.h.2.mlp.c_proj.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "lm_head.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "smear_gate.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "value_embeds.0.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              },
+              {
+                "name": "value_embeds.2.weight",
+                "present": true,
+                "finite": true,
+                "nonzero": true
+              }
+            ],
+            "zero_gradient_names": []
+          }
+        },
+        "gradient_fixture_layers": 3,
+        "optimizer_updates": 0,
+        "trained_checkpoint_created": false
+      }
+    }
+  ],
+  "elapsed_seconds": 0.4114154350027093,
+  "reviewed_source_hashes": {
+    "adapters.py": "41cb92001ef24b0c19968d4d93b1905189ccdeebe4e4aa5a9f9b93c618c8b840",
+    "test_adapters.py": "2a2fb0bfd61c3cd721fa6c4e81cd4e791710c4eab5823095d11c80847ef2f38a"
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+}

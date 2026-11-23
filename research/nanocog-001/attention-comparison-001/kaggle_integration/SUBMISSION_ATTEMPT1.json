@@ -1,0 +1,25 @@
+{
+  "run_id": "COG-ATTENTION-KAGGLE-ADAPTER-001",
+  "attempt": 1,
+  "requested_kernel_ref": "eweewee2/cog-attention-adapter-001",
+  "command_arguments": [
+    "kernels",
+    "push",
+    "-p",
+    "STAGED_REVIEWED_DIRECTORY",
+    "--accelerator",
+    "NvidiaTeslaT4",
+    "--timeout",
+    "900"
+  ],
+  "submitted_source_sha256": "c7cd17d088294cf56f62a372328921ed4e29cf083f8bfc897f7040a374ee4a81",
+  "requested_private": true,
+  "requested_internet": true,
+  "attached_sources": [],
+  "credential_scan": "PASS_EXACT_SECRET_BYTES_ABSENT",
+  "status": "ACCEPTED",
+  "model_fits": 0,
+  "returned_version": 1,
+  "returned_ref": "eweewee2/cog-attention-adapter-001",
+  "returned_url": "https://www.kaggle.com/code/eweewee2/cog-attention-adapter-001"
+}

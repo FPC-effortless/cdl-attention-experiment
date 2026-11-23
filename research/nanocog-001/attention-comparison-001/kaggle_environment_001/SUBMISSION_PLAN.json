@@ -1,0 +1,25 @@
+{
+  "run_id": "COG-ATTENTION-KAGGLE-ENV-001",
+  "kernel_ref": "eweewee2/cog-attention-compare-env-001",
+  "source_sha256": "70c81e91d05c38a7cd487c2d6a74b639ff2ce1802ce4b27a93071a2ffefc7719",
+  "metadata": {
+    "id": "eweewee2/cog-attention-compare-env-001",
+    "title": "COG Attention Comparison Environment 001",
+    "code_file": "probe.py",
+    "language": "python",
+    "kernel_type": "script",
+    "is_private": true,
+    "enable_gpu": true,
+    "enable_tpu": false,
+    "enable_internet": false,
+    "dataset_sources": [],
+    "competition_sources": [],
+    "kernel_sources": [],
+    "model_sources": []
+  },
+  "requested_accelerator": "NvidiaTeslaT4",
+  "timeout_seconds": 300,
+  "maximum_submissions": 1,
+  "model_training": false,
+  "credential_included": false
+}

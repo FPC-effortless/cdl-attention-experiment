@@ -1,0 +1,151 @@
+{
+  "status": "PASS_DOCUMENT_SOURCE_PACKAGE_ONLY",
+  "file_count": 28,
+  "json_and_python_syntax": "PASS",
+  "credential_bytes_absent": "PASS",
+  "index_original_prefix_preserved": "PASS",
+  "gpu_execution": "QUEUED_NOT_OBSERVED",
+  "model_fits": 0,
+  "files": [
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_environment_001/ENVIRONMENT_REVIEW.md",
+      "sha256": "33d3e60f853938eb43ba662c918c818ac66d55582244da048230986eb0737258",
+      "size_bytes": 3905
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_environment_001/PROTOCOL.md",
+      "sha256": "a0823963c45e98258e7306556126c3833cc6043cdb9a8c6ce7b280c54f128378",
+      "size_bytes": 1937
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_environment_001/REMOTE_RECEIPT.json",
+      "sha256": "d2474b351535c7ae05a577948f71d16a5ed80c0da48fcc09baa1b125d6883777",
+      "size_bytes": 820
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_environment_001/SUBMISSION_ATTEMPT1.json",
+      "sha256": "2aa8eb098143d10794ff4417643133dfefb35204574fc767748266fbcea6fad8",
+      "size_bytes": 930
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_environment_001/SUBMISSION_PLAN.json",
+      "sha256": "c5372ff03f777480f030479923d2cf4a96a31e9dc1d5f5ed8212d4196f5f0747",
+      "size_bytes": 774
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_environment_001/probe.py",
+      "sha256": "70c81e91d05c38a7cd487c2d6a74b639ff2ce1802ce4b27a93071a2ffefc7719",
+      "size_bytes": 2831
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/ADAPTER_DESIGN.md",
+      "sha256": "165ab0d85db1defb4ababf0a7bce3c5e1a98ee77606dcdd619a1af26ac8583a2",
+      "size_bytes": 11591
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/BOOTSTRAP_WHEEL_LOCK.json",
+      "sha256": "283c76d74c0b56845479040ecd57c2e58294048658829bc3f1e6bb8c821e6c5d",
+      "size_bytes": 12358
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/BUNDLE_RECEIPT.json",
+      "sha256": "9a4b9859350eba2f90c294d3dd01d02714b4945223e40fe011ea5805d9328526",
+      "size_bytes": 13295
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/BUNDLE_REVIEW.md",
+      "sha256": "ae12e0fc5251ffb667656b87f95d0f42d6405e74f2cadc36cdf650b68caed7bb",
+      "size_bytes": 8044
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/BUNDLE_STATIC_REVIEW.json",
+      "sha256": "c65e5d11009a5e46d3cab983294771cc7cf5ac9ff921bd8b9e6a7ac19ff72627",
+      "size_bytes": 933
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/CPU_CHECKS_ATTEMPT1.json",
+      "sha256": "f91e77368bb296d10a9d0c6bce0007fa4863d7843891d0cb176d9f7d3c7dcec6",
+      "size_bytes": 50111
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/EXECUTION_STATUS.json",
+      "sha256": "36b03254ffcdde6888da2080435b5627ee3b2e8dbda0f334e0c8aeb72ad6881e",
+      "size_bytes": 1109
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/INDEPENDENT_ADMISSION_REVIEW.md",
+      "sha256": "ed97031bcfd9289b53e001b95b66ace9149f460086c6995e5942e97047c14b34",
+      "size_bytes": 18520
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/README.md",
+      "sha256": "7940bfdfaf19061a749b1e18e4c3b0719baa206e2ced00142774fa62e8861966",
+      "size_bytes": 5953
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/REMOTE_RECEIPT_ATTEMPT1.json",
+      "sha256": "ed38c41855748c82eefa209ee324410566a446e9fcaf5a9f73413df2d985cb85",
+      "size_bytes": 774
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/RESUME.md",
+      "sha256": "de92ceaf4d9269eb9d631ae5cd6524939033108eec3d9f951f4f345d587bae99",
+      "size_bytes": 3513
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/RUN_PROTOCOL.md",
+      "sha256": "64c94fe6099d4f99fa2a6dad5fa76d140faf800735f0f8a84d57e0560f52ee2c",
+      "size_bytes": 4517
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/SUBMISSION_ATTEMPT1.json",
+      "sha256": "9138a5552de1dc97050e68726cd3b3ffd5af946ae3cc1e9cbc35294ac44cd7e3",
+      "size_bytes": 745
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/TOKENIZER_PREPARATION_RECEIPT.json",
+      "sha256": "efdcfe4e29d79e512a7337216a337e505c95b96ef37668d726519434378bd4b9",
+      "size_bytes": 3388
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/TOKENIZER_REVIEW.md",
+      "sha256": "2cc09d61e22c065e5d799c5fa4883a5152589119964a59f34633e61e24e4ae12",
+      "size_bytes": 3653
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/adapters.py",
+      "sha256": "41cb92001ef24b0c19968d4d93b1905189ccdeebe4e4aa5a9f9b93c618c8b840",
+      "size_bytes": 27939
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/bootstrap-requirements.txt",
+      "sha256": "e2a15d3b282e2939ab256979eab265a9eaa77166ad56d909a07c55e2ddbfffb3",
+      "size_bytes": 4930
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/build_bundle.py",
+      "sha256": "3f2fe8382be6a33befd28206573fea7b0dc54b276134f148f2fa6c4526857c2f",
+      "size_bytes": 9707
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/runner_core.py",
+      "sha256": "25418c51065a301461ad0e8c468e83b299da569a78b44458e1a42e2ee4be03e8",
+      "size_bytes": 11876
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/test_adapters.py",
+      "sha256": "2a2fb0bfd61c3cd721fa6c4e81cd4e791710c4eab5823095d11c80847ef2f38a",
+      "size_bytes": 18189
+    },
+    {
+      "path": "research/nanocog-001/attention-comparison-001/kaggle_integration/tokenizer_assets.py",
+      "sha256": "91095ddb5fbcbec91ec5b90761ac40bd346931d66e788352b241019e07cbac0b",
+      "size_bytes": 7316
+    },
+    {
+      "path": "research/nanocog-001/RESULTS_INDEX.md",
+      "sha256": "6ceb7b76cbb549bf6c5c30947854418edff89c1ca8a89dd522a1fbfef59c7669",
+      "size_bytes": 8557
+    }
+  ]
+}

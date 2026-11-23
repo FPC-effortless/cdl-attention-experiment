@@ -1,0 +1,269 @@
+{
+  "observed_utc": "2026-11-23T05:25:45.941595+00:00",
+  "only_binary": true,
+  "install_dependencies": false,
+  "packages": [
+    {
+      "package": "rustbpe",
+      "version": "0.1.0",
+      "metadata_url": "https://pypi.org/pypi/rustbpe/0.1.0/json",
+      "wheels": [
+        {
+          "filename": "rustbpe-0.1.0-cp310-cp310-macosx_10_12_x86_64.whl",
+          "sha256": "15f2e126a2b9fde264598f9317b1ec7f20ed3cf1e49cae081f7d6b7c1064655c"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp310-cp310-macosx_11_0_arm64.whl",
+          "sha256": "34dc37f2771517813b70be47e26d5861ba69298f299dfd24409882e76bd1ccad"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+          "sha256": "d4e7543962c932c3dcc29f5a02855ad613e9b05bc93c898fb99e4c7928598c7b"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "sha256": "f7e90da31ce2708481c6b2169d9b8072917d7deefae4fb91cf25655dedac6afa"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp310-cp310-win_amd64.whl",
+          "sha256": "9b92ff475c37a2b10391614c10ab2deb923bb029a8288e11e77618d5e5fcdc0e"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp311-cp311-macosx_10_12_x86_64.whl",
+          "sha256": "400be6ede8875d5ac0e0ac91dfba1ec7ea7d359353b0465da633576cf01c7de7"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp311-cp311-macosx_11_0_arm64.whl",
+          "sha256": "dff3ffb6f05576a27732d2013f044ec6f137bc7bce6773a5e134cfc0c24dcc82"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+          "sha256": "92a0186ed815ccec376cca23c4bc5f209f6c67efeb101c1c935345cd63cc9eea"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "sha256": "fec78edb30f3264d0db69ffd7ac333d695be76e4e672fd5301626787bc1220c2"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp311-cp311-win_amd64.whl",
+          "sha256": "0f35a858c31faf09e6723fe2e8c020efcf4e036b7270ed151ca8538fad1fe0c5"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp312-cp312-macosx_10_12_x86_64.whl",
+          "sha256": "13e6aeaaf6e2f970ab577f32a6c49c8dd23517279253a37873ddc7f74fd30622"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp312-cp312-macosx_11_0_arm64.whl",
+          "sha256": "40763a0751ba8a595717f5015d18b0241e1af9930412e42d350380ba4601361b"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+          "sha256": "bfe8d24d0d71c16fb8ba5106e7d2be2c43211195a74ffa7e2c88cb98c07122e4"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "sha256": "844f7f6c3bd59a9578b87ebc6bb60fe3ee47c8d8040a62488ce8e7eaeeb31319"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp312-cp312-win_amd64.whl",
+          "sha256": "b79b67d8db6a2fe3928918006569e73aee23e012b3b0b36fd4a2a85cc2c2161f"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp313-cp313-macosx_10_12_x86_64.whl",
+          "sha256": "6a59c05a8123d3a8e8815106fd1938a9499d4fdaf5cf00351fa7d3b5cc4f8ad6"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp313-cp313-macosx_11_0_arm64.whl",
+          "sha256": "bc0a8dd8b30860e3a4889ab7cf7c04a2614f8fc77c191efde1500aa054484efa"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+          "sha256": "3eeb8efae3d10a3b6640a1e2bdc7f1e55a15f867bdae9efb3d8f0757b01d9d3a"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "sha256": "2b0b77591c9e836df41ad0b30be9ec519a708c477cbf82eedaf839e7a9b10101"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp313-cp313t-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+          "sha256": "b1229e70c2d091faf8c0a50951e2e734b3b810d1d2b7677cd49d86dc3853c283"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp313-cp313-win_amd64.whl",
+          "sha256": "cc5bebc9990071e400bbe304304af3d5757522bb2a1177e2c3517f11ad28f0eb"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp314-cp314-macosx_10_12_x86_64.whl",
+          "sha256": "02d123e72fe9253c92904bfe2ba35afc816576b2cdbb432a96001e75bafb888e"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp314-cp314-macosx_11_0_arm64.whl",
+          "sha256": "a0df5172a813c982d31673d9de32dd053ddbb64ced2b97709a85d2e3c6a6cd28"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp314-cp314-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+          "sha256": "c525072e521a5cf729474a0ea6c83b1b16973b877098ee7060eac4bbacd46c7a"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "sha256": "e0c9216f9e38558f0939f6e34cc78d5517d7a02026c1a35b271ca82e9b522539"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp314-cp314t-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+          "sha256": "88d1482ccadf5e29b524b13740b3a5e1f4e454a048684885d894fd1a9930617a"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp314-cp314-win_amd64.whl",
+          "sha256": "b5ceb789bb93a82547c0ed7277ecc01047eaf0eeea6bbc0a21420e65e5fb553a"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+          "sha256": "a260ce8eac982d6107370dd86fb0d894dd4d18889c946fc356cc2ea1d93c13bf"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "sha256": "066a4a8d2ec0ef5656a122b448239d75d8cae200fb1862b453a6b7daabc835a9"
+        },
+        {
+          "filename": "rustbpe-0.1.0-cp39-cp39-win_amd64.whl",
+          "sha256": "74c517c7ad32ac26594a9f8ab769e338ed3be0ceda5d6a3e37c3c26f59782a1e"
+        },
+        {
+          "filename": "rustbpe-0.1.0-pp311-pypy311_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+          "sha256": "ba8e08ed3cc7a7bf832f70c86c64a94d0112e8c526d55a1f40e53ede2ca14d22"
+        },
+        {
+          "filename": "rustbpe-0.1.0-pp311-pypy311_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "sha256": "9f419fd428e8ffd2430945a694cb5177706550ee5c9b16737ba860ecccd5acff"
+        }
+      ]
+    },
+    {
+      "package": "tiktoken",
+      "version": "0.11.0",
+      "metadata_url": "https://pypi.org/pypi/tiktoken/0.11.0/json",
+      "wheels": [
+        {
+          "filename": "tiktoken-0.11.0-cp310-cp310-macosx_10_12_x86_64.whl",
+          "sha256": "8a9b517d6331d7103f8bef29ef93b3cca95fa766e293147fe7bacddf310d5917"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp310-cp310-macosx_11_0_arm64.whl",
+          "sha256": "b4ddb1849e6bf0afa6cc1c5d809fb980ca240a5fffe585a04e119519758788c0"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+          "sha256": "10331d08b5ecf7a780b4fe4d0281328b23ab22cdb4ff65e68d56caeda9940ecc"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "sha256": "b062c82300341dc87e0258c69f79bed725f87e753c21887aea90d272816be882"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp310-cp310-musllinux_1_2_x86_64.whl",
+          "sha256": "195d84bec46169af3b1349a1495c151d37a0ff4cba73fd08282736be7f92cc6c"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp310-cp310-win_amd64.whl",
+          "sha256": "fe91581b0ecdd8783ce8cb6e3178f2260a3912e8724d2f2d49552b98714641a1"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp311-cp311-macosx_10_12_x86_64.whl",
+          "sha256": "4ae374c46afadad0f501046db3da1b36cd4dfbfa52af23c998773682446097cf"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp311-cp311-macosx_11_0_arm64.whl",
+          "sha256": "25a512ff25dc6c85b58f5dd4f3d8c674dc05f96b02d66cdacf628d26a4e4866b"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+          "sha256": "2130127471e293d385179c1f3f9cd445070c0772be73cdafb7cec9a3684c0458"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "sha256": "21e43022bf2c33f733ea9b54f6a3f6b4354b909f5a73388fb1b9347ca54a069c"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp311-cp311-musllinux_1_2_x86_64.whl",
+          "sha256": "adb4e308eb64380dc70fa30493e21c93475eaa11669dea313b6bbf8210bfd013"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp311-cp311-win_amd64.whl",
+          "sha256": "ece6b76bfeeb61a125c44bbefdfccc279b5288e6007fbedc0d32bfec602df2f2"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp312-cp312-macosx_10_13_x86_64.whl",
+          "sha256": "fd9e6b23e860973cf9526544e220b223c60badf5b62e80a33509d6d40e6c8f5d"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp312-cp312-macosx_11_0_arm64.whl",
+          "sha256": "6a76d53cee2da71ee2731c9caa747398762bda19d7f92665e882fef229cb0b5b"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+          "sha256": "6ef72aab3ea240646e642413cb363b73869fed4e604dcfd69eec63dc54d603e8"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "sha256": "7f929255c705efec7a28bf515e29dc74220b2f07544a8c81b8d69e8efc4578bd"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp312-cp312-musllinux_1_2_x86_64.whl",
+          "sha256": "61f1d15822e4404953d499fd1dcc62817a12ae9fb1e4898033ec8fe3915fdf8e"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp312-cp312-win_amd64.whl",
+          "sha256": "45927a71ab6643dfd3ef57d515a5db3d199137adf551f66453be098502838b0f"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp313-cp313-macosx_10_13_x86_64.whl",
+          "sha256": "a5f3f25ffb152ee7fec78e90a5e5ea5b03b4ea240beed03305615847f7a6ace2"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp313-cp313-macosx_11_0_arm64.whl",
+          "sha256": "7dc6e9ad16a2a75b4c4be7208055a1f707c9510541d94d9cc31f7fbdc8db41d8"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+          "sha256": "5a0517634d67a8a48fd4a4ad73930c3022629a85a217d256a6e9b8b47439d1e4"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "sha256": "7fb4effe60574675118b73c6fbfd3b5868e5d7a1f570d6cc0d18724b09ecf318"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp313-cp313-musllinux_1_2_x86_64.whl",
+          "sha256": "94f984c9831fd32688aef4348803b0905d4ae9c432303087bae370dc1381a2b8"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp313-cp313-win_amd64.whl",
+          "sha256": "2177ffda31dec4023356a441793fed82f7af5291120751dee4d696414f54db0c"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp39-cp39-macosx_10_12_x86_64.whl",
+          "sha256": "13220f12c9e82e399377e768640ddfe28bea962739cc3a869cad98f42c419a89"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp39-cp39-macosx_11_0_arm64.whl",
+          "sha256": "7f2db627f5c74477c0404b4089fd8a28ae22fa982a6f7d9c7d4c305c375218f3"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+          "sha256": "2302772f035dceb2bcf8e55a735e4604a0b51a6dd50f38218ff664d46ec43807"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+          "sha256": "20b977989afe44c94bcc50db1f76971bb26dca44218bd203ba95925ef56f8e7a"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp39-cp39-musllinux_1_2_x86_64.whl",
+          "sha256": "669a1aa1ad6ebf1b3c26b45deb346f345da7680f845b5ea700bba45c20dea24c"
+        },
+        {
+          "filename": "tiktoken-0.11.0-cp39-cp39-win_amd64.whl",
+          "sha256": "e363f33c720a055586f730c00e330df4c7ea0024bf1c83a8a9a9dbc054c4f304"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "archive_sha256": "65f19af445dc368e382faa32fd006941969c6df26f5c4b5330bd898472f555f5",
+  "kernel_source_sha256": "c7cd17d088294cf56f62a372328921ed4e29cf083f8bfc897f7040a374ee4a81",
+  "kernel_source_bytes": 649761,
+  "metadata": {
+    "id": "eweewee2/cog-attention-adapter-001",
+    "title": "COG Attention Adapter 001",
+    "code_file": "kernel.py",
+    "language": "python",
+    "kernel_type": "script",
+    "is_private": true,
+    "enable_gpu": true,
+    "enable_tpu": false,
+    "enable_internet": true,
+    "dataset_sources": [],
+    "kernel_sources": [],
+    "competition_sources": [],
+    "model_sources": []
+  },
+  "source_manifest": {
+    "schema": "cog.private-kaggle-source-bundle.v1",
+    "run_id": "COG-ATTENTION-KAGGLE-ADAPTER-001",
+    "source_only_allowlist": true,
+    "credential_included": false,
+    "core_timeout_seconds": 720,
+    "requested_server_timeout_seconds": 900,
+    "requested_accelerator": "NvidiaTeslaT4",
+    "is_private": true,
+    "worker_internet": "enabled only for hash-pinned PyPI binary bootstrap; no model/data downloads",
+    "files": [
+      {
+        "bundle_path": "candidate/NOTICE_NANOCHAT_LICENSE",
+        "size_bytes": 1072,
+        "sha256": "42bb09f339a8af8b90d3b4969b6f6e4ba4aff3b5c614103b031fccdf71c8f772",
+        "kind": "license",
+        "repository": "FPC-effortless/cdl-attention-experiment",
+        "commit": "1a91168b216a49543cc839153fa299a262320730"
+      },
+      {
+        "bundle_path": "candidate/nanocog/__init__.py",
+        "size_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "kind": "candidate_source",
+        "repository": "FPC-effortless/cdl-attention-experiment",
+        "commit": "1a91168b216a49543cc839153fa299a262320730",
+        "equivalent_reference_commit": "39be434ff160d4e6507df8d2114979ba5529caff",
+        "path": "research/nanocog-001/nanocog/__init__.py"
+      },
+      {
+        "bundle_path": "candidate/nanocog/comm/__init__.py",
+        "size_bytes": 100,
+        "sha256": "356b9684a3e34021696b06bfbd97175a4161241a3d86e78a148a83e2e6eccdc9",
+        "kind": "candidate_source",
+        "repository": "FPC-effortless/cdl-attention-experiment",
+        "commit": "1a91168b216a49543cc839153fa299a262320730",
+        "equivalent_reference_commit": "39be434ff160d4e6507df8d2114979ba5529caff",
+        "path": "research/nanocog-001/nanocog/comm/__init__.py"
+      },
+      {
+        "bundle_path": "candidate/nanocog/comm/packet.py",
+        "size_bytes": 10861,
+        "sha256": "346505fc26654609c8d5f19f59376cb0ecff11c1aa572c51ae7f188d4eeb997b",
+        "kind": "candidate_source",
+        "repository": "FPC-effortless/cdl-attention-experiment",
+        "commit": "1a91168b216a49543cc839153fa299a262320730",
+        "equivalent_reference_commit": "39be434ff160d4e6507df8d2114979ba5529caff",
+        "path": "research/nanocog-001/nanocog/comm/packet.py"
+      },
+      {
+        "bundle_path": "candidate/nanocog/interaction.py",
+        "size_bytes": 1257,
+        "sha256": "f6f9db16ead08fb837360051ec10920d5e410eb837453c02d93fb24057c0f1a8",
+        "kind": "candidate_source",
+        "repository": "FPC-effortless/cdl-attention-experiment",
+        "commit": "1a91168b216a49543cc839153fa299a262320730",
+        "equivalent_reference_commit": "39be434ff160d4e6507df8d2114979ba5529caff",
+        "path": "research/nanocog-001/nanocog/interaction.py"
+      },
+      {
+        "bundle_path": "candidate/nanocog/model.py",
+        "size_bytes": 6299,
+        "sha256": "b9ae1000992dbd9e103de5f2365b88fb0c2a674e9acc9cfc0c9ac2ba7b599ab3",
+        "kind": "candidate_source",
+        "repository": "FPC-effortless/cdl-attention-experiment",
+        "commit": "1a91168b216a49543cc839153fa299a262320730",
+        "equivalent_reference_commit": "39be434ff160d4e6507df8d2114979ba5529caff",
+        "path": "research/nanocog-001/nanocog/model.py"
+      },
+      {
+        "bundle_path": "candidate/nanocog/state/__init__.py",
+        "size_bytes": 310,
+        "sha256": "6eec56cc553d7d3bad34efcaaaa4aacf6368b80e3f08bde044136e084e1a831f",
+        "kind": "candidate_source",
+        "repository": "FPC-effortless/cdl-attention-experiment",
+        "commit": "1a91168b216a49543cc839153fa299a262320730",
+        "equivalent_reference_commit": "39be434ff160d4e6507df8d2114979ba5529caff",
+        "path": "research/nanocog-001/nanocog/state/__init__.py"
+      },
+      {
+        "bundle_path": "candidate/nanocog/state/pulse_adapter.py",
+        "size_bytes": 3186,
+        "sha256": "d3d178c37b2f60c918fe00f115da7ff1e6d44bd014969c679c208e2d2cd965ac",
+        "kind": "candidate_source",
+        "repository": "FPC-effortless/cdl-attention-experiment",
+        "commit": "1a91168b216a49543cc839153fa299a262320730",
+        "equivalent_reference_commit": "39be434ff160d4e6507df8d2114979ba5529caff",
+        "path": "research/nanocog-001/nanocog/state/pulse_adapter.py"
+      },
+      {
+        "bundle_path": "candidate/nanocog/state/records.py",
+        "size_bytes": 11487,
+        "sha256": "6eb6950971538ec7991b669a6962112d89ce5a97be8b721be13268e3b9d1a502",
+        "kind": "candidate_source",
+        "repository": "FPC-effortless/cdl-attention-experiment",
+        "commit": "1a91168b216a49543cc839153fa299a262320730",
+        "equivalent_reference_commit": "39be434ff160d4e6507df8d2114979ba5529caff",
+        "path": "research/nanocog-001/nanocog/state/records.py"
+      },
+      {
+        "bundle_path": "integration/RUN_PROTOCOL.md",
+        "size_bytes": 4517,
+        "sha256": "64c94fe6099d4f99fa2a6dad5fa76d140faf800735f0f8a84d57e0560f52ee2c",
+        "kind": "reviewed_integration_source",
+        "path": "RUN_PROTOCOL.md"
+      },
+      {
+        "bundle_path": "integration/adapters.py",
+        "size_bytes": 27939,
+        "sha256": "41cb92001ef24b0c19968d4d93b1905189ccdeebe4e4aa5a9f9b93c618c8b840",
+        "kind": "reviewed_integration_source",
+        "path": "adapters.py"
+      },
+      {
+        "bundle_path": "integration/bootstrap-requirements.txt",
+        "size_bytes": 4930,
+        "sha256": "e2a15d3b282e2939ab256979eab265a9eaa77166ad56d909a07c55e2ddbfffb3",
+        "kind": "reviewed_integration_source",
+        "path": "bootstrap-requirements.txt"
+      },
+      {
+        "bundle_path": "integration/runner_core.py",
+        "size_bytes": 11876,
+        "sha256": "25418c51065a301461ad0e8c468e83b299da569a78b44458e1a42e2ee4be03e8",
+        "kind": "reviewed_integration_source",
+        "path": "runner_core.py"
+      },
+      {
+        "bundle_path": "integration/test_adapters.py",
+        "size_bytes": 18189,
+        "sha256": "2a2fb0bfd61c3cd721fa6c4e81cd4e791710c4eab5823095d11c80847ef2f38a",
+        "kind": "reviewed_integration_source",
+        "path": "test_adapters.py"
+      },
+      {
+        "bundle_path": "integration/tokenizer_assets.py",
+        "size_bytes": 7316,
+        "sha256": "91095ddb5fbcbec91ec5b90761ac40bd346931d66e788352b241019e07cbac0b",
+        "kind": "reviewed_integration_source",
+        "path": "tokenizer_assets.py"
+      },
+      {
+        "bundle_path": "tokenizer/GPT2_LICENSE.txt",
+        "size_bytes": 1403,
+        "sha256": "0dbeda4bc78823b1d67ec0ee414d8690ee4cad826bc9c147b215adc3af202436",
+        "kind": "verified_tokenizer_asset",
+        "path": "GPT2_LICENSE.txt"
+      },
+      {
+        "bundle_path": "tokenizer/encoding.json",
+        "size_bytes": 1036809,
+        "sha256": "587a4639dc0483709fb06ae822d11a480a83743f5d18a94e17e03abee3c03601",
+        "kind": "verified_tokenizer_asset",
+        "path": "encoding.json"
+      },
+      {
+        "bundle_path": "tokenizer/tokenizer_manifest.json",
+        "size_bytes": 2548,
+        "sha256": "bb8d2c66b9586f5f7750da15472238181810f905ff1bc656fdd5298d2abcedb7",
+        "kind": "verified_tokenizer_asset",
+        "path": "tokenizer_manifest.json"
+      },
+      {
+        "bundle_path": "upstream/LICENSE",
+        "size_bytes": 1072,
+        "sha256": "42bb09f339a8af8b90d3b4969b6f6e4ba4aff3b5c614103b031fccdf71c8f772",
+        "kind": "license",
+        "repository": "karpathy/nanochat",
+        "commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd"
+      },
+      {
+        "bundle_path": "upstream/nanochat/__init__.py",
+        "size_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "kind": "upstream_source",
+        "repository": "karpathy/nanochat",
+        "commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "path": "nanochat/__init__.py"
+      },
+      {
+        "bundle_path": "upstream/nanochat/checkpoint_manager.py",
+        "size_bytes": 8722,
+        "sha256": "aa63399ddaf2a0412dc099287bf0dc879f9cb0cce00f861db50eeec58746f3ba",
+        "kind": "upstream_source",
+        "repository": "karpathy/nanochat",
+        "commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "path": "nanochat/checkpoint_manager.py"
+      },
+      {
+        "bundle_path": "upstream/nanochat/common.py",
+        "size_bytes": 13560,
+        "sha256": "b843db6e769db18d3364e42cb3742a9537a3d4cf43e5f098293babc7ddeb44bf",
+        "kind": "upstream_source",
+        "repository": "karpathy/nanochat",
+        "commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "path": "nanochat/common.py"
+      },
+      {
+        "bundle_path": "upstream/nanochat/core_eval.py",
+        "size_bytes": 11572,
+        "sha256": "9303997ff17fa48ad5e5730f33b7e79a687cc2a1fdad928666bb63dc3514c51d",
+        "kind": "upstream_source",
+        "repository": "karpathy/nanochat",
+        "commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "path": "nanochat/core_eval.py"
+      },
+      {
+        "bundle_path": "upstream/nanochat/dataloader.py",
+        "size_bytes": 7450,
+        "sha256": "5cc72d7207931f112d685ba8e04c112e1a4ab7756dbbb29b95bdb4908a21864d",
+        "kind": "upstream_source",
+        "repository": "karpathy/nanochat",
+        "commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "path": "nanochat/dataloader.py"
+      },
+      {
+        "bundle_path": "upstream/nanochat/dataset.py",
+        "size_bytes": 7014,
+        "sha256": "3ec2ad5987875e3d7f3ec72f08d78089fe8a3b20090448b798c21c4efb93d18a",
+        "kind": "upstream_source",
+        "repository": "karpathy/nanochat",
+        "commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "path": "nanochat/dataset.py"
+      },
+      {
+        "bundle_path": "upstream/nanochat/engine.py",
+        "size_bytes": 15533,
+        "sha256": "76636fc24228e72afdafe4747ff8e52a6cc60a5ec61c97205061f3bfed0a86fd",
+        "kind": "upstream_source",
+        "repository": "karpathy/nanochat",
+        "commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "path": "nanochat/engine.py"
+      },
+      {
+        "bundle_path": "upstream/nanochat/execution.py",
+        "size_bytes": 5313,
+        "sha256": "122ce1457100a5cb20fbe9666a57006df3b0fe78c014240d2f87c35ccade2c1a",
+        "kind": "upstream_source",
+        "repository": "karpathy/nanochat",
+        "commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "path": "nanochat/execution.py"
+      },
+      {
+        "bundle_path": "upstream/nanochat/flash_attention.py",
+        "size_bytes": 7146,
+        "sha256": "a10b0b10ad91893fcf9c9b19c96bd3468a2721cf156dcdbeeeecf05f97f22c2f",
+        "kind": "upstream_source",
+        "repository": "karpathy/nanochat",
+        "commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "path": "nanochat/flash_attention.py"
+      },
+      {
+        "bundle_path": "upstream/nanochat/fp8.py",
+        "size_bytes": 12008,
+        "sha256": "fb56d323639a315393b04cecd3469dc129e8c975638cfc7ced8067f647b868b6",
+        "kind": "upstream_source",
+        "repository": "karpathy/nanochat",
+        "commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "path": "nanochat/fp8.py"
+      },
+      {
+        "bundle_path": "upstream/nanochat/gpt.py",
+        "size_bytes": 28918,
+        "sha256": "8cdedc2e418b9d4dc45884e07f59904fcdec066bb3d76664b2adf2d415f704e3",
+        "kind": "upstream_source",
+        "repository": "karpathy/nanochat",
+        "commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "path": "nanochat/gpt.py"
+      },
+      {
+        "bundle_path": "upstream/nanochat/loss_eval.py",
+        "size_bytes": 3124,
+        "sha256": "00faad1e0ae8912022f79ee4bf583c4f9b4c058e4523c5674144648c49229fd6",
+        "kind": "upstream_source",
+        "repository": "karpathy/nanochat",
+        "commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "path": "nanochat/loss_eval.py"
+      },
+      {
+        "bundle_path": "upstream/nanochat/optim.py",
+        "size_bytes": 23314,
+        "sha256": "7c9b714c6f76e3a9d50fc530044b2767d0cd89391237e609548f1cd730afed8f",
+        "kind": "upstream_source",
+        "repository": "karpathy/nanochat",
+        "commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "path": "nanochat/optim.py"
+      },
+      {
+        "bundle_path": "upstream/nanochat/tokenizer.py",
+        "size_bytes": 12911,
+        "sha256": "e6f12cb88fead3e6d0d45a7dd2af4192280712d92bfde83e2399cc4b3a0860fb",
+        "kind": "upstream_source",
+        "repository": "karpathy/nanochat",
+        "commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "path": "nanochat/tokenizer.py"
+      }
+    ]
+  }
+}
