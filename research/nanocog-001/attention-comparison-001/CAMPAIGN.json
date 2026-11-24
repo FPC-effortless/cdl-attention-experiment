@@ -1,0 +1,242 @@
+{
+  "schema": "cog.attention-comparison.proposal.v1",
+  "study_id": "COG-ATTENTION-COMPARE-001",
+  "prepared_date": "2026-11-22",
+  "timezone": "America/Los_Angeles",
+  "state": "PROPOSED_NOT_ADMITTED",
+  "scientific_qualification": "NOT_QUALIFIED",
+  "native_dispatch_manifest": false,
+  "model_execution_permitted_by_this_file": false,
+  "completed_model_runs": 0,
+  "comparison_results": [],
+  "requested_goal": "Compare the complete attention replacement to competent attention alternatives fairly on quality and measured inference cost.",
+  "source_reference": {
+    "candidate_repository": "FPC-effortless/cdl-attention-experiment",
+    "candidate_pr": 88,
+    "inspected_reference_commit": "8374f72ba9324fa4a11d0d3ecb40a6db0e311c73",
+    "inspected_reference_path": "research/nanocog-001",
+    "experimental_source_commit": null,
+    "candidate_config_sha256": null,
+    "candidate_checkpoint_sha256": null,
+    "nanochat_reference_commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+    "veritas_statistics_reference_commit": "eec439492407b0aa26922c23b5ae40d95289f4eb",
+    "veritas_statistics_path": "integrations/trainlab/src/trainlab/comparison_design.py"
+  },
+  "proposed_core_roster": [
+    "NANOCOG_PACKET",
+    "TRAINED_LOCAL_ONLY",
+    "GQA",
+    "MLA",
+    "KDA_GQA_3_TO_1"
+  ],
+  "proposed_challengers": [
+    "GDN_GQA_3_TO_1",
+    "GDN2_GQA_3_TO_1"
+  ],
+  "conditional_reference": [
+    "CSA2"
+  ],
+  "kernel_variants_are_architectures": false,
+  "final_primary_roster_frozen": false,
+  "tracks": [
+    {
+      "id": "A",
+      "purpose": "Common-backbone mechanism",
+      "binding_budget": "common_data_and_comparable_capacity",
+      "training_tokens": null,
+      "target_parameter_distance_fraction": 0.01,
+      "capacity_fallback": "Keep fixed-shell contrast and separately specify meaningful capacity-matched comparison; never add inactive padding."
+    },
+    {
+      "id": "B",
+      "purpose": "Training-budget frontier",
+      "binding_budget": null,
+      "total_training_flops": null,
+      "total_hardware_hours": null
+    },
+    {
+      "id": "C",
+      "purpose": "Quality-constrained serving",
+      "binding_budget": "same_hardware_workload_and_required_quality",
+      "quality_gate_freeze": null,
+      "hardware_identity": null
+    }
+  ],
+  "scale_plan": {
+    "status": "PLANNING_ONLY",
+    "illustrative_primary_total_parameters": 125000000,
+    "selected_total_parameters": null,
+    "selected_training_tokens": null,
+    "second_scale_parameters": null,
+    "broad_claim_requires_second_meaningful_scale": true,
+    "adequacy": "Competence and learning curves under a prospective rule; no fixed token-to-parameter guarantee."
+  },
+  "data": {
+    "tokenizer_sha256": null,
+    "training_manifest_sha256": null,
+    "development_manifest_sha256": null,
+    "calibration_manifest_sha256": null,
+    "confirmatory_manifest_sha256": null,
+    "family_definition_sha256": null,
+    "split_leakage_review": null,
+    "access_policy": "Fit sees authorized TRAIN only; prediction sees permitted inputs and closed checkpoints; scoring truth remains evaluator-only.",
+    "previous_exposed_cohorts": "DIAGNOSTIC_ONLY",
+    "protected_test_access": "NOT_AUTHORIZED_BY_THIS_PROPOSAL"
+  },
+  "proposed_workload": {
+    "prompt_tokens": [
+      1024,
+      4096,
+      16384,
+      65536,
+      131072
+    ],
+    "output_tokens": [
+      128,
+      512,
+      2048
+    ],
+    "requested_concurrency": [
+      1,
+      4,
+      16
+    ],
+    "qualification": "Only admitted support and measured runner capacity; not a promise of candidate context or throughput.",
+    "panels": [
+      "NATURAL_LANGUAGE_AND_CODE",
+      "COUNTERFACTUAL_RELATIONAL_UPDATES",
+      "LONG_CONTEXT_MULTI_FACT",
+      "COMPLETE_ACTING_TASKS_IF_CLAIMED"
+    ],
+    "critical_strata": [
+      "UNSEEN_ENTITIES",
+      "UNSEEN_WORDING",
+      "BOTH_QUERY_ROLES",
+      "DELAYED_CORRECTIONS",
+      "UNTOUCHED_RELATIONS",
+      "COLLISION_AND_CAPACITY_STRESS"
+    ]
+  },
+  "statistics": {
+    "initial_seed_count_proposal": 5,
+    "final_seed_roster": null,
+    "independent_family_count": null,
+    "pilot_power_target_proposal": 0.9,
+    "achieved_power": null,
+    "dependence": "Crossed training-run pairs and independent task/document families; all related variants retained together.",
+    "alpha_proposal": 0.05,
+    "primary_family_sha256": null,
+    "multiplicity_plan": null,
+    "proposed_margins": {
+      "success_noninferiority_absolute": 0.01,
+      "nll_noninferiority_nats_per_token": 0.02,
+      "minimum_latency_speedup": 1.2
+    },
+    "margins_status": "PROPOSAL_REQUIRES_JUSTIFICATION_AND_PREEXPOSURE_FREEZE",
+    "preserves_stricter_existing_gates": true,
+    "native_analyzer_limits": {
+      "max_units": 1000,
+      "max_comparisons": 32,
+      "max_total_cells": 20000,
+      "max_draws": 10000,
+      "max_total_cells_times_draws": 5000000
+    },
+    "native_analyzer_adequacy": "UNVERIFIED_FOR_THIS_DESIGN",
+    "weighted_nll_estimator": "REQUIRES_VALIDATED_RATIO_OF_SUMS_CLUSTER_ANALYSIS",
+    "cost_ratio_estimator": "REQUIRES_PAIRED_SESSION_ESTIMAND_AND_VALIDATION",
+    "no_silent_downsampling_or_multiplicity_weakening": true
+  },
+  "resource_allocation": {
+    "provider": null,
+    "hardware": null,
+    "environment_lock_sha256": null,
+    "total_tuning_budget": null,
+    "total_fit_budget": null,
+    "training_wall_cap_seconds": null,
+    "per_evaluation_wall_cap_seconds": null,
+    "paid_spending_authorized": false,
+    "runner_id": null,
+    "job_ids": [],
+    "device_memory_limit_bytes": null
+  },
+  "failure_policy": {
+    "retain_all_attempts": true,
+    "evaluation_timeouts": "Failure for success-within-budget; completion latency censored, never zero.",
+    "training_divergence": "Retain failed seed and actual cost; no favorable-seed replacement.",
+    "external_fault_rerun": "Same config/seed only under a symmetric predeclared independently evidenced rule.",
+    "missing_nll": "Unavailable; never fabricated finite score.",
+    "invalid_baseline": "Suspend claim; repair/requalify before fresh confirmatory evaluation."
+  },
+  "next_engineering_unit": "Common nanochat-compatible tokenizer/data/optimizer and explicit candidate state adapter with the unchanged attention baseline.",
+  "admission_gates": [
+    {
+      "id": "EXACT_SOURCE_AND_GRAPH",
+      "status": "OPEN",
+      "evidence_sha256": null
+    },
+    {
+      "id": "TOKENIZER_AND_DATA_RIGHTS",
+      "status": "OPEN",
+      "evidence_sha256": null
+    },
+    {
+      "id": "FAMILY_SPLITS_AND_CONTAMINATION",
+      "status": "OPEN",
+      "evidence_sha256": null
+    },
+    {
+      "id": "COMPLETE_TRAIN_PREFILL_DECODE_ADAPTERS",
+      "status": "OPEN",
+      "evidence_sha256": null
+    },
+    {
+      "id": "CAUSALITY_AND_STATE_ISOLATION",
+      "status": "OPEN",
+      "evidence_sha256": null
+    },
+    {
+      "id": "NUMERICAL_AND_GRADIENT_PARITY",
+      "status": "OPEN",
+      "evidence_sha256": null
+    },
+    {
+      "id": "BASELINE_TRAINING_ADEQUACY",
+      "status": "OPEN",
+      "evidence_sha256": null
+    },
+    {
+      "id": "CONTEXT_AND_GRADIENT_HORIZON_SUPPORT",
+      "status": "OPEN",
+      "evidence_sha256": null
+    },
+    {
+      "id": "EQUAL_TUNING_OPPORTUNITY",
+      "status": "OPEN",
+      "evidence_sha256": null
+    },
+    {
+      "id": "MEASURED_RESOURCE_ALLOCATION",
+      "status": "OPEN",
+      "evidence_sha256": null
+    },
+    {
+      "id": "POWER_AND_STATISTICAL_IMPLEMENTATION",
+      "status": "OPEN",
+      "evidence_sha256": null
+    },
+    {
+      "id": "PRIMARY_ENDPOINT_AND_MARGIN_FREEZE",
+      "status": "OPEN",
+      "evidence_sha256": null
+    },
+    {
+      "id": "INDEPENDENT_EXACT_VERSION_STAGE_REVIEW",
+      "status": "OPEN",
+      "evidence_sha256": null
+    }
+  ],
+  "inherited_diagnostic_controls": [
+    "PULSE_006_REFERENCE",
+    "TEXT_FACING_DETERMINISTIC_CONTROLS"
+  ]
+}
