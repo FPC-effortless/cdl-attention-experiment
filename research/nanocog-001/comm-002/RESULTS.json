@@ -1,0 +1,350 @@
+{
+  "w025-1171-128": {
+    "all": {
+      "exact_families": 0,
+      "exact_worlds": 167,
+      "families": 120,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 480,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "exact_families": 0,
+      "exact_worlds": 147,
+      "families": 110,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 440,
+      "worlds": 880
+    },
+    "unseen_name_pair": {
+      "exact_families": 0,
+      "exact_worlds": 20,
+      "families": 10,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 40,
+      "worlds": 80
+    }
+  },
+  "w025-1171-1280": {
+    "all": {
+      "exact_families": 111,
+      "exact_worlds": 948,
+      "families": 120,
+      "two_color_families": 111,
+      "two_color_ties": 0,
+      "two_color_worlds": 948,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "exact_families": 102,
+      "exact_worlds": 871,
+      "families": 110,
+      "two_color_families": 102,
+      "two_color_ties": 0,
+      "two_color_worlds": 871,
+      "worlds": 880
+    },
+    "unseen_name_pair": {
+      "exact_families": 9,
+      "exact_worlds": 77,
+      "families": 10,
+      "two_color_families": 9,
+      "two_color_ties": 0,
+      "two_color_worlds": 77,
+      "worlds": 80
+    }
+  },
+  "w025-1271-128": {
+    "all": {
+      "exact_families": 0,
+      "exact_worlds": 137,
+      "families": 120,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 480,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "exact_families": 0,
+      "exact_worlds": 127,
+      "families": 110,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 440,
+      "worlds": 880
+    },
+    "unseen_name_pair": {
+      "exact_families": 0,
+      "exact_worlds": 10,
+      "families": 10,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 40,
+      "worlds": 80
+    }
+  },
+  "w025-1271-1280": {
+    "all": {
+      "exact_families": 117,
+      "exact_worlds": 956,
+      "families": 120,
+      "two_color_families": 117,
+      "two_color_ties": 0,
+      "two_color_worlds": 956,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "exact_families": 108,
+      "exact_worlds": 878,
+      "families": 110,
+      "two_color_families": 108,
+      "two_color_ties": 0,
+      "two_color_worlds": 878,
+      "worlds": 880
+    },
+    "unseen_name_pair": {
+      "exact_families": 9,
+      "exact_worlds": 78,
+      "families": 10,
+      "two_color_families": 9,
+      "two_color_ties": 0,
+      "two_color_worlds": 78,
+      "worlds": 80
+    }
+  },
+  "w025-1371-128": {
+    "all": {
+      "exact_families": 0,
+      "exact_worlds": 170,
+      "families": 120,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 482,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "exact_families": 0,
+      "exact_worlds": 150,
+      "families": 110,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 442,
+      "worlds": 880
+    },
+    "unseen_name_pair": {
+      "exact_families": 0,
+      "exact_worlds": 20,
+      "families": 10,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 40,
+      "worlds": 80
+    }
+  },
+  "w025-1371-1280": {
+    "all": {
+      "exact_families": 70,
+      "exact_worlds": 851,
+      "families": 120,
+      "two_color_families": 70,
+      "two_color_ties": 0,
+      "two_color_worlds": 851,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "exact_families": 65,
+      "exact_worlds": 781,
+      "families": 110,
+      "two_color_families": 65,
+      "two_color_ties": 0,
+      "two_color_worlds": 781,
+      "worlds": 880
+    },
+    "unseen_name_pair": {
+      "exact_families": 5,
+      "exact_worlds": 70,
+      "families": 10,
+      "two_color_families": 5,
+      "two_color_ties": 0,
+      "two_color_worlds": 70,
+      "worlds": 80
+    }
+  },
+  "w1-1171-128": {
+    "all": {
+      "exact_families": 0,
+      "exact_worlds": 20,
+      "families": 120,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 477,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "exact_families": 0,
+      "exact_worlds": 13,
+      "families": 110,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 437,
+      "worlds": 880
+    },
+    "unseen_name_pair": {
+      "exact_families": 0,
+      "exact_worlds": 7,
+      "families": 10,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 40,
+      "worlds": 80
+    }
+  },
+  "w1-1171-1280": {
+    "all": {
+      "exact_families": 112,
+      "exact_worlds": 946,
+      "families": 120,
+      "two_color_families": 112,
+      "two_color_ties": 0,
+      "two_color_worlds": 946,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "exact_families": 103,
+      "exact_worlds": 870,
+      "families": 110,
+      "two_color_families": 103,
+      "two_color_ties": 0,
+      "two_color_worlds": 870,
+      "worlds": 880
+    },
+    "unseen_name_pair": {
+      "exact_families": 9,
+      "exact_worlds": 76,
+      "families": 10,
+      "two_color_families": 9,
+      "two_color_ties": 0,
+      "two_color_worlds": 76,
+      "worlds": 80
+    }
+  },
+  "w1-1271-128": {
+    "all": {
+      "exact_families": 0,
+      "exact_worlds": 16,
+      "families": 120,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 483,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "exact_families": 0,
+      "exact_worlds": 14,
+      "families": 110,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 443,
+      "worlds": 880
+    },
+    "unseen_name_pair": {
+      "exact_families": 0,
+      "exact_worlds": 2,
+      "families": 10,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 40,
+      "worlds": 80
+    }
+  },
+  "w1-1271-1280": {
+    "all": {
+      "exact_families": 108,
+      "exact_worlds": 937,
+      "families": 120,
+      "two_color_families": 108,
+      "two_color_ties": 0,
+      "two_color_worlds": 937,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "exact_families": 100,
+      "exact_worlds": 863,
+      "families": 110,
+      "two_color_families": 100,
+      "two_color_ties": 0,
+      "two_color_worlds": 863,
+      "worlds": 880
+    },
+    "unseen_name_pair": {
+      "exact_families": 8,
+      "exact_worlds": 74,
+      "families": 10,
+      "two_color_families": 8,
+      "two_color_ties": 0,
+      "two_color_worlds": 74,
+      "worlds": 80
+    }
+  },
+  "w1-1371-128": {
+    "all": {
+      "exact_families": 0,
+      "exact_worlds": 0,
+      "families": 120,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 470,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "exact_families": 0,
+      "exact_worlds": 0,
+      "families": 110,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 430,
+      "worlds": 880
+    },
+    "unseen_name_pair": {
+      "exact_families": 0,
+      "exact_worlds": 0,
+      "families": 10,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 40,
+      "worlds": 80
+    }
+  },
+  "w1-1371-1280": {
+    "all": {
+      "exact_families": 0,
+      "exact_worlds": 536,
+      "families": 120,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 536,
+      "worlds": 960
+    },
+    "seen_name_pair": {
+      "exact_families": 0,
+      "exact_worlds": 493,
+      "families": 110,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 493,
+      "worlds": 880
+    },
+    "unseen_name_pair": {
+      "exact_families": 0,
+      "exact_worlds": 43,
+      "families": 10,
+      "two_color_families": 0,
+      "two_color_ties": 0,
+      "two_color_worlds": 43,
+      "worlds": 80
+    }
+  }
+}

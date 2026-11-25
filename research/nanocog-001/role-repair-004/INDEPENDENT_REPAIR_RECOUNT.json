@@ -1,0 +1,577 @@
+{
+  "latencies_not_serving": {
+    "literal_control-1471-128": 3.535483,
+    "literal_control-1471-1280": 2.904379,
+    "literal_control-1571-128": 2.767326,
+    "literal_control-1571-1280": 2.992551,
+    "literal_control-1671-128": 3.022174,
+    "literal_control-1671-1280": 2.748683,
+    "native-1371-0": 2.934067,
+    "tap_compare-1471-128": 3.021082,
+    "tap_compare-1471-1280": 2.90396,
+    "tap_compare-1571-128": 2.953486,
+    "tap_compare-1571-1280": 2.885425,
+    "tap_compare-1671-128": 2.747902,
+    "tap_compare-1671-1280": 2.731619
+  },
+  "result": {
+    "backbone_robustness_claim": false,
+    "content_arm_preferred_on_known_backbone": false,
+    "per_seed_primary": {
+      "1471": {
+        "content_both_query_gain": 0,
+        "content_clears": false,
+        "content_first_minus_native": -38,
+        "literal_clears": false
+      },
+      "1571": {
+        "content_both_query_gain": -1,
+        "content_clears": false,
+        "content_first_minus_native": -42,
+        "literal_clears": false
+      },
+      "1671": {
+        "content_both_query_gain": 2,
+        "content_clears": false,
+        "content_first_minus_native": -41,
+        "literal_clears": false
+      }
+    },
+    "scores": {
+      "literal_control-1471-128": {
+        "all": {
+          "exact_both_assignments": 421,
+          "exact_both_orders": 408,
+          "exact_both_queries": 401,
+          "families": 120,
+          "first_strict": 458,
+          "relative_families": 76,
+          "relative_worlds": 878,
+          "second_strict": 420,
+          "strict_families": 76,
+          "strict_worlds": 878,
+          "worlds": 960
+        },
+        "familiar": {
+          "exact_both_assignments": 378,
+          "exact_both_orders": 368,
+          "exact_both_queries": 361,
+          "families": 108,
+          "first_strict": 410,
+          "relative_families": 69,
+          "relative_worlds": 790,
+          "second_strict": 380,
+          "strict_families": 69,
+          "strict_worlds": 790,
+          "worlds": 864
+        },
+        "unseen_name_pair": {
+          "exact_both_assignments": 43,
+          "exact_both_orders": 40,
+          "exact_both_queries": 40,
+          "families": 12,
+          "first_strict": 48,
+          "relative_families": 7,
+          "relative_worlds": 88,
+          "second_strict": 40,
+          "strict_families": 7,
+          "strict_worlds": 88,
+          "worlds": 96
+        }
+      },
+      "literal_control-1471-1280": {
+        "all": {
+          "exact_both_assignments": 418,
+          "exact_both_orders": 432,
+          "exact_both_queries": 416,
+          "families": 120,
+          "first_strict": 440,
+          "relative_families": 79,
+          "relative_worlds": 895,
+          "second_strict": 455,
+          "strict_families": 79,
+          "strict_worlds": 895,
+          "worlds": 960
+        },
+        "familiar": {
+          "exact_both_assignments": 376,
+          "exact_both_orders": 388,
+          "exact_both_queries": 374,
+          "families": 108,
+          "first_strict": 395,
+          "relative_families": 71,
+          "relative_worlds": 805,
+          "second_strict": 410,
+          "strict_families": 71,
+          "strict_worlds": 805,
+          "worlds": 864
+        },
+        "unseen_name_pair": {
+          "exact_both_assignments": 42,
+          "exact_both_orders": 44,
+          "exact_both_queries": 42,
+          "families": 12,
+          "first_strict": 45,
+          "relative_families": 8,
+          "relative_worlds": 90,
+          "second_strict": 45,
+          "strict_families": 8,
+          "strict_worlds": 90,
+          "worlds": 96
+        }
+      },
+      "literal_control-1571-128": {
+        "all": {
+          "exact_both_assignments": 418,
+          "exact_both_orders": 410,
+          "exact_both_queries": 399,
+          "families": 120,
+          "first_strict": 454,
+          "relative_families": 77,
+          "relative_worlds": 876,
+          "second_strict": 422,
+          "strict_families": 77,
+          "strict_worlds": 876,
+          "worlds": 960
+        },
+        "familiar": {
+          "exact_both_assignments": 376,
+          "exact_both_orders": 370,
+          "exact_both_queries": 360,
+          "families": 108,
+          "first_strict": 407,
+          "relative_families": 70,
+          "relative_worlds": 789,
+          "second_strict": 382,
+          "strict_families": 70,
+          "strict_worlds": 789,
+          "worlds": 864
+        },
+        "unseen_name_pair": {
+          "exact_both_assignments": 42,
+          "exact_both_orders": 40,
+          "exact_both_queries": 39,
+          "families": 12,
+          "first_strict": 47,
+          "relative_families": 7,
+          "relative_worlds": 87,
+          "second_strict": 40,
+          "strict_families": 7,
+          "strict_worlds": 87,
+          "worlds": 96
+        }
+      },
+      "literal_control-1571-1280": {
+        "all": {
+          "exact_both_assignments": 418,
+          "exact_both_orders": 429,
+          "exact_both_queries": 414,
+          "families": 120,
+          "first_strict": 437,
+          "relative_families": 79,
+          "relative_worlds": 893,
+          "second_strict": 456,
+          "strict_families": 79,
+          "strict_worlds": 893,
+          "worlds": 960
+        },
+        "familiar": {
+          "exact_both_assignments": 375,
+          "exact_both_orders": 385,
+          "exact_both_queries": 371,
+          "families": 108,
+          "first_strict": 392,
+          "relative_families": 71,
+          "relative_worlds": 802,
+          "second_strict": 410,
+          "strict_families": 71,
+          "strict_worlds": 802,
+          "worlds": 864
+        },
+        "unseen_name_pair": {
+          "exact_both_assignments": 43,
+          "exact_both_orders": 44,
+          "exact_both_queries": 43,
+          "families": 12,
+          "first_strict": 45,
+          "relative_families": 8,
+          "relative_worlds": 91,
+          "second_strict": 46,
+          "strict_families": 8,
+          "strict_worlds": 91,
+          "worlds": 96
+        }
+      },
+      "literal_control-1671-128": {
+        "all": {
+          "exact_both_assignments": 419,
+          "exact_both_orders": 407,
+          "exact_both_queries": 398,
+          "families": 120,
+          "first_strict": 457,
+          "relative_families": 76,
+          "relative_worlds": 875,
+          "second_strict": 418,
+          "strict_families": 76,
+          "strict_worlds": 875,
+          "worlds": 960
+        },
+        "familiar": {
+          "exact_both_assignments": 376,
+          "exact_both_orders": 367,
+          "exact_both_queries": 358,
+          "families": 108,
+          "first_strict": 409,
+          "relative_families": 69,
+          "relative_worlds": 787,
+          "second_strict": 378,
+          "strict_families": 69,
+          "strict_worlds": 787,
+          "worlds": 864
+        },
+        "unseen_name_pair": {
+          "exact_both_assignments": 43,
+          "exact_both_orders": 40,
+          "exact_both_queries": 40,
+          "families": 12,
+          "first_strict": 48,
+          "relative_families": 7,
+          "relative_worlds": 88,
+          "second_strict": 40,
+          "strict_families": 7,
+          "strict_worlds": 88,
+          "worlds": 96
+        }
+      },
+      "literal_control-1671-1280": {
+        "all": {
+          "exact_both_assignments": 418,
+          "exact_both_orders": 431,
+          "exact_both_queries": 414,
+          "families": 120,
+          "first_strict": 436,
+          "relative_families": 80,
+          "relative_worlds": 893,
+          "second_strict": 457,
+          "strict_families": 80,
+          "strict_worlds": 893,
+          "worlds": 960
+        },
+        "familiar": {
+          "exact_both_assignments": 375,
+          "exact_both_orders": 387,
+          "exact_both_queries": 371,
+          "families": 108,
+          "first_strict": 391,
+          "relative_families": 72,
+          "relative_worlds": 802,
+          "second_strict": 411,
+          "strict_families": 72,
+          "strict_worlds": 802,
+          "worlds": 864
+        },
+        "unseen_name_pair": {
+          "exact_both_assignments": 43,
+          "exact_both_orders": 44,
+          "exact_both_queries": 43,
+          "families": 12,
+          "first_strict": 45,
+          "relative_families": 8,
+          "relative_worlds": 91,
+          "second_strict": 46,
+          "strict_families": 8,
+          "strict_worlds": 91,
+          "worlds": 96
+        }
+      },
+      "native-1371-0": {
+        "all": {
+          "exact_both_assignments": 430,
+          "exact_both_orders": 392,
+          "exact_both_queries": 391,
+          "families": 120,
+          "first_strict": 475,
+          "relative_families": 76,
+          "relative_worlds": 871,
+          "second_strict": 396,
+          "strict_families": 76,
+          "strict_worlds": 871,
+          "worlds": 960
+        },
+        "familiar": {
+          "exact_both_assignments": 387,
+          "exact_both_orders": 354,
+          "exact_both_queries": 353,
+          "families": 108,
+          "first_strict": 427,
+          "relative_families": 69,
+          "relative_worlds": 785,
+          "second_strict": 358,
+          "strict_families": 69,
+          "strict_worlds": 785,
+          "worlds": 864
+        },
+        "unseen_name_pair": {
+          "exact_both_assignments": 43,
+          "exact_both_orders": 38,
+          "exact_both_queries": 38,
+          "families": 12,
+          "first_strict": 48,
+          "relative_families": 7,
+          "relative_worlds": 86,
+          "second_strict": 38,
+          "strict_families": 7,
+          "strict_worlds": 86,
+          "worlds": 96
+        }
+      },
+      "tap_compare-1471-128": {
+        "all": {
+          "exact_both_assignments": 421,
+          "exact_both_orders": 404,
+          "exact_both_queries": 398,
+          "families": 120,
+          "first_strict": 446,
+          "relative_families": 77,
+          "relative_worlds": 873,
+          "second_strict": 427,
+          "strict_families": 77,
+          "strict_worlds": 873,
+          "worlds": 960
+        },
+        "familiar": {
+          "exact_both_assignments": 379,
+          "exact_both_orders": 364,
+          "exact_both_queries": 359,
+          "families": 108,
+          "first_strict": 399,
+          "relative_families": 70,
+          "relative_worlds": 786,
+          "second_strict": 387,
+          "strict_families": 70,
+          "strict_worlds": 786,
+          "worlds": 864
+        },
+        "unseen_name_pair": {
+          "exact_both_assignments": 42,
+          "exact_both_orders": 40,
+          "exact_both_queries": 39,
+          "families": 12,
+          "first_strict": 47,
+          "relative_families": 7,
+          "relative_worlds": 87,
+          "second_strict": 40,
+          "strict_families": 7,
+          "strict_worlds": 87,
+          "worlds": 96
+        }
+      },
+      "tap_compare-1471-1280": {
+        "all": {
+          "exact_both_assignments": 426,
+          "exact_both_orders": 427,
+          "exact_both_queries": 416,
+          "families": 120,
+          "first_strict": 437,
+          "relative_families": 83,
+          "relative_worlds": 895,
+          "second_strict": 458,
+          "strict_families": 83,
+          "strict_worlds": 895,
+          "worlds": 960
+        },
+        "familiar": {
+          "exact_both_assignments": 381,
+          "exact_both_orders": 382,
+          "exact_both_queries": 371,
+          "families": 108,
+          "first_strict": 390,
+          "relative_families": 74,
+          "relative_worlds": 802,
+          "second_strict": 412,
+          "strict_families": 74,
+          "strict_worlds": 802,
+          "worlds": 864
+        },
+        "unseen_name_pair": {
+          "exact_both_assignments": 45,
+          "exact_both_orders": 45,
+          "exact_both_queries": 45,
+          "families": 12,
+          "first_strict": 47,
+          "relative_families": 9,
+          "relative_worlds": 93,
+          "second_strict": 46,
+          "strict_families": 9,
+          "strict_worlds": 93,
+          "worlds": 96
+        }
+      },
+      "tap_compare-1571-128": {
+        "all": {
+          "exact_both_assignments": 423,
+          "exact_both_orders": 404,
+          "exact_both_queries": 400,
+          "families": 120,
+          "first_strict": 448,
+          "relative_families": 77,
+          "relative_worlds": 875,
+          "second_strict": 427,
+          "strict_families": 77,
+          "strict_worlds": 875,
+          "worlds": 960
+        },
+        "familiar": {
+          "exact_both_assignments": 381,
+          "exact_both_orders": 364,
+          "exact_both_queries": 361,
+          "families": 108,
+          "first_strict": 401,
+          "relative_families": 70,
+          "relative_worlds": 788,
+          "second_strict": 387,
+          "strict_families": 70,
+          "strict_worlds": 788,
+          "worlds": 864
+        },
+        "unseen_name_pair": {
+          "exact_both_assignments": 42,
+          "exact_both_orders": 40,
+          "exact_both_queries": 39,
+          "families": 12,
+          "first_strict": 47,
+          "relative_families": 7,
+          "relative_worlds": 87,
+          "second_strict": 40,
+          "strict_families": 7,
+          "strict_worlds": 87,
+          "worlds": 96
+        }
+      },
+      "tap_compare-1571-1280": {
+        "all": {
+          "exact_both_assignments": 428,
+          "exact_both_orders": 423,
+          "exact_both_queries": 413,
+          "families": 120,
+          "first_strict": 433,
+          "relative_families": 83,
+          "relative_worlds": 893,
+          "second_strict": 460,
+          "strict_families": 83,
+          "strict_worlds": 893,
+          "worlds": 960
+        },
+        "familiar": {
+          "exact_both_assignments": 383,
+          "exact_both_orders": 379,
+          "exact_both_queries": 369,
+          "families": 108,
+          "first_strict": 387,
+          "relative_families": 74,
+          "relative_worlds": 801,
+          "second_strict": 414,
+          "strict_families": 74,
+          "strict_worlds": 801,
+          "worlds": 864
+        },
+        "unseen_name_pair": {
+          "exact_both_assignments": 45,
+          "exact_both_orders": 44,
+          "exact_both_queries": 44,
+          "families": 12,
+          "first_strict": 46,
+          "relative_families": 9,
+          "relative_worlds": 92,
+          "second_strict": 46,
+          "strict_families": 9,
+          "strict_worlds": 92,
+          "worlds": 96
+        }
+      },
+      "tap_compare-1671-128": {
+        "all": {
+          "exact_both_assignments": 422,
+          "exact_both_orders": 403,
+          "exact_both_queries": 399,
+          "families": 120,
+          "first_strict": 452,
+          "relative_families": 76,
+          "relative_worlds": 874,
+          "second_strict": 422,
+          "strict_families": 76,
+          "strict_worlds": 874,
+          "worlds": 960
+        },
+        "familiar": {
+          "exact_both_assignments": 379,
+          "exact_both_orders": 363,
+          "exact_both_queries": 359,
+          "families": 108,
+          "first_strict": 404,
+          "relative_families": 69,
+          "relative_worlds": 786,
+          "second_strict": 382,
+          "strict_families": 69,
+          "strict_worlds": 786,
+          "worlds": 864
+        },
+        "unseen_name_pair": {
+          "exact_both_assignments": 43,
+          "exact_both_orders": 40,
+          "exact_both_queries": 40,
+          "families": 12,
+          "first_strict": 48,
+          "relative_families": 7,
+          "relative_worlds": 88,
+          "second_strict": 40,
+          "strict_families": 7,
+          "strict_worlds": 88,
+          "worlds": 96
+        }
+      },
+      "tap_compare-1671-1280": {
+        "all": {
+          "exact_both_assignments": 429,
+          "exact_both_orders": 425,
+          "exact_both_queries": 416,
+          "families": 120,
+          "first_strict": 434,
+          "relative_families": 83,
+          "relative_worlds": 896,
+          "second_strict": 462,
+          "strict_families": 83,
+          "strict_worlds": 896,
+          "worlds": 960
+        },
+        "familiar": {
+          "exact_both_assignments": 384,
+          "exact_both_orders": 380,
+          "exact_both_queries": 371,
+          "families": 108,
+          "first_strict": 387,
+          "relative_families": 74,
+          "relative_worlds": 803,
+          "second_strict": 416,
+          "strict_families": 74,
+          "strict_worlds": 803,
+          "worlds": 864
+        },
+        "unseen_name_pair": {
+          "exact_both_assignments": 45,
+          "exact_both_orders": 45,
+          "exact_both_queries": 45,
+          "families": 12,
+          "first_strict": 47,
+          "relative_families": 9,
+          "relative_worlds": 93,
+          "second_strict": 46,
+          "strict_families": 9,
+          "strict_worlds": 93,
+          "worlds": 96
+        }
+      }
+    }
+  },
+  "seal": "0971d030ad7b74f7456e5eabdfa39b87dcd3641d90b6c2dfbf9e31e51366f1da"
+}

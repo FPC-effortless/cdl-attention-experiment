@@ -1,0 +1,11 @@
+# COG-COMM-001 temporary router
+
+BoundedRoute(width, block=8, retained_blocks=16, route_mode="learned") consumes causal hidden representations [B,T,C], returning a delta and functional scratch state. forward_with_candidates adds absolute positions [B,T,2,2], with -1 absent. Begin each independent document with state=None. The reference expects live contiguous tokens; callers segment or reset rather than marking padding inside this API.
+
+A learned admission threshold and top-one writer prepend projected payload to a two-row FIFO among four topics. The learned subscriber reads the top two topics (at most four prior tokens) before publishing the current row. Learned age weights are relative FIFO rank; query mixing uses current topic logits, not a scan of previous raw tokens. Eval indexes selected payloads only, but route scores and updates/expiry still work over fixed four topics. Training uses hard-forward straight-through surrogates over all fixed topics, not a sparse backward or guarantee of useful gradients for never-published routes.
+
+Scratch holds eight payloads per row, with position int64s and a cursor. Default expiry allows age up to 127 positions, often much smaller with topic collisions. This is not persistent memory, a 127-token retention guarantee, sparsity in actual write kernel execution, or measured acceleration.
+
+Content-blind mode reads two cyclic topics selected by stream position, with uniform mixing. Sender/admission/write traffic and budget rules are the same for identical x. Subscriber projection is computed but unused (no task gradient), and an eventual compiler might prune it; actual physical costs must be measured. A frozen mode toggle preserves the same cache within this module on identical inputs. Whole models may generate different earlier-layer input trajectories, so trained A/B/C differences are not a pure causal addressing contrast.
+
+Disable emits zero, suppresses current writes, advances time and expires old entries without modifying the input cache. Forks can use state.index_select or state.detached. Tests cover hard raw indices, causality, chunk parity, FIFO/expiry/reset-by-fork behavior, gradients and same-input cache parity. No optimization, held corpus, or comparative speed was run.

@@ -1,0 +1,21 @@
+{
+  "ledger_sha256": "b78161b7687aa0d89c86e5192dd2863ca7542b5e905d2ccb4836143421fd4425",
+  "runs": {
+    "trace-1171": {
+      "artifacts": {
+        "TRACE.f32le": "885349bbbcb20f0c60613fba5fcd6c241d7eeef0f3d4cf419325e8b5295a694a",
+        "trace_contract.json": "cfda0d148b6a7730f479f5cb1d539702f33834f3a2a73a153da9d5c6ecb078c4"
+      },
+      "id": "20261122T181858-e05b864da92d",
+      "receipt_sha256": "4fcbd6f8103bfd9cd8ad3582c95237ecd0715c656303cdd16c447543ee9e836d"
+    },
+    "trace-1371": {
+      "artifacts": {
+        "TRACE.f32le": "2bcea0c708ef85436506c185b8fe07edd0d94117a40af178e32aff88c4242aa8",
+        "trace_contract.json": "36c1df626e01223e36219610498306744a41a34a975150e6a27148915fec94ce"
+      },
+      "id": "20261122T181902-2b72da2c787a",
+      "receipt_sha256": "4826fe193a8a2c00d116ae351a563672e45181334619da0a61d923df36e480d4"
+    }
+  }
+}

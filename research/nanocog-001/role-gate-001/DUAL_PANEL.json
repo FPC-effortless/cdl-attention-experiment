@@ -1,0 +1,175 @@
+{
+  "002-1171": {
+    "checkpoint_sha256": "b2cbd5aa6cb1acd345f54bd562ece11e6d85d696b86cd87adc4cb13f8d3c810c",
+    "mean_choice_nats": 0.051951028919615595,
+    "mean_pair_mass_nats": 0.022217385023766814,
+    "order_pairs": {
+      "always_first": 3,
+      "always_second": 9,
+      "follows_role": 468
+    },
+    "queried_slot": {
+      "first": {
+        "color": 471,
+        "den": 480,
+        "strict": 471
+      },
+      "second": {
+        "color": 477,
+        "den": 480,
+        "strict": 477
+      }
+    },
+    "query_pairs": {
+      "always_first": 3,
+      "always_second": 9,
+      "follows_query": 468
+    },
+    "strict_families": 111,
+    "strict_worlds": 948
+  },
+  "002-1271": {
+    "checkpoint_sha256": "22dd1a8127001411ea597ea86ea881c54d7d84f693382e1f8d43c373e95ee4eb",
+    "mean_choice_nats": 0.012150609164591384,
+    "mean_pair_mass_nats": 0.018047681434492775,
+    "order_pairs": {
+      "always_second": 4,
+      "follows_role": 476
+    },
+    "queried_slot": {
+      "first": {
+        "color": 476,
+        "den": 480,
+        "strict": 476
+      },
+      "second": {
+        "color": 480,
+        "den": 480,
+        "strict": 480
+      }
+    },
+    "query_pairs": {
+      "always_second": 4,
+      "follows_query": 476
+    },
+    "strict_families": 117,
+    "strict_worlds": 956
+  },
+  "002-1371": {
+    "checkpoint_sha256": "517c990e5834a1648524b59bd287f97f472583fa642ce0e5a8dc95270536e890",
+    "mean_choice_nats": 0.2560909166083663,
+    "mean_pair_mass_nats": 0.05463587834968524,
+    "order_pairs": {
+      "always_first": 99,
+      "follows_role": 376,
+      "stable_wrong_role": 5
+    },
+    "queried_slot": {
+      "first": {
+        "color": 475,
+        "den": 480,
+        "strict": 475
+      },
+      "second": {
+        "color": 376,
+        "den": 480,
+        "strict": 376
+      }
+    },
+    "query_pairs": {
+      "always_first": 102,
+      "always_second": 3,
+      "follows_query": 373,
+      "inverted_query": 2
+    },
+    "strict_families": 70,
+    "strict_worlds": 851
+  },
+  "003-1171": {
+    "checkpoint_sha256": "b2cbd5aa6cb1acd345f54bd562ece11e6d85d696b86cd87adc4cb13f8d3c810c",
+    "mean_choice_nats": 0.026875448904999683,
+    "mean_pair_mass_nats": 0.022597868013468775,
+    "order_pairs": {
+      "always_first": 4,
+      "always_second": 3,
+      "follows_role": 473
+    },
+    "queried_slot": {
+      "first": {
+        "color": 477,
+        "den": 480,
+        "strict": 477
+      },
+      "second": {
+        "color": 476,
+        "den": 480,
+        "strict": 476
+      }
+    },
+    "query_pairs": {
+      "always_first": 4,
+      "always_second": 3,
+      "follows_query": 473
+    },
+    "strict_families": 115,
+    "strict_worlds": 953
+  },
+  "003-1271": {
+    "checkpoint_sha256": "22dd1a8127001411ea597ea86ea881c54d7d84f693382e1f8d43c373e95ee4eb",
+    "mean_choice_nats": 0.0177524401439333,
+    "mean_pair_mass_nats": 0.017948422321651815,
+    "order_pairs": {
+      "always_second": 6,
+      "follows_role": 474
+    },
+    "queried_slot": {
+      "first": {
+        "color": 474,
+        "den": 480,
+        "strict": 474
+      },
+      "second": {
+        "color": 480,
+        "den": 480,
+        "strict": 480
+      }
+    },
+    "query_pairs": {
+      "always_second": 6,
+      "follows_query": 474
+    },
+    "strict_families": 114,
+    "strict_worlds": 954
+  },
+  "003-1371": {
+    "checkpoint_sha256": "517c990e5834a1648524b59bd287f97f472583fa642ce0e5a8dc95270536e890",
+    "mean_choice_nats": 0.26707675527025054,
+    "mean_pair_mass_nats": 0.056711814199729836,
+    "order_pairs": {
+      "always_first": 100,
+      "always_second": 4,
+      "follows_role": 369,
+      "stable_wrong_role": 7
+    },
+    "queried_slot": {
+      "first": {
+        "color": 469,
+        "den": 480,
+        "strict": 469
+      },
+      "second": {
+        "color": 373,
+        "den": 480,
+        "strict": 373
+      }
+    },
+    "query_pairs": {
+      "always_first": 105,
+      "always_second": 9,
+      "follows_query": 364,
+      "inverted_query": 2
+    },
+    "strict_families": 62,
+    "strict_worlds": 842
+  }
+}

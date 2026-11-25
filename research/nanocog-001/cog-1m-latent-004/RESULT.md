@@ -1,0 +1,22 @@
+# COG-1M-LATENT-004: verified state reuse paid off on repeated reads, not one read
+
+**Caching the native state was faster once a record was queried repeatedly in this benchmark.** Compared with normal canonical text recomputation, the literal-state cache lost at one read per edit, saved 3.30 and 3.53 ms at four reads, and saved 33.37 and 30.71 ms at sixteen reads (median paired savings, one result per frozen checkpoint). Four was the **first measured profitable workload** among 1, 4 and 16; the exact crossover was not measured. The four-read p95 was slightly worse on one checkpoint, so a median win is not a tail guarantee.
+
+| Actual edit plus read cycle, ms p50 / p95 | 1 read | 4 reads | 16 reads |
+| --- | ---: | ---: | ---: |
+| 20371 canonical text live | 15.80 / 18.72 | 60.92 / 68.80 | 239.04 / 276.07 |
+| 20371 cached literal state | 19.45 / 23.04 | 57.37 / 69.61 | 205.18 / 231.73 |
+| 20371 compact live | 18.37 / 23.37 | 71.04 / 89.41 | 280.05 / 309.32 |
+| 20371 cached compact state | 20.05 / 22.57 | 57.51 / 65.53 | 207.26 / 233.82 |
+| 20471 canonical text live | 14.68 / 16.81 | 56.78 / 64.34 | 226.00 / 249.06 |
+| 20471 cached literal state | 18.03 / 21.20 | 53.06 / 61.39 | 194.43 / 208.82 |
+| 20471 compact live | 17.07 / 18.76 | 66.07 / 75.83 | 262.11 / 287.30 |
+| 20471 cached compact state | 18.17 / 20.21 | 53.37 / 62.38 | 194.10 / 207.41 |
+
+Each cycle includes a real SQLite edit and all subsequent reads, including first-read state construction and persistence. Individual warm repeat median fell from 14.74/13.87 ms with canonical text to 12.30/11.59 ms with its state cache. The two caches were close on warm reads; live compact (17.12/16.15 ms) was slower than normal literal recomputation. Compared directly with canonical live, compact caching saved 3.38–3.40 ms at four reads and 31.94–33.22 ms at sixteen reads in the independent paired recount. **The evidence favors state reuse, not a speed advantage for the compact encoding.** First answer after actual process restart and persisted database reopen took 12.73/11.80 ms from the literal cache versus 14.76/14.02 ms live, excluding connection-open and model-startup time. The database was reopened in a fresh process, not from artificially evicted disk pages. The SQLite open alone took roughly 0.15–0.16 ms median, and model initialization inside each phase took 0.83–0.99 s, exclusive of process/import startup.
+
+**Correctness:** across all 2,784 authorized reads per path/checkpoint, cached generation matched its own live source exactly in tokens, ties, and stopping. The compact cache's logits were bitwise identical; canonical split-vs-one-pass max absolute logit drift was 6.20×10⁻⁶. Cold, overwrite, and irrelevant updates used verified scope, identity, per-record revision, source, model, codec, and payload integrity. Each cache produced 2,016 hits per checkpoint without processing the 14-position prefix again. Across both cache forms, 576 old payload offers per checkpoint, including 192 same-value ABA offers, were refused before generation. Unknown or ambiguous requests received no decoder call. Every path answered 2,688/2,688 and 2,649/2,688 direct reads correctly on the two checkpoints; complete correction roots were 16/16 and 15/16. Alias quality was only 60/96 on most checkpoint/path combinations (63/96 for compact on the second checkpoint). Reuse preserved those existing model limits; it did not fix them.
+
+**Storage:** each cached record keeps 10,208 bytes of float32 native state plus revision and integrity metadata. The median SQLite file after close doubled from 36,864 to 73,728 bytes per mode's session; temporary WAL and shared-memory files added more before close. The 224-byte compact packet exists at the receiver interface, not at rest in this state cache, and is not smaller than the 14-byte literal fact. Live compact still runs its 14-position soft prefix; this implementation also serializes the full intermediate state in-process before decoding.
+
+This is a serial, CPU-pinned local benchmark with the two same-root frozen checkpoints (16 independent roots, crossed worlds and workloads); the larger read counts are not independent samples. This is not a concurrent current-at-emission test, a claim about arbitrary language or alias binding, a networking benchmark, or a universal speedup. **Practical policy:** start with canonical text for occasional reads. Consider validated state reuse for records expected to get repeated reads, if the additional storage and first-read cost are acceptable.

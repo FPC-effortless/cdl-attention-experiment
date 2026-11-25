@@ -1,0 +1,69 @@
+{
+  "fits": {
+    "attention32-1171": {
+      "adequacy_sha256": "4719f1f98639aa04ce981e28d72b42309296ff7e89b3fad0c9dc6f59aa3f8d2d",
+      "parameters": 37414,
+      "recipe_file_sha256": "de7591dafd01543cb2258a6378015011f6b1f8dc8dd671a56432d87618b25b0f",
+      "recipe_identity": "46a617293b65eaa24074e8e43058412dad3a4cb20c59f7b74ac414222cf9069a",
+      "status": "DECLARED_CRITERIA_MET"
+    },
+    "attention32-1271": {
+      "adequacy_sha256": "708ec0755148a3d3616eb1e40640430839806ac518cfbedd2a4a57f05742082a",
+      "parameters": 37414,
+      "recipe_file_sha256": "f2b1e4eb5cff8196187c61c934b238842a58ed96b3d3139dbd16b553ac78ea51",
+      "recipe_identity": "8b2a8321966f65daf8d7c242839a9405971f259e35b855cc63efba138d88ec6b",
+      "status": "DECLARED_CRITERIA_MET"
+    },
+    "attention32-1371": {
+      "adequacy_sha256": "fd71fff631b5afaca6549bfdac98c3bc2d423634b2264a7fb071ff835a5d5f45",
+      "parameters": 37414,
+      "recipe_file_sha256": "fc591b94dafacd8b7d13f9cd3536724386fdcee72e857390bedf713f36f5a494",
+      "recipe_identity": "31c7276db35189885c781e472196aff64b3e861a5a0d382318b8276cf1756bea",
+      "status": "DECLARED_CRITERIA_MET"
+    },
+    "gated48-1171": {
+      "adequacy_sha256": "a1965a2a922660dd765a1980634bbb7c08480e391778b12da4d8dcce78b127aa",
+      "parameters": 69926,
+      "recipe_file_sha256": "c544934a97528b351532f159c8e4b61046cfc4fb0261bdb8d62f454d29e6b8f5",
+      "recipe_identity": "459bc58f092c67a1665ed73e7e3547f52cbd8c943fb39bb4dd87cc1770250f68",
+      "status": "DECLARED_CRITERIA_MET"
+    },
+    "gated48-1271": {
+      "adequacy_sha256": "e9836ed7eed0366fb00c103de182f5d79e97bf281c79f67511b37341dc0b7a93",
+      "parameters": 69926,
+      "recipe_file_sha256": "2195bc2cb93bf39aaa34854780f6431e1207366edd0b0ebb3ba1fb99d5eda1d0",
+      "recipe_identity": "5554a71c60c0f886d8b08a0a2e81eb718ab4b99eb87f82756243695f3ad7e300",
+      "status": "DECLARED_CRITERIA_MET"
+    },
+    "gated48-1371": {
+      "adequacy_sha256": "1cad3fd76aaa0627a6284431558c86f3913e715a3958d36e86b3816ad92e7f4c",
+      "parameters": 69926,
+      "recipe_file_sha256": "6a4d3f7d0cd5550341b93129db1435cf5eb4811f57db19319384db4bb5b71aab",
+      "recipe_identity": "aeca653f22ff1255a29351546311e797a76ed7d68bf22f13312b60bb25cbb0a7",
+      "status": "DECLARED_CRITERIA_MET"
+    },
+    "static32-1171": {
+      "adequacy_sha256": "e2bec0c91974d79507feb9148519a34b1ce82c6e8f08756b55a82e857ad7dbe4",
+      "parameters": 37158,
+      "recipe_file_sha256": "58a359ff8b9f6b8c5d6617d6cbc45c7b3a1fc3532e81c3a0728dbb5619117e00",
+      "recipe_identity": "0cc0b6b3e522d38b4f3187eea2fd8517e25c877102bc478815af6b64a96ae6b3",
+      "status": "DECLARED_CRITERIA_MET"
+    },
+    "static32-1271": {
+      "adequacy_sha256": "a89352b2a3841541c4c3b0d7c46175942a2d9b793951393ac11f2d2e6e2ed49c",
+      "parameters": 37158,
+      "recipe_file_sha256": "5dd415a4fee39f810b1965f2dd868b70626fc1a425503eef80b5b5b1b02353ee",
+      "recipe_identity": "b4d2208726819eef77b36dc6f02e836cc29a560cbc329a993ab846924f48499d",
+      "status": "DECLARED_CRITERIA_MET"
+    },
+    "static32-1371": {
+      "adequacy_sha256": "c7697fe5fddc9ad143088f68e06c7f9d6055db8820e0087a9e85acc5ac37700d",
+      "parameters": 37158,
+      "recipe_file_sha256": "c2759e80c481ddcb7fec5567b3ceb60e6e88ee72aaaf32b42855b657af80006c",
+      "recipe_identity": "b87b6595260de071eaa55007d26e2f2f209aaacd230333c62656ae7e6a4cc695",
+      "status": "DECLARED_CRITERIA_MET"
+    }
+  },
+  "optimizer_updates_by_auditor": 0,
+  "run_allowed": "FIT only; no prediction or scoring"
+}

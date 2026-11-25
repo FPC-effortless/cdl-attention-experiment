@@ -1,0 +1,5566 @@
+Warning: truncated output (original token count: 62024)
+Total output lines: 7671
+
+{
+  "addressability": "Descriptive posthoc; not a fresh qualification test.",
+  "model_invocations": 0,
+  "pinned_input_sha256": {
+    "002": [
+      "201a63921dfaaf601b03e03e7dc80858e9958b71fe0eef8e6b8572d8d459aac1",
+      "ce80c30bfbb9c38ae8b078d16c0fd8187bc8a641bba4315bd05dad5253927118",
+      "2f28213c2eedcbdfce2151a42250ba57b0ca48bd92a2119726dc10818679ad25",
+      "e6a31a5ceaecb1ee296289f4f38a63d541f44de6e0508c02ad55ac9542e056f8",
+      "a6c354d69ee3ac3583cab31125404987fe510c22e3e282d93325ab0a04b390cb"
+    ],
+    "003": [
+      "536ba918ab5122549cd1142df0c02789fb406731a2fdf4928db75ac04a1c1555",
+      "edade4df767fff4ce0321d09c4e5511514f3944e8ea5f52077539402b7f4de84",
+      "d9b6bd3cd2a9a089933c51a14383bc3378d88e837d9d5427e81175d22a826d48",
+      "a03f10d2ec6b2ef1fee936c031dad2f17ab6d7499f61cc6fb761bb1c72321d12",
+      "8f80309fb58d1f39a7533e8aeb3b28305957c4894e0ccee154470f25fc8b43d2"
+    ]
+  },
+  "results": {
+    "002": {
+      "actor_count": 12,
+      "cases": {
+        "w025-1171-128": {
+          "exact_family_histogram": {
+            "0": 65,
+            "1": 4,
+            "2": 15,
+            "3": 11,
+            "4": 25
+          },
+          "exact_rule_templates": {
+            "color:+1": 37,
+            "color:-1": 76,
+            "position:-1": 3,
+            "query_only:-1": 1
+          },
+          "fail_clustering": {
+            "color_pair": {
+              "groups": 27,
+              "repeated_both_failed": 295,
+              "repeated_pairs": 295,
+              "singleton_groups": 3,
+              "with_failures": 27
+            },
+            "name_pair": {
+              "groups": 81,
+              "repeated_both_failed": 52,
+              "repeated_pairs": 52,
+              "singleton_groups": 53,
+              "with_failures": 81
+            }
+          },
+          "flips": {
+            "assignment:((1, -1), (2, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 0,
+              "flipped_color_non_tied": 5,
+              "neither_exact": 87,
+              "one_exact": 33,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 115
+            },
+            "assignment:((1, -1), (2, 1))": {
+              "both_exact": 2,
+              "both_relative_correct": 4,
+              "flipped_color_non_tied": 4,
+              "neither_exact": 68,
+              "one_exact": 50,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 116
+            },
+            "assignment:((1, 1), (2, -1))": {
+              "both_exact": 1,
+              "both_relative_correct": 5,
+              "flipped_color_non_tied": 5,
+              "neither_exact": 74,
+              "one_exact": 45,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 115
+            },
+            "assignment:((1, 1), (2, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 0,
+              "flipped_color_non_tied": 4,
+              "neither_exact": 87,
+              "one_exact": 33,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 116
+            },
+            "assignment:all": {
+              "both_exact": 3,
+              "both_relative_correct": 9,
+              "flipped_color_non_tied": 18,
+              "neither_exact": 316,
+              "one_exact": 161,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 462
+            },
+            "order:((0, -1), (2, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 38,
+              "flipped_color_non_tied": 5,
+              "neither_exact": 115,
+              "one_exact": 5,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 115
+            },
+            "order:((0, -1), (2, 1))": {
+              "both_exact": 32,
+              "both_relative_correct": 77,
+              "flipped_color_non_tied": 4,
+              "neither_exact": 74,
+              "one_exact": 14,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 116
+            },
+            "order:((0, 1), (2, -1))": {
+              "both_exact": 32,
+              "both_relative_correct": 77,
+              "flipped_color_non_tied": 5,
+              "neither_exact": 77,
+              "one_exact": 11,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 115
+            },
+            "order:((0, 1), (2, 1))": {
+              "both_exact": 1,
+              "both_relative_correct": 39,
+              "flipped_color_non_tied": 4,
+              "neither_exact": 112,
+              "one_exact": 7,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 116
+            },
+            "order:all": {
+              "both_exact": 65,
+              "both_relative_correct": 231,
+              "flipped_color_non_tied": 18,
+              "neither_exact": 378,
+              "one_exact": 37,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 462
+            },
+            "query:((0, -1), (1, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 1,
+              "flipped_color_non_tied": 3,
+              "neither_exact": 74,
+              "one_exact": 46,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 117
+            },
+            "query:((0, -1), (1, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 1,
+              "flipped_color_non_tied": 2,
+              "neither_exact": 83,
+              "one_exact": 37,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 118
+            },
+            "query:((0, 1), (1, -1))": {
+              "both_exact": 1,
+              "both_relative_correct": 1,
+              "flipped_color_non_tied": 2,
+              "neither_exact": 80,
+              "one_exact": 39,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 118
+            },
+            "query:((0, 1), (1, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 2,
+              "flipped_color_non_tied": 3,
+              "neither_exact": 77,
+              "one_exact": 43,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 117
+            },
+            "query:all": {
+              "both_exact": 1,
+              "both_relative_correct": 5,
+              "flipped_color_non_tied": 10,
+              "neither_exact": 314,
+              "one_exact": 165,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 470
+            }
+          },
+          "mean_walsh_logit_contrast": {
+            "binding": 3.8056944807370506e-05,
+            "canonical_name": -0.0005482158313194911,
+            "color": -0.1932277787476778,
+            "order_only": 0.003082353249192238,
+            "order_query": -0.00025836142400900524,
+            "position": -0.06313268430531024,
+            "query_only": 0.007954711342851322,
+            "triple": 0.0006376928339401881
+          },
+          "mean_within_family_walsh_energy_share": {
+            "binding": 1.1985006760629648e-05,
+            "canonical_name": 0.00014215029271866337,
+            "color": 0.8901885443657656,
+            "order_only": 0.0020531759154689844,
+            "order_query": 0.00046189985451086294,
+            "position": 0.056989907299718846,
+            "query_only": 0.046742786037868654,
+            "triple": 0.0034095512271873807
+          },
+          "strata": {
+            "all": {
+              "chooses_first": 462,
+              "exact": 167,
+              "relative_correct": 480,
+              "ties": 0,
+              "worlds": 960
+            },
+            "order=+1": {
+              "chooses_first": 231,
+              "exact": 80,
+              "relative_correct": 241,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=+1,query=+1": {
+              "chooses_first": 116,
+              "exact": 33,
+              "relative_correct": 116,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=+1,query=-1": {
+              "chooses_first": 115,
+              "exact": 47,
+              "relative_correct": 125,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1": {
+              "chooses_first": 231,
+              "exact": 87,
+              "relative_correct": 239,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=-1,query=+1": {
+              "chooses_first": 116,
+              "exact": 54,
+              "relative_correct": 124,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1,query=-1": {
+              "chooses_first": 115,
+              "exact": 33,
+              "relative_correct": 115,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1": {
+              "chooses_first": 231,
+              "exact": 66,
+              "relative_correct": 231,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=1,correct_color=1": {
+              "chooses_first": 77,
+              "exact": 1,
+              "relative_correct": 77,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1,correct_color=2": {
+              "chooses_first": 154,
+              "exact": 65,
+              "relative_correct": 154,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2": {
+              "chooses_first": 231,
+              "exact": 101,
+              "relative_correct": 249,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=2,correct_color=1": {
+              "chooses_first": 154,
+              "exact": 13,
+              "relative_correct": 86,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2,correct_color=2": {
+              "chooses_first": 77,
+              "exact": 88,
+              "relative_correct": 163,
+              "ties": 0,
+              "worlds": 240
+            },
+            "query=+1": {
+              "chooses_first": 232,
+              "exact": 87,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 480
+            },
+            "query=-1": {
+              "chooses_first": 230,
+              "exact": 80,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 480
+            }
+          }
+        },
+        "w025-1171-1280": {
+          "exact_family_histogram": {
+            "5": 1,
+            "6": 1,
+            "7": 7,
+            "8": 111
+          },
+          "exact_rule_templates": {
+            "binding:+1": 111
+          },
+          "fail_clustering": {
+            "color_pair": {
+              "groups": 27,
+              "repeated_both_failed": 2,
+              "repeated_pairs": 295,
+              "singleton_groups": 3,
+              "with_failures": 7
+            },
+            "name_pair": {
+              "groups": 81,
+              "repeated_both_failed": 1,
+              "repeated_pairs": 52,
+              "singleton_groups": 53,
+              "with_failures": 8
+            }
+          },
+          "flips": {
+            "assignment:((1, -1), (2, -1))": {
+              "both_exact": 118,
+              "both_relative_correct": 118,
+              "flipped_color_non_tied": 118,
+              "neither_exact": 0,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 2
+            },
+            "assignment:((1, -1), (2, 1))": {
+              "both_exact": 119,
+              "both_relative_correct": 119,
+              "flipped_color_non_tied": 119,
+              "neither_exact": 0,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 1
+            },
+            "assignment:((1, 1), (2, -1))": {
+              "both_exact": 118,
+              "both_relative_correct": 118,
+              "flipped_color_non_tied": 118,
+              "neither_exact": 0,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 2
+            },
+            "assignment:((1, 1), (2, 1))": {
+              "both_exact": 115,
+              "both_relative_correct": 115,
+              "flipped_color_non_tied": 117,
+              "neither_exact": 2,
+              "one_exact": 3,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 3
+            },
+            "assignment:all": {
+              "both_exact": 470,
+              "both_relative_correct": 470,
+              "flipped_color_non_tied": 472,
+              "neither_exact": 2,
+              "one_exact": 8,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 8
+            },
+            "order:((0, -1), (2, -1))": {
+              "both_exact": 118,
+              "both_relative_correct": 118,
+              "flipped_color_non_tied": 2,
+              "neither_exact": 0,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 118
+            },
+            "order:((0, -1), (2, 1))": {
+              "both_exact": 116,
+              "both_relative_correct": 116,
+              "flipped_color_non_tied": 4,
+              "neither_exact": 0,
+              "one_exact": 4,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 116
+            },
+            "order:((0, 1), (2, -1))": {
+              "both_exact": 118,
+              "both_relative_correct": 118,
+              "flipped_color_non_tied": 2,
+              "neither_exact": 0,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 118
+            },
+            "order:((0, 1), (2, 1))": {
+              "both_exact": 116,
+              "both_relative_correct": 116,
+              "flipped_color_non_tied": 4,
+              "neither_exact": 0,
+              "one_exact": 4,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 116
+            },
+            "order:all": {
+              "both_exact": 468,
+              "both_relative_correct": 468,
+              "flipped_color_non_tied": 12,
+              "neither_exact": 0,
+              "one_exact": 12,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 468
+            },
+            "query:((0, -1), (1, -1))": {
+              "both_exact": 117,
+              "both_relative_correct": 117,
+              "flipped_color_non_tied": 117,
+              "neither_exact": 0,
+              "one_exact": 3,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 3
+            },
+            "query:((0, -1), (1, 1))": {
+              "both_exact": 117,
+              "both_relative_correct": 117,
+              "flipped_color_non_tied": 117,
+              "neither_exact": 0,
+              "one_exact": 3,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 3
+            },
+            "query:((0, 1), (1, -1))": {
+              "both_exact": 120,
+              "both_relative_correct": 120,
+              "flipped_color_non_tied": 120,
+              "neither_exact": 0,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 0
+            },
+            "query:((0, 1), (1, 1))": {
+              "both_exact": 114,
+              "both_relative_correct": 114,
+              "flipped_color_non_tied": 114,
+              "neither_exact": 0,
+              "one_exact": 6,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 6
+            },
+            "query:all": {
+              "both_exact": 468,
+              "both_relative_correct": 468,
+              "flipped_color_non_tied": 468,
+              "neither_exact": 0,
+              "one_exact": 12,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 12
+            }
+          },
+          "mean_walsh_logit_contrast": {
+            "binding": 6.020353760511838,
+            "canonical_name": -0.01217236980276842,
+            "color": -0.008779955715726828,
+            "order_only": -0.03506407719711812,
+            "order_query": 0.003617627089988673,
+            "position": 0.06922028888535957,
+            "query_only": -0.034188883773216126,
+            "triple": -0.05390730837461888
+          },
+          "mean_within_family_walsh_energy_share": {
+            "binding": 0.9625912391361566,
+            "canonical_name": 0.006377699544667994,
+            "color": 0.002802355801458893,
+            "order_only": 0.001959967411339605,
+            "order_query": 0.002913378852908773,
+            "position": 0.014342575541288193,
+            "query_only": 0.002140901089254958,
+            "triple": 0.006871882622924778
+          },
+          "strata": {
+            "all": {
+              "chooses_first": 474,
+              "exact": 948,
+              "relative_correct": 948,
+              "ties": 0,
+              "worlds": 960
+            },
+            "order=+1": {
+              "chooses_first": 235,
+              "exact": 471,
+              "relative_correct": 471,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=+1,query=+1": {
+              "chooses_first": 233,
+              "exact": 233,
+              "relative_correct": 233,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=+1,query=-1": {
+              "chooses_first": 2,
+              "exact": 238,
+              "relative_correct": 238,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1": {
+              "chooses_first": 239,
+              "exact": 477,
+              "relative_correct": 477,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=-1,query=+1": {
+              "chooses_first": 1,
+              "exact": 239,
+              "relative_correct": 239,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1,query=-1": {
+              "chooses_first": 238,
+              "exact": 238,
+              "relative_correct": 238,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1": {
+              "chooses_first": 471,
+              "exact": 471,
+              "relative_correct": 471,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=1,correct_color=1": {
+              "chooses_first": 234,
+              "exact": 234,
+              "relative_correct": 234,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1,correct_color=2": {
+              "chooses_first": 237,
+              "exact": 237,
+              "relative_correct": 237,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2": {
+              "chooses_first": 3,
+              "exact": 477,
+              "relative_correct": 477,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=2,correct_color=1": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2,correct_color=2": {
+              "chooses_first": 3,
+              "exact": 237,
+              "relative_correct": 237,
+              "ties": 0,
+              "worlds": 240
+            },
+            "query=+1": {
+              "chooses_first": 234,
+              "exact": 472,
+              "relative_correct": 472,
+              "ties": 0,
+              "worlds": 480
+            },
+            "query=-1": {
+              "chooses_first": 240,
+              "exact": 476,
+              "relative_correct": 476,
+              "ties": 0,
+              "worlds": 480
+            }
+          }
+        },
+        "w025-1271-128": {
+          "exact_family_histogram": {
+            "0": 65,
+            "1": 11,
+            "2": 22,
+            "3": 6,
+            "4": 16
+          },
+          "exact_rule_templates": {
+            "color:+1": 52,
+            "color:-1": 57,
+            "query_only:+1": 4
+          },
+          "fail_clustering": {
+            "color_pair": {
+              "groups": 27,
+              "repeated_both_failed": 295,
+              "repeated_pairs": 295,
+              "singleton_groups": 3,
+              "with_failures": 27
+            },
+            "name_pair": {
+              "groups": 81,
+              "repeated_both_failed": 52,
+              "repeated_pairs": 52,
+              "singleton_groups": 53,
+              "with_failures": 81
+            }
+          },
+          "flips": {
+            "assignment:((1, -1), (2, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 0,
+              "flipped_color_non_tied": 1,
+              "neither_exact": 83,
+              "one_exact": 37,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 119
+            },
+            "assignment:((1, -1), (2, 1))": {
+              "both_exact": 2,
+              "both_relative_correct": 3,
+              "flipped_color_non_tied": 3,
+              "neither_exact": 86,
+              "one_exact": 32,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 117
+            },
+            "assignment:((1, 1), (2, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 0,
+              "flipped_color_non_tied": 1,
+              "neither_exact": 87,
+              "one_exact": 33,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 119
+            },
+            "assignment:((1, 1), (2, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 1,
+              "flipped_color_non_tied": 3,
+              "neither_exact": 89,
+              "one_exact": 31,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 117
+            },
+            "assignment:all": {
+              "both_exact": 2,
+              "both_relative_correct": 4,
+              "flipped_color_non_tied": 8,
+              "neither_exact": 345,
+              "one_exact": 133,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 472
+            },
+            "order:((0, -1), (2, -1))": {
+              "both_exact": 22,
+              "both_relative_correct": 55,
+              "flipped_color_non_tied": 2,
+              "neither_exact": 89,
+              "one_exact": 9,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 118
+            },
+            "order:((0, -1), (2, 1))": {
+              "both_exact": 10,
+              "both_relative_correct": 59,
+              "flipped_color_non_tied": 2,
+              "neither_exact": 106,
+              "one_exact": 4,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 118
+            },
+            "order:((0, 1), (2, -1))": {
+              "both_exact": 5,
+              "both_relative_correct": 62,
+              "flipped_color_non_tied": 2,
+              "neither_exact": 108,
+              "one_exact": 7,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 118
+            },
+            "order:((0, 1), (2, 1))": {
+              "both_exact": 19,
+              "both_relative_correct": 59,
+              "flipped_color_non_tied": 4,
+              "neither_exact": 96,
+              "one_exact": 5,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 116
+            },
+            "order:all": {
+              "both_exact": 56,
+              "both_relative_correct": 235,
+              "flipped_color_non_tied": 10,
+              "neither_exact": 399,
+              "one_exact": 25,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 470
+            },
+            "query:((0, -1), (1, -1))": {
+              "both_exact": 2,
+              "both_relative_correct": 3,
+              "flipped_color_non_tied": 8,
+              "neither_exact": 82,
+              "one_exact": 36,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 112
+            },
+            "query:((0, -1), (1, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 2,
+              "flipped_color_non_tied": 10,
+              "neither_exact": 83,
+              "one_exact": 37,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 110
+            },
+            "query:((0, 1), (1, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 5,
+              "flipped_color_non_tied": 6,
+              "neither_exact": 87,
+              "one_exact": 33,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 114
+            },
+            "query:((0, 1), (1, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 6,
+              "flipped_color_non_tied": 8,
+              "neither_exact": 93,
+              "one_exact": 27,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 112
+            },
+            "query:all": {
+              "both_exact": 2,
+              "both_relative_correct": 16,
+              "flipped_color_non_tied": 32,
+              "neither_exact": 345,
+              "one_exact": 133,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 448
+            }
+          },
+          "mean_walsh_logit_contrast": {
+            "binding": -0.00011775667468706766,
+            "canonical_name": -6.7653755346934e-05,
+            "color": -0.07257690404852231,
+            "order_only": -0.0022019296884536743,
+            "order_query": 0.00022727275888125101,
+            "position": -0.011292927712202073,
+            "query_only": -0.009238934020201366,
+            "triple": -0.000908831258614858
+          },
+          "mean_within_family_walsh_energy_share": {
+            "binding": 7.803711525057565e-06,
+            "canonical_name": 7.423870357167153e-05,
+            "color": 0.8805412878537432,
+            "order_only": 0.007870068236887861,
+            "order_query": 0.0016663618597081355,
+            "position": 0.0072069564470257546,
+            "query_only": 0.10060306795234882,
+            "triple": 0.0020302152351894466
+          },
+          "strata": {
+            "all": {
+              "chooses_first": 476,
+              "exact": 137,
+              "relative_correct": 480,
+              "ties": 0,
+              "worlds": 960
+            },
+            "order=+1": {
+              "chooses_first": 240,
+              "exact": 64,
+              "relative_correct": 238,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=+1,query=+1": {
+              "chooses_first": 119,
+              "exact": 31,
+              "relative_correct": 119,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=+1,query=-1": {
+              "chooses_first": 121,
+              "exact": 33,
+              "relative_correct": 119,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1": {
+              "chooses_first": 236,
+              "exact": 73,
+              "relative_correct": 242,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=-1,query=+1": {
+              "chooses_first": 117,
+              "exact": 36,
+              "relative_correct": 123,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1,query=-1": {
+              "chooses_first": 119,
+              "exact": 37,
+              "relative_correct": 119,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1": {
+              "chooses_first": 238,
+              "exact": 68,
+              "relative_correct": 238,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=1,correct_color=1": {
+              "chooses_first": 117,
+              "exact": 47,
+              "relative_correct": 117,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1,correct_color=2": {
+              "chooses_first": 121,
+              "exact": 21,
+              "relative_correct": 121,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2": {
+              "chooses_first": 238,
+              "exact": 69,
+              "relative_correct": 242,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=2,correct_color=1": {
+              "chooses_first": 123,
+              "exact": 49,
+              "relative_correct": 117,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2,correct_color=2": {
+              "chooses_first": 115,
+              "exact": 20,
+              "relative_correct": 125,
+              "ties": 0,
+              "worlds": 240
+            },
+            "query=+1": {
+              "chooses_first": 236,
+              "exact": 67,
+              "relative_correct": 242,
+              "ties": 0,
+              "worlds": 480
+            },
+            "query=-1": {
+              "chooses_first": 240,
+              "exact": 70,
+              "relative_correct": 238,
+              "ties": 0,
+              "worlds": 480
+            }
+          }
+        },
+        "w025-1271-1280": {
+          "exact_family_histogram": {
+            "6": 1,
+            "7": 2,
+            "8": 117
+          },
+          "exact_rule_templates": {
+            "binding:+1": 117
+          },
+          "fail_clustering": {
+            "color_pair": {
+              "groups": 27,
+              "repeated_both_failed": 0,
+              "repeated_pairs": 295,
+              "singleton_groups": 3,
+              "with_failures": 3
+            },
+            "name_pair": {
+              "groups": 81,
+              "repeated_both_failed": 0,
+              "repeated_pairs": 52,
+              "singleton_groups": 53,
+              "with_failures": 3
+            }
+          },
+          "flips": {
+            "assignment:((1, -1), (2, -1))": {
+              "both_exact": 119,
+              "both_relative_correct": 119,
+              "flipped_color_non_tied": 119,
+              "neither_exact": 0,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 1
+            },
+            "assignment:((1, -1), (2, 1))": {
+              "both_exact": 120,
+              "both_relative_correct": 120,
+              "flipped_color_non_tied": 120,
+              "neither_exact": 0,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 0
+            },
+            "assignment:((1, 1), (2, -1))": {
+              "both_exact": 120,
+              "both_relative_correct": 120,
+              "flipped_color_non_tied": 120,
+              "neither_exact": 0,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 0
+            },
+            "assignment:((1, 1), (2, 1))": {
+              "both_exact": 118,
+              "both_relative_correct": 118,
+              "flipped_color_non_tied": 119,
+              "neither_exact": 1,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 1
+            },
+            "assignment:all": {
+              "both_exact": 477,
+              "both_relative_correct": 477,
+              "flipped_color_non_tied": 478,
+              "neither_exact": 1,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 2
+            },
+            "order:((0, -1), (2, -1))": {
+              "both_exact": 119,
+              "both_relative_correct": 119,
+              "flipped_color_non_tied": 1,
+              "neither_exact": 0,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 119
+            },
+            "order:((0, -1), (2, 1))": {
+              "both_exact": 119,
+              "both_relative_correct": 119,
+              "flipped_color_non_tied": 1,
+              "neither_exact": 0,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 119
+            },
+            "order:((0, 1), (2, -1))": {
+              "both_exact": 120,
+              "both_relative_correct": 120,
+              "flipped_color_non_tied": 0,
+              "neither_exact": 0,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 120
+            },
+            "order:((0, 1), (2, 1))": {
+              "both_exact": 118,
+              "both_relative_correct": 118,
+              "flipped_color_non_tied": 2,
+              "neither_exact": 0,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 118
+            },
+            "order:all": {
+              "both_exact": 476,
+              "both_relative_correct": 476,
+              "flipped_color_non_tied": 4,
+              "neither_exact": 0,
+              "one_exact": 4,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 476
+            },
+            "query:((0, -1), (1, -1))": {
+              "both_exact": 119,
+              "both_relative_correct": 119,
+              "flipped_color_non_tied": 119,
+              "neither_exact": 0,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 1
+            },
+            "query:((0, -1), (1, 1))": {
+              "both_exact": 119,
+              "both_relative_correct": 119,
+              "flipped_color_non_tied": 119,
+              "neither_exact": 0,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 1
+            },
+            "query:((0, 1), (1, -1))": {
+              "both_exact": 120,
+              "both_relative_correct": 120,
+              "flipped_color_non_tied": 120,
+              "neither_exact": 0,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 0
+            },
+            "query:((0, 1), (1, 1))": {
+              "both_exact": 118,
+              "both_relative_correct": 118,
+              "flipped_color_non_tied": 118,
+              "neither_exact": 0,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 2
+            },
+            "query:all": {
+              "both_exact": 476,
+              "both_relative_correct": 476,
+              "flipped_color_non_tied": 476,
+              "neither_exact": 0,
+              "one_exact": 4,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 4
+            }
+          },
+          "mean_walsh_logit_contrast": {
+            "binding": 6.435920568329675,
+            "canonical_name": 0.006174813986945082,
+            "color": -0.06874029496575532,
+            "order_only": -0.02076256036537719,
+            "order_query": -0.059361088164223474,
+            "position": -0.17762760682077594,
+            "query_only": 0.00976654770577928,
+            "triple": -0.02270769321100185
+          },
+          "mean_within_family_walsh_energy_share": {
+            "binding": 0.987055420443692,
+            "canonical_name": 0.002215387945542195,
+            "color": 0.0017436536492220673,
+            "order_only": 0.0007736622154002377,
+            "order_query": 0.0011525160818938774,
+            "position": 0.004366953158771286,
+            "query_only": 0.0007052981880419788,
+            "triple": 0.001987108317436294
+          },
+          "strata": {
+            "all": {
+              "chooses_first": 476,
+              "exact": 956,
+              "relative_correct": 956,
+              "ties": 0,
+              "worlds": 960
+            },
+            "order=+1": {
+              "chooses_first": 237,
+              "exact": 477,
+              "relative_correct": 477,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=+1,query=+1": {
+              "chooses_first": 237,
+              "exact": 237,
+              "relative_correct": 237,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=+1,query=-1": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1": {
+              "chooses_first": 239,
+              "exact": 479,
+              "relative_correct": 479,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=-1,query=+1": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1,query=-1": {
+              "chooses_first": 239,
+              "exact": 239,
+              "relative_correct": 239,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1": {
+              "chooses_first": 476,
+              "exact": 476,
+              "relative_correct": 476,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=1,correct_color=1": {
+              "chooses_first": 237,
+              "exact": 237,
+              "relative_correct": 237,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1,correct_color=2": {
+              "chooses_first": 239,
+              "exact": 239,
+              "relative_correct": 239,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2": {
+              "chooses_first": 0,
+              "exact": 480,
+              "relative_correct": 480,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=2,correct_color=1": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2,correct_color=2": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "query=+1": {
+              "chooses_first": 237,
+              "exact": 477,
+              "relative_correct": 477,
+              "ties": 0,
+              "worlds": 480
+            },
+            "query=-1": {
+              "chooses_first": 239,
+              "exact": 479,
+              "relative_correct": 479,
+              "ties": 0,
+              "worlds": 480
+            }
+          }
+        },
+        "w025-1371-128": {
+          "exact_family_histogram": {
+            "0": 43,
+            "1": 23,
+            "2": 27,
+            "3": 15,
+            "4": 12
+          },
+          "exact_rule_templates": {
+            "color:+1": 32,
+            "color:-1": 47,
+            "position:-1": 12,
+            "query_only:+1": 3
+          },
+          "fail_clustering": {
+            "color_pair": {
+              "groups": 27,
+              "repeated_both_failed": 295,
+              "repeated_pairs": 295,
+              "singleton_groups": 3,
+              "with_failures": 27
+            },
+            "name_pair": {
+              "groups": 81,
+              "repeated_both_failed": 52,
+              "repeated_pairs": 52,
+              "singleton_groups": 53,
+              "with_failures": 81
+            }
+          },
+          "flips": {
+            "assignment:((1, -1), (2, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 0,
+              "flipped_color_non_tied": 19,
+              "neither_exact": 99,
+              "one_exact": 21,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 101
+            },
+            "assignment:((1, -1), (2, 1))": {
+              "both_exact": 1,
+              "both_relative_correct": 29,
+              "flipped_color_non_tied": 29,
+              "neither_exact": 53,
+              "one_exact": 66,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 91
+            },
+            "assignment:((1, 1), (2, -1))": {
+              "both_exact": 6,
+              "both_relative_correct": 21,
+              "flipped_color_non_tied": 21,
+              "neither_exact": 67,
+              "one_exact": 47,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 99
+            },
+            "assignment:((1, 1), (2, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 0,
+              "flipped_color_non_tied": 29,
+              "neither_exact": 98,
+              "one_exact": 22,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 91
+            },
+            "assignment:all": {
+              "both_exact": 7,
+              "both_relative_correct": 50,
+              "flipped_color_non_tied": 98,
+              "neither_exact": 317,
+              "one_exact": 156,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 382
+            },
+            "order:((0, -1), (2, -1))": {
+              "both_exact": 19,
+              "both_relative_correct": 44,
+              "flipped_color_non_tied": 21,
+              "neither_exact": 82,
+              "one_exact": 19,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 99
+            },
+            "order:((0, -1), (2, 1))": {
+              "both_exact": 3,
+              "both_relative_correct": 50,
+              "flipped_color_non_tied": 31,
+              "neither_exact": 91,
+              "one_exact": 26,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 89
+            },
+            "order:((0, 1), (2, -1))": {
+              "both_exact": 2,
+              "both_relative_correct": 57,
+              "flipped_color_non_tied": 19,
+              "neither_exact": 99,
+              "one_exact": 19,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 101
+            },
+            "order:((0, 1), (2, 1))": {
+              "both_exact": 18,
+              "both_relative_correct": 41,
+              "flipped_color_non_tied": 27,
+              "neither_exact": 80,
+              "one_exact": 22,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 93
+            },
+            "order:all": {
+              "both_exact": 42,
+              "both_relative_correct": 192,
+              "flipped_color_non_tied": 98,
+              "neither_exact": 352,
+              "one_exact": 86,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 382
+            },
+            "query:((0, -1), (1, -1))": {
+              "both_exact": 2,
+              "both_relative_correct": 11,
+              "flipped_color_non_tied": 17,
+              "neither_exact": 74,
+              "one_exact": 44,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 103
+            },
+            "query:((0, -1), (1, 1))": {
+              "both_exact": 1,
+              "both_relative_correct": 3,
+              "flipped_color_non_tied": 11,
+              "neither_exact": 80,
+              "one_exact": 39,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 109
+            },
+            "query:((0, 1), (1, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 6,
+              "flipped_color_non_tied": 7,
+              "neither_exact": 79,
+              "one_exact": 41,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 113
+            },
+            "query:((0, 1), (1, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 7,
+              "flipped_color_non_tied": 17,
+              "neither_exact": 80,
+              "one_exact": 40,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 103
+            },
+            "query:all": {
+              "both_exact": 3,
+              "both_relative_correct": 27,
+              "flipped_color_non_tied": 52,
+              "neither_exact": 313,
+              "one_exact": 164,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 428
+            }
+          },
+          "mean_walsh_logit_contrast": {
+            "binding": -0.0005959014718731245,
+            "canonical_name": -0.0011799177154898643,
+            "color": -0.10351527376721302,
+            "order_only": 0.004133568269511064,
+            "order_query": -6.335073461135228e-05,
+            "position": -0.11608520677934091,
+            "query_only": -3.669702758391698e-05,
+            "triple": -0.014912033888200919
+          },
+          "mean_within_family_walsh_energy_share": {
+            "binding": 4.166779485563108e-05,
+            "canonical_name": 0.00017683213090774873,
+            "color": 0.664987893053538,
+            "order_only": 0.008669402151216504,
+            "order_query": 0.0010503115417165646,
+            "position": 0.21283068637746552,
+            "query_only": 0.1025129260127788,
+            "triple": 0.009730280937521192
+          },
+          "strata": {
+            "all": {
+              "chooses_first": 382,
+              "exact": 170,
+              "relative_correct": 482,
+              "ties": 0,
+              "worlds": 960
+            },
+            "order=+1": {
+              "chooses_first": 190,
+              "exact": 81,
+              "relative_correct": 232,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=+1,query=+1": {
+              "chooses_first": 91,
+              "exact": 22,
+              "relative_correct": 91,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=+1,query=-1": {
+              "chooses_first": 99,
+              "exact": 59,
+              "relative_correct": 141,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1": {
+              "chooses_first": 192,
+              "exact": 89,
+              "relative_correct": 250,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=-1,query=+1": {
+              "chooses_first": 91,
+              "exact": 68,
+              "relative_correct": 149,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1,query=-1": {
+              "chooses_first": 101,
+              "exact": 21,
+              "relative_correct": 101,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1": {
+              "chooses_first": 192,
+              "exact": 43,
+              "relative_correct": 192,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=1,correct_color=1": {
+              "chooses_first": 85,
+              "exact": 38,
+              "relative_correct": 85,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1,correct_color=2": {
+              "chooses_first": 107,
+              "exact": 5,
+              "relative_correct": 107,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2": {
+              "chooses_first": 190,
+              "exact": 127,
+              "relative_correct": 290,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=2,correct_color=1": {
+              "chooses_first": 107,
+              "exact": 77,
+              "relative_correct": 133,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2,correct_color=2": {
+              "chooses_first": 83,
+              "exact": 50,
+              "relative_correct": 157,
+              "ties": 0,
+              "worlds": 240
+            },
+            "query=+1": {
+              "chooses_first": 182,
+              "exact": 90,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 480
+            },
+            "query=-1": {
+              "chooses_first": 200,
+              "exact": 80,
+              "relative_correct": 242,
+              "ties": 0,
+              "worlds": 480
+            }
+          }
+        },
+        "w025-1371-1280": {
+          "exact_family_histogram": {
+            "4": 6,
+            "5": 3,
+            "6": 35,
+            "7": 6,
+            "8": 70
+          },
+          "exact_rule_templates": {
+            "binding:+1": 70,
+            "position:+1": 4
+          },
+          "fail_clustering": {
+            "color_pair": {
+              "groups": 27,
+              "repeated_both_failed": 45,
+              "repeated_pairs": 295,
+              "singleton_groups": 3,
+              "with_failures": 22
+            },
+            "name_pair": {
+              "groups": 81,
+              "repeated_both_failed": 20,
+              "repeated_pairs": 52,
+              "singleton_groups": 53,
+              "with_failures": 35
+            }
+          },
+          "flips": {
+            "assignment:((1, -1), (2, -1))": {
+              "both_exact": 115,
+              "both_relative_correct": 115,
+              "flipped_color_non_tied": 115,
+              "neither_exact": 0,
+              "one_exact": 5,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 5
+            },
+            "assignment:((1, -1), (2, 1))": {
+              "both_exact": 100,
+              "both_relative_correct": 100,
+              "flipped_color_non_tied": 117,
+              "neither_exact": 17,
+              "one_exact": 3,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 3
+            },
+            "assignment:((1, 1), (2, -1))": {
+              "both_exact": 82,
+              "both_relative_correct": 82,
+              "flipped_color_non_tied": 111,
+              "neither_exact": 29,
+              "one_exact": 9,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 9
+            },
+            "assignment:((1, 1), (2, 1))": {
+              "both_exact": 120,
+              "both_relative_correct": 120,
+              "flipped_color_non_tied": 120,
+              "neither_exact": 0,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 0
+            },
+            "assignment:all": {
+              "both_exact": 417,
+              "both_relative_correct": 417,
+              "flipped_color_non_tied": 463,
+              "neither_exact": 46,
+              "one_exact": 17,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 17
+            },
+            "order:((0, -1), (2, -1))": {
+              "both_exact": 85,
+              "both_relative_correct": 85,
+              "flipped_color_non_tied": 31,
+              "neither_exact": 4,
+              "one_exact": 31,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 89
+            },
+            "order:((0, -1), (2, 1))": {
+              "both_exact": 102,
+              "both_relative_correct": 102,
+              "flipped_color_non_tied": 18,
+              "neither_exact": 0,
+              "one_exact": 18,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 102
+            },
+            "order:((0, 1), (2, -1))": {
+              "both_exact": 88,
+              "both_relative_correct": 88,
+              "flipped_color_non_tied": 31,
+              "neither_exact": 1,
+              "one_exact": 31,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 89
+            },
+            "order:((0, 1), (2, 1))": {
+              "both_exact": 101,
+              "both_relative_correct": 101,
+              "flipped_color_non_tied": 19,
+              "neither_exact": 0,
+              "one_exact": 19,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 101
+            },
+            "order:all": {
+              "both_exact": 376,
+              "both_relative_correct": 376,
+              "flipped_color_non_tied": 99,
+              "neither_exact": 5,
+              "one_exact": 99,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 381
+            },
+            "query:((0, -1), (1, -1))": {
+              "both_exact": 99,
+              "both_relative_correct": 99,
+              "flipped_color_non_tied": 100,
+              "neither_exact": 1,
+              "one_exact": 20,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 20
+            },
+            "query:((0, -1), (1, 1))": {
+              "both_exact": 85,
+              "both_relative_correct": 85,
+              "flipped_color_non_tied": 85,
+              "neither_exact": 0,
+              "one_exact": 35,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 35
+            },
+            "query:((0, 1), (1, -1))": {
+              "both_exact": 101,
+              "both_relative_correct": 101,
+              "flipped_color_non_tied": 102,
+              "neither_exact": 1,
+              "one_exact": 18,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 18
+            },
+            "query:((0, 1), (1, 1))": {
+              "both_exact": 88,
+              "both_relative_correct": 88,
+              "flipped_color_non_tied": 88,
+              "neither_exact": 0,
+              "one_exact": 32,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 32
+            },
+            "query:all": {
+              "both_exact": 373,
+              "both_relative_correct": 373,
+              "flipped_color_non_tied": 375,
+              "neither_exact": 2,
+              "one_exact": 105,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 105
+            }
+          },
+          "mean_walsh_logit_contrast": {
+            "binding": 4.05608955546583,
+            "canonical_name": 0.4099014283172437,
+            "color": -0.06518251267116285,
+            "order_only": 0.010790769773787663,
+            "order_query": 0.010440261128921217,
+            "position": 0.6735406994223012,
+            "query_only": 0.025960599391934618,
+            "triple": -0.13223290228197584
+          },
+          "mean_within_family_walsh_energy_share": {
+            "binding": 0.7401960843069142,
+            "canonical_name": 0.12915869308763425,
+            "color": 0.015031657069150446,
+            "order_only": 0.0007816886978628744,
+            "order_query": 0.0005534291058947041,
+            "position": 0.0815361828688273,
+            "query_only": 0.00267023836880531,
+            "triple": 0.03007202649491113
+          },
+          "strata": {
+            "all": {
+              "chooses_first": 579,
+              "exact": 851,
+              "relative_correct": 851,
+              "ties": 0,
+              "worlds": 960
+            },
+            "order=+1": {
+              "chooses_first": 307,
+              "exact": 413,
+              "relative_correct": 413,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=+1,query=+1": {
+              "chooses_first": 240,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=+1,query=-1": {
+              "chooses_first": 67,
+              "exact": 173,
+              "relative_correct": 173,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1": {
+              "chooses_first": 272,
+              "exact": 438,
+              "relative_correct": 438,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=-1,query=+1": {
+              "chooses_first": 37,
+              "exact": 203,
+              "relative_correct": 203,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1,query=-1": {
+              "chooses_first": 235,
+              "exact": 235,
+              "relative_correct": 235,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1": {
+              "chooses_first": 475,
+              "exact": 475,
+              "relative_correct": 475,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=1,correct_color=1": {
+              "chooses_first": 236,
+              "exact": 236,
+              "relative_correct": 236,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1,correct_color=2": {
+              "chooses_first": 239,
+              "exact": 239,
+              "relative_correct": 239,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2": {
+              "chooses_first": 104,
+              "exact": 376,
+              "relative_correct": 376,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=2,correct_color=1": {
+              "chooses_first": 54,
+              "exact": 186,
+              "relative_correct": 186,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2,correct_color=2": {
+              "chooses_first": 50,
+              "exact": 190,
+              "relative_correct": 190,
+              "ties": 0,
+              "worlds": 240
+            },
+            "query=+1": {
+              "chooses_first": 277,
+              "exact": 443,
+              "relative_correct": 443,
+              "ties": 0,
+              "worlds": 480
+            },
+            "query=-1": {
+              "chooses_first": 302,
+              "exact": 408,
+              "relative_correct": 408,
+              "ties": 0,
+              "worlds": 480
+            }
+          }
+        },
+        "w1-1171-128": {
+          "exact_family_histogram": {
+            "0": 105,
+            "1": 10,
+            "2": 5
+          },
+          "exact_rule_templates": {
+            "color:+1": 34,
+            "color:-1": 71,
+            "query_only:+1": 4,
+            "query_only:-1": 2
+          },
+          "fail_clustering": {
+            "color_pair": {
+              "groups": 27,
+              "repeated_both_failed": 295,
+              "repeated_pairs": 295,
+              "singleton_groups": 3,
+              "with_failures": 27
+            },
+            "name_pair": {
+              "groups": 81,
+              "repeated_both_failed": 52,
+              "repeated_pairs": 52,
+              "singleton_groups": 53,
+              "with_failures": 81
+            }
+          },
+          "flips": {
+            "assignment:((1, -1), (2, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 0,
+              "flipped_color_non_tied": 6,
+              "neither_exact": 116,
+              "one_exact": 4,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 114
+            },
+            "assignment:((1, -1), (2, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 3,
+              "flipped_color_non_tied": 3,
+              "neither_exact": 111,
+              "one_exact": 9,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 117
+            },
+            "assignment:((1, 1), (2, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 3,
+              "flipped_color_non_tied": 3,
+              "neither_exact": 114,
+              "one_exact": 6,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 117
+            },
+            "assignment:((1, 1), (2, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 0,
+              "flipped_color_non_tied": 3,
+              "neither_exact": 119,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 117
+            },
+            "assignment:all": {
+              "both_exact": 0,
+              "both_relative_correct": 6,
+              "flipped_color_non_tied": 15,
+              "neither_exact": 460,
+              "one_exact": 20,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 465
+            },
+            "order:((0, -1), (2, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 37,
+              "flipped_color_non_tied": 5,
+              "neither_exact": 118,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 115
+            },
+            "order:((0, -1), (2, 1))": {
+              "both_exact": 1,
+              "both_relative_correct": 75,
+              "flipped_color_non_tied": 2,
+              "neither_exact": 111,
+              "one_exact": 8,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 118
+            },
+            "order:((0, 1), (2, -1))": {
+              "both_exact": 3,
+              "both_relative_correct": 77,
+              "flipped_color_non_tied": 4,
+              "neither_exact": 115,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 116
+            },
+            "order:((0, 1), (2, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 42,
+              "flipped_color_non_tied": 4,
+              "neither_exact": 120,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 116
+            },
+            "order:all": {
+              "both_exact": 4,
+              "both_relative_correct": 231,
+              "flipped_color_non_tied": 15,
+              "neither_exact": 464,
+              "one_exact": 12,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 465
+            },
+            "query:((0, -1), (1, -1))": {
+              "both_exact": 1,
+              "both_relative_correct": 3,
+              "flipped_color_non_tied": 12,
+              "neither_exact": 111,
+              "one_exact": 8,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 108
+            },
+            "query:((0, -1), (1, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 3,
+              "flipped_color_non_tied": 9,
+              "neither_exact": 118,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 111
+            },
+            "query:((0, 1), (1, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 6,
+              "flipped_color_non_tied": 9,
+              "neither_exact": 117,
+              "one_exact": 3,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 111
+            },
+            "query:((0, 1), (1, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 6,
+              "flipped_color_non_tied": 9,
+              "neither_exact": 115,
+              "one_exact": 5,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 111
+            },
+            "query:all": {
+              "both_exact": 1,
+              "both_relative_correct": 18,
+              "flipped_color_non_tied": 39,
+              "neither_exact": 461,
+              "one_exact": 18,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 441
+            }
+          },
+          "mean_walsh_logit_contrast": {
+            "binding": 0.00012265245119730633,
+            "canonical_name": -0.0004637221495310465,
+            "color": -0.16116757467389106,
+            "order_only": 0.004518518348534902,
+            "order_query": 0.00025099714597066246,
+            "position": -0.05459501619140307,
+            "query_only": 0.005462183803319931,
+            "triple": 0.0007942227025826772
+          },
+          "mean_within_family_walsh_energy_share": {
+            "binding": 2.6097949370589173e-05,
+            "canonical_name": 0.00024683869190943934,
+            "color": 0.8371539766426621,
+            "order_only": 0.005581934400722949,
+            "order_query": 0.00091903702499109,
+            "position": 0.05255206419372329,
+            "query_only": 0.09780498328350745,
+            "triple": 0.005715067813113164
+          },
+          "strata": {
+            "all": {
+              "chooses_first": 465,
+              "exact": 20,
+              "relative_correct": 477,
+              "ties": 0,
+              "worlds": 960
+            },
+            "order=+1": {
+              "chooses_first": 234,
+              "exact": 7,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=+1,query=+1": {
+              "chooses_first": 117,
+              "exact": 1,
+              "relative_correct": 117,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=+1,query=-1": {
+              "chooses_first": 117,
+              "exact": 6,
+              "relative_correct": 123,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1": {
+              "chooses_first": 231,
+              "exact": 13,
+              "relative_correct": 237,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=-1,query=+1": {
+              "chooses_first": 117,
+              "exact": 9,
+              "relative_correct": 123,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1,query=-1": {
+              "chooses_first": 114,
+              "exact": 4,
+              "relative_correct": 114,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1": {
+              "chooses_first": 231,
+              "exact": 5,
+              "relative_correct": 231,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=1,correct_color=1": {
+              "chooses_first": 79,
+              "exact": 1,
+              "relative_correct": 79,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1,correct_color=2": {
+              "chooses_first": 152,
+              "exact": 4,
+              "relative_correct": 152,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2": {
+              "chooses_first": 234,
+              "exact": 15,
+              "relative_correct": 246,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=2,correct_color=1": {
+              "chooses_first": 152,
+              "exact": 1,
+              "relative_correct": 88,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2,correct_color=2": {
+              "chooses_first": 82,
+              "exact": 14,
+              "relative_correct": 158,
+              "ties": 0,
+              "worlds": 240
+            },
+            "query=+1": {
+              "chooses_first": 234,
+              "exact": 10,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 480
+            },
+            "query=-1": {
+              "chooses_first": 231,
+              "exact": 10,
+              "relative_correct": 237,
+              "ties": 0,
+              "worlds": 480
+            }
+          }
+        },
+        "w1-1171-1280": {
+          "exact_family_histogram": {
+            "4": 1,
+            "6": 3,
+            "7": 4,
+            "8": 112
+          },
+          "exact_rule_templates": {
+            "binding:+1": 112,
+            "position:-1": 1
+          },
+          "fail_clustering": {
+            "color_pair": {
+              "groups": 27,
+              "repeated_both_failed": 0,
+              "repeated_pairs": 295,
+              "singleton_groups": 3,
+              "with_failures": 8
+            },
+            "name_pair": {
+              "groups": 81,
+              "repeated_both_failed": 1,
+              "repeated_pairs": 52,
+              "singleton_groups": 53,
+              "with_failures": 7
+            }
+          },
+          "flips": {
+            "assignment:((1, -1), (2, -1))": {
+              "both_exact": 113,
+              "both_relative_correct": 113,
+              "flipped_color_non_tied": 116,
+              "neither_exact": 3,
+              "one_exact": 4,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 4
+            },
+            "assignment:((1, -1), (2, 1))": {
+              "both_exact": 120,
+              "both_relative_correct": 120,
+              "flipped_color_non_tied": 120,
+              "neither_exact": 0,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 0
+            },
+            "assignment:((1, 1), (2, -1))": {
+              "both_exact": 120,
+              "both_relative_correct": 120,
+              "flipped_color_non_tied": 120,
+              "neither_exact": 0,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 0
+            },
+            "assignment:((1, 1), (2, 1))": {
+              "both_exact": 117,
+              "both_relative_correct": 117,
+              "flipped_color_non_tied": 118,
+              "neither_exact": 1,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 2
+            },
+            "assignment:all": {
+              "both_exact": 470,
+              "both_relative_correct": 470,
+              "flipped_color_non_tied": 474,
+              "neither_exact": 4,
+              "one_exact": 6,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 6
+            },
+            "order:((0, -1), (2, -1))": {
+              "both_exact": 114,
+              "both_relative_correct": 114,
+              "flipped_color_non_tied": 6,
+              "neither_exact": 0,
+              "one_exact": 6,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 114
+            },
+            "order:((0, -1), (2, 1))": {
+              "both_exact": 119,
+              "both_relative_correct": 119,
+              "flipped_color_non_tied": 1,
+              "neither_exact": 0,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 119
+            },
+            "order:((0, 1), (2, -1))": {
+              "both_exact": 116,
+              "both_relative_correct": 116,
+              "flipped_color_non_tied": 4,
+              "neither_exact": 0,
+              "one_exact": 4,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 116
+            },
+            "order:((0, 1), (2, 1))": {
+              "both_exact": 117,
+              "both_relative_correct": 117,
+              "flipped_color_non_tied": 3,
+              "neither_exact": 0,
+              "one_exact": 3,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 117
+            },
+            "order:all": {
+              "both_exact": 466,
+              "both_relative_correct": 466,
+              "flipped_color_non_tied": 14,
+              "neither_exact": 0,
+              "one_exact": 14,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 466
+            },
+            "query:((0, -1), (1, -1))": {
+              "both_exact": 114,
+              "both_relative_correct": 114,
+              "flipped_color_non_tied": 114,
+              "neither_exact": 0,
+              "one_exact": 6,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 6
+            },
+            "query:((0, -1), (1, 1))": {
+              "both_exact": 119,
+              "both_relative_correct": 119,
+              "flipped_color_non_tied": 119,
+              "neither_exact": 0,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 1
+            },
+            "query:((0, 1), (1, -1))": {
+              "both_exact": 116,
+              "both_relative_correct": 116,
+              "flipped_color_non_tied": 116,
+              "neither_exact": 0,
+              "one_exact": 4,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 4
+            },
+            "query:((0, 1), (1, 1))": {
+              "both_exact": 117,
+              "both_relative_correct": 117,
+              "flipped_color_non_tied": 117,
+              "neither_exact": 0,
+              "one_exact": 3,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 3
+            },
+            "query:all": {
+              "both_exact": 466,
+              "both_relative_correct": 466,
+              "flipped_color_non_tied": 466,
+              "neither_exact": 0,
+              "one_exact": 14,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 14
+            }
+          },
+          "mean_walsh_logit_contrast": {
+            "binding": 5.220774050445228,
+            "canonical_name": 0.051957690337197465,
+            "color": -0.044950574642522646,
+            "order_only": -0.0004489906483892507,
+            "order_query": -0.020740723782364513,
+            "position": -0.09419423084885542,
+            "query_only": -0.0035097848194709513,
+            "triple": 0.06925101868328057
+          },
+          "mean_within_family_walsh_energy_share": {
+            "binding": 0.9615545099543046,
+            "canonical_name": 0.00578332271268946,
+            "color": 0.0036989735386683538,
+            "order_only": 0.0014458059218256422,
+            "order_query": 0.002666532336798507,
+            "position": 0.017455923872388143,
+            "query_only": 0.0014384426763431658,
+            "triple": 0.0059564889869816685
+          },
+          "strata": {
+            "all": {
+              "chooses_first": 466,
+              "exact": 946,
+              "relative_correct": 946,
+              "ties": 0,
+              "worlds": 960
+            },
+            "order=+1": {
+              "chooses_first": 236,
+              "exact": 476,
+              "relative_correct": 476,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=+1,query=+1": {
+              "chooses_first": 236,
+              "exact": 236,
+              "relative_correct": 236,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=+1,query=-1": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1": {
+              "chooses_first": 230,
+              "exact": 470,
+              "relative_correct": 470,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=-1,query=+1": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1,query=-1": {
+              "chooses_first": 230,
+              "exact": 230,
+              "relative_correct": 230,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1": {
+              "chooses_first": 466,
+              "exact": 466,
+              "relative_correct": 466,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=1,correct_color=1": {
+              "chooses_first": 231,
+              "exact": 231,
+              "relative_correct": 231,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1,correct_color=2": {
+              "chooses_first": 235,
+              "exact": 235,
+              "relative_correct": 235,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2": {
+              "chooses_first": 0,
+              "exact": 480,
+              "relative_correct": 480,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=2,correct_color=1": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2,correct_color=2": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "query=+1": {
+              "chooses_first": 236,
+              "exact": 476,
+              "relative_correct": 476,
+              "ties": 0,
+              "worlds": 480
+            },
+            "query=-1": {
+              "chooses_first": 230,
+              "exact": 470,
+              "relative_correct": 470,
+              "ties": 0,
+              "worlds": 480
+            }
+          }
+        },
+        "w1-1271-128": {
+          "exact_family_histogram": {
+            "0": 112,
+            "2": 8
+          },
+          "exact_rule_templates": {
+            "color:+1": 49,
+            "color:-1": 57,
+            "query_only:+1": 6,
+            "query_only:-1": 4
+          },
+          "fail_clustering": {
+            "color_pair": {
+              "groups": 27,
+              "repeated_both_failed": 295,
+              "repeated_pairs": 295,
+              "singleton_groups": 3,
+              "with_failures": 27
+            },
+            "name_pair": {
+              "groups": 81,
+              "repeated_both_failed": 52,
+              "repeated_pairs": 52,
+              "singleton_groups": 53,
+              "with_failures": 81
+            }
+          },
+          "flips": {
+            "assignment:((1, -1), (2, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 2,
+              "flipped_color_non_tied": 3,
+              "neither_exact": 118,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 117
+            },
+            "assignment:((1, -1), (2, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 1,
+              "flipped_color_non_tied": 1,
+              "neither_exact": 114,
+              "one_exact": 6,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 119
+            },
+            "assignment:((1, 1), (2, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 1,
+              "flipped_color_non_tied": 1,
+              "neither_exact": 118,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 119
+            },
+            "assignment:((1, 1), (2, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 0,
+              "flipped_color_non_tied": 0,
+              "neither_exact": 114,
+              "one_exact": 6,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 120
+            },
+            "assignment:all": {
+              "both_exact": 0,
+              "both_relative_correct": 4,
+              "flipped_color_non_tied": 5,
+              "neither_exact": 464,
+              "one_exact": 16,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 475
+            },
+            "order:((0, -1), (2, -1))": {
+              "both_exact": 2,
+              "both_relative_correct": 53,
+              "flipped_color_non_tied": 3,
+              "neither_exact": 118,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 117
+            },
+            "order:((0, -1), (2, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 61,
+              "flipped_color_non_tied": 1,
+              "neither_exact": 120,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 119
+            },
+            "order:((0, 1), (2, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 66,
+              "flipped_color_non_tied": 1,
+              "neither_exact": 120,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 119
+            },
+            "order:((0, 1), (2, 1))": {
+              "both_exact": 6,
+              "both_relative_correct": 59,
+              "flipped_color_non_tied": 0,
+              "neither_exact": 114,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 120
+            },
+            "order:all": {
+              "both_exact": 8,
+              "both_relative_correct": 239,
+              "flipped_color_non_tied": 5,
+              "neither_exact": 472,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 475
+            },
+            "query:((0, -1), (1, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 4,
+              "flipped_color_non_tied": 11,
+              "neither_exact": 118,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 109
+            },
+            "query:((0, -1), (1, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 4,
+              "flipped_color_non_tied": 13,
+              "neither_exact": 118,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 107
+            },
+            "query:((0, 1), (1, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 9,
+              "flipped_color_non_tied": 13,
+              "neither_exact": 114,
+              "one_exact": 6,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 107
+            },
+            "query:((0, 1), (1, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 10,
+              "flipped_color_non_tied": 14,
+              "neither_exact": 114,
+              "one_exact": 6,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 106
+            },
+            "query:all": {
+              "both_exact": 0,
+              "both_relative_correct": 27,
+              "flipped_color_non_tied": 51,
+              "neither_exact": 464,
+              "one_exact": 16,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 429
+            }
+          },
+          "mean_walsh_logit_contrast": {
+            "binding": -0.0001398582011461258,
+            "canonical_name": -5.7751064499219255e-05,
+            "color": -0.07482406410078207,
+            "order_only": -0.0016832092156012853,
+            "order_query": 0.0007312346249818801,
+            "position": -0.008871629709998767,
+            "query_only": -0.007859430089592934,
+            "triple": -0.0006889389206965764
+          },
+          "mean_within_family_walsh_energy_share": {
+            "binding": 9.720267243175418e-06,
+            "canonical_name": 6.494677049400737e-05,
+            "color": 0.8515059924492083,
+            "order_only": 0.007125052428611127,
+            "order_query": 0.003488134904479488,
+            "position": 0.008329987960397325,
+            "query_only": 0.12840032625181863,
+            "triple": 0.0010758389677483016
+          },
+          "strata": {
+            "all": {
+              "chooses_first": 479,
+              "exact": 16,
+              "relative_correct": 483,
+              "ties": 0,
+              "worlds": 960
+            },
+            "order=+1": {
+              "chooses_first": 239,
+              "exact": 8,
+              "relative_correct": 241,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=+1,query=+1": {
+              "chooses_first": 120,
+              "exact": 6,
+              "relative_correct": 120,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=+1,query=-1": {
+              "chooses_first": 119,
+              "exact": 2,
+              "relative_correct": 121,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1": {
+              "chooses_first": 240,
+              "exact": 8,
+              "relative_correct": 242,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=-1,query=+1": {
+              "chooses_first": 119,
+              "exact": 6,
+              "relative_correct": 121,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1,query=-1": {
+              "chooses_first": 121,
+              "exact": 2,
+              "relative_correct": 121,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1": {
+              "chooses_first": 241,
+              "exact": 8,
+              "relative_correct": 241,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=1,correct_color=1": {
+              "chooses_first": 114,
+              "exact": 8,
+              "relative_correct": 114,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1,correct_color=2": {
+              "chooses_first": 127,
+              "exact": 0,
+              "relative_correct": 127,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2": {
+              "chooses_first": 238,
+              "exact": 8,
+              "relative_correct": 242,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=2,correct_color=1": {
+              "chooses_first": 127,
+              "exact": 8,
+              "relative_correct": 113,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2,correct_color=2": {
+              "chooses_first": 111,
+              "exact": 0,
+              "relative_correct": 129,
+              "ties": 0,
+              "worlds": 240
+         …17024 tokens truncated…rs": 120,
+              "same_color_non_tied": 119
+            },
+            "order:all": {
+              "both_exact": 474,
+              "both_relative_correct": 474,
+              "flipped_color_non_tied": 6,
+              "neither_exact": 0,
+              "one_exact": 6,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 474
+            },
+            "query:((0, -1), (1, -1))": {
+              "both_exact": 117,
+              "both_relative_correct": 117,
+              "flipped_color_non_tied": 117,
+              "neither_exact": 0,
+              "one_exact": 3,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 3
+            },
+            "query:((0, -1), (1, 1))": {
+              "both_exact": 120,
+              "both_relative_correct": 120,
+              "flipped_color_non_tied": 120,
+              "neither_exact": 0,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 0
+            },
+            "query:((0, 1), (1, -1))": {
+              "both_exact": 118,
+              "both_relative_correct": 118,
+              "flipped_color_non_tied": 118,
+              "neither_exact": 0,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 2
+            },
+            "query:((0, 1), (1, 1))": {
+              "both_exact": 119,
+              "both_relative_correct": 119,
+              "flipped_color_non_tied": 119,
+              "neither_exact": 0,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 1
+            },
+            "query:all": {
+              "both_exact": 474,
+              "both_relative_correct": 474,
+              "flipped_color_non_tied": 474,
+              "neither_exact": 0,
+              "one_exact": 6,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 6
+            }
+          },
+          "mean_walsh_logit_contrast": {
+            "binding": 6.378688367122444,
+            "canonical_name": 0.05997391110307338,
+            "color": -0.05093450227404901,
+            "order_only": -0.028285405080017274,
+            "order_query": -0.03013656784481403,
+            "position": -0.17780135439973796,
+            "query_only": 0.0068039850400055,
+            "triple": -0.003270390947272972
+          },
+          "mean_within_family_walsh_energy_share": {
+            "binding": 0.9835276212596626,
+            "canonical_name": 0.002608629060596584,
+            "color": 0.0019670038731943577,
+            "order_only": 0.0015859645592184823,
+            "order_query": 0.0016013655776705943,
+            "position": 0.004903618051789995,
+            "query_only": 0.0015928926394612845,
+            "triple": 0.00221290497840618
+          },
+          "strata": {
+            "all": {
+              "chooses_first": 474,
+              "exact": 954,
+              "relative_correct": 954,
+              "ties": 0,
+              "worlds": 960
+            },
+            "order=+1": {
+              "chooses_first": 239,
+              "exact": 479,
+              "relative_correct": 479,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=+1,query=+1": {
+              "chooses_first": 239,
+              "exact": 239,
+              "relative_correct": 239,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=+1,query=-1": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1": {
+              "chooses_first": 235,
+              "exact": 475,
+              "relative_correct": 475,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=-1,query=+1": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1,query=-1": {
+              "chooses_first": 235,
+              "exact": 235,
+              "relative_correct": 235,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1": {
+              "chooses_first": 474,
+              "exact": 474,
+              "relative_correct": 474,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=1,correct_color=1": {
+              "chooses_first": 236,
+              "exact": 236,
+              "relative_correct": 236,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1,correct_color=2": {
+              "chooses_first": 238,
+              "exact": 238,
+              "relative_correct": 238,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2": {
+              "chooses_first": 0,
+              "exact": 480,
+              "relative_correct": 480,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=2,correct_color=1": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2,correct_color=2": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "query=+1": {
+              "chooses_first": 239,
+              "exact": 479,
+              "relative_correct": 479,
+              "ties": 0,
+              "worlds": 480
+            },
+            "query=-1": {
+              "chooses_first": 235,
+              "exact": 475,
+              "relative_correct": 475,
+              "ties": 0,
+              "worlds": 480
+            }
+          }
+        },
+        "clip1-1371-128": {
+          "exact_family_histogram": {
+            "0": 33,
+            "1": 28,
+            "2": 23,
+            "3": 19,
+            "4": 17
+          },
+          "exact_rule_templates": {
+            "color:+1": 27,
+            "color:-1": 41,
+            "position:-1": 10,
+            "query_only:+1": 1,
+            "query_only:-1": 3
+          },
+          "fail_clustering": {
+            "color_pair": {
+              "groups": 28,
+              "repeated_both_failed": 249,
+              "repeated_pairs": 249,
+              "singleton_groups": 2,
+              "with_failures": 28
+            },
+            "name_pair": {
+              "groups": 74,
+              "repeated_both_failed": 63,
+              "repeated_pairs": 63,
+              "singleton_groups": 41,
+              "with_failures": 74
+            }
+          },
+          "flips": {
+            "assignment:((1, -1), (2, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 0,
+              "flipped_color_non_tied": 25,
+              "neither_exact": 88,
+              "one_exact": 32,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 95
+            },
+            "assignment:((1, -1), (2, 1))": {
+              "both_exact": 5,
+              "both_relative_correct": 36,
+              "flipped_color_non_tied": 36,
+              "neither_exact": 46,
+              "one_exact": 69,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 84
+            },
+            "assignment:((1, 1), (2, -1))": {
+              "both_exact": 3,
+              "both_relative_correct": 21,
+              "flipped_color_non_tied": 21,
+              "neither_exact": 63,
+              "one_exact": 54,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 99
+            },
+            "assignment:((1, 1), (2, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 0,
+              "flipped_color_non_tied": 38,
+              "neither_exact": 92,
+              "one_exact": 28,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 82
+            },
+            "assignment:all": {
+              "both_exact": 8,
+              "both_relative_correct": 57,
+              "flipped_color_non_tied": 120,
+              "neither_exact": 289,
+              "one_exact": 183,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 360
+            },
+            "order:((0, -1), (2, -1))": {
+              "both_exact": 24,
+              "both_relative_correct": 44,
+              "flipped_color_non_tied": 22,
+              "neither_exact": 80,
+              "one_exact": 16,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 98
+            },
+            "order:((0, -1), (2, 1))": {
+              "both_exact": 10,
+              "both_relative_correct": 49,
+              "flipped_color_non_tied": 37,
+              "neither_exact": 85,
+              "one_exact": 25,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 83
+            },
+            "order:((0, 1), (2, -1))": {
+              "both_exact": 5,
+              "both_relative_correct": 51,
+              "flipped_color_non_tied": 24,
+              "neither_exact": 97,
+              "one_exact": 18,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 96
+            },
+            "order:((0, 1), (2, 1))": {
+              "both_exact": 18,
+              "both_relative_correct": 33,
+              "flipped_color_non_tied": 37,
+              "neither_exact": 76,
+              "one_exact": 26,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 83
+            },
+            "order:all": {
+              "both_exact": 57,
+              "both_relative_correct": 177,
+              "flipped_color_non_tied": 120,
+              "neither_exact": 338,
+              "one_exact": 85,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 360
+            },
+            "query:((0, -1), (1, -1))": {
+              "both_exact": 5,
+              "both_relative_correct": 17,
+              "flipped_color_non_tied": 24,
+              "neither_exact": 66,
+              "one_exact": 49,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 96
+            },
+            "query:((0, -1), (1, 1))": {
+              "both_exact": 3,
+              "both_relative_correct": 6,
+              "flipped_color_non_tied": 17,
+              "neither_exact": 73,
+              "one_exact": 44,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 103
+            },
+            "query:((0, 1), (1, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 8,
+              "flipped_color_non_tied": 15,
+              "neither_exact": 68,
+              "one_exact": 52,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 105
+            },
+            "query:((0, 1), (1, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 5,
+              "flipped_color_non_tied": 22,
+              "neither_exact": 82,
+              "one_exact": 38,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 98
+            },
+            "query:all": {
+              "both_exact": 8,
+              "both_relative_correct": 36,
+              "flipped_color_non_tied": 78,
+              "neither_exact": 289,
+              "one_exact": 183,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 402
+            }
+          },
+          "mean_walsh_logit_contrast": {
+            "binding": -0.000493255133430163,
+            "canonical_name": -0.0005465944608052572,
+            "color": -0.05013811799387137,
+            "order_only": 0.0025381175180276233,
+            "order_query": 0.0025236493597428004,
+            "position": -0.10966258781651655,
+            "query_only": -0.005923054118951162,
+            "triple": -0.0119544451435407
+          },
+          "mean_within_family_walsh_energy_share": {
+            "binding": 3.921183549122547e-05,
+            "canonical_name": 0.00017066965815646157,
+            "color": 0.6190136328124868,
+            "order_only": 0.011434090086928332,
+            "order_query": 0.0016938707536351275,
+            "position": 0.22983863946067679,
+            "query_only": 0.12816865564920324,
+            "triple": 0.00964122974342207
+          },
+          "strata": {
+            "all": {
+              "chooses_first": 360,
+              "exact": 199,
+              "relative_correct": 474,
+              "ties": 0,
+              "worlds": 960
+            },
+            "order=+1": {
+              "chooses_first": 181,
+              "exact": 88,
+              "relative_correct": 223,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=+1,query=+1": {
+              "chooses_first": 82,
+              "exact": 28,
+              "relative_correct": 82,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=+1,query=-1": {
+              "chooses_first": 99,
+              "exact": 60,
+              "relative_correct": 141,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1": {
+              "chooses_first": 179,
+              "exact": 111,
+              "relative_correct": 251,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=-1,query=+1": {
+              "chooses_first": 84,
+              "exact": 79,
+              "relative_correct": 156,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1,query=-1": {
+              "chooses_first": 95,
+              "exact": 32,
+              "relative_correct": 95,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1": {
+              "chooses_first": 177,
+              "exact": 60,
+              "relative_correct": 177,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=1,correct_color=1": {
+              "chooses_first": 77,
+              "exact": 42,
+              "relative_correct": 77,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1,correct_color=2": {
+              "chooses_first": 100,
+              "exact": 18,
+              "relative_correct": 100,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2": {
+              "chooses_first": 183,
+              "exact": 139,
+              "relative_correct": 297,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=2,correct_color=1": {
+              "chooses_first": 104,
+              "exact": 84,
+              "relative_correct": 136,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2,correct_color=2": {
+              "chooses_first": 79,
+              "exact": 55,
+              "relative_correct": 161,
+              "ties": 0,
+              "worlds": 240
+            },
+            "query=+1": {
+              "chooses_first": 166,
+              "exact": 107,
+              "relative_correct": 238,
+              "ties": 0,
+              "worlds": 480
+            },
+            "query=-1": {
+              "chooses_first": 194,
+              "exact": 92,
+              "relative_correct": 236,
+              "ties": 0,
+              "worlds": 480
+            }
+          }
+        },
+        "clip1-1371-1280": {
+          "exact_family_histogram": {
+            "4": 5,
+            "5": 1,
+            "6": 43,
+            "7": 9,
+            "8": 62
+          },
+          "exact_rule_templates": {
+            "binding:+1": 62,
+            "position:+1": 3
+          },
+          "fail_clustering": {
+            "color_pair": {
+              "groups": 28,
+              "repeated_both_failed": 54,
+              "repeated_pairs": 249,
+              "singleton_groups": 2,
+              "with_failures": 25
+            },
+            "name_pair": {
+              "groups": 74,
+              "repeated_both_failed": 28,
+              "repeated_pairs": 63,
+              "singleton_groups": 41,
+              "with_failures": 37
+            }
+          },
+          "flips": {
+            "assignment:((1, -1), (2, -1))": {
+              "both_exact": 115,
+              "both_relative_correct": 115,
+              "flipped_color_non_tied": 115,
+              "neither_exact": 0,
+              "one_exact": 5,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 5
+            },
+            "assignment:((1, -1), (2, 1))": {
+              "both_exact": 96,
+              "both_relative_correct": 96,
+              "flipped_color_non_tied": 113,
+              "neither_exact": 17,
+              "one_exact": 7,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 7
+            },
+            "assignment:((1, 1), (2, -1))": {
+              "both_exact": 82,
+              "both_relative_correct": 82,
+              "flipped_color_non_tied": 110,
+              "neither_exact": 28,
+              "one_exact": 10,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 10
+            },
+            "assignment:((1, 1), (2, 1))": {
+              "both_exact": 116,
+              "both_relative_correct": 116,
+              "flipped_color_non_tied": 118,
+              "neither_exact": 2,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 2
+            },
+            "assignment:all": {
+              "both_exact": 409,
+              "both_relative_correct": 409,
+              "flipped_color_non_tied": 456,
+              "neither_exact": 47,
+              "one_exact": 24,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 24
+            },
+            "order:((0, -1), (2, -1))": {
+              "both_exact": 86,
+              "both_relative_correct": 86,
+              "flipped_color_non_tied": 31,
+              "neither_exact": 3,
+              "one_exact": 31,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 89
+            },
+            "order:((0, -1), (2, 1))": {
+              "both_exact": 99,
+              "both_relative_correct": 99,
+              "flipped_color_non_tied": 21,
+              "neither_exact": 0,
+              "one_exact": 21,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 99
+            },
+            "order:((0, 1), (2, -1))": {
+              "both_exact": 88,
+              "both_relative_correct": 88,
+              "flipped_color_non_tied": 30,
+              "neither_exact": 2,
+              "one_exact": 30,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 90
+            },
+            "order:((0, 1), (2, 1))": {
+              "both_exact": 96,
+              "both_relative_correct": 96,
+              "flipped_color_non_tied": 22,
+              "neither_exact": 2,
+              "one_exact": 22,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 98
+            },
+            "order:all": {
+              "both_exact": 369,
+              "both_relative_correct": 369,
+              "flipped_color_non_tied": 104,
+              "neither_exact": 7,
+              "one_exact": 104,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 376
+            },
+            "query:((0, -1), (1, -1))": {
+              "both_exact": 99,
+              "both_relative_correct": 99,
+              "flipped_color_non_tied": 100,
+              "neither_exact": 1,
+              "one_exact": 20,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 20
+            },
+            "query:((0, -1), (1, 1))": {
+              "both_exact": 84,
+              "both_relative_correct": 84,
+              "flipped_color_non_tied": 84,
+              "neither_exact": 0,
+              "one_exact": 36,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 36
+            },
+            "query:((0, 1), (1, -1))": {
+              "both_exact": 96,
+              "both_relative_correct": 96,
+              "flipped_color_non_tied": 96,
+              "neither_exact": 0,
+              "one_exact": 24,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 24
+            },
+            "query:((0, 1), (1, 1))": {
+              "both_exact": 85,
+              "both_relative_correct": 85,
+              "flipped_color_non_tied": 86,
+              "neither_exact": 1,
+              "one_exact": 34,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 34
+            },
+            "query:all": {
+              "both_exact": 364,
+              "both_relative_correct": 364,
+              "flipped_color_non_tied": 366,
+              "neither_exact": 2,
+              "one_exact": 114,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 114
+            }
+          },
+          "mean_walsh_logit_contrast": {
+            "binding": 3.937461363817753,
+            "canonical_name": 0.28462857757831445,
+            "color": -0.053261911347696395,
+            "order_only": 0.010507601614608574,
+            "order_query": 0.0097123032371807,
+            "position": 0.5874635117890951,
+            "query_only": 0.03576990498559098,
+            "triple": -0.13622495281994512
+          },
+          "mean_within_family_walsh_energy_share": {
+            "binding": 0.7190296835848466,
+            "canonical_name": 0.16937527843544473,
+            "color": 0.012639840400703447,
+            "order_only": 0.0007646509718372012,
+            "order_query": 0.0005566857995264095,
+            "position": 0.06899552257059637,
+            "query_only": 0.0026138973084740926,
+            "triple": 0.026024440928571257
+          },
+          "strata": {
+            "all": {
+              "chooses_first": 576,
+              "exact": 842,
+              "relative_correct": 842,
+              "ties": 0,
+              "worlds": 960
+            },
+            "order=+1": {
+              "chooses_first": 300,
+              "exact": 408,
+              "relative_correct": 408,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=+1,query=+1": {
+              "chooses_first": 234,
+              "exact": 234,
+              "relative_correct": 234,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=+1,query=-1": {
+              "chooses_first": 66,
+              "exact": 174,
+              "relative_correct": 174,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1": {
+              "chooses_first": 276,
+              "exact": 434,
+              "relative_correct": 434,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=-1,query=+1": {
+              "chooses_first": 41,
+              "exact": 199,
+              "relative_correct": 199,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1,query=-1": {
+              "chooses_first": 235,
+              "exact": 235,
+              "relative_correct": 235,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1": {
+              "chooses_first": 469,
+              "exact": 469,
+              "relative_correct": 469,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=1,correct_color=1": {
+              "chooses_first": 233,
+              "exact": 233,
+              "relative_correct": 233,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1,correct_color=2": {
+              "chooses_first": 236,
+              "exact": 236,
+              "relative_correct": 236,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2": {
+              "chooses_first": 107,
+              "exact": 373,
+              "relative_correct": 373,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=2,correct_color=1": {
+              "chooses_first": 56,
+              "exact": 184,
+              "relative_correct": 184,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2,correct_color=2": {
+              "chooses_first": 51,
+              "exact": 189,
+              "relative_correct": 189,
+              "ties": 0,
+              "worlds": 240
+            },
+            "query=+1": {
+              "chooses_first": 275,
+              "exact": 433,
+              "relative_correct": 433,
+              "ties": 0,
+              "worlds": 480
+            },
+            "query=-1": {
+              "chooses_first": 301,
+              "exact": 409,
+              "relative_correct": 409,
+              "ties": 0,
+              "worlds": 480
+            }
+          }
+        },
+        "clip2-1171-128": {
+          "exact_family_histogram": {
+            "0": 67,
+            "1": 8,
+            "2": 14,
+            "3": 14,
+            "4": 15,
+            "5": 2
+          },
+          "exact_rule_templates": {
+            "color:+1": 44,
+            "color:-1": 63,
+            "position:-1": 2,
+            "query_only:+1": 1,
+            "query_only:-1": 1
+          },
+          "fail_clustering": {
+            "color_pair": {
+              "groups": 28,
+              "repeated_both_failed": 249,
+              "repeated_pairs": 249,
+              "singleton_groups": 2,
+              "with_failures": 28
+            },
+            "name_pair": {
+              "groups": 74,
+              "repeated_both_failed": 63,
+              "repeated_pairs": 63,
+              "singleton_groups": 41,
+              "with_failures": 74
+            }
+          },
+          "flips": {
+            "assignment:((1, -1), (2, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 0,
+              "flipped_color_non_tied": 9,
+              "neither_exact": 96,
+              "one_exact": 24,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 111
+            },
+            "assignment:((1, -1), (2, 1))": {
+              "both_exact": 5,
+              "both_relative_correct": 7,
+              "flipped_color_non_tied": 7,
+              "neither_exact": 70,
+              "one_exact": 45,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 113
+            },
+            "assignment:((1, 1), (2, -1))": {
+              "both_exact": 3,
+              "both_relative_correct": 6,
+              "flipped_color_non_tied": 6,
+              "neither_exact": 78,
+              "one_exact": 39,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 114
+            },
+            "assignment:((1, 1), (2, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 0,
+              "flipped_color_non_tied": 6,
+              "neither_exact": 96,
+              "one_exact": 24,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 114
+            },
+            "assignment:all": {
+              "both_exact": 8,
+              "both_relative_correct": 13,
+              "flipped_color_non_tied": 28,
+              "neither_exact": 340,
+              "one_exact": 132,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 452
+            },
+            "order:((0, -1), (2, -1))": {
+              "both_exact": 2,
+              "both_relative_correct": 45,
+              "flipped_color_non_tied": 7,
+              "neither_exact": 108,
+              "one_exact": 10,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 113
+            },
+            "order:((0, -1), (2, 1))": {
+              "both_exact": 22,
+              "both_relative_correct": 67,
+              "flipped_color_non_tied": 5,
+              "neither_exact": 81,
+              "one_exact": 17,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 115
+            },
+            "order:((0, 1), (2, -1))": {
+              "both_exact": 20,
+              "both_relative_correct": 66,
+              "flipped_color_non_tied": 8,
+              "neither_exact": 85,
+              "one_exact": 15,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 112
+            },
+            "order:((0, 1), (2, 1))": {
+              "both_exact": 1,
+              "both_relative_correct": 47,
+              "flipped_color_non_tied": 8,
+              "neither_exact": 103,
+              "one_exact": 16,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 112
+            },
+            "order:all": {
+              "both_exact": 45,
+              "both_relative_correct": 225,
+              "flipped_color_non_tied": 28,
+              "neither_exact": 377,
+              "one_exact": 58,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 452
+            },
+            "query:((0, -1), (1, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 1,
+              "flipped_color_non_tied": 5,
+              "neither_exact": 80,
+              "one_exact": 40,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 115
+            },
+            "query:((0, -1), (1, 1))": {
+              "both_exact": 1,
+              "both_relative_correct": 2,
+              "flipped_color_non_tied": 5,
+              "neither_exact": 86,
+              "one_exact": 33,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 115
+            },
+            "query:((0, 1), (1, -1))": {
+              "both_exact": 1,
+              "both_relative_correct": 2,
+              "flipped_color_non_tied": 3,
+              "neither_exact": 82,
+              "one_exact": 37,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 117
+            },
+            "query:((0, 1), (1, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 3,
+              "flipped_color_non_tied": 5,
+              "neither_exact": 86,
+              "one_exact": 34,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 115
+            },
+            "query:all": {
+              "both_exact": 2,
+              "both_relative_correct": 8,
+              "flipped_color_non_tied": 18,
+              "neither_exact": 334,
+              "one_exact": 144,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 462
+            }
+          },
+          "mean_walsh_logit_contrast": {
+            "binding": -8.881787459055582e-05,
+            "canonical_name": -0.00035764599839846294,
+            "color": -0.13652181178331374,
+            "order_only": 0.0015533665815989177,
+            "order_query": 0.0007205250362555186,
+            "position": -0.06831574564178784,
+            "query_only": 0.0014989587167898815,
+            "triple": -0.00011701236168543498
+          },
+          "mean_within_family_walsh_energy_share": {
+            "binding": 1.6174753799212108e-05,
+            "canonical_name": 0.00012920702913228445,
+            "color": 0.8648113094350595,
+            "order_only": 0.0029325972336019324,
+            "order_query": 0.00024523777762116894,
+            "position": 0.075282732138419,
+            "query_only": 0.05222765374858225,
+            "triple": 0.0043550878837845825
+          },
+          "strata": {
+            "all": {
+              "chooses_first": 452,
+              "exact": 148,
+              "relative_correct": 478,
+              "ties": 0,
+              "worlds": 960
+            },
+            "order=+1": {
+              "chooses_first": 228,
+              "exact": 69,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=+1,query=+1": {
+              "chooses_first": 114,
+              "exact": 24,
+              "relative_correct": 114,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=+1,query=-1": {
+              "chooses_first": 114,
+              "exact": 45,
+              "relative_correct": 126,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1": {
+              "chooses_first": 224,
+              "exact": 79,
+              "relative_correct": 238,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=-1,query=+1": {
+              "chooses_first": 113,
+              "exact": 55,
+              "relative_correct": 127,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1,query=-1": {
+              "chooses_first": 111,
+              "exact": 24,
+              "relative_correct": 111,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1": {
+              "chooses_first": 225,
+              "exact": 48,
+              "relative_correct": 225,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=1,correct_color=1": {
+              "chooses_first": 92,
+              "exact": 3,
+              "relative_correct": 92,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1,correct_color=2": {
+              "chooses_first": 133,
+              "exact": 45,
+              "relative_correct": 133,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2": {
+              "chooses_first": 227,
+              "exact": 100,
+              "relative_correct": 253,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=2,correct_color=1": {
+              "chooses_first": 133,
+              "exact": 29,
+              "relative_correct": 107,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2,correct_color=2": {
+              "chooses_first": 94,
+              "exact": 71,
+              "relative_correct": 146,
+              "ties": 0,
+              "worlds": 240
+            },
+            "query=+1": {
+              "chooses_first": 227,
+              "exact": 79,
+              "relative_correct": 241,
+              "ties": 0,
+              "worlds": 480
+            },
+            "query=-1": {
+              "chooses_first": 225,
+              "exact": 69,
+              "relative_correct": 237,
+              "ties": 0,
+              "worlds": 480
+            }
+          }
+        },
+        "clip2-1171-1280": {
+          "exact_family_histogram": {
+            "5": 1,
+            "7": 1,
+            "8": 118
+          },
+          "exact_rule_templates": {
+            "binding:+1": 118
+          },
+          "fail_clustering": {
+            "color_pair": {
+              "groups": 28,
+              "repeated_both_failed": 0,
+              "repeated_pairs": 249,
+              "singleton_groups": 2,
+              "with_failures": 2
+            },
+            "name_pair": {
+              "groups": 74,
+              "repeated_both_failed": 1,
+              "repeated_pairs": 63,
+              "singleton_groups": 41,
+              "with_failures": 1
+            }
+          },
+          "flips": {
+            "assignment:((1, -1), (2, -1))": {
+              "both_exact": 119,
+              "both_relative_correct": 119,
+              "flipped_color_non_tied": 119,
+              "neither_exact": 0,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 1
+            },
+            "assignment:((1, -1), (2, 1))": {
+              "both_exact": 120,
+              "both_relative_correct": 120,
+              "flipped_color_non_tied": 120,
+              "neither_exact": 0,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 0
+            },
+            "assignment:((1, 1), (2, -1))": {
+              "both_exact": 120,
+              "both_relative_correct": 120,
+              "flipped_color_non_tied": 120,
+              "neither_exact": 0,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 0
+            },
+            "assignment:((1, 1), (2, 1))": {
+              "both_exact": 118,
+              "both_relative_correct": 118,
+              "flipped_color_non_tied": 119,
+              "neither_exact": 1,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 1
+            },
+            "assignment:all": {
+              "both_exact": 477,
+              "both_relative_correct": 477,
+              "flipped_color_non_tied": 478,
+              "neither_exact": 1,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 2
+            },
+            "order:((0, -1), (2, -1))": {
+              "both_exact": 120,
+              "both_relative_correct": 120,
+              "flipped_color_non_tied": 0,
+              "neither_exact": 0,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 120
+            },
+            "order:((0, -1), (2, 1))": {
+              "both_exact": 119,
+              "both_relative_correct": 119,
+              "flipped_color_non_tied": 1,
+              "neither_exact": 0,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 119
+            },
+            "order:((0, 1), (2, -1))": {
+              "both_exact": 119,
+              "both_relative_correct": 119,
+              "flipped_color_non_tied": 1,
+              "neither_exact": 0,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 119
+            },
+            "order:((0, 1), (2, 1))": {
+              "both_exact": 118,
+              "both_relative_correct": 118,
+              "flipped_color_non_tied": 2,
+              "neither_exact": 0,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 118
+            },
+            "order:all": {
+              "both_exact": 476,
+              "both_relative_correct": 476,
+              "flipped_color_non_tied": 4,
+              "neither_exact": 0,
+              "one_exact": 4,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 476
+            },
+            "query:((0, -1), (1, -1))": {
+              "both_exact": 120,
+              "both_relative_correct": 120,
+              "flipped_color_non_tied": 120,
+              "neither_exact": 0,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 0
+            },
+            "query:((0, -1), (1, 1))": {
+              "both_exact": 119,
+              "both_relative_correct": 119,
+              "flipped_color_non_tied": 119,
+              "neither_exact": 0,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 1
+            },
+            "query:((0, 1), (1, -1))": {
+              "both_exact": 119,
+              "both_relative_correct": 119,
+              "flipped_color_non_tied": 119,
+              "neither_exact": 0,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 1
+            },
+            "query:((0, 1), (1, 1))": {
+              "both_exact": 118,
+              "both_relative_correct": 118,
+              "flipped_color_non_tied": 118,
+              "neither_exact": 0,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 2
+            },
+            "query:all": {
+              "both_exact": 476,
+              "both_relative_correct": 476,
+              "flipped_color_non_tied": 476,
+              "neither_exact": 0,
+              "one_exact": 4,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 4
+            }
+          },
+          "mean_walsh_logit_contrast": {
+            "binding": 5.64140147425084,
+            "canonical_name": -0.011860748104178734,
+            "color": -0.021129828137297104,
+            "order_only": 0.002577391395607265,
+            "order_query": 0.015306605246587423,
+            "position": 0.10492950505892319,
+            "query_only": -0.0011416375513363165,
+            "triple": -0.02841678082792593
+          },
+          "mean_within_family_walsh_energy_share": {
+            "binding": 0.9829829955126917,
+            "canonical_name": 0.0014445795287539055,
+            "color": 0.001790759421464617,
+            "order_only": 0.0007434890276724071,
+            "order_query": 0.001345483379469764,
+            "position": 0.009396938627748737,
+            "query_only": 0.0008306168205202051,
+            "triple": 0.001465137681678713
+          },
+          "strata": {
+            "all": {
+              "chooses_first": 476,
+              "exact": 956,
+              "relative_correct": 956,
+              "ties": 0,
+              "worlds": 960
+            },
+            "order=+1": {
+              "chooses_first": 237,
+              "exact": 477,
+              "relative_correct": 477,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=+1,query=+1": {
+              "chooses_first": 237,
+              "exact": 237,
+              "relative_correct": 237,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=+1,query=-1": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1": {
+              "chooses_first": 239,
+              "exact": 479,
+              "relative_correct": 479,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=-1,query=+1": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1,query=-1": {
+              "chooses_first": 239,
+              "exact": 239,
+              "relative_correct": 239,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1": {
+              "chooses_first": 476,
+              "exact": 476,
+              "relative_correct": 476,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=1,correct_color=1": {
+              "chooses_first": 238,
+              "exact": 238,
+              "relative_correct": 238,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1,correct_color=2": {
+              "chooses_first": 238,
+              "exact": 238,
+              "relative_correct": 238,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2": {
+              "chooses_first": 0,
+              "exact": 480,
+              "relative_correct": 480,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=2,correct_color=1": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2,correct_color=2": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "query=+1": {
+              "chooses_first": 237,
+              "exact": 477,
+              "relative_correct": 477,
+              "ties": 0,
+              "worlds": 480
+            },
+            "query=-1": {
+              "chooses_first": 239,
+              "exact": 479,
+              "relative_correct": 479,
+              "ties": 0,
+              "worlds": 480
+            }
+          }
+        },
+        "clip2-1271-128": {
+          "exact_family_histogram": {
+            "0": 74,
+            "1": 11,
+            "2": 18,
+            "3": 6,
+            "4": 11
+          },
+          "exact_rule_templates": {
+            "color:+1": 55,
+            "color:-1": 54,
+            "query_only:-1": 3
+          },
+          "fail_clustering": {
+            "color_pair": {
+              "groups": 28,
+              "repeated_both_failed": 249,
+              "repeated_pairs": 249,
+              "singleton_groups": 2,
+              "with_failures": 28
+            },
+            "name_pair": {
+              "groups": 74,
+              "repeated_both_failed": 63,
+              "repeated_pairs": 63,
+              "singleton_groups": 41,
+              "with_failures": 74
+            }
+          },
+          "flips": {
+            "assignment:((1, -1), (2, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 0,
+              "flipped_color_non_tied": 1,
+              "neither_exact": 95,
+              "one_exact": 25,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 119
+            },
+            "assignment:((1, -1), (2, 1))": {
+              "both_exact": 1,
+              "both_relative_correct": 2,
+              "flipped_color_non_tied": 2,
+              "neither_exact": 92,
+              "one_exact": 27,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 118
+            },
+            "assignment:((1, 1), (2, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 0,
+              "flipped_color_non_tied": 0,
+              "neither_exact": 89,
+              "one_exact": 31,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 120
+            },
+            "assignment:((1, 1), (2, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 1,
+              "flipped_color_non_tied": 4,
+              "neither_exact": 96,
+              "one_exact": 24,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 116
+            },
+            "assignment:all": {
+              "both_exact": 1,
+              "both_relative_correct": 3,
+              "flipped_color_non_tied": 7,
+              "neither_exact": 372,
+              "one_exact": 107,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 473
+            },
+            "order:((0, -1), (2, -1))": {
+              "both_exact": 18,
+              "both_relative_correct": 64,
+              "flipped_color_non_tied": 2,
+              "neither_exact": 96,
+              "one_exact": 6,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 118
+            },
+            "order:((0, -1), (2, 1))": {
+              "both_exact": 7,
+              "both_relative_correct": 57,
+              "flipped_color_non_tied": 4,
+              "neither_exact": 109,
+              "one_exact": 4,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 116
+            },
+            "order:((0, 1), (2, -1))": {
+              "both_exact": 5,
+              "both_relative_correct": 54,
+              "flipped_color_non_tied": 1,
+              "neither_exact": 111,
+              "one_exact": 4,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 119
+            },
+            "order:((0, 1), (2, 1))": {
+              "both_exact": 14,
+              "both_relative_correct": 59,
+              "flipped_color_non_tied": 4,
+              "neither_exact": 99,
+              "one_exact": 7,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 116
+            },
+            "order:all": {
+              "both_exact": 44,
+              "both_relative_correct": 234,
+              "flipped_color_non_tied": 11,
+              "neither_exact": 415,
+              "one_exact": 21,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 469
+            },
+            "query:((0, -1), (1, -1))": {
+              "both_exact": 1,
+              "both_relative_correct": 5,
+              "flipped_color_non_tied": 7,
+              "neither_exact": 94,
+              "one_exact": 25,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 113
+            },
+            "query:((0, -1), (1, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 5,
+              "flipped_color_non_tied": 5,
+              "neither_exact": 87,
+              "one_exact": 33,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 115
+            },
+            "query:((0, 1), (1, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 1,
+              "flipped_color_non_tied": 4,
+              "neither_exact": 93,
+              "one_exact": 27,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 116
+            },
+            "query:((0, 1), (1, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 0,
+              "flipped_color_non_tied": 7,
+              "neither_exact": 98,
+              "one_exact": 22,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 113
+            },
+            "query:all": {
+              "both_exact": 1,
+              "both_relative_correct": 11,
+              "flipped_color_non_tied": 23,
+              "neither_exact": 372,
+              "one_exact": 107,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 457
+            }
+          },
+          "mean_walsh_logit_contrast": {
+            "binding": -3.464097778002421e-05,
+            "canonical_name": 0.0001622110605239868,
+            "color": -0.013472197204828262,
+            "order_only": -0.0024914316833019256,
+            "order_query": 0.0002619291345278422,
+            "position": -0.014306645095348357,
+            "query_only": -0.006876227756341298,
+            "triple": -0.0026740250488122303
+          },
+          "mean_within_family_walsh_energy_share": {
+            "binding": 1.2857385549218554e-05,
+            "canonical_name": 3.420398848485107e-05,
+            "color": 0.8886598232251303,
+            "order_only": 0.011373270163057303,
+            "order_query": 0.0010951123033560142,
+            "position": 0.007026293101790884,
+            "query_only": 0.08978126037948904,
+            "triple": 0.0020171794531419116
+          },
+          "strata": {
+            "all": {
+              "chooses_first": 475,
+              "exact": 109,
+              "relative_correct": 479,
+              "ties": 0,
+              "worlds": 960
+            },
+            "order=+1": {
+              "chooses_first": 238,
+              "exact": 55,
+              "relative_correct": 238,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=+1,query=+1": {
+              "chooses_first": 118,
+              "exact": 24,
+              "relative_correct": 118,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=+1,query=-1": {
+              "chooses_first": 120,
+              "exact": 31,
+              "relative_correct": 120,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1": {
+              "chooses_first": 237,
+              "exact": 54,
+              "relative_correct": 241,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=-1,query=+1": {
+              "chooses_first": 118,
+              "exact": 29,
+              "relative_correct": 122,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1,query=-1": {
+              "chooses_first": 119,
+              "exact": 25,
+              "relative_correct": 119,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1": {
+              "chooses_first": 237,
+              "exact": 49,
+              "relative_correct": 237,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=1,correct_color=1": {
+              "chooses_first": 123,
+              "exact": 33,
+              "relative_correct": 123,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1,correct_color=2": {
+              "chooses_first": 114,
+              "exact": 16,
+              "relative_correct": 114,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2": {
+              "chooses_first": 238,
+              "exact": 60,
+              "relative_correct": 242,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=2,correct_color=1": {
+              "chooses_first": 111,
+              "exact": 44,
+              "relative_correct": 129,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2,correct_color=2": {
+              "chooses_first": 127,
+              "exact": 16,
+              "relative_correct": 113,
+              "ties": 0,
+              "worlds": 240
+            },
+            "query=+1": {
+              "chooses_first": 236,
+              "exact": 53,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 480
+            },
+            "query=-1": {
+              "chooses_first": 239,
+              "exact": 56,
+              "relative_correct": 239,
+              "ties": 0,
+              "worlds": 480
+            }
+          }
+        },
+        "clip2-1271-1280": {
+          "exact_family_histogram": {
+            "7": 4,
+            "8": 116
+          },
+          "exact_rule_templates": {
+            "binding:+1": 116
+          },
+          "fail_clustering": {
+            "color_pair": {
+              "groups": 28,
+              "repeated_both_failed": 0,
+              "repeated_pairs": 249,
+              "singleton_groups": 2,
+              "with_failures": 4
+            },
+            "name_pair": {
+              "groups": 74,
+              "repeated_both_failed": 1,
+              "repeated_pairs": 63,
+              "singleton_groups": 41,
+              "with_failures": 3
+            }
+          },
+          "flips": {
+            "assignment:((1, -1), (2, -1))": {
+              "both_exact": 118,
+              "both_relative_correct": 118,
+              "flipped_color_non_tied": 118,
+              "neither_exact": 0,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 2
+            },
+            "assignment:((1, -1), (2, 1))": {
+              "both_exact": 120,
+              "both_relative_correct": 120,
+              "flipped_color_non_tied": 120,
+              "neither_exact": 0,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 0
+            },
+            "assignment:((1, 1), (2, -1))": {
+              "both_exact": 120,
+              "both_relative_correct": 120,
+              "flipped_color_non_tied": 120,
+              "neither_exact": 0,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 0
+            },
+            "assignment:((1, 1), (2, 1))": {
+              "both_exact": 118,
+              "both_relative_correct": 118,
+              "flipped_color_non_tied": 118,
+              "neither_exact": 0,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 2
+            },
+            "assignment:all": {
+              "both_exact": 476,
+              "both_relative_correct": 476,
+              "flipped_color_non_tied": 476,
+              "neither_exact": 0,
+              "one_exact": 4,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 4
+            },
+            "order:((0, -1), (2, -1))": {
+              "both_exact": 119,
+              "both_relative_correct": 119,
+              "flipped_color_non_tied": 1,
+              "neither_exact": 0,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 119
+            },
+            "order:((0, -1), (2, 1))": {
+              "both_exact": 120,
+              "both_relative_correct": 120,
+              "flipped_color_non_tied": 0,
+              "neither_exact": 0,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 120
+            },
+            "order:((0, 1), (2, -1))": {
+              "both_exact": 119,
+              "both_relative_correct": 119,
+              "flipped_color_non_tied": 1,
+              "neither_exact": 0,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 119
+            },
+            "order:((0, 1), (2, 1))": {
+              "both_exact": 118,
+              "both_relative_correct": 118,
+              "flipped_color_non_tied": 2,
+              "neither_exact": 0,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 118
+            },
+            "order:all": {
+              "both_exact": 476,
+              "both_relative_correct": 476,
+              "flipped_color_non_tied": 4,
+              "neither_exact": 0,
+              "one_exact": 4,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 476
+            },
+            "query:((0, -1), (1, -1))": {
+              "both_exact": 119,
+              "both_relative_correct": 119,
+              "flipped_color_non_tied": 119,
+              "neither_exact": 0,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 1
+            },
+            "query:((0, -1), (1, 1))": {
+              "both_exact": 120,
+              "both_relative_correct": 120,
+              "flipped_color_non_tied": 120,
+              "neither_exact": 0,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 0
+            },
+            "query:((0, 1), (1, -1))": {
+              "both_exact": 119,
+              "both_relative_correct": 119,
+              "flipped_color_non_tied": 119,
+              "neither_exact": 0,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 1
+            },
+            "query:((0, 1), (1, 1))": {
+              "both_exact": 118,
+              "both_relative_correct": 118,
+              "flipped_color_non_tied": 118,
+              "neither_exact": 0,
+              "one_exact": 2,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 2
+            },
+            "query:all": {
+              "both_exact": 476,
+              "both_relative_correct": 476,
+              "flipped_color_non_tied": 476,
+              "neither_exact": 0,
+              "one_exact": 4,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 4
+            }
+          },
+          "mean_walsh_logit_contrast": {
+            "binding": 5.750668031860308,
+            "canonical_name": 0.069903215032294,
+            "color": -0.09308770729524743,
+            "order_only": -0.0346084012594171,
+            "order_query": -0.00561472353656427,
+            "position": -0.06349107169104778,
+            "query_only": -0.005943744346101691,
+            "triple": -0.017919584105402463
+          },
+          "mean_within_family_walsh_energy_share": {
+            "binding": 0.9806888357807055,
+            "canonical_name": 0.0033122674277604645,
+            "color": 0.004383233561659773,
+            "order_only": 0.0022038339979722236,
+            "order_query": 0.0013211898673907215,
+            "position": 0.0033293203825856977,
+            "query_only": 0.0017045602583997325,
+            "triple": 0.003056758723525877
+          },
+          "strata": {
+            "all": {
+              "chooses_first": 476,
+              "exact": 956,
+              "relative_correct": 956,
+              "ties": 0,
+              "worlds": 960
+            },
+            "order=+1": {
+              "chooses_first": 238,
+              "exact": 478,
+              "relative_correct": 478,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=+1,query=+1": {
+              "chooses_first": 238,
+              "exact": 238,
+              "relative_correct": 238,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=+1,query=-1": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1": {
+              "chooses_first": 238,
+              "exact": 478,
+              "relative_correct": 478,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=-1,query=+1": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1,query=-1": {
+              "chooses_first": 238,
+              "exact": 238,
+              "relative_correct": 238,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1": {
+              "chooses_first": 476,
+              "exact": 476,
+              "relative_correct": 476,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=1,correct_color=1": {
+              "chooses_first": 237,
+              "exact": 237,
+              "relative_correct": 237,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1,correct_color=2": {
+              "chooses_first": 239,
+              "exact": 239,
+              "relative_correct": 239,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2": {
+              "chooses_first": 0,
+              "exact": 480,
+              "relative_correct": 480,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=2,correct_color=1": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2,correct_color=2": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "query=+1": {
+              "chooses_first": 238,
+              "exact": 478,
+              "relative_correct": 478,
+              "ties": 0,
+              "worlds": 480
+            },
+            "query=-1": {
+              "chooses_first": 238,
+              "exact": 478,
+              "relative_correct": 478,
+              "ties": 0,
+              "worlds": 480
+            }
+          }
+        },
+        "clip2-1371-128": {
+          "exact_family_histogram": {
+            "0": 33,
+            "1": 28,
+            "2": 23,
+            "3": 19,
+            "4": 17
+          },
+          "exact_rule_templates": {
+            "color:+1": 27,
+            "color:-1": 41,
+            "position:-1": 10,
+            "query_only:+1": 1,
+            "query_only:-1": 3
+          },
+          "fail_clustering": {
+            "color_pair": {
+              "groups": 28,
+              "repeated_both_failed": 249,
+              "repeated_pairs": 249,
+              "singleton_groups": 2,
+              "with_failures": 28
+            },
+            "name_pair": {
+              "groups": 74,
+              "repeated_both_failed": 63,
+              "repeated_pairs": 63,
+              "singleton_groups": 41,
+              "with_failures": 74
+            }
+          },
+          "flips": {
+            "assignment:((1, -1), (2, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 0,
+              "flipped_color_non_tied": 25,
+              "neither_exact": 88,
+              "one_exact": 32,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 95
+            },
+            "assignment:((1, -1), (2, 1))": {
+              "both_exact": 5,
+              "both_relative_correct": 36,
+              "flipped_color_non_tied": 36,
+              "neither_exact": 46,
+              "one_exact": 69,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 84
+            },
+            "assignment:((1, 1), (2, -1))": {
+              "both_exact": 3,
+              "both_relative_correct": 21,
+              "flipped_color_non_tied": 21,
+              "neither_exact": 63,
+              "one_exact": 54,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 99
+            },
+            "assignment:((1, 1), (2, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 0,
+              "flipped_color_non_tied": 38,
+              "neither_exact": 92,
+              "one_exact": 28,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 82
+            },
+            "assignment:all": {
+              "both_exact": 8,
+              "both_relative_correct": 57,
+              "flipped_color_non_tied": 120,
+              "neither_exact": 289,
+              "one_exact": 183,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 360
+            },
+            "order:((0, -1), (2, -1))": {
+              "both_exact": 24,
+              "both_relative_correct": 44,
+              "flipped_color_non_tied": 22,
+              "neither_exact": 80,
+              "one_exact": 16,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 98
+            },
+            "order:((0, -1), (2, 1))": {
+              "both_exact": 10,
+              "both_relative_correct": 49,
+              "flipped_color_non_tied": 37,
+              "neither_exact": 85,
+              "one_exact": 25,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 83
+            },
+            "order:((0, 1), (2, -1))": {
+              "both_exact": 5,
+              "both_relative_correct": 51,
+              "flipped_color_non_tied": 24,
+              "neither_exact": 97,
+              "one_exact": 18,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 96
+            },
+            "order:((0, 1), (2, 1))": {
+              "both_exact": 18,
+              "both_relative_correct": 33,
+              "flipped_color_non_tied": 37,
+              "neither_exact": 76,
+              "one_exact": 26,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 83
+            },
+            "order:all": {
+              "both_exact": 57,
+              "both_relative_correct": 177,
+              "flipped_color_non_tied": 120,
+              "neither_exact": 338,
+              "one_exact": 85,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 360
+            },
+            "query:((0, -1), (1, -1))": {
+              "both_exact": 5,
+              "both_relative_correct": 17,
+              "flipped_color_non_tied": 24,
+              "neither_exact": 66,
+              "one_exact": 49,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 96
+            },
+            "query:((0, -1), (1, 1))": {
+              "both_exact": 3,
+              "both_relative_correct": 6,
+              "flipped_color_non_tied": 17,
+              "neither_exact": 73,
+              "one_exact": 44,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 103
+            },
+            "query:((0, 1), (1, -1))": {
+              "both_exact": 0,
+              "both_relative_correct": 8,
+              "flipped_color_non_tied": 15,
+              "neither_exact": 68,
+              "one_exact": 52,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 105
+            },
+            "query:((0, 1), (1, 1))": {
+              "both_exact": 0,
+              "both_relative_correct": 5,
+              "flipped_color_non_tied": 22,
+              "neither_exact": 82,
+              "one_exact": 38,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 98
+            },
+            "query:all": {
+              "both_exact": 8,
+              "both_relative_correct": 36,
+              "flipped_color_non_tied": 78,
+              "neither_exact": 289,
+              "one_exact": 183,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 402
+            }
+          },
+          "mean_walsh_logit_contrast": {
+            "binding": -0.0004932578653097152,
+            "canonical_name": -0.0005465711156527202,
+            "color": -0.05013770262400309,
+            "order_only": 0.0025381166487932205,
+            "order_query": 0.0025236626466115315,
+            "position": -0.10966301324466864,
+            "query_only": -0.005923048531015714,
+            "triple": -0.011954458306233089
+          },
+          "mean_within_family_walsh_energy_share": {
+            "binding": 3.921270825477657e-05,
+            "canonical_name": 0.00017066508754308264,
+            "color": 0.6190126894332126,
+            "order_only": 0.01143405371714676,
+            "order_query": 0.0016938605338823432,
+            "position": 0.2298397239836333,
+            "query_only": 0.1281685245755083,
+            "triple": 0.00964126996081876
+          },
+          "strata": {
+            "all": {
+              "chooses_first": 360,
+              "exact": 199,
+              "relative_correct": 474,
+              "ties": 0,
+              "worlds": 960
+            },
+            "order=+1": {
+              "chooses_first": 181,
+              "exact": 88,
+              "relative_correct": 223,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=+1,query=+1": {
+              "chooses_first": 82,
+              "exact": 28,
+              "relative_correct": 82,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=+1,query=-1": {
+              "chooses_first": 99,
+              "exact": 60,
+              "relative_correct": 141,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1": {
+              "chooses_first": 179,
+              "exact": 111,
+              "relative_correct": 251,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=-1,query=+1": {
+              "chooses_first": 84,
+              "exact": 79,
+              "relative_correct": 156,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1,query=-1": {
+              "chooses_first": 95,
+              "exact": 32,
+              "relative_correct": 95,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1": {
+              "chooses_first": 177,
+              "exact": 60,
+              "relative_correct": 177,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=1,correct_color=1": {
+              "chooses_first": 77,
+              "exact": 42,
+              "relative_correct": 77,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1,correct_color=2": {
+              "chooses_first": 100,
+              "exact": 18,
+              "relative_correct": 100,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2": {
+              "chooses_first": 183,
+              "exact": 139,
+              "relative_correct": 297,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=2,correct_color=1": {
+              "chooses_first": 104,
+              "exact": 84,
+              "relative_correct": 136,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2,correct_color=2": {
+              "chooses_first": 79,
+              "exact": 55,
+              "relative_correct": 161,
+              "ties": 0,
+              "worlds": 240
+            },
+            "query=+1": {
+              "chooses_first": 166,
+              "exact": 107,
+              "relative_correct": 238,
+              "ties": 0,
+              "worlds": 480
+            },
+            "query=-1": {
+              "chooses_first": 194,
+              "exact": 92,
+              "relative_correct": 236,
+              "ties": 0,
+              "worlds": 480
+            }
+          }
+        },
+        "clip2-1371-1280": {
+          "exact_family_histogram": {
+            "4": 6,
+            "5": 3,
+            "6": 46,
+            "7": 7,
+            "8": 58
+          },
+          "exact_rule_templates": {
+            "binding:+1": 58,
+            "position:-1": 6
+          },
+          "fail_clustering": {
+            "color_pair": {
+              "groups": 28,
+              "repeated_both_failed": 64,
+              "repeated_pairs": 249,
+              "singleton_groups": 2,
+              "with_failures": 25
+            },
+            "name_pair": {
+              "groups": 74,
+              "repeated_both_failed": 30,
+              "repeated_pairs": 63,
+              "singleton_groups": 41,
+              "with_failures": 40
+            }
+          },
+          "flips": {
+            "assignment:((1, -1), (2, -1))": {
+              "both_exact": 80,
+              "both_relative_correct": 80,
+              "flipped_color_non_tied": 112,
+              "neither_exact": 32,
+              "one_exact": 8,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 8
+            },
+            "assignment:((1, -1), (2, 1))": {
+              "both_exact": 119,
+              "both_relative_correct": 119,
+              "flipped_color_non_tied": 119,
+              "neither_exact": 0,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 1
+            },
+            "assignment:((1, 1), (2, -1))": {
+              "both_exact": 120,
+              "both_relative_correct": 120,
+              "flipped_color_non_tied": 120,
+              "neither_exact": 0,
+              "one_exact": 0,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 0
+            },
+            "assignment:((1, 1), (2, 1))": {
+              "both_exact": 90,
+              "both_relative_correct": 90,
+              "flipped_color_non_tied": 119,
+              "neither_exact": 29,
+              "one_exact": 1,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 1
+            },
+            "assignment:all": {
+              "both_exact": 409,
+              "both_relative_correct": 409,
+              "flipped_color_non_tied": 470,
+              "neither_exact": 61,
+              "one_exact": 10,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 10
+            },
+            "order:((0, -1), (2, -1))": {
+              "both_exact": 83,
+              "both_relative_correct": 83,
+              "flipped_color_non_tied": 37,
+              "neither_exact": 0,
+              "one_exact": 37,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 83
+            },
+            "order:((0, -1), (2, 1))": {
+              "both_exact": 90,
+              "both_relative_correct": 90,
+              "flipped_color_non_tied": 29,
+              "neither_exact": 1,
+              "one_exact": 29,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 91
+            },
+            "order:((0, 1), (2, -1))": {
+              "both_exact": 85,
+              "both_relative_correct": 85,
+              "flipped_color_non_tied": 35,
+              "neither_exact": 0,
+              "one_exact": 35,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 85
+            },
+            "order:((0, 1), (2, 1))": {
+              "both_exact": 91,
+              "both_relative_correct": 91,
+              "flipped_color_non_tied": 29,
+              "neither_exact": 0,
+              "one_exact": 29,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 91
+            },
+            "order:all": {
+              "both_exact": 349,
+              "both_relative_correct": 349,
+              "flipped_color_non_tied": 130,
+              "neither_exact": 1,
+              "one_exact": 130,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 350
+            },
+            "query:((0, -1), (1, -1))": {
+              "both_exact": 82,
+              "both_relative_correct": 82,
+              "flipped_color_non_tied": 82,
+              "neither_exact": 0,
+              "one_exact": 38,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 38
+            },
+            "query:((0, -1), (1, 1))": {
+              "both_exact": 90,
+              "both_relative_correct": 90,
+              "flipped_color_non_tied": 90,
+              "neither_exact": 0,
+              "one_exact": 30,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 30
+            },
+            "query:((0, 1), (1, -1))": {
+              "both_exact": 85,
+              "both_relative_correct": 85,
+              "flipped_color_non_tied": 85,
+              "neither_exact": 0,
+              "one_exact": 35,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 35
+            },
+            "query:((0, 1), (1, 1))": {
+              "both_exact": 91,
+              "both_relative_correct": 91,
+              "flipped_color_non_tied": 91,
+              "neither_exact": 0,
+              "one_exact": 29,
+              "one_or_more_ties": 0,
+              "pairs": 120,
+              "same_color_non_tied": 29
+            },
+            "query:all": {
+              "both_exact": 348,
+              "both_relative_correct": 348,
+              "flipped_color_non_tied": 348,
+              "neither_exact": 0,
+              "one_exact": 132,
+              "one_or_more_ties": 0,
+              "pairs": 480,
+              "same_color_non_tied": 132
+            }
+          },
+          "mean_walsh_logit_contrast": {
+            "binding": 3.4041252995909113,
+            "canonical_name": 0.21147056858462748,
+            "color": 0.007567000198954095,
+            "order_only": 0.014111418785372127,
+            "order_query": 0.03120741688568766,
+            "position": -0.27384423299323923,
+            "query_only": 0.008789721018789958,
+            "triple": 0.046432517749296194
+          },
+          "mean_within_family_walsh_energy_share": {
+            "binding": 0.685079788330841,
+            "canonical_name": 0.17765407088094579,
+            "color": 0.004843572064117327,
+            "order_only": 0.0016721073316841473,
+            "order_query": 0.0016668985869257799,
+            "position": 0.08891427333579983,
+            "query_only": 0.0024463730808043675,
+            "triple": 0.037722916388881415
+          },
+          "strata": {
+            "all": {
+              "chooses_first": 350,
+              "exact": 828,
+              "relative_correct": 828,
+              "ties": 0,
+              "worlds": 960
+            },
+            "order=+1": {
+              "chooses_first": 181,
+              "exact": 421,
+              "relative_correct": 421,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=+1,query=+1": {
+              "chooses_first": 181,
+              "exact": 181,
+              "relative_correct": 181,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=+1,query=-1": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1": {
+              "chooses_first": 169,
+              "exact": 407,
+              "relative_correct": 407,
+              "ties": 0,
+              "worlds": 480
+            },
+            "order=-1,query=+1": {
+              "chooses_first": 1,
+              "exact": 239,
+              "relative_correct": 239,
+              "ties": 0,
+              "worlds": 240
+            },
+            "order=-1,query=-1": {
+              "chooses_first": 168,
+              "exact": 168,
+              "relative_correct": 168,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1": {
+              "chooses_first": 349,
+              "exact": 349,
+              "relative_correct": 349,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=1,correct_color=1": {
+              "chooses_first": 174,
+              "exact": 174,
+              "relative_correct": 174,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=1,correct_color=2": {
+              "chooses_first": 175,
+              "exact": 175,
+              "relative_correct": 175,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2": {
+              "chooses_first": 1,
+              "exact": 479,
+              "relative_correct": 479,
+              "ties": 0,
+              "worlds": 480
+            },
+            "position=2,correct_color=1": {
+              "chooses_first": 0,
+              "exact": 240,
+              "relative_correct": 240,
+              "ties": 0,
+              "worlds": 240
+            },
+            "position=2,correct_color=2": {
+              "chooses_first": 1,
+              "exact": 239,
+              "relative_correct": 239,
+              "ties": 0,
+              "worlds": 240
+            },
+            "query=+1": {
+              "chooses_first": 182,
+              "exact": 420,
+              "relative_correct": 420,
+              "ties": 0,
+              "worlds": 480
+            },
+            "query=-1": {
+              "chooses_first": 168,
+              "exact": 408,
+              "relative_correct": 408,
+              "ties": 0,
+              "worlds": 480
+            }
+          }
+        }
+      },
+      "crossed_family_failure_overlap": {
+        "clip1-1171-1280/clip1-1271-1280": {
+          "both_fail": 1,
+          "both_pass": 110,
+          "failure_expected_if_independent": 0.25,
+          "failure_jaccard": 0.1,
+          "first_only_fails": 4,
+          "second_only_fails": 5
+        },
+        "clip1-1171-1280/clip1-1371-1280": {
+          "both_fail": 0,
+          "both_pass": 57,
+          "failure_expected_if_independent": 2.4166666666666665,
+          "failure_jaccard": 0.0,
+          "first_only_fails": 5,
+          "second_only_fails": 58
+        },
+        "clip1-1171-1280/clip2-1171-1280": {
+          "both_fail": 1,
+          "both_pass": 114,
+          "failure_expected_if_independent": 0.08333333333333333,
+          "failure_jaccard": 0.16666666666666666,
+          "first_only_fails": 4,
+          "second_only_fails": 1
+        },
+        "clip1-1171-1280/clip2-1271-1280": {
+          "both_fail": 0,
+          "both_pass": 111,
+          "failure_expected_if_independent": 0.16666666666666666,
+          "failure_jaccard": 0.0,
+          "first_only_fails": 5,
+          "second_only_fails": 4
+        },
+        "clip1-1171-1280/clip2-1371-1280": {
+          "both_fail": 0,
+          "both_pass": 53,
+          "failure_expected_if_independent": 2.5833333333333335,
+          "failure_jaccard": 0.0,
+          "first_only_fails": 5,
+          "second_only_fails": 62
+        },
+        "clip1-1271-1280/clip1-1371-1280": {
+          "both_fail": 2,
+          "both_pass": 58,
+          "failure_expected_if_independent": 2.9,
+          "failure_jaccard": 0.03225806451612903,
+          "first_only_fails": 4,
+          "second_only_fails": 56
+        },
+        "clip1-1271-1280/clip2-1171-1280": {
+          "both_fail": 0,
+          "both_pass": 112,
+          "failure_expected_if_independent": 0.1,
+          "failure_jaccard": 0.0,
+          "first_only_fails": 6,
+          "second_only_fails": 2
+        },
+        "clip1-1271-1280/clip2-1271-1280": {
+          "both_fail": 2,
+          "both_pass": 112,
+          "failure_expected_if_independent": 0.2,
+          "failure_jaccard": 0.25,
+          "first_only_fails": 4,
+          "second_only_fails": 2
+        },
+        "clip1-1271-1280/clip2-1371-1280": {
+          "both_fail": 2,
+          "both_pass": 54,
+          "failure_expected_if_independent": 3.1,
+          "failure_jaccard": 0.030303030303030304,
+          "first_only_fails": 4,
+          "second_only_fails": 60
+        },
+        "clip1-1371-1280/clip2-1171-1280": {
+          "both_fail": 0,
+          "both_pass": 60,
+          "failure_expected_if_independent": 0.9666666666666667,
+          "failure_jaccard": 0.0,
+          "first_only_fails": 58,
+          "second_only_fails": 2
+        },
+        "clip1-1371-1280/clip2-1271-1280": {
+          "both_fail": 1,
+          "both_pass": 59,
+          "failure_expected_if_independent": 1.9333333333333333,
+          "failure_jaccard": 0.01639344262295082,
+          "first_only_fails": 57,
+          "second_only_fails": 3
+        },
+        "clip1-1371-1280/clip2-1371-1280": {
+          "both_fail": 56,
+          "both_pass": 56,
+          "failure_expected_if_independent": 29.966666666666665,
+          "failure_jaccard": 0.875,
+          "first_only_fails": 2,
+          "second_only_fails": 6
+        },
+        "clip2-1171-1280/clip2-1271-1280": {
+          "both_fail": 0,
+          "both_pass": 114,
+          "failure_expected_if_independent": 0.06666666666666667,
+          "failure_jaccard": 0.0,
+          "first_only_fails": 2,
+          "second_only_fails": 4
+        },
+        "clip2-1171-1280/clip2-1371-1280": {
+          "both_fail": 0,
+          "both_pass": 56,
+          "failure_expected_if_independent": 1.0333333333333334,
+          "failure_jaccard": 0.0,
+          "first_only_fails": 2,
+          "second_only_fails": 62
+        },
+        "clip2-1271-1280/clip2-1371-1280": {
+          "both_fail": 1,
+          "both_pass": 55,
+          "failure_expected_if_independent": 2.066666666666667,
+          "failure_jaccard": 0.015384615384615385,
+          "first_only_fails": 3,
+          "second_only_fails": 61
+        }
+      },
+      "logit_row_count": 11520
+    }
+  }
+}

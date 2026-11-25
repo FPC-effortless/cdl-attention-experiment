@@ -1,0 +1,84 @@
+{
+  "readout-1171": {
+    "checkpoint_sha256": "b2cbd5aa6cb1acd345f54bd562ece11e6d85d696b86cd87adc4cb13f8d3c810c",
+    "matching": {
+      "eight": {
+        "damages": 0,
+        "first_damages": 0,
+        "first_rescues": 0,
+        "native_ce_nats": 0.030885087562115096,
+        "native_correct": 509,
+        "probe_ce_nats": 0.029529163022459032,
+        "probe_correct": 510,
+        "probe_minus_native_ce_grouped_95_nats": [
+          -0.005124706909246353,
+          0.0013528837991123948
+        ],
+        "rescues": 1,
+        "second_damages": 0,
+        "second_rescues": 1
+      },
+      "two": {
+        "damages": 0,
+        "first_damages": 0,
+        "first_rescues": 0,
+        "native_ce_nats": 0.019824385372696415,
+        "native_correct": 509,
+        "probe_ce_nats": 0.01761784952512787,
+        "probe_correct": 510,
+        "probe_minus_native_ce_grouped_95_nats": [
+          -0.0061007803381790465,
+          0.0003466692100748502
+        ],
+        "rescues": 1,
+        "second_damages": 0,
+        "second_rescues": 1
+      }
+    },
+    "native_full_ce_nats": 0.04091832534086535,
+    "native_strict_287_correct": 509,
+    "pre_output_parity_sha256": "ff18847f893e5a46a84e5e1d138a073b1b1c003b01d42bed8545ba84144618ac",
+    "rows": 512
+  },
+  "readout-1371": {
+    "checkpoint_sha256": "517c990e5834a1648524b59bd287f97f472583fa642ce0e5a8dc95270536e890",
+    "matching": {
+      "eight": {
+        "damages": 1,
+        "first_damages": 0,
+        "first_rescues": 0,
+        "native_ce_nats": 0.3772581201884901,
+        "native_correct": 434,
+        "probe_ce_nats": 0.3643285513997137,
+        "probe_correct": 433,
+        "probe_minus_native_ce_grouped_95_nats": [
+          -0.028305287574149955,
+          -0.0007474269466024734
+        ],
+        "rescues": 0,
+        "second_damages": 1,
+        "second_rescues": 0
+      },
+      "two": {
+        "damages": 1,
+        "first_damages": 0,
+        "first_rescues": 0,
+        "native_ce_nats": 0.33733647922450744,
+        "native_correct": 434,
+        "probe_ce_nats": 0.3155447390673655,
+        "probe_correct": 433,
+        "probe_minus_native_ce_grouped_95_nats": [
+          -0.03597657776572238,
+          -0.009677527121701088
+        ],
+        "rescues": 0,
+        "second_damages": 1,
+        "second_rescues": 0
+      }
+    },
+    "native_full_ce_nats": 0.3898567516012055,
+    "native_strict_287_correct": 434,
+    "pre_output_parity_sha256": "4ad8cafeb0d2519930b7cda55d20ecf3584030418a69c0c8205a9dfc718e6071",
+    "rows": 512
+  }
+}

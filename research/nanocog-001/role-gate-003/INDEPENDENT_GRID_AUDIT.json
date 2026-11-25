@@ -1,0 +1,634 @@
+{
+  "model_invocations": 0,
+  "results": {
+    "grid-1171": {
+      "elapsed_seconds": 3.388219,
+      "native_fp32_bit_exact": true,
+      "old_native_bytes": 293888,
+      "run": "20261122T173618-57887e9441a3",
+      "strict": {
+        "best_fixed_pair_keys": [
+          "mid_0_3"
+        ],
+        "best_fixed_pairs": 43,
+        "best_fixed_row_keys": [
+          "mid_0_3"
+        ],
+        "best_fixed_rows": 167,
+        "family_hierarchy_pair_shared": 31,
+        "family_same_grid_or_native": 31,
+        "fixed": {
+          "corner_0": {
+            "families": 0,
+            "first": 128,
+            "first_damaged": 0,
+            "first_rescued": 1,
+            "history_pairs": 0,
+            "rows": 128,
+            "second": 0,
+            "second_damaged": 128,
+            "second_rescued": 0
+          },
+          "corner_1": {
+            "families": 0,
+            "first": 0,
+            "first_damaged": 127,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 0,
+            "second": 0,
+            "second_damaged": 128,
+            "second_rescued": 0
+          },
+          "corner_2": {
+            "families": 0,
+            "first": 0,
+            "first_damaged": 127,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 128,
+            "second": 128,
+            "second_damaged": 0,
+            "second_rescued": 0
+          },
+          "corner_3": {
+            "families": 0,
+            "first": 0,
+            "first_damaged": 127,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 125,
+            "second": 125,
+            "second_damaged": 3,
+            "second_rescued": 0
+          },
+          "mid_0_1": {
+            "families": 0,
+            "first": 120,
+            "first_damaged": 8,
+            "first_rescued": 1,
+            "history_pairs": 0,
+            "rows": 120,
+            "second": 0,
+            "second_damaged": 128,
+            "second_rescued": 0
+          },
+          "mid_0_2": {
+            "families": 0,
+            "first": 25,
+            "first_damaged": 103,
+            "first_rescued": 1,
+            "history_pairs": 2,
+            "rows": 123,
+            "second": 98,
+            "second_damaged": 30,
+            "second_rescued": 0
+          },
+          "mid_0_3": {
+            "families": 1,
+            "first": 108,
+            "first_damaged": 20,
+            "first_rescued": 1,
+            "history_pairs": 43,
+            "rows": 167,
+            "second": 59,
+            "second_damaged": 69,
+            "second_rescued": 0
+          },
+          "mid_1_2": {
+            "families": 0,
+            "first": 0,
+            "first_damaged": 127,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 128,
+            "second": 128,
+            "second_damaged": 0,
+            "second_rescued": 0
+          },
+          "mid_1_3": {
+            "families": 0,
+            "first": 2,
+            "first_damaged": 125,
+            "first_rescued": 0,
+            "history_pairs": 2,
+            "rows": 96,
+            "second": 94,
+            "second_damaged": 34,
+            "second_rescued": 0
+          },
+          "mid_2_3": {
+            "families": 0,
+            "first": 0,
+            "first_damaged": 127,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 128,
+            "second": 128,
+            "second_damaged": 0,
+            "second_rescued": 0
+          },
+          "native": {
+            "families": 31,
+            "first": 127,
+            "first_damaged": 0,
+            "first_rescued": 0,
+            "history_pairs": 127,
+            "rows": 255,
+            "second": 128,
+            "second_damaged": 0,
+            "second_rescued": 0
+          },
+          "uniform": {
+            "families": 0,
+            "first": 5,
+            "first_damaged": 122,
+            "first_rescued": 0,
+            "history_pairs": 4,
+            "rows": 130,
+            "second": 125,
+            "second_damaged": 3,
+            "second_rescued": 0
+          }
+        },
+        "history_shared_choice_grid_or_native": 127,
+        "history_shared_grid_only": 48,
+        "query_pairs_different_choices_allowed": 128,
+        "row_oracle_all": 256,
+        "row_oracle_first_rescues": 1,
+        "row_oracle_grid_only": 256,
+        "row_oracle_rescues": 1,
+        "row_oracle_second_rescues": 0
+      },
+      "two_color": {
+        "best_fixed_pair_keys": [
+          "mid_0_3"
+        ],
+        "best_fixed_pairs": 46,
+        "best_fixed_row_keys": [
+          "mid_0_3"
+        ],
+        "best_fixed_rows": 171,
+        "family_hierarchy_pair_shared": 31,
+        "family_same_grid_or_native": 31,
+        "fixed": {
+          "corner_0": {
+            "families": 0,
+            "first": 128,
+            "first_damaged": 0,
+            "first_rescued": 1,
+            "history_pairs": 0,
+            "rows": 128,
+            "second": 0,
+            "second_damaged": 128,
+            "second_rescued": 0
+          },
+          "corner_1": {
+            "families": 0,
+            "first": 84,
+            "first_damaged": 44,
+            "first_rescued": 1,
+            "history_pairs": 12,
+            "rows": 136,
+            "second": 52,
+            "second_damaged": 76,
+            "second_rescued": 0
+          },
+          "corner_2": {
+            "families": 0,
+            "first": 0,
+            "first_damaged": 127,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 128,
+            "second": 128,
+            "second_damaged": 0,
+            "second_rescued": 0
+          },
+          "corner_3": {
+            "families": 0,
+            "first": 0,
+            "first_damaged": 127,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 128,
+            "second": 128,
+            "second_damaged": 0,
+            "second_rescued": 0
+          },
+          "mid_0_1": {
+            "families": 0,
+            "first": 128,
+            "first_damaged": 0,
+            "first_rescued": 1,
+            "history_pairs": 0,
+            "rows": 128,
+            "second": 0,
+            "second_damaged": 128,
+            "second_rescued": 0
+          },
+          "mid_0_2": {
+            "families": 0,
+            "first": 25,
+            "first_damaged": 103,
+            "first_rescued": 1,
+            "history_pairs": 2,
+            "rows": 123,
+            "second": 98,
+            "second_damaged": 30,
+            "second_rescued": 0
+          },
+          "mid_0_3": {
+            "families": 1,
+            "first": 108,
+            "first_damaged": 20,
+            "first_rescued": 1,
+            "history_pairs": 46,
+            "rows": 171,
+            "second": 63,
+            "second_damaged": 65,
+            "second_rescued": 0
+          },
+          "mid_1_2": {
+            "families": 0,
+            "first": 0,
+            "first_damaged": 127,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 128,
+            "second": 128,
+            "second_damaged": 0,
+            "second_rescued": 0
+          },
+          "mid_1_3": {
+            "families": 0,
+            "first": 5,
+            "first_damaged": 122,
+            "first_rescued": 0,
+            "history_pairs": 5,
+            "rows": 133,
+            "second": 128,
+            "second_damaged": 0,
+            "second_rescued": 0
+          },
+          "mid_2_3": {
+            "families": 0,
+            "first": 0,
+            "first_damaged": 127,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 128,
+            "second": 128,
+            "second_damaged": 0,
+            "second_rescued": 0
+          },
+          "native": {
+            "families": 31,
+            "first": 127,
+            "first_damaged": 0,
+            "first_rescued": 0,
+            "history_pairs": 127,
+            "rows": 255,
+            "second": 128,
+            "second_damaged": 0,
+            "second_rescued": 0
+          },
+          "uniform": {
+            "families": 0,
+            "first": 5,
+            "first_damaged": 122,
+            "first_rescued": 0,
+            "history_pairs": 4,
+            "rows": 130,
+            "second": 125,
+            "second_damaged": 3,
+            "second_rescued": 0
+          }
+        },
+        "history_shared_choice_grid_or_native": 127,
+        "history_shared_grid_only": 58,
+        "query_pairs_different_choices_allowed": 128,
+        "row_oracle_all": 256,
+        "row_oracle_first_rescues": 1,
+        "row_oracle_grid_only": 256,
+        "row_oracle_rescues": 1,
+        "row_oracle_second_rescues": 0
+      }
+    },
+    "grid-1371": {
+      "elapsed_seconds": 2.930777,
+      "native_fp32_bit_exact": true,
+      "old_native_bytes": 293888,
+      "run": "20261122T173621-632799071225",
+      "strict": {
+        "best_fixed_pair_keys": [
+          "mid_1_2"
+        ],
+        "best_fixed_pairs": 16,
+        "best_fixed_row_keys": [
+          "mid_1_2"
+        ],
+        "best_fixed_rows": 130,
+        "family_hierarchy_pair_shared": 16,
+        "family_same_grid_or_native": 16,
+        "fixed": {
+          "corner_0": {
+            "families": 0,
+            "first": 0,
+            "first_damaged": 128,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 0,
+            "second": 0,
+            "second_damaged": 95,
+            "second_rescued": 0
+          },
+          "corner_1": {
+            "families": 0,
+            "first": 128,
+            "first_damaged": 0,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 128,
+            "second": 0,
+            "second_damaged": 95,
+            "second_rescued": 0
+          },
+          "corner_2": {
+            "families": 0,
+            "first": 0,
+            "first_damaged": 128,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 128,
+            "second": 128,
+            "second_damaged": 0,
+            "second_rescued": 33
+          },
+          "corner_3": {
+            "families": 0,
+            "first": 0,
+            "first_damaged": 128,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 0,
+            "second": 0,
+            "second_damaged": 95,
+            "second_rescued": 0
+          },
+          "mid_0_1": {
+            "families": 0,
+            "first": 78,
+            "first_damaged": 50,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 78,
+            "second": 0,
+            "second_damaged": 95,
+            "second_rescued": 0
+          },
+          "mid_0_2": {
+            "families": 0,
+            "first": 0,
+            "first_damaged": 128,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 70,
+            "second": 70,
+            "second_damaged": 38,
+            "second_rescued": 13
+          },
+          "mid_0_3": {
+            "families": 0,
+            "first": 0,
+            "first_damaged": 128,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 0,
+            "second": 0,
+            "second_damaged": 95,
+            "second_rescued": 0
+          },
+          "mid_1_2": {
+            "families": 0,
+            "first": 35,
+            "first_damaged": 93,
+            "first_rescued": 0,
+            "history_pairs": 16,
+            "rows": 130,
+            "second": 95,
+            "second_damaged": 26,
+            "second_rescued": 26
+          },
+          "mid_1_3": {
+            "families": 0,
+            "first": 65,
+            "first_damaged": 63,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 65,
+            "second": 0,
+            "second_damaged": 95,
+            "second_rescued": 0
+          },
+          "mid_2_3": {
+            "families": 0,
+            "first": 0,
+            "first_damaged": 128,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 52,
+            "second": 52,
+            "second_damaged": 51,
+            "second_rescued": 8
+          },
+          "native": {
+            "families": 16,
+            "first": 128,
+            "first_damaged": 0,
+            "first_rescued": 0,
+            "history_pairs": 95,
+            "rows": 223,
+            "second": 95,
+            "second_damaged": 0,
+            "second_rescued": 0
+          },
+          "uniform": {
+            "families": 0,
+            "first": 24,
+            "first_damaged": 104,
+            "first_rescued": 0,
+            "history_pairs": 6,
+            "rows": 42,
+            "second": 18,
+            "second_damaged": 80,
+            "second_rescued": 3
+          }
+        },
+        "history_shared_choice_grid_or_native": 97,
+        "history_shared_grid_only": 18,
+        "query_pairs_different_choices_allowed": 128,
+        "row_oracle_all": 256,
+        "row_oracle_first_rescues": 0,
+        "row_oracle_grid_only": 256,
+        "row_oracle_rescues": 33,
+        "row_oracle_second_rescues": 33
+      },
+      "two_color": {
+        "best_fixed_pair_keys": [
+          "uniform"
+        ],
+        "best_fixed_pairs": 29,
+        "best_fixed_row_keys": [
+          "corner_3"
+        ],
+        "best_fixed_rows": 145,
+        "family_hierarchy_pair_shared": 17,
+        "family_same_grid_or_native": 16,
+        "fixed": {
+          "corner_0": {
+            "families": 0,
+            "first": 81,
+            "first_damaged": 47,
+            "first_rescued": 0,
+            "history_pairs": 7,
+            "rows": 120,
+            "second": 39,
+            "second_damaged": 67,
+            "second_rescued": 11
+          },
+          "corner_1": {
+            "families": 0,
+            "first": 128,
+            "first_damaged": 0,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 128,
+            "second": 0,
+            "second_damaged": 95,
+            "second_rescued": 0
+          },
+          "corner_2": {
+            "families": 0,
+            "first": 0,
+            "first_damaged": 128,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 128,
+            "second": 128,
+            "second_damaged": 0,
+            "second_rescued": 33
+          },
+          "corner_3": {
+            "families": 0,
+            "first": 52,
+            "first_damaged": 76,
+            "first_rescued": 0,
+            "history_pairs": 28,
+            "rows": 145,
+            "second": 93,
+            "second_damaged": 22,
+            "second_rescued": 20
+          },
+          "mid_0_1": {
+            "families": 0,
+            "first": 128,
+            "first_damaged": 0,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 128,
+            "second": 0,
+            "second_damaged": 95,
+            "second_rescued": 0
+          },
+          "mid_0_2": {
+            "families": 0,
+            "first": 1,
+            "first_damaged": 127,
+            "first_rescued": 0,
+            "history_pairs": 1,
+            "rows": 128,
+            "second": 127,
+            "second_damaged": 1,
+            "second_rescued": 33
+          },
+          "mid_0_3": {
+            "families": 0,
+            "first": 65,
+            "first_damaged": 63,
+            "first_rescued": 0,
+            "history_pairs": 18,
+            "rows": 134,
+            "second": 69,
+            "second_damaged": 41,
+            "second_rescued": 15
+          },
+          "mid_1_2": {
+            "families": 0,
+            "first": 35,
+            "first_damaged": 93,
+            "first_rescued": 0,
+            "history_pairs": 16,
+            "rows": 130,
+            "second": 95,
+            "second_damaged": 26,
+            "second_rescued": 26
+          },
+          "mid_1_3": {
+            "families": 0,
+            "first": 128,
+            "first_damaged": 0,
+            "first_rescued": 0,
+            "history_pairs": 1,
+            "rows": 129,
+            "second": 1,
+            "second_damaged": 94,
+            "second_rescued": 0
+          },
+          "mid_2_3": {
+            "families": 0,
+            "first": 0,
+            "first_damaged": 128,
+            "first_rescued": 0,
+            "history_pairs": 0,
+            "rows": 128,
+            "second": 128,
+            "second_damaged": 0,
+            "second_rescued": 33
+          },
+          "native": {
+            "families": 16,
+            "first": 128,
+            "first_damaged": 0,
+            "first_rescued": 0,
+            "history_pairs": 95,
+            "rows": 223,
+            "second": 95,
+            "second_damaged": 0,
+            "second_rescued": 0
+          },
+          "uniform": {
+            "families": 0,
+            "first": 62,
+            "first_damaged": 66,
+            "first_rescued": 0,
+            "history_pairs": 29,
+            "rows": 140,
+            "second": 78,
+            "second_damaged": 37,
+            "second_rescued": 20
+          }
+        },
+        "history_shared_choice_grid_or_native": 105,
+        "history_shared_grid_only": 49,
+        "query_pairs_different_choices_allowed": 128,
+        "row_oracle_all": 256,
+        "row_oracle_first_rescues": 0,
+        "row_oracle_grid_only": 256,
+        "row_oracle_rescues": 33,
+        "row_oracle_second_rescues": 33
+      }
+    }
+  },
+  "seal_sha256": "770686ff7de4fc2174d16312f3771ba0263fe7373d898ed0195f18fbe37d3a41"
+}

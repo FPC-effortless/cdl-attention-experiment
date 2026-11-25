@@ -1,0 +1,1758 @@
+{
+  "broader_model_qualification": false,
+  "consistency_preferred_on_known_backbone": false,
+  "per_seed": {
+    "1771": {
+      "both_query_delta": 2,
+      "consistent_clears": false,
+      "consistent_first_delta": -34,
+      "fragile_second_delta": 0,
+      "robust_second_delta": 0,
+      "zero_clears": false,
+      "zero_first_delta": -34
+    },
+    "1871": {
+      "both_query_delta": 2,
+      "consistent_clears": false,
+      "consistent_first_delta": -32,
+      "fragile_second_delta": 0,
+      "robust_second_delta": 0,
+      "zero_clears": false,
+      "zero_first_delta": -32
+    },
+    "1971": {
+      "both_query_delta": 0,
+      "consistent_clears": false,
+      "consistent_first_delta": -40,
+      "fragile_second_delta": 0,
+      "robust_second_delta": 0,
+      "zero_clears": false,
+      "zero_first_delta": -38
+    }
+  },
+  "scores": {
+    "consistency000-1771-128-ordinary": {
+      "all": {
+        "both_assignments": 403,
+        "both_orders": 376,
+        "both_queries": 370,
+        "families": 120,
+        "first_strict": 459,
+        "relative_families": 67,
+        "relative_worlds": 844,
+        "second_strict": 385,
+        "strict_families": 67,
+        "strict_worlds": 844,
+        "worlds": 960
+      },
+      "seen_name_pair": {
+        "both_assignments": 363,
+        "both_orders": 339,
+        "both_queries": 333,
+        "families": 109,
+        "first_strict": 415,
+        "relative_families": 60,
+        "relative_worlds": 763,
+        "second_strict": 348,
+        "strict_families": 60,
+        "strict_worlds": 763,
+        "worlds": 872
+      },
+      "unseen_name_pair": {
+        "both_assignments": 40,
+        "both_orders": 37,
+        "both_queries": 37,
+        "families": 11,
+        "first_strict": 44,
+        "relative_families": 7,
+        "relative_worlds": 81,
+        "second_strict": 37,
+        "strict_families": 7,
+        "strict_worlds": 81,
+        "worlds": 88
+      }
+    },
+    "consistency000-1771-1280-contrast": {
+      "counts": {
+        "distractor_first": {
+          "fragile_relative": 96,
+          "fragile_strict": 96,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        },
+        "distractor_second": {
+          "fragile_relative": 96,
+          "fragile_strict": 96,
+          "fragile_worlds": 96,
+          "robust_relative": 92,
+          "robust_strict": 92,
+          "robust_worlds": 96
+        },
+        "focal_first": {
+          "fragile_relative": 79,
+          "fragile_strict": 79,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        },
+        "focal_second": {
+          "fragile_relative": 59,
+          "fragile_strict": 59,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        }
+      },
+      "robust_minus_fragile": {
+        "distractor_first": {
+          "block_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "effect": 0.0
+        },
+        "distractor_second": {
+          "block_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.5,
+            0.0,
+            -0.5,
+            0.0
+          ],
+          "bootstrap_95": [
+            -0.10416666666666667,
+            0.0
+          ],
+          "effect": -0.041666666666666664
+        },
+        "focal_first": {
+          "block_values": [
+            0.5,
+            0.5,
+            0.5,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.25,
+            0.0,
+            0.5,
+            0.25,
+            0.5,
+            0.25,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bootstrap_95": [
+            0.08333333333333333,
+            0.2708333333333333
+          ],
+          "effect": 0.17708333333333334
+        },
+        "focal_second": {
+          "block_values": [
+            0.5,
+            0.0,
+            0.25,
+            0.5,
+            0.25,
+            0.25,
+            0.0,
+            0.75,
+            0.75,
+            0.5,
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            0.25,
+            0.5,
+            0.5,
+            0.5,
+            0.25
+          ],
+          "bootstrap_95": [
+            0.2708333333333333,
+            0.5104166666666666
+          ],
+          "effect": 0.3854166666666667
+        }
+      }
+    },
+    "consistency000-1771-1280-ordinary": {
+      "all": {
+        "both_assignments": 423,
+        "both_orders": 387,
+        "both_queries": 393,
+        "families": 120,
+        "first_strict": 439,
+        "relative_families": 75,
+        "relative_worlds": 866,
+        "second_strict": 427,
+        "strict_families": 75,
+        "strict_worlds": 866,
+        "worlds": 960
+      },
+      "seen_name_pair": {
+        "both_assignments": 380,
+        "both_orders": 344,
+        "both_queries": 350,
+        "families": 109,
+        "first_strict": 396,
+        "relative_families": 65,
+        "relative_worlds": 779,
+        "second_strict": 383,
+        "strict_families": 65,
+        "strict_worlds": 779,
+        "worlds": 872
+      },
+      "unseen_name_pair": {
+        "both_assignments": 43,
+        "both_orders": 43,
+        "both_queries": 43,
+        "families": 11,
+        "first_strict": 43,
+        "relative_families": 10,
+        "relative_worlds": 87,
+        "second_strict": 44,
+        "strict_families": 10,
+        "strict_worlds": 87,
+        "worlds": 88
+      }
+    },
+    "consistency000-1871-128-ordinary": {
+      "all": {
+        "both_assignments": 400,
+        "both_orders": 380,
+        "both_queries": 372,
+        "families": 120,
+        "first_strict": 452,
+        "relative_families": 66,
+        "relative_worlds": 846,
+        "second_strict": 394,
+        "strict_families": 66,
+        "strict_worlds": 846,
+        "worlds": 960
+      },
+      "seen_name_pair": {
+        "both_assignments": 361,
+        "both_orders": 342,
+        "both_queries": 335,
+        "families": 109,
+        "first_strict": 409,
+        "relative_families": 59,
+        "relative_worlds": 765,
+        "second_strict": 356,
+        "strict_families": 59,
+        "strict_worlds": 765,
+        "worlds": 872
+      },
+      "unseen_name_pair": {
+        "both_assignments": 39,
+        "both_orders": 38,
+        "both_queries": 37,
+        "families": 11,
+        "first_strict": 43,
+        "relative_families": 7,
+        "relative_worlds": 81,
+        "second_strict": 38,
+        "strict_families": 7,
+        "strict_worlds": 81,
+        "worlds": 88
+      }
+    },
+    "consistency000-1871-1280-contrast": {
+      "counts": {
+        "distractor_first": {
+          "fragile_relative": 96,
+          "fragile_strict": 96,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        },
+        "distractor_second": {
+          "fragile_relative": 96,
+          "fragile_strict": 96,
+          "fragile_worlds": 96,
+          "robust_relative": 92,
+          "robust_strict": 92,
+          "robust_worlds": 96
+        },
+        "focal_first": {
+          "fragile_relative": 80,
+          "fragile_strict": 80,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        },
+        "focal_second": {
+          "fragile_relative": 56,
+          "fragile_strict": 56,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        }
+      },
+      "robust_minus_fragile": {
+        "distractor_first": {
+          "block_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "effect": 0.0
+        },
+        "distractor_second": {
+          "block_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.5,
+            0.0,
+            -0.5,
+            0.0
+          ],
+          "bootstrap_95": [
+            -0.10416666666666667,
+            0.0
+          ],
+          "effect": -0.041666666666666664
+        },
+        "focal_first": {
+          "block_values": [
+            0.25,
+            0.5,
+            0.5,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.25,
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bootstrap_95": [
+            0.08333333333333333,
+            0.2604166666666667
+          ],
+          "effect": 0.16666666666666666
+        },
+        "focal_second": {
+          "block_values": [
+            0.5,
+            0.0,
+            0.25,
+            0.5,
+            0.25,
+            0.25,
+            0.5,
+            0.75,
+            0.75,
+            0.5,
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            0.25,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "bootstrap_95": [
+            0.3020833333333333,
+            0.53125
+          ],
+          "effect": 0.4166666666666667
+        }
+      }
+    },
+    "consistency000-1871-1280-ordinary": {
+      "all": {
+        "both_assignments": 420,
+        "both_orders": 384,
+        "both_queries": 388,
+        "families": 120,
+        "first_strict": 441,
+        "relative_families": 75,
+        "relative_worlds": 862,
+        "second_strict": 421,
+        "strict_families": 75,
+        "strict_worlds": 862,
+        "worlds": 960
+      },
+      "seen_name_pair": {
+        "both_assignments": 378,
+        "both_orders": 342,
+        "both_queries": 346,
+        "families": 109,
+        "first_strict": 398,
+        "relative_families": 65,
+        "relative_worlds": 776,
+        "second_strict": 378,
+        "strict_families": 65,
+        "strict_worlds": 776,
+        "worlds": 872
+      },
+      "unseen_name_pair": {
+        "both_assignments": 42,
+        "both_orders": 42,
+        "both_queries": 42,
+        "families": 11,
+        "first_strict": 43,
+        "relative_families": 10,
+        "relative_worlds": 86,
+        "second_strict": 43,
+        "strict_families": 10,
+        "strict_worlds": 86,
+        "worlds": 88
+      }
+    },
+    "consistency000-1971-128-ordinary": {
+      "all": {
+        "both_assignments": 406,
+        "both_orders": 375,
+        "both_queries": 371,
+        "families": 120,
+        "first_strict": 465,
+        "relative_families": 67,
+        "relative_worlds": 846,
+        "second_strict": 381,
+        "strict_families": 67,
+        "strict_worlds": 846,
+        "worlds": 960
+      },
+      "seen_name_pair": {
+        "both_assignments": 366,
+        "both_orders": 338,
+        "both_queries": 334,
+        "families": 109,
+        "first_strict": 421,
+        "relative_families": 60,
+        "relative_worlds": 765,
+        "second_strict": 344,
+        "strict_families": 60,
+        "strict_worlds": 765,
+        "worlds": 872
+      },
+      "unseen_name_pair": {
+        "both_assignments": 40,
+        "both_orders": 37,
+        "both_queries": 37,
+        "families": 11,
+        "first_strict": 44,
+        "relative_families": 7,
+        "relative_worlds": 81,
+        "second_strict": 37,
+        "strict_families": 7,
+        "strict_worlds": 81,
+        "worlds": 88
+      }
+    },
+    "consistency000-1971-1280-contrast": {
+      "counts": {
+        "distractor_first": {
+          "fragile_relative": 96,
+          "fragile_strict": 96,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        },
+        "distractor_second": {
+          "fragile_relative": 96,
+          "fragile_strict": 96,
+          "fragile_worlds": 96,
+          "robust_relative": 92,
+          "robust_strict": 92,
+          "robust_worlds": 96
+        },
+        "focal_first": {
+          "fragile_relative": 78,
+          "fragile_strict": 78,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        },
+        "focal_second": {
+          "fragile_relative": 64,
+          "fragile_strict": 64,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        }
+      },
+      "robust_minus_fragile": {
+        "distractor_first": {
+          "block_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "effect": 0.0
+        },
+        "distractor_second": {
+          "block_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.5,
+            0.0,
+            -0.5,
+            0.0
+          ],
+          "bootstrap_95": [
+            -0.10416666666666667,
+            0.0
+          ],
+          "effect": -0.041666666666666664
+        },
+        "focal_first": {
+          "block_values": [
+            0.5,
+            0.5,
+            0.5,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.25,
+            0.0,
+            0.5,
+            0.75,
+            0.5,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bootstrap_95": [
+            0.09375,
+            0.2916666666666667
+          ],
+          "effect": 0.1875
+        },
+        "focal_second": {
+          "block_values": [
+            0.5,
+            0.0,
+            0.25,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.75,
+            0.5,
+            0.25,
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            0.25,
+            0.5,
+            0.5,
+            0.25,
+            0.25
+          ],
+          "bootstrap_95": [
+            0.21875,
+            0.4583333333333333
+          ],
+          "effect": 0.3333333333333333
+        }
+      }
+    },
+    "consistency000-1971-1280-ordinary": {
+      "all": {
+        "both_assignments": 419,
+        "both_orders": 389,
+        "both_queries": 389,
+        "families": 120,
+        "first_strict": 435,
+        "relative_families": 76,
+        "relative_worlds": 863,
+        "second_strict": 428,
+        "strict_families": 76,
+        "strict_worlds": 863,
+        "worlds": 960
+      },
+      "seen_name_pair": {
+        "both_assignments": 376,
+        "both_orders": 347,
+        "both_queries": 347,
+        "families": 109,
+        "first_strict": 393,
+        "relative_families": 66,
+        "relative_worlds": 777,
+        "second_strict": 384,
+        "strict_families": 66,
+        "strict_worlds": 777,
+        "worlds": 872
+      },
+      "unseen_name_pair": {
+        "both_assignments": 43,
+        "both_orders": 42,
+        "both_queries": 42,
+        "families": 11,
+        "first_strict": 42,
+        "relative_families": 10,
+        "relative_worlds": 86,
+        "second_strict": 44,
+        "strict_families": 10,
+        "strict_worlds": 86,
+        "worlds": 88
+      }
+    },
+    "consistency025-1771-128-ordinary": {
+      "all": {
+        "both_assignments": 404,
+        "both_orders": 376,
+        "both_queries": 371,
+        "families": 120,
+        "first_strict": 460,
+        "relative_families": 67,
+        "relative_worlds": 845,
+        "second_strict": 385,
+        "strict_families": 67,
+        "strict_worlds": 845,
+        "worlds": 960
+      },
+      "seen_name_pair": {
+        "both_assignments": 364,
+        "both_orders": 339,
+        "both_queries": 334,
+        "families": 109,
+        "first_strict": 416,
+        "relative_families": 60,
+        "relative_worlds": 764,
+        "second_strict": 348,
+        "strict_families": 60,
+        "strict_worlds": 764,
+        "worlds": 872
+      },
+      "unseen_name_pair": {
+        "both_assignments": 40,
+        "both_orders": 37,
+        "both_queries": 37,
+        "families": 11,
+        "first_strict": 44,
+        "relative_families": 7,
+        "relative_worlds": 81,
+        "second_strict": 37,
+        "strict_families": 7,
+        "strict_worlds": 81,
+        "worlds": 88
+      }
+    },
+    "consistency025-1771-1280-contrast": {
+      "counts": {
+        "distractor_first": {
+          "fragile_relative": 96,
+          "fragile_strict": 96,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        },
+        "distractor_second": {
+          "fragile_relative": 96,
+          "fragile_strict": 96,
+          "fragile_worlds": 96,
+          "robust_relative": 92,
+          "robust_strict": 92,
+          "robust_worlds": 96
+        },
+        "focal_first": {
+          "fragile_relative": 79,
+          "fragile_strict": 79,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        },
+        "focal_second": {
+          "fragile_relative": 59,
+          "fragile_strict": 59,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        }
+      },
+      "robust_minus_fragile": {
+        "distractor_first": {
+          "block_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "effect": 0.0
+        },
+        "distractor_second": {
+          "block_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.5,
+            0.0,
+            -0.5,
+            0.0
+          ],
+          "bootstrap_95": [
+            -0.10416666666666667,
+            0.0
+          ],
+          "effect": -0.041666666666666664
+        },
+        "focal_first": {
+          "block_values": [
+            0.5,
+            0.5,
+            0.5,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.25,
+            0.0,
+            0.5,
+            0.25,
+            0.5,
+            0.25,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bootstrap_95": [
+            0.08333333333333333,
+            0.2708333333333333
+          ],
+          "effect": 0.17708333333333334
+        },
+        "focal_second": {
+          "block_values": [
+            0.5,
+            0.0,
+            0.25,
+            0.5,
+            0.25,
+            0.25,
+            0.0,
+            0.75,
+            0.75,
+            0.5,
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            0.25,
+            0.5,
+            0.5,
+            0.5,
+            0.25
+          ],
+          "bootstrap_95": [
+            0.2708333333333333,
+            0.5104166666666666
+          ],
+          "effect": 0.3854166666666667
+        }
+      }
+    },
+    "consistency025-1771-1280-ordinary": {
+      "all": {
+        "both_assignments": 424,
+        "both_orders": 390,
+        "both_queries": 395,
+        "families": 120,
+        "first_strict": 439,
+        "relative_families": 76,
+        "relative_worlds": 869,
+        "second_strict": 430,
+        "strict_families": 76,
+        "strict_worlds": 869,
+        "worlds": 960
+      },
+      "seen_name_pair": {
+        "both_assignments": 381,
+        "both_orders": 347,
+        "both_queries": 352,
+        "families": 109,
+        "first_strict": 396,
+        "relative_families": 66,
+        "relative_worlds": 782,
+        "second_strict": 386,
+        "strict_families": 66,
+        "strict_worlds": 782,
+        "worlds": 872
+      },
+      "unseen_name_pair": {
+        "both_assignments": 43,
+        "both_orders": 43,
+        "both_queries": 43,
+        "families": 11,
+        "first_strict": 43,
+        "relative_families": 10,
+        "relative_worlds": 87,
+        "second_strict": 44,
+        "strict_families": 10,
+        "strict_worlds": 87,
+        "worlds": 88
+      }
+    },
+    "consistency025-1871-128-ordinary": {
+      "all": {
+        "both_assignments": 401,
+        "both_orders": 380,
+        "both_queries": 373,
+        "families": 120,
+        "first_strict": 452,
+        "relative_families": 66,
+        "relative_worlds": 847,
+        "second_strict": 395,
+        "strict_families": 66,
+        "strict_worlds": 847,
+        "worlds": 960
+      },
+      "seen_name_pair": {
+        "both_assignments": 362,
+        "both_orders": 342,
+        "both_queries": 336,
+        "families": 109,
+        "first_strict": 409,
+        "relative_families": 59,
+        "relative_worlds": 766,
+        "second_strict": 357,
+        "strict_families": 59,
+        "strict_worlds": 766,
+        "worlds": 872
+      },
+      "unseen_name_pair": {
+        "both_assignments": 39,
+        "both_orders": 38,
+        "both_queries": 37,
+        "families": 11,
+        "first_strict": 43,
+        "relative_families": 7,
+        "relative_worlds": 81,
+        "second_strict": 38,
+        "strict_families": 7,
+        "strict_worlds": 81,
+        "worlds": 88
+      }
+    },
+    "consistency025-1871-1280-contrast": {
+      "counts": {
+        "distractor_first": {
+          "fragile_relative": 96,
+          "fragile_strict": 96,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        },
+        "distractor_second": {
+          "fragile_relative": 96,
+          "fragile_strict": 96,
+          "fragile_worlds": 96,
+          "robust_relative": 92,
+          "robust_strict": 92,
+          "robust_worlds": 96
+        },
+        "focal_first": {
+          "fragile_relative": 80,
+          "fragile_strict": 80,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        },
+        "focal_second": {
+          "fragile_relative": 56,
+          "fragile_strict": 56,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        }
+      },
+      "robust_minus_fragile": {
+        "distractor_first": {
+          "block_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "effect": 0.0
+        },
+        "distractor_second": {
+          "block_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.5,
+            0.0,
+            -0.5,
+            0.0
+          ],
+          "bootstrap_95": [
+            -0.10416666666666667,
+            0.0
+          ],
+          "effect": -0.041666666666666664
+        },
+        "focal_first": {
+          "block_values": [
+            0.25,
+            0.5,
+            0.5,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.25,
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bootstrap_95": [
+            0.08333333333333333,
+            0.2604166666666667
+          ],
+          "effect": 0.16666666666666666
+        },
+        "focal_second": {
+          "block_values": [
+            0.5,
+            0.0,
+            0.25,
+            0.5,
+            0.25,
+            0.25,
+            0.5,
+            0.75,
+            0.75,
+            0.5,
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            0.25,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "bootstrap_95": [
+            0.3020833333333333,
+            0.53125
+          ],
+          "effect": 0.4166666666666667
+        }
+      }
+    },
+    "consistency025-1871-1280-ordinary": {
+      "all": {
+        "both_assignments": 422,
+        "both_orders": 386,
+        "both_queries": 390,
+        "families": 120,
+        "first_strict": 441,
+        "relative_families": 76,
+        "relative_worlds": 864,
+        "second_strict": 423,
+        "strict_families": 76,
+        "strict_worlds": 864,
+        "worlds": 960
+      },
+      "seen_name_pair": {
+        "both_assignments": 380,
+        "both_orders": 344,
+        "both_queries": 348,
+        "families": 109,
+        "first_strict": 398,
+        "relative_families": 66,
+        "relative_worlds": 778,
+        "second_strict": 380,
+        "strict_families": 66,
+        "strict_worlds": 778,
+        "worlds": 872
+      },
+      "unseen_name_pair": {
+        "both_assignments": 42,
+        "both_orders": 42,
+        "both_queries": 42,
+        "families": 11,
+        "first_strict": 43,
+        "relative_families": 10,
+        "relative_worlds": 86,
+        "second_strict": 43,
+        "strict_families": 10,
+        "strict_worlds": 86,
+        "worlds": 88
+      }
+    },
+    "consistency025-1971-128-ordinary": {
+      "all": {
+        "both_assignments": 406,
+        "both_orders": 375,
+        "both_queries": 371,
+        "families": 120,
+        "first_strict": 465,
+        "relative_families": 67,
+        "relative_worlds": 846,
+        "second_strict": 381,
+        "strict_families": 67,
+        "strict_worlds": 846,
+        "worlds": 960
+      },
+      "seen_name_pair": {
+        "both_assignments": 366,
+        "both_orders": 338,
+        "both_queries": 334,
+        "families": 109,
+        "first_strict": 421,
+        "relative_families": 60,
+        "relative_worlds": 765,
+        "second_strict": 344,
+        "strict_families": 60,
+        "strict_worlds": 765,
+        "worlds": 872
+      },
+      "unseen_name_pair": {
+        "both_assignments": 40,
+        "both_orders": 37,
+        "both_queries": 37,
+        "families": 11,
+        "first_strict": 44,
+        "relative_families": 7,
+        "relative_worlds": 81,
+        "second_strict": 37,
+        "strict_families": 7,
+        "strict_worlds": 81,
+        "worlds": 88
+      }
+    },
+    "consistency025-1971-1280-contrast": {
+      "counts": {
+        "distractor_first": {
+          "fragile_relative": 96,
+          "fragile_strict": 96,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        },
+        "distractor_second": {
+          "fragile_relative": 96,
+          "fragile_strict": 96,
+          "fragile_worlds": 96,
+          "robust_relative": 92,
+          "robust_strict": 92,
+          "robust_worlds": 96
+        },
+        "focal_first": {
+          "fragile_relative": 78,
+          "fragile_strict": 78,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        },
+        "focal_second": {
+          "fragile_relative": 64,
+          "fragile_strict": 64,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        }
+      },
+      "robust_minus_fragile": {
+        "distractor_first": {
+          "block_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "effect": 0.0
+        },
+        "distractor_second": {
+          "block_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.5,
+            0.0,
+            -0.5,
+            0.0
+          ],
+          "bootstrap_95": [
+            -0.10416666666666667,
+            0.0
+          ],
+          "effect": -0.041666666666666664
+        },
+        "focal_first": {
+          "block_values": [
+            0.5,
+            0.5,
+            0.5,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.25,
+            0.0,
+            0.5,
+            0.75,
+            0.5,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bootstrap_95": [
+            0.09375,
+            0.2916666666666667
+          ],
+          "effect": 0.1875
+        },
+        "focal_second": {
+          "block_values": [
+            0.5,
+            0.0,
+            0.25,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.75,
+            0.5,
+            0.25,
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            0.25,
+            0.5,
+            0.5,
+            0.25,
+            0.25
+          ],
+          "bootstrap_95": [
+            0.21875,
+            0.4583333333333333
+          ],
+          "effect": 0.3333333333333333
+        }
+      }
+    },
+    "consistency025-1971-1280-ordinary": {
+      "all": {
+        "both_assignments": 418,
+        "both_orders": 387,
+        "both_queries": 389,
+        "families": 120,
+        "first_strict": 433,
+        "relative_families": 75,
+        "relative_worlds": 862,
+        "second_strict": 429,
+        "strict_families": 75,
+        "strict_worlds": 862,
+        "worlds": 960
+      },
+      "seen_name_pair": {
+        "both_assignments": 375,
+        "both_orders": 345,
+        "both_queries": 347,
+        "families": 109,
+        "first_strict": 391,
+        "relative_families": 65,
+        "relative_worlds": 776,
+        "second_strict": 385,
+        "strict_families": 65,
+        "strict_worlds": 776,
+        "worlds": 872
+      },
+      "unseen_name_pair": {
+        "both_assignments": 43,
+        "both_orders": 42,
+        "both_queries": 42,
+        "families": 11,
+        "first_strict": 42,
+        "relative_families": 10,
+        "relative_worlds": 86,
+        "second_strict": 44,
+        "strict_families": 10,
+        "strict_worlds": 86,
+        "worlds": 88
+      }
+    },
+    "native-1371-0-contrast": {
+      "counts": {
+        "distractor_first": {
+          "fragile_relative": 96,
+          "fragile_strict": 96,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        },
+        "distractor_second": {
+          "fragile_relative": 96,
+          "fragile_strict": 96,
+          "fragile_worlds": 96,
+          "robust_relative": 94,
+          "robust_strict": 94,
+          "robust_worlds": 96
+        },
+        "focal_first": {
+          "fragile_relative": 95,
+          "fragile_strict": 95,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        },
+        "focal_second": {
+          "fragile_relative": 7,
+          "fragile_strict": 7,
+          "fragile_worlds": 96,
+          "robust_relative": 96,
+          "robust_strict": 96,
+          "robust_worlds": 96
+        }
+      },
+      "robust_minus_fragile": {
+        "distractor_first": {
+          "block_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "effect": 0.0
+        },
+        "distractor_second": {
+          "block_values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.5,
+            0.0
+          ],
+          "bootstrap_95": [
+            -0.0625,
+            0.0
+          ],
+          "effect": -0.020833333333333332
+        },
+        "focal_first": {
+          "block_values": [
+            0.0,
+            0.0,
+            0.25,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bootstrap_95": [
+            0.0,
+            0.03125
+          ],
+          "effect": 0.010416666666666666
+        },
+        "focal_second": {
+          "block_values": [
+            1.0,
+            0.75,
+            0.75,
+            0.75,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.75,
+            1.0,
+            0.75,
+            0.75,
+            1.0,
+            1.0,
+            1.0,
+            0.75,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "bootstrap_95": [
+            0.875,
+            0.96875
+          ],
+          "effect": 0.9270833333333334
+        }
+      }
+    },
+    "native-1371-0-ordinary": {
+      "all": {
+        "both_assignments": 411,
+        "both_orders": 364,
+        "both_queries": 361,
+        "families": 120,
+        "first_strict": 473,
+        "relative_families": 67,
+        "relative_worlds": 840,
+        "second_strict": 367,
+        "strict_families": 67,
+        "strict_worlds": 840,
+        "worlds": 960
+      },
+      "seen_name_pair": {
+        "both_assignments": 371,
+        "both_orders": 328,
+        "both_queries": 325,
+        "families": 109,
+        "first_strict": 429,
+        "relative_families": 60,
+        "relative_worlds": 760,
+        "second_strict": 331,
+        "strict_families": 60,
+        "strict_worlds": 760,
+        "worlds": 872
+      },
+      "unseen_name_pair": {
+        "both_assignments": 40,
+        "both_orders": 36,
+        "both_queries": 36,
+        "families": 11,
+        "first_strict": 44,
+        "relative_families": 7,
+        "relative_worlds": 80,
+        "second_strict": 36,
+        "strict_families": 7,
+        "strict_worlds": 80,
+        "worlds": 88
+      }
+    }
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "max_resident_payloads_per_layer_stream": 8,
+  "n": 40,
+  "parameter": "retained blocks; block width eight; age only",
+  "scope": "inert TRAIN generator fixtures, no admitted panel, model calls, fit or quality scores",
+  "seed": 77100,
+  "strata": {
+    "16": {
+      "0": {
+        "any_age_eligible_worlds": 12,
+        "encoded_length_range": [
+          181,
+          267
+        ],
+        "full_span_age_eligible_worlds": 8,
+        "nearest_support_age_range": [
+          49,
+          149
+        ],
+        "worlds": 16
+      },
+      "16": {
+        "any_age_eligible_worlds": 0,
+        "encoded_length_range": [
+          500,
+          575
+        ],
+        "full_span_age_eligible_worlds": 0,
+        "nearest_support_age_range": [
+          339,
+          461
+        ],
+        "worlds": 16
+      },
+      "2": {
+        "any_age_eligible_worlds": 4,
+        "encoded_length_range": [
+          219,
+          314
+        ],
+        "full_span_age_eligible_worlds": 4,
+        "nearest_support_age_range": [
+          86,
+          184
+        ],
+        "worlds": 16
+      },
+      "4": {
+        "any_age_eligible_worlds": 0,
+        "encoded_length_range": [
+          282,
+          369
+        ],
+        "full_span_age_eligible_worlds": 0,
+        "nearest_support_age_range": [
+          130,
+          224
+        ],
+        "worlds": 16
+      },
+      "8": {
+        "any_age_eligible_worlds": 0,
+        "encoded_length_range": [
+          330,
+          417
+        ],
+        "full_span_age_eligible_worlds": 0,
+        "nearest_support_age_range": [
+          207,
+          301
+        ],
+        "worlds": 16
+      }
+    },
+    "64": {
+      "0": {
+        "any_age_eligible_worlds": 16,
+        "encoded_length_range": [
+          181,
+          267
+        ],
+        "full_span_age_eligible_worlds": 16,
+        "nearest_support_age_range": [
+          49,
+          149
+        ],
+        "worlds": 16
+      },
+      "16": {
+        "any_age_eligible_worlds": 16,
+        "encoded_length_range": [
+          500,
+          575
+        ],
+        "full_span_age_eligible_worlds": 16,
+        "nearest_support_age_range": [
+          339,
+          461
+        ],
+        "worlds": 16
+      },
+      "2": {
+        "any_age_eligible_worlds": 16,
+        "encoded_length_range": [
+          219,
+          314
+        ],
+        "full_span_age_eligible_worlds": 16,
+        "nearest_support_age_range": [
+          86,
+          184
+        ],
+        "worlds": 16
+      },
+      "4": {
+        "any_age_eligible_worlds": 16,
+        "encoded_length_range": [
+          282,
+          369
+        ],
+        "full_span_age_eligible_worlds": 16,
+        "nearest_support_age_range": [
+          130,
+          224
+        ],
+        "worlds": 16
+      },
+      "8": {
+        "any_age_eligible_worlds": 16,
+        "encoded_length_range": [
+          330,
+          417
+        ],
+        "full_span_age_eligible_worlds": 16,
+        "nearest_support_age_range": [
+          207,
+          301
+        ],
+        "worlds": 16
+      }
+    }
+  },
+  "vocab": 286
+}

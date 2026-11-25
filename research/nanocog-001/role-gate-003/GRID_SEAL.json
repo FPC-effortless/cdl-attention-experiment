@@ -1,0 +1,21 @@
+{
+  "admission_ledger_sha256": "d00ab48c52a3ba4557b21e40a12e436dabd1aa31d459d453e4430cb737cbb8c2",
+  "results": {
+    "grid-1171": {
+      "artifacts": {
+        "grid_receipt.json": "fa058d740f02786343f32ef6e3c5cb672a5f1161fd54c9ee181eb28f19be8de2",
+        "logits.f32le": "a425236818ef933712b07b1401f203e89f7b02f2a8993f280f014a2b6fb47411"
+      },
+      "id": "20261122T173618-57887e9441a3",
+      "receipt_sha256": "5f265d124c2918a4e8ea1acbd02c9b72c7f4a07300dc965837e7a4442febf107"
+    },
+    "grid-1371": {
+      "artifacts": {
+        "grid_receipt.json": "4a3de38d1b3f144782cb34f795304547377421292c080fbba5d3f95cc77cfdfd",
+        "logits.f32le": "7ccf8eceec329a0e1e1b6b57d32e18e3fea09140ff1169903ca646ec169af35e"
+      },
+      "id": "20261122T173621-632799071225",
+      "receipt_sha256": "90a236b3a89e5c2f08f5eb728d501de772049d40ddaa8ba8e20db15885aeba83"
+    }
+  }
+}
