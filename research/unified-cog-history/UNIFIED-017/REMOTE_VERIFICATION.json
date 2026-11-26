@@ -1,0 +1,63 @@
+{
+  "study": "COG-UNIFIED-017",
+  "verified_commit": "671a653ab37752531176043fbeae39270562c7ed",
+  "verification_method": "Fetched each weight by exact commit and path with base64 encoding, decoded remote bytes and computed SHA-256. Compared SHA-256, byte count and Git blob digest against REMOTE_CUSTODY.json. Source and result files were retrieved from the same commit and their Git blob hashes matched locally computed hashes.",
+  "weights_verified": 18,
+  "weights_expected": 18,
+  "source_and_results_verified": 12,
+  "source_and_results_expected": 12,
+  "source_results": [
+    {
+      "path": "PROTOCOL.md",
+      "verified": true
+    },
+    {
+      "path": "DIAGNOSTICS.md",
+      "verified": true
+    },
+    {
+      "path": "FINAL_REPORT.md",
+      "verified": true
+    },
+    {
+      "path": "run.py",
+      "verified": true
+    },
+    {
+      "path": "diagnostics.py",
+      "verified": true
+    },
+    {
+      "path": "summary.csv",
+      "verified": true
+    },
+    {
+      "path": "verification.json",
+      "verified": true
+    },
+    {
+      "path": "timing.json",
+      "verified": true
+    },
+    {
+      "path": "checkpoint_inventory.json",
+      "verified": true
+    },
+    {
+      "path": "reference/lm.py",
+      "verified": true
+    },
+    {
+      "path": "reference/scan_check.py",
+      "verified": true
+    },
+    {
+      "path": "reference/scan_reference.py",
+      "verified": true
+    }
+  ],
+  "full_optimizer_checkpoint_archive": "LOCAL_ONLY; see SHA-256 in REMOTE_CUSTODY.json",
+  "historical_weights": "Not backfilled in this cycle",
+  "promotion": "Denied; developmental experiment only",
+  "campaign_credit": 0
+}
