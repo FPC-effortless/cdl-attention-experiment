@@ -1,0 +1,188 @@
+{
+  "scope": "UNIFIED-017 lossless inference tensor exports. Full training checkpoints including optimizer/RNG remain in the local evidence archive; not uploaded in this commit. All exports verified tensor-identical locally. Git blob digests matched local hashes at creation.",
+  "archive": {
+    "filename": "cog_unified_017_evidence.zip",
+    "bytes": 6781048,
+    "sha256": "e66290648117482e188b71102804f8689221c37ea0f3740d44067af174345240",
+    "remote_status": "LOCAL_ONLY"
+  },
+  "note": "cog_joint_5209 was serialized twice with different Safetensors metadata ordering. The remote file uses the original verified export, with identical tensors; remote SHA-256 below supersedes that specific inference export hash in local checkpoint_inventory.json, not the original training checkpoint hash.",
+  "weights": [
+    {
+      "fit": "cog_endpoint_5209",
+      "path": "weights/cog_endpoint_5209.safetensors",
+      "git_sha": "339193fec1682f759cfcd044a53a7558f71de81d",
+      "sha256": "3597e421483f504be146679ec3af7f8df81595611411c2f9a65bb06fee41ffe0",
+      "bytes": 101276
+    },
+    {
+      "fit": "cog_endpoint_5231",
+      "path": "weights/cog_endpoint_5231.safetensors",
+      "git_sha": "a0b7af1c55c0fd84efdb97aa5de3cf709fbfed15",
+      "sha256": "f688be4edf49c5be6da488ca0065b6328f62ea485f4c5339d2fff8717c7ba9ea",
+      "bytes": 101276
+    },
+    {
+      "fit": "cog_endpoint_5279",
+      "path": "weights/cog_endpoint_5279.safetensors",
+      "git_sha": "73d8f107c43906dcb1dae2628e05312387e4b045",
+      "sha256": "c847297a919aa9e30304a5c471816f5dd01446b43b31a3af8802a83e091efd00",
+      "bytes": 101276
+    },
+    {
+      "fit": "cog_joint_5209",
+      "path": "weights/cog_joint_5209.safetensors",
+      "git_sha": "39d7e3665579df6e488f2c90fc34f0e3911128dd",
+      "sha256": "23363684083851ca29344fa2d829947449792479945626a9f8746a3857463896",
+      "bytes": 101276
+    },
+    {
+      "fit": "cog_joint_5231",
+      "path": "weights/cog_joint_5231.safetensors",
+      "git_sha": "6ea5ad7f48f5c05a9dde058094a3cacd165c92af",
+      "sha256": "6902ff444a47c6ddf301f28c0cf34957021e39f2b830ab0159c89c2d0cca2b15",
+      "bytes": 101276
+    },
+    {
+      "fit": "cog_joint_5279",
+      "path": "weights/cog_joint_5279.safetensors",
+      "git_sha": "adcfb0d2408b4e4fe5ea24242ed629e575b4d53a",
+      "sha256": "ba5c974f075f84f00273fdcd4b06aadc85355d090f7d5cfa8858cc920ff75f40",
+      "bytes": 101276
+    },
+    {
+      "fit": "delta_joint_5209",
+      "path": "weights/delta_joint_5209.safetensors",
+      "git_sha": "3b738d4dc5e14010690e6020b976406697668857",
+      "sha256": "73a96c98e9d85fbfb939ce002e2a5d420b2dfdb71c8dd2725f6811ef2e400504",
+      "bytes": 99068
+    },
+    {
+      "fit": "delta_joint_5231",
+      "path": "weights/delta_joint_5231.safetensors",
+      "git_sha": "16fb22ec6d3d8d9663cceba7df35e1ab25d8532a",
+      "sha256": "10954b084e27c5aa75c7ba18fbd297398d9ad01245f9c636254876138bb17338",
+      "bytes": 99068
+    },
+    {
+      "fit": "delta_joint_5279",
+      "path": "weights/delta_joint_5279.safetensors",
+      "git_sha": "3dd0df6bf71435ff761d3927682390e9cc6844ee",
+      "sha256": "acd4ec326e51ad951f8b319a0018c7f0b4a0dad8e5005c2f6042347d86cb4a21",
+      "bytes": 99068
+    },
+    {
+      "fit": "gru_joint_5209",
+      "path": "weights/gru_joint_5209.safetensors",
+      "git_sha": "2ea28c6a5b765b4c1b16352aaa830eca5fa9ae20",
+      "sha256": "d2b51d51a295c09534c3e37549b493af0d9a2c8535fb104d38304d58bf11b854",
+      "bytes": 99020
+    },
+    {
+      "fit": "gru_joint_5231",
+      "path": "weights/gru_joint_5231.safetensors",
+      "git_sha": "788d4a0e983805f3fb877b487beda80c14aed6e2",
+      "sha256": "94d39e89866b0f87fb508729b9fec928a3b97105ddcd7cb007730ed86ff36fe0",
+      "bytes": 99020
+    },
+    {
+      "fit": "gru_joint_5279",
+      "path": "weights/gru_joint_5279.safetensors",
+      "git_sha": "4707abf2a0921b131a2dddcdfa0432524a973f3b",
+      "sha256": "a1e402141ad4a24812ce8ecf9aaafec6adfc32fc21e5d645198626585b486c9a",
+      "bytes": 99020
+    },
+    {
+      "fit": "transformer_endpoint_5209",
+      "path": "weights/transformer_endpoint_5209.safetensors",
+      "git_sha": "df8b9bc11dc89bf1d9a45da033f59aae940bf4c7",
+      "sha256": "bd16bb7dcc05605df9370f975059996d76345e410dcff9395cef5e816136a7d2",
+      "bytes": 98724
+    },
+    {
+      "fit": "transformer_endpoint_5231",
+      "path": "weights/transformer_endpoint_5231.safetensors",
+      "git_sha": "9b35f1d0e9b7c023746be56d5715420f4c561141",
+      "sha256": "a355999875a8b61b5b03821823a1d9168679c6fb5067eb7a62aae1daefd3d5c1",
+      "bytes": 98724
+    },
+    {
+      "fit": "transformer_endpoint_5279",
+      "path": "weights/transformer_endpoint_5279.safetensors",
+      "git_sha": "56b43452636cfc63b23d526667e5962cf5c1ef75",
+      "sha256": "3e6dd2e19e7a8e55a205beea54beadc09c7c2bbcc56b7e9c9f2b000f1347cc74",
+      "bytes": 98724
+    },
+    {
+      "fit": "transformer_joint_5209",
+      "path": "weights/transformer_joint_5209.safetensors",
+      "git_sha": "42ecc7d13f52f51b6a8ec70ace06dc2c0f604bdb",
+      "sha256": "9c6f6cf6203c61f2d2b4b770f7bb7f89ecd1d0dd6f547ee8c9af15c75a172999",
+      "bytes": 98724
+    },
+    {
+      "fit": "transformer_joint_5231",
+      "path": "weights/transformer_joint_5231.safetensors",
+      "git_sha": "5ed6416e949efe472f6c9ad7b54896443ec48026",
+      "sha256": "03e143d8648dca2b69dd4af268bf3fbfd5fe7c861490f8209cab7791d62e022c",
+      "bytes": 98724
+    },
+    {
+      "fit": "transformer_joint_5279",
+      "path": "weights/transformer_joint_5279.safetensors",
+      "git_sha": "d6cbdf915cb6a914c451d1488756e2ce34efba8e",
+      "sha256": "d1d40da48d572b8547f9d0f5ecf979d2a4a03a32a718a1b2000eefcd504a31d0",
+      "bytes": 98724
+    }
+  ],
+  "source_and_results": [
+    {
+      "path": "PROTOCOL.md",
+      "git_sha": "5722b6bce72c1d898ba447ab7082ef92f92a984d"
+    },
+    {
+      "path": "DIAGNOSTICS.md",
+      "git_sha": "ddf1c51138d5d87796a5271171cbaa5a93f6c0c6"
+    },
+    {
+      "path": "FINAL_REPORT.md",
+      "git_sha": "243d831512091766d282977342dafa509e6d282d"
+    },
+    {
+      "path": "run.py",
+      "git_sha": "ba1b585121f43cf8536621caf5dd44374c4f2044"
+    },
+    {
+      "path": "diagnostics.py",
+      "git_sha": "172682149f4a3db7134c0be272840b296915c189"
+    },
+    {
+      "path": "summary.csv",
+      "git_sha": "64d838df9674609e7cee145a6decfd2d2595ebed"
+    },
+    {
+      "path": "verification.json",
+      "git_sha": "01298e78cef08123fd52e13af0fd3e019f322086"
+    },
+    {
+      "path": "timing.json",
+      "git_sha": "2a2b3820a28a261c4fd4d90c4c0d09446479f868"
+    },
+    {
+      "path": "checkpoint_inventory.json",
+      "git_sha": "1dcf368568d6ead914f8f30c31b7e93f274268b3"
+    },
+    {
+      "path": "reference/lm.py",
+      "git_sha": "97bed973f53fb04a3ca932c7b382817b3bbd0e5b"
+    },
+    {
+      "path": "reference/scan_check.py",
+      "git_sha": "f50c2d66d494a4229a24e65efe896de2e84e8962"
+    },
+    {
+      "path": "reference/scan_reference.py",
+      "git_sha": "1c15cf281d574f1e508b122a4a5e73fd0f76b368"
+    }
+  ]
+}

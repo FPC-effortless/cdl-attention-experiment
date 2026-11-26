@@ -1,0 +1,1065 @@
+{
+  "replays": [
+    {
+      "fit": "cog_endpoint_5209",
+      "hash": "17c356f0cd5a1794ecba3a903e48617b9e39f6655dfca25f0289ff11e7cfb06a",
+      "replay_exact": true,
+      "mutation": null
+    },
+    {
+      "fit": "cog_endpoint_5231",
+      "hash": "c288026c62c4397bcecca80c4c8d9647001027d2b3c5a8428c9f224694cdd706",
+      "replay_exact": true,
+      "mutation": null
+    },
+    {
+      "fit": "cog_endpoint_5279",
+      "hash": "68f8521111cbd7bcf99931b62c62b6eb837142d35bbcb5b3196acfa59122875c",
+      "replay_exact": true,
+      "mutation": null
+    },
+    {
+      "fit": "cog_joint_5209",
+      "hash": "1ca9e4db4116aae7703daa4c6a4e837e3a7af588af59ba3782aad4ab5d6c151c",
+      "replay_exact": true,
+      "mutation": {
+        "value": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        },
+        "ambiguity": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        },
+        "nuisance": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        }
+      }
+    },
+    {
+      "fit": "cog_joint_5231",
+      "hash": "6e6f86d904175fd84b59af18cbff1356580facb2973078be403f1509242e0006",
+      "replay_exact": true,
+      "mutation": {
+        "value": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        },
+        "ambiguity": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        },
+        "nuisance": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        }
+      }
+    },
+    {
+      "fit": "cog_joint_5279",
+      "hash": "b317579638cc66d677002c4fc91e6e551b0fc5aca45696c1d38ebe3db33c46e6",
+      "replay_exact": true,
+      "mutation": {
+        "value": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 52,
+            "mutated": 52,
+            "pair": 52,
+            "target_pair": 57,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 52,
+            "mutated": 52,
+            "pair": 52,
+            "target_pair": 57,
+            "unrelated_same": 64
+          }
+        },
+        "ambiguity": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 52,
+            "mutated": 56,
+            "pair": 52,
+            "target_pair": 57,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 52,
+            "mutated": 56,
+            "pair": 52,
+            "target_pair": 57,
+            "unrelated_same": 64
+          }
+        },
+        "nuisance": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 1,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 52,
+            "mutated": 52,
+            "pair": 52,
+            "target_pair": 57,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 52,
+            "mutated": 52,
+            "pair": 52,
+            "target_pair": 57,
+            "unrelated_same": 64
+          }
+        }
+      }
+    },
+    {
+      "fit": "delta_joint_5209",
+      "hash": "beff3716f42d9411ed91b8c4183b5bceaf3a1d3b8de73e0c78da66ca2e150484",
+      "replay_exact": true,
+      "mutation": {
+        "value": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 63
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        },
+        "ambiguity": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 3,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 63
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        },
+        "nuisance": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        }
+      }
+    },
+    {
+      "fit": "delta_joint_5231",
+      "hash": "e8c3012a2e0d3d3fa0c8dd3a09c80057dd5484f9146598a513aacbea2e3f9b8c",
+      "replay_exact": true,
+      "mutation": {
+        "value": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 61
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        },
+        "ambiguity": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 10,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 61
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        },
+        "nuisance": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        }
+      }
+    },
+    {
+      "fit": "delta_joint_5279",
+      "hash": "35905a6899c72c24c99bd3161fee6c9d98091703c9d477db4e85e87bb89cc353",
+      "replay_exact": true,
+      "mutation": {
+        "value": {
+          "native": {
+            "n": 64,
+            "base": 3,
+            "mutated": 7,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        },
+        "ambiguity": {
+          "native": {
+            "n": 64,
+            "base": 3,
+            "mutated": 35,
+            "pair": 3,
+            "target_pair": 4,
+            "unrelated_same": 63
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        },
+        "nuisance": {
+          "native": {
+            "n": 64,
+            "base": 3,
+            "mutated": 3,
+            "pair": 3,
+            "target_pair": 4,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        }
+      }
+    },
+    {
+      "fit": "gru_joint_5209",
+      "hash": "6fdb82664540f44ffb8969afd7c562ed927a6c6b0abf3cac633a0b7791d581c7",
+      "replay_exact": true,
+      "mutation": {
+        "value": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        },
+        "ambiguity": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        },
+        "nuisance": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 1,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        }
+      }
+    },
+    {
+      "fit": "gru_joint_5231",
+      "hash": "df05e36dd6001b8d59810b6be5a4a1051f1ceccba3fdfea50d391a1bb0400a96",
+      "replay_exact": true,
+      "mutation": {
+        "value": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        },
+        "ambiguity": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        },
+        "nuisance": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        }
+      }
+    },
+    {
+      "fit": "gru_joint_5279",
+      "hash": "0d8e2a0ead5897c1f803b887602fc60df9ff88aa9fb455a56fc0913263fdf189",
+      "replay_exact": true,
+      "mutation": {
+        "value": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        },
+        "ambiguity": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        },
+        "nuisance": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 64,
+            "mutated": 64,
+            "pair": 64,
+            "target_pair": 64,
+            "unrelated_same": 64
+          }
+        }
+      }
+    },
+    {
+      "fit": "transformer_endpoint_5209",
+      "hash": "655631dca528c39a1fadb076187d037ae023ea1c1c505c16e37d52975645113f",
+      "replay_exact": true,
+      "mutation": null
+    },
+    {
+      "fit": "transformer_endpoint_5231",
+      "hash": "d142f2e9d38f55514cb7d0659c1b373de70c12c565f9fb463d73cb1039bf06dd",
+      "replay_exact": true,
+      "mutation": null
+    },
+    {
+      "fit": "transformer_endpoint_5279",
+      "hash": "4e023c9b82553c9fe149fd5cf5785cde0945dd7ac89d4dee9ee9b476a2c78b0a",
+      "replay_exact": true,
+      "mutation": null
+    },
+    {
+      "fit": "transformer_joint_5209",
+      "hash": "c06f4eb673b26958dda10405c4cc1e771b1c5f19cac069911d0e911bfc409c7f",
+      "replay_exact": true,
+      "mutation": {
+        "value": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 1,
+            "unrelated_same": 62
+          },
+          "store": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 15,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 15,
+            "unrelated_same": 64
+          }
+        },
+        "ambiguity": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 1,
+            "unrelated_same": 62
+          },
+          "store": {
+            "n": 64,
+            "base": 0,
+            "mutated": 1,
+            "pair": 0,
+            "target_pair": 15,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 0,
+            "mutated": 1,
+            "pair": 0,
+            "target_pair": 15,
+            "unrelated_same": 64
+          }
+        },
+        "nuisance": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 4,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 15,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 15,
+            "unrelated_same": 64
+          }
+        }
+      }
+    },
+    {
+      "fit": "transformer_joint_5231",
+      "hash": "c4437873fbd8ce08ea3148c83b8fe0c679eeccc07bde749c6f5092b59deeb3df",
+      "replay_exact": true,
+      "mutation": {
+        "value": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 1,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 1,
+            "unrelated_same": 64
+          }
+        },
+        "ambiguity": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 3,
+            "unrelated_same": 63
+          },
+          "store": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 4,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 4,
+            "unrelated_same": 64
+          }
+        },
+        "nuisance": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 8,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 4,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 4,
+            "unrelated_same": 64
+          }
+        }
+      }
+    },
+    {
+      "fit": "transformer_joint_5279",
+      "hash": "60fccf5c5fff6232df6c1702d01bdc4417af210bb7d4a0a69c29aa33fe9bf39c",
+      "replay_exact": true,
+      "mutation": {
+        "value": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 17,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 17,
+            "unrelated_same": 64
+          }
+        },
+        "ambiguity": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 0,
+            "mutated": 1,
+            "pair": 0,
+            "target_pair": 17,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 0,
+            "mutated": 1,
+            "pair": 0,
+            "target_pair": 17,
+            "unrelated_same": 64
+          }
+        },
+        "nuisance": {
+          "native": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 0,
+            "unrelated_same": 64
+          },
+          "store": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 14,
+            "unrelated_same": 64
+          },
+          "calibrated": {
+            "n": 64,
+            "base": 0,
+            "mutated": 0,
+            "pair": 0,
+            "target_pair": 14,
+            "unrelated_same": 64
+          }
+        }
+      }
+    }
+  ],
+  "schema": {
+    "tests": 2400,
+    "violations": 0,
+    "accepted": 256
+  }
+}
