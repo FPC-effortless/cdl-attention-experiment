@@ -1,0 +1,17 @@
+{
+  "cycle": "UNIFIED-019",
+  "verified_commit": "04cfd10f81b98eeb4f39782acbb5d2aacfc358da",
+  "method": "Fetched pinned GitHub blob as base64, compared all encoded bytes to exact local ZIP encoding; matching local Git blob SHA and local ZIP SHA256.",
+  "priority_archive": {
+    "bytes": 546533,
+    "sha256": "354621ddbcaf3b6e814a1e5c3deb985dc7591f77005951f40822f59a87981d0e",
+    "verified_exact": true,
+    "inference_exports": 9
+  },
+  "other_inference_exports": 96,
+  "full_training_archive_status": "LOCAL_ONLY",
+  "full_inference_archive_status": "LOCAL_ONLY",
+  "historical_archive_backfill": "not completed",
+  "promotion": "none",
+  "campaign_credit": 0
+}
