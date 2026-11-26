@@ -1,0 +1,102 @@
+{
+  "record_id": "COG-CELL-RECONCILE-20261126",
+  "status": "PROPOSED_KNOWLEDGE_RECORDS_NOT_SCIENTIFIC_ADMISSION",
+  "scientific_knowledge": [
+    {
+      "id": "COG-CELL-001",
+      "evidence": "RESEARCH_LEDGER.md",
+      "classification": "AUXILIARY_NON_NATIVE",
+      "qualification": "NOT_PROMOTED"
+    },
+    {
+      "id": "COG-CELL-002",
+      "evidence": "RESEARCH_LEDGER.md",
+      "classification": "NATIVE_CONTROLLED_RESEARCH",
+      "qualification": "NOT_PROMOTED"
+    },
+    {
+      "id": "COG-CELL-003",
+      "evidence": "RESEARCH_LEDGER.md",
+      "classification": "NATIVE_CONTROLLED_RESEARCH",
+      "qualification": "NOT_PROMOTED"
+    },
+    {
+      "id": "COG-CELL-004",
+      "evidence": "RESEARCH_LEDGER.md",
+      "classification": "NATIVE_CONTROLLED_RESEARCH",
+      "qualification": "NOT_PROMOTED"
+    },
+    {
+      "id": "COG-CELL-005",
+      "evidence": "RESEARCH_LEDGER.md",
+      "classification": "NATIVE_CONTROLLED_RESEARCH",
+      "qualification": "NOT_PROMOTED"
+    },
+    {
+      "id": "COG-CELL-006",
+      "evidence": "RESEARCH_LEDGER.md",
+      "classification": "NATIVE_CONTROLLED_RESEARCH",
+      "qualification": "NOT_PROMOTED"
+    },
+    {
+      "id": "COG-CELL-007",
+      "evidence": "RESEARCH_LEDGER.md",
+      "classification": "NATIVE_CONTROLLED_RESEARCH",
+      "qualification": "NOT_PROMOTED"
+    },
+    {
+      "id": "COG-CELL-008",
+      "evidence": "RESEARCH_LEDGER.md",
+      "classification": "NATIVE_CONTROLLED_RESEARCH",
+      "qualification": "NOT_PROMOTED"
+    },
+    {
+      "id": "COG-CELL-009",
+      "evidence": "RESEARCH_LEDGER.md",
+      "classification": "NATIVE_CONTROLLED_RESEARCH",
+      "qualification": "NOT_PROMOTED"
+    },
+    {
+      "id": "COG-CELL-010",
+      "evidence": "RESEARCH_LEDGER.md",
+      "classification": "NATIVE_CONTROLLED_RESEARCH",
+      "qualification": "NOT_PROMOTED"
+    },
+    {
+      "id": "COG-CELL-011",
+      "evidence": "RESEARCH_LEDGER.md",
+      "classification": "NATIVE_CONTROLLED_RESEARCH",
+      "qualification": "NOT_PROMOTED"
+    },
+    {
+      "id": "COG-CELL-012",
+      "evidence": "RESEARCH_LEDGER.md",
+      "classification": "NATIVE_CONTROLLED_RESEARCH",
+      "qualification": "NOT_PROMOTED"
+    }
+  ],
+  "candidate_registry": {
+    "reference": "COG-UNIFIED-006",
+    "retain": [
+      {
+        "id": "COG-CELL-009",
+        "variant": "orthogonal 4D",
+        "training": "CELL-011 semantic"
+      },
+      {
+        "id": "COG-CELL-010",
+        "variant": "w16_trace",
+        "training": "CELL-011 semantic"
+      }
+    ],
+    "reject_promotion": [
+      {
+        "id": "COG-CELL-012",
+        "reason": "Predefined 1024-step and medium-horizon gates failed; state correction harms 010 vs native at 64 and 128."
+      }
+    ]
+  },
+  "canonical_architecture_mutation": false,
+  "independent_veritas_admission": false,
+  "binary_evidence": "Controlled Library; exact archive names and SHA256 in RESEARCH_LEDGER.md"
+}
