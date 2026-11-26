@@ -25,3 +25,5 @@ The historical audit deduplicates 159 prior checkpoint hashes across Gate 0, 0B 
 ## Prospective custody policy
 
 Each new experiment must preserve source, configuration, actual weight bytes, raw evaluations and hashes, then pass checkpoint reload and remote retrieval verification before campaign admission. Record negative outcomes and distinguish training from replays. The source archive contains a proposed ARCHIVE_POLICY.md and a non-clobbering authenticated `archive_release.py` utility for large assets. This utility was not executed here because the environment has no authenticated GitHub CLI or direct release-asset upload access. The branch does not change the canonical architecture or automatically update lab automations.
+
+The recovered [historical Gate 0 / 0B / 0C source and result records](archive/gate0_historical_source_results.zip) are also archived and remotely byte-verified. This archive contains source and result records, not the large historical language-model weight packages.
