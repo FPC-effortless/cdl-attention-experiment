@@ -1,0 +1,125 @@
+{
+  "checkpoint_sha256": {
+    "connected": "f9ad0b2ac4c10cef235ec38527c83ee76fc6a59eb9ec4b80f02089c5a74abfa1",
+    "reset_control": "d480f4745f6c6cde422b2f024c46448d5d3214980d174f015a7e8a7bdf2ab0b9"
+  },
+  "completed_updates_per_arm": 1000,
+  "controller_state_bytes": 128,
+  "fit_times": {
+    "connected": {
+      "cpu_seconds": 1.6831958199999981,
+      "wall_seconds": 1.689982584939571
+    },
+    "reset_control": {
+      "cpu_seconds": 1.5698135020000104,
+      "wall_seconds": 1.5834413980337558
+    }
+  },
+  "gates": {
+    "acute_reset": true,
+    "complete": true,
+    "connected_mse": true,
+    "first_input_gradient": true,
+    "tenfold_control_gain": true
+  },
+  "gradient": {
+    "abs_max": 0.5529382228851318,
+    "abs_mean": 0.4966564476490021,
+    "finite": true,
+    "mean": 0.4966564476490021
+  },
+  "initial_weights_sha256": "ba40747b5f34251ee55e043d745199e5e54f42162c0950ade82481d4ae8f4c2b",
+  "mse": {
+    "acute_reset": 0.04776572436094284,
+    "connected": 4.780251038027927e-05,
+    "permuted_first": 0.09293898195028305,
+    "reset_control": 0.04696562513709068,
+    "second_only_optimal": 0.046714384108781815
+  },
+  "paired_cpu_seconds": 4.676287668,
+  "paired_wall_seconds": 4.692955456004711,
+  "parameter_count": 4296,
+  "pass": true,
+  "seed": 1701,
+  "trace": [
+    {
+      "loss": {
+        "connected": 0.10278868675231934,
+        "reset_control": 0.10296142846345901
+      },
+      "step": 1
+    },
+    {
+      "loss": {
+        "connected": 0.000370260386262089,
+        "reset_control": 0.04488077759742737
+      },
+      "step": 100
+    },
+    {
+      "loss": {
+        "connected": 0.00010085182293551043,
+        "reset_control": 0.04592748358845711
+      },
+      "step": 200
+    },
+    {
+      "loss": {
+        "connected": 0.00013318384299054742,
+        "reset_control": 0.048856206238269806
+      },
+      "step": 300
+    },
+    {
+      "loss": {
+        "connected": 5.8316305512562394e-05,
+        "reset_control": 0.04839557036757469
+      },
+      "step": 400
+    },
+    {
+      "loss": {
+        "connected": 7.58067617425695e-05,
+        "reset_control": 0.04685157164931297
+      },
+      "step": 500
+    },
+    {
+      "loss": {
+        "connected": 5.524156222236343e-05,
+        "reset_control": 0.04585913568735123
+      },
+      "step": 600
+    },
+    {
+      "loss": {
+        "connected": 6.589797703782097e-05,
+        "reset_control": 0.047967035323381424
+      },
+      "step": 700
+    },
+    {
+      "loss": {
+        "connected": 6.308091542450711e-05,
+        "reset_control": 0.04521716758608818
+      },
+      "step": 800
+    },
+    {
+      "loss": {
+        "connected": 4.727379564428702e-05,
+        "reset_control": 0.04992961138486862
+      },
+      "step": 900
+    },
+    {
+      "loss": {
+        "connected": 4.524176620179787e-05,
+        "reset_control": 0.0501287467777729
+      },
+      "step": 1000
+    }
+  ],
+  "training_inputs_sha256": "89a2cd7607a2a13afa443d5702e4fa5d07cf241e7b22556ff077b90bc4b6958d",
+  "training_pairs_per_arm": 64000
+}

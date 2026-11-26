@@ -1,0 +1,71 @@
+{
+  "schema": "cog-fusion-qualification-v1",
+  "seeds": {
+    "17": {
+      "test_answer": true,
+      "test_complete_pairs": true,
+      "test_whole_history": true,
+      "fresh_answer": false,
+      "fresh_complete_pairs": false,
+      "fresh_whole_history": false,
+      "fixed_state_relevant_pairs": true,
+      "local_parent_language_preservation": true
+    },
+    "29": {
+      "test_answer": true,
+      "test_complete_pairs": true,
+      "test_whole_history": true,
+      "fresh_answer": false,
+      "fresh_complete_pairs": false,
+      "fresh_whole_history": false,
+      "fixed_state_relevant_pairs": true,
+      "local_parent_language_preservation": true
+    },
+    "41": {
+      "test_answer": true,
+      "test_complete_pairs": true,
+      "test_whole_history": true,
+      "fresh_answer": false,
+      "fresh_complete_pairs": false,
+      "fresh_whole_history": false,
+      "fixed_state_relevant_pairs": true,
+      "local_parent_language_preservation": true
+    }
+  },
+  "complete_learned_system_qualified": false,
+  "general_attention_efficiency_claim": "not tested / not admitted",
+  "original_full_language_quality": "worse than original full Connected COG reference",
+  "multi_turn": {
+    "17": {
+      "correct": 4,
+      "total": 7
+    },
+    "29": {
+      "correct": 5,
+      "total": 7
+    },
+    "41": {
+      "correct": 3,
+      "total": 7
+    }
+  },
+  "source": {
+    "corpus_sha256": "3b4133d81db7b13b6779b478373b405a997d6a0f6d7c94c5cad530d7fd308c98",
+    "training_lock_sha256": "ef962af41235c87fc410a8d1db0d9f17a73c96f462b17e9a8f4b918e71bb7f84"
+  },
+  "optional_numeric_component_qualified": true,
+  "optional_durable_computation_pass": true,
+  "optional_joint_language_computation_qualified": false,
+  "optional_full_parameters": {
+    "total": 1089106,
+    "active": 1008946,
+    "base_total": 1077834,
+    "base_active": 997674,
+    "inactive_native_board": 80160,
+    "attached": 11272,
+    "record_computer": 4296,
+    "feedback_projections": 6976,
+    "trainable": 1089106
+  },
+  "engineering_tests_passed": 87
+}

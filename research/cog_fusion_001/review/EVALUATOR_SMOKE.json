@@ -1,0 +1,2417 @@
+{
+  "schema": "cog-fusion-independent-evaluator-smoke-v1",
+  "status": "PASS",
+  "scope": "Eight DEV families; discarded five-update calibration checkpoint; no TEST/FRESH/LONG model inference; not a learned performance finding.",
+  "checkpoint_sha256": "568cf6e2286e708e431c2ad862a5f69439c4035ebfc097cefd8960d927cb9544",
+  "corpus_sha256": "3b4133d81db7b13b6779b478373b405a997d6a0f6d7c94c5cad530d7fd308c98",
+  "evaluator_source_sha256": "d5a0e5977064fd19ec620ea8dcc2fcbb67f16a5e7bd08c87925fb36fff09aa02",
+  "independent_summary_reconciliation": {
+    "acute_memory_off": {
+      "exact_answers": 0,
+      "complete_pairs": 0,
+      "strict_whole_history_pairs": 0
+    },
+    "hybrid": {
+      "exact_answers": 0,
+      "complete_pairs": 0,
+      "strict_whole_history_pairs": 0
+    },
+    "strict": {
+      "exact_answers": 0,
+      "complete_pairs": 0,
+      "strict_whole_history_pairs": 0
+    },
+    "supplied_reference_evidence": {
+      "exact_answers": 0,
+      "complete_pairs": 0,
+      "strict_whole_history_pairs": 0
+    }
+  },
+  "raw": {
+    "summary": {
+      "worlds": 16,
+      "families": 8,
+      "operations_exact": 3,
+      "operations_total": 80,
+      "all_operations_exact": 0,
+      "all_post_event_ledgers_exact": 0,
+      "query_exact": 4,
+      "modes": {
+        "acute_memory_off": {
+          "exact_answers": 0,
+          "complete_pairs": 0,
+          "strict_whole_history_pairs": 0,
+          "answer_changing_complete": 0,
+          "answer_changing_total": 5,
+          "invariant_complete": 0,
+          "invariant_total": 3,
+          "support_exact": 0,
+          "max_candidates_per_query": 1,
+          "by_kind": {
+            "direct": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "twohop": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "correction": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "irrelevant": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "retraction": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "bridge": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "missing": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "cancelled": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            }
+          }
+        },
+        "hybrid": {
+          "exact_answers": 0,
+          "complete_pairs": 0,
+          "strict_whole_history_pairs": 0,
+          "answer_changing_complete": 0,
+          "answer_changing_total": 5,
+          "invariant_complete": 0,
+          "invariant_total": 3,
+          "support_exact": 0,
+          "max_candidates_per_query": 0,
+          "by_kind": {
+            "direct": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "twohop": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "correction": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "irrelevant": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "retraction": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "bridge": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "missing": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "cancelled": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            }
+          }
+        },
+        "strict": {
+          "exact_answers": 0,
+          "complete_pairs": 0,
+          "strict_whole_history_pairs": 0,
+          "answer_changing_complete": 0,
+          "answer_changing_total": 5,
+          "invariant_complete": 0,
+          "invariant_total": 3,
+          "support_exact": 0,
+          "max_candidates_per_query": 1,
+          "by_kind": {
+            "direct": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "twohop": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "correction": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "irrelevant": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "retraction": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "bridge": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "missing": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "cancelled": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            }
+          }
+        },
+        "supplied_reference_evidence": {
+          "exact_answers": 0,
+          "complete_pairs": 0,
+          "strict_whole_history_pairs": 0,
+          "answer_changing_complete": 0,
+          "answer_changing_total": 5,
+          "invariant_complete": 0,
+          "invariant_total": 3,
+          "support_exact": 16,
+          "max_candidates_per_query": 0,
+          "by_kind": {
+            "direct": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "twohop": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "correction": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "irrelevant": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "retraction": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "bridge": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "missing": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            },
+            "cancelled": {
+              "pairs": 1,
+              "complete_pairs": 0,
+              "strict_pairs": 0,
+              "exact_answers": 0
+            }
+          }
+        }
+      }
+    },
+    "rows": [
+      {
+        "family_id": "dev-00000",
+        "side": 0,
+        "kind": "direct",
+        "query": "Who owns the chest?",
+        "target": "Eren.",
+        "predicted_query_entity": 12,
+        "predicted_query_plan": 2,
+        "query_exact": false,
+        "operations_exact": 0,
+        "operations_total": 5,
+        "all_operations_exact": false,
+        "all_post_event_ledgers_exact": false,
+        "predicted_operations": [
+          [
+            1,
+            8,
+            0,
+            9
+          ],
+          [
+            1,
+            8,
+            0,
+            2
+          ],
+          [
+            1,
+            11,
+            0,
+            6
+          ],
+          [
+            1,
+            8,
+            0,
+            9
+          ],
+          [
+            1,
+            11,
+            0,
+            10
+          ]
+        ],
+        "final_ledger": [
+          [
+            8,
+            0,
+            9
+          ],
+          [
+            11,
+            0,
+            10
+          ]
+        ],
+        "answers": {
+          "strict": {
+            "generated": "thoustwichat",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "acute_memory_off": {
+            "generated": "I thousaAtoo",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "hybrid": {
+            "generated": "I thousaAtoo",
+            "correct": false,
+            "support_exact": false,
+            "keys": [],
+            "values": [
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 16,
+            "index_records": 2
+          },
+          "supplied_reference_evidence": {
+            "generated": "I thousaAtoo",
+            "correct": false,
+            "support_exact": true,
+            "keys": [
+              [
+                8,
+                0
+              ]
+            ],
+            "values": [
+              4
+            ],
+            "status": "reference",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          }
+        }
+      },
+      {
+        "family_id": "dev-00000",
+        "side": 1,
+        "kind": "direct",
+        "query": "Who owns the chest?",
+        "target": "Cora.",
+        "predicted_query_entity": 12,
+        "predicted_query_plan": 2,
+        "query_exact": false,
+        "operations_exact": 1,
+        "operations_total": 5,
+        "all_operations_exact": false,
+        "all_post_event_ledgers_exact": false,
+        "predicted_operations": [
+          [
+            1,
+            8,
+            0,
+            2
+          ],
+          [
+            1,
+            8,
+            0,
+            2
+          ],
+          [
+            1,
+            11,
+            0,
+            6
+          ],
+          [
+            1,
+            8,
+            0,
+            11
+          ],
+          [
+            1,
+            11,
+            0,
+            10
+          ]
+        ],
+        "final_ledger": [
+          [
+            8,
+            0,
+            11
+          ],
+          [
+            11,
+            0,
+            10
+          ]
+        ],
+        "answers": {
+          "strict": {
+            "generated": "thoustwichat",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "acute_memory_off": {
+            "generated": "I thousaAtoo",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "hybrid": {
+            "generated": "I thousaAtoo",
+            "correct": false,
+            "support_exact": false,
+            "keys": [],
+            "values": [
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 16,
+            "index_records": 2
+          },
+          "supplied_reference_evidence": {
+            "generated": "I thousaAtoo",
+            "correct": false,
+            "support_exact": true,
+            "keys": [
+              [
+                8,
+                0
+              ]
+            ],
+            "values": [
+              2
+            ],
+            "status": "reference",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          }
+        }
+      },
+      {
+        "family_id": "dev-00001",
+        "side": 0,
+        "kind": "twohop",
+        "query": "Who owns the container holding the gem?",
+        "target": "Bela.",
+        "predicted_query_entity": 15,
+        "predicted_query_plan": 2,
+        "query_exact": false,
+        "operations_exact": 0,
+        "operations_total": 5,
+        "all_operations_exact": false,
+        "all_post_event_ledgers_exact": false,
+        "predicted_operations": [
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            11,
+            0,
+            4
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            11,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ]
+        ],
+        "final_ledger": [
+          [
+            8,
+            0,
+            3
+          ],
+          [
+            11,
+            0,
+            3
+          ]
+        ],
+        "answers": {
+          "strict": {
+            "generated": "thoustwinkin",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                15,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "acute_memory_off": {
+            "generated": "thousthoust ",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                15,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "hybrid": {
+            "generated": "thousthoust ",
+            "correct": false,
+            "support_exact": false,
+            "keys": [],
+            "values": [
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 16,
+            "index_records": 2
+          },
+          "supplied_reference_evidence": {
+            "generated": "thereie! tho",
+            "correct": false,
+            "support_exact": true,
+            "keys": [
+              [
+                13,
+                1
+              ],
+              [
+                11,
+                0
+              ]
+            ],
+            "values": [
+              11,
+              1
+            ],
+            "status": "reference",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          }
+        }
+      },
+      {
+        "family_id": "dev-00001",
+        "side": 1,
+        "kind": "twohop",
+        "query": "Who owns the container holding the gem?",
+        "target": "Gita.",
+        "predicted_query_entity": 15,
+        "predicted_query_plan": 2,
+        "query_exact": false,
+        "operations_exact": 0,
+        "operations_total": 5,
+        "all_operations_exact": false,
+        "all_post_event_ledgers_exact": false,
+        "predicted_operations": [
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            11,
+            0,
+            4
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            11,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ]
+        ],
+        "final_ledger": [
+          [
+            8,
+            0,
+            3
+          ],
+          [
+            11,
+            0,
+            3
+          ]
+        ],
+        "answers": {
+          "strict": {
+            "generated": "thoustwinkin",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                15,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "acute_memory_off": {
+            "generated": "thousthoust ",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                15,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "hybrid": {
+            "generated": "thousthoust ",
+            "correct": false,
+            "support_exact": false,
+            "keys": [],
+            "values": [
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 16,
+            "index_records": 2
+          },
+          "supplied_reference_evidence": {
+            "generated": "therein, twe",
+            "correct": false,
+            "support_exact": true,
+            "keys": [
+              [
+                13,
+                1
+              ],
+              [
+                11,
+                0
+              ]
+            ],
+            "values": [
+              11,
+              6
+            ],
+            "status": "reference",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          }
+        }
+      },
+      {
+        "family_id": "dev-00002",
+        "side": 0,
+        "kind": "correction",
+        "query": "Who owns the container holding the coin?",
+        "target": "Amara.",
+        "predicted_query_entity": 12,
+        "predicted_query_plan": 2,
+        "query_exact": true,
+        "operations_exact": 0,
+        "operations_total": 5,
+        "all_operations_exact": false,
+        "all_post_event_ledgers_exact": false,
+        "predicted_operations": [
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            9
+          ],
+          [
+            1,
+            11,
+            0,
+            6
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ]
+        ],
+        "final_ledger": [
+          [
+            8,
+            0,
+            3
+          ],
+          [
+            11,
+            0,
+            6
+          ]
+        ],
+        "answers": {
+          "strict": {
+            "generated": "thoustain!\n\n",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "acute_memory_off": {
+            "generated": "thoustwich t",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "hybrid": {
+            "generated": "thoustwichat",
+            "correct": false,
+            "support_exact": false,
+            "keys": [],
+            "values": [
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 16,
+            "index_records": 2
+          },
+          "supplied_reference_evidence": {
+            "generated": "thy thousatu",
+            "correct": false,
+            "support_exact": true,
+            "keys": [
+              [
+                12,
+                1
+              ],
+              [
+                9,
+                0
+              ]
+            ],
+            "values": [
+              9,
+              0
+            ],
+            "status": "reference",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          }
+        }
+      },
+      {
+        "family_id": "dev-00002",
+        "side": 1,
+        "kind": "correction",
+        "query": "Who owns the container holding the coin?",
+        "target": "Bela.",
+        "predicted_query_entity": 12,
+        "predicted_query_plan": 2,
+        "query_exact": true,
+        "operations_exact": 0,
+        "operations_total": 5,
+        "all_operations_exact": false,
+        "all_post_event_ledgers_exact": false,
+        "predicted_operations": [
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            9
+          ],
+          [
+            1,
+            11,
+            0,
+            6
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ]
+        ],
+        "final_ledger": [
+          [
+            8,
+            0,
+            3
+          ],
+          [
+            11,
+            0,
+            6
+          ]
+        ],
+        "answers": {
+          "strict": {
+            "generated": "thoustain!\n\n",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "acute_memory_off": {
+            "generated": "thy twourn?\n",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "hybrid": {
+            "generated": "thoustwichat",
+            "correct": false,
+            "support_exact": false,
+            "keys": [],
+            "values": [
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 16,
+            "index_records": 2
+          },
+          "supplied_reference_evidence": {
+            "generated": "thy thousata",
+            "correct": false,
+            "support_exact": true,
+            "keys": [
+              [
+                12,
+                1
+              ],
+              [
+                9,
+                0
+              ]
+            ],
+            "values": [
+              9,
+              1
+            ],
+            "status": "reference",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          }
+        }
+      },
+      {
+        "family_id": "dev-00003",
+        "side": 0,
+        "kind": "irrelevant",
+        "query": "Who is the owner of the container with the coin?",
+        "target": "Davi.",
+        "predicted_query_entity": 12,
+        "predicted_query_plan": 2,
+        "query_exact": true,
+        "operations_exact": 0,
+        "operations_total": 5,
+        "all_operations_exact": false,
+        "all_post_event_ledgers_exact": false,
+        "predicted_operations": [
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            11,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ]
+        ],
+        "final_ledger": [
+          [
+            8,
+            0,
+            3
+          ],
+          [
+            11,
+            0,
+            3
+          ]
+        ],
+        "answers": {
+          "strict": {
+            "generated": "thoustain!\n\n",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "acute_memory_off": {
+            "generated": "I thinkness ",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "hybrid": {
+            "generated": "thoustwichat",
+            "correct": false,
+            "support_exact": false,
+            "keys": [],
+            "values": [
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 16,
+            "index_records": 2
+          },
+          "supplied_reference_evidence": {
+            "generated": "theren?\n\n\nCl",
+            "correct": false,
+            "support_exact": true,
+            "keys": [
+              [
+                12,
+                1
+              ],
+              [
+                11,
+                0
+              ]
+            ],
+            "values": [
+              11,
+              3
+            ],
+            "status": "reference",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          }
+        }
+      },
+      {
+        "family_id": "dev-00003",
+        "side": 1,
+        "kind": "irrelevant",
+        "query": "Who is the owner of the container with the coin?",
+        "target": "Davi.",
+        "predicted_query_entity": 12,
+        "predicted_query_plan": 2,
+        "query_exact": true,
+        "operations_exact": 0,
+        "operations_total": 5,
+        "all_operations_exact": false,
+        "all_post_event_ledgers_exact": false,
+        "predicted_operations": [
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            11,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ]
+        ],
+        "final_ledger": [
+          [
+            8,
+            0,
+            3
+          ],
+          [
+            11,
+            0,
+            3
+          ]
+        ],
+        "answers": {
+          "strict": {
+            "generated": "thoustain!\n\n",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "acute_memory_off": {
+            "generated": "I thinkness ",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "hybrid": {
+            "generated": "I thinknesss",
+            "correct": false,
+            "support_exact": false,
+            "keys": [],
+            "values": [
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 16,
+            "index_records": 2
+          },
+          "supplied_reference_evidence": {
+            "generated": "theren?\n\n\nCl",
+            "correct": false,
+            "support_exact": true,
+            "keys": [
+              [
+                12,
+                1
+              ],
+              [
+                11,
+                0
+              ]
+            ],
+            "values": [
+              11,
+              3
+            ],
+            "status": "reference",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          }
+        }
+      },
+      {
+        "family_id": "dev-00004",
+        "side": 0,
+        "kind": "retraction",
+        "query": "Who owns what contains the gem?",
+        "target": "unknown.",
+        "predicted_query_entity": 15,
+        "predicted_query_plan": 2,
+        "query_exact": false,
+        "operations_exact": 0,
+        "operations_total": 5,
+        "all_operations_exact": false,
+        "all_post_event_ledgers_exact": false,
+        "predicted_operations": [
+          [
+            1,
+            11,
+            0,
+            3
+          ],
+          [
+            1,
+            11,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            11,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ]
+        ],
+        "final_ledger": [
+          [
+            8,
+            0,
+            3
+          ],
+          [
+            11,
+            0,
+            3
+          ]
+        ],
+        "answers": {
+          "strict": {
+            "generated": "thoustwinkin",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                15,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "acute_memory_off": {
+            "generated": "thousthoust ",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                15,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "hybrid": {
+            "generated": "thousthoust ",
+            "correct": false,
+            "support_exact": false,
+            "keys": [],
+            "values": [
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 16,
+            "index_records": 2
+          },
+          "supplied_reference_evidence": {
+            "generated": "thousthouran",
+            "correct": false,
+            "support_exact": true,
+            "keys": [
+              [
+                13,
+                1
+              ],
+              [
+                10,
+                0
+              ]
+            ],
+            "values": [
+              10,
+              16
+            ],
+            "status": "reference",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          }
+        }
+      },
+      {
+        "family_id": "dev-00004",
+        "side": 1,
+        "kind": "retraction",
+        "query": "Who owns what contains the gem?",
+        "target": "Cora.",
+        "predicted_query_entity": 15,
+        "predicted_query_plan": 2,
+        "query_exact": false,
+        "operations_exact": 0,
+        "operations_total": 5,
+        "all_operations_exact": false,
+        "all_post_event_ledgers_exact": false,
+        "predicted_operations": [
+          [
+            1,
+            11,
+            0,
+            3
+          ],
+          [
+            1,
+            11,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            11,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ]
+        ],
+        "final_ledger": [
+          [
+            8,
+            0,
+            3
+          ],
+          [
+            11,
+            0,
+            3
+          ]
+        ],
+        "answers": {
+          "strict": {
+            "generated": "thoustwichat",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                15,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "acute_memory_off": {
+            "generated": "thousthoust ",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                15,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "hybrid": {
+            "generated": "thousthoust ",
+            "correct": false,
+            "support_exact": false,
+            "keys": [],
+            "values": [
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 16,
+            "index_records": 2
+          },
+          "supplied_reference_evidence": {
+            "generated": "thousthourab",
+            "correct": false,
+            "support_exact": true,
+            "keys": [
+              [
+                13,
+                1
+              ],
+              [
+                10,
+                0
+              ]
+            ],
+            "values": [
+              10,
+              2
+            ],
+            "status": "reference",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          }
+        }
+      },
+      {
+        "family_id": "dev-00005",
+        "side": 0,
+        "kind": "bridge",
+        "query": "Who is the owner of the container with the key?",
+        "target": "Faye.",
+        "predicted_query_entity": 12,
+        "predicted_query_plan": 2,
+        "query_exact": false,
+        "operations_exact": 0,
+        "operations_total": 5,
+        "all_operations_exact": false,
+        "all_post_event_ledgers_exact": false,
+        "predicted_operations": [
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            11,
+            0,
+            2
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            11,
+            0,
+            10
+          ]
+        ],
+        "final_ledger": [
+          [
+            8,
+            0,
+            3
+          ],
+          [
+            11,
+            0,
+            10
+          ]
+        ],
+        "answers": {
+          "strict": {
+            "generated": "thoustwinkin",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "acute_memory_off": {
+            "generated": "thoustwich t",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "hybrid": {
+            "generated": "thoustwich t",
+            "correct": false,
+            "support_exact": false,
+            "keys": [],
+            "values": [
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 16,
+            "index_records": 2
+          },
+          "supplied_reference_evidence": {
+            "generated": "I thy thousa",
+            "correct": false,
+            "support_exact": true,
+            "keys": [
+              [
+                15,
+                1
+              ],
+              [
+                9,
+                0
+              ]
+            ],
+            "values": [
+              9,
+              5
+            ],
+            "status": "reference",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          }
+        }
+      },
+      {
+        "family_id": "dev-00005",
+        "side": 1,
+        "kind": "bridge",
+        "query": "Who is the owner of the container with the key?",
+        "target": "Amara.",
+        "predicted_query_entity": 12,
+        "predicted_query_plan": 2,
+        "query_exact": false,
+        "operations_exact": 0,
+        "operations_total": 5,
+        "all_operations_exact": false,
+        "all_post_event_ledgers_exact": false,
+        "predicted_operations": [
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            11,
+            0,
+            2
+          ],
+          [
+            1,
+            8,
+            0,
+            3
+          ],
+          [
+            1,
+            11,
+            0,
+            10
+          ]
+        ],
+        "final_ledger": [
+          [
+            8,
+            0,
+            3
+          ],
+          [
+            11,
+            0,
+            10
+          ]
+        ],
+        "answers": {
+          "strict": {
+            "generated": "thoustwinkin",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "acute_memory_off": {
+            "generated": "thoustwich t",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "hybrid": {
+            "generated": "thoustwinkin",
+            "correct": false,
+            "support_exact": false,
+            "keys": [],
+            "values": [
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 16,
+            "index_records": 2
+          },
+          "supplied_reference_evidence": {
+            "generated": "thoustwich t",
+            "correct": false,
+            "support_exact": true,
+            "keys": [
+              [
+                15,
+                1
+              ],
+              [
+                8,
+                0
+              ]
+            ],
+            "values": [
+              8,
+              0
+            ],
+            "status": "reference",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          }
+        }
+      },
+      {
+        "family_id": "dev-00006",
+        "side": 0,
+        "kind": "missing",
+        "query": "Who is the owner of the container with the gem?",
+        "target": "unknown.",
+        "predicted_query_entity": 12,
+        "predicted_query_plan": 2,
+        "query_exact": false,
+        "operations_exact": 1,
+        "operations_total": 5,
+        "all_operations_exact": false,
+        "all_post_event_ledgers_exact": false,
+        "predicted_operations": [
+          [
+            1,
+            8,
+            0,
+            2
+          ],
+          [
+            1,
+            8,
+            0,
+            9
+          ],
+          [
+            1,
+            11,
+            0,
+            9
+          ],
+          [
+            1,
+            8,
+            0,
+            6
+          ],
+          [
+            1,
+            11,
+            0,
+            9
+          ]
+        ],
+        "final_ledger": [
+          [
+            8,
+            0,
+            6
+          ],
+          [
+            11,
+            0,
+            9
+          ]
+        ],
+        "answers": {
+          "strict": {
+            "generated": "thoustwinkin",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "acute_memory_off": {
+            "generated": "theren, thou",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "hybrid": {
+            "generated": "thoustwich t",
+            "correct": false,
+            "support_exact": false,
+            "keys": [],
+            "values": [
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 16,
+            "index_records": 2
+          },
+          "supplied_reference_evidence": {
+            "generated": "thoustwinkin",
+            "correct": false,
+            "support_exact": true,
+            "keys": [
+              [
+                13,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "reference",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          }
+        }
+      },
+      {
+        "family_id": "dev-00006",
+        "side": 1,
+        "kind": "missing",
+        "query": "Who is the owner of the container with the gem?",
+        "target": "unknown.",
+        "predicted_query_entity": 12,
+        "predicted_query_plan": 2,
+        "query_exact": false,
+        "operations_exact": 1,
+        "operations_total": 5,
+        "all_operations_exact": false,
+        "all_post_event_ledgers_exact": false,
+        "predicted_operations": [
+          [
+            1,
+            8,
+            0,
+            2
+          ],
+          [
+            1,
+            8,
+            0,
+            9
+          ],
+          [
+            1,
+            11,
+            0,
+            9
+          ],
+          [
+            1,
+            8,
+            0,
+            6
+          ],
+          [
+            1,
+            11,
+            0,
+            2
+          ]
+        ],
+        "final_ledger": [
+          [
+            8,
+            0,
+            6
+          ],
+          [
+            11,
+            0,
+            2
+          ]
+        ],
+        "answers": {
+          "strict": {
+            "generated": "thoustwinkin",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "acute_memory_off": {
+            "generated": "thousth twis",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "hybrid": {
+            "generated": "thousthoust ",
+            "correct": false,
+            "support_exact": false,
+            "keys": [],
+            "values": [
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 16,
+            "index_records": 2
+          },
+          "supplied_reference_evidence": {
+            "generated": "thoustwinkin",
+            "correct": false,
+            "support_exact": true,
+            "keys": [
+              [
+                13,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "reference",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          }
+        }
+      },
+      {
+        "family_id": "dev-00007",
+        "side": 0,
+        "kind": "cancelled",
+        "query": "Who owns what contains the ring?",
+        "target": "Bela.",
+        "predicted_query_entity": 12,
+        "predicted_query_plan": 2,
+        "query_exact": false,
+        "operations_exact": 0,
+        "operations_total": 5,
+        "all_operations_exact": false,
+        "all_post_event_ledgers_exact": false,
+        "predicted_operations": [
+          [
+            1,
+            11,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            11
+          ],
+          [
+            1,
+            11,
+            0,
+            2
+          ],
+          [
+            1,
+            11,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            9
+          ]
+        ],
+        "final_ledger": [
+          [
+            8,
+            0,
+            9
+          ],
+          [
+            11,
+            0,
+            3
+          ]
+        ],
+        "answers": {
+          "strict": {
+            "generated": "thoustwichat",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "acute_memory_off": {
+            "generated": "thoustwich t",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "hybrid": {
+            "generated": "thoustwichat",
+            "correct": false,
+            "support_exact": false,
+            "keys": [],
+            "values": [
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 16,
+            "index_records": 2
+          },
+          "supplied_reference_evidence": {
+            "generated": "thoustwichat",
+            "correct": false,
+            "support_exact": true,
+            "keys": [
+              [
+                14,
+                1
+              ],
+              [
+                8,
+                0
+              ]
+            ],
+            "values": [
+              8,
+              1
+            ],
+            "status": "reference",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          }
+        }
+      },
+      {
+        "family_id": "dev-00007",
+        "side": 1,
+        "kind": "cancelled",
+        "query": "Who owns what contains the ring?",
+        "target": "Bela.",
+        "predicted_query_entity": 12,
+        "predicted_query_plan": 2,
+        "query_exact": false,
+        "operations_exact": 0,
+        "operations_total": 5,
+        "all_operations_exact": false,
+        "all_post_event_ledgers_exact": false,
+        "predicted_operations": [
+          [
+            1,
+            11,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            11
+          ],
+          [
+            1,
+            11,
+            0,
+            2
+          ],
+          [
+            1,
+            11,
+            0,
+            3
+          ],
+          [
+            1,
+            8,
+            0,
+            9
+          ]
+        ],
+        "final_ledger": [
+          [
+            8,
+            0,
+            9
+          ],
+          [
+            11,
+            0,
+            3
+          ]
+        ],
+        "answers": {
+          "strict": {
+            "generated": "thoustwichat",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "acute_memory_off": {
+            "generated": "thoustwich t",
+            "correct": false,
+            "support_exact": false,
+            "keys": [
+              [
+                12,
+                1
+              ]
+            ],
+            "values": [
+              16,
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 1,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          },
+          "hybrid": {
+            "generated": "thoustwichat",
+            "correct": false,
+            "support_exact": false,
+            "keys": [],
+            "values": [
+              16
+            ],
+            "status": "missing",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 16,
+            "index_records": 2
+          },
+          "supplied_reference_evidence": {
+            "generated": "thoustwichat",
+            "correct": false,
+            "support_exact": true,
+            "keys": [
+              [
+                14,
+                1
+              ],
+              [
+                8,
+                0
+              ]
+            ],
+            "values": [
+              8,
+              1
+            ],
+            "status": "reference",
+            "candidates_fetched": 0,
+            "codebook_comparisons": 0,
+            "index_records": 0
+          }
+        }
+      }
+    ],
+    "evaluation_wall_seconds": 0.48100880299170967,
+    "timing_status": "evaluation duration, not isolated serving benchmark"
+  }
+}

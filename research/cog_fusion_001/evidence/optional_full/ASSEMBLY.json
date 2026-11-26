@@ -1,0 +1,71 @@
+[
+  {
+    "base_checkpoint_sha256": "69180f8e9d05574eff19c78cf003f7e4aa21e5442e45a90ec2c09bffff553421",
+    "numeric_checkpoint_sha256": "f9ad0b2ac4c10cef235ec38527c83ee76fc6a59eb9ec4b80f02089c5a74abfa1",
+    "base_seed": 17,
+    "numeric_seed": 1701,
+    "qualification": "numeric component trained separately; semantic/query/character feedback projections untrained",
+    "joint_language_computation_qualified": false,
+    "path": "evidence/optional_full/full_seed17.pt",
+    "sha256": "b8c6e91eab43f9d684b0db53a935a5fe349f5b8abf1b575f893a4ef5646e7ac8",
+    "model_identity": "892288e39cc30fc68c2c926edab1beaa2cbaf8054cf8bc52352cbd99f359acff",
+    "parameters": {
+      "total": 1089106,
+      "active": 1008946,
+      "base_total": 1077834,
+      "base_active": 997674,
+      "inactive_native_board": 80160,
+      "attached": 11272,
+      "record_computer": 4296,
+      "feedback_projections": 6976,
+      "trainable": 1089106
+    },
+    "state_tensor_bytes": 10720
+  },
+  {
+    "base_checkpoint_sha256": "5f9699aa14f44c2bbb30f176d9a1886767e971a48235d7e5dab435a13f6d7522",
+    "numeric_checkpoint_sha256": "dcec9cd0acb22bae9bccef79544471ff9e6d58e95dde3d2061c579d654116341",
+    "base_seed": 29,
+    "numeric_seed": 1702,
+    "qualification": "numeric component trained separately; semantic/query/character feedback projections untrained",
+    "joint_language_computation_qualified": false,
+    "path": "evidence/optional_full/full_seed29.pt",
+    "sha256": "a1b94e9c2cad27ac09074b6393a75303cdf9ca13e1210d4917fcbf46510c9ef6",
+    "model_identity": "692723b97d8b09bf9d813cf19aee03df70d9b4b8f235ed1f26fb4361ae7e16b3",
+    "parameters": {
+      "total": 1089106,
+      "active": 1008946,
+      "base_total": 1077834,
+      "base_active": 997674,
+      "inactive_native_board": 80160,
+      "attached": 11272,
+      "record_computer": 4296,
+      "feedback_projections": 6976,
+      "trainable": 1089106
+    },
+    "state_tensor_bytes": 10720
+  },
+  {
+    "base_checkpoint_sha256": "5640ccce618b25c434b664934fc7e63986629cd6ec7bc5a790f785cfb7ee4332",
+    "numeric_checkpoint_sha256": "86ca4d30eefe2cc4a3d7d4fadd05590ba4846621b6250b05bd7ba386a7bcb0c1",
+    "base_seed": 41,
+    "numeric_seed": 1703,
+    "qualification": "numeric component trained separately; semantic/query/character feedback projections untrained",
+    "joint_language_computation_qualified": false,
+    "path": "evidence/optional_full/full_seed41.pt",
+    "sha256": "11669e69114d40e7a3eaeede826c42c41afff4cc4e00bbf71ad48ac16b2ccb33",
+    "model_identity": "3f886a94766a393d6bfe52bd50b5d73f5ebe7afdee81f1a3b03f58606e69ae96",
+    "parameters": {
+      "total": 1089106,
+      "active": 1008946,
+      "base_total": 1077834,
+      "base_active": 997674,
+      "inactive_native_board": 80160,
+      "attached": 11272,
+      "record_computer": 4296,
+      "feedback_projections": 6976,
+      "trainable": 1089106
+    },
+    "state_tensor_bytes": 10720
+  }
+]

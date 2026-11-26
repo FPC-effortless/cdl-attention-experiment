@@ -1,0 +1,9 @@
+{
+  "time_utc": "2026-11-23T21:22:26Z",
+  "source_sha256": {
+    "fusion/evaluate.py": "a3ed7d4532ce730cec610278f9d17623fd8a4a4f14352095e5183802c4ed6461",
+    "fusion/interaction.py": "67c7a7fac412cfaf6003059bdc431de8158633e5b589f4c7665fff2ec4317409",
+    "fusion/session.py": "83ff0c1a60dc482638f019911dd7ea0fb674eca2a8ac109b37b4b45cfd4dfa29",
+    "fusion/store.py": "006c88fcc02152ed8fe444aeb15e8001e01cdba1770b7408ec162041aeafea56"
+  }
+}

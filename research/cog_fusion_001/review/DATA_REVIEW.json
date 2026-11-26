@@ -1,0 +1,81 @@
+{
+  "schema": "cog-fusion-independent-data-review-v1",
+  "status": "PASS",
+  "corpus_sha256": "3b4133d81db7b13b6779b478373b405a997d6a0f6d7c94c5cad530d7fd308c98",
+  "manifest_sha256": "0fc9da07b92ebd8a9df95b9fdc1298695d62ac1d87df7a1fca6d492d7c423965",
+  "reviewer_source_sha256": "9a0308a0e61915eb9e038fb26b7cd879694f8e71f15b455948566e544d9f90a6",
+  "counts": {
+    "dev": {
+      "families": 64,
+      "worlds": 128,
+      "events": 640,
+      "answer_changing": 40,
+      "invariant_or_unknown": 24
+    },
+    "fresh": {
+      "families": 128,
+      "worlds": 256,
+      "events": 1280,
+      "answer_changing": 80,
+      "invariant_or_unknown": 48
+    },
+    "long": {
+      "families": 32,
+      "worlds": 64,
+      "events": 4416,
+      "answer_changing": 20,
+      "invariant_or_unknown": 12
+    },
+    "test": {
+      "families": 128,
+      "worlds": 256,
+      "events": 1280,
+      "answer_changing": 80,
+      "invariant_or_unknown": 48
+    },
+    "train": {
+      "families": 1024,
+      "worlds": 2048,
+      "events": 10240,
+      "answer_changing": 640,
+      "invariant_or_unknown": 384
+    }
+  },
+  "failures": [],
+  "fresh_words_absent_from_task_train": [
+    "For",
+    "Giving",
+    "Identify",
+    "Inside",
+    "Name",
+    "Ownership",
+    "There",
+    "abandoned",
+    "accepted",
+    "as",
+    "been",
+    "containing",
+    "current",
+    "for",
+    "has",
+    "holds",
+    "its",
+    "lies",
+    "never",
+    "own",
+    "ownership",
+    "person",
+    "place",
+    "possesses",
+    "proposal",
+    "record",
+    "rests",
+    "that",
+    "thing",
+    "took",
+    "whatever",
+    "withdrawn"
+  ],
+  "interpretation": "Fresh wording changes vocabulary and syntax; entity vocabulary remains fixed.",
+  "scope": "No candidate module imports, model calls, fitting, threshold selection or checkpoint selection."
+}

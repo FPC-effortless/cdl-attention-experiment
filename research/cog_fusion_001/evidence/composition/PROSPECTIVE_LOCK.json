@@ -1,0 +1,19 @@
+{
+  "batch": 64,
+  "hidden_dim": 32,
+  "protocol": "COMPOSITION_PROTOCOL.md",
+  "seeds": [
+    1701,
+    1702,
+    1703
+  ],
+  "source_sha256": {
+    "COMPOSITION_PROTOCOL.md": "18ee532c756856b7cd19dfdbd1adedf446f85633a4ba730ce3194819fae18ae2",
+    "fusion/composition.py": "c02d572fe4a0242fab4564b48f5c2584d886b2009f4d842fcb326ddb780f101f",
+    "train_composition.py": "68a3f860aeed55bc4ff99d53e4d6c678b802256d593e8de49ecc8ca789e31b0a"
+  },
+  "steps": 1000,
+  "threads": 1,
+  "torch": "2.10.0+cpu",
+  "value_dim": 8
+}
