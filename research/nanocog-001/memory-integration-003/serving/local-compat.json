@@ -1,0 +1,70 @@
+{
+  "attachment_identity": {
+    "median_ms": 8.511699,
+    "p95_ms": 12.133288,
+    "samples_ms": [
+      7.994012,
+      12.133288,
+      9.1467,
+      7.337535,
+      8.511699
+    ]
+  },
+  "cases": [],
+  "compatibility": {
+    "checkpoint_sha256": "aac91270e20025f1c2c7290c25c21703ef45c481284a151402efa80020c21bc5",
+    "manifest_equal": true,
+    "output_sha256": "a2c2e18c5c95f9da7ba284153b0806a7e75abe018b136c77c32b28d9329cc3c0",
+    "revision": 2,
+    "tokens_seen": 1040
+  },
+  "harness_sha256": "86a6a33d8b38c904be2b4b10d5a97bc70433ae0f494474003fc8cf20b26fc73d",
+  "kind": "local",
+  "manifest": {
+    "batch_size": 1,
+    "config": {
+      "layers": 4,
+      "vocab_alignment": 64,
+      "vocab_size": 256,
+      "width": 160
+    },
+    "format": "nanocog-persistent-decoder",
+    "model_sha256": "82e0002cd0319120e1a42a522071a21fe76b51b1f7aefc95316cabb9ec50a300",
+    "runtime": {
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "torch": "2.10.0+cpu"
+    },
+    "schema_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "session_id": "cost-stream",
+    "tokenizer_id": "synthetic-byte-256-v1",
+    "version": 2
+  },
+  "parameters": 1005474,
+  "seed": 91023,
+  "source_sha256": {
+    "comm/packet.py": "346505fc26654609c8d5f19f59376cb0ecff11c1aa572c51ae7f188d4eeb997b",
+    "interaction.py": "f6f9db16ead08fb837360051ec10920d5e410eb837453c02d93fb24057c0f1a8",
+    "memory/codec.py": "195758561841b95cb67046b23a8e462f77fc47f36d7f5a988fd0601b4f0e23ff",
+    "memory/decoder.py": "8380db65776f50329cfa15575211e7b72e2dc9629799174bc345addbd6f6b6e2",
+    "memory/store.py": "3bf7561d194e19cc32a6ab4377ca4656aea86800ce6d026fd0a291ab18ec47c1",
+    "model.py": "b9ae1000992dbd9e103de5f2365b88fb0c2a674e9acc9cfc0c9ac2ba7b599ab3",
+    "state/records.py": "6eb6950971538ec7991b669a6962112d89ce5a97be8b721be13268e3b9d1a502"
+  },
+  "source_sha256_after": {
+    "comm/packet.py": "346505fc26654609c8d5f19f59376cb0ecff11c1aa572c51ae7f188d4eeb997b",
+    "interaction.py": "f6f9db16ead08fb837360051ec10920d5e410eb837453c02d93fb24057c0f1a8",
+    "memory/codec.py": "195758561841b95cb67046b23a8e462f77fc47f36d7f5a988fd0601b4f0e23ff",
+    "memory/decoder.py": "8380db65776f50329cfa15575211e7b72e2dc9629799174bc345addbd6f6b6e2",
+    "memory/store.py": "3bf7561d194e19cc32a6ab4377ca4656aea86800ce6d026fd0a291ab18ec47c1",
+    "model.py": "b9ae1000992dbd9e103de5f2365b88fb0c2a674e9acc9cfc0c9ac2ba7b599ab3",
+    "state/records.py": "6eb6950971538ec7991b669a6962112d89ce5a97be8b721be13268e3b9d1a502"
+  },
+  "trained": false,
+  "variant": "candidate",
+  "versions": {
+    "python": "3.12.14",
+    "sqlite": "3.53.1",
+    "torch": "2.10.0+cpu"
+  }
+}

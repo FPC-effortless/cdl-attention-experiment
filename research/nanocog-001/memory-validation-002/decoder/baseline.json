@@ -1,0 +1,151 @@
+{
+  "label": "baseline",
+  "fixture": "seeded untrained reference models; no fitting",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "torch": "2.10.0+cpu",
+  "sqlite": "3.53.1",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "threads": 1,
+  "git_head": "56cb4eeb04d68f5f6c210c756f0790f34cc2fd5f",
+  "source_sha256_before": {
+    "nanocog/memory/decoder.py": "a1863ce60e1389c975d4b37bff86a17d77ae92dabe82f9e6ba4dd42e2b066d92",
+    "nanocog/memory/codec.py": "15761577fef3dc0769e817b7da7a5a7d29a0d89b4e656f41e553de86204f112f",
+    "nanocog/memory/store.py": "fe694bcd923a4167a97c237e5ae4bfb279e7cccc92b54d542943258ef413e3d7",
+    "nanocog/model.py": "b9ae1000992dbd9e103de5f2365b88fb0c2a674e9acc9cfc0c9ac2ba7b599ab3",
+    "nanocog/interaction.py": "f6f9db16ead08fb837360051ec10920d5e410eb837453c02d93fb24057c0f1a8",
+    "nanocog/comm/packet.py": "346505fc26654609c8d5f19f59376cb0ecff11c1aa572c51ae7f188d4eeb997b",
+    "nanocog/state/records.py": "6eb6950971538ec7991b669a6962112d89ce5a97be8b721be13268e3b9d1a502",
+    "nanocog/memory/test_adversarial_decoder.py": "30d4c883fceeae32636bd3fa64412d9a6bde720f3a7f17b13618201a72367614"
+  },
+  "tests_run": 19,
+  "failures": 6,
+  "errors": 0,
+  "success": false,
+  "seconds": 0.2947017690021312,
+  "cases": [
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialCodecTests.test_aggregate_tensor_budget_not_just_per_tensor",
+      "status": "passed",
+      "seconds": 0.0026349660038249567,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialCodecTests.test_invalid_boolean_bytes_rejected_even_with_matching_hash",
+      "status": "passed",
+      "seconds": 0.0002284259971929714,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialCodecTests.test_noncanonical_base64_rejected_even_with_matching_decoded_bytes",
+      "status": "passed",
+      "seconds": 0.00011927100422326475,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialCodecTests.test_schema_extensions_are_not_silently_deserialized",
+      "status": "passed",
+      "seconds": 0.0003564709913916886,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialCodecTests.test_strided_tensor_values_roundtrip_without_storage_aliases",
+      "status": "passed",
+      "seconds": 0.0014949850010452792,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_caller_token_mutation_after_inference_does_not_change_request_identity",
+      "status": "passed",
+      "seconds": 0.01818248999188654,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_changed_convolution_execution_geometry_rejected_live",
+      "status": "failed",
+      "seconds": 0.015347059001214802,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/nanocog/memory/test_adversarial_decoder.py\", line 59, in test_changed_convolution_execution_geometry_rejected_live\n    with self.assertRaises((IntegrityError, ValueError)):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: (<class 'nanocog.memory.store.IntegrityError'>, <class 'ValueError'>) not raised\n"
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_changed_convolution_execution_geometry_rejected_on_reopen",
+      "status": "failed",
+      "seconds": 0.012010867008939385,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/nanocog/memory/test_adversarial_decoder.py\", line 68, in test_changed_convolution_execution_geometry_rejected_on_reopen\n    with self.assertRaises((IntegrityError, ValueError)):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: (<class 'nanocog.memory.store.IntegrityError'>, <class 'ValueError'>) not raised\n"
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_corrupt_receipt_payload_is_rejected",
+      "status": "passed",
+      "seconds": 0.011367261002305895,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_corrupt_receipt_revision_cannot_misreport_an_old_retry",
+      "status": "failed",
+      "seconds": 0.014884026008076034,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/nanocog/memory/test_adversarial_decoder.py\", line 152, in test_corrupt_receipt_revision_cannot_misreport_an_old_retry\n    with self.assertRaises(IntegrityError):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: IntegrityError not raised\n"
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_deleted_session_blocks_a_first_checkpoint_in_flight",
+      "status": "passed",
+      "seconds": 0.012190599998575635,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_existing_checkpoint_cannot_resurrect_state_after_source_erasure",
+      "status": "passed",
+      "seconds": 0.02531247099977918,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_first_checkpoint_cannot_resurrect_state_after_source_erasure",
+      "status": "failed",
+      "seconds": 0.008064811991062015,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/nanocog/memory/test_adversarial_decoder.py\", line 113, in test_first_checkpoint_cannot_resurrect_state_after_source_erasure\n    with self.assertRaises((DeletedError, ConflictError)):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: (<class 'nanocog.memory.store.DeletedError'>, <class 'nanocog.memory.store.ConflictError'>) not raised\n"
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_float64_continuation_for_all_three_supported_mixers",
+      "status": "passed",
+      "seconds": 0.11274291900917888,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_global_forward_hook_cannot_change_persisted_inference",
+      "status": "failed",
+      "seconds": 0.008959541999502108,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/nanocog/memory/test_adversarial_decoder.py\", line 81, in test_global_forward_hook_cannot_change_persisted_inference\n    with self.assertRaises((IntegrityError, ValueError)):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: (<class 'nanocog.memory.store.IntegrityError'>, <class 'ValueError'>) not raised\n"
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_global_pre_hook_cannot_substitute_the_requested_tokens",
+      "status": "failed",
+      "seconds": 0.00811722400248982,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/nanocog/memory/test_adversarial_decoder.py\", line 97, in test_global_pre_hook_cannot_substitute_the_requested_tokens\n    with self.assertRaises((IntegrityError, ValueError)):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: (<class 'nanocog.memory.store.IntegrityError'>, <class 'ValueError'>) not raised\n"
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_invalid_input_bounds_never_create_a_checkpoint",
+      "status": "passed",
+      "seconds": 0.014302941010100767,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_noncontiguous_valid_token_views_have_the_same_result",
+      "status": "passed",
+      "seconds": 0.014992411001003347,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_returned_logits_do_not_alias_the_saved_receipt",
+      "status": "passed",
+      "seconds": 0.009217152008204721,
+      "traceback": null
+    }
+  ],
+  "source_sha256_after": {
+    "nanocog/memory/decoder.py": "a1863ce60e1389c975d4b37bff86a17d77ae92dabe82f9e6ba4dd42e2b066d92",
+    "nanocog/memory/codec.py": "15761577fef3dc0769e817b7da7a5a7d29a0d89b4e656f41e553de86204f112f",
+    "nanocog/memory/store.py": "fe694bcd923a4167a97c237e5ae4bfb279e7cccc92b54d542943258ef413e3d7",
+    "nanocog/model.py": "b9ae1000992dbd9e103de5f2365b88fb0c2a674e9acc9cfc0c9ac2ba7b599ab3",
+    "nanocog/interaction.py": "f6f9db16ead08fb837360051ec10920d5e410eb837453c02d93fb24057c0f1a8",
+    "nanocog/comm/packet.py": "346505fc26654609c8d5f19f59376cb0ecff11c1aa572c51ae7f188d4eeb997b",
+    "nanocog/state/records.py": "6eb6950971538ec7991b669a6962112d89ce5a97be8b721be13268e3b9d1a502",
+    "nanocog/memory/test_adversarial_decoder.py": "30d4c883fceeae32636bd3fa64412d9a6bde720f3a7f17b13618201a72367614"
+  }
+}

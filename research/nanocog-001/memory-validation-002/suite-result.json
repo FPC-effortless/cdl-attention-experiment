@@ -1,0 +1,52 @@
+{
+  "command": "PULSE006_SOURCE=<hash-verified private source> OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python3 -m pytest -q nanocog --junitxml=memory-validation-002/full-suite.xml",
+  "optional_archived_source_sha256": {
+    "networks.py": "8edd054a26a0fe1842d67d3cfaa5d3e9fc8ec4d07c853f93cd1b6c1f7e809ece",
+    "world.py": "fb0e2cb85789435f910aa122a5e36be091be1b985c671c32e602c707f91d86c2"
+  },
+  "result": {
+    "errors": "0",
+    "failures": "0",
+    "hostname": "ded1e193e523",
+    "name": "pytest",
+    "skipped": "0",
+    "tests": "135",
+    "time": "18.874",
+    "timestamp": "2026-11-23T18:12:19.039619+00:00"
+  },
+  "source_sha256": {
+    "nanocog/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "nanocog/comm/__init__.py": "356b9684a3e34021696b06bfbd97175a4161241a3d86e78a148a83e2e6eccdc9",
+    "nanocog/comm/packet.py": "346505fc26654609c8d5f19f59376cb0ecff11c1aa572c51ae7f188d4eeb997b",
+    "nanocog/comm/test_packet.py": "aace8689d8fb33830dc623be767fa608d0866c4578aca188ac8099d1e3be790c",
+    "nanocog/interaction.py": "f6f9db16ead08fb837360051ec10920d5e410eb837453c02d93fb24057c0f1a8",
+    "nanocog/memory/__init__.py": "cd0c94b6c7a07518a4f22b5790916df5d3479356f6d42cf3ac06d010a2f66301",
+    "nanocog/memory/__main__.py": "53fa073c5eb16e9ce68e65fcf98ba460b694a41a69d12ae545ebd2d82a0446ed",
+    "nanocog/memory/codec.py": "15761577fef3dc0769e817b7da7a5a7d29a0d89b4e656f41e553de86204f112f",
+    "nanocog/memory/decoder.py": "65e5afb321dbab4014c8aa11d860b272f5003fb5758064dfe22e76a27c771b0a",
+    "nanocog/memory/session.py": "ae2f109dfb7abcb64c2e7549eb7cdd94e99223b78a94c7b950ce15ad7ef389d6",
+    "nanocog/memory/store.py": "3bf7561d194e19cc32a6ab4377ca4656aea86800ce6d026fd0a291ab18ec47c1",
+    "nanocog/memory/temporal.py": "de29a2de0a71353c712638876669fb86487d5e05c19d399817506e5040592eca",
+    "nanocog/memory/test_adversarial_capacity.py": "927bd64a4fc42206427ad8fd60bffd4191491f2357122f863a936f7e84e277c1",
+    "nanocog/memory/test_adversarial_decoder.py": "71019a82bd98e5e911d6b81e96eda1c7e30867f4d545be22c3998439140a5f52",
+    "nanocog/memory/test_adversarial_store.py": "aff89770361780ff89de472b6e41fcd2272244ed23227be8c56704d9eb5b61f3",
+    "nanocog/memory/test_decoder.py": "0a4b5dbb7446b64008d131ac6a0412ef9869f208fffd877ba01ebdbb55f8bb56",
+    "nanocog/memory/test_session.py": "ab8c14f3573289be04158254733e8e88d23e2341d5985c4c7fa3a598ee0c242f",
+    "nanocog/memory/test_store.py": "cde65a302cf29d106ae47ccaf40b75991b7f6a71a6aab2989a434e3b69c6c06b",
+    "nanocog/memory/test_temporal.py": "95ac2b60d1a75229cff863652d78892a4943ebde48f04a7f294b7dd3c268e3cd",
+    "nanocog/model.py": "b9ae1000992dbd9e103de5f2365b88fb0c2a674e9acc9cfc0c9ac2ba7b599ab3",
+    "nanocog/state/__init__.py": "6eec56cc553d7d3bad34efcaaaa4aacf6368b80e3f08bde044136e084e1a831f",
+    "nanocog/state/pulse_adapter.py": "d3d178c37b2f60c918fe00f115da7ff1e6d44bd014969c679c208e2d2cd965ac",
+    "nanocog/state/records.py": "6eb6950971538ec7991b669a6962112d89ce5a97be8b721be13268e3b9d1a502",
+    "nanocog/state/test_records.py": "88bfdf0ca136b15865de4e03fd0febc78f5f7b04fcb5ce904ceb871cca58a465",
+    "nanocog/test_integration.py": "66593e49c98e527e754c917c6778e9d7ccd6231e41fa0d9bb8db9f71cdc127bf",
+    "nanocog/test_model.py": "cf36c5494a73eabbb31b385d6dc76d7654999566d7ea897c96995fb0b16d508a"
+  },
+  "versions": {
+    "numpy": "2.3.5",
+    "pytest": "8.4.2",
+    "python": "3.12.14",
+    "sqlite": "3.53.1",
+    "torch": "2.10.0+cpu"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "baseline_commit": "ffb842adc176496d8838b774d0fe412aec5d1d20",
+  "baseline_runtime": "/workspace/scratch/df97c7006000/memory003_retrieval_baseline/research/nanocog-001",
+  "candidate_runtime": "/workspace/scratch/df97c7006000/memory003_retrieval_candidate/research/nanocog-001",
+  "tmpdir": "/workspace/scratch/df97c7006000/memory003_retrieval_tmp",
+  "filesystem": "Filesystem     Type    1024-blocks     Used Available Capacity Mounted on\noverlay        overlay    66002476 20962264  41668388      34% /workspace\n",
+  "qualification": "workspace-overlay descriptive measurements; not physical power-loss or isolated-host benchmark"
+}

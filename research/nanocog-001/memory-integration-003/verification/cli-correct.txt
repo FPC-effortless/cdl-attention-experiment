@@ -1,0 +1,24 @@
+{
+  "mode": "experimental-categorical-factual-memory",
+  "unfamiliar_wording_qualified": false,
+  "result": {
+    "operation": 7,
+    "status": "written",
+    "decision_event_id": "factual:1cd9e6973bb032e416919a78e18184a42872b22429fc7e25e15c7ea802f4d861:result",
+    "fact": {
+      "key": "cog-factual:holder:chest",
+      "value": {
+        "kind": "owner",
+        "schema": "cog-factual-adapter-v1",
+        "value": "Gus"
+      },
+      "revision": 2,
+      "source_event_id": "factual:1cd9e6973bb032e416919a78e18184a42872b22429fc7e25e15c7ea802f4d861:result",
+      "proposal_id": "factual:1cd9e6973bb032e416919a78e18184a42872b22429fc7e25e15c7ea802f4d861:proposal",
+      "authority": "experimental-model-policy",
+      "changed_at": "2026-11-23T18:55:49.903189+00:00",
+      "deleted": false
+    },
+    "replayed": false
+  }
+}

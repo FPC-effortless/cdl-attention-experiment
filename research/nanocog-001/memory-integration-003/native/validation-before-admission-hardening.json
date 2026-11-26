@@ -1,0 +1,2652 @@
+{
+  "status": "PASS",
+  "claim_scope": "exposed native validation regression and adapter-attachment isolation only",
+  "native_parameters": 993574,
+  "full_adapter_parameters": 1012141,
+  "trainable_adapter_parameters": 18567,
+  "checkpoint_sha256": "d8bab3d1d99a43dfb6cca2257f2caae4d3a7282d62b079c92874ce736a44ec3c",
+  "native_tensor_digest": "8a524ff5a5721a6d349cd533822771297cbdb962e949220a89da7ec96b688131",
+  "kit_manifest_entries_verified": 10,
+  "native_source_sha256": {
+    "model.py": "f15e7d5430bd1df83a1264ebbec63576b818733386d6fb0f1d8c1e2a930370f9",
+    "base_model.py": "f96bd967b4bc4ece9d2750a5cf1afdf1cc819a6b007e2d638af633376c7eccaa",
+    "scripted_core.py": "6c00b2c4425a5309927fb3aba4e53add670e79c88a7b051fbe963b6b060f99e3"
+  },
+  "adapter_source_sha256": "25c043c7f83f12e38f506064cd79ebd85914227ac2b5ca7b9ab61acc6178034b",
+  "validation_sha256": "42586f62517e6504c04c45990fe22bf8ee50f49f45872a953cbbb645d3b9feae",
+  "saved_validation_mean_nll": 1.595178123236727,
+  "reproduction_absolute_nll_difference": 0.0,
+  "python": "3.12.14",
+  "torch": "2.10.0+cpu",
+  "threads": 1,
+  "dtype": "float32",
+  "device": "cpu",
+  "context_policy": "reset128, nonoverlapping; all55769 targets once",
+  "measurement": {
+    "mean_nll": 1.595178123236727,
+    "next_character_accuracy": 0.5177249009306245,
+    "targets": 55769,
+    "windows": [
+      {
+        "start": 0,
+        "targets": 128,
+        "loss_sum": 152.67182735656388,
+        "correct": 78
+      },
+      {
+        "start": 128,
+        "targets": 128,
+        "loss_sum": 174.48589535086649,
+        "correct": 77
+      },
+      {
+        "start": 256,
+        "targets": 128,
+        "loss_sum": 182.08108729569358,
+        "correct": 68
+      },
+      {
+        "start": 384,
+        "targets": 128,
+        "loss_sum": 227.97342705074698,
+        "correct": 53
+      },
+      {
+        "start": 512,
+        "targets": 128,
+        "loss_sum": 189.01801754860207,
+        "correct": 72
+      },
+      {
+        "start": 640,
+        "targets": 128,
+        "loss_sum": 205.09924858249724,
+        "correct": 67
+      },
+      {
+        "start": 768,
+        "targets": 128,
+        "loss_sum": 206.63360346667469,
+        "correct": 59
+      },
+      {
+        "start": 896,
+        "targets": 128,
+        "loss_sum": 181.2739764758153,
+        "correct": 70
+      },
+      {
+        "start": 1024,
+        "targets": 128,
+        "loss_sum": 154.3490047256346,
+        "correct": 89
+      },
+      {
+        "start": 1152,
+        "targets": 128,
+        "loss_sum": 172.17423762509134,
+        "correct": 70
+      },
+      {
+        "start": 1280,
+        "targets": 128,
+        "loss_sum": 194.84673488588305,
+        "correct": 68
+      },
+      {
+        "start": 1408,
+        "targets": 128,
+        "loss_sum": 202.24952600616962,
+        "correct": 69
+      },
+      {
+        "start": 1536,
+        "targets": 128,
+        "loss_sum": 186.2357907234109,
+        "correct": 68
+      },
+      {
+        "start": 1664,
+        "targets": 128,
+        "loss_sum": 186.3732656193897,
+        "correct": 72
+      },
+      {
+        "start": 1792,
+        "targets": 128,
+        "loss_sum": 263.72388343093917,
+        "correct": 54
+      },
+      {
+        "start": 1920,
+        "targets": 128,
+        "loss_sum": 235.42494966404047,
+        "correct": 55
+      },
+      {
+        "start": 2048,
+        "targets": 128,
+        "loss_sum": 184.99066433613189,
+        "correct": 71
+      },
+      {
+        "start": 2176,
+        "targets": 128,
+        "loss_sum": 163.50760598486522,
+        "correct": 80
+      },
+      {
+        "start": 2304,
+        "targets": 128,
+        "loss_sum": 190.95439406577498,
+        "correct": 75
+      },
+      {
+        "start": 2432,
+        "targets": 128,
+        "loss_sum": 188.64369323151186,
+        "correct": 72
+      },
+      {
+        "start": 2560,
+        "targets": 128,
+        "loss_sum": 177.12855237768963,
+        "correct": 76
+      },
+      {
+        "start": 2688,
+        "targets": 128,
+        "loss_sum": 219.52290934242774,
+        "correct": 58
+      },
+      {
+        "start": 2816,
+        "targets": 128,
+        "loss_sum": 202.79364711634116,
+        "correct": 65
+      },
+      {
+        "start": 2944,
+        "targets": 128,
+        "loss_sum": 207.0348368898267,
+        "correct": 68
+      },
+      {
+        "start": 3072,
+        "targets": 128,
+        "loss_sum": 189.7539972490631,
+        "correct": 72
+      },
+      {
+        "start": 3200,
+        "targets": 128,
+        "loss_sum": 168.4652218472911,
+        "correct": 74
+      },
+      {
+        "start": 3328,
+        "targets": 128,
+        "loss_sum": 203.19239368056878,
+        "correct": 63
+      },
+      {
+        "start": 3456,
+        "targets": 128,
+        "loss_sum": 177.51380376750603,
+        "correct": 76
+      },
+      {
+        "start": 3584,
+        "targets": 128,
+        "loss_sum": 155.16445494742948,
+        "correct": 78
+      },
+      {
+        "start": 3712,
+        "targets": 128,
+        "loss_sum": 247.53890888113528,
+        "correct": 54
+      },
+      {
+        "start": 3840,
+        "targets": 128,
+        "loss_sum": 195.9675985360518,
+        "correct": 68
+      },
+      {
+        "start": 3968,
+        "targets": 128,
+        "loss_sum": 172.31598164254683,
+        "correct": 70
+      },
+      {
+        "start": 4096,
+        "targets": 128,
+        "loss_sum": 190.33586483332328,
+        "correct": 68
+      },
+      {
+        "start": 4224,
+        "targets": 128,
+        "loss_sum": 205.9259455455467,
+        "correct": 62
+      },
+      {
+        "start": 4352,
+        "targets": 128,
+        "loss_sum": 191.8503600343247,
+        "correct": 71
+      },
+      {
+        "start": 4480,
+        "targets": 128,
+        "loss_sum": 173.16831573483068,
+        "correct": 77
+      },
+      {
+        "start": 4608,
+        "targets": 128,
+        "loss_sum": 160.859010633023,
+        "correct": 76
+      },
+      {
+        "start": 4736,
+        "targets": 128,
+        "loss_sum": 187.27495857109898,
+        "correct": 70
+      },
+      {
+        "start": 4864,
+        "targets": 128,
+        "loss_sum": 192.0693219989189,
+        "correct": 67
+      },
+      {
+        "start": 4992,
+        "targets": 128,
+        "loss_sum": 221.6382269836031,
+        "correct": 61
+      },
+      {
+        "start": 5120,
+        "targets": 128,
+        "loss_sum": 179.34324746299535,
+        "correct": 73
+      },
+      {
+        "start": 5248,
+        "targets": 128,
+        "loss_sum": 245.17422432499006,
+        "correct": 51
+      },
+      {
+        "start": 5376,
+        "targets": 128,
+        "loss_sum": 196.9488712323946,
+        "correct": 61
+      },
+      {
+        "start": 5504,
+        "targets": 128,
+        "loss_sum": 191.43332291507977,
+        "correct": 71
+      },
+      {
+        "start": 5632,
+        "targets": 128,
+        "loss_sum": 205.08934220904484,
+        "correct": 69
+      },
+      {
+        "start": 5760,
+        "targets": 128,
+        "loss_sum": 170.1115210392163,
+        "correct": 76
+      },
+      {
+        "start": 5888,
+        "targets": 128,
+        "loss_sum": 200.22107084281743,
+        "correct": 62
+      },
+      {
+        "start": 6016,
+        "targets": 128,
+        "loss_sum": 206.8148157610558,
+        "correct": 60
+      },
+      {
+        "start": 6144,
+        "targets": 128,
+        "loss_sum": 222.51576849468984,
+        "correct": 53
+      },
+      {
+        "start": 6272,
+        "targets": 128,
+        "loss_sum": 207.4350252733566,
+        "correct": 59
+      },
+      {
+        "start": 6400,
+        "targets": 128,
+        "loss_sum": 179.22401872754563,
+        "correct": 73
+      },
+      {
+        "start": 6528,
+        "targets": 128,
+        "loss_sum": 195.3672700181487,
+        "correct": 72
+      },
+      {
+        "start": 6656,
+        "targets": 128,
+        "loss_sum": 268.5225995723158,
+        "correct": 50
+      },
+      {
+        "start": 6784,
+        "targets": 128,
+        "loss_sum": 213.30246635852382,
+        "correct": 63
+      },
+      {
+        "start": 6912,
+        "targets": 128,
+        "loss_sum": 199.06579476146726,
+        "correct": 70
+      },
+      {
+        "start": 7040,
+        "targets": 128,
+        "loss_sum": 181.5300612631254,
+        "correct": 68
+      },
+      {
+        "start": 7168,
+        "targets": 128,
+        "loss_sum": 210.14570737659233,
+        "correct": 66
+      },
+      {
+        "start": 7296,
+        "targets": 128,
+        "loss_sum": 160.53444681147812,
+        "correct": 76
+      },
+      {
+        "start": 7424,
+        "targets": 128,
+        "loss_sum": 194.47601797053358,
+        "correct": 70
+      },
+      {
+        "start": 7552,
+        "targets": 128,
+        "loss_sum": 198.54642231020262,
+        "correct": 70
+      },
+      {
+        "start": 7680,
+        "targets": 128,
+        "loss_sum": 238.37684771360364,
+        "correct": 66
+      },
+      {
+        "start": 7808,
+        "targets": 128,
+        "loss_sum": 205.28230998618528,
+        "correct": 68
+      },
+      {
+        "start": 7936,
+        "targets": 128,
+        "loss_sum": 193.1904619738052,
+        "correct": 64
+      },
+      {
+        "start": 8064,
+        "targets": 128,
+        "loss_sum": 184.45380583553924,
+        "correct": 68
+      },
+      {
+        "start": 8192,
+        "targets": 128,
+        "loss_sum": 161.50727223214926,
+        "correct": 80
+      },
+      {
+        "start": 8320,
+        "targets": 128,
+        "loss_sum": 175.78544398094527,
+        "correct": 74
+      },
+      {
+        "start": 8448,
+        "targets": 128,
+        "loss_sum": 194.65311918628868,
+        "correct": 65
+      },
+      {
+        "start": 8576,
+        "targets": 128,
+        "loss_sum": 238.8042811441701,
+        "correct": 57
+      },
+      {
+        "start": 8704,
+        "targets": 128,
+        "loss_sum": 171.26842375303386,
+        "correct": 80
+      },
+      {
+        "start": 8832,
+        "targets": 128,
+        "loss_sum": 174.93076258324436,
+        "correct": 76
+      },
+      {
+        "start": 8960,
+        "targets": 128,
+        "loss_sum": 177.69680293271085,
+        "correct": 74
+      },
+      {
+        "start": 9088,
+        "targets": 128,
+        "loss_sum": 153.29553915260476,
+        "correct": 81
+      },
+      {
+        "start": 9216,
+        "targets": 128,
+        "loss_sum": 211.2121262604196,
+        "correct": 63
+      },
+      {
+        "start": 9344,
+        "targets": 128,
+        "loss_sum": 201.62878163345158,
+        "correct": 62
+      },
+      {
+        "start": 9472,
+        "targets": 128,
+        "loss_sum": 201.01185452518985,
+        "correct": 67
+      },
+      {
+        "start": 9600,
+        "targets": 128,
+        "loss_sum": 192.6377895581536,
+        "correct": 63
+      },
+      {
+        "start": 9728,
+        "targets": 128,
+        "loss_sum": 214.4356986414641,
+        "correct": 68
+      },
+      {
+        "start": 9856,
+        "targets": 128,
+        "loss_sum": 244.88204819429666,
+        "correct": 59
+      },
+      {
+        "start": 9984,
+        "targets": 128,
+        "loss_sum": 208.8603352351929,
+        "correct": 67
+      },
+      {
+        "start": 10112,
+        "targets": 128,
+        "loss_sum": 222.18459994345903,
+        "correct": 65
+      },
+      {
+        "start": 10240,
+        "targets": 128,
+        "loss_sum": 197.1309733033704,
+        "correct": 69
+      },
+      {
+        "start": 10368,
+        "targets": 128,
+        "loss_sum": 196.85147605685052,
+        "correct": 71
+      },
+      {
+        "start": 10496,
+        "targets": 128,
+        "loss_sum": 181.1587932454422,
+        "correct": 76
+      },
+      {
+        "start": 10624,
+        "targets": 128,
+        "loss_sum": 202.57317812461406,
+        "correct": 70
+      },
+      {
+        "start": 10752,
+        "targets": 128,
+        "loss_sum": 180.03066096059047,
+        "correct": 68
+      },
+      {
+        "start": 10880,
+        "targets": 128,
+        "loss_sum": 216.47252913704142,
+        "correct": 64
+      },
+      {
+        "start": 11008,
+        "targets": 128,
+        "loss_sum": 181.73511694767512,
+        "correct": 71
+      },
+      {
+        "start": 11136,
+        "targets": 128,
+        "loss_sum": 178.4405774474144,
+        "correct": 70
+      },
+      {
+        "start": 11264,
+        "targets": 128,
+        "loss_sum": 182.75850580626866,
+        "correct": 68
+      },
+      {
+        "start": 11392,
+        "targets": 128,
+        "loss_sum": 221.38161003863206,
+        "correct": 68
+      },
+      {
+        "start": 11520,
+        "targets": 128,
+        "loss_sum": 193.57781652221456,
+        "correct": 70
+      },
+      {
+        "start": 11648,
+        "targets": 128,
+        "loss_sum": 203.76417997013777,
+        "correct": 68
+      },
+      {
+        "start": 11776,
+        "targets": 128,
+        "loss_sum": 196.2591902410204,
+        "correct": 75
+      },
+      {
+        "start": 11904,
+        "targets": 128,
+        "loss_sum": 205.51490407757228,
+        "correct": 68
+      },
+      {
+        "start": 12032,
+        "targets": 128,
+        "loss_sum": 167.08560553449206,
+        "correct": 74
+      },
+      {
+        "start": 12160,
+        "targets": 128,
+        "loss_sum": 196.49543731240556,
+        "correct": 71
+      },
+      {
+        "start": 12288,
+        "targets": 128,
+        "loss_sum": 232.54533006064594,
+        "correct": 57
+      },
+      {
+        "start": 12416,
+        "targets": 128,
+        "loss_sum": 199.31703016441315,
+        "correct": 67
+      },
+      {
+        "start": 12544,
+        "targets": 128,
+        "loss_sum": 243.30929827387445,
+        "correct": 58
+      },
+      {
+        "start": 12672,
+        "targets": 128,
+        "loss_sum": 178.56146139279008,
+        "correct": 75
+      },
+      {
+        "start": 12800,
+        "targets": 128,
+        "loss_sum": 192.75900153821567,
+        "correct": 70
+      },
+      {
+        "start": 12928,
+        "targets": 128,
+        "loss_sum": 210.4080957742408,
+        "correct": 66
+      },
+      {
+        "start": 13056,
+        "targets": 128,
+        "loss_sum": 224.52495006192476,
+        "correct": 63
+      },
+      {
+        "start": 13184,
+        "targets": 128,
+        "loss_sum": 210.53590876417002,
+        "correct": 60
+      },
+      {
+        "start": 13312,
+        "targets": 128,
+        "loss_sum": 203.53885265023564,
+        "correct": 65
+      },
+      {
+        "start": 13440,
+        "targets": 128,
+        "loss_sum": 195.01513401186094,
+        "correct": 69
+      },
+      {
+        "start": 13568,
+        "targets": 128,
+        "loss_sum": 169.29478709676187,
+        "correct": 73
+      },
+      {
+        "start": 13696,
+        "targets": 128,
+        "loss_sum": 251.8084753114963,
+        "correct": 62
+      },
+      {
+        "start": 13824,
+        "targets": 128,
+        "loss_sum": 214.32878486369736,
+        "correct": 62
+      },
+      {
+        "start": 13952,
+        "targets": 128,
+        "loss_sum": 209.1942257140763,
+        "correct": 69
+      },
+      {
+        "start": 14080,
+        "targets": 128,
+        "loss_sum": 191.8546754650306,
+        "correct": 71
+      },
+      {
+        "start": 14208,
+        "targets": 128,
+        "loss_sum": 243.44189395429567,
+        "correct": 60
+      },
+      {
+        "start": 14336,
+        "targets": 128,
+        "loss_sum": 314.2952418960631,
+        "correct": 41
+      },
+      {
+        "start": 14464,
+        "targets": 128,
+        "loss_sum": 262.8534883293323,
+        "correct": 58
+      },
+      {
+        "start": 14592,
+        "targets": 128,
+        "loss_sum": 238.07383100921288,
+        "correct": 65
+      },
+      {
+        "start": 14720,
+        "targets": 128,
+        "loss_sum": 173.7984463610337,
+        "correct": 72
+      },
+      {
+        "start": 14848,
+        "targets": 128,
+        "loss_sum": 184.8877756278962,
+        "correct": 75
+      },
+      {
+        "start": 14976,
+        "targets": 128,
+        "loss_sum": 235.545077778399,
+        "correct": 51
+      },
+      {
+        "start": 15104,
+        "targets": 128,
+        "loss_sum": 198.22556671162602,
+        "correct": 70
+      },
+      {
+        "start": 15232,
+        "targets": 128,
+        "loss_sum": 211.00698644760996,
+        "correct": 65
+      },
+      {
+        "start": 15360,
+        "targets": 128,
+        "loss_sum": 221.42787279293407,
+        "correct": 67
+      },
+      {
+        "start": 15488,
+        "targets": 128,
+        "loss_sum": 248.20130474772304,
+        "correct": 57
+      },
+      {
+        "start": 15616,
+        "targets": 128,
+        "loss_sum": 150.84155659368844,
+        "correct": 78
+      },
+      {
+        "start": 15744,
+        "targets": 128,
+        "loss_sum": 183.0797966507089,
+        "correct": 73
+      },
+      {
+        "start": 15872,
+        "targets": 128,
+        "loss_sum": 170.65498527674936,
+        "correct": 74
+      },
+      {
+        "start": 16000,
+        "targets": 128,
+        "loss_sum": 182.55167703874758,
+        "correct": 65
+      },
+      {
+        "start": 16128,
+        "targets": 128,
+        "loss_sum": 201.4438749968831,
+        "correct": 66
+      },
+      {
+        "start": 16256,
+        "targets": 128,
+        "loss_sum": 194.62404311774299,
+        "correct": 68
+      },
+      {
+        "start": 16384,
+        "targets": 128,
+        "loss_sum": 200.82187611918198,
+        "correct": 68
+      },
+      {
+        "start": 16512,
+        "targets": 128,
+        "loss_sum": 251.29664573722403,
+        "correct": 59
+      },
+      {
+        "start": 16640,
+        "targets": 128,
+        "loss_sum": 196.84686413616873,
+        "correct": 65
+      },
+      {
+        "start": 16768,
+        "targets": 128,
+        "loss_sum": 222.10126975364983,
+        "correct": 63
+      },
+      {
+        "start": 16896,
+        "targets": 128,
+        "loss_sum": 211.84995947941206,
+        "correct": 61
+      },
+      {
+        "start": 17024,
+        "targets": 128,
+        "loss_sum": 194.60248393123038,
+        "correct": 71
+      },
+      {
+        "start": 17152,
+        "targets": 128,
+        "loss_sum": 196.8963968739845,
+        "correct": 64
+      },
+      {
+        "start": 17280,
+        "targets": 128,
+        "loss_sum": 191.8640283625282,
+        "correct": 67
+      },
+      {
+        "start": 17408,
+        "targets": 128,
+        "loss_sum": 219.808033936657,
+        "correct": 64
+      },
+      {
+        "start": 17536,
+        "targets": 128,
+        "loss_sum": 152.71798249491258,
+        "correct": 78
+      },
+      {
+        "start": 17664,
+        "targets": 128,
+        "loss_sum": 196.26732444763184,
+        "correct": 66
+      },
+      {
+        "start": 17792,
+        "targets": 128,
+        "loss_sum": 201.85507631953806,
+        "correct": 60
+      },
+      {
+        "start": 17920,
+        "targets": 128,
+        "loss_sum": 196.33879720437108,
+        "correct": 63
+      },
+      {
+        "start": 18048,
+        "targets": 128,
+        "loss_sum": 233.59445889346534,
+        "correct": 62
+      },
+      {
+        "start": 18176,
+        "targets": 128,
+        "loss_sum": 352.0559741994948,
+        "correct": 40
+      },
+      {
+        "start": 18304,
+        "targets": 128,
+        "loss_sum": 321.21971035934985,
+        "correct": 43
+      },
+      {
+        "start": 18432,
+        "targets": 128,
+        "loss_sum": 301.1608703248203,
+        "correct": 45
+      },
+      {
+        "start": 18560,
+        "targets": 128,
+        "loss_sum": 203.00991886173142,
+        "correct": 65
+      },
+      {
+        "start": 18688,
+        "targets": 128,
+        "loss_sum": 267.1101582314586,
+        "correct": 51
+      },
+      {
+        "start": 18816,
+        "targets": 128,
+        "loss_sum": 341.6147236498073,
+        "correct": 40
+      },
+      {
+        "start": 18944,
+        "targets": 128,
+        "loss_sum": 162.35657194734085,
+        "correct": 76
+      },
+      {
+        "start": 19072,
+        "targets": 128,
+        "loss_sum": 200.00898470869288,
+        "correct": 67
+      },
+      {
+        "start": 19200,
+        "targets": 128,
+        "loss_sum": 249.36370734783122,
+        "correct": 65
+      },
+      {
+        "start": 19328,
+        "targets": 128,
+        "loss_sum": 175.49301539262524,
+        "correct": 78
+      },
+      {
+        "start": 19456,
+        "targets": 128,
+        "loss_sum": 171.7452479909989,
+        "correct": 73
+      },
+      {
+        "start": 19584,
+        "targets": 128,
+        "loss_sum": 191.62640129734064,
+        "correct": 64
+      },
+      {
+        "start": 19712,
+        "targets": 128,
+        "loss_sum": 178.6958324223524,
+        "correct": 75
+      },
+      {
+        "start": 19840,
+        "targets": 128,
+        "loss_sum": 221.9882469146978,
+        "correct": 57
+      },
+      {
+        "start": 19968,
+        "targets": 128,
+        "loss_sum": 198.22111007830244,
+        "correct": 65
+      },
+      {
+        "start": 20096,
+        "targets": 128,
+        "loss_sum": 201.486467609182,
+        "correct": 68
+      },
+      {
+        "start": 20224,
+        "targets": 128,
+        "loss_sum": 179.25842755864142,
+        "correct": 75
+      },
+      {
+        "start": 20352,
+        "targets": 128,
+        "loss_sum": 157.36476812811452,
+        "correct": 74
+      },
+      {
+        "start": 20480,
+        "targets": 128,
+        "loss_sum": 190.33612868911587,
+        "correct": 66
+      },
+      {
+        "start": 20608,
+        "targets": 128,
+        "loss_sum": 195.07887584311538,
+        "correct": 67
+      },
+      {
+        "start": 20736,
+        "targets": 128,
+        "loss_sum": 223.72841934068128,
+        "correct": 55
+      },
+      {
+        "start": 20864,
+        "targets": 128,
+        "loss_sum": 226.96477940375917,
+        "correct": 57
+      },
+      {
+        "start": 20992,
+        "targets": 128,
+        "loss_sum": 216.35805649030954,
+        "correct": 61
+      },
+      {
+        "start": 21120,
+        "targets": 128,
+        "loss_sum": 205.36469998164102,
+        "correct": 63
+      },
+      {
+        "start": 21248,
+        "targets": 128,
+        "loss_sum": 192.98718214803375,
+        "correct": 68
+      },
+      {
+        "start": 21376,
+        "targets": 128,
+        "loss_sum": 201.33190822368488,
+        "correct": 67
+      },
+      {
+        "start": 21504,
+        "targets": 128,
+        "loss_sum": 182.31512713586562,
+        "correct": 72
+      },
+      {
+        "start": 21632,
+        "targets": 128,
+        "loss_sum": 213.24592058898997,
+        "correct": 59
+      },
+      {
+        "start": 21760,
+        "targets": 128,
+        "loss_sum": 200.3936890187324,
+        "correct": 65
+      },
+      {
+        "start": 21888,
+        "targets": 128,
+        "loss_sum": 197.99302503670333,
+        "correct": 67
+      },
+      {
+        "start": 22016,
+        "targets": 128,
+        "loss_sum": 178.76838629762642,
+        "correct": 66
+      },
+      {
+        "start": 22144,
+        "targets": 128,
+        "loss_sum": 242.01161861169385,
+        "correct": 58
+      },
+      {
+        "start": 22272,
+        "targets": 128,
+        "loss_sum": 233.7290805261582,
+        "correct": 51
+      },
+      {
+        "start": 22400,
+        "targets": 128,
+        "loss_sum": 227.38199556199834,
+        "correct": 55
+      },
+      {
+        "start": 22528,
+        "targets": 128,
+        "loss_sum": 227.983386750333,
+        "correct": 63
+      },
+      {
+        "start": 22656,
+        "targets": 128,
+        "loss_sum": 245.4094016070012,
+        "correct": 56
+      },
+      {
+        "start": 22784,
+        "targets": 128,
+        "loss_sum": 256.5918978713453,
+        "correct": 48
+      },
+      {
+        "start": 22912,
+        "targets": 128,
+        "loss_sum": 222.0448991912417,
+        "correct": 57
+      },
+      {
+        "start": 23040,
+        "targets": 128,
+        "loss_sum": 224.47375444427598,
+        "correct": 57
+      },
+      {
+        "start": 23168,
+        "targets": 128,
+        "loss_sum": 215.74857572623296,
+        "correct": 61
+      },
+      {
+        "start": 23296,
+        "targets": 128,
+        "loss_sum": 264.48951991740614,
+        "correct": 45
+      },
+      {
+        "start": 23424,
+        "targets": 128,
+        "loss_sum": 212.7924840641208,
+        "correct": 63
+      },
+      {
+        "start": 23552,
+        "targets": 128,
+        "loss_sum": 233.90389855063404,
+        "correct": 58
+      },
+      {
+        "start": 23680,
+        "targets": 128,
+        "loss_sum": 188.49931207078043,
+        "correct": 65
+      },
+      {
+        "start": 23808,
+        "targets": 128,
+        "loss_sum": 193.51205754719558,
+        "correct": 67
+      },
+      {
+        "start": 23936,
+        "targets": 128,
+        "loss_sum": 211.69605584355304,
+        "correct": 61
+      },
+      {
+        "start": 24064,
+        "targets": 128,
+        "loss_sum": 148.8880594097427,
+        "correct": 80
+      },
+      {
+        "start": 24192,
+        "targets": 128,
+        "loss_sum": 173.55177725380054,
+        "correct": 72
+      },
+      {
+        "start": 24320,
+        "targets": 128,
+        "loss_sum": 183.5436736466363,
+        "correct": 71
+      },
+      {
+        "start": 24448,
+        "targets": 128,
+        "loss_sum": 196.8783270988497,
+        "correct": 65
+      },
+      {
+        "start": 24576,
+        "targets": 128,
+        "loss_sum": 213.36095780297183,
+        "correct": 64
+      },
+      {
+        "start": 24704,
+        "targets": 128,
+        "loss_sum": 215.95500333525706,
+        "correct": 65
+      },
+      {
+        "start": 24832,
+        "targets": 128,
+        "loss_sum": 194.08895916468464,
+        "correct": 70
+      },
+      {
+        "start": 24960,
+        "targets": 128,
+        "loss_sum": 184.33092818176374,
+        "correct": 70
+      },
+      {
+        "start": 25088,
+        "targets": 128,
+        "loss_sum": 203.1748282116605,
+        "correct": 62
+      },
+      {
+        "start": 25216,
+        "targets": 128,
+        "loss_sum": 198.91341101340367,
+        "correct": 65
+      },
+      {
+        "start": 25344,
+        "targets": 128,
+        "loss_sum": 176.80648685997585,
+        "correct": 70
+      },
+      {
+        "start": 25472,
+        "targets": 128,
+        "loss_sum": 208.4290231638588,
+        "correct": 60
+      },
+      {
+        "start": 25600,
+        "targets": 128,
+        "loss_sum": 177.54077241476625,
+        "correct": 72
+      },
+      {
+        "start": 25728,
+        "targets": 128,
+        "loss_sum": 193.15519242628943,
+        "correct": 61
+      },
+      {
+        "start": 25856,
+        "targets": 128,
+        "loss_sum": 182.87089559008018,
+        "correct": 73
+      },
+      {
+        "start": 25984,
+        "targets": 128,
+        "loss_sum": 211.93070835247636,
+        "correct": 70
+      },
+      {
+        "start": 26112,
+        "targets": 128,
+        "loss_sum": 200.70670138380956,
+        "correct": 70
+      },
+      {
+        "start": 26240,
+        "targets": 128,
+        "loss_sum": 191.81771489078528,
+        "correct": 63
+      },
+      {
+        "start": 26368,
+        "targets": 128,
+        "loss_sum": 205.98933919146657,
+        "correct": 64
+      },
+      {
+        "start": 26496,
+        "targets": 128,
+        "loss_sum": 178.28164807279245,
+        "correct": 74
+      },
+      {
+        "start": 26624,
+        "targets": 128,
+        "loss_sum": 237.86547986324877,
+        "correct": 62
+      },
+      {
+        "start": 26752,
+        "targets": 128,
+        "loss_sum": 196.94824374857126,
+        "correct": 70
+      },
+      {
+        "start": 26880,
+        "targets": 128,
+        "loss_sum": 227.688336150517,
+        "correct": 57
+      },
+      {
+        "start": 27008,
+        "targets": 128,
+        "loss_sum": 187.83697983811726,
+        "correct": 60
+      },
+      {
+        "start": 27136,
+        "targets": 128,
+        "loss_sum": 211.62061972924857,
+        "correct": 56
+      },
+      {
+        "start": 27264,
+        "targets": 128,
+        "loss_sum": 254.5563608352095,
+        "correct": 54
+      },
+      {
+        "start": 27392,
+        "targets": 128,
+        "loss_sum": 216.0751449437812,
+        "correct": 58
+      },
+      {
+        "start": 27520,
+        "targets": 128,
+        "loss_sum": 213.2790904826834,
+        "correct": 64
+      },
+      {
+        "start": 27648,
+        "targets": 128,
+        "loss_sum": 219.13106801122194,
+        "correct": 59
+      },
+      {
+        "start": 27776,
+        "targets": 128,
+        "loss_sum": 261.65943814907223,
+        "correct": 50
+      },
+      {
+        "start": 27904,
+        "targets": 128,
+        "loss_sum": 210.04835401428863,
+        "correct": 65
+      },
+      {
+        "start": 28032,
+        "targets": 128,
+        "loss_sum": 203.16827330971137,
+        "correct": 65
+      },
+      {
+        "start": 28160,
+        "targets": 128,
+        "loss_sum": 209.79310519620776,
+        "correct": 71
+      },
+      {
+        "start": 28288,
+        "targets": 128,
+        "loss_sum": 183.94348205969436,
+        "correct": 69
+      },
+      {
+        "start": 28416,
+        "targets": 128,
+        "loss_sum": 183.17495609028265,
+        "correct": 66
+      },
+      {
+        "start": 28544,
+        "targets": 128,
+        "loss_sum": 144.3256010558689,
+        "correct": 84
+      },
+      {
+        "start": 28672,
+        "targets": 128,
+        "loss_sum": 179.1263297534315,
+        "correct": 70
+      },
+      {
+        "start": 28800,
+        "targets": 128,
+        "loss_sum": 159.65919160237536,
+        "correct": 77
+      },
+      {
+        "start": 28928,
+        "targets": 128,
+        "loss_sum": 178.23738482227782,
+        "correct": 72
+      },
+      {
+        "start": 29056,
+        "targets": 128,
+        "loss_sum": 148.7784364540421,
+        "correct": 82
+      },
+      {
+        "start": 29184,
+        "targets": 128,
+        "loss_sum": 150.26528782647802,
+        "correct": 77
+      },
+      {
+        "start": 29312,
+        "targets": 128,
+        "loss_sum": 187.93124531881767,
+        "correct": 72
+      },
+      {
+        "start": 29440,
+        "targets": 128,
+        "loss_sum": 155.80222790609696,
+        "correct": 83
+      },
+      {
+        "start": 29568,
+        "targets": 128,
+        "loss_sum": 201.21463577495888,
+        "correct": 68
+      },
+      {
+        "start": 29696,
+        "targets": 128,
+        "loss_sum": 201.54473458149005,
+        "correct": 74
+      },
+      {
+        "start": 29824,
+        "targets": 128,
+        "loss_sum": 189.75775515273563,
+        "correct": 72
+      },
+      {
+        "start": 29952,
+        "targets": 128,
+        "loss_sum": 190.4028549711802,
+        "correct": 72
+      },
+      {
+        "start": 30080,
+        "targets": 128,
+        "loss_sum": 202.56155413237866,
+        "correct": 71
+      },
+      {
+        "start": 30208,
+        "targets": 128,
+        "loss_sum": 234.03672656789422,
+        "correct": 60
+      },
+      {
+        "start": 30336,
+        "targets": 128,
+        "loss_sum": 216.45212495233864,
+        "correct": 55
+      },
+      {
+        "start": 30464,
+        "targets": 128,
+        "loss_sum": 220.71021329751238,
+        "correct": 61
+      },
+      {
+        "start": 30592,
+        "targets": 128,
+        "loss_sum": 214.58127716183662,
+        "correct": 62
+      },
+      {
+        "start": 30720,
+        "targets": 128,
+        "loss_sum": 217.67565784230828,
+        "correct": 68
+      },
+      {
+        "start": 30848,
+        "targets": 128,
+        "loss_sum": 200.6952240881219,
+        "correct": 67
+      },
+      {
+        "start": 30976,
+        "targets": 128,
+        "loss_sum": 174.08474912203383,
+        "correct": 71
+      },
+      {
+        "start": 31104,
+        "targets": 128,
+        "loss_sum": 200.89322508691112,
+        "correct": 64
+      },
+      {
+        "start": 31232,
+        "targets": 128,
+        "loss_sum": 232.6922174906358,
+        "correct": 58
+      },
+      {
+        "start": 31360,
+        "targets": 128,
+        "loss_sum": 197.24560343445046,
+        "correct": 63
+      },
+      {
+        "start": 31488,
+        "targets": 128,
+        "loss_sum": 212.28463767888024,
+        "correct": 57
+      },
+      {
+        "start": 31616,
+        "targets": 128,
+        "loss_sum": 222.26249863114208,
+        "correct": 66
+      },
+      {
+        "start": 31744,
+        "targets": 128,
+        "loss_sum": 215.84430685872212,
+        "correct": 66
+      },
+      {
+        "start": 31872,
+        "targets": 128,
+        "loss_sum": 203.7719098185189,
+        "correct": 60
+      },
+      {
+        "start": 32000,
+        "targets": 128,
+        "loss_sum": 246.90899965987774,
+        "correct": 59
+      },
+      {
+        "start": 32128,
+        "targets": 128,
+        "loss_sum": 200.9305680222751,
+        "correct": 70
+      },
+      {
+        "start": 32256,
+        "targets": 128,
+        "loss_sum": 259.0037383099552,
+        "correct": 59
+      },
+      {
+        "start": 32384,
+        "targets": 128,
+        "loss_sum": 256.2725841974607,
+        "correct": 53
+      },
+      {
+        "start": 32512,
+        "targets": 128,
+        "loss_sum": 219.67678337171674,
+        "correct": 62
+      },
+      {
+        "start": 32640,
+        "targets": 128,
+        "loss_sum": 251.4390720766387,
+        "correct": 56
+      },
+      {
+        "start": 32768,
+        "targets": 128,
+        "loss_sum": 177.49749877024442,
+        "correct": 67
+      },
+      {
+        "start": 32896,
+        "targets": 128,
+        "loss_sum": 216.5707505395403,
+        "correct": 70
+      },
+      {
+        "start": 33024,
+        "targets": 128,
+        "loss_sum": 195.90226049497142,
+        "correct": 69
+      },
+      {
+        "start": 33152,
+        "targets": 128,
+        "loss_sum": 213.73325527179986,
+        "correct": 66
+      },
+      {
+        "start": 33280,
+        "targets": 128,
+        "loss_sum": 243.04072034198907,
+        "correct": 64
+      },
+      {
+        "start": 33408,
+        "targets": 128,
+        "loss_sum": 272.2642459818162,
+        "correct": 53
+      },
+      {
+        "start": 33536,
+        "targets": 128,
+        "loss_sum": 241.00440589850768,
+        "correct": 56
+      },
+      {
+        "start": 33664,
+        "targets": 128,
+        "loss_sum": 198.1072351768671,
+        "correct": 71
+      },
+      {
+        "start": 33792,
+        "targets": 128,
+        "loss_sum": 230.23829072056105,
+        "correct": 62
+      },
+      {
+        "start": 33920,
+        "targets": 128,
+        "loss_sum": 280.08656893807347,
+        "correct": 62
+      },
+      {
+        "start": 34048,
+        "targets": 128,
+        "loss_sum": 194.33483544015326,
+        "correct": 71
+      },
+      {
+        "start": 34176,
+        "targets": 128,
+        "loss_sum": 271.54733360232785,
+        "correct": 49
+      },
+      {
+        "start": 34304,
+        "targets": 128,
+        "loss_sum": 201.16040213612723,
+        "correct": 73
+      },
+      {
+        "start": 34432,
+        "targets": 128,
+        "loss_sum": 207.21886431239545,
+        "correct": 65
+      },
+      {
+        "start": 34560,
+        "targets": 128,
+        "loss_sum": 202.3943656384945,
+        "correct": 64
+      },
+      {
+        "start": 34688,
+        "targets": 128,
+        "loss_sum": 214.35580499190837,
+        "correct": 54
+      },
+      {
+        "start": 34816,
+        "targets": 128,
+        "loss_sum": 223.8378151715733,
+        "correct": 61
+      },
+      {
+        "start": 34944,
+        "targets": 128,
+        "loss_sum": 216.31154822476674,
+        "correct": 69
+      },
+      {
+        "start": 35072,
+        "targets": 128,
+        "loss_sum": 284.06395625905134,
+        "correct": 55
+      },
+      {
+        "start": 35200,
+        "targets": 128,
+        "loss_sum": 244.2949720933102,
+        "correct": 62
+      },
+      {
+        "start": 35328,
+        "targets": 128,
+        "loss_sum": 222.5106315385783,
+        "correct": 70
+      },
+      {
+        "start": 35456,
+        "targets": 128,
+        "loss_sum": 198.3513673542475,
+        "correct": 69
+      },
+      {
+        "start": 35584,
+        "targets": 128,
+        "loss_sum": 227.28195135324495,
+        "correct": 68
+      },
+      {
+        "start": 35712,
+        "targets": 128,
+        "loss_sum": 239.08199816642446,
+        "correct": 63
+      },
+      {
+        "start": 35840,
+        "targets": 128,
+        "loss_sum": 288.35935413918924,
+        "correct": 56
+      },
+      {
+        "start": 35968,
+        "targets": 128,
+        "loss_sum": 258.2187034538947,
+        "correct": 58
+      },
+      {
+        "start": 36096,
+        "targets": 128,
+        "loss_sum": 212.13613403006457,
+        "correct": 63
+      },
+      {
+        "start": 36224,
+        "targets": 128,
+        "loss_sum": 197.41273655963596,
+        "correct": 67
+      },
+      {
+        "start": 36352,
+        "targets": 128,
+        "loss_sum": 287.6960554314428,
+        "correct": 49
+      },
+      {
+        "start": 36480,
+        "targets": 128,
+        "loss_sum": 229.83318350510672,
+        "correct": 61
+      },
+      {
+        "start": 36608,
+        "targets": 128,
+        "loss_sum": 221.96941600358696,
+        "correct": 59
+      },
+      {
+        "start": 36736,
+        "targets": 128,
+        "loss_sum": 210.38326674242853,
+        "correct": 69
+      },
+      {
+        "start": 36864,
+        "targets": 128,
+        "loss_sum": 245.3719037566334,
+        "correct": 57
+      },
+      {
+        "start": 36992,
+        "targets": 128,
+        "loss_sum": 260.75641797087155,
+        "correct": 52
+      },
+      {
+        "start": 37120,
+        "targets": 128,
+        "loss_sum": 193.67013181146467,
+        "correct": 69
+      },
+      {
+        "start": 37248,
+        "targets": 128,
+        "loss_sum": 241.44028032943606,
+        "correct": 56
+      },
+      {
+        "start": 37376,
+        "targets": 128,
+        "loss_sum": 234.36107937339693,
+        "correct": 56
+      },
+      {
+        "start": 37504,
+        "targets": 128,
+        "loss_sum": 249.56274330615997,
+        "correct": 54
+      },
+      {
+        "start": 37632,
+        "targets": 128,
+        "loss_sum": 205.35861210757867,
+        "correct": 63
+      },
+      {
+        "start": 37760,
+        "targets": 128,
+        "loss_sum": 213.04589112859685,
+        "correct": 55
+      },
+      {
+        "start": 37888,
+        "targets": 128,
+        "loss_sum": 225.612665075314,
+        "correct": 66
+      },
+      {
+        "start": 38016,
+        "targets": 128,
+        "loss_sum": 200.4003708269447,
+        "correct": 65
+      },
+      {
+        "start": 38144,
+        "targets": 128,
+        "loss_sum": 180.5767763647018,
+        "correct": 74
+      },
+      {
+        "start": 38272,
+        "targets": 128,
+        "loss_sum": 209.67557908734307,
+        "correct": 71
+      },
+      {
+        "start": 38400,
+        "targets": 128,
+        "loss_sum": 246.9454240128398,
+        "correct": 60
+      },
+      {
+        "start": 38528,
+        "targets": 128,
+        "loss_sum": 173.07612737693125,
+        "correct": 73
+      },
+      {
+        "start": 38656,
+        "targets": 128,
+        "loss_sum": 217.63179564941674,
+        "correct": 65
+      },
+      {
+        "start": 38784,
+        "targets": 128,
+        "loss_sum": 211.91890987940133,
+        "correct": 60
+      },
+      {
+        "start": 38912,
+        "targets": 128,
+        "loss_sum": 210.91037057474023,
+        "correct": 67
+      },
+      {
+        "start": 39040,
+        "targets": 128,
+        "loss_sum": 220.7151112582651,
+        "correct": 64
+      },
+      {
+        "start": 39168,
+        "targets": 128,
+        "loss_sum": 195.88756850454956,
+        "correct": 65
+      },
+      {
+        "start": 39296,
+        "targets": 128,
+        "loss_sum": 208.49851936922641,
+        "correct": 63
+      },
+      {
+        "start": 39424,
+        "targets": 128,
+        "loss_sum": 206.4648702032864,
+        "correct": 67
+      },
+      {
+        "start": 39552,
+        "targets": 128,
+        "loss_sum": 184.75042515760288,
+        "correct": 68
+      },
+      {
+        "start": 39680,
+        "targets": 128,
+        "loss_sum": 213.17457241332158,
+        "correct": 63
+      },
+      {
+        "start": 39808,
+        "targets": 128,
+        "loss_sum": 193.50999914342538,
+        "correct": 69
+      },
+      {
+        "start": 39936,
+        "targets": 128,
+        "loss_sum": 220.7904335076455,
+        "correct": 64
+      },
+      {
+        "start": 40064,
+        "targets": 128,
+        "loss_sum": 185.7806725972332,
+        "correct": 69
+      },
+      {
+        "start": 40192,
+        "targets": 128,
+        "loss_sum": 176.65850286232308,
+        "correct": 68
+      },
+      {
+        "start": 40320,
+        "targets": 128,
+        "loss_sum": 200.01052262910525,
+        "correct": 68
+      },
+      {
+        "start": 40448,
+        "targets": 128,
+        "loss_sum": 196.79164387338096,
+        "correct": 68
+      },
+      {
+        "start": 40576,
+        "targets": 128,
+        "loss_sum": 177.05371365929022,
+        "correct": 69
+      },
+      {
+        "start": 40704,
+        "targets": 128,
+        "loss_sum": 195.86965544472332,
+        "correct": 69
+      },
+      {
+        "start": 40832,
+        "targets": 128,
+        "loss_sum": 176.4131970931776,
+        "correct": 72
+      },
+      {
+        "start": 40960,
+        "targets": 128,
+        "loss_sum": 213.22096366854385,
+        "correct": 67
+      },
+      {
+        "start": 41088,
+        "targets": 128,
+        "loss_sum": 206.6881749772292,
+        "correct": 72
+      },
+      {
+        "start": 41216,
+        "targets": 128,
+        "loss_sum": 181.81433794321492,
+        "correct": 67
+      },
+      {
+        "start": 41344,
+        "targets": 128,
+        "loss_sum": 189.949946597917,
+        "correct": 70
+      },
+      {
+        "start": 41472,
+        "targets": 128,
+        "loss_sum": 179.7270684451796,
+        "correct": 80
+      },
+      {
+        "start": 41600,
+        "targets": 128,
+        "loss_sum": 180.35334411953227,
+        "correct": 71
+      },
+      {
+        "start": 41728,
+        "targets": 128,
+        "loss_sum": 180.27689559594728,
+        "correct": 75
+      },
+      {
+        "start": 41856,
+        "targets": 128,
+        "loss_sum": 198.41100041521713,
+        "correct": 62
+      },
+      {
+        "start": 41984,
+        "targets": 128,
+        "loss_sum": 162.88571530702757,
+        "correct": 82
+      },
+      {
+        "start": 42112,
+        "targets": 128,
+        "loss_sum": 215.94586336240172,
+        "correct": 62
+      },
+      {
+        "start": 42240,
+        "targets": 128,
+        "loss_sum": 202.60157911339775,
+        "correct": 67
+      },
+      {
+        "start": 42368,
+        "targets": 128,
+        "loss_sum": 197.20260102651082,
+        "correct": 66
+      },
+      {
+        "start": 42496,
+        "targets": 128,
+        "loss_sum": 179.1751334645087,
+        "correct": 75
+      },
+      {
+        "start": 42624,
+        "targets": 128,
+        "loss_sum": 193.95374642394017,
+        "correct": 67
+      },
+      {
+        "start": 42752,
+        "targets": 128,
+        "loss_sum": 188.01763545401627,
+        "correct": 66
+      },
+      {
+        "start": 42880,
+        "targets": 128,
+        "loss_sum": 203.38974940683693,
+        "correct": 62
+      },
+      {
+        "start": 43008,
+        "targets": 128,
+        "loss_sum": 206.52427240277757,
+        "correct": 67
+      },
+      {
+        "start": 43136,
+        "targets": 128,
+        "loss_sum": 200.17625648900867,
+        "correct": 66
+      },
+      {
+        "start": 43264,
+        "targets": 128,
+        "loss_sum": 221.9464289280295,
+        "correct": 59
+      },
+      {
+        "start": 43392,
+        "targets": 128,
+        "loss_sum": 181.72003877919633,
+        "correct": 71
+      },
+      {
+        "start": 43520,
+        "targets": 128,
+        "loss_sum": 205.6353339543566,
+        "correct": 69
+      },
+      {
+        "start": 43648,
+        "targets": 128,
+        "loss_sum": 183.34774747194024,
+        "correct": 74
+      },
+      {
+        "start": 43776,
+        "targets": 128,
+        "loss_sum": 247.0887663050089,
+        "correct": 60
+      },
+      {
+        "start": 43904,
+        "targets": 128,
+        "loss_sum": 182.11288172521745,
+        "correct": 78
+      },
+      {
+        "start": 44032,
+        "targets": 128,
+        "loss_sum": 190.6881997505552,
+        "correct": 73
+      },
+      {
+        "start": 44160,
+        "targets": 128,
+        "loss_sum": 191.79066737182438,
+        "correct": 73
+      },
+      {
+        "start": 44288,
+        "targets": 128,
+        "loss_sum": 189.20377032924443,
+        "correct": 73
+      },
+      {
+        "start": 44416,
+        "targets": 128,
+        "loss_sum": 201.81708776921732,
+        "correct": 65
+      },
+      {
+        "start": 44544,
+        "targets": 128,
+        "loss_sum": 152.98666813230375,
+        "correct": 79
+      },
+      {
+        "start": 44672,
+        "targets": 128,
+        "loss_sum": 220.8713342921983,
+        "correct": 63
+      },
+      {
+        "start": 44800,
+        "targets": 128,
+        "loss_sum": 182.98177621600917,
+        "correct": 70
+      },
+      {
+        "start": 44928,
+        "targets": 128,
+        "loss_sum": 175.96795564086642,
+        "correct": 77
+      },
+      {
+        "start": 45056,
+        "targets": 128,
+        "loss_sum": 163.71434536064044,
+        "correct": 81
+      },
+      {
+        "start": 45184,
+        "targets": 128,
+        "loss_sum": 159.84699431381887,
+        "correct": 79
+      },
+      {
+        "start": 45312,
+        "targets": 128,
+        "loss_sum": 179.32766399203683,
+        "correct": 71
+      },
+      {
+        "start": 45440,
+        "targets": 128,
+        "loss_sum": 160.09460812277393,
+        "correct": 75
+      },
+      {
+        "start": 45568,
+        "targets": 128,
+        "loss_sum": 209.26613373239525,
+        "correct": 63
+      },
+      {
+        "start": 45696,
+        "targets": 128,
+        "loss_sum": 190.39268585018,
+        "correct": 71
+      },
+      {
+        "start": 45824,
+        "targets": 128,
+        "loss_sum": 187.15910825441824,
+        "correct": 69
+      },
+      {
+        "start": 45952,
+        "targets": 128,
+        "loss_sum": 206.7892417507246,
+        "correct": 66
+      },
+      {
+        "start": 46080,
+        "targets": 128,
+        "loss_sum": 222.08451985381544,
+        "correct": 60
+      },
+      {
+        "start": 46208,
+        "targets": 128,
+        "loss_sum": 190.75464921165258,
+        "correct": 67
+      },
+      {
+        "start": 46336,
+        "targets": 128,
+        "loss_sum": 196.1027525854297,
+        "correct": 63
+      },
+      {
+        "start": 46464,
+        "targets": 128,
+        "loss_sum": 186.06774338163086,
+        "correct": 67
+      },
+      {
+        "start": 46592,
+        "targets": 128,
+        "loss_sum": 225.26455585850636,
+        "correct": 60
+      },
+      {
+        "start": 46720,
+        "targets": 128,
+        "loss_sum": 201.28835765033728,
+        "correct": 66
+      },
+      {
+        "start": 46848,
+        "targets": 128,
+        "loss_sum": 173.88542569061974,
+        "correct": 72
+      },
+      {
+        "start": 46976,
+        "targets": 128,
+        "loss_sum": 190.5344589400629,
+        "correct": 70
+      },
+      {
+        "start": 47104,
+        "targets": 128,
+        "loss_sum": 192.24211087397998,
+        "correct": 70
+      },
+      {
+        "start": 47232,
+        "targets": 128,
+        "loss_sum": 191.91260572802275,
+        "correct": 74
+      },
+      {
+        "start": 47360,
+        "targets": 128,
+        "loss_sum": 179.81570365367224,
+        "correct": 71
+      },
+      {
+        "start": 47488,
+        "targets": 128,
+        "loss_sum": 220.43045100785093,
+        "correct": 63
+      },
+      {
+        "start": 47616,
+        "targets": 128,
+        "loss_sum": 190.6640361752361,
+        "correct": 67
+      },
+      {
+        "start": 47744,
+        "targets": 128,
+        "loss_sum": 172.5620428205002,
+        "correct": 75
+      },
+      {
+        "start": 47872,
+        "targets": 128,
+        "loss_sum": 160.91632781433873,
+        "correct": 75
+      },
+      {
+        "start": 48000,
+        "targets": 128,
+        "loss_sum": 203.94790942198597,
+        "correct": 73
+      },
+      {
+        "start": 48128,
+        "targets": 128,
+        "loss_sum": 247.5351114818477,
+        "correct": 52
+      },
+      {
+        "start": 48256,
+        "targets": 128,
+        "loss_sum": 248.04095182043966,
+        "correct": 57
+      },
+      {
+        "start": 48384,
+        "targets": 128,
+        "loss_sum": 170.6721453963546,
+        "correct": 74
+      },
+      {
+        "start": 48512,
+        "targets": 128,
+        "loss_sum": 144.04457812363398,
+        "correct": 86
+      },
+      {
+        "start": 48640,
+        "targets": 128,
+        "loss_sum": 177.73403247375973,
+        "correct": 70
+      },
+      {
+        "start": 48768,
+        "targets": 128,
+        "loss_sum": 173.63075344637036,
+        "correct": 73
+      },
+      {
+        "start": 48896,
+        "targets": 128,
+        "loss_sum": 231.29237122135237,
+        "correct": 56
+      },
+      {
+        "start": 49024,
+        "targets": 128,
+        "loss_sum": 164.81255438001244,
+        "correct": 78
+      },
+      {
+        "start": 49152,
+        "targets": 128,
+        "loss_sum": 238.67959098989377,
+        "correct": 57
+      },
+      {
+        "start": 49280,
+        "targets": 128,
+        "loss_sum": 247.22696595219895,
+        "correct": 46
+      },
+      {
+        "start": 49408,
+        "targets": 128,
+        "loss_sum": 238.11813140352024,
+        "correct": 57
+      },
+      {
+        "start": 49536,
+        "targets": 128,
+        "loss_sum": 167.87565031135455,
+        "correct": 75
+      },
+      {
+        "start": 49664,
+        "targets": 128,
+        "loss_sum": 213.82648639613762,
+        "correct": 66
+      },
+      {
+        "start": 49792,
+        "targets": 128,
+        "loss_sum": 194.03474752203329,
+        "correct": 68
+      },
+      {
+        "start": 49920,
+        "targets": 128,
+        "loss_sum": 199.10563376772916,
+        "correct": 67
+      },
+      {
+        "start": 50048,
+        "targets": 128,
+        "loss_sum": 251.25011322827777,
+        "correct": 56
+      },
+      {
+        "start": 50176,
+        "targets": 128,
+        "loss_sum": 238.93442836869508,
+        "correct": 59
+      },
+      {
+        "start": 50304,
+        "targets": 128,
+        "loss_sum": 221.4283692841418,
+        "correct": 67
+      },
+      {
+        "start": 50432,
+        "targets": 128,
+        "loss_sum": 214.5566817598883,
+        "correct": 62
+      },
+      {
+        "start": 50560,
+        "targets": 128,
+        "loss_sum": 195.00167993016657,
+        "correct": 73
+      },
+      {
+        "start": 50688,
+        "targets": 128,
+        "loss_sum": 195.49324369378155,
+        "correct": 70
+      },
+      {
+        "start": 50816,
+        "targets": 128,
+        "loss_sum": 215.86661750735948,
+        "correct": 58
+      },
+      {
+        "start": 50944,
+        "targets": 128,
+        "loss_sum": 219.44798832852393,
+        "correct": 61
+      },
+      {
+        "start": 51072,
+        "targets": 128,
+        "loss_sum": 234.74608856718987,
+        "correct": 65
+      },
+      {
+        "start": 51200,
+        "targets": 128,
+        "loss_sum": 236.84576268849196,
+        "correct": 55
+      },
+      {
+        "start": 51328,
+        "targets": 128,
+        "loss_sum": 240.22480089048622,
+        "correct": 57
+      },
+      {
+        "start": 51456,
+        "targets": 128,
+        "loss_sum": 234.71661487559322,
+        "correct": 61
+      },
+      {
+        "start": 51584,
+        "targets": 128,
+        "loss_sum": 192.64403689699247,
+        "correct": 72
+      },
+      {
+        "start": 51712,
+        "targets": 128,
+        "loss_sum": 187.46856213838328,
+        "correct": 70
+      },
+      {
+        "start": 51840,
+        "targets": 128,
+        "loss_sum": 209.8121525424649,
+        "correct": 66
+      },
+      {
+        "start": 51968,
+        "targets": 128,
+        "loss_sum": 171.21669644583017,
+        "correct": 79
+      },
+      {
+        "start": 52096,
+        "targets": 128,
+        "loss_sum": 171.52251883264398,
+        "correct": 72
+      },
+      {
+        "start": 52224,
+        "targets": 128,
+        "loss_sum": 195.73536655606586,
+        "correct": 67
+      },
+      {
+        "start": 52352,
+        "targets": 128,
+        "loss_sum": 205.0139692093362,
+        "correct": 71
+      },
+      {
+        "start": 52480,
+        "targets": 128,
+        "loss_sum": 177.05244292429416,
+        "correct": 78
+      },
+      {
+        "start": 52608,
+        "targets": 128,
+        "loss_sum": 177.03965442394838,
+        "correct": 70
+      },
+      {
+        "start": 52736,
+        "targets": 128,
+        "loss_sum": 200.81976161082275,
+        "correct": 71
+      },
+      {
+        "start": 52864,
+        "targets": 128,
+        "loss_sum": 199.7124432255514,
+        "correct": 71
+      },
+      {
+        "start": 52992,
+        "targets": 128,
+        "loss_sum": 227.43484940752387,
+        "correct": 63
+      },
+      {
+        "start": 53120,
+        "targets": 128,
+        "loss_sum": 190.41011780314147,
+        "correct": 67
+      },
+      {
+        "start": 53248,
+        "targets": 128,
+        "loss_sum": 192.17847880907357,
+        "correct": 68
+      },
+      {
+        "start": 53376,
+        "targets": 128,
+        "loss_sum": 170.88498018617975,
+        "correct": 78
+      },
+      {
+        "start": 53504,
+        "targets": 128,
+        "loss_sum": 190.54033778514713,
+        "correct": 68
+      },
+      {
+        "start": 53632,
+        "targets": 128,
+        "loss_sum": 161.78954501380213,
+        "correct": 78
+      },
+      {
+        "start": 53760,
+        "targets": 128,
+        "loss_sum": 234.68460142653203,
+        "correct": 62
+      },
+      {
+        "start": 53888,
+        "targets": 128,
+        "loss_sum": 210.15441892654053,
+        "correct": 65
+      },
+      {
+        "start": 54016,
+        "targets": 128,
+        "loss_sum": 201.83049948787084,
+        "correct": 65
+      },
+      {
+        "start": 54144,
+        "targets": 128,
+        "loss_sum": 187.0563291532162,
+        "correct": 63
+      },
+      {
+        "start": 54272,
+        "targets": 128,
+        "loss_sum": 194.67131330573466,
+        "correct": 73
+      },
+      {
+        "start": 54400,
+        "targets": 128,
+        "loss_sum": 210.19042945618276,
+        "correct": 64
+      },
+      {
+        "start": 54528,
+        "targets": 128,
+        "loss_sum": 192.4402822041884,
+        "correct": 69
+      },
+      {
+        "start": 54656,
+        "targets": 128,
+        "loss_sum": 238.43106103444006,
+        "correct": 57
+      },
+      {
+        "start": 54784,
+        "targets": 128,
+        "loss_sum": 161.0390130621381,
+        "correct": 78
+      },
+      {
+        "start": 54912,
+        "targets": 128,
+        "loss_sum": 165.68551932554692,
+        "correct": 70
+      },
+      {
+        "start": 55040,
+        "targets": 128,
+        "loss_sum": 188.66450491221622,
+        "correct": 71
+      },
+      {
+        "start": 55168,
+        "targets": 128,
+        "loss_sum": 174.67591114051174,
+        "correct": 71
+      },
+      {
+        "start": 55296,
+        "targets": 128,
+        "loss_sum": 190.0150887714699,
+        "correct": 69
+      },
+      {
+        "start": 55424,
+        "targets": 128,
+        "loss_sum": 160.5210350281559,
+        "correct": 78
+      },
+      {
+        "start": 55552,
+        "targets": 128,
+        "loss_sum": 166.9812641227618,
+        "correct": 76
+      },
+      {
+        "start": 55680,
+        "targets": 89,
+        "loss_sum": 123.45407172321575,
+        "correct": 45
+      }
+    ],
+    "logits_sha256": "660a50c97e50dcd1975ffbddecf7af9c527d92e39e613f9d3138050d9fcf80f8",
+    "native_logits_and_complete_state_bit_equal_after_attachment": true,
+    "cpu_seconds": 8.690873715,
+    "wall_seconds": 8.758544821001124
+  }
+}

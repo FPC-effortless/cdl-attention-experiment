@@ -1,0 +1,335 @@
+{
+  "python": "3.12.14",
+  "sqlite": "3.53.1",
+  "source_sha256_before": {
+    "nanocog/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "nanocog/comm/__init__.py": "356b9684a3e34021696b06bfbd97175a4161241a3d86e78a148a83e2e6eccdc9",
+    "nanocog/comm/packet.py": "346505fc26654609c8d5f19f59376cb0ecff11c1aa572c51ae7f188d4eeb997b",
+    "nanocog/comm/test_packet.py": "aace8689d8fb33830dc623be767fa608d0866c4578aca188ac8099d1e3be790c",
+    "nanocog/interaction.py": "f6f9db16ead08fb837360051ec10920d5e410eb837453c02d93fb24057c0f1a8",
+    "nanocog/memory/__init__.py": "cd0c94b6c7a07518a4f22b5790916df5d3479356f6d42cf3ac06d010a2f66301",
+    "nanocog/memory/__main__.py": "53fa073c5eb16e9ce68e65fcf98ba460b694a41a69d12ae545ebd2d82a0446ed",
+    "nanocog/memory/codec.py": "195758561841b95cb67046b23a8e462f77fc47f36d7f5a988fd0601b4f0e23ff",
+    "nanocog/memory/decoder.py": "8380db65776f50329cfa15575211e7b72e2dc9629799174bc345addbd6f6b6e2",
+    "nanocog/memory/learned_archive.py": "25c043c7f83f12e38f506064cd79ebd85914227ac2b5ca7b9ab61acc6178034b",
+    "nanocog/memory/session.py": "ae2f109dfb7abcb64c2e7549eb7cdd94e99223b78a94c7b950ce15ad7ef389d6",
+    "nanocog/memory/store.py": "89dc05ae971c52b73b65bf37df1349ef16473528d1f4a8c695a4c891f0ea6085",
+    "nanocog/memory/temporal.py": "de29a2de0a71353c712638876669fb86487d5e05c19d399817506e5040592eca",
+    "nanocog/memory/test_adversarial_capacity.py": "927bd64a4fc42206427ad8fd60bffd4191491f2357122f863a936f7e84e277c1",
+    "nanocog/memory/test_adversarial_decoder.py": "71019a82bd98e5e911d6b81e96eda1c7e30867f4d545be22c3998439140a5f52",
+    "nanocog/memory/test_adversarial_store.py": "aff89770361780ff89de472b6e41fcd2272244ed23227be8c56704d9eb5b61f3",
+    "nanocog/memory/test_decoder.py": "0a4b5dbb7446b64008d131ac6a0412ef9869f208fffd877ba01ebdbb55f8bb56",
+    "nanocog/memory/test_learned_archive.py": "1b732bf07ab046549428bf1dcf1bc7e344c06a62cef2c4aefb6d0c90244f54cc",
+    "nanocog/memory/test_retrieval_optimization.py": "42efa136e6e3ee71ccabcc55e662b8508b0410da2ea70d5b345c254ca2cb0ac5",
+    "nanocog/memory/test_serving_optimization.py": "88826be705e98abd26da8dba15123db0b4dc5ed1fe206141f80e71d0fa1b0a9d",
+    "nanocog/memory/test_session.py": "ab8c14f3573289be04158254733e8e88d23e2341d5985c4c7fa3a598ee0c242f",
+    "nanocog/memory/test_store.py": "cde65a302cf29d106ae47ccaf40b75991b7f6a71a6aab2989a434e3b69c6c06b",
+    "nanocog/memory/test_temporal.py": "95ac2b60d1a75229cff863652d78892a4943ebde48f04a7f294b7dd3c268e3cd",
+    "nanocog/model.py": "b9ae1000992dbd9e103de5f2365b88fb0c2a674e9acc9cfc0c9ac2ba7b599ab3",
+    "nanocog/state/__init__.py": "6eec56cc553d7d3bad34efcaaaa4aacf6368b80e3f08bde044136e084e1a831f",
+    "nanocog/state/pulse_adapter.py": "d3d178c37b2f60c918fe00f115da7ff1e6d44bd014969c679c208e2d2cd965ac",
+    "nanocog/state/records.py": "6eb6950971538ec7991b669a6962112d89ce5a97be8b721be13268e3b9d1a502",
+    "nanocog/state/test_records.py": "88bfdf0ca136b15865de4e03fd0febc78f5f7b04fcb5ce904ceb871cca58a465",
+    "nanocog/test_integration.py": "66593e49c98e527e754c917c6778e9d7ccd6231e41fa0d9bb8db9f71cdc127bf",
+    "nanocog/test_model.py": "cf36c5494a73eabbb31b385d6dc76d7654999566d7ea897c96995fb0b16d508a",
+    "memory-integration-003/integration/verify_fitted.py": "acb8b1946cc413a3627abd84c1e68c47e51d6fd3c1dba556147f3b2fd5458d01",
+    "memory-integration-003/learned/dataset.py": "1a0059eab977e8e22f61aa981aa0c824e4d1f243d6a5da98b569e9d061aa1f61",
+    "memory-integration-003/learned/durable_check.py": "76374f48825c83a34125d0fc8777c0ded69b91ef02405c68575614a3d341e5f6",
+    "memory-integration-003/learned/factual_cli.py": "4e12b79c90e6d4989ca6ef019c884f809459cb6a3e6fb6e05c8da28034484d0a",
+    "memory-integration-003/learned/runner.py": "48775237e60b962520b2bb29e0052f1e7b8339cb640dae5ef8adcf4e6f06946f",
+    "memory-integration-003/learned/trace_export.py": "ff99458f3de294cbeb5f648f9a541b65b025232b2799dca8c6202a8e4e657867",
+    "memory-integration-003/native/validate_native.py": "dd24bc5adc0539d03400c32f45774a15d28ee95241c1791a4b37bb6eb189a779",
+    "memory-integration-003/retrieval/run_compare.py": "233df540dd4455e397fbcdd6644ac617020fe346cdcc766ebb777f06a23db796",
+    "memory-integration-003/retrieval/verify_results.py": "e6df7375f91943f1f31bd49a5f4822cb94256898e29c7425b666771eac67e4ff",
+    "memory-integration-003/review/diagnostics.py": "0e3b703dff34416a6f86094fb53493f126eef551ade6e12b0a80fd0d62deda5e",
+    "memory-integration-003/review/test_adapter_review.py": "fa07b65be4575c9c28277486e75011f5a493722d5e7116f4cbd091f359f14cff",
+    "memory-integration-003/serving/compare.py": "f24b2f05c57de205542294501c1da6717e8188aaa4f546a3ee59f14a8834533c",
+    "memory-integration-003/serving/initial_compare.py": "86a6a33d8b38c904be2b4b10d5a97bc70433ae0f494474003fc8cf20b26fc73d",
+    "memory-integration-003/serving/summarize.py": "fd571322e5da8a978e18c183209881e9d1bd383c08b8c7d680eab4539b469011",
+    "memory-integration-003/verification/run_checks.py": "1f7b651d5e2851921118c6ef825fc972e14ad4ba956aa4035b3e2ccf8bfb6fa8"
+  },
+  "optional_pulse_source_enabled": true,
+  "test_scope": "infrastructure/reference tests; learned qualification is a separate gate",
+  "package": {
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "nanocog",
+      "--junitxml=/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/memory-integration-003/verification/full-suite.xml"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 17.68007350699918,
+    "counts": {
+      "tests": 189,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "system": {
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "memory-validation-002/storage/run_adversarial.py",
+      "--output",
+      "/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/memory-integration-003/verification/system-results.json"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 8.232707667993964,
+    "counts": {
+      "ERROR": 0,
+      "FAIL": 0,
+      "PASS": 9
+    },
+    "source_unchanged": true
+  },
+  "independent_review": {
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "memory-integration-003/review/test_adapter_review.py"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 2.9963415800011717
+  },
+  "private_fitted_cli": {
+    "passed": 4,
+    "total": 4,
+    "cases": [
+      {
+        "name": "write",
+        "passed": true,
+        "execution": {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/memory-integration-003/learned/factual_cli.py",
+            "--kit",
+            "/workspace/scratch/df97c7006000/memory003_inputs/test_kit/COG_CONNECTED_1M",
+            "--checkpoint",
+            "/workspace/scratch/df97c7006000/memory003_learned_private/checkpoints/candidate-17.pt",
+            "--db",
+            "/workspace/scratch/df97c7006000/memory003_timing_tmp/memory003-cli-0p7fdd9p/persistent.sqlite3",
+            "--principal",
+            "cli-check",
+            "--session",
+            "one",
+            "--request-id",
+            "first",
+            "--event",
+            "Amara holds the chest."
+          ],
+          "exit_code": 0,
+          "wall_seconds": 2.147202111998922
+        },
+        "result": {
+          "mode": "experimental-categorical-factual-memory",
+          "unfamiliar_wording_qualified": false,
+          "result": {
+            "operation": 1,
+            "status": "written",
+            "decision_event_id": "factual:edf5ce67dbd54d082de20bd477d450e60ae5d0f5fd06e259c661b4055c08395f:result",
+            "fact": {
+              "key": "cog-factual:holder:chest",
+              "value": {
+                "kind": "owner",
+                "schema": "cog-factual-adapter-v1",
+                "value": "Amara"
+              },
+              "revision": 1,
+              "source_event_id": "factual:edf5ce67dbd54d082de20bd477d450e60ae5d0f5fd06e259c661b4055c08395f:result",
+              "proposal_id": "factual:edf5ce67dbd54d082de20bd477d450e60ae5d0f5fd06e259c661b4055c08395f:proposal",
+              "authority": "experimental-model-policy",
+              "changed_at": "2026-11-23T18:55:45.626386+00:00",
+              "deleted": false
+            },
+            "replayed": false
+          }
+        }
+      },
+      {
+        "name": "read-new-process",
+        "passed": true,
+        "execution": {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/memory-integration-003/learned/factual_cli.py",
+            "--kit",
+            "/workspace/scratch/df97c7006000/memory003_inputs/test_kit/COG_CONNECTED_1M",
+            "--checkpoint",
+            "/workspace/scratch/df97c7006000/memory003_learned_private/checkpoints/candidate-17.pt",
+            "--db",
+            "/workspace/scratch/df97c7006000/memory003_timing_tmp/memory003-cli-0p7fdd9p/persistent.sqlite3",
+            "--principal",
+            "cli-check",
+            "--session",
+            "two",
+            "--request-id",
+            "ask-one",
+            "--question",
+            "Who holds the chest?"
+          ],
+          "exit_code": 0,
+          "wall_seconds": 2.1727187389915343
+        },
+        "result": {
+          "mode": "experimental-categorical-factual-memory",
+          "unfamiliar_wording_qualified": false,
+          "result": {
+            "answer": "Amara",
+            "answer_index": 0,
+            "route": 0,
+            "read_value": 0,
+            "dependencies": {
+              "cog-factual:holder:chest": 1
+            },
+            "assistant_event_id": "factual:cdadb016c66262c97192af7d5320a14a8d81669efce9eca0c2cd3c508422fae8:result",
+            "replayed": false
+          }
+        }
+      },
+      {
+        "name": "correct",
+        "passed": true,
+        "execution": {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/memory-integration-003/learned/factual_cli.py",
+            "--kit",
+            "/workspace/scratch/df97c7006000/memory003_inputs/test_kit/COG_CONNECTED_1M",
+            "--checkpoint",
+            "/workspace/scratch/df97c7006000/memory003_learned_private/checkpoints/candidate-17.pt",
+            "--db",
+            "/workspace/scratch/df97c7006000/memory003_timing_tmp/memory003-cli-0p7fdd9p/persistent.sqlite3",
+            "--principal",
+            "cli-check",
+            "--session",
+            "three",
+            "--request-id",
+            "second",
+            "--event",
+            "Amara gave the chest to Gus."
+          ],
+          "exit_code": 0,
+          "wall_seconds": 2.157780802997877
+        },
+        "result": {
+          "mode": "experimental-categorical-factual-memory",
+          "unfamiliar_wording_qualified": false,
+          "result": {
+            "operation": 7,
+            "status": "written",
+            "decision_event_id": "factual:1cd9e6973bb032e416919a78e18184a42872b22429fc7e25e15c7ea802f4d861:result",
+            "fact": {
+              "key": "cog-factual:holder:chest",
+              "value": {
+                "kind": "owner",
+                "schema": "cog-factual-adapter-v1",
+                "value": "Gus"
+              },
+              "revision": 2,
+              "source_event_id": "factual:1cd9e6973bb032e416919a78e18184a42872b22429fc7e25e15c7ea802f4d861:result",
+              "proposal_id": "factual:1cd9e6973bb032e416919a78e18184a42872b22429fc7e25e15c7ea802f4d861:proposal",
+              "authority": "experimental-model-policy",
+              "changed_at": "2026-11-23T18:55:49.903189+00:00",
+              "deleted": false
+            },
+            "replayed": false
+          }
+        }
+      },
+      {
+        "name": "read-correction",
+        "passed": true,
+        "execution": {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/memory-integration-003/learned/factual_cli.py",
+            "--kit",
+            "/workspace/scratch/df97c7006000/memory003_inputs/test_kit/COG_CONNECTED_1M",
+            "--checkpoint",
+            "/workspace/scratch/df97c7006000/memory003_learned_private/checkpoints/candidate-17.pt",
+            "--db",
+            "/workspace/scratch/df97c7006000/memory003_timing_tmp/memory003-cli-0p7fdd9p/persistent.sqlite3",
+            "--principal",
+            "cli-check",
+            "--session",
+            "four",
+            "--request-id",
+            "ask-two",
+            "--question",
+            "Who holds the chest?"
+          ],
+          "exit_code": 0,
+          "wall_seconds": 2.381200022995472
+        },
+        "result": {
+          "mode": "experimental-categorical-factual-memory",
+          "unfamiliar_wording_qualified": false,
+          "result": {
+            "answer": "Gus",
+            "answer_index": 6,
+            "route": 0,
+            "read_value": 6,
+            "dependencies": {
+              "cog-factual:holder:chest": 2
+            },
+            "assistant_event_id": "factual:29d38751d16bb51e13a570dc868adafa14474d5557e24da5d22003c466f6e6bc:result",
+            "replayed": false
+          }
+        }
+      }
+    ]
+  },
+  "source_sha256_after": {
+    "nanocog/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "nanocog/comm/__init__.py": "356b9684a3e34021696b06bfbd97175a4161241a3d86e78a148a83e2e6eccdc9",
+    "nanocog/comm/packet.py": "346505fc26654609c8d5f19f59376cb0ecff11c1aa572c51ae7f188d4eeb997b",
+    "nanocog/comm/test_packet.py": "aace8689d8fb33830dc623be767fa608d0866c4578aca188ac8099d1e3be790c",
+    "nanocog/interaction.py": "f6f9db16ead08fb837360051ec10920d5e410eb837453c02d93fb24057c0f1a8",
+    "nanocog/memory/__init__.py": "cd0c94b6c7a07518a4f22b5790916df5d3479356f6d42cf3ac06d010a2f66301",
+    "nanocog/memory/__main__.py": "53fa073c5eb16e9ce68e65fcf98ba460b694a41a69d12ae545ebd2d82a0446ed",
+    "nanocog/memory/codec.py": "195758561841b95cb67046b23a8e462f77fc47f36d7f5a988fd0601b4f0e23ff",
+    "nanocog/memory/decoder.py": "8380db65776f50329cfa15575211e7b72e2dc9629799174bc345addbd6f6b6e2",
+    "nanocog/memory/learned_archive.py": "25c043c7f83f12e38f506064cd79ebd85914227ac2b5ca7b9ab61acc6178034b",
+    "nanocog/memory/session.py": "ae2f109dfb7abcb64c2e7549eb7cdd94e99223b78a94c7b950ce15ad7ef389d6",
+    "nanocog/memory/store.py": "89dc05ae971c52b73b65bf37df1349ef16473528d1f4a8c695a4c891f0ea6085",
+    "nanocog/memory/temporal.py": "de29a2de0a71353c712638876669fb86487d5e05c19d399817506e5040592eca",
+    "nanocog/memory/test_adversarial_capacity.py": "927bd64a4fc42206427ad8fd60bffd4191491f2357122f863a936f7e84e277c1",
+    "nanocog/memory/test_adversarial_decoder.py": "71019a82bd98e5e911d6b81e96eda1c7e30867f4d545be22c3998439140a5f52",
+    "nanocog/memory/test_adversarial_store.py": "aff89770361780ff89de472b6e41fcd2272244ed23227be8c56704d9eb5b61f3",
+    "nanocog/memory/test_decoder.py": "0a4b5dbb7446b64008d131ac6a0412ef9869f208fffd877ba01ebdbb55f8bb56",
+    "nanocog/memory/test_learned_archive.py": "1b732bf07ab046549428bf1dcf1bc7e344c06a62cef2c4aefb6d0c90244f54cc",
+    "nanocog/memory/test_retrieval_optimization.py": "42efa136e6e3ee71ccabcc55e662b8508b0410da2ea70d5b345c254ca2cb0ac5",
+    "nanocog/memory/test_serving_optimization.py": "88826be705e98abd26da8dba15123db0b4dc5ed1fe206141f80e71d0fa1b0a9d",
+    "nanocog/memory/test_session.py": "ab8c14f3573289be04158254733e8e88d23e2341d5985c4c7fa3a598ee0c242f",
+    "nanocog/memory/test_store.py": "cde65a302cf29d106ae47ccaf40b75991b7f6a71a6aab2989a434e3b69c6c06b",
+    "nanocog/memory/test_temporal.py": "95ac2b60d1a75229cff863652d78892a4943ebde48f04a7f294b7dd3c268e3cd",
+    "nanocog/model.py": "b9ae1000992dbd9e103de5f2365b88fb0c2a674e9acc9cfc0c9ac2ba7b599ab3",
+    "nanocog/state/__init__.py": "6eec56cc553d7d3bad34efcaaaa4aacf6368b80e3f08bde044136e084e1a831f",
+    "nanocog/state/pulse_adapter.py": "d3d178c37b2f60c918fe00f115da7ff1e6d44bd014969c679c208e2d2cd965ac",
+    "nanocog/state/records.py": "6eb6950971538ec7991b669a6962112d89ce5a97be8b721be13268e3b9d1a502",
+    "nanocog/state/test_records.py": "88bfdf0ca136b15865de4e03fd0febc78f5f7b04fcb5ce904ceb871cca58a465",
+    "nanocog/test_integration.py": "66593e49c98e527e754c917c6778e9d7ccd6231e41fa0d9bb8db9f71cdc127bf",
+    "nanocog/test_model.py": "cf36c5494a73eabbb31b385d6dc76d7654999566d7ea897c96995fb0b16d508a",
+    "memory-integration-003/integration/verify_fitted.py": "acb8b1946cc413a3627abd84c1e68c47e51d6fd3c1dba556147f3b2fd5458d01",
+    "memory-integration-003/learned/dataset.py": "1a0059eab977e8e22f61aa981aa0c824e4d1f243d6a5da98b569e9d061aa1f61",
+    "memory-integration-003/learned/durable_check.py": "76374f48825c83a34125d0fc8777c0ded69b91ef02405c68575614a3d341e5f6",
+    "memory-integration-003/learned/factual_cli.py": "4e12b79c90e6d4989ca6ef019c884f809459cb6a3e6fb6e05c8da28034484d0a",
+    "memory-integration-003/learned/runner.py": "48775237e60b962520b2bb29e0052f1e7b8339cb640dae5ef8adcf4e6f06946f",
+    "memory-integration-003/learned/trace_export.py": "ff99458f3de294cbeb5f648f9a541b65b025232b2799dca8c6202a8e4e657867",
+    "memory-integration-003/native/validate_native.py": "dd24bc5adc0539d03400c32f45774a15d28ee95241c1791a4b37bb6eb189a779",
+    "memory-integration-003/retrieval/run_compare.py": "233df540dd4455e397fbcdd6644ac617020fe346cdcc766ebb777f06a23db796",
+    "memory-integration-003/retrieval/verify_results.py": "e6df7375f91943f1f31bd49a5f4822cb94256898e29c7425b666771eac67e4ff",
+    "memory-integration-003/review/diagnostics.py": "0e3b703dff34416a6f86094fb53493f126eef551ade6e12b0a80fd0d62deda5e",
+    "memory-integration-003/review/test_adapter_review.py": "fa07b65be4575c9c28277486e75011f5a493722d5e7116f4cbd091f359f14cff",
+    "memory-integration-003/serving/compare.py": "f24b2f05c57de205542294501c1da6717e8188aaa4f546a3ee59f14a8834533c",
+    "memory-integration-003/serving/initial_compare.py": "86a6a33d8b38c904be2b4b10d5a97bc70433ae0f494474003fc8cf20b26fc73d",
+    "memory-integration-003/serving/summarize.py": "fd571322e5da8a978e18c183209881e9d1bd383c08b8c7d680eab4539b469011",
+    "memory-integration-003/verification/run_checks.py": "1f7b651d5e2851921118c6ef825fc972e14ad4ba956aa4035b3e2ccf8bfb6fa8"
+  },
+  "source_unchanged": true,
+  "passed": true
+}

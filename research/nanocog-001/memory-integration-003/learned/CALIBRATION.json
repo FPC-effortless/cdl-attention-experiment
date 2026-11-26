@@ -1,0 +1,27 @@
+{
+  "accuracy_used_for_budget": false,
+  "calibration_checkpoint_discarded": true,
+  "cpu_seconds_per_update": 0.021365982218749996,
+  "extraction": {
+    "characters": 98432,
+    "cpu_seconds": 5.733904412999999,
+    "file_bytes": 66840733,
+    "new_texts": 2278,
+    "sha256": "8a4a355f3c3dbd4aadd8bccc0ed0359942b9161ecad4b6f84544b0a1c6caa0af",
+    "unique_texts": 2278,
+    "wall_seconds": 5.775848104007309
+  },
+  "lock_sha256": "f0a9d44068fa39e20a87f7338571f9c71d3991b294d2f992c5a7e645491ed763",
+  "predicted_fit_cpu_seconds": 262.54518950399995,
+  "shared_scored_updates": 2048,
+  "timed_updates": 64,
+  "timing": {
+    "cpu_seconds": 1.3674228619999997,
+    "wall_seconds": 1.3676334589981707
+  },
+  "total": {
+    "cpu_seconds": 8.578751896,
+    "wall_seconds": 8.63086833700072
+  },
+  "warmup_updates": 32
+}

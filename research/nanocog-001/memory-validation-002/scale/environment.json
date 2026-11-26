@@ -1,0 +1,25 @@
+{
+  "captured_utc": "2026-11-23",
+  "filesystem_commands": {
+    "/tmp": "Filesystem     Type  1K-blocks  Used Available Use% Mounted on\ntmpfs          tmpfs   5103232  9132   5094100   1% /tmp\n",
+    "/workspace/scratch/df97c7006000": "Filesystem     Type    1K-blocks     Used Available Use% Mounted on\noverlay        overlay  66002476 20585208  42045444  33% /workspace\n"
+  },
+  "runs": {
+    "baseline-initial-results.json": "tmpfs; initial narrower checks",
+    "baseline-results.json": "tmpfs; expanded paired harness",
+    "baseline-overlay-results.json": "overlay; expanded paired harness",
+    "repaired-results.json": "tmpfs; intermediate repaired store ce6d26ac, retained; superseded by exact final-hash run",
+    "repaired-overlay-results.json": "overlay; final repaired store 3bf7561d194e19cc32a6ab4377ca4656aea86800ce6d026fd0a291ab18ec47c1",
+    "final-tmpfs-results.json": "tmpfs; final repaired store 3bf7561d194e19cc32a6ab4377ca4656aea86800ce6d026fd0a291ab18ec47c1",
+    "repaired-overlay-pre-retry-results.json": "overlay; intermediate repaired store e4806236, retained; superseded after journal-startup retry refinement"
+  },
+  "baseline_git_head": "56cb4eeb04d68f5f6c210c756f0790f34cc2fd5f",
+  "available_cpu_affinity_count": 9,
+  "cpu_count": 9,
+  "notes": [
+    "Temporary SQLite databases and their backup copies share the stated filesystem.",
+    "A fresh process does not flush OS or host storage caches.",
+    "tmpfs latency is not durable-disk write latency.",
+    "Overlay behavior does not establish durability after host or disk failure."
+  ]
+}

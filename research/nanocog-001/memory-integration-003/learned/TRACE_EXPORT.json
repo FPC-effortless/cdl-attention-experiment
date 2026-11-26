@@ -1,0 +1,54 @@
+{
+  "cache_integrity_matches_extraction_receipts": true,
+  "evaluation_cache_sha256": "411a72597ff0cb2c522603e5f227d7b609c51c8083e83540b19c8f506c81ebc8",
+  "outputs": [
+    {
+      "arm": "control",
+      "path": "control-17.json",
+      "seed": 17,
+      "sha256": "2a0f84250eeffc5d5157369669d3e3133c67816f674cf98ba81b01694b2a4036",
+      "text_count": 4880
+    },
+    {
+      "arm": "candidate",
+      "path": "candidate-17.json",
+      "seed": 17,
+      "sha256": "420ef0dc1589a405785e25a425ae359ee1be6e2dcd4d023262ae9d0d72c6272f",
+      "text_count": 4880
+    },
+    {
+      "arm": "control",
+      "path": "control-29.json",
+      "seed": 29,
+      "sha256": "1bf6011af4c52f20a952cffa301be93e64e5bcc139139b15d768d30eb921a56b",
+      "text_count": 4880
+    },
+    {
+      "arm": "candidate",
+      "path": "candidate-29.json",
+      "seed": 29,
+      "sha256": "309c430149b2d9b45bbef37bda360bbb1f8c9421afb8931b1d0ebf3cae643c57",
+      "text_count": 4880
+    },
+    {
+      "arm": "control",
+      "path": "control-41.json",
+      "seed": 41,
+      "sha256": "ac9d585930809d1ce5ec5be2f43ed8b367f745e81cd15f2496f7fae430549d10",
+      "text_count": 4880
+    },
+    {
+      "arm": "candidate",
+      "path": "candidate-41.json",
+      "seed": 41,
+      "sha256": "0a9f0be555882b2512da090de92669eee1f759fee79475b253194b99f359edcf",
+      "text_count": 4880
+    }
+  ],
+  "status": "post-fit diagnostics only; no training, tuning, or checkpoint selection",
+  "timing": {
+    "cpu_seconds": 5.547282861999999,
+    "wall_seconds": 5.561509393999586
+  },
+  "training_cache_sha256": "8a4a355f3c3dbd4aadd8bccc0ed0359942b9161ecad4b6f84544b0a1c6caa0af"
+}

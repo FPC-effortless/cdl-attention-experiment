@@ -1,0 +1,15 @@
+{
+  "mode": "experimental-categorical-factual-memory",
+  "unfamiliar_wording_qualified": false,
+  "result": {
+    "answer": "Amara",
+    "answer_index": 0,
+    "route": 0,
+    "read_value": 0,
+    "dependencies": {
+      "cog-factual:holder:chest": 1
+    },
+    "assistant_event_id": "factual:cdadb016c66262c97192af7d5320a14a8d81669efce9eca0c2cd3c508422fae8:result",
+    "replayed": false
+  }
+}

@@ -1,0 +1,5 @@
+........................................................................ [ 38%]
+........................................................................ [ 76%]
+.............................................                            [100%]
+- generated xml file: /workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/memory-integration-003/verification/full-suite.xml -
+189 passed in 16.53s

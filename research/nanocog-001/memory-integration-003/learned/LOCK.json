@@ -1,0 +1,12 @@
+{
+  "corpus_sha256": "01901d188130e37a087e75bae1591a4b2dd7faaf1fc081b700eb485ebb8113d7",
+  "native_sha256": "d8bab3d1d99a43dfb6cca2257f2caae4d3a7282d62b079c92874ce736a44ec3c",
+  "pinned_unix_time": 1795459670.795467,
+  "sources": {
+    "memory-integration-003/learned/DATA_MANIFEST.json": "b6f389481f76216cbfae5e0ceeaf63c72341779894086d4754ddf3cea87d70a4",
+    "memory-integration-003/learned/PROTOCOL.md": "055a67a13c83a83abf191966722c422887ec0ea0a8f1a7b8d1afdc9d24a67495",
+    "memory-integration-003/learned/dataset.py": "1a0059eab977e8e22f61aa981aa0c824e4d1f243d6a5da98b569e9d061aa1f61",
+    "memory-integration-003/learned/runner.py": "48775237e60b962520b2bb29e0052f1e7b8339cb640dae5ef8adcf4e6f06946f",
+    "nanocog/memory/learned_archive.py": "25c043c7f83f12e38f506064cd79ebd85914227ac2b5ca7b9ab61acc6178034b"
+  }
+}

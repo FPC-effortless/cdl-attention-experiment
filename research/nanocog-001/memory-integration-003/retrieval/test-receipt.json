@@ -1,0 +1,11 @@
+{
+  "command": "python3 -m pytest -q nanocog/memory/test_retrieval_optimization.py nanocog/memory/test_store.py nanocog/memory/test_adversarial_store.py nanocog/memory/test_session.py nanocog/memory/test_adversarial_capacity.py",
+  "cwd": "research/nanocog-001",
+  "exit_code": 0,
+  "observed_summary": "71 passed in 3.91s",
+  "existing_tests": 51,
+  "new_test_cases": 20,
+  "production_store_sha256": "89dc05ae971c52b73b65bf37df1349ef16473528d1f4a8c695a4c891f0ea6085",
+  "new_test_module_sha256": "42efa136e6e3ee71ccabcc55e662b8508b0410da2ea70d5b345c254ca2cb0ac5",
+  "qualification": "Observed local regression run; the root integration gate separately covers the combined model and serving changes."
+}

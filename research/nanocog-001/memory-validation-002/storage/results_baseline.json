@@ -1,0 +1,650 @@
+{
+  "cases": [
+    {
+      "expectation": "Foreign-scope writes cannot change local retrieval ranking or return foreign content.",
+      "name": "ranking_interference",
+      "observations": [
+        {
+          "after": [
+            "a",
+            "b"
+          ],
+          "before": [
+            "b",
+            "a"
+          ],
+          "foreign_content_rows": 0,
+          "unchanged": false,
+          "variant": "foreign_principal"
+        },
+        {
+          "after": [
+            "a",
+            "b"
+          ],
+          "before": [
+            "b",
+            "a"
+          ],
+          "foreign_content_rows": 0,
+          "unchanged": false,
+          "variant": "foreign_namespace"
+        }
+      ],
+      "passed": false,
+      "seconds": 0.03009830399241764,
+      "status": "FAIL"
+    },
+    {
+      "after": {
+        "accepted_facts": [
+          {
+            "authority": "synthetic-fixture",
+            "changed_at": "2026-11-23T17:59:40.969104+00:00",
+            "deleted": false,
+            "epistemic_status": "accepted_by_host",
+            "key": "stock.9",
+            "proposal_id": "stock-p9",
+            "revision": 1,
+            "source_event_id": "source",
+            "value": 19
+          },
+          {
+            "authority": "synthetic-fixture",
+            "changed_at": "2026-11-23T17:59:40.968975+00:00",
+            "deleted": false,
+            "epistemic_status": "accepted_by_host",
+            "key": "stock.8",
+            "proposal_id": "stock-p8",
+            "revision": 1,
+            "source_event_id": "source",
+            "value": 18
+          },
+          {
+            "authority": "synthetic-fixture",
+            "changed_at": "2026-11-23T17:59:40.968843+00:00",
+            "deleted": false,
+            "epistemic_status": "accepted_by_host",
+            "key": "stock.7",
+            "proposal_id": "stock-p7",
+            "revision": 1,
+            "source_event_id": "source",
+            "value": 17
+          },
+          {
+            "authority": "synthetic-fixture",
+            "changed_at": "2026-11-23T17:59:40.968658+00:00",
+            "deleted": false,
+            "epistemic_status": "accepted_by_host",
+            "key": "stock.6",
+            "proposal_id": "stock-p6",
+            "revision": 1,
+            "source_event_id": "source",
+            "value": 16
+          },
+          {
+            "authority": "synthetic-fixture",
+            "changed_at": "2026-11-23T17:59:40.968529+00:00",
+            "deleted": false,
+            "epistemic_status": "accepted_by_host",
+            "key": "stock.5",
+            "proposal_id": "stock-p5",
+            "revision": 1,
+            "source_event_id": "source",
+            "value": 15
+          },
+          {
+            "authority": "synthetic-fixture",
+            "changed_at": "2026-11-23T17:59:40.968400+00:00",
+            "deleted": false,
+            "epistemic_status": "accepted_by_host",
+            "key": "stock.4",
+            "proposal_id": "stock-p4",
+            "revision": 1,
+            "source_event_id": "source",
+            "value": 14
+          },
+          {
+            "authority": "synthetic-fixture",
+            "changed_at": "2026-11-23T17:59:40.968242+00:00",
+            "deleted": false,
+            "epistemic_status": "accepted_by_host",
+            "key": "stock.3",
+            "proposal_id": "stock-p3",
+            "revision": 1,
+            "source_event_id": "source",
+            "value": 13
+          },
+          {
+            "authority": "synthetic-fixture",
+            "changed_at": "2026-11-23T17:59:40.967588+00:00",
+            "deleted": false,
+            "epistemic_status": "accepted_by_host",
+            "key": "stock.2",
+            "proposal_id": "stock-p2",
+            "revision": 1,
+            "source_event_id": "source",
+            "value": 12
+          }
+        ],
+        "schema_version": 1,
+        "truncated": true,
+        "unverified_observations": []
+      },
+      "before": {
+        "accepted_facts": [
+          {
+            "authority": "synthetic-fixture",
+            "changed_at": "2026-11-23T17:59:40.966359+00:00",
+            "deleted": false,
+            "epistemic_status": "accepted_by_host",
+            "key": "orion.launch",
+            "proposal_id": "target",
+            "revision": 1,
+            "source_event_id": "source",
+            "value": "Thursday"
+          }
+        ],
+        "schema_version": 1,
+        "truncated": false,
+        "unverified_observations": [
+          {
+            "content": "Orion launches Thursday. Stock item 0 has 10 units. Stock item 1 has 11 units. Stock item 2 has 12 units. Stock item 3 has 13 units. Stock item 4 has 14 units. Stock item 5 has 15 units. Stock item 6 has 16 units. Stock item 7 has 17 units. Stock item 8 has 18 units. Stock item 9 has 19 units.",
+            "created_at": "2026-11-23T17:59:40.965893+00:00",
+            "epistemic_status": "unverified_observation",
+            "event_id": "source",
+            "role": "user",
+            "seq": 1,
+            "session_id": "source-chat",
+            "source_event_id": "source"
+          }
+        ]
+      },
+      "expectation": "A directly query-matching accepted fact stays available after unrelated facts are added to its source.",
+      "ledger_corrupted": false,
+      "name": "unrelated_facts",
+      "passed": false,
+      "seconds": 0.006832833998487331,
+      "status": "FAIL",
+      "stored_target": [
+        {
+          "authority": "synthetic-fixture",
+          "changed_at": "2026-11-23T17:59:40.966359+00:00",
+          "deleted": false,
+          "key": "orion.launch",
+          "proposal_id": "target",
+          "revision": 1,
+          "source_event_id": "source",
+          "value": "Thursday"
+        }
+      ],
+      "unrelated_writes": 10
+    },
+    {
+      "expectation": "Four OS writers plus one OS reader retain all acknowledged messages and accepted values without malformed reads.",
+      "fact_count": 400,
+      "message_count": 400,
+      "name": "multiprocess",
+      "passed": true,
+      "process_exitcodes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "seconds": 0.7626627129939152,
+      "sqlite_integrity": "ok",
+      "status": "PASS",
+      "worker_reports": [
+        {
+          "ok": true,
+          "seconds": 0.1403992389969062,
+          "worker": 3,
+          "writes": 100
+        },
+        {
+          "ok": true,
+          "seconds": 0.1835766069998499,
+          "worker": 2,
+          "writes": 100
+        },
+        {
+          "ok": true,
+          "seconds": 0.22617899300530553,
+          "worker": 1,
+          "writes": 100
+        },
+        {
+          "ok": true,
+          "seconds": 0.2869114479981363,
+          "worker": 0,
+          "writes": 100
+        },
+        {
+          "ok": true,
+          "read_rounds": 120,
+          "worker": "reader"
+        }
+      ]
+    },
+    {
+      "expectation": "Simultaneous initializers can open a new shared database and preserve each acknowledged write.",
+      "name": "concurrent_initialization",
+      "passed": false,
+      "seconds": 1.8334227730083512,
+      "status": "FAIL",
+      "trials": [
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 1
+            }
+          ],
+          "trial": 0
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 1
+            }
+          ],
+          "trial": 1
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 3
+            }
+          ],
+          "trial": 2
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 3
+            }
+          ],
+          "trial": 3
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 0
+            }
+          ],
+          "trial": 4
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 1
+            }
+          ],
+          "trial": 5
+        },
+        {
+          "messages": 5,
+          "passed": false,
+          "reports": [
+            {
+              "error": "Traceback (most recent call last):\n  File \"/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/memory-validation-002/storage/run_adversarial.py\", line 157, in process_initializer\n    with MemoryStore(path, principal_id=\"init\", timeout=10) as store:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/nanocog/memory/store.py\", line 219, in __init__\n    _prepare_file(self.path)\n  File \"/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/nanocog/memory/store.py\", line 101, in _prepare_file\n    _unused_database_path(path)\n  File \"/workspace/scratch/df97c7006000/cdl-attention-experiment/research/nanocog-001/nanocog/memory/store.py\", line 117, in _unused_database_path\n    raise FileExistsError(\"database destination or SQLite sidecars already exist\")\nFileExistsError: database destination or SQLite sidecars already exist\n",
+              "ok": false,
+              "worker": 3
+            },
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 4
+            }
+          ],
+          "trial": 6
+        },
+        {
+          "messages": 6,
+          "passed": true,
+          "reports": [
+            {
+              "ok": true,
+              "worker": 5
+            },
+            {
+              "ok": true,
+              "worker": 2
+            },
+            {
+              "ok": true,
+              "worker": 1
+            },
+            {
+              "ok": true,
+              "worker": 4
+            },
+            {
+              "ok": true,
+              "worker": 0
+            },
+            {
+              "ok": true,
+              "worker": 3
+            }
+          ],
+          "trial": 7
+        }
+      ]
+    },
+    {
+      "erased": {
+        "already_erased": false,
+        "derived_messages_erased": 36,
+        "erased": true,
+        "event_id": "source"
+      },
+      "expectation": "Erasing a root transitively removes cross-chat descendants, prevents exact old response retry, and leaves other namespaces intact.",
+      "foreign_namespace_survives": true,
+      "name": "dependency_erasure_and_retries",
+      "old_response_id": "turn:0ad49487041c53f56237759d2bc975d52e5e5c2a94b24c1439259c2cdd1b5762:assistant",
+      "passed": true,
+      "redacted_history": [
+        {
+          "authority": "synthetic-fixture",
+          "changed_at": "2026-11-23T17:59:43.586140+00:00",
+          "deleted": true,
+          "key": "derived.claim",
+          "proposal_id": "derived-proposal",
+          "revision": 1,
+          "source_event_id": "chain-29",
+          "value": null
+        },
+        {
+          "authority": "erasure",
+          "changed_at": "2026-11-23T17:59:43.594093+00:00",
+          "deleted": true,
+          "key": "derived.claim",
+          "proposal_id": null,
+          "revision": 2,
+          "source_event_id": null,
+          "value": null
+        }
+      ],
+      "retry_error": "DeletedError",
+      "seconds": 0.028147171993623488,
+      "status": "PASS",
+      "surviving_events": [
+        "turn:0ad49487041c53f56237759d2bc975d52e5e5c2a94b24c1439259c2cdd1b5762:user"
+      ],
+      "surviving_facts": []
+    },
+    {
+      "expectation": "A second OS process changing recalled evidence before response commit rejects the stale reply.",
+      "name": "inflight_mutations",
+      "observations": [
+        {
+          "assistant_count": 0,
+          "mutation": "correction",
+          "outcome": {
+            "result": "ConflictError"
+          },
+          "passed": true
+        },
+        {
+          "assistant_count": 0,
+          "mutation": "erasure",
+          "outcome": {
+            "result": "DeletedError"
+          },
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "seconds": 0.21485253699938767,
+      "status": "PASS"
+    },
+    {
+      "expectation": "SIGKILL before COMMIT leaves no partial message/index/dependency; SIGKILL after acknowledgment preserves all three.",
+      "name": "crash_boundaries",
+      "observations": [
+        {
+          "dependency_edges": 0,
+          "exitcode": -9,
+          "fts_rows": 0,
+          "message_present": false,
+          "passed": true,
+          "reached": "before_commit",
+          "sqlite_integrity": "ok",
+          "stage": "before_commit"
+        },
+        {
+          "dependency_edges": 1,
+          "exitcode": -9,
+          "fts_rows": 1,
+          "message_present": true,
+          "passed": true,
+          "reached": "after_ack",
+          "sqlite_integrity": "ok",
+          "stage": "after_ack"
+        }
+      ],
+      "passed": true,
+      "seconds": 0.2290110190078849,
+      "status": "PASS"
+    },
+    {
+      "documented_limit": {
+        "meaning": "Old backups remain separate retained copies. No automatic propagation of later erasures is implemented.",
+        "pre_erasure_backup_restores_checkpoint": true,
+        "pre_erasure_backup_restores_source": true
+      },
+      "expectation": "Erasure removes checkpoint payloads; retries and post-erasure restore cannot silently recover the erased state.",
+      "invalidated_error": "DeletedError",
+      "name": "checkpoints_and_restore",
+      "passed": true,
+      "post_retry_error": "DeletedError",
+      "restored_checkpoint_error": "DeletedError",
+      "restored_receipt": {
+        "manifest": {
+          "model": "synthetic-state-only"
+        },
+        "request_hash": "c265336b540e09039b4eb4171eb1de43f518a7b0fdc24218f70987609497bc8c",
+        "request_id": "r1",
+        "result": null,
+        "revision": 1
+      },
+      "restored_source_error": "DeletedError",
+      "retry": {
+        "duplicate": true,
+        "manifest": {
+          "model": "synthetic-state-only"
+        },
+        "request_hash": "c265336b540e09039b4eb4171eb1de43f518a7b0fdc24218f70987609497bc8c",
+        "request_id": "r1",
+        "result": null,
+        "revision": 1
+      },
+      "seconds": 0.01249261200428009,
+      "status": "PASS"
+    },
+    {
+      "callback_calls": 2,
+      "expectation": "Exact committed request replay preserves its original answer; a fresh request sees the correction.",
+      "fresh_request": "Friday",
+      "interpretation": "An idempotent retry is not a fresh factual answer; callers must use a new request ID to request a new answer.",
+      "name": "correction_vs_exact_retry",
+      "old_retry": "Thursday",
+      "old_retry_replayed": true,
+      "original": "Thursday",
+      "passed": true,
+      "seconds": 0.007454578997567296,
+      "status": "PASS"
+    }
+  ],
+  "counts": {
+    "ERROR": 0,
+    "FAIL": 3,
+    "PASS": 6
+  },
+  "finished_utc": "2026-11-23T17:59:44Z",
+  "git_head": "56cb4eeb04d68f5f6c210c756f0790f34cc2fd5f",
+  "kind": "independent-synthetic-system-experiments",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.12.14",
+  "source_sha256": {
+    "session.py": "ae2f109dfb7abcb64c2e7549eb7cdd94e99223b78a94c7b950ce15ad7ef389d6",
+    "store.py": "fe694bcd923a4167a97c237e5ae4bfb279e7cccc92b54d542943258ef413e3d7"
+  },
+  "sqlite": "3.53.1",
+  "started_utc": "2026-11-23T17:59:40Z"
+}

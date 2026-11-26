@@ -1,0 +1,864 @@
+{
+  "changes_to_primary_endpoints": false,
+  "kind": "post-fit exposed TRAIN view diagnostic",
+  "new_fits": 0,
+  "new_model_calls": 0,
+  "runs": [
+    {
+      "all_exposed_views": {
+        "all_operations": {
+          "correct": 1536,
+          "fraction": 1.0,
+          "wilson95": [
+            0.9975052893928209,
+            1.0
+          ]
+        },
+        "all_post_event_ledgers": {
+          "correct": 1536,
+          "fraction": 1.0,
+          "wilson95": [
+            0.9975052893928209,
+            1.0
+          ]
+        },
+        "both_answers": {
+          "correct": 1536,
+          "fraction": 1.0,
+          "wilson95": [
+            0.9975052893928209,
+            1.0
+          ]
+        },
+        "both_final_ledgers": {
+          "correct": 1536,
+          "fraction": 1.0,
+          "wilson95": [
+            0.9975052893928209,
+            1.0
+          ]
+        },
+        "both_query_routes": {
+          "correct": 1536,
+          "fraction": 1.0,
+          "wilson95": [
+            0.9975052893928209,
+            1.0
+          ]
+        },
+        "damaged_previously_correct_facts": 0,
+        "first_error_event_counts": {},
+        "histories": 3072,
+        "invalid_operations": 0,
+        "operation_accuracy": 1.0,
+        "operations": 98112,
+        "pairs": 1536,
+        "post_event_ledger_accuracy": 1.0,
+        "post_event_ledger_errors": 0,
+        "strict_pair": {
+          "correct": 1536,
+          "fraction": 1.0,
+          "wilson95": [
+            0.9975052893928209,
+            1.0
+          ]
+        },
+        "wrong_operations": 0
+      },
+      "arm": "candidate",
+      "by_syntax": {
+        "canonical": {
+          "all_operations": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "all_post_event_ledgers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_answers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_final_ledgers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_query_routes": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "damaged_previously_correct_facts": 0,
+          "first_error_event_counts": {},
+          "histories": 1024,
+          "invalid_operations": 0,
+          "operation_accuracy": 1.0,
+          "operations": 32704,
+          "pairs": 512,
+          "post_event_ledger_accuracy": 1.0,
+          "post_event_ledger_errors": 0,
+          "strict_pair": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "wrong_operations": 0
+        },
+        "matched_completion": {
+          "all_operations": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "all_post_event_ledgers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_answers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_final_ledgers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_query_routes": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "damaged_previously_correct_facts": 0,
+          "first_error_event_counts": {},
+          "histories": 1024,
+          "invalid_operations": 0,
+          "operation_accuracy": 1.0,
+          "operations": 32704,
+          "pairs": 512,
+          "post_event_ledger_accuracy": 1.0,
+          "post_event_ledger_errors": 0,
+          "strict_pair": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "wrong_operations": 0
+        },
+        "matched_recipient": {
+          "all_operations": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "all_post_event_ledgers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_answers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_final_ledgers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_query_routes": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "damaged_previously_correct_facts": 0,
+          "first_error_event_counts": {},
+          "histories": 1024,
+          "invalid_operations": 0,
+          "operation_accuracy": 1.0,
+          "operations": 32704,
+          "pairs": 512,
+          "post_event_ledger_accuracy": 1.0,
+          "post_event_ledger_errors": 0,
+          "strict_pair": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "wrong_operations": 0
+        }
+      },
+      "prediction_export_sha256": "420ef0dc1589a405785e25a425ae359ee1be6e2dcd4d023262ae9d0d72c6272f",
+      "seed": 17
+    },
+    {
+      "all_exposed_views": {
+        "all_operations": {
+          "correct": 1352,
+          "fraction": 0.8802083333333334,
+          "wilson95": [
+            0.8630134083739179,
+            0.8955062387685396
+          ]
+        },
+        "all_post_event_ledgers": {
+          "correct": 1352,
+          "fraction": 0.8802083333333334,
+          "wilson95": [
+            0.8630134083739179,
+            0.8955062387685396
+          ]
+        },
+        "both_answers": {
+          "correct": 1494,
+          "fraction": 0.97265625,
+          "wilson95": [
+            0.9632466860760496,
+            0.9797075328031013
+          ]
+        },
+        "both_final_ledgers": {
+          "correct": 1448,
+          "fraction": 0.9427083333333334,
+          "wilson95": [
+            0.9299438262758235,
+            0.9532639820407367
+          ]
+        },
+        "both_query_routes": {
+          "correct": 1536,
+          "fraction": 1.0,
+          "wilson95": [
+            0.9975052893928209,
+            1.0
+          ]
+        },
+        "damaged_previously_correct_facts": 0,
+        "first_error_event_counts": {
+          "10": 6,
+          "11": 6,
+          "12": 7,
+          "13": 5,
+          "14": 8,
+          "15": 4,
+          "16": 5,
+          "17": 2,
+          "18": 1,
+          "19": 2,
+          "20": 5,
+          "21": 4,
+          "22": 4,
+          "23": 3,
+          "24": 1,
+          "25": 3,
+          "28": 2,
+          "30": 3,
+          "31": 3,
+          "32": 1,
+          "33": 3,
+          "34": 1,
+          "35": 1,
+          "36": 2,
+          "37": 2,
+          "38": 1,
+          "4": 41,
+          "40": 1,
+          "41": 1,
+          "42": 2,
+          "43": 1,
+          "45": 3,
+          "47": 1,
+          "49": 1,
+          "5": 5,
+          "50": 1,
+          "52": 1,
+          "53": 3,
+          "54": 3,
+          "56": 4,
+          "59": 1,
+          "6": 11,
+          "60": 2,
+          "61": 1,
+          "62": 1,
+          "7": 4,
+          "8": 4,
+          "9": 7
+        },
+        "histories": 3072,
+        "invalid_operations": 0,
+        "operation_accuracy": 0.9955764840182648,
+        "operations": 98112,
+        "pairs": 1536,
+        "post_event_ledger_accuracy": 0.9500061154598826,
+        "post_event_ledger_errors": 4905,
+        "strict_pair": {
+          "correct": 1352,
+          "fraction": 0.8802083333333334,
+          "wilson95": [
+            0.8630134083739179,
+            0.8955062387685396
+          ]
+        },
+        "wrong_operations": 434
+      },
+      "arm": "candidate",
+      "by_syntax": {
+        "canonical": {
+          "all_operations": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "all_post_event_ledgers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_answers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_final_ledgers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_query_routes": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "damaged_previously_correct_facts": 0,
+          "first_error_event_counts": {},
+          "histories": 1024,
+          "invalid_operations": 0,
+          "operation_accuracy": 1.0,
+          "operations": 32704,
+          "pairs": 512,
+          "post_event_ledger_accuracy": 1.0,
+          "post_event_ledger_errors": 0,
+          "strict_pair": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "wrong_operations": 0
+        },
+        "matched_completion": {
+          "all_operations": {
+            "correct": 452,
+            "fraction": 0.8828125,
+            "wilson95": [
+              0.8520591804664085,
+              0.9078642287457593
+            ]
+          },
+          "all_post_event_ledgers": {
+            "correct": 452,
+            "fraction": 0.8828125,
+            "wilson95": [
+              0.8520591804664085,
+              0.9078642287457593
+            ]
+          },
+          "both_answers": {
+            "correct": 489,
+            "fraction": 0.955078125,
+            "wilson95": [
+              0.9334960572612445,
+              0.9698822812409755
+            ]
+          },
+          "both_final_ledgers": {
+            "correct": 465,
+            "fraction": 0.908203125,
+            "wilson95": [
+              0.8800615175449181,
+              0.9302649749313222
+            ]
+          },
+          "both_query_routes": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "damaged_previously_correct_facts": 0,
+          "first_error_event_counts": {
+            "10": 1,
+            "11": 2,
+            "13": 1,
+            "20": 1,
+            "24": 1,
+            "25": 1,
+            "31": 1,
+            "32": 1,
+            "35": 1,
+            "4": 41,
+            "40": 1,
+            "5": 1,
+            "53": 1,
+            "54": 2,
+            "6": 2,
+            "60": 1,
+            "9": 1
+          },
+          "histories": 1024,
+          "invalid_operations": 0,
+          "operation_accuracy": 0.9963001467710372,
+          "operations": 32704,
+          "pairs": 512,
+          "post_event_ledger_accuracy": 0.9259112035225049,
+          "post_event_ledger_errors": 2423,
+          "strict_pair": {
+            "correct": 452,
+            "fraction": 0.8828125,
+            "wilson95": [
+              0.8520591804664085,
+              0.9078642287457593
+            ]
+          },
+          "wrong_operations": 121
+        },
+        "matched_recipient": {
+          "all_operations": {
+            "correct": 388,
+            "fraction": 0.7578125,
+            "wilson95": [
+              0.7188729901641424,
+              0.7929121629787461
+            ]
+          },
+          "all_post_event_ledgers": {
+            "correct": 388,
+            "fraction": 0.7578125,
+            "wilson95": [
+              0.7188729901641424,
+              0.7929121629787461
+            ]
+          },
+          "both_answers": {
+            "correct": 493,
+            "fraction": 0.962890625,
+            "wilson95": [
+              0.9427707550251679,
+              0.976116224481382
+            ]
+          },
+          "both_final_ledgers": {
+            "correct": 471,
+            "fraction": 0.919921875,
+            "wilson95": [
+              0.8931649760362443,
+              0.9404244779464908
+            ]
+          },
+          "both_query_routes": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "damaged_previously_correct_facts": 0,
+          "first_error_event_counts": {
+            "10": 5,
+            "11": 4,
+            "12": 7,
+            "13": 4,
+            "14": 8,
+            "15": 4,
+            "16": 5,
+            "17": 2,
+            "18": 1,
+            "19": 2,
+            "20": 4,
+            "21": 4,
+            "22": 4,
+            "23": 3,
+            "25": 2,
+            "28": 2,
+            "30": 3,
+            "31": 2,
+            "33": 3,
+            "34": 1,
+            "36": 2,
+            "37": 2,
+            "38": 1,
+            "41": 1,
+            "42": 2,
+            "43": 1,
+            "45": 3,
+            "47": 1,
+            "49": 1,
+            "5": 4,
+            "50": 1,
+            "52": 1,
+            "53": 2,
+            "54": 1,
+            "56": 4,
+            "59": 1,
+            "6": 9,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "7": 4,
+            "8": 4,
+            "9": 6
+          },
+          "histories": 1024,
+          "invalid_operations": 0,
+          "operation_accuracy": 0.9904293052837574,
+          "operations": 32704,
+          "pairs": 512,
+          "post_event_ledger_accuracy": 0.9241071428571429,
+          "post_event_ledger_errors": 2482,
+          "strict_pair": {
+            "correct": 388,
+            "fraction": 0.7578125,
+            "wilson95": [
+              0.7188729901641424,
+              0.7929121629787461
+            ]
+          },
+          "wrong_operations": 313
+        }
+      },
+      "prediction_export_sha256": "309c430149b2d9b45bbef37bda360bbb1f8c9421afb8931b1d0ebf3cae643c57",
+      "seed": 29
+    },
+    {
+      "all_exposed_views": {
+        "all_operations": {
+          "correct": 1536,
+          "fraction": 1.0,
+          "wilson95": [
+            0.9975052893928209,
+            1.0
+          ]
+        },
+        "all_post_event_ledgers": {
+          "correct": 1536,
+          "fraction": 1.0,
+          "wilson95": [
+            0.9975052893928209,
+            1.0
+          ]
+        },
+        "both_answers": {
+          "correct": 1536,
+          "fraction": 1.0,
+          "wilson95": [
+            0.9975052893928209,
+            1.0
+          ]
+        },
+        "both_final_ledgers": {
+          "correct": 1536,
+          "fraction": 1.0,
+          "wilson95": [
+            0.9975052893928209,
+            1.0
+          ]
+        },
+        "both_query_routes": {
+          "correct": 1536,
+          "fraction": 1.0,
+          "wilson95": [
+            0.9975052893928209,
+            1.0
+          ]
+        },
+        "damaged_previously_correct_facts": 0,
+        "first_error_event_counts": {},
+        "histories": 3072,
+        "invalid_operations": 0,
+        "operation_accuracy": 1.0,
+        "operations": 98112,
+        "pairs": 1536,
+        "post_event_ledger_accuracy": 1.0,
+        "post_event_ledger_errors": 0,
+        "strict_pair": {
+          "correct": 1536,
+          "fraction": 1.0,
+          "wilson95": [
+            0.9975052893928209,
+            1.0
+          ]
+        },
+        "wrong_operations": 0
+      },
+      "arm": "candidate",
+      "by_syntax": {
+        "canonical": {
+          "all_operations": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "all_post_event_ledgers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_answers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_final_ledgers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_query_routes": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "damaged_previously_correct_facts": 0,
+          "first_error_event_counts": {},
+          "histories": 1024,
+          "invalid_operations": 0,
+          "operation_accuracy": 1.0,
+          "operations": 32704,
+          "pairs": 512,
+          "post_event_ledger_accuracy": 1.0,
+          "post_event_ledger_errors": 0,
+          "strict_pair": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "wrong_operations": 0
+        },
+        "matched_completion": {
+          "all_operations": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "all_post_event_ledgers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_answers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_final_ledgers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_query_routes": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "damaged_previously_correct_facts": 0,
+          "first_error_event_counts": {},
+          "histories": 1024,
+          "invalid_operations": 0,
+          "operation_accuracy": 1.0,
+          "operations": 32704,
+          "pairs": 512,
+          "post_event_ledger_accuracy": 1.0,
+          "post_event_ledger_errors": 0,
+          "strict_pair": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "wrong_operations": 0
+        },
+        "matched_recipient": {
+          "all_operations": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "all_post_event_ledgers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_answers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_final_ledgers": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "both_query_routes": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "damaged_previously_correct_facts": 0,
+          "first_error_event_counts": {},
+          "histories": 1024,
+          "invalid_operations": 0,
+          "operation_accuracy": 1.0,
+          "operations": 32704,
+          "pairs": 512,
+          "post_event_ledger_accuracy": 1.0,
+          "post_event_ledger_errors": 0,
+          "strict_pair": {
+            "correct": 512,
+            "fraction": 1.0,
+            "wilson95": [
+              0.9925530242771171,
+              0.9999999999999999
+            ]
+          },
+          "wrong_operations": 0
+        }
+      },
+      "prediction_export_sha256": "0a9f0be555882b2512da090de92669eee1f759fee79475b253194b99f359edcf",
+      "seed": 41
+    }
+  ],
+  "timing": {
+    "cpu_seconds": 1.2500733290000001,
+    "wall_seconds": 1.2546760230034124
+  }
+}

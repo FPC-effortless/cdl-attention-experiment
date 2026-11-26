@@ -1,0 +1,181 @@
+{
+  "label": "final",
+  "fixture": "seeded untrained reference models; no fitting",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "torch": "2.10.0+cpu",
+  "sqlite": "3.53.1",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "threads": 1,
+  "git_head": "56cb4eeb04d68f5f6c210c756f0790f34cc2fd5f",
+  "source_sha256_before": {
+    "nanocog/memory/decoder.py": "65e5afb321dbab4014c8aa11d860b272f5003fb5758064dfe22e76a27c771b0a",
+    "nanocog/memory/codec.py": "15761577fef3dc0769e817b7da7a5a7d29a0d89b4e656f41e553de86204f112f",
+    "nanocog/memory/store.py": "3bf7561d194e19cc32a6ab4377ca4656aea86800ce6d026fd0a291ab18ec47c1",
+    "nanocog/model.py": "b9ae1000992dbd9e103de5f2365b88fb0c2a674e9acc9cfc0c9ac2ba7b599ab3",
+    "nanocog/interaction.py": "f6f9db16ead08fb837360051ec10920d5e410eb837453c02d93fb24057c0f1a8",
+    "nanocog/comm/packet.py": "346505fc26654609c8d5f19f59376cb0ecff11c1aa572c51ae7f188d4eeb997b",
+    "nanocog/state/records.py": "6eb6950971538ec7991b669a6962112d89ce5a97be8b721be13268e3b9d1a502",
+    "nanocog/memory/test_adversarial_decoder.py": "71019a82bd98e5e911d6b81e96eda1c7e30867f4d545be22c3998439140a5f52"
+  },
+  "tests_run": 24,
+  "failures": 0,
+  "errors": 0,
+  "success": true,
+  "seconds": 0.4366411459923256,
+  "cases": [
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialCodecTests.test_aggregate_tensor_budget_not_just_per_tensor",
+      "status": "passed",
+      "seconds": 0.003714260004926473,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialCodecTests.test_invalid_boolean_bytes_rejected_even_with_matching_hash",
+      "status": "passed",
+      "seconds": 0.0002613099932204932,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialCodecTests.test_noncanonical_base64_rejected_even_with_matching_decoded_bytes",
+      "status": "passed",
+      "seconds": 0.00011620500299613923,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialCodecTests.test_schema_extensions_are_not_silently_deserialized",
+      "status": "passed",
+      "seconds": 0.00028150700381956995,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialCodecTests.test_strided_tensor_values_roundtrip_without_storage_aliases",
+      "status": "passed",
+      "seconds": 0.0010398109880043194,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_caller_token_mutation_after_inference_does_not_change_request_identity",
+      "status": "passed",
+      "seconds": 0.040888132993131876,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_changed_convolution_execution_geometry_rejected_live",
+      "status": "passed",
+      "seconds": 0.015387346007628366,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_changed_convolution_execution_geometry_rejected_on_reopen",
+      "status": "passed",
+      "seconds": 0.014729817994521,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_class_level_local_forward_replacement_is_rejected",
+      "status": "passed",
+      "seconds": 0.004937244011671282,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_class_level_torch_forward_replacement_is_rejected",
+      "status": "passed",
+      "seconds": 0.005951380997430533,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_compiled_call_replacement_is_rejected",
+      "status": "passed",
+      "seconds": 0.005650236998917535,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_corrupt_receipt_payload_is_rejected",
+      "status": "passed",
+      "seconds": 0.015229215001454577,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_corrupt_receipt_revision_cannot_misreport_an_old_retry",
+      "status": "passed",
+      "seconds": 0.028672437998466194,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_deleted_session_blocks_a_first_checkpoint_in_flight",
+      "status": "passed",
+      "seconds": 0.01479281899810303,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_existing_checkpoint_cannot_resurrect_state_after_source_erasure",
+      "status": "passed",
+      "seconds": 0.01920437900116667,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_first_checkpoint_cannot_resurrect_state_after_source_erasure",
+      "status": "passed",
+      "seconds": 0.011083082994446158,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_float64_continuation_for_all_three_supported_mixers",
+      "status": "passed",
+      "seconds": 0.143161678002798,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_global_forward_hook_cannot_change_persisted_inference",
+      "status": "passed",
+      "seconds": 0.00751702299749013,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_global_pre_hook_cannot_substitute_the_requested_tokens",
+      "status": "passed",
+      "seconds": 0.007336123002460226,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_invalid_input_bounds_never_create_a_checkpoint",
+      "status": "passed",
+      "seconds": 0.024825209999107756,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_noncontiguous_valid_token_views_have_the_same_result",
+      "status": "passed",
+      "seconds": 0.02475337999931071,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_retry_snapshot_preceding_erasure_is_not_revoked_after_read",
+      "status": "passed",
+      "seconds": 0.024252085990156047,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_returned_logits_do_not_alias_the_saved_receipt",
+      "status": "passed",
+      "seconds": 0.012876437001978047,
+      "traceback": null
+    },
+    {
+      "test": "nanocog.memory.test_adversarial_decoder.AdversarialDecoderTests.test_sparse_tokens_are_rejected_as_an_input_boundary_error",
+      "status": "passed",
+      "seconds": 0.008074820012552664,
+      "traceback": null
+    }
+  ],
+  "source_sha256_after": {
+    "nanocog/memory/decoder.py": "65e5afb321dbab4014c8aa11d860b272f5003fb5758064dfe22e76a27c771b0a",
+    "nanocog/memory/codec.py": "15761577fef3dc0769e817b7da7a5a7d29a0d89b4e656f41e553de86204f112f",
+    "nanocog/memory/store.py": "3bf7561d194e19cc32a6ab4377ca4656aea86800ce6d026fd0a291ab18ec47c1",
+    "nanocog/model.py": "b9ae1000992dbd9e103de5f2365b88fb0c2a674e9acc9cfc0c9ac2ba7b599ab3",
+    "nanocog/interaction.py": "f6f9db16ead08fb837360051ec10920d5e410eb837453c02d93fb24057c0f1a8",
+    "nanocog/comm/packet.py": "346505fc26654609c8d5f19f59376cb0ecff11c1aa572c51ae7f188d4eeb997b",
+    "nanocog/state/records.py": "6eb6950971538ec7991b669a6962112d89ce5a97be8b721be13268e3b9d1a502",
+    "nanocog/memory/test_adversarial_decoder.py": "71019a82bd98e5e911d6b81e96eda1c7e30867f4d545be22c3998439140a5f52"
+  }
+}

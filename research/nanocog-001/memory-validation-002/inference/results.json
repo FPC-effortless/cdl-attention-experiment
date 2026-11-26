@@ -1,0 +1,1057 @@
+{
+  "cases": [
+    {
+      "history_tokens": 128,
+      "kind": "local",
+      "max_abs_error": {
+        "exact_retry": 1.0728836059570312e-06,
+        "persistent_commit": 1.0728836059570312e-06,
+        "ram_incremental": 1.0728836059570312e-06,
+        "recompute_prefix": 0.0
+      },
+      "new_tokens": 1,
+      "prefix_state": {
+        "encoded_json_bytes": 8572,
+        "raw_tensor_bytes": 5760
+      },
+      "standalone_state_codec_round_trip": {
+        "median_ms": 0.269483,
+        "p95_ms": 0.531368,
+        "samples_ms": [
+          0.531368,
+          0.492295,
+          0.269483,
+          0.262736,
+          0.254713
+        ]
+      },
+      "tail_output": {
+        "encoded_json_bytes": 1554,
+        "raw_tensor_bytes": 1024
+      },
+      "timings": {
+        "exact_retry": {
+          "median_ms": 13.650746,
+          "p95_ms": 20.702862,
+          "samples_ms": [
+            13.441715,
+            20.702862,
+            10.784587,
+            17.047545,
+            13.650746
+          ]
+        },
+        "persistent_commit": {
+          "median_ms": 50.983615,
+          "p95_ms": 56.57946,
+          "samples_ms": [
+            51.657642,
+            56.57946,
+            36.227675,
+            40.868142,
+            50.983615
+          ]
+        },
+        "ram_incremental": {
+          "median_ms": 2.465826,
+          "p95_ms": 6.383006,
+          "samples_ms": [
+            6.383006,
+            1.969582,
+            3.496903,
+            1.31538,
+            2.465826
+          ]
+        },
+        "recompute_prefix": {
+          "median_ms": 6.964946,
+          "p95_ms": 9.373079,
+          "samples_ms": [
+            7.166655,
+            6.678391,
+            9.373079,
+            6.216606,
+            6.964946
+          ]
+        }
+      }
+    },
+    {
+      "history_tokens": 128,
+      "kind": "local",
+      "max_abs_error": {
+        "exact_retry": 0.0,
+        "persistent_commit": 0.0,
+        "ram_incremental": 0.0,
+        "recompute_prefix": 0.0
+      },
+      "new_tokens": 16,
+      "prefix_state": {
+        "encoded_json_bytes": 8572,
+        "raw_tensor_bytes": 5760
+      },
+      "standalone_state_codec_round_trip": {
+        "median_ms": 0.269483,
+        "p95_ms": 0.531368,
+        "samples_ms": [
+          0.531368,
+          0.492295,
+          0.269483,
+          0.262736,
+          0.254713
+        ]
+      },
+      "tail_output": {
+        "encoded_json_bytes": 22035,
+        "raw_tensor_bytes": 16384
+      },
+      "timings": {
+        "exact_retry": {
+          "median_ms": 13.854537,
+          "p95_ms": 21.110803,
+          "samples_ms": [
+            13.854537,
+            10.476001,
+            19.688551,
+            21.110803,
+            11.884471
+          ]
+        },
+        "persistent_commit": {
+          "median_ms": 41.833954,
+          "p95_ms": 51.936798,
+          "samples_ms": [
+            41.833954,
+            51.936798,
+            44.539545,
+            39.263796,
+            28.373836
+          ]
+        },
+        "ram_incremental": {
+          "median_ms": 3.526345,
+          "p95_ms": 7.676088,
+          "samples_ms": [
+            7.676088,
+            3.292329,
+            3.526345,
+            3.166158,
+            4.650453
+          ]
+        },
+        "recompute_prefix": {
+          "median_ms": 7.699401,
+          "p95_ms": 12.364437,
+          "samples_ms": [
+            12.364437,
+            8.251923,
+            7.37476,
+            6.432766,
+            7.699401
+          ]
+        }
+      }
+    },
+    {
+      "history_tokens": 1024,
+      "kind": "local",
+      "max_abs_error": {
+        "exact_retry": 6.556510925292969e-07,
+        "persistent_commit": 6.556510925292969e-07,
+        "ram_incremental": 6.556510925292969e-07,
+        "recompute_prefix": 0.0
+      },
+      "new_tokens": 1,
+      "prefix_state": {
+        "encoded_json_bytes": 8573,
+        "raw_tensor_bytes": 5760
+      },
+      "standalone_state_codec_round_trip": {
+        "median_ms": 0.379079,
+        "p95_ms": 0.469624,
+        "samples_ms": [
+          0.338983,
+          0.393123,
+          0.267854,
+          0.469624,
+          0.379079
+        ]
+      },
+      "tail_output": {
+        "encoded_json_bytes": 1554,
+        "raw_tensor_bytes": 1024
+      },
+      "timings": {
+        "exact_retry": {
+          "median_ms": 10.063098,
+          "p95_ms": 13.50349,
+          "samples_ms": [
+            9.733216,
+            10.063098,
+            11.214508,
+            13.50349,
+            9.600352
+          ]
+        },
+        "persistent_commit": {
+          "median_ms": 49.097537,
+          "p95_ms": 68.557487,
+          "samples_ms": [
+            45.597418,
+            49.097537,
+            42.00094,
+            68.557487,
+            57.538403
+          ]
+        },
+        "ram_incremental": {
+          "median_ms": 2.198202,
+          "p95_ms": 3.771664,
+          "samples_ms": [
+            1.342424,
+            2.420379,
+            2.198202,
+            1.636089,
+            3.771664
+          ]
+        },
+        "recompute_prefix": {
+          "median_ms": 28.046176,
+          "p95_ms": 37.561996,
+          "samples_ms": [
+            27.946234,
+            37.561996,
+            26.103026,
+            28.870331,
+            28.046176
+          ]
+        }
+      }
+    },
+    {
+      "history_tokens": 1024,
+      "kind": "local",
+      "max_abs_error": {
+        "exact_retry": 0.0,
+        "persistent_commit": 0.0,
+        "ram_incremental": 0.0,
+        "recompute_prefix": 0.0
+      },
+      "new_tokens": 16,
+      "prefix_state": {
+        "encoded_json_bytes": 8573,
+        "raw_tensor_bytes": 5760
+      },
+      "standalone_state_codec_round_trip": {
+        "median_ms": 0.379079,
+        "p95_ms": 0.469624,
+        "samples_ms": [
+          0.338983,
+          0.393123,
+          0.267854,
+          0.469624,
+          0.379079
+        ]
+      },
+      "tail_output": {
+        "encoded_json_bytes": 22035,
+        "raw_tensor_bytes": 16384
+      },
+      "timings": {
+        "exact_retry": {
+          "median_ms": 12.509183,
+          "p95_ms": 15.275976,
+          "samples_ms": [
+            12.509183,
+            15.275976,
+            14.59752,
+            9.879026,
+            11.297367
+          ]
+        },
+        "persistent_commit": {
+          "median_ms": 60.10561,
+          "p95_ms": 111.20378,
+          "samples_ms": [
+            60.10561,
+            111.20378,
+            67.796597,
+            58.155006,
+            50.5839
+          ]
+        },
+        "ram_incremental": {
+          "median_ms": 2.453809,
+          "p95_ms": 5.732792,
+          "samples_ms": [
+            2.453809,
+            2.249586,
+            5.732792,
+            5.042814,
+            2.020572
+          ]
+        },
+        "recompute_prefix": {
+          "median_ms": 36.510619,
+          "p95_ms": 51.36433,
+          "samples_ms": [
+            31.154737,
+            36.510619,
+            51.36433,
+            45.360599,
+            27.38232
+          ]
+        }
+      }
+    },
+    {
+      "history_tokens": 128,
+      "kind": "packet",
+      "max_abs_error": {
+        "exact_retry": 8.344650268554688e-07,
+        "persistent_commit": 8.344650268554688e-07,
+        "ram_incremental": 8.344650268554688e-07,
+        "recompute_prefix": 0.0
+      },
+      "new_tokens": 1,
+      "prefix_state": {
+        "encoded_json_bytes": 60416,
+        "raw_tensor_bytes": 43168
+      },
+      "standalone_state_codec_round_trip": {
+        "median_ms": 1.725079,
+        "p95_ms": 1.979558,
+        "samples_ms": [
+          1.026496,
+          1.793467,
+          1.725079,
+          1.979558,
+          1.167577
+        ]
+      },
+      "tail_output": {
+        "encoded_json_bytes": 1554,
+        "raw_tensor_bytes": 1024
+      },
+      "timings": {
+        "exact_retry": {
+          "median_ms": 12.864874,
+          "p95_ms": 16.952302,
+          "samples_ms": [
+            11.147396,
+            12.864874,
+            16.229023,
+            16.952302,
+            12.627382
+          ]
+        },
+        "persistent_commit": {
+          "median_ms": 50.22034,
+          "p95_ms": 60.596733,
+          "samples_ms": [
+            32.66252,
+            40.061074,
+            60.596733,
+            50.22034,
+            52.164173
+          ]
+        },
+        "ram_incremental": {
+          "median_ms": 3.274869,
+          "p95_ms": 4.745731,
+          "samples_ms": [
+            3.277939,
+            2.660097,
+            3.274869,
+            4.745731,
+            3.158268
+          ]
+        },
+        "recompute_prefix": {
+          "median_ms": 90.439957,
+          "p95_ms": 143.156848,
+          "samples_ms": [
+            76.779408,
+            83.133372,
+            143.156848,
+            98.227959,
+            90.439957
+          ]
+        }
+      }
+    },
+    {
+      "history_tokens": 128,
+      "kind": "packet",
+      "max_abs_error": {
+        "exact_retry": 0.0,
+        "persistent_commit": 0.0,
+        "ram_incremental": 0.0,
+        "recompute_prefix": 0.0
+      },
+      "new_tokens": 16,
+      "prefix_state": {
+        "encoded_json_bytes": 60416,
+        "raw_tensor_bytes": 43168
+      },
+      "standalone_state_codec_round_trip": {
+        "median_ms": 1.725079,
+        "p95_ms": 1.979558,
+        "samples_ms": [
+          1.026496,
+          1.793467,
+          1.725079,
+          1.979558,
+          1.167577
+        ]
+      },
+      "tail_output": {
+        "encoded_json_bytes": 22035,
+        "raw_tensor_bytes": 16384
+      },
+      "timings": {
+        "exact_retry": {
+          "median_ms": 23.229894,
+          "p95_ms": 26.538723,
+          "samples_ms": [
+            25.715162,
+            23.229894,
+            26.538723,
+            12.03911,
+            13.132927
+          ]
+        },
+        "persistent_commit": {
+          "median_ms": 62.530547,
+          "p95_ms": 139.192873,
+          "samples_ms": [
+            66.501676,
+            62.530547,
+            62.500195,
+            51.956175,
+            139.192873
+          ]
+        },
+        "ram_incremental": {
+          "median_ms": 14.453915,
+          "p95_ms": 22.475608,
+          "samples_ms": [
+            22.475608,
+            15.594147,
+            12.851727,
+            14.453915,
+            12.070153
+          ]
+        },
+        "recompute_prefix": {
+          "median_ms": 109.994711,
+          "p95_ms": 118.819881,
+          "samples_ms": [
+            112.836652,
+            109.994711,
+            118.819881,
+            85.165201,
+            83.768566
+          ]
+        }
+      }
+    },
+    {
+      "history_tokens": 1024,
+      "kind": "packet",
+      "max_abs_error": {
+        "exact_retry": 7.152557373046875e-07,
+        "persistent_commit": 7.152557373046875e-07,
+        "ram_incremental": 7.152557373046875e-07,
+        "recompute_prefix": 0.0
+      },
+      "new_tokens": 1,
+      "prefix_state": {
+        "encoded_json_bytes": 60417,
+        "raw_tensor_bytes": 43168
+      },
+      "standalone_state_codec_round_trip": {
+        "median_ms": 1.312724,
+        "p95_ms": 2.298396,
+        "samples_ms": [
+          1.312724,
+          1.159353,
+          1.002381,
+          2.298396,
+          2.115115
+        ]
+      },
+      "tail_output": {
+        "encoded_json_bytes": 1554,
+        "raw_tensor_bytes": 1024
+      },
+      "timings": {
+        "exact_retry": {
+          "median_ms": 14.778799,
+          "p95_ms": 21.843268,
+          "samples_ms": [
+            12.367303,
+            21.843268,
+            11.692741,
+            15.069708,
+            14.778799
+          ]
+        },
+        "persistent_commit": {
+          "median_ms": 69.647314,
+          "p95_ms": 71.816853,
+          "samples_ms": [
+            62.897192,
+            62.863377,
+            71.787391,
+            69.647314,
+            71.816853
+          ]
+        },
+        "ram_incremental": {
+          "median_ms": 3.498367,
+          "p95_ms": 4.976439,
+          "samples_ms": [
+            3.498367,
+            3.408002,
+            3.384815,
+            4.976439,
+            4.123304
+          ]
+        },
+        "recompute_prefix": {
+          "median_ms": 775.398728,
+          "p95_ms": 890.423985,
+          "samples_ms": [
+            816.513472,
+            626.831518,
+            890.423985,
+            775.398728,
+            727.836143
+          ]
+        }
+      }
+    },
+    {
+      "history_tokens": 1024,
+      "kind": "packet",
+      "max_abs_error": {
+        "exact_retry": 0.0,
+        "persistent_commit": 0.0,
+        "ram_incremental": 0.0,
+        "recompute_prefix": 0.0
+      },
+      "new_tokens": 16,
+      "prefix_state": {
+        "encoded_json_bytes": 60417,
+        "raw_tensor_bytes": 43168
+      },
+      "standalone_state_codec_round_trip": {
+        "median_ms": 1.312724,
+        "p95_ms": 2.298396,
+        "samples_ms": [
+          1.312724,
+          1.159353,
+          1.002381,
+          2.298396,
+          2.115115
+        ]
+      },
+      "tail_output": {
+        "encoded_json_bytes": 22035,
+        "raw_tensor_bytes": 16384
+      },
+      "timings": {
+        "exact_retry": {
+          "median_ms": 16.5904,
+          "p95_ms": 28.507896,
+          "samples_ms": [
+            16.143199,
+            22.387937,
+            28.507896,
+            16.044509,
+            16.5904
+          ]
+        },
+        "persistent_commit": {
+          "median_ms": 111.779289,
+          "p95_ms": 132.040181,
+          "samples_ms": [
+            132.040181,
+            111.779289,
+            104.413468,
+            126.202122,
+            99.88442
+          ]
+        },
+        "ram_incremental": {
+          "median_ms": 17.341113,
+          "p95_ms": 28.030276,
+          "samples_ms": [
+            17.341113,
+            13.530399,
+            17.173448,
+            28.030276,
+            22.407461
+          ]
+        },
+        "recompute_prefix": {
+          "median_ms": 1072.130014,
+          "p95_ms": 1188.869978,
+          "samples_ms": [
+            1084.993204,
+            1009.418922,
+            801.202396,
+            1188.869978,
+            1072.130014
+          ]
+        }
+      }
+    },
+    {
+      "history_tokens": 128,
+      "kind": "typed_packet",
+      "max_abs_error": {
+        "exact_retry": 7.152557373046875e-07,
+        "persistent_commit": 7.152557373046875e-07,
+        "ram_incremental": 7.152557373046875e-07,
+        "recompute_prefix": 0.0
+      },
+      "new_tokens": 1,
+      "prefix_state": {
+        "encoded_json_bytes": 64064,
+        "raw_tensor_bytes": 43968
+      },
+      "standalone_state_codec_round_trip": {
+        "median_ms": 4.753358,
+        "p95_ms": 5.815321,
+        "samples_ms": [
+          4.063638,
+          4.753358,
+          5.245976,
+          5.815321,
+          2.137954
+        ]
+      },
+      "tail_output": {
+        "encoded_json_bytes": 1554,
+        "raw_tensor_bytes": 1024
+      },
+      "timings": {
+        "exact_retry": {
+          "median_ms": 16.452579,
+          "p95_ms": 19.294449,
+          "samples_ms": [
+            16.452579,
+            18.79048,
+            14.212244,
+            14.84797,
+            19.294449
+          ]
+        },
+        "persistent_commit": {
+          "median_ms": 67.853264,
+          "p95_ms": 74.00854,
+          "samples_ms": [
+            59.748398,
+            74.00854,
+            67.853264,
+            45.951579,
+            72.804812
+          ]
+        },
+        "ram_incremental": {
+          "median_ms": 6.599612,
+          "p95_ms": 8.313384,
+          "samples_ms": [
+            5.569875,
+            7.864232,
+            8.313384,
+            6.599612,
+            3.877163
+          ]
+        },
+        "recompute_prefix": {
+          "median_ms": 278.252861,
+          "p95_ms": 321.170312,
+          "samples_ms": [
+            321.170312,
+            246.544703,
+            278.252861,
+            226.39514,
+            279.977242
+          ]
+        }
+      }
+    },
+    {
+      "history_tokens": 128,
+      "kind": "typed_packet",
+      "max_abs_error": {
+        "exact_retry": 0.0,
+        "persistent_commit": 0.0,
+        "ram_incremental": 0.0,
+        "recompute_prefix": 0.0
+      },
+      "new_tokens": 16,
+      "prefix_state": {
+        "encoded_json_bytes": 64064,
+        "raw_tensor_bytes": 43968
+      },
+      "standalone_state_codec_round_trip": {
+        "median_ms": 4.753358,
+        "p95_ms": 5.815321,
+        "samples_ms": [
+          4.063638,
+          4.753358,
+          5.245976,
+          5.815321,
+          2.137954
+        ]
+      },
+      "tail_output": {
+        "encoded_json_bytes": 22035,
+        "raw_tensor_bytes": 16384
+      },
+      "timings": {
+        "exact_retry": {
+          "median_ms": 27.030984,
+          "p95_ms": 38.225459,
+          "samples_ms": [
+            19.850885,
+            30.703723,
+            38.225459,
+            27.030984,
+            25.986291
+          ]
+        },
+        "persistent_commit": {
+          "median_ms": 159.958517,
+          "p95_ms": 174.344512,
+          "samples_ms": [
+            104.324718,
+            159.958517,
+            174.344512,
+            160.961573,
+            103.351945
+          ]
+        },
+        "ram_incremental": {
+          "median_ms": 69.968735,
+          "p95_ms": 140.026948,
+          "samples_ms": [
+            41.313495,
+            140.026948,
+            69.160894,
+            101.541511,
+            69.968735
+          ]
+        },
+        "recompute_prefix": {
+          "median_ms": 436.911558,
+          "p95_ms": 574.61294,
+          "samples_ms": [
+            396.967469,
+            333.783932,
+            574.61294,
+            562.369759,
+            436.911558
+          ]
+        }
+      }
+    },
+    {
+      "history_tokens": 1024,
+      "kind": "typed_packet",
+      "max_abs_error": {
+        "exact_retry": 9.5367431640625e-07,
+        "persistent_commit": 9.5367431640625e-07,
+        "ram_incremental": 9.5367431640625e-07,
+        "recompute_prefix": 0.0
+      },
+      "new_tokens": 1,
+      "prefix_state": {
+        "encoded_json_bytes": 64065,
+        "raw_tensor_bytes": 43968
+      },
+      "standalone_state_codec_round_trip": {
+        "median_ms": 1.708363,
+        "p95_ms": 2.134569,
+        "samples_ms": [
+          1.951318,
+          1.448442,
+          1.708363,
+          2.134569,
+          1.431673
+        ]
+      },
+      "tail_output": {
+        "encoded_json_bytes": 1554,
+        "raw_tensor_bytes": 1024
+      },
+      "timings": {
+        "exact_retry": {
+          "median_ms": 19.523392,
+          "p95_ms": 33.800085,
+          "samples_ms": [
+            18.927279,
+            19.523392,
+            23.898351,
+            15.702072,
+            33.800085
+          ]
+        },
+        "persistent_commit": {
+          "median_ms": 82.70154,
+          "p95_ms": 108.99106,
+          "samples_ms": [
+            76.778062,
+            90.243452,
+            108.99106,
+            66.775898,
+            82.70154
+          ]
+        },
+        "ram_incremental": {
+          "median_ms": 7.621188,
+          "p95_ms": 7.917821,
+          "samples_ms": [
+            7.814794,
+            7.621188,
+            5.592805,
+            7.917821,
+            5.411532
+          ]
+        },
+        "recompute_prefix": {
+          "median_ms": 2194.453197,
+          "p95_ms": 2529.305357,
+          "samples_ms": [
+            2046.179069,
+            2250.564204,
+            2194.453197,
+            2529.305357,
+            2092.070802
+          ]
+        }
+      }
+    },
+    {
+      "history_tokens": 1024,
+      "kind": "typed_packet",
+      "max_abs_error": {
+        "exact_retry": 0.0,
+        "persistent_commit": 0.0,
+        "ram_incremental": 0.0,
+        "recompute_prefix": 0.0
+      },
+      "new_tokens": 16,
+      "prefix_state": {
+        "encoded_json_bytes": 64065,
+        "raw_tensor_bytes": 43968
+      },
+      "standalone_state_codec_round_trip": {
+        "median_ms": 1.708363,
+        "p95_ms": 2.134569,
+        "samples_ms": [
+          1.951318,
+          1.448442,
+          1.708363,
+          2.134569,
+          1.431673
+        ]
+      },
+      "tail_output": {
+        "encoded_json_bytes": 22035,
+        "raw_tensor_bytes": 16384
+      },
+      "timings": {
+        "exact_retry": {
+          "median_ms": 19.294708,
+          "p95_ms": 27.257043,
+          "samples_ms": [
+            22.827681,
+            18.113941,
+            19.000326,
+            19.294708,
+            27.257043
+          ]
+        },
+        "persistent_commit": {
+          "median_ms": 118.800969,
+          "p95_ms": 131.834183,
+          "samples_ms": [
+            122.632526,
+            100.998641,
+            131.834183,
+            115.171652,
+            118.800969
+          ]
+        },
+        "ram_incremental": {
+          "median_ms": 42.263679,
+          "p95_ms": 57.85416,
+          "samples_ms": [
+            37.992724,
+            35.371284,
+            53.470326,
+            42.263679,
+            57.85416
+          ]
+        },
+        "recompute_prefix": {
+          "median_ms": 2408.566295,
+          "p95_ms": 3291.236411,
+          "samples_ms": [
+            2512.830428,
+            2243.831712,
+            2084.591761,
+            2408.566295,
+            3291.236411
+          ]
+        }
+      }
+    }
+  ],
+  "cold_processes": [
+    {
+      "history_tokens": 128,
+      "inner_run_ms": 35.348853,
+      "kind": "local",
+      "max_abs_error": 0.0,
+      "new_tokens": 16,
+      "process_wall_ms": 3923.098981002113,
+      "revision": 2,
+      "tokens_seen": 144
+    },
+    {
+      "history_tokens": 1024,
+      "inner_run_ms": 64.38611,
+      "kind": "local",
+      "max_abs_error": 0.0,
+      "new_tokens": 16,
+      "process_wall_ms": 2386.2748420069693,
+      "revision": 2,
+      "tokens_seen": 1040
+    },
+    {
+      "history_tokens": 128,
+      "inner_run_ms": 93.715814,
+      "kind": "packet",
+      "max_abs_error": 0.0,
+      "new_tokens": 16,
+      "process_wall_ms": 2314.4159600051353,
+      "revision": 2,
+      "tokens_seen": 144
+    },
+    {
+      "history_tokens": 1024,
+      "inner_run_ms": 126.152031,
+      "kind": "packet",
+      "max_abs_error": 0.0,
+      "new_tokens": 16,
+      "process_wall_ms": 3236.4996999967843,
+      "revision": 2,
+      "tokens_seen": 1040
+    },
+    {
+      "history_tokens": 128,
+      "inner_run_ms": 105.135335,
+      "kind": "typed_packet",
+      "max_abs_error": 0.0,
+      "new_tokens": 16,
+      "process_wall_ms": 2795.1316670078086,
+      "revision": 2,
+      "tokens_seen": 144
+    },
+    {
+      "history_tokens": 1024,
+      "inner_run_ms": 119.440397,
+      "kind": "typed_packet",
+      "max_abs_error": 0.0,
+      "new_tokens": 16,
+      "process_wall_ms": 3034.844226000132,
+      "revision": 2,
+      "tokens_seen": 1040
+    }
+  ],
+  "environment": {
+    "cpu_threads": 1,
+    "machine": "x86_64",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "python": "3.12.14",
+    "sqlite": "3.53.1",
+    "torch": "2.10.0+cpu",
+    "visible_cpus": 9
+  },
+  "filesystem": "Filesystem     Type    1024-blocks     Used Available Capacity Mounted on\noverlay        overlay    66002476 20574860  42055792      33% /workspace",
+  "harness_sha256": "798ddee88f216edde8b1ee84594fcdf874b1e43c29002a5d0b3a27ee829fc839",
+  "kind": "untrained_reference_cost",
+  "measured_trials": 5,
+  "models": [
+    {
+      "kind": "local",
+      "parameters": 1005474,
+      "standalone_identity": {
+        "median_ms": 11.968873,
+        "p95_ms": 15.427737,
+        "samples_ms": [
+          15.427737,
+          13.089495,
+          11.543161,
+          11.199714,
+          11.968873
+        ]
+      }
+    },
+    {
+      "kind": "packet",
+      "parameters": 1134210,
+      "standalone_identity": {
+        "median_ms": 13.555237,
+        "p95_ms": 15.336926,
+        "samples_ms": [
+          14.058894,
+          15.336926,
+          12.67583,
+          13.555237,
+          11.426984
+        ]
+      }
+    },
+    {
+      "kind": "typed_packet",
+      "parameters": 1274942,
+      "standalone_identity": {
+        "median_ms": 22.877243,
+        "p95_ms": 32.496238,
+        "samples_ms": [
+          32.496238,
+          22.877243,
+          26.106912,
+          19.314229,
+          19.967873
+        ]
+      }
+    }
+  ],
+  "parent_cpu_seconds": 76.911993685,
+  "qualification": "numerical continuation and descriptive one-host cost only; no trained quality or lifetime claim",
+  "seed": 91023,
+  "source_sha256": {
+    "comm/packet.py": "346505fc26654609c8d5f19f59376cb0ecff11c1aa572c51ae7f188d4eeb997b",
+    "interaction.py": "f6f9db16ead08fb837360051ec10920d5e410eb837453c02d93fb24057c0f1a8",
+    "memory/codec.py": "15761577fef3dc0769e817b7da7a5a7d29a0d89b4e656f41e553de86204f112f",
+    "memory/decoder.py": "65e5afb321dbab4014c8aa11d860b272f5003fb5758064dfe22e76a27c771b0a",
+    "memory/store.py": "3bf7561d194e19cc32a6ab4377ca4656aea86800ce6d026fd0a291ab18ec47c1",
+    "model.py": "b9ae1000992dbd9e103de5f2365b88fb0c2a674e9acc9cfc0c9ac2ba7b599ab3",
+    "state/records.py": "6eb6950971538ec7991b669a6962112d89ce5a97be8b721be13268e3b9d1a502"
+  },
+  "study": "MEMORY-VALIDATION-002",
+  "tolerance": {
+    "atol": 1e-06,
+    "rtol": 1e-05
+  },
+  "wall_seconds": 95.80772916600108,
+  "warmup_trials": 1
+}
