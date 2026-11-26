@@ -1,0 +1,13 @@
+# UNIFIED-016 protocol snapshots
+
+Rendered from the archived protocol files; exact source bytes remain in the local evidence ZIP. The result record governs observed outcomes and corrections.
+
+## Primary protocol
+
+# COG-UNIFIED-016 developmental protocol
+2026-11-26. Scope: CPU, exact recovered UNIFIED-015 backbone. New seeds 4121, 4133, 4153. Separate depth/width pilot (1M matched 1/2 layers, 400 updates, 8x32 bytes) and semantic custody mechanism probe. No sustained 10M, GPU or formal muP claim. Development-exposed corpus for LM only. Semantic probe uses synthetic templated English statements, familiar surface aliases, a held wording order and explicit query alias but no intermediate address/action labels. Soft and straight-through hard controls and an exact oracle keyed store. The held wording uses known words in new order. Capacity: 4 or 8 slots for 8 entities; compare delayed record after 16, 128, 1024 events, short full histories and held wording. Gate: >=95% complete 8-answer histories in all seeds and both wording panels, exact target retention at 1024, no nonselected writes. Model promotion requires independent adequate natural language/compute evidence, not met by a diagnostic. Count unique completed fits separately from all interventions, replays, and prior weights. Archive every checkpoint and results. Do not change official campaign counts. No autonomous worker claims.
+
+## Secondary diagnostic protocol
+
+# Secondary diagnostics, after primary custody failure
+Auxiliary-supervised GRU hard-execution model, 8 slots, three seeds and 300 updates, same data as original. Explicit subject destination, update-vs-hold and query destination targets derived from training templates. These are privileged labels, not autonomous acquisition. Evaluate identical panels, including held ordering. An exact grammar-aware keyed-store control checks task solvability. Independent eviction diagnostic: synthetic immutable value per entity, random stream of writes to 256 keys; query targets either recent or popular from a fixed Zipf distribution. Compare bounded FIFO, LRU-on-access and LFU (resident counters), and unbounded dictionary. Queries only to previously seen keys; correctness requires resident current value. Capacity 16/64/128. This tests policy/workload dependence, not a learned COG architecture. All no-fit operations recorded separately. No formal muP or adequate 10M fit.
