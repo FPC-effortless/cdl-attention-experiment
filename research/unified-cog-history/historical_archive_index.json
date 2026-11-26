@@ -1,0 +1,178 @@
+{
+  "date": "2026-11-26",
+  "scope": "UNIFIED-001–015 plus separate temporal 010",
+  "local_archive_crc_pass": 21,
+  "checkpoint_members": 755,
+  "distinct_checkpoint_sha256": 732,
+  "archives": [
+    {
+      "archive": "cog_unified_001_evidence.zip",
+      "bytes": 5585,
+      "checkpoint_members": 0,
+      "sha256": "b1fd476b8c68b61897eb633e88f3321e15ea0bfb7fec7c9f66fe8e4a7676e6b1",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    },
+    {
+      "archive": "cog_unified_002_evidence.zip",
+      "bytes": 68508673,
+      "checkpoint_members": 18,
+      "sha256": "a9f1ba756c8f39fe004cc851024b632de3f0dcbe056b61c4786826b2afceda6e",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    },
+    {
+      "archive": "cog_unified_003_evidence.zip",
+      "bytes": 87094180,
+      "checkpoint_members": 27,
+      "sha256": "be467cc96c9bc543c35b9ccc7d354e7b04388478a5aad1370ac103b3e8d0dbd9",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    },
+    {
+      "archive": "cog_unified_004_evidence.zip",
+      "bytes": 45488962,
+      "checkpoint_members": 12,
+      "sha256": "827d51b5808f462840db993b2f21488b5d6b01c0f58971fb7f567da209d0c2dd",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    },
+    {
+      "archive": "cog_unified_005_evidence.zip",
+      "bytes": 34146133,
+      "checkpoint_members": 9,
+      "sha256": "4fa1a3486f23c5896047cd7c1277b381e2672cce4a09a2ed0f10e373a90cf4be",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    },
+    {
+      "archive": "cog_unified_006_evidence.zip",
+      "bytes": 46670562,
+      "checkpoint_members": 12,
+      "sha256": "1351b2bb7f7800ce0ad2b35dd698761680ee9c96468118520850eaa3ccaf6f89",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    },
+    {
+      "archive": "cog_unified_007_evidence.zip",
+      "bytes": 76536440,
+      "checkpoint_members": 25,
+      "sha256": "ee31b8e56e9bbcab235c48ba172d3303d3c176b904b5c0e431165a5f442bfe64",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    },
+    {
+      "archive": "cog_unified_008_evidence.zip",
+      "bytes": 4670480,
+      "checkpoint_members": 55,
+      "sha256": "509016c5409c914ed99ee4bdb0b300c222aefb4b6ce45452ca169d5f52071735",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    },
+    {
+      "archive": "cog_unified_009_evidence.zip",
+      "bytes": 5066360,
+      "checkpoint_members": 60,
+      "sha256": "9e32f3cda0b8dd8594bec15047373d666bb41b62ed31b725813fb00f61270085",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    },
+    {
+      "archive": "cog_temporal_010_evidence.zip",
+      "bytes": 98607568,
+      "checkpoint_members": 32,
+      "sha256": "cb5b4d9eaf7681ef771c061f2aae29b71e84c4d468d552d6b82f5e9cd12f3574",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    },
+    {
+      "archive": "cog_unified_010_evidence.zip",
+      "bytes": 89999833,
+      "checkpoint_members": 45,
+      "sha256": "394f3cb01ccec688236294f272053a7c16027772747a61d94897a37a9223434c",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    },
+    {
+      "archive": "cog_unified_011_evidence.zip",
+      "bytes": 186375451,
+      "checkpoint_members": 70,
+      "sha256": "9de6e8b44e535221a5b7d70ad49127a1423a502040526e450865896544e1c1ee",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    },
+    {
+      "archive": "cog_unified_012_evidence.zip",
+      "bytes": 129856915,
+      "checkpoint_members": 135,
+      "sha256": "569dea6a779e999070ff2ff4c932b077aea5d82933b0c665f944ef9922222b90",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    },
+    {
+      "archive": "cog_unified_013_evidence.zip",
+      "bytes": 545772,
+      "checkpoint_members": 0,
+      "sha256": "bf0b931f595eb3f49f15dfa60f1cd8cd6963880fe3271d3dd14e9d8cff466d4e",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    },
+    {
+      "archive": "cog_unified_013_weights_1.zip",
+      "bytes": 161559624,
+      "checkpoint_members": 26,
+      "sha256": "b6e27a08ce7bad9abc92bb719d2b1fa5a3d430692277ff18daf00ad20b7034d7",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    },
+    {
+      "archive": "cog_unified_013_weights_2.zip",
+      "bytes": 161782557,
+      "checkpoint_members": 22,
+      "sha256": "072a97bb4cb1290d65494a6725cdc831caf502365dd6033fcdc7248cb24ca409",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    },
+    {
+      "archive": "cog_unified_013_weights_3.zip",
+      "bytes": 161557669,
+      "checkpoint_members": 24,
+      "sha256": "70569a3d59001bdf430b5bde5f3d861e27891f1ac65781e2b5cf7c30c109975b",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    },
+    {
+      "archive": "cog_unified_013_weights_4.zip",
+      "bytes": 161396605,
+      "checkpoint_members": 26,
+      "sha256": "08bcf7b67474349d6a01c6327bec35867366e0db1cc279dab4f8a071852ed296",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    },
+    {
+      "archive": "cog_unified_013_weights_5.zip",
+      "bytes": 161728551,
+      "checkpoint_members": 22,
+      "sha256": "5b551811335f772f26da5c08e404955ea14355f86d7c977e1d2531e51ed8244a",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    },
+    {
+      "archive": "cog_unified_014_evidence.zip",
+      "bytes": 122500330,
+      "checkpoint_members": 54,
+      "sha256": "6c04cd1dcb77feac1fcc8cccb0ce0ff82e884bb07d060652637564082885a1ba",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    },
+    {
+      "archive": "cog_unified_015_evidence.zip",
+      "bytes": 73958454,
+      "checkpoint_members": 81,
+      "sha256": "88b7004399e4a547fdbdbfa9cf05c30fd2755af0178fe51c91ac14eeb62a9e3e",
+      "crc_ok": true,
+      "remote_binary_status": "UPLOAD_BLOCKED"
+    }
+  ],
+  "notes": "Historical inventory includes inherited and intermediate checkpoint objects; not independent fits. No archive is asserted to have been uploaded. Public release must exclude non-public or unlicensed corpus content; record separate sanitized release SHA256."
+}
