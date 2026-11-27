@@ -1,0 +1,267 @@
+name: COG-ALG-DISCOVERY-001 six-arm pretraining
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [research/cog-math-repair-009-cpu]
+    paths:
+      - 'research/algorithm-discovery-001/**'
+      - '.github/workflows/cog-alg-discovery-001.yaml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: cog-alg-discovery-001-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+env:
+  OMP_NUM_THREADS: '4'
+  MKL_NUM_THREADS: '4'
+  OPENBLAS_NUM_THREADS: '4'
+jobs:
+  prepare:
+    if: (github.event_name == 'workflow_dispatch' && github.ref_name == 'research/cog-alg-discovery-001') || (github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'research/cog-alg-discovery-001' && github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned CPU environment
+        run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0 pyarrow==18.1.0 packaging==25.0
+      - uses: actions/download-artifact@v4
+        with:
+          name: corpus
+          path: ${{ runner.temp }}/corpus
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46039004295'
+      - name: Verify exact parent corpus and exercise all 24 configurations
+        run: |
+          python research/math-repair-009/recover009.py corpus --data "$RUNNER_TEMP/corpus"
+          python research/algorithm-discovery-001/smoke_resume.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: engineering-preflight
+          path: research/algorithm-discovery-001/smoke_resume.json
+          if-no-files-found: error
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: alg001-corpus
+          path: ${{ runner.temp }}/corpus
+          if-no-files-found: error
+          retention-days: 30
+  stage1:
+    needs: [prepare]
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        arm: [HH, A0, local_joint, context_role, context_address, context_joint]
+        seed: [9001, 9011, 9029, 9041]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned CPU environment
+        run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0 pyarrow==18.1.0 packaging==25.0
+      - uses: actions/download-artifact@v4
+        with:
+          name: alg001-corpus
+          path: ${{ runner.temp }}/corpus
+      - name: Train fixed-budget stage 1
+        run: |
+          python research/algorithm-discovery-001/train_adapter.py train --parent research/math-repair-009 --data "$RUNNER_TEMP/corpus" --out-root "$RUNNER_TEMP/fits" --arm '${{ matrix.arm }}' --seed '${{ matrix.seed }}' --stage 1 --threads 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: alg001-stage1-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/fits/${{ matrix.arm }}/${{ matrix.seed }}/stage1
+          if-no-files-found: warn
+          retention-days: 30
+  stage2:
+    needs: [prepare, stage1]
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        arm: [HH, A0, local_joint, context_role, context_address, context_joint]
+        seed: [9001, 9011, 9029, 9041]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned CPU environment
+        run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0 pyarrow==18.1.0 packaging==25.0
+      - uses: actions/download-artifact@v4
+        with:
+          name: alg001-corpus
+          path: ${{ runner.temp }}/corpus
+      - uses: actions/download-artifact@v4
+        with:
+          name: alg001-stage1-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/fits/${{ matrix.arm }}/${{ matrix.seed }}/stage1
+      - name: Train fixed-budget stage 2
+        run: |
+          python research/algorithm-discovery-001/train_adapter.py train --parent research/math-repair-009 --data "$RUNNER_TEMP/corpus" --out-root "$RUNNER_TEMP/fits" --arm '${{ matrix.arm }}' --seed '${{ matrix.seed }}' --stage 2 --threads 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: alg001-stage2-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/fits/${{ matrix.arm }}/${{ matrix.seed }}/stage2
+          if-no-files-found: warn
+          retention-days: 30
+  stage3:
+    needs: [prepare, stage2]
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        arm: [HH, A0, local_joint, context_role, context_address, context_joint]
+        seed: [9001, 9011, 9029, 9041]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned CPU environment
+        run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0 pyarrow==18.1.0 packaging==25.0
+      - uses: actions/download-artifact@v4
+        with:
+          name: alg001-corpus
+          path: ${{ runner.temp }}/corpus
+      - uses: actions/download-artifact@v4
+        with:
+          name: alg001-stage2-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/fits/${{ matrix.arm }}/${{ matrix.seed }}/stage2
+      - name: Train fixed-budget stage 3
+        run: |
+          python research/algorithm-discovery-001/train_adapter.py train --parent research/math-repair-009 --data "$RUNNER_TEMP/corpus" --out-root "$RUNNER_TEMP/fits" --arm '${{ matrix.arm }}' --seed '${{ matrix.seed }}' --stage 3 --threads 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: alg001-stage3-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/fits/${{ matrix.arm }}/${{ matrix.seed }}/stage3
+          if-no-files-found: warn
+          retention-days: 30
+  stage4:
+    needs: [prepare, stage3]
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        arm: [HH, A0, local_joint, context_role, context_address, context_joint]
+        seed: [9001, 9011, 9029, 9041]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned CPU environment
+        run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0 pyarrow==18.1.0 packaging==25.0
+      - uses: actions/download-artifact@v4
+        with:
+          name: alg001-corpus
+          path: ${{ runner.temp }}/corpus
+      - uses: actions/download-artifact@v4
+        with:
+          name: alg001-stage3-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/fits/${{ matrix.arm }}/${{ matrix.seed }}/stage3
+      - name: Train fixed-budget stage 4
+        run: |
+          python research/algorithm-discovery-001/train_adapter.py train --parent research/math-repair-009 --data "$RUNNER_TEMP/corpus" --out-root "$RUNNER_TEMP/fits" --arm '${{ matrix.arm }}' --seed '${{ matrix.seed }}' --stage 4 --threads 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: alg001-stage4-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/fits/${{ matrix.arm }}/${{ matrix.seed }}/stage4
+          if-no-files-found: warn
+          retention-days: 30
+  terminal_validation:
+    needs: [prepare, stage4]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned CPU environment
+        run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0 pyarrow==18.1.0 packaging==25.0
+      - uses: actions/download-artifact@v4
+        with:
+          name: alg001-corpus
+          path: ${{ runner.temp }}/corpus
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: alg001-stage4-*
+          path: ${{ runner.temp }}/terminal
+      - name: Verify all 24 terminal receipts before opening validation
+        run: |
+          set -euo pipefail
+          for arm in HH A0 local_joint context_role context_address context_joint; do
+            for seed in 9001 9011 9029 9041; do
+              mkdir -p "$RUNNER_TEMP/fits/$arm/$seed"
+              mv "$RUNNER_TEMP/terminal/alg001-stage4-$arm-$seed" "$RUNNER_TEMP/fits/$arm/$seed/stage4"
+            done
+          done
+          python research/algorithm-discovery-001/train_adapter.py gate --parent research/math-repair-009 --data "$RUNNER_TEMP/corpus" --out-root "$RUNNER_TEMP/fits"
+          python research/math-repair-009/data009.py --split validation --out "$RUNNER_TEMP/holdout" --train-manifest "$RUNNER_TEMP/corpus"
+      - name: Evaluate terminal checkpoints
+        run: |
+          set -euo pipefail
+          for arm in HH A0 local_joint context_role context_address context_joint; do
+            for seed in 9001 9011 9029 9041; do
+              python research/algorithm-discovery-001/train_adapter.py validate --parent research/math-repair-009 --data "$RUNNER_TEMP/holdout" --out-root "$RUNNER_TEMP/fits" --arm "$arm" --seed "$seed" --threads 4
+            done
+          done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: alg001-validation
+          path: |
+            ${{ runner.temp }}/fits/*/*/validation/validation.json
+            ${{ runner.temp }}/holdout/manifest.json
+          if-no-files-found: warn
+          retention-days: 30
