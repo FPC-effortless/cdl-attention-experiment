@@ -1,0 +1,30 @@
+fit G cog 171 1914 600
+fit G protected-instant 171 1914 600
+fit G dense-instant 171 1914 600
+fit G protected-compact 171 1306 600
+fit G static 171 2286 600
+fit G cog 311 1914 600
+fit G protected-instant 311 1914 600
+fit G dense-instant 311 1914 240
+fit G protected-compact 311 1306 360
+fit G static 311 2286 240
+fit G cog 591 1914 480
+fit G protected-instant 591 1914 600
+fit G dense-instant 591 1914 480
+fit G protected-compact 591 1306 480
+fit G static 591 2286 480
+evaluated G cog 171 0.16640355419039968
+evaluated G protected-instant 171 0.16633937149019803
+evaluated G dense-instant 171 0.16680222421492014
+evaluated G protected-compact 171 0.16709021572629568
+evaluated G static 171 0.1653064498729296
+evaluated G cog 311 0.1662956206750875
+evaluated G protected-instant 311 0.16846182408034976
+evaluated G dense-instant 311 0.17229745660503726
+evaluated G protected-compact 311 0.16719604277373257
+evaluated G static 311 0.17135711827294223
+evaluated G cog 591 0.17030683660146825
+evaluated G protected-instant 591 0.16739557669553756
+evaluated G dense-instant 591 0.17033879189353945
+evaluated G protected-compact 591 0.1645689813443659
+evaluated G static 591 0.17029775430006863
