@@ -1,0 +1,143 @@
+name: COG-EDGE v0.1 repair replay and expanded development
+on:
+  pull_request:
+    paths:
+      - 'research/cog-edge-v01/**'
+      - '.github/workflows/cog-edge-v01.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13.5'
+      - run: |
+          python -m pip install numpy==2.3.5
+          python -m pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+      - name: Restore exact original bytes and replay
+        run: |
+          python research/cog-edge-v01/restore.py --out "${RUNNER_TEMP}/edge"
+          mkdir -p ci-replay
+          python "${RUNNER_TEMP}/edge/repair.py" research/cog-drone-audit/archives/COG-DRONE-002-006-evidence.zip --out ci-replay/repair.json
+          python "${RUNNER_TEMP}/edge/replay.py" --root "${RUNNER_TEMP}/edge" --out ci-replay/replay.json
+          python "${RUNNER_TEMP}/edge/prepare.py" --archive research/cog-drone-audit/archives/COG-DRONE-002-006-evidence.zip --out "${RUNNER_TEMP}/restored-pilot.npz"
+          python - <<'PY'
+          import os,json,numpy as np,pathlib
+          p=pathlib.Path(os.environ['RUNNER_TEMP']);a=np.load(p/'edge/pilot.npz');b=np.load(p/'restored-pilot.npz');assert set(a.files)==set(b.files) and all(np.array_equal(a[k],b[k]) for k in a.files)
+          assert json.loads((p/'edge/pilot.json').read_text())['splits']==json.loads((p/'restored-pilot.json').read_text())['splits']
+          print("Historical training data and split reconstructed exactly")
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: edge-replay-receipt
+          path: ci-replay/
+          if-no-files-found: warn
+  retrain:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        fold: [Y, R, G]
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13.5'
+      - run: |
+          python -m pip install numpy==2.3.5
+          python -m pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+      - name: Refit historical developmental cohort from initialization
+        env:
+          FOLD: ${{ matrix.fold }}
+        run: |
+          python research/cog-edge-v01/restore.py --out "${RUNNER_TEMP}/edge"
+          mkdir -p ci-evidence
+          python "${RUNNER_TEMP}/edge/edge.py" --dataset "${RUNNER_TEMP}/edge/pilot.npz" --fold "$FOLD" --out "ci-evidence/retrain-$FOLD" --updates 150 --pilot
+          python - <<'PY'
+          import json, pathlib, os
+          g=os.environ['FOLD'];p=pathlib.Path(os.environ['RUNNER_TEMP']);a=json.loads((p/f'edge/pilot-{g}/results.json').read_text());b=json.loads(pathlib.Path(f'ci-evidence/retrain-{g}/results.json').read_text())
+          aa={(x['seed'],x['name']):x for x in a['fits']};bb={(x['seed'],x['name']):x for x in b['fits']};assert len(aa)==len(bb)==15 and aa.keys()==bb.keys()
+          rows=[]
+          for k in sorted(aa):
+           x,y=aa[k],bb[k];d=max(abs(x['test'][j]['rmse_v']-y['test'][j]['rmse_v']) for j in x['test']);rows.append({'seed':k[0],'name':k[1],'max_rmse_delta_v':d,'selected_update_matches':x['selected']==y['selected']})
+          pathlib.Path(f'ci-evidence/retrain-{g}/comparison.json').write_text(json.dumps(rows,indent=2))
+          print('max retraining RMSE delta',max(x['max_rmse_delta_v'] for x in rows))
+          assert max(x['max_rmse_delta_v'] for x in rows)<0.005, 'training reproduction tolerance exceeded'
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: edge-retrain-${{ matrix.fold }}
+          path: ci-evidence/
+          if-no-files-found: warn
+      - name: Preserve independent retraining evidence on a separate branch
+        if: always() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'research/cog-edge-v01'
+        env:
+          FOLD: ${{ matrix.fold }}
+        run: |
+          test -d ci-evidence || exit 0
+          git config user.name "COG research CI"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          dst="research/cog-edge-v01/ci-evidence/${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-retrain-$FOLD"
+          mkdir -p "$dst"
+          cp -a ci-evidence/. "$dst/"
+          (cd "$dst"; find . -type f ! -name SHA256SUMS.txt -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS.txt)
+          git add -f "$dst"
+          git diff --cached --quiet && exit 0
+          git commit -m "Preserve independent COG-EDGE retrain $FOLD run $GITHUB_RUN_ID"
+          git push origin "HEAD:refs/heads/research/cog-edge-v01-evidence-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-retrain-$FOLD"
+  expanded:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 50
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13.5'
+      - run: |
+          python -m pip install numpy==2.3.5
+          python -m pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+      - name: Retrieve pinned fresh cohort and enforce source and pack-label gates
+        run: |
+          mkdir -p ci-evidence
+          python research/cog-edge-v01/restore.py --out "${RUNNER_TEMP}/edge"
+          python "${RUNNER_TEMP}/edge/prepare.py" --expanded --archive research/cog-drone-audit/archives/COG-DRONE-002-006-evidence.zip --out "${RUNNER_TEMP}/expanded.npz" 2>&1 | tee ci-evidence/acquisition.log
+          cp "${RUNNER_TEMP}/expanded.json" ci-evidence/source-manifest.json
+        shell: bash
+      - name: Train all folds under frozen expanded protocol
+        run: |
+          for g in Y R G; do
+            python "${RUNNER_TEMP}/edge/edge.py" --dataset "${RUNNER_TEMP}/expanded.npz" --fold "$g" --out "ci-evidence/expanded-$g" --updates 600 2>&1 | tee "ci-evidence/train-$g.log"
+          done
+        shell: bash
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: edge-expanded-development
+          path: ci-evidence/
+          if-no-files-found: warn
+      - name: Preserve expanded weights and provenance without third-party raw data
+        if: always() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'research/cog-edge-v01'
+        run: |
+          test -d ci-evidence || exit 0
+          git config user.name "COG research CI"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          dst="research/cog-edge-v01/ci-evidence/${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-expanded"
+          mkdir -p "$dst"
+          cp -a ci-evidence/. "$dst/"
+          (cd "$dst"; find . -type f ! -name SHA256SUMS.txt -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS.txt)
+          git add -f "$dst"
+          git diff --cached --quiet && exit 0
+          git commit -m "Preserve COG-EDGE expanded run $GITHUB_RUN_ID"
+          git push origin "HEAD:refs/heads/research/cog-edge-v01-evidence-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-expanded"
