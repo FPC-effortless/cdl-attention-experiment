@@ -1,0 +1,56 @@
+{
+  "run": 46052265606,
+  "commit": "3e6d9018f0eee8ec1b4f7134290ec84c5e5b27ab",
+  "workflow": "COG-EDGE v0.1 repair replay and expanded development",
+  "url": "https://github.com/FPC-effortless/cdl-attention-experiment/actions/runs/46052265606",
+  "replay": {
+    "job": 140686234439,
+    "status": "success",
+    "archive_files": 149,
+    "archive_sha256": "3d1bc2eeb7efec14a5b2e5c9c08cf8dbb4b65d0171028b7541ca810d0c67f768",
+    "repair_panels": 18,
+    "repair_max_stream_delta": 4.76837158203125e-7,
+    "repair_hold_checks": 655038,
+    "repair_resume_delta": 0,
+    "refits_replayed": 45,
+    "metric_panels": 540,
+    "max_metric_delta": 1.5634005201548007e-8,
+    "max_prefix_delta": 0,
+    "exact_data_and_split_reconstructed": true
+  },
+  "retraining": [
+    {
+      "fold": "Y",
+      "job": 140686234890,
+      "status": "success",
+      "fits": 15,
+      "max_rmse_delta": 8.398549089516649e-8,
+      "evidence_commit": "f9ce2236c11e7140c25d0782000a48fd6d04f3e3"
+    },
+    {
+      "fold": "R",
+      "job": 140686234763,
+      "status": "success",
+      "fits": 15,
+      "max_rmse_delta": 0.00000384595860188075,
+      "evidence_commit": "2b5107c7d9a958a37268bae5a4da1142a62aa4ad"
+    },
+    {
+      "fold": "G",
+      "job": 140686234800,
+      "status": "success",
+      "fits": 15,
+      "max_rmse_delta": 1.2179091180009038e-8,
+      "evidence_commit": "591e321f859c5bc67cc12d72c7c2cb880f20e23c"
+    }
+  ],
+  "expanded": {
+    "job": 140686234821,
+    "status": "failure",
+    "stage": "source acquisition",
+    "cause": "HTTP 403: rate limit exceeded on anonymous tree API",
+    "fits": 0,
+    "evidence_commit": "1fdf4fcdfc46e02a74b021b64a73d901c3c9de64"
+  },
+  "scope": "Independent reproduction of historical pilot, not independent scientific qualification; no promotion."
+}
