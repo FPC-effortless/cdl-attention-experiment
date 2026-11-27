@@ -1,0 +1,3 @@
+1681965061928d98ce9d2abac9cce0ffca18f85dbf13a3ed0f3a23d0b1072d45  ./acquisition.log
+b591f0a7e1fcbc4e41a2ff7da967f4e90eb677eec20a7fb7e1bafc042da22c14  ./custody.log
+642049c9f5a2ff9441ca93d0c2b7c2ad2f242683ba5f2a1cff50f64916f78a00  ./replay.log

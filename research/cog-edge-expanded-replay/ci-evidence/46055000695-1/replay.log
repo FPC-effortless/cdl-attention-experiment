@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/runner/work/cdl-attention-experiment/cdl-attention-experiment/research/cog-edge-expanded-replay/replay.py", line 177, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/runner/work/cdl-attention-experiment/cdl-attention-experiment/research/cog-edge-expanded-replay/replay.py", line 150, in main
+    resume_one(edge,m,final);m.load_state_dict(c['model']);m.eval()
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: resume_one() missing 1 required positional argument: 'tr'
