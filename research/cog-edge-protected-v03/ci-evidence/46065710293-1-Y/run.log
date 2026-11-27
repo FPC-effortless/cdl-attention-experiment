@@ -1,0 +1,30 @@
+fit Y cog 171 1914 600
+fit Y protected-instant 171 1914 600
+fit Y dense-instant 171 1914 480
+fit Y protected-compact 171 1306 600
+fit Y static 171 2286 600
+fit Y cog 311 1914 600
+fit Y protected-instant 311 1914 600
+fit Y dense-instant 311 1914 480
+fit Y protected-compact 311 1306 600
+fit Y static 311 2286 480
+fit Y cog 591 1914 600
+fit Y protected-instant 591 1914 600
+fit Y dense-instant 591 1914 600
+fit Y protected-compact 591 1306 600
+fit Y static 591 2286 600
+evaluated Y cog 171 0.1045845708037869
+evaluated Y protected-instant 171 0.10535937192574639
+evaluated Y dense-instant 171 0.10714568618914937
+evaluated Y protected-compact 171 0.10212889409944015
+evaluated Y static 171 0.10207379598603185
+evaluated Y cog 311 0.10156120321811082
+evaluated Y protected-instant 311 0.10230786226933998
+evaluated Y dense-instant 311 0.10255410916268472
+evaluated Y protected-compact 311 0.10317302578679867
+evaluated Y static 311 0.10270125570459308
+evaluated Y cog 591 0.10181668907892007
+evaluated Y protected-instant 591 0.10336127516873894
+evaluated Y dense-instant 591 0.10205140183550496
+evaluated Y protected-compact 591 0.10124079096863588
+evaluated Y static 591 0.09986330309205413
