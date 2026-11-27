@@ -1,0 +1,246 @@
+{
+  "scope": "Read-only verification of archived external battery-monitoring results and descriptive donor/target distributions; no new fits, calibration, adaptation, or claim of physical causality.",
+  "archive_files_verified": 17,
+  "independently_reconstructed_external_arrays": 203,
+  "independently_reconstructed_source_arrays": 215,
+  "frozen_evaluations": 63,
+  "matched_cells": 2436,
+  "max_flight_aggregation_discrepancy": 0.0,
+  "source_replay_panels_recorded": 540,
+  "source_resume_checks_recorded": 45,
+  "profiles": {
+    "external": {
+      "voltage_v": {
+        "n": 37507,
+        "mean": 22.425787405518044,
+        "std": 1.1869518098225822,
+        "min": 18.923494338989258,
+        "p01": 20.417264938354492,
+        "median": 22.297771453857422,
+        "p99": 25.66703987121582,
+        "max": 25.894912719726562,
+        "negative_fraction": 0.0,
+        "zero_fraction": 0.0
+      },
+      "current_a": {
+        "n": 37507,
+        "mean": 18.05753429046626,
+        "std": 10.778248995027969,
+        "min": -0.2703603208065033,
+        "p01": -0.14313192665576935,
+        "median": 21.93894386291504,
+        "p99": 34.4068603515625,
+        "max": 43.217891693115234,
+        "negative_fraction": 0.11024608739701923,
+        "zero_fraction": 0.010717999306796065
+      }
+    },
+    "training_folds": {
+      "Y": {
+        "voltage_v": {
+          "train": {
+            "n": 44703,
+            "mean": 14.78605316803311,
+            "std": 0.6412209661280907,
+            "min": 8.772000312805176,
+            "p01": 13.504000663757324,
+            "median": 14.672000885009766,
+            "p99": 16.692001342773438,
+            "max": 16.81599998474121,
+            "negative_fraction": 0.0,
+            "zero_fraction": 0.0
+          },
+          "external_mean_shift_in_train_sd": 11.914620280303229,
+          "external_fraction_outside_train_minmax": 1.0,
+          "external_fraction_abs_z_gt3": 1.0
+        },
+        "current_a": {
+          "train": {
+            "n": 44703,
+            "mean": 15.313974686203514,
+            "std": 4.721612404557619,
+            "min": 0.0,
+            "p01": 0.0,
+            "median": 16.030000686645508,
+            "p99": 23.439804077148438,
+            "max": 34.459999084472656,
+            "negative_fraction": 0.0,
+            "zero_fraction": 0.04728989105876563
+          },
+          "external_mean_shift_in_train_sd": 0.5810795447420398,
+          "external_fraction_outside_train_minmax": 0.12003092756018877,
+          "external_fraction_abs_z_gt3": 0.2921054736449196
+        }
+      },
+      "R": {
+        "voltage_v": {
+          "train": {
+            "n": 47401,
+            "mean": 14.75143304883859,
+            "std": 0.6542564132852573,
+            "min": 7.682000160217285,
+            "p01": 13.562999725341797,
+            "median": 14.633999824523926,
+            "p99": 16.56100082397461,
+            "max": 16.795000076293945,
+            "negative_fraction": 0.0,
+            "zero_fraction": 0.0
+          },
+          "external_mean_shift_in_train_sd": 11.729747209396713,
+          "external_fraction_outside_train_minmax": 1.0,
+          "external_fraction_abs_z_gt3": 1.0
+        },
+        "current_a": {
+          "train": {
+            "n": 47401,
+            "mean": 15.723553511290655,
+            "std": 4.914977314279046,
+            "min": 0.0,
+            "p01": 0.0,
+            "median": 16.440000534057617,
+            "p99": 23.229999542236328,
+            "max": 34.88999938964844,
+            "negative_fraction": 0.0,
+            "zero_fraction": 0.06373283264066158
+          },
+          "external_mean_shift_in_train_sd": 0.47486872970063354,
+          "external_fraction_outside_train_minmax": 0.11819127096275361,
+          "external_fraction_abs_z_gt3": 0.2709894153091423
+        }
+      },
+      "G": {
+        "voltage_v": {
+          "train": {
+            "n": 62898,
+            "mean": 14.799879956447839,
+            "std": 0.6273117815015216,
+            "min": 7.682000160217285,
+            "p01": 13.749969482421875,
+            "median": 14.670499801635742,
+            "p99": 16.68800163269043,
+            "max": 16.808000564575195,
+            "negative_fraction": 0.0,
+            "zero_fraction": 0.0
+          },
+          "external_mean_shift_in_train_sd": 12.156516011991032,
+          "external_fraction_outside_train_minmax": 1.0,
+          "external_fraction_abs_z_gt3": 1.0
+        },
+        "current_a": {
+          "train": {
+            "n": 62898,
+            "mean": 14.888373885971792,
+            "std": 4.958294750389811,
+            "min": 0.0,
+            "p01": 0.0,
+            "median": 15.679999351501465,
+            "p99": 23.93000030517578,
+            "max": 38.0,
+            "negative_fraction": 0.0,
+            "zero_fraction": 0.06531209259435912
+          },
+          "external_mean_shift_in_train_sd": 0.639182904544976,
+          "external_fraction_outside_train_minmax": 0.11299224144826299,
+          "external_fraction_abs_z_gt3": 0.1943637187724958
+        }
+      }
+    }
+  },
+  "winners": {
+    "0.15-0/0": "persistence",
+    "0.15-0/5": "persistence",
+    "0.15-0/15": "persistence",
+    "0.15-1/0": "persistence",
+    "0.15-1/5": "persistence",
+    "0.15-1/15": "persistence",
+    "0.5-0/0": "persistence",
+    "0.5-0/5": "persistence",
+    "0.5-0/15": "persistence",
+    "0.5-1/0": "persistence",
+    "0.5-1/5": "persistence",
+    "0.5-1/15": "persistence"
+  },
+  "conditional_comparisons": {
+    "protected-compact vs cog": {
+      "delta_v": 0.3077373453495318,
+      "conditional95_v": [
+        0.29283898014592935,
+        0.32271613947207856
+      ],
+      "scope": "post-result, fixed cohort/models, grouped by recording date"
+    },
+    "protected-compact vs protected-instant": {
+      "delta_v": 0.24843979126391003,
+      "conditional95_v": [
+        0.23576837578536217,
+        0.2609427784417855
+      ],
+      "scope": "post-result, fixed cohort/models, grouped by recording date"
+    },
+    "protected-compact vs dense-instant": {
+      "delta_v": 0.09242544050485813,
+      "conditional95_v": [
+        0.08055568352377625,
+        0.10553378805092008
+      ],
+      "scope": "post-result, fixed cohort/models, grouped by recording date"
+    },
+    "protected-compact vs static": {
+      "delta_v": -1.6949094857929436,
+      "conditional95_v": [
+        -1.7542730260655541,
+        -1.6484774360934946
+      ],
+      "scope": "post-result, fixed cohort/models, grouped by recording date"
+    },
+    "protected-compact vs gru": {
+      "delta_v": -0.135622694172981,
+      "conditional95_v": [
+        -0.14381500155942742,
+        -0.12992173667924306
+      ],
+      "scope": "post-result, fixed cohort/models, grouped by recording date"
+    },
+    "protected-compact vs persistence": {
+      "delta_v": 0.7506003702461956,
+      "conditional95_v": [
+        0.6810609706644272,
+        0.8251564184911061
+      ],
+      "scope": "post-result, fixed cohort/models, grouped by recording date"
+    },
+    "protected-compact vs lag-ridge": {
+      "delta_v": 0.621921449534522,
+      "conditional95_v": [
+        0.5908019871904828,
+        0.6540799403658798
+      ],
+      "scope": "post-result, fixed cohort/models, grouped by recording date"
+    },
+    "protected-compact vs kalman": {
+      "delta_v": 0.10165671070734272,
+      "conditional95_v": [
+        0.07378373130395276,
+        0.1307707360567226
+      ],
+      "scope": "post-result, fixed cohort/models, grouped by recording date"
+    },
+    "protected-instant vs dense-instant": {
+      "delta_v": -0.1560143507590519,
+      "conditional95_v": [
+        -0.16006973302441638,
+        -0.1515088593499739
+      ],
+      "scope": "post-result, fixed cohort/models, grouped by recording date"
+    },
+    "cog vs persistence": {
+      "delta_v": 0.44286302489666385,
+      "conditional95_v": [
+        0.386547068581717,
+        0.5045518904979951
+      ],
+      "scope": "post-result, fixed cohort/models, grouped by recording date"
+    }
+  },
+  "qualification": "HOLD"
+}

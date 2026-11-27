@@ -1,0 +1,17 @@
+./cmu-acquisition.log: OK
+./cmu/battery-only.npz: OK
+./cmu/manifest.json: OK
+./cmu/repository-metadata.json: OK
+./cpu.txt: OK
+./custody-G.log: OK
+./custody-R.log: OK
+./custody-Y.log: OK
+./custody-old.log: OK
+./donor-replay.json: OK
+./environment.txt: OK
+./external-fits.json: OK
+./external-summary.json: OK
+./external.log: OK
+./frozen-donor.sha256: OK
+./replay.log: OK
+./source-acquisition.log: OK
