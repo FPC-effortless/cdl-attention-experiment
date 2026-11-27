@@ -1,0 +1,68 @@
+{
+  "doi": "10.1184/R1/12683453.v1",
+  "version": 1,
+  "title": "Data Collected with Package Delivery Quadcopter Drone",
+  "license": {
+    "value": 1,
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "authors": [
+    "Thiago A. Rodrigues",
+    "Jay Patrikar",
+    "Arnav Choudhry",
+    "Jacob Feldgoise",
+    "Vaibhav Arcot",
+    "Aradhana Gahlaut",
+    "Sophia Lau",
+    "Brady Moon",
+    "Bastian Wagner",
+    "H Scott Matthews",
+    "Sebastian Scherer",
+    "Constantine Samaras"
+  ],
+  "metadata_sha256": "9b385ae4597b32609042cc0cadcb0a2f793f516f6c56c21c6d6c4c7a9ce9795c",
+  "published_files": [
+    {
+      "name": "parameters.csv",
+      "id": 26385034,
+      "size": 7867
+    },
+    {
+      "name": "flights.zip",
+      "id": 26385070,
+      "size": 41274360
+    },
+    {
+      "name": "flights.csv",
+      "id": 26385151,
+      "size": 107068831
+    },
+    {
+      "name": "README.txt",
+      "id": 26405786,
+      "size": 25101
+    },
+    {
+      "name": "raw_files.zip",
+      "id": 26405936,
+      "size": 106101296
+    }
+  ],
+  "downloads": [
+    {
+      "name": "parameters.csv",
+      "id": 26385034,
+      "bytes": 7867,
+      "md5": "7daa897a1af7847b592ccb7a459477ee",
+      "sha256": "568dffaed11a4d335ef4f8a932b342c836907af2f4aa54da9b4a0e2ffef2108a"
+    },
+    {
+      "name": "flights.zip",
+      "id": 26385070,
+      "bytes": 41274360,
+      "md5": "cd1d267fd9b025219f9633b95158eea2",
+      "sha256": "98f65a1ab54a8b618c169fdf49311a53ff1fefed86fdc3f440d6a0166ce49fb1"
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+external Y cog 171 1.1243438653292541
+external Y protected-instant 171 1.1186766864246114
+external Y dense-instant 171 1.310697696629811
+external Y protected-compact 171 1.5372714697570786
+external Y static 171 3.031234741300241
+external Y cog 311 1.2451596997919714
+external Y protected-instant 311 1.139649039177449
+external Y dense-instant 311 1.3892412080798415
+external Y protected-compact 311 1.7983271341053808
+external Y static 311 3.756108695764421
+external Y cog 591 1.7741293070728934
+external Y protected-instant 591 1.9304346395141236
+external Y dense-instant 591 2.1452753354765406
+external Y protected-compact 591 1.7678386191277118
+external Y static 591 3.2660278775723226
+external Y gru 171 1.558787927688213
+external Y gru 311 2.049951306803741
+external Y gru 591 2.028353303579733
+external Y persistence None 0.8741479769410402
+external Y lag-ridge None 0.9763101378220527
+external Y kalman None 1.6454838860941823
+external R cog 171 1.052807196874982
+external R protected-instant 171 1.1978547050921808
+external R dense-instant 171 1.273732724687747
+external R protected-compact 171 1.2626476702641154
+external R static 171 3.643162373578905
+external R cog 311 1.1659084220365492
+external R protected-instant 311 1.250264272052733
+external R dense-instant 311 1.1439429301469568
+external R protected-compact 311 1.524393810436737
+external R static 311 3.8997298584622175
+external R cog 591 1.198424829618895
+external R protected-instant 591 1.2130718859138896
+external R dense-instant 591 1.3195649424306422
+external R protected-compact 591 1.36400182502176
+external R static 591 2.858924698486561
+external R gru 171 1.1033276863324677
+external R gru 311 1.6668789565538784
+external R gru 591 1.740159012066051
+external R persistence None 0.8741479655872847
+external R lag-ridge None 0.9666123439070576
+external R kalman None 1.4337175892420846
+external G cog 171 1.4193131131939072
+external G protected-instant 171 1.464972286241975
+external G dense-instant 171 1.7096322896148888
+external G protected-compact 171 1.596677587859339
+external G static 171 3.7187292550990887
+external G cog 311 1.2255000438941337
+external G protected-instant 311 1.097058621939041
+external G dense-instant 311 1.3122664068852605
+external G protected-compact 311 1.8553588111376285
+external G static 311 2.6534746411769694
+external G cog 591 1.6475124490882773
+external G protected-instant 591 1.9747947773154553
+external G dense-instant 591 2.186552536551237
+external G protected-compact 591 1.916218107336898
+external G static 591 3.0495282657424156
+external G gru 171 1.7396966350859917
+external G gru 311 1.7497735558699403
+external G gru 591 2.206410898623461
+external G persistence None 0.8741479584153045
+external G lag-ridge None 1.0655581813495398
+external G kalman None 1.4900734042239212
+{
+  "flights": 203,
+  "seconds": 37507,
+  "primary": {
+    "cog": {
+      "rmse_v": 1.3170109918778736,
+      "mae_v": 1.172867907423108,
+      "coverage90": 0.6444971793750911,
+      "width_v": 4.769611156799812
+    },
+    "protected-instant": {
+      "rmse_v": 1.3763085459634954,
+      "mae_v": 1.23512061946177,
+      "coverage90": 0.6619031758918101,
+      "width_v": 4.430672816078407
+    },
+    "dense-instant": {
+      "rmse_v": 1.5323228967225473,
+      "mae_v": 1.3985908742184814,
+      "coverage90": 0.7823122879327213,
+      "width_v": 6.91859784338666
+    },
+    "protected-compact": {
+      "rmse_v": 1.6247483372274054,
+      "mae_v": 1.4983594289807312,
+      "coverage90": 0.3317478160106025,
+      "width_v": 2.4187568886576503
+    },
+    "static": {
+      "rmse_v": 3.319657823020349,
+      "mae_v": 3.2308372623500223,
+      "coverage90": 0.9897513825572278,
+      "width_v": 17.47655590826072
+    },
+    "gru": {
+      "rmse_v": 1.7603710314003864,
+      "mae_v": 1.6303593598839343,
+      "coverage90": 0.5106337212126258,
+      "width_v": 3.0594464778929926
+    },
+    "persistence": {
+      "rmse_v": 0.8741479669812098,
+      "mae_v": 0.5272766212853105,
+      "coverage90": 0.3526926039259768,
+      "width_v": 0.2986678608639229
+    },
+    "lag-ridge": {
+      "rmse_v": 1.0028268876928834,
+      "mae_v": 0.8165425943384861,
+      "coverage90": 0.04267366098378401,
+      "width_v": 0.2750076405102671
+    },
+    "kalman": {
+      "rmse_v": 1.5230916265200627,
+      "mae_v": 1.3170949389011468,
+      "coverage90": 0.01484210745436,
+      "width_v": 0.29112090264569873
+    }
+  },
+  "date_bootstrap": {
+    "cog": {
+      "compact_minus_baseline_v": 0.3077373453495318,
+      "conditional95_v": [
+        0.29283898014592935,
+        0.32271613947207856
+      ]
+    },
+    "protected-instant": {
+      "compact_minus_baseline_v": 0.24843979126391003,
+      "conditional95_v": [
+        0.23576837578536217,
+        0.2609427784417855
+      ]
+    },
+    "dense-instant": {
+      "compact_minus_baseline_v": 0.09242544050485813,
+      "conditional95_v": [
+        0.08055568352377625,
+        0.10553378805092008
+      ]
+    },
+    "static": {
+      "compact_minus_baseline_v": -1.6949094857929436,
+      "conditional95_v": [
+        -1.7542730260655541,
+        -1.6484774360934946
+      ]
+    },
+    "gru": {
+      "compact_minus_baseline_v": -0.135622694172981,
+      "conditional95_v": [
+        -0.14381500155942742,
+        -0.12992173667924306
+      ]
+    },
+    "persistence": {
+      "compact_minus_baseline_v": 0.7506003702461956,
+      "conditional95_v": [
+        0.6810609706644272,
+        0.8251564184911061
+      ]
+    },
+    "lag-ridge": {
+      "compact_minus_baseline_v": 0.621921449534522,
+      "conditional95_v": [
+        0.5908019871904828,
+        0.6540799403658798
+      ]
+    },
+    "kalman": {
+      "compact_minus_baseline_v": 0.10165671070734272,
+      "conditional95_v": [
+        0.07378373130395276,
+        0.1307707360567226
+      ]
+    }
+  }
+}
