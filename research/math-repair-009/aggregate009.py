@@ -1,5 +1,6 @@
 """Aggregate only complete, paired, source- and data-locked terminal validation runs."""
 import argparse,json,math
+from recover009 import source as expected_source
 from pathlib import Path
 import numpy as np
 ARMS=('gpt','HH','A0','U','UA','AU')
@@ -16,7 +17,8 @@ def main(root,out):
     assert set(results)=={(a,s) for a in ARMS for s in SEEDS}
     assert len({r['data_manifest'] for r in results.values()})==1
     assert len({r['checkpoint']['lock']['data'] for r in results.values()})==1
-    assert len({json.dumps(r['checkpoint']['lock']['source'],sort_keys=True) for r in results.values()})==1
+    for (arm,seed),r in results.items():
+        assert r['checkpoint']['lock']['source']==expected_source(arm),(arm,seed,'unreviewed source change')
     for s in SEEDS:assert len({results[a,s]['checkpoint']['lock']['data_order'] for a in ARMS})==1
     arrays={k:np.array(r['eval']['per_document'],np.float64) for k,r in results.items()}
     reference=arrays['gpt',9001]
