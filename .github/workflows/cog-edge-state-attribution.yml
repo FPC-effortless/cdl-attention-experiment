@@ -1,0 +1,59 @@
+name: COG-EDGE selective state attribution
+on:
+  pull_request:
+    paths:
+      - 'research/cog-edge-state-attribution/**'
+      - '.github/workflows/cog-edge-state-attribution.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  attribution:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13.5'
+      - run: |
+          python -m pip install numpy==2.3.5
+          python -m pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+      - name: Verify original archive and reconstruct pinned source
+        run: |
+          set -euo pipefail
+          mkdir -p ci-attribution "${RUNNER_TEMP}/receipts"
+          git fetch --no-tags --depth=1 origin refs/heads/research/cog-edge-v01-expanded-evidence-46052547333-1
+          test "$(git rev-parse FETCH_HEAD)" = 78a432daec384336911b97852f7995ea47f0ccc5
+          git archive FETCH_HEAD research/cog-edge-v01-expanded/ci-evidence/46052547333-1 | tar -x -C "${RUNNER_TEMP}/receipts"
+          (cd "${RUNNER_TEMP}/receipts/research/cog-edge-v01-expanded/ci-evidence/46052547333-1"; sha256sum -c SHA256SUMS.txt) | tee ci-attribution/custody.log
+          python research/cog-edge-v01/restore.py --out "${RUNNER_TEMP}/edge"
+          python research/cog-edge-v01-expanded/prepare_expanded.py --restored-source "${RUNNER_TEMP}/edge" --archive research/cog-drone-audit/archives/COG-DRONE-002-006-evidence.zip --out "${RUNNER_TEMP}/expanded.npz" 2>&1 | tee ci-attribution/acquisition.log
+      - name: Run protected versus predictive state interventions
+        run: |
+          set -euo pipefail
+          python research/cog-edge-state-attribution/attribution.py --restored "${RUNNER_TEMP}/edge" --dataset "${RUNNER_TEMP}/expanded.npz" --archived "${RUNNER_TEMP}/receipts/research/cog-edge-v01-expanded/ci-evidence/46052547333-1" --out ci-attribution/results 2>&1 | tee ci-attribution/run.log
+          python -m pip freeze > ci-attribution/environment.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: state-attribution-evidence
+          path: ci-attribution/
+          if-no-files-found: warn
+      - name: Preserve run-specific evidence
+        if: always() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'research/cog-edge-state-attribution'
+        run: |
+          set -euo pipefail
+          test -d ci-attribution || exit 0
+          git config user.name "COG research CI"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          dst="research/cog-edge-state-attribution/ci-evidence/${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          mkdir -p "$dst"
+          cp -a ci-attribution/. "$dst/"
+          (cd "$dst"; find . -type f ! -name SHA256SUMS.txt -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS.txt)
+          git add -f "$dst"
+          git diff --cached --quiet && exit 0
+          git commit -m "Preserve state attribution run $GITHUB_RUN_ID"
+          git push origin "HEAD:refs/heads/research/cog-edge-attribution-evidence-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
