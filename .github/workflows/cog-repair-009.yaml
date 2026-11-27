@@ -292,3 +292,28 @@ jobs:
           if-no-files-found: error
           retention-days: 14
 
+  aggregate:
+    needs: [validate]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: validation-*
+          path: ${{ runner.temp }}/evaluations
+          merge-multiple: false
+      - name: Aggregate paired results
+        run: |
+          python3 -m venv "$RUNNER_TEMP/repair009-env"
+          "$RUNNER_TEMP/repair009-env/bin/pip" install numpy==2.3.5
+          "$RUNNER_TEMP/repair009-env/bin/python" research/math-repair-009/aggregate009.py --input "$RUNNER_TEMP/evaluations" --out "$RUNNER_TEMP/summary/comparison.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: terminal-paired-comparison
+          path: ${{ runner.temp }}/summary
+          if-no-files-found: error
+          retention-days: 30
