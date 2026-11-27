@@ -1,0 +1,128 @@
+name: COG-OPT-DISCOVERY-001 matched optimizer screen
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [research/cog-alg-discovery-001]
+    paths:
+      - 'research/optimizer-discovery-001/**'
+      - '.github/workflows/cog-optimizer-discovery-001.yaml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: cog-opt-discovery-001-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+env:
+  OMP_NUM_THREADS: '4'
+  MKL_NUM_THREADS: '4'
+  OPENBLAS_NUM_THREADS: '4'
+jobs:
+  prepare:
+    if: (github.event_name == 'workflow_dispatch' && github.ref_name == 'research/cog-optimizer-discovery-001') || (github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'research/cog-optimizer-discovery-001' && github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install numpy==2.3.5
+      - uses: actions/download-artifact@v4
+        with:
+          name: corpus
+          path: ${{ runner.temp }}/corpus
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46039004295'
+      - run: python research/math-repair-009/recover009.py corpus --data "$RUNNER_TEMP/corpus"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: optimizer-corpus
+          path: ${{ runner.temp }}/corpus
+          if-no-files-found: error
+          retention-days: 30
+  screen:
+    needs: prepare
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        recipe: [adamw, muon, cog_split, soap, schedulefree]
+        rate_index: [0, 1, 2]
+        seed: [9101, 9109]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Pin CPU environment and official optimizer implementations
+        run: |
+          set -euo pipefail
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+          python -m pip freeze > "$RUNNER_TEMP/environment.txt"
+          if [[ '${{ matrix.recipe }}' == soap ]]; then
+            mkdir -p "$RUNNER_TEMP/soap"
+            git -C "$RUNNER_TEMP/soap" init
+            git -C "$RUNNER_TEMP/soap" fetch --depth=1 https://github.com/nikhilvyas/SOAP.git a1e553530fde97d0e6b307d7c82ac6d38b072340
+            git -C "$RUNNER_TEMP/soap" checkout --detach FETCH_HEAD
+            test "$(git -C "$RUNNER_TEMP/soap" rev-parse HEAD)" = a1e553530fde97d0e6b307d7c82ac6d38b072340
+            echo "PYTHONPATH=$RUNNER_TEMP/soap" >> "$GITHUB_ENV"
+          fi
+          if [[ '${{ matrix.recipe }}' == schedulefree ]]; then
+            mkdir -p "$RUNNER_TEMP/sf"
+            git -C "$RUNNER_TEMP/sf" init
+            git -C "$RUNNER_TEMP/sf" fetch --depth=1 https://github.com/facebookresearch/schedule_free.git 70785b53e778d0e872c0bbb75ff4ee54ee10c291
+            git -C "$RUNNER_TEMP/sf" checkout --detach FETCH_HEAD
+            test "$(git -C "$RUNNER_TEMP/sf" rev-parse HEAD)" = 70785b53e778d0e872c0bbb75ff4ee54ee10c291
+            echo "PYTHONPATH=$RUNNER_TEMP/sf/schedulefree" >> "$GITHUB_ENV"
+          fi
+      - uses: actions/download-artifact@v4
+        with:
+          name: optimizer-corpus
+          path: ${{ runner.temp }}/corpus
+      - name: Engineering gate and matched real-text optimizer fit
+        run: |
+          python research/optimizer-discovery-001/run.py --recipe '${{ matrix.recipe }}' --rate-index '${{ matrix.rate_index }}' --seed '${{ matrix.seed }}' --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/fit" --threads 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: opt-${{ matrix.recipe }}-${{ matrix.rate_index }}-${{ matrix.seed }}
+          path: |
+            ${{ runner.temp }}/fit/
+            ${{ runner.temp }}/environment.txt
+          if-no-files-found: warn
+          retention-days: 30
+  aggregate:
+    needs: screen
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: opt-*
+          path: ${{ runner.temp }}/fits
+      - run: python research/optimizer-discovery-001/aggregate.py --input "$RUNNER_TEMP/fits" --out "$RUNNER_TEMP/comparison/summary.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: optimizer-comparison
+          path: ${{ runner.temp }}/comparison
+          retention-days: 30
+          if-no-files-found: error
