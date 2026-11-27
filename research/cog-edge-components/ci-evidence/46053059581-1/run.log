@@ -1,0 +1,29 @@
+{
+  "scope": "Historical pilot; offline battery monitoring; injected invalid values are not actual hardware faults",
+  "environment": {
+    "python": "3.13.5 (main, Jun 12 2025, 03:51:07) [GCC 13.3.0]",
+    "torch": "2.10.0+cpu",
+    "numpy": "2.3.5",
+    "machine": "x86_64",
+    "processor": "x86_64"
+  },
+  "models": 18,
+  "panels": 288,
+  "checks": 313872,
+  "max_batch_delta": 4.76837158203125e-07,
+  "max_restart_delta": 0.0,
+  "identity_and_integrity_rejections": 576,
+  "guard": {
+    "valid_channel_checks": 2304,
+    "false_flags": 0,
+    "injected_invalid_values_rejected": 3456,
+    "missing_false_flags": 0
+  },
+  "timing_summary": {
+    "0.15-0": 1.1821734359799494,
+    "0.15-1": 1.2032626845646501,
+    "0.5-0": 0.9120242857394323,
+    "0.5-1": 0.9595981115045886
+  },
+  "qualification": "HOLD; no actual equipment faults, no board or electrical measurement, no training"
+}
