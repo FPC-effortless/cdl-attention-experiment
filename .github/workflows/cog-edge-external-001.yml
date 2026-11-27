@@ -1,0 +1,85 @@
+name: COG-EDGE independent compact replay and external dataset
+on:
+  pull_request:
+    paths:
+      - 'research/cog-edge-external-001/**'
+      - '.github/workflows/cog-edge-external-001.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  external:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13.5'
+      - run: |
+          python -m pip install numpy==2.3.5
+          python -m pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+      - name: Restore pinned checkpoints and source data
+        run: |
+          set -euo pipefail
+          mkdir -p ci-external "${RUNNER_TEMP}/v03" "${RUNNER_TEMP}/old"
+          for item in Y:0b26c671b0efeba8f0149abf957d5422851c0580 R:8b77799f7e36947bff550631abc1df71bb652a06 G:fb9459644606fe6972948c4f8bdfd08abb6f3062; do
+            g="${item%%:*}"; sha="${item#*:}"
+            git fetch --no-tags --depth=1 origin "refs/heads/research/cog-edge-protected-evidence-46065710293-1-$g"
+            test "$(git rev-parse FETCH_HEAD)" = "$sha"
+            mkdir -p "${RUNNER_TEMP}/v03/$g"
+            git archive FETCH_HEAD "research/cog-edge-protected-v03/ci-evidence/46065710293-1-$g" | tar -x --strip-components=4 -C "${RUNNER_TEMP}/v03/$g"
+            (cd "${RUNNER_TEMP}/v03/$g"; sha256sum -c SHA256SUMS.txt) | tee "ci-external/custody-$g.log"
+          done
+          git fetch --no-tags --depth=1 origin refs/heads/research/cog-edge-v01-expanded-evidence-46052547333-1
+          test "$(git rev-parse FETCH_HEAD)" = 78a432daec384336911b97852f7995ea47f0ccc5
+          git archive FETCH_HEAD research/cog-edge-v01-expanded/ci-evidence/46052547333-1 | tar -x --strip-components=4 -C "${RUNNER_TEMP}/old"
+          (cd "${RUNNER_TEMP}/old"; sha256sum -c SHA256SUMS.txt) | tee ci-external/custody-old.log
+          python research/cog-edge-v01/restore.py --out "${RUNNER_TEMP}/edge"
+          python research/cog-edge-v01-expanded/prepare_expanded.py --restored-source "${RUNNER_TEMP}/edge" --archive research/cog-drone-audit/archives/COG-DRONE-002-006-evidence.zip --out "${RUNNER_TEMP}/expanded.npz" 2>&1 | tee ci-external/source-acquisition.log
+          python - <<'PY'
+          import hashlib,pathlib,zipfile,os
+          a=pathlib.Path('research/cog-edge-v01-expanded/kalman-diagnostic.zip')
+          assert hashlib.sha256(a.read_bytes()).hexdigest()=='51f7ed704287742d96bbc1785f53fcc6a2e8840a5d31089a81d5102720f94e8c'
+          with zipfile.ZipFile(a) as z:
+           pathlib.Path(os.environ['RUNNER_TEMP'],'edge','kalman.py').write_bytes(z.read('kalman.py'))
+          PY
+      - name: Independently replay source models and freeze donor calibration
+        run: |
+          set -euo pipefail
+          python research/cog-edge-external-001/evaluate.py --phase replay --restored "${RUNNER_TEMP}/edge" --archives "${RUNNER_TEMP}/v03" --old "${RUNNER_TEMP}/old" --source "${RUNNER_TEMP}/expanded.npz" --out ci-external 2>&1 | tee ci-external/replay.log
+          sha256sum ci-external/donor-replay.json > ci-external/frozen-donor.sha256
+      - name: Acquire licensed independent battery-only dataset
+        run: |
+          set -euo pipefail
+          python research/cog-edge-external-001/acquire.py --out ci-external/cmu 2>&1 | tee ci-external/cmu-acquisition.log
+      - name: Evaluate every frozen model on independent data
+        run: |
+          set -euo pipefail
+          sha256sum -c ci-external/frozen-donor.sha256
+          python research/cog-edge-external-001/evaluate.py --phase external --restored "${RUNNER_TEMP}/edge" --archives "${RUNNER_TEMP}/v03" --old "${RUNNER_TEMP}/old" --external ci-external/cmu --out ci-external 2>&1 | tee ci-external/external.log
+          python -m pip freeze > ci-external/environment.txt
+          lscpu > ci-external/cpu.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cog-edge-external-evidence
+          path: ci-external/
+          if-no-files-found: warn
+      - name: Preserve run-specific evidence
+        if: always() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'research/cog-edge-external-001'
+        run: |
+          set -euo pipefail
+          test -d ci-external || exit 0
+          git config user.name "COG research CI"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          dst="research/cog-edge-external-001/ci-evidence/${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          mkdir -p "$dst"
+          cp -a ci-external/. "$dst/"
+          (cd "$dst"; find . -type f ! -name SHA256SUMS.txt -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS.txt)
+          git add -f "$dst"
+          git diff --cached --quiet && exit 0
+          git commit -m "Preserve external validation run $GITHUB_RUN_ID"
+          git push origin "HEAD:refs/heads/research/cog-edge-external-evidence-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
