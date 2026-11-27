@@ -9,7 +9,7 @@ permissions:
   contents: read
 jobs:
   source-provenance:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     defaults:
       run:
@@ -27,7 +27,7 @@ jobs:
           path: research/cog-drone-audit/provenance-result.json
           if-no-files-found: warn
   archive-and-replay:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     defaults:
       run:
