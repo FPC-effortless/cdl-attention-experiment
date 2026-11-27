@@ -1,0 +1,5 @@
+1681965061928d98ce9d2abac9cce0ffca18f85dbf13a3ed0f3a23d0b1072d45  ./acquisition.log
+b591f0a7e1fcbc4e41a2ff7da967f4e90eb677eec20a7fb7e1bafc042da22c14  ./custody.log
+1060bd52b2b82b32082110c8f29b2e73adb02b7993b365976dc84649c5aea8a1  ./environment.txt
+369fd687e887b1fd797e6dfe8dea6a95540e913517a7bff56ed02cab79b81ace  ./replay.log
+3cf39edd79de15fe54701369d58e9074ed2bcb9cbb863dca538a4aa7df25f2b7  ./results.json
