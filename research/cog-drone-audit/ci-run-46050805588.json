@@ -1,0 +1,367 @@
+{
+  "scope": "Independent GitHub Actions replay of historical archives, not training reproduction or architecture qualification.",
+  "run_id": 46050805588,
+  "run_url": "https://github.com/FPC-effortless/cdl-attention-experiment/actions/runs/46050805588",
+  "tested_commit": "d28be2e1cceb65a4a0a4396578b54fc032364496",
+  "runner_jobs": [
+    {
+      "id": 140681328155,
+      "name": "source-provenance",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success",
+          "status": "completed"
+        },
+        {
+          "name": "Run actions/checkout@v5",
+          "conclusion": "success",
+          "status": "completed"
+        },
+        {
+          "name": "Run actions/setup-python@v6",
+          "conclusion": "success",
+          "status": "completed"
+        },
+        {
+          "name": "Run python provenance.py",
+          "conclusion": "success",
+          "status": "completed"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success",
+          "status": "completed"
+        },
+        {
+          "name": "Post Run actions/setup-python@v6",
+          "conclusion": "success",
+          "status": "completed"
+        },
+        {
+          "name": "Post Run actions/checkout@v5",
+          "conclusion": "success",
+          "status": "completed"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "id": 140681328418,
+      "name": "archive-and-replay",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success",
+          "status": "completed"
+        },
+        {
+          "name": "Run actions/checkout@v5",
+          "conclusion": "success",
+          "status": "completed"
+        },
+        {
+          "name": "Run actions/setup-python@v6",
+          "conclusion": "success",
+          "status": "completed"
+        },
+        {
+          "name": "Require byte-exact archives",
+          "conclusion": "success",
+          "status": "completed"
+        },
+        {
+          "name": "Install CPU dependencies",
+          "conclusion": "success",
+          "status": "completed"
+        },
+        {
+          "name": "Replay historical checkpoints",
+          "conclusion": "success",
+          "status": "completed"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success",
+          "status": "completed"
+        },
+        {
+          "name": "Post Run actions/setup-python@v6",
+          "conclusion": "success",
+          "status": "completed"
+        },
+        {
+          "name": "Post Run actions/checkout@v5",
+          "conclusion": "success",
+          "status": "completed"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success",
+          "status": "completed"
+        }
+      ]
+    }
+  ],
+  "workflow_artifacts": [
+    {
+      "id": 15224232669,
+      "name": "cog-drone-custody-and-replay",
+      "size_in_bytes": 10395,
+      "digest": "sha256:8a2c60192013fca0943f54d11745599870666852b2a8042c9eabd01cbee18588",
+      "expired": false
+    },
+    {
+      "id": 15224157446,
+      "name": "cog-drone-source-provenance",
+      "size_in_bytes": 1789,
+      "digest": "sha256:c59c252b6edd38606585ffb01e57e8e0c3860757c9c8b5261d415c8d28de3041",
+      "expired": false
+    }
+  ],
+  "provenance": {
+    "upstream_commit": "67069ed00ddbebd62b71aa9bb1272415e9b15ff8",
+    "verified": 12,
+    "groups": {
+      "Y": 4,
+      "R": 4,
+      "G": 4
+    },
+    "records": [
+      {
+        "path": "FAFS/FAFS/UavY_P200A20S8_1.csv",
+        "source_sha": "65a0d26bc83fa29b074ba508baf269a6f74e3735",
+        "extract_sha256": "12fa74a4efcf0303e30c17eb55106001fb1b3665912f5898944760454926ec7b",
+        "aircraft": "Y",
+        "battery_label": "28",
+        "samples": 96,
+        "source_rows": 1099,
+        "zero_current_samples": 25,
+        "max_time_error": 0.019999980926513672,
+        "voltage_min": 14.1610002518,
+        "voltage_max": 15.642999649
+      },
+      {
+        "path": "VAFS/VAFS/UavY_P0VarAS8_7.csv",
+        "source_sha": "9ba9b64f5d13c09437fc9828adfd24938b3f4b6f",
+        "extract_sha256": "01c30e4c296143a303301ec858f10ac2d884bb13418b40e64606fbbe1dee1041",
+        "aircraft": "Y",
+        "battery_label": "17",
+        "samples": 96,
+        "source_rows": 1099,
+        "zero_current_samples": 0,
+        "max_time_error": 0.029999971389770508,
+        "voltage_min": 14.3549995422,
+        "voltage_max": 16.0440006256
+      },
+      {
+        "path": "VAFS/VAFS/UavY_P0VarAS8_1.csv",
+        "source_sha": "0a0f36b09a6e9cf43af9cf16b7b986e06e8c9bef",
+        "extract_sha256": "697fccb381e55e777682996847e204f15078d60a6ac998ae52f155646c121265",
+        "aircraft": "Y",
+        "battery_label": "32",
+        "samples": 96,
+        "source_rows": 1099,
+        "zero_current_samples": 0,
+        "max_time_error": 0.009999990463256836,
+        "voltage_min": 14.3009996414,
+        "voltage_max": 14.9790000916
+      },
+      {
+        "path": "FAVS/FAVS/UavY_P0A20VarS6_1.csv",
+        "source_sha": "07307137c4ddc5cb32e976dcb1fddfe5623b9670",
+        "extract_sha256": "cded83376fe1682680639b748d74fd9a71fb9ce939d694af051a2d3cf67263a2",
+        "aircraft": "Y",
+        "battery_label": "no record",
+        "samples": 96,
+        "source_rows": 1099,
+        "zero_current_samples": 0,
+        "max_time_error": 0.022948299999995925,
+        "voltage_min": 15.31299973,
+        "voltage_max": 15.82699966
+      },
+      {
+        "path": "VAFS/VAFS/UavR_P400VarAS8_7.csv",
+        "source_sha": "9dcb1c0b24150233a596a2f845ccf1ee672ad847",
+        "extract_sha256": "338db98a3ef4b8cdcd36e7fd39e2443d2fc8389ecbd224c628a8a442c91fecf1",
+        "aircraft": "R",
+        "battery_label": "10",
+        "samples": 96,
+        "source_rows": 1099,
+        "zero_current_samples": 0,
+        "max_time_error": 0,
+        "voltage_min": 14.92400074,
+        "voltage_max": 15.60800076
+      },
+      {
+        "path": "VAFS/VAFS/UavR_P200VarAS8_7.csv",
+        "source_sha": "22fdd1100b4eb09cc9fa30d56d817922d60d7837",
+        "extract_sha256": "0e58f08450cd7cfbe8b9c6ca9a624c3e21c32d37350956c95208f08e4710c6b3",
+        "aircraft": "R",
+        "battery_label": "27",
+        "samples": 96,
+        "source_rows": 1099,
+        "zero_current_samples": 0,
+        "max_time_error": 0.12999987602233887,
+        "voltage_min": 14.936000824,
+        "voltage_max": 15.4400005341
+      },
+      {
+        "path": "VAVS/VAVS/UavR_P400VarAVarS8_1.csv",
+        "source_sha": "017d9e0d3b9bc4a000e8277cda3ee44402760019",
+        "extract_sha256": "c5d9299c6082dbed73e0a971f9f0004c4ab346fe079fcf6afd65dd37f098dad4",
+        "aircraft": "R",
+        "battery_label": "16",
+        "samples": 96,
+        "source_rows": 1099,
+        "zero_current_samples": 0,
+        "max_time_error": 0.019999980926513672,
+        "voltage_min": 14.7960004807,
+        "voltage_max": 15.4640007019
+      },
+      {
+        "path": "FAVS/FAVS/UavR_P400A40VarS8_1.csv",
+        "source_sha": "ad5a45b307c68d929b92b421aedee361d6354820",
+        "extract_sha256": "208466265fafd60802e2cb0adf283a6b98a1cea0341c1809e9ebbf74add5340c",
+        "aircraft": "R",
+        "battery_label": "11",
+        "samples": 96,
+        "source_rows": 1099,
+        "zero_current_samples": 0,
+        "max_time_error": 0.18999981880187988,
+        "voltage_min": 14.8120002747,
+        "voltage_max": 15.392001152
+      },
+      {
+        "path": "FAVS/FAVS/UavG_P0A10VarS2_3.csv",
+        "source_sha": "f71cec582342493dd9d26da5490872e2cfc26062",
+        "extract_sha256": "56e7f7ca18d9f1fe3ecb484470b488b400ba99f96a95ff2b2255723458e39bea",
+        "aircraft": "G",
+        "battery_label": "no record",
+        "samples": 96,
+        "source_rows": 1099,
+        "zero_current_samples": 0,
+        "max_time_error": 0.22271590200000446,
+        "voltage_min": 15.654999733,
+        "voltage_max": 16.9190006256
+      },
+      {
+        "path": "FAVS/FAVS/UavG_P0A20VarS2_1.csv",
+        "source_sha": "bf989220bc83349f64e23fe09589770db8aa404f",
+        "extract_sha256": "ca99b40bc3217e8a0ddf868ad28f22fa5e12d0e74ff4b70058613089ce07e1cf",
+        "aircraft": "G",
+        "battery_label": "no record",
+        "samples": 96,
+        "source_rows": 1099,
+        "zero_current_samples": 0,
+        "max_time_error": 0.20111937500000465,
+        "voltage_min": 15.5810003281,
+        "voltage_max": 16.0820007324
+      },
+      {
+        "path": "FAVS/FAVS/UavG_P200A10VarS4_1.csv",
+        "source_sha": "865f6f402b584915c625c5f0c79f789fcabf5583",
+        "extract_sha256": "5e148ef15ccd0b1383c3bf13bd9e38c66a8982b4abfa07aaadf79f9d0bb02f85",
+        "aircraft": "G",
+        "battery_label": "11",
+        "samples": 96,
+        "source_rows": 1099,
+        "zero_current_samples": 0,
+        "max_time_error": 0.07000017166137695,
+        "voltage_min": 14.7270002365,
+        "voltage_max": 15.2379999161
+      },
+      {
+        "path": "FAVS/FAVS/UavG_P200A20VarS8_1.csv",
+        "source_sha": "d5c37c43331d885a611d2d2c392cbec976a168fa",
+        "extract_sha256": "eb956fd10352b591487fe7a22f56028957fc5f520d50d048a4dd9145ad22eb92",
+        "aircraft": "G",
+        "battery_label": "3",
+        "samples": 96,
+        "source_rows": 1099,
+        "zero_current_samples": 0,
+        "max_time_error": 0.019999980926513672,
+        "voltage_min": 14.6639995575,
+        "voltage_max": 15.2580003738
+      }
+    ],
+    "shared_battery_labels": {
+      "11": [
+        "G",
+        "R"
+      ],
+      "no record": [
+        "G",
+        "Y"
+      ]
+    },
+    "errors": [],
+    "scope": "12 short excerpts only; pack-label overlap is not proof of same physical pack."
+  },
+  "custody": {
+    "receipts": [
+      {
+        "archive": "COG-DRONE-001-evidence.zip",
+        "sha256": "46c0c7b41e76b4f561df18a76da7dd74b3ed49ec76743725884932de778d675b",
+        "files": 42,
+        "checkpoints": 30
+      },
+      {
+        "archive": "COG-DRONE-002-006-evidence.zip",
+        "sha256": "80ac5e498a3927ba1c07deb7629e11ce703e79b4eebb8ef3e3be485063754ad2",
+        "files": 97,
+        "checkpoints": 81
+      }
+    ],
+    "errors": []
+  },
+  "replay": {
+    "python": "3.13.5 (main, Jun 12 2025, 03:51:07) [GCC 13.3.0]",
+    "torch": "2.10.0+cpu",
+    "numpy": "2.3.5",
+    "manifest": {
+      "COG-DRONE-001": 41,
+      "COG-DRONE-002-006": 96
+    },
+    "synthetic": {
+      "100": {
+        "fits": 15,
+        "panels": 45,
+        "max_metric_delta": 2.384185791015625e-7,
+        "max_prefix_delta": 8.940696716308594e-8
+      },
+      "500": {
+        "fits": 15,
+        "panels": 45,
+        "max_metric_delta": 1.1920928955078125e-7,
+        "max_prefix_delta": 3.5762786865234375e-7
+      }
+    },
+    "recorded": {
+      "fits": 81,
+      "panels": 162,
+      "classical_panels": 18,
+      "max_metric_delta": 0.0000019073486328125,
+      "streaming_panels": 144,
+      "protected_checks": 1033662,
+      "protected_violations": 0,
+      "streaming_failures_count": 18
+    }
+  },
+  "scientific_qualification": "HOLD",
+  "limitations": [
+    "No optimizer/scheduler/RNG resume snapshots were saved in originals.",
+    "No full raw source archive or dataset redistribution license established.",
+    "Selected short excerpts, three aircraft, pack identity unresolved; battery label 11 crosses aircraft, three missing labels.",
+    "Reference recurrence comparisons do not establish official-model superiority, matched-cost benefit, real fault or embedded qualification.",
+    "Historical batch/step inconsistency in 18 panels preserved. No new training, automatic promotion or merge."
+  ]
+}
