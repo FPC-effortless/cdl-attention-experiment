@@ -147,7 +147,7 @@ def main():
    for snap,u in ((c,f['selected']),(final,600)):
     assert snap['name']==n and snap['seed']==f['seed'] and snap['update']==u
     assert set(('optimizer','torch_rng','numpy_rng','python_rng','model'))<=set(snap)
-   resume_one(edge,m,final);m.load_state_dict(c['model']);m.eval()
+   resume_one(edge,m,final,train);m.load_state_dict(c['model']);m.eval()
    q=edge.calibrate(edge.predict(m,dev));qd=max(abs(x-y) for x,y in zip(q,f['q']));assert qd<2e-5
    full=edge.predict(m,test);replayed,flight=edge.metrics(full,std[0],f['q'])
    md=compare_metrics(replayed,f['test'])
