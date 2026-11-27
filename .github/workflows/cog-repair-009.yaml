@@ -1,0 +1,344 @@
+name: REPAIR-009 CPU language pretraining checkpoint continuation
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+    paths:
+      - 'research/math-repair-009/**'
+      - '.github/workflows/cog-repair-009.yaml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: repair009-checkpoint-continuation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+env:
+  OMP_NUM_THREADS: '4'
+  MKL_NUM_THREADS: '4'
+  OPENBLAS_NUM_THREADS: '4'
+jobs:
+  prepare:
+    if: (github.event_name == 'workflow_dispatch' && github.ref_name == 'research/cog-math-repair-009-cpu') || (github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'research/cog-math-repair-009-cpu' && github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: corpus
+          path: ${{ runner.temp }}/corpus
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46039004295'
+      - name: Verify original corpus without rebuilding or resampling
+        run: |
+          python3 -m venv "$RUNNER_TEMP/repair009-env"
+          "$RUNNER_TEMP/repair009-env/bin/pip" install numpy==2.3.5
+          "$RUNNER_TEMP/repair009-env/bin/python" research/math-repair-009/recover009.py corpus --data "$RUNNER_TEMP/corpus"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: corpus
+          path: ${{ runner.temp }}/corpus
+          if-no-files-found: error
+          retention-days: 14
+  stage1_ready:
+    needs: [prepare]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 320
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Require all original first-stage jobs; exclude duplicate later-stage work
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 research/math-repair-009/await_resume009.py --out "$RUNNER_TEMP/original/terminal_jobs.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: original-stage1-terminal-receipt
+          path: ${{ runner.temp }}/original
+          if-no-files-found: error
+          retention-days: 14
+  stage2:
+    needs: [prepare, stage1_ready]
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        arm: [gpt, HH, A0, U, UA, AU]
+        seed: [9001, 9011, 9029]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: corpus
+          path: ${{ runner.temp }}/corpus
+      - uses: actions/download-artifact@v4
+        if: matrix.arm == 'gpt'
+        with:
+          name: stage1-gpt-${{ matrix.seed }}
+          path: ${{ runner.temp }}/prior
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46041424800'
+      - uses: actions/download-artifact@v4
+        if: matrix.arm != 'gpt'
+        with:
+          name: stage1-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/prior
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46039004295'
+      - name: Install CPU environment and pinned upstream baseline
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m venv "$RUNNER_TEMP/repair009-env"
+          "$RUNNER_TEMP/repair009-env/bin/pip" install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          "$RUNNER_TEMP/repair009-env/bin/pip" install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+          "$RUNNER_TEMP/repair009-env/bin/python" -c 'import torch, numpy, packaging, safetensors.torch; assert not torch.cuda.is_available()'
+          mkdir -p research/math-repair-009/vendor/nanogpt
+          git -C research/math-repair-009/vendor/nanogpt init
+          git -C research/math-repair-009/vendor/nanogpt fetch --depth=1 https://github.com/karpathy/nanoGPT.git f08abb45bd2285627d17da16daea14dda7e7253e
+          git -C research/math-repair-009/vendor/nanogpt checkout --detach FETCH_HEAD
+          test "$(git -C research/math-repair-009/vendor/nanogpt rev-parse HEAD)" = f08abb45bd2285627d17da16daea14dda7e7253e
+      - name: Verify prior stage and continue fixed budget stage 2
+        shell: bash
+        run: |
+          set -euo pipefail
+          prior_run="46041424800"
+          if [[ "${{ matrix.arm }}" != gpt ]]; then prior_run="46039004295"; fi
+          "$RUNNER_TEMP/repair009-env/bin/python" research/math-repair-009/resume009.py --prior "$RUNNER_TEMP/prior" --out "$RUNNER_TEMP/resume" --data "$RUNNER_TEMP/corpus" --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --stage 1 --run-id "$prior_run"
+          mkdir -p "$RUNNER_TEMP/result"
+          cp "$RUNNER_TEMP/resume/migration.json" "$RUNNER_TEMP/result/input_checkpoint_migration.json"
+          trainer=research/math-repair-009/train009.py
+          if [[ "${{ matrix.arm }}" == gpt ]]; then trainer=research/math-repair-009/gpt009.py; fi
+          "$RUNNER_TEMP/repair009-env/bin/python" "$trainer" train --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --stage 2 --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/result" --resume "$RUNNER_TEMP/resume/checkpoint.pt" --threads 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage2-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/result
+          if-no-files-found: warn
+          retention-days: 14
+  stage3:
+    needs: [prepare, stage2]
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        arm: [gpt, HH, A0, U, UA, AU]
+        seed: [9001, 9011, 9029]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: corpus
+          path: ${{ runner.temp }}/corpus
+      - uses: actions/download-artifact@v4
+        with:
+          name: stage2-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/prior
+      - name: Install CPU environment and pinned upstream baseline
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m venv "$RUNNER_TEMP/repair009-env"
+          "$RUNNER_TEMP/repair009-env/bin/pip" install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          "$RUNNER_TEMP/repair009-env/bin/pip" install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+          "$RUNNER_TEMP/repair009-env/bin/python" -c 'import torch, numpy, packaging, safetensors.torch; assert not torch.cuda.is_available()'
+          mkdir -p research/math-repair-009/vendor/nanogpt
+          git -C research/math-repair-009/vendor/nanogpt init
+          git -C research/math-repair-009/vendor/nanogpt fetch --depth=1 https://github.com/karpathy/nanoGPT.git f08abb45bd2285627d17da16daea14dda7e7253e
+          git -C research/math-repair-009/vendor/nanogpt checkout --detach FETCH_HEAD
+          test "$(git -C research/math-repair-009/vendor/nanogpt rev-parse HEAD)" = f08abb45bd2285627d17da16daea14dda7e7253e
+      - name: Verify prior stage and continue fixed budget stage 3
+        shell: bash
+        run: |
+          set -euo pipefail
+          prior_run="$GITHUB_RUN_ID"
+          "$RUNNER_TEMP/repair009-env/bin/python" research/math-repair-009/resume009.py --prior "$RUNNER_TEMP/prior" --out "$RUNNER_TEMP/resume" --data "$RUNNER_TEMP/corpus" --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --stage 2 --run-id "$prior_run"
+          mkdir -p "$RUNNER_TEMP/result"
+          cp "$RUNNER_TEMP/resume/migration.json" "$RUNNER_TEMP/result/input_checkpoint_migration.json"
+          trainer=research/math-repair-009/train009.py
+          if [[ "${{ matrix.arm }}" == gpt ]]; then trainer=research/math-repair-009/gpt009.py; fi
+          "$RUNNER_TEMP/repair009-env/bin/python" "$trainer" train --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --stage 3 --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/result" --resume "$RUNNER_TEMP/resume/checkpoint.pt" --threads 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage3-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/result
+          if-no-files-found: warn
+          retention-days: 14
+  stage4:
+    needs: [prepare, stage3]
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        arm: [gpt, HH, A0, U, UA, AU]
+        seed: [9001, 9011, 9029]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: corpus
+          path: ${{ runner.temp }}/corpus
+      - uses: actions/download-artifact@v4
+        with:
+          name: stage3-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/prior
+      - name: Install CPU environment and pinned upstream baseline
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m venv "$RUNNER_TEMP/repair009-env"
+          "$RUNNER_TEMP/repair009-env/bin/pip" install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          "$RUNNER_TEMP/repair009-env/bin/pip" install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+          "$RUNNER_TEMP/repair009-env/bin/python" -c 'import torch, numpy, packaging, safetensors.torch; assert not torch.cuda.is_available()'
+          mkdir -p research/math-repair-009/vendor/nanogpt
+          git -C research/math-repair-009/vendor/nanogpt init
+          git -C research/math-repair-009/vendor/nanogpt fetch --depth=1 https://github.com/karpathy/nanoGPT.git f08abb45bd2285627d17da16daea14dda7e7253e
+          git -C research/math-repair-009/vendor/nanogpt checkout --detach FETCH_HEAD
+          test "$(git -C research/math-repair-009/vendor/nanogpt rev-parse HEAD)" = f08abb45bd2285627d17da16daea14dda7e7253e
+      - name: Verify prior stage and continue fixed budget stage 4
+        shell: bash
+        run: |
+          set -euo pipefail
+          prior_run="$GITHUB_RUN_ID"
+          "$RUNNER_TEMP/repair009-env/bin/python" research/math-repair-009/resume009.py --prior "$RUNNER_TEMP/prior" --out "$RUNNER_TEMP/resume" --data "$RUNNER_TEMP/corpus" --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --stage 3 --run-id "$prior_run"
+          mkdir -p "$RUNNER_TEMP/result"
+          cp "$RUNNER_TEMP/resume/migration.json" "$RUNNER_TEMP/result/input_checkpoint_migration.json"
+          trainer=research/math-repair-009/train009.py
+          if [[ "${{ matrix.arm }}" == gpt ]]; then trainer=research/math-repair-009/gpt009.py; fi
+          "$RUNNER_TEMP/repair009-env/bin/python" "$trainer" train --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --stage 4 --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/result" --resume "$RUNNER_TEMP/resume/checkpoint.pt" --threads 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage4-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/result
+          if-no-files-found: warn
+          retention-days: 14
+  holdout:
+    needs: [prepare, stage4]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: corpus
+          path: ${{ runner.temp }}/corpus
+      - name: Install pinned corpus dependencies
+        run: |
+          python3 -m venv "$RUNNER_TEMP/repair009-env"
+          "$RUNNER_TEMP/repair009-env/bin/pip" install numpy==2.3.5 pyarrow==18.1.0
+      - name: Open frozen validation only after all terminal checkpoints
+        run: |
+          "$RUNNER_TEMP/repair009-env/bin/python" research/math-repair-009/data009.py --split validation --out "$RUNNER_TEMP/holdout" --train-manifest "$RUNNER_TEMP/corpus"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: holdout
+          path: |
+            ${{ runner.temp }}/holdout/*.bin
+            ${{ runner.temp }}/holdout/*.npy
+            ${{ runner.temp }}/holdout/*.json
+          if-no-files-found: error
+          retention-days: 14
+  validate:
+    needs: [stage4, holdout]
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        arm: [gpt, HH, A0, U, UA, AU]
+        seed: [9001, 9011, 9029]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: holdout
+          path: ${{ runner.temp }}/holdout
+      - uses: actions/download-artifact@v4
+        with:
+          name: stage4-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/prior
+      - name: Install CPU environment and pinned upstream baseline
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m venv "$RUNNER_TEMP/repair009-env"
+          "$RUNNER_TEMP/repair009-env/bin/pip" install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          "$RUNNER_TEMP/repair009-env/bin/pip" install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+          "$RUNNER_TEMP/repair009-env/bin/python" -c 'import torch, numpy, packaging, safetensors.torch; assert not torch.cuda.is_available()'
+          mkdir -p research/math-repair-009/vendor/nanogpt
+          git -C research/math-repair-009/vendor/nanogpt init
+          git -C research/math-repair-009/vendor/nanogpt fetch --depth=1 https://github.com/karpathy/nanoGPT.git f08abb45bd2285627d17da16daea14dda7e7253e
+          git -C research/math-repair-009/vendor/nanogpt checkout --detach FETCH_HEAD
+          test "$(git -C research/math-repair-009/vendor/nanogpt rev-parse HEAD)" = f08abb45bd2285627d17da16daea14dda7e7253e
+      - name: Independent terminal checkpoint evaluation
+        run: |
+          trainer=research/math-repair-009/train009.py
+          if [[ "${{ matrix.arm }}" == gpt ]]; then trainer=research/math-repair-009/gpt009.py; fi
+          "$RUNNER_TEMP/repair009-env/bin/python" "$trainer" validate --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --data "$RUNNER_TEMP/holdout" --resume "$RUNNER_TEMP/prior/model.safetensors" --out "$RUNNER_TEMP/validation" --threads 4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: validation-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/validation
+          if-no-files-found: error
+          retention-days: 14
+
+  aggregate:
+    needs: [validate]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: validation-*
+          path: ${{ runner.temp }}/evaluations
+          merge-multiple: false
+      - name: Aggregate paired results
+        run: |
+          python3 -m venv "$RUNNER_TEMP/repair009-env"
+          "$RUNNER_TEMP/repair009-env/bin/pip" install numpy==2.3.5
+          "$RUNNER_TEMP/repair009-env/bin/python" research/math-repair-009/aggregate009.py --input "$RUNNER_TEMP/evaluations" --out "$RUNNER_TEMP/summary/comparison.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: terminal-paired-comparison
+          path: ${{ runner.temp }}/summary
+          if-no-files-found: error
+          retention-days: 30
