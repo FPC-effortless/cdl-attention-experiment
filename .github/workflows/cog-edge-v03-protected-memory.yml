@@ -1,0 +1,64 @@
+name: COG-EDGE v0.3 protected-memory factorial
+on:
+  pull_request:
+    paths:
+      - 'research/cog-edge-v03-protected-memory/**'
+      - '.github/workflows/cog-edge-v03-protected-memory.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  developmental:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        fold: [Y,R,G]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13.5'
+      - run: |
+          python -m pip install numpy==2.3.5
+          python -m pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+      - name: Verify original custody and reconstruct telemetry
+        run: |
+          set -euo pipefail
+          mkdir -p ci-v03 "${RUNNER_TEMP}/receipts"
+          git fetch --no-tags --depth=1 origin refs/heads/research/cog-edge-v01-expanded-evidence-46052547333-1
+          test "$(git rev-parse FETCH_HEAD)" = 78a432daec384336911b97852f7995ea47f0ccc5
+          git archive FETCH_HEAD research/cog-edge-v01-expanded/ci-evidence/46052547333-1 | tar -x -C "${RUNNER_TEMP}/receipts"
+          (cd "${RUNNER_TEMP}/receipts/research/cog-edge-v01-expanded/ci-evidence/46052547333-1"; sha256sum -c SHA256SUMS.txt) | tee ci-v03/custody.log
+          python research/cog-edge-v01/restore.py --out "${RUNNER_TEMP}/edge"
+          python research/cog-edge-v01-expanded/prepare_expanded.py --restored-source "${RUNNER_TEMP}/edge" --archive research/cog-drone-audit/archives/COG-DRONE-002-006-evidence.zip --out "${RUNNER_TEMP}/expanded.npz" 2>&1 | tee ci-v03/acquisition.log
+      - name: Run matched factorial on developmental partitions
+        run: |
+          set -euo pipefail
+          python research/cog-edge-v03-protected-memory/factorial.py --restored "${RUNNER_TEMP}/edge" --dataset "${RUNNER_TEMP}/expanded.npz" --source "${RUNNER_TEMP}/receipts/research/cog-edge-v01-expanded/ci-evidence/46052547333-1/source-manifest.json" --splits research/cog-edge-calibration-v02/splits.json --fold "${{ matrix.fold }}" --out ci-v03/fits 2>&1 | tee ci-v03/run.log
+          python -m pip freeze > ci-v03/environment.txt
+          lscpu > ci-v03/cpu.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cog-edge-v03-${{ matrix.fold }}
+          path: ci-v03/
+          if-no-files-found: warn
+      - name: Preserve run-specific evidence
+        if: always() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'research/cog-edge-v03-protected-memory'
+        run: |
+          set -euo pipefail
+          test -d ci-v03 || exit 0
+          git config user.name "COG research CI"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          dst="research/cog-edge-v03-protected-memory/ci-evidence/${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${{ matrix.fold }}"
+          mkdir -p "$dst"
+          cp -a ci-v03/. "$dst/"
+          (cd "$dst"; find . -type f ! -name SHA256SUMS.txt -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS.txt)
+          git add -f "$dst"
+          git diff --cached --quiet && exit 0
+          git commit -m "Preserve COG-EDGE v0.3 run $GITHUB_RUN_ID fold ${{ matrix.fold }}"
+          git push origin "HEAD:refs/heads/research/cog-edge-v03-evidence-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${{ matrix.fold }}"
