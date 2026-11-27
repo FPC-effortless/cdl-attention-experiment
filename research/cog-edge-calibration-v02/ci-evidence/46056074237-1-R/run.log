@@ -1,0 +1,30 @@
+fit R cog 171 480
+fit R dense 171 480
+fit R gated 171 480
+fit R gru 171 360
+fit R static 171 360
+fit R cog 311 360
+fit R dense 311 480
+fit R gated 311 360
+fit R gru 311 360
+fit R static 311 360
+fit R cog 591 480
+fit R dense 591 480
+fit R gated 591 480
+fit R gru 591 240
+fit R static 591 360
+calibrated R cog 171 {'pooled': 0.7476, 'age-stratified': 0.7484, 'conservative-age': 0.7574, 'pack-max': 0.8465}
+calibrated R dense 171 {'pooled': 0.7441, 'age-stratified': 0.7386, 'conservative-age': 0.7457, 'pack-max': 0.8379}
+calibrated R gated 171 {'pooled': 0.7309, 'age-stratified': 0.7246, 'conservative-age': 0.734, 'pack-max': 0.8462}
+calibrated R gru 171 {'pooled': 0.7173, 'age-stratified': 0.7206, 'conservative-age': 0.7271, 'pack-max': 0.829}
+calibrated R static 171 {'pooled': 0.7083, 'age-stratified': 0.7041, 'conservative-age': 0.7096, 'pack-max': 0.8019}
+calibrated R cog 311 {'pooled': 0.7353, 'age-stratified': 0.7377, 'conservative-age': 0.7398, 'pack-max': 0.837}
+calibrated R dense 311 {'pooled': 0.7178, 'age-stratified': 0.7095, 'conservative-age': 0.7214, 'pack-max': 0.8239}
+calibrated R gated 311 {'pooled': 0.7174, 'age-stratified': 0.7229, 'conservative-age': 0.7246, 'pack-max': 0.8181}
+calibrated R gru 311 {'pooled': 0.7175, 'age-stratified': 0.7146, 'conservative-age': 0.7186, 'pack-max': 0.814}
+calibrated R static 311 {'pooled': 0.7121, 'age-stratified': 0.7138, 'conservative-age': 0.7185, 'pack-max': 0.7958}
+calibrated R cog 591 {'pooled': 0.732, 'age-stratified': 0.7356, 'conservative-age': 0.7406, 'pack-max': 0.8418}
+calibrated R dense 591 {'pooled': 0.7184, 'age-stratified': 0.7128, 'conservative-age': 0.7242, 'pack-max': 0.829}
+calibrated R gated 591 {'pooled': 0.7131, 'age-stratified': 0.7167, 'conservative-age': 0.7213, 'pack-max': 0.8304}
+calibrated R gru 591 {'pooled': 0.7582, 'age-stratified': 0.751, 'conservative-age': 0.764, 'pack-max': 0.8411}
+calibrated R static 591 {'pooled': 0.7001, 'age-stratified': 0.699, 'conservative-age': 0.7049, 'pack-max': 0.806}
