@@ -1,0 +1,30 @@
+fit G cog 171 600
+fit G dense 171 600
+fit G gated 171 600
+fit G gru 171 600
+fit G static 171 600
+fit G cog 311 600
+fit G dense 311 240
+fit G gated 311 360
+fit G gru 311 600
+fit G static 311 240
+fit G cog 591 480
+fit G dense 591 480
+fit G gated 591 480
+fit G gru 591 480
+fit G static 591 480
+calibrated G cog 171 {'pooled': 0.9333, 'age-stratified': 0.9359, 'conservative-age': 0.9371, 'pack-max': 0.9708}
+calibrated G dense 171 {'pooled': 0.9353, 'age-stratified': 0.9353, 'conservative-age': 0.9357, 'pack-max': 0.977}
+calibrated G gated 171 {'pooled': 0.9272, 'age-stratified': 0.9294, 'conservative-age': 0.9314, 'pack-max': 0.967}
+calibrated G gru 171 {'pooled': 0.943, 'age-stratified': 0.9436, 'conservative-age': 0.9443, 'pack-max': 0.969}
+calibrated G static 171 {'pooled': 0.9397, 'age-stratified': 0.9372, 'conservative-age': 0.9406, 'pack-max': 0.9802}
+calibrated G cog 311 {'pooled': 0.9375, 'age-stratified': 0.9388, 'conservative-age': 0.9401, 'pack-max': 0.9806}
+calibrated G dense 311 {'pooled': 0.9433, 'age-stratified': 0.9441, 'conservative-age': 0.9443, 'pack-max': 0.9799}
+calibrated G gated 311 {'pooled': 0.937, 'age-stratified': 0.9388, 'conservative-age': 0.9402, 'pack-max': 0.9628}
+calibrated G gru 311 {'pooled': 0.9455, 'age-stratified': 0.9443, 'conservative-age': 0.9457, 'pack-max': 0.9784}
+calibrated G static 311 {'pooled': 0.934, 'age-stratified': 0.9389, 'conservative-age': 0.94, 'pack-max': 0.9854}
+calibrated G cog 591 {'pooled': 0.9368, 'age-stratified': 0.936, 'conservative-age': 0.9376, 'pack-max': 0.9819}
+calibrated G dense 591 {'pooled': 0.943, 'age-stratified': 0.9399, 'conservative-age': 0.9456, 'pack-max': 0.9848}
+calibrated G gated 591 {'pooled': 0.9276, 'age-stratified': 0.9296, 'conservative-age': 0.9308, 'pack-max': 0.979}
+calibrated G gru 591 {'pooled': 0.9539, 'age-stratified': 0.9524, 'conservative-age': 0.9545, 'pack-max': 0.9807}
+calibrated G static 591 {'pooled': 0.9532, 'age-stratified': 0.9493, 'conservative-age': 0.9539, 'pack-max': 0.9756}
