@@ -1,0 +1,59 @@
+name: COG-EDGE calibration evidence aggregation audit
+on:
+  pull_request:
+    paths:
+      - 'research/cog-edge-calibration-review/**'
+      - '.github/workflows/cog-edge-calibration-review.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13.5'
+      - name: Fetch pinned evidence without retraining
+        run: |
+          set -euo pipefail
+          mkdir -p ci-review "${RUNNER_TEMP}/review"
+          for item in Y:f5b1bedb7f4adf41e54d2a3667a9bb22a2aa2dd3 R:ab8e06e3e0d10dea8bb7266c49ba0ed9e270a303 G:0ca08ad37b65c8b284277d5b840ae26e867ec8f1; do
+            g="${item%%:*}"; sha="${item#*:}"
+            git fetch --no-tags --depth=1 origin "refs/heads/research/cog-edge-calibration-evidence-46056074237-1-$g"
+            test "$(git rev-parse FETCH_HEAD)" = "$sha"
+            path="research/cog-edge-calibration-v02/ci-evidence/46056074237-1-$g"
+            mkdir -p "${RUNNER_TEMP}/review/$g"
+            git archive FETCH_HEAD "$path" | tar -x --strip-components=4 -C "${RUNNER_TEMP}/review/$g"
+          done
+          git fetch --no-tags --depth=1 origin refs/heads/research/cog-edge-v01-expanded-evidence-46052547333-1
+          test "$(git rev-parse FETCH_HEAD)" = 78a432daec384336911b97852f7995ea47f0ccc5
+          git show FETCH_HEAD:research/cog-edge-v01-expanded/ci-evidence/46052547333-1/source-manifest.json > "${RUNNER_TEMP}/source-manifest.json"
+      - name: Verify metrics and summarize coverage, width and residual strata
+        run: |
+          set -euo pipefail
+          python research/cog-edge-calibration-review/audit.py --root "${RUNNER_TEMP}/review" --source "${RUNNER_TEMP}/source-manifest.json" --splits research/cog-edge-calibration-v02/splits.json --out ci-review 2>&1 | tee ci-review/run.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: calibration-review
+          path: ci-review/
+      - name: Preserve run-specific evidence
+        if: always() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'research/cog-edge-calibration-review'
+        run: |
+          set -euo pipefail
+          test -d ci-review || exit 0
+          git config user.name "COG research CI"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          dst="research/cog-edge-calibration-review/ci-evidence/${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          mkdir -p "$dst"
+          cp -a ci-review/. "$dst/"
+          (cd "$dst"; find . -type f ! -name SHA256SUMS.txt -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS.txt)
+          git add -f "$dst"
+          git diff --cached --quiet && exit 0
+          git commit -m "Preserve calibration aggregation audit $GITHUB_RUN_ID"
+          git push origin "HEAD:refs/heads/research/cog-edge-calibration-review-evidence-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
