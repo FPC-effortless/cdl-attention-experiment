@@ -1,0 +1,5 @@
+cog 1914 {'protected_checks': 2744, 'step_delta': 1.1920928955078125e-07, 'prefix_delta': 0.0, 'restart_exact': True}
+protected-instant 1914 {'protected_checks': 2744, 'step_delta': 1.1920928955078125e-07, 'prefix_delta': 0.0, 'restart_exact': True}
+dense-instant 1914 {'protected_checks': 0, 'step_delta': 2.384185791015625e-07, 'prefix_delta': 0.0, 'restart_exact': True}
+protected-compact 1306 {'protected_checks': 2744, 'step_delta': 1.1920928955078125e-07, 'prefix_delta': 0.0, 'restart_exact': True}
+static 2286 {'protected_checks': 0, 'step_delta': None, 'prefix_delta': 0.0, 'restart_exact': None}

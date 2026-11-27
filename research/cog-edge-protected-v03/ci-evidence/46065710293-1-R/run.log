@@ -1,0 +1,30 @@
+fit R cog 171 1914 480
+fit R protected-instant 171 1914 480
+fit R dense-instant 171 1914 480
+fit R protected-compact 171 1306 480
+fit R static 171 2286 360
+fit R cog 311 1914 480
+fit R protected-instant 311 1914 360
+fit R dense-instant 311 1914 360
+fit R protected-compact 311 1306 480
+fit R static 311 2286 360
+fit R cog 591 1914 480
+fit R protected-instant 591 1914 480
+fit R dense-instant 591 1914 360
+fit R protected-compact 591 1306 240
+fit R static 591 2286 360
+evaluated R cog 171 0.0947893468153367
+evaluated R protected-instant 171 0.09213117453919643
+evaluated R dense-instant 171 0.09182312731681612
+evaluated R protected-compact 171 0.09215127128594804
+evaluated R static 171 0.09048786091682834
+evaluated R cog 311 0.09400203896849453
+evaluated R protected-instant 311 0.09396454922681242
+evaluated R dense-instant 311 0.09371463846968502
+evaluated R protected-compact 311 0.09162931675571204
+evaluated R static 311 0.09193057352882472
+evaluated R cog 591 0.09359764927994421
+evaluated R protected-instant 591 0.09384493155657776
+evaluated R dense-instant 591 0.09462328453373603
+evaluated R protected-compact 591 0.09522222176553648
+evaluated R static 591 0.09591529310251963
