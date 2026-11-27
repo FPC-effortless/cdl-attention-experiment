@@ -1,0 +1,13 @@
+# COG-EDGE state attribution: frozen-weight developmental diagnostic
+
+Purpose: distinguish useful history in the protected observation banks from the predictive state, rather than infer mechanism necessity from wiping both. Passive battery-voltage telemetry forecasting only. No aircraft operation capability.
+
+## Fixed protocol before scoring
+- Use the 27 archived COG/dense/gated selected models (three original seeds, three held-out aircraft folds, three matched architectures) from evidence commit 78a432daec384336911b97852f7995ea47f0ccc5.
+- Independently reconstruct and hash all original 215 arrays, verify all original archive checksums and the data partitions. Use the original DEVELOPMENT partitions and original dev-v1 masks only. No test-cohort predictions in this study. These development partitions were previously used for model selection; no generalization claim.
+- Independently reproduce original development selection score and scale calibration. For every model and every development flight, retain identical inputs including the original preprocessing/last-known values, outputs, masks, weights and forecast labels.
+- Zero the previous hidden state of the protected bank alone, predictive state alone, or both immediately before processing a reset-boundary observation. Periods 16 and 64 seconds, phases 0 and half a period. Same phase and period for all arms; no choice based on scores.
+- Preserve the unreset pathway bit-for-bit relative to the continuous model; independently compare the scan-based intervention to explicit streaming recurrence on deterministic prefixes. Both-reset phase 0 must match chunked evaluation. Tolerance 2e-5. Match target counts at flight, regime, horizon level. Report all negative and positive results.
+- Primary descriptive metric: severe simulated outage 15-second voltage RMSE, averaged over two phases, three seeds and three folds; report all 12 condition/horizon cells, full state and all 12 intervention configurations. Publish per-flight sufficient statistics. Interventions on the original learned model are not evidence that a smaller retrained model would fail; reset sensitivity alone does not establish superiority.
+- PR #104 independently reproduced 540 panels and 45 final optimizer continuation checks. Its severe-outage 15s COG error rises from .1257618795 V to .1387036011 (16s) and .1284591616 (64s). All 9 COG seed/fold fits worsen at both intervals. Calibration v0.2 PR #105 remains separate; do not tune its frozen protocol or reuse test data to choose the next architecture.
+- Archive code, environment, original checkpoint identities, results, logs and manifests on immutable run-specific evidence ref. No raw third-party telemetry redistribution. Scientific qualification HOLD.
