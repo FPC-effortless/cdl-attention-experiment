@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/home/runner/work/_temp/edge/prepare.py", line 56, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--archive',required=True);p.add_argument('--out',required=True);p.add_argument('--expanded',action='store_true');a=p.parse_args();d,m=expanded(a.archive) if a.expanded else historical(a.archive);path=pathlib.Path(a.out);np.savez(path,**d);path.with_suffix('.json').write_text(json.dumps(m,indent=2)+'\n');print('records',len(d),'splits',{g:{k:len(v) for k,v in s.items()} for g,s in m['splits'].items()})
+                                                                                                                                                                                      ~~~~~~~~^^^^^^^^^^^
+  File "/home/runner/work/_temp/edge/prepare.py", line 24, in expanded
+    tree=json.loads(get(f'https://api.github.com/repos/{REPO}/git/trees/{REV}?recursive=1'));assert not tree['truncated'];blobs={x['path']:x['sha'] for x in tree['tree'] if x['type']=='blob'};candidates=[];rejections=[];seen=set()
+                    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/_temp/edge/prepare.py", line 10, in get
+    with urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'COG-EDGE-research'}),timeout=45) as r:return r.read()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.5/x64/lib/python3.13/urllib/request.py", line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.5/x64/lib/python3.13/urllib/request.py", line 495, in open
+    response = meth(req, response)
+  File "/opt/hostedtoolcache/Python/3.13.5/x64/lib/python3.13/urllib/request.py", line 604, in http_response
+    response = self.parent.error(
+        'http', request, response, code, msg, hdrs)
+  File "/opt/hostedtoolcache/Python/3.13.5/x64/lib/python3.13/urllib/request.py", line 533, in error
+    return self._call_chain(*args)
+           ~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.5/x64/lib/python3.13/urllib/request.py", line 466, in _call_chain
+    result = func(*args)
+  File "/opt/hostedtoolcache/Python/3.13.5/x64/lib/python3.13/urllib/request.py", line 613, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: rate limit exceeded
