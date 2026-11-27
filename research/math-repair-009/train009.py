@@ -22,7 +22,7 @@ def logits(m,x):
 def loss(m,x,y):
     if hasattr(m,'transformer'):return m(x,y)[1]
     z=m(x);return F.cross_entropy(z.flatten(0,1),y.flatten())
-def environment():return dict(torch=torch.__version__,numpy=np.__version__,python=platform.python_version(),machine=platform.machine(),threads=torch.get_num_threads(),cpu=next((x.split(':',1)[1].strip() for x in Path('/proc/cpuinfo').read_text().splitlines() if x.startswith('model name')),None),pip=subprocess.check_output([sys.executable,'-m','pip','freeze'],text=True).splitlines())
+def environment():return dict(torch=str(torch.__version__),numpy=np.__version__,python=platform.python_version(),machine=platform.machine(),threads=torch.get_num_threads(),cpu=next((x.split(':',1)[1].strip() for x in Path('/proc/cpuinfo').read_text().splitlines() if x.startswith('model name')),None),pip=subprocess.check_output([sys.executable,'-m','pip','freeze'],text=True).splitlines())
 def source_lock():return {k:sha(HERE/k) for k in ('model.py','data009.py','train009.py','PROTOCOL.md')}
 @torch.no_grad()
 def evaluate(m,root,split):
@@ -52,7 +52,7 @@ def preflight(m):
     return dict(causal_error=err,chunk_error=ce,parameters=count(m))
 def train(a):
     torch.set_num_threads(a.threads);torch.set_num_interop_threads(1);torch.use_deterministic_algorithms(True);assert a.seed in SEEDS and 1<=a.stage<=4;root=Path(a.data);mfest=verify(root);assert mfest['split']=='train';out=Path(a.out);out.mkdir(parents=True,exist_ok=True)
-    starts=order(root,a.seed);order_sha=hashlib.sha256(starts.tobytes()).hexdigest();raw=np.memmap(root/'train.bin',dtype=np.uint8,mode='r');m=make(a.arm,a.seed);pf=preflight(m);opt=torch.optim.AdamW([{'params':[p for p in m.parameters() if p.ndim>=2],'weight_decay':.1},{'params':[p for p in m.parameters() if p.ndim<2],'weight_decay':0}],lr=.0006,betas=(.9,.95));lock=dict(arm=a.arm,seed=a.seed,source=source_lock(),data=sha(root/'manifest.json'),data_order=order_sha,steps=STEPS,context=T,batch=B,torch=torch.__version__,numpy=np.__version__,threads=a.threads,gpt_revision=GPT_REV);start=(a.stage-1)*STAGE;end=a.stage*STAGE;curve=[];training_sec=0.
+    starts=order(root,a.seed);order_sha=hashlib.sha256(starts.tobytes()).hexdigest();raw=np.memmap(root/'train.bin',dtype=np.uint8,mode='r');m=make(a.arm,a.seed);pf=preflight(m);opt=torch.optim.AdamW([{'params':[p for p in m.parameters() if p.ndim>=2],'weight_decay':.1},{'params':[p for p in m.parameters() if p.ndim<2],'weight_decay':0}],lr=.0006,betas=(.9,.95));lock=dict(arm=a.arm,seed=a.seed,source=source_lock(),data=sha(root/'manifest.json'),data_order=order_sha,steps=STEPS,context=T,batch=B,torch=str(torch.__version__),numpy=np.__version__,threads=a.threads,gpt_revision=GPT_REV);start=(a.stage-1)*STAGE;end=a.stage*STAGE;curve=[];training_sec=0.
     if start:
         p=Path(a.resume);assert p.is_file();receipt=json.loads(p.with_name('receipt.json').read_text());assert receipt['sha256']==sha(p);cp=torch.load(p,weights_only=True,map_location='cpu');assert cp['lock']==lock and cp['step']==start; m.load_state_dict(cp['weights']);opt.load_state_dict(cp['optimizer']);torch.set_rng_state(cp['rng']);curve=cp['curve'];training_sec=cp['training_seconds']
     elif a.resume:raise ValueError('unexpected first-stage resume')
