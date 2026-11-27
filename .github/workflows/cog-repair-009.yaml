@@ -1,4 +1,4 @@
-name: REPAIR-009 CPU language pretraining
+name: REPAIR-009 CPU language pretraining recovery
 on:
   pull_request:
     types: [opened, synchronize, reopened]
@@ -9,9 +9,10 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+  actions: read
 concurrency:
-  group: repair009-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+  group: repair009-gpt-recovery-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
 env:
   OMP_NUM_THREADS: '4'
   MKL_NUM_THREADS: '4'
@@ -26,29 +27,31 @@ jobs:
         with:
           persist-credentials: false
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
-      - name: Install pinned corpus dependencies
+      - uses: actions/download-artifact@v4
+        with:
+          name: corpus
+          path: ${{ runner.temp }}/corpus
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46039004295'
+      - name: Verify original corpus without rebuilding or resampling
         run: |
           python3 -m venv "$RUNNER_TEMP/repair009-env"
-          "$RUNNER_TEMP/repair009-env/bin/pip" install numpy==2.3.5 pyarrow==18.1.0
-      - name: Freeze training corpus and train-only development split
-        run: |
-          "$RUNNER_TEMP/repair009-env/bin/python" research/math-repair-009/data009.py --split train --out "$RUNNER_TEMP/corpus"
+          "$RUNNER_TEMP/repair009-env/bin/pip" install numpy==2.3.5
+          "$RUNNER_TEMP/repair009-env/bin/python" research/math-repair-009/recover009.py corpus --data "$RUNNER_TEMP/corpus"
       - uses: actions/upload-artifact@v4
         with:
           name: corpus
-          path: |
-            ${{ runner.temp }}/corpus/*.bin
-            ${{ runner.temp }}/corpus/*.npy
-            ${{ runner.temp }}/corpus/*.json
+          path: ${{ runner.temp }}/corpus
           if-no-files-found: error
           retention-days: 14
   stage1:
     needs: [prepare]
     strategy:
       fail-fast: false
-      max-parallel: 6
+      max-parallel: 3
       matrix:
-        arm: [gpt, HH, A0, U, UA, AU]
+        arm: [gpt]
         seed: [9001, 9011, 9029]
     runs-on: ubuntu-24.04
     timeout-minutes: 355
@@ -74,18 +77,48 @@ jobs:
           git -C research/math-repair-009/vendor/nanogpt fetch --depth=1 https://github.com/karpathy/nanoGPT.git f08abb45bd2285627d17da16daea14dda7e7253e
           git -C research/math-repair-009/vendor/nanogpt checkout --detach FETCH_HEAD
           test "$(git -C research/math-repair-009/vendor/nanogpt rev-parse HEAD)" = f08abb45bd2285627d17da16daea14dda7e7253e
-      - name: Fixed budget training stage 1
+      - name: GPT production-shape backward and restart preflight
         run: |
-          "$RUNNER_TEMP/repair009-env/bin/python" research/math-repair-009/train009.py train --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --stage 1 --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/result" --threads 4
+          "$RUNNER_TEMP/repair009-env/bin/python" research/math-repair-009/gpt009.py smoke --arm gpt --seed "${{ matrix.seed }}" --out "$RUNNER_TEMP/smoke" --threads 4
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: stage1-${{ matrix.arm }}-${{ matrix.seed }}
+          name: gpt-preflight-${{ matrix.seed }}
+          path: ${{ runner.temp }}/smoke
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Fixed budget GPT training stage 1
+        run: |
+          "$RUNNER_TEMP/repair009-env/bin/python" research/math-repair-009/gpt009.py train --arm gpt --seed "${{ matrix.seed }}" --stage 1 --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/result" --threads 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage1-gpt-${{ matrix.seed }}
           path: ${{ runner.temp }}/result
           if-no-files-found: warn
           retention-days: 14
-  stage2:
+  native_stage1_ready:
     needs: [prepare, stage1]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 320
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Wait for all original non-GPT stage-1 jobs; fail closed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 research/math-repair-009/recover009.py await-native --out "$RUNNER_TEMP/original/terminal_jobs.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: original-native-stage1-receipt
+          path: ${{ runner.temp }}/original
+          if-no-files-found: error
+          retention-days: 14
+  stage2:
+    needs: [prepare, stage1, native_stage1_ready]
     strategy:
       fail-fast: false
       max-parallel: 6
@@ -104,9 +137,18 @@ jobs:
           name: corpus
           path: ${{ runner.temp }}/corpus
       - uses: actions/download-artifact@v4
+        if: matrix.arm == 'gpt'
+        with:
+          name: stage1-gpt-${{ matrix.seed }}
+          path: ${{ runner.temp }}/prior
+      - uses: actions/download-artifact@v4
+        if: matrix.arm != 'gpt'
         with:
           name: stage1-${{ matrix.arm }}-${{ matrix.seed }}
           path: ${{ runner.temp }}/prior
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46039004295'
       - name: Install CPU environment and pinned upstream baseline
         shell: bash
         run: |
@@ -120,9 +162,16 @@ jobs:
           git -C research/math-repair-009/vendor/nanogpt fetch --depth=1 https://github.com/karpathy/nanoGPT.git f08abb45bd2285627d17da16daea14dda7e7253e
           git -C research/math-repair-009/vendor/nanogpt checkout --detach FETCH_HEAD
           test "$(git -C research/math-repair-009/vendor/nanogpt rev-parse HEAD)" = f08abb45bd2285627d17da16daea14dda7e7253e
-      - name: Fixed budget training stage 2
+      - name: Verify prior stage and continue fixed budget stage 2
+        shell: bash
         run: |
-          "$RUNNER_TEMP/repair009-env/bin/python" research/math-repair-009/train009.py train --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --stage 2 --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/result" --resume "$RUNNER_TEMP/prior/checkpoint.pt" --threads 4
+          set -euo pipefail
+          prior_run="$GITHUB_RUN_ID"
+          if [[ "${{ matrix.arm }}" != gpt ]]; then prior_run="46039004295"; fi
+          "$RUNNER_TEMP/repair009-env/bin/python" research/math-repair-009/recover009.py checkpoint --checkpoint "$RUNNER_TEMP/prior/checkpoint.pt" --data "$RUNNER_TEMP/corpus" --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --stage 1 --run-id "$prior_run"
+          trainer=research/math-repair-009/train009.py
+          if [[ "${{ matrix.arm }}" == gpt ]]; then trainer=research/math-repair-009/gpt009.py; fi
+          "$RUNNER_TEMP/repair009-env/bin/python" "$trainer" train --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --stage 2 --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/result" --resume "$RUNNER_TEMP/prior/checkpoint.pt" --threads 4
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -166,9 +215,15 @@ jobs:
           git -C research/math-repair-009/vendor/nanogpt fetch --depth=1 https://github.com/karpathy/nanoGPT.git f08abb45bd2285627d17da16daea14dda7e7253e
           git -C research/math-repair-009/vendor/nanogpt checkout --detach FETCH_HEAD
           test "$(git -C research/math-repair-009/vendor/nanogpt rev-parse HEAD)" = f08abb45bd2285627d17da16daea14dda7e7253e
-      - name: Fixed budget training stage 3
+      - name: Verify prior stage and continue fixed budget stage 3
+        shell: bash
         run: |
-          "$RUNNER_TEMP/repair009-env/bin/python" research/math-repair-009/train009.py train --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --stage 3 --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/result" --resume "$RUNNER_TEMP/prior/checkpoint.pt" --threads 4
+          set -euo pipefail
+          prior_run="$GITHUB_RUN_ID"
+          "$RUNNER_TEMP/repair009-env/bin/python" research/math-repair-009/recover009.py checkpoint --checkpoint "$RUNNER_TEMP/prior/checkpoint.pt" --data "$RUNNER_TEMP/corpus" --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --stage 2 --run-id "$prior_run"
+          trainer=research/math-repair-009/train009.py
+          if [[ "${{ matrix.arm }}" == gpt ]]; then trainer=research/math-repair-009/gpt009.py; fi
+          "$RUNNER_TEMP/repair009-env/bin/python" "$trainer" train --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --stage 3 --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/result" --resume "$RUNNER_TEMP/prior/checkpoint.pt" --threads 4
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -212,9 +267,15 @@ jobs:
           git -C research/math-repair-009/vendor/nanogpt fetch --depth=1 https://github.com/karpathy/nanoGPT.git f08abb45bd2285627d17da16daea14dda7e7253e
           git -C research/math-repair-009/vendor/nanogpt checkout --detach FETCH_HEAD
           test "$(git -C research/math-repair-009/vendor/nanogpt rev-parse HEAD)" = f08abb45bd2285627d17da16daea14dda7e7253e
-      - name: Fixed budget training stage 4
+      - name: Verify prior stage and continue fixed budget stage 4
+        shell: bash
         run: |
-          "$RUNNER_TEMP/repair009-env/bin/python" research/math-repair-009/train009.py train --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --stage 4 --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/result" --resume "$RUNNER_TEMP/prior/checkpoint.pt" --threads 4
+          set -euo pipefail
+          prior_run="$GITHUB_RUN_ID"
+          "$RUNNER_TEMP/repair009-env/bin/python" research/math-repair-009/recover009.py checkpoint --checkpoint "$RUNNER_TEMP/prior/checkpoint.pt" --data "$RUNNER_TEMP/corpus" --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --stage 3 --run-id "$prior_run"
+          trainer=research/math-repair-009/train009.py
+          if [[ "${{ matrix.arm }}" == gpt ]]; then trainer=research/math-repair-009/gpt009.py; fi
+          "$RUNNER_TEMP/repair009-env/bin/python" "$trainer" train --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --stage 4 --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/result" --resume "$RUNNER_TEMP/prior/checkpoint.pt" --threads 4
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -289,7 +350,9 @@ jobs:
           test "$(git -C research/math-repair-009/vendor/nanogpt rev-parse HEAD)" = f08abb45bd2285627d17da16daea14dda7e7253e
       - name: Independent terminal checkpoint evaluation
         run: |
-          "$RUNNER_TEMP/repair009-env/bin/python" research/math-repair-009/train009.py validate --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --data "$RUNNER_TEMP/holdout" --resume "$RUNNER_TEMP/prior/model.safetensors" --out "$RUNNER_TEMP/validation" --threads 4
+          trainer=research/math-repair-009/train009.py
+          if [[ "${{ matrix.arm }}" == gpt ]]; then trainer=research/math-repair-009/gpt009.py; fi
+          "$RUNNER_TEMP/repair009-env/bin/python" "$trainer" validate --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --data "$RUNNER_TEMP/holdout" --resume "$RUNNER_TEMP/prior/model.safetensors" --out "$RUNNER_TEMP/validation" --threads 4
       - uses: actions/upload-artifact@v4
         with:
           name: validation-${{ matrix.arm }}-${{ matrix.seed }}
