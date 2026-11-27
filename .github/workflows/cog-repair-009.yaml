@@ -11,7 +11,7 @@ permissions:
   contents: read
 concurrency:
   group: repair009-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 env:
   OMP_NUM_THREADS: '4'
   MKL_NUM_THREADS: '4'
@@ -67,7 +67,8 @@ jobs:
           set -euo pipefail
           python3 -m venv "$RUNNER_TEMP/repair009-env"
           "$RUNNER_TEMP/repair009-env/bin/pip" install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
-          "$RUNNER_TEMP/repair009-env/bin/pip" install numpy==2.3.5 safetensors==0.7.0
+          "$RUNNER_TEMP/repair009-env/bin/pip" install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+          "$RUNNER_TEMP/repair009-env/bin/python" -c 'import torch, numpy, packaging, safetensors.torch; assert not torch.cuda.is_available()'
           mkdir -p research/math-repair-009/vendor/nanogpt
           git -C research/math-repair-009/vendor/nanogpt init
           git -C research/math-repair-009/vendor/nanogpt fetch --depth=1 https://github.com/karpathy/nanoGPT.git f08abb45bd2285627d17da16daea14dda7e7253e
@@ -112,7 +113,8 @@ jobs:
           set -euo pipefail
           python3 -m venv "$RUNNER_TEMP/repair009-env"
           "$RUNNER_TEMP/repair009-env/bin/pip" install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
-          "$RUNNER_TEMP/repair009-env/bin/pip" install numpy==2.3.5 safetensors==0.7.0
+          "$RUNNER_TEMP/repair009-env/bin/pip" install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+          "$RUNNER_TEMP/repair009-env/bin/python" -c 'import torch, numpy, packaging, safetensors.torch; assert not torch.cuda.is_available()'
           mkdir -p research/math-repair-009/vendor/nanogpt
           git -C research/math-repair-009/vendor/nanogpt init
           git -C research/math-repair-009/vendor/nanogpt fetch --depth=1 https://github.com/karpathy/nanoGPT.git f08abb45bd2285627d17da16daea14dda7e7253e
@@ -157,7 +159,8 @@ jobs:
           set -euo pipefail
           python3 -m venv "$RUNNER_TEMP/repair009-env"
           "$RUNNER_TEMP/repair009-env/bin/pip" install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
-          "$RUNNER_TEMP/repair009-env/bin/pip" install numpy==2.3.5 safetensors==0.7.0
+          "$RUNNER_TEMP/repair009-env/bin/pip" install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+          "$RUNNER_TEMP/repair009-env/bin/python" -c 'import torch, numpy, packaging, safetensors.torch; assert not torch.cuda.is_available()'
           mkdir -p research/math-repair-009/vendor/nanogpt
           git -C research/math-repair-009/vendor/nanogpt init
           git -C research/math-repair-009/vendor/nanogpt fetch --depth=1 https://github.com/karpathy/nanoGPT.git f08abb45bd2285627d17da16daea14dda7e7253e
@@ -202,7 +205,8 @@ jobs:
           set -euo pipefail
           python3 -m venv "$RUNNER_TEMP/repair009-env"
           "$RUNNER_TEMP/repair009-env/bin/pip" install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
-          "$RUNNER_TEMP/repair009-env/bin/pip" install numpy==2.3.5 safetensors==0.7.0
+          "$RUNNER_TEMP/repair009-env/bin/pip" install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+          "$RUNNER_TEMP/repair009-env/bin/python" -c 'import torch, numpy, packaging, safetensors.torch; assert not torch.cuda.is_available()'
           mkdir -p research/math-repair-009/vendor/nanogpt
           git -C research/math-repair-009/vendor/nanogpt init
           git -C research/math-repair-009/vendor/nanogpt fetch --depth=1 https://github.com/karpathy/nanoGPT.git f08abb45bd2285627d17da16daea14dda7e7253e
@@ -276,7 +280,8 @@ jobs:
           set -euo pipefail
           python3 -m venv "$RUNNER_TEMP/repair009-env"
           "$RUNNER_TEMP/repair009-env/bin/pip" install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
-          "$RUNNER_TEMP/repair009-env/bin/pip" install numpy==2.3.5 safetensors==0.7.0
+          "$RUNNER_TEMP/repair009-env/bin/pip" install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+          "$RUNNER_TEMP/repair009-env/bin/python" -c 'import torch, numpy, packaging, safetensors.torch; assert not torch.cuda.is_available()'
           mkdir -p research/math-repair-009/vendor/nanogpt
           git -C research/math-repair-009/vendor/nanogpt init
           git -C research/math-repair-009/vendor/nanogpt fetch --depth=1 https://github.com/karpathy/nanoGPT.git f08abb45bd2285627d17da16daea14dda7e7253e
