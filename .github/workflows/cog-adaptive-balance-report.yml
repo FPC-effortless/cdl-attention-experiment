@@ -1,0 +1,59 @@
+name: COG Adaptive Balance 001 final report
+on:
+  pull_request:
+    types: [opened, reopened]
+    branches: [research/cog-adaptive-balance-001]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  report:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'research/cog-adaptive-balance-001-pilot-evidence'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    env:
+      TRAINING_RUN: '46180812123'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Follow upstream campaign to its terminal status
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          end=$((SECONDS + 19200))
+          while (( SECONDS < end )); do
+            status=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$TRAINING_RUN" --jq .status) || { sleep 45; continue; }
+            echo "Training run $TRAINING_RUN is $status"
+            if [[ "$status" == completed ]]; then break; fi
+            sleep 45
+          done
+      - uses: actions/download-artifact@v4
+        with:
+          repository: ${{ github.repository }}
+          github-token: ${{ github.token }}
+          run-id: '46180812123'
+          pattern: 'balance-*'
+          path: collected
+      - name: Aggregate all available training and frozen-weight results
+        run: |
+          mkdir -p report
+          python research/cog-balance-001/summarize.py --input collected --out report/summary.json --scales 1m 10m | tee report/tables.md
+          cat report/tables.md >> "$GITHUB_STEP_SUMMARY"
+          python - <<'PY'
+          import pathlib
+          import shutil
+          root = pathlib.Path("collected")
+          for source in root.rglob("*.json"):
+              target = pathlib.Path("report/fits") / source.relative_to(root)
+              target.parent.mkdir(parents=True, exist_ok=True)
+              shutil.copyfile(source, target)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cog-adaptive-balance-comparison
+          path: report/
+          retention-days: 30
+          if-no-files-found: error
