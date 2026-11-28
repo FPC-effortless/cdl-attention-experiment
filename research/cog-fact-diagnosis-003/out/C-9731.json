@@ -1,0 +1,214 @@
+{
+  "checkpoint_sha256": "4d60ed82289f1b4bea1e8a64649d98b61e6f01130aebb69d75dd21487f49df30",
+  "arm": "C",
+  "scale": "1m",
+  "seed": 9731,
+  "load": {
+    "immediate": {
+      "pairs_correct": 0,
+      "pairs": 384,
+      "answer_switches": 0,
+      "mean_max_digit_logit_change": 0.006817905853192012
+    },
+    "short_one_identity": {
+      "pairs_correct": 0,
+      "pairs": 384,
+      "answer_switches": 0,
+      "mean_max_digit_logit_change": 0.00210819145043691
+    },
+    "long_one_identity": {
+      "pairs_correct": 0,
+      "pairs": 384,
+      "answer_switches": 0,
+      "mean_max_digit_logit_change": 0.000638134777545929
+    },
+    "long_three_identities": {
+      "pairs_correct": 0,
+      "pairs": 384,
+      "answer_switches": 0,
+      "mean_max_digit_logit_change": 0.0006337153414885203
+    },
+    "target_last": {
+      "pairs_correct": 0,
+      "pairs": 384,
+      "answer_switches": 0,
+      "mean_max_digit_logit_change": 0.0068754032254219055
+    },
+    "gap_64": {
+      "pairs_correct": 0,
+      "pairs": 384,
+      "answer_switches": 0,
+      "mean_max_digit_logit_change": 6.778786579767863e-05
+    }
+  },
+  "symbol": {
+    "dev_worlds": 192,
+    "train_probe_worlds": 384,
+    "head": {
+      "single": 0.22135416666666666,
+      "fact_pairs": 0.0,
+      "query_pairs": 0.0,
+      "grid": 0.0
+    },
+    "probe": {
+      "history_fast": {
+        "single": 0.8880208333333334,
+        "fact_pairs": 0.7864583333333334,
+        "query_pairs": 0.7864583333333334,
+        "grid": 0.609375
+      },
+      "history_protected": {
+        "single": 0.2513020833333333,
+        "fact_pairs": 0.015625,
+        "query_pairs": 0.033854166666666664,
+        "grid": 0.015625
+      },
+      "history_background": {
+        "single": 0.60546875,
+        "fact_pairs": 0.3307291666666667,
+        "query_pairs": 0.3515625,
+        "grid": 0.11979166666666667
+      },
+      "history_slow": {
+        "single": 0.3450520833333333,
+        "fact_pairs": 0.12239583333333333,
+        "query_pairs": 0.09895833333333333,
+        "grid": 0.0
+      },
+      "history_joint": {
+        "single": 0.91015625,
+        "fact_pairs": 0.8307291666666666,
+        "query_pairs": 0.8255208333333334,
+        "grid": 0.6770833333333334
+      },
+      "final": {
+        "single": 0.3216145833333333,
+        "fact_pairs": 0.059895833333333336,
+        "query_pairs": 0.03125,
+        "grid": 0.0
+      },
+      "input_local": {
+        "single": 0.22135416666666666,
+        "fact_pairs": 0.0,
+        "query_pairs": 0.0,
+        "grid": 0.0
+      }
+    },
+    "routing": {
+      "historical_action_counts": [
+        2412,
+        2375,
+        0,
+        973
+      ],
+      "write_or_reset_by_slot": [
+        890,
+        0,
+        0,
+        2458,
+        0,
+        0,
+        0,
+        0
+      ],
+      "effective_slots": 1.7843734757464982,
+      "any_query_role_or_address_switch": 0.0,
+      "final_query_address_switch": 0.0,
+      "query_read_fraction": 0.0
+    },
+    "abs_margin_shift_after_state_swap": {
+      "full": 0.0009706194202105204,
+      "fast": 0.00047131751974423725,
+      "protected": 0.0,
+      "background": 0.0003377273678779602,
+      "slow": 5.851189295450847e-06,
+      "tail": 0.00025682399670283
+    },
+    "chunk_parity_max": 3.814697265625e-06
+  },
+  "english": {
+    "dev_worlds": 192,
+    "train_probe_worlds": 384,
+    "head": {
+      "single": 0.2526041666666667,
+      "fact_pairs": 0.0,
+      "query_pairs": 0.0,
+      "grid": 0.0
+    },
+    "probe": {
+      "history_fast": {
+        "single": 0.3489583333333333,
+        "fact_pairs": 0.13020833333333334,
+        "query_pairs": 0.1171875,
+        "grid": 0.036458333333333336
+      },
+      "history_protected": {
+        "single": 0.2643229166666667,
+        "fact_pairs": 0.013020833333333334,
+        "query_pairs": 0.06770833333333333,
+        "grid": 0.0
+      },
+      "history_background": {
+        "single": 0.4752604166666667,
+        "fact_pairs": 0.19791666666666666,
+        "query_pairs": 0.1953125,
+        "grid": 0.057291666666666664
+      },
+      "history_slow": {
+        "single": 0.2682291666666667,
+        "fact_pairs": 0.033854166666666664,
+        "query_pairs": 0.057291666666666664,
+        "grid": 0.005208333333333333
+      },
+      "history_joint": {
+        "single": 0.5130208333333334,
+        "fact_pairs": 0.2552083333333333,
+        "query_pairs": 0.23958333333333334,
+        "grid": 0.06770833333333333
+      },
+      "final": {
+        "single": 0.2578125,
+        "fact_pairs": 0.0026041666666666665,
+        "query_pairs": 0.020833333333333332,
+        "grid": 0.0
+      },
+      "input_local": {
+        "single": 0.2526041666666667,
+        "fact_pairs": 0.0,
+        "query_pairs": 0.0,
+        "grid": 0.0
+      }
+    },
+    "routing": {
+      "historical_action_counts": [
+        64512,
+        7680,
+        0,
+        0
+      ],
+      "write_or_reset_by_slot": [
+        0,
+        7680,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "effective_slots": 1.0,
+      "any_query_role_or_address_switch": 0.0,
+      "final_query_address_switch": 0.0,
+      "query_read_fraction": 0.0
+    },
+    "abs_margin_shift_after_state_swap": {
+      "full": 3.860642512639364e-05,
+      "fast": 3.509223461151123e-06,
+      "protected": 0.0,
+      "background": 2.9295682907104492e-05,
+      "slow": 3.0075510342915854e-06,
+      "tail": 1.2195358673731485e-05
+    },
+    "chunk_parity_max": 2.86102294921875e-06
+  }
+}

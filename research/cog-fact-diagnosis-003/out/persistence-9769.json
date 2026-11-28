@@ -1,0 +1,372 @@
+{
+  "stages": [
+    "target digit",
+    "distractor 1",
+    "distractor 2",
+    "distractor 3",
+    "query key",
+    "two identity operations",
+    "answer delimiter"
+  ],
+  "measured": {
+    "0/0/fast": {
+      "digit": 1.0,
+      "both": 1.0,
+      "fraction_exactly_identical": 0.0
+    },
+    "0/0/protected": {
+      "digit": 0.23828125,
+      "both": 0.0,
+      "fraction_exactly_identical": 1.0
+    },
+    "0/0/background": {
+      "digit": 1.0,
+      "both": 1.0,
+      "fraction_exactly_identical": 0.0
+    },
+    "0/0/slow": {
+      "digit": 0.8307291666666666,
+      "both": 0.6614583333333334,
+      "fraction_exactly_identical": 0.0
+    },
+    "0/1/fast": {
+      "digit": 1.0,
+      "both": 1.0,
+      "fraction_exactly_identical": 0.0
+    },
+    "0/1/protected": {
+      "digit": 0.23828125,
+      "both": 0.0,
+      "fraction_exactly_identical": 1.0
+    },
+    "0/1/background": {
+      "digit": 1.0,
+      "both": 1.0,
+      "fraction_exactly_identical": 0.0
+    },
+    "0/1/slow": {
+      "digit": 0.8203125,
+      "both": 0.6536458333333334,
+      "fraction_exactly_identical": 0.0
+    },
+    "0/-1/hidden": {
+      "digit": 1.0,
+      "both": 1.0,
+      "fraction_exactly_identical": null
+    },
+    "1/0/fast": {
+      "digit": 1.0,
+      "both": 1.0,
+      "fraction_exactly_identical": 0.0
+    },
+    "1/0/protected": {
+      "digit": 0.23828125,
+      "both": 0.0,
+      "fraction_exactly_identical": 1.0
+    },
+    "1/0/background": {
+      "digit": 1.0,
+      "both": 1.0,
+      "fraction_exactly_identical": 0.0
+    },
+    "1/0/slow": {
+      "digit": 0.55859375,
+      "both": 0.2994791666666667,
+      "fraction_exactly_identical": 0.0
+    },
+    "1/1/fast": {
+      "digit": 1.0,
+      "both": 1.0,
+      "fraction_exactly_identical": 0.0
+    },
+    "1/1/protected": {
+      "digit": 0.23828125,
+      "both": 0.0,
+      "fraction_exactly_identical": 1.0
+    },
+    "1/1/background": {
+      "digit": 1.0,
+      "both": 1.0,
+      "fraction_exactly_identical": 0.0
+    },
+    "1/1/slow": {
+      "digit": 0.7981770833333334,
+      "both": 0.6510416666666666,
+      "fraction_exactly_identical": 0.0
+    },
+    "1/-1/hidden": {
+      "digit": 1.0,
+      "both": 1.0,
+      "fraction_exactly_identical": null
+    },
+    "2/0/fast": {
+      "digit": 0.9973958333333334,
+      "both": 0.9947916666666666,
+      "fraction_exactly_identical": 0.0
+    },
+    "2/0/protected": {
+      "digit": 0.23828125,
+      "both": 0.0,
+      "fraction_exactly_identical": 1.0
+    },
+    "2/0/background": {
+      "digit": 0.9934895833333334,
+      "both": 0.9921875,
+      "fraction_exactly_identical": 0.0
+    },
+    "2/0/slow": {
+      "digit": 0.4817708333333333,
+      "both": 0.21875,
+      "fraction_exactly_identical": 0.0
+    },
+    "2/1/fast": {
+      "digit": 1.0,
+      "both": 1.0,
+      "fraction_exactly_identical": 0.0
+    },
+    "2/1/protected": {
+      "digit": 0.23828125,
+      "both": 0.0,
+      "fraction_exactly_identical": 1.0
+    },
+    "2/1/background": {
+      "digit": 0.9830729166666666,
+      "both": 0.96875,
+      "fraction_exactly_identical": 0.0
+    },
+    "2/1/slow": {
+      "digit": 0.62109375,
+      "both": 0.3828125,
+      "fraction_exactly_identical": 0.0
+    },
+    "2/-1/hidden": {
+      "digit": 0.6809895833333334,
+      "both": 0.4661458333333333,
+      "fraction_exactly_identical": null
+    },
+    "3/0/fast": {
+      "digit": 0.82421875,
+      "both": 0.703125,
+      "fraction_exactly_identical": 0.0
+    },
+    "3/0/protected": {
+      "digit": 0.23828125,
+      "both": 0.0,
+      "fraction_exactly_identical": 1.0
+    },
+    "3/0/background": {
+      "digit": 0.9895833333333334,
+      "both": 0.984375,
+      "fraction_exactly_identical": 0.0
+    },
+    "3/0/slow": {
+      "digit": 0.453125,
+      "both": 0.13802083333333334,
+      "fraction_exactly_identical": 0.0
+    },
+    "3/1/fast": {
+      "digit": 0.9622395833333334,
+      "both": 0.9270833333333334,
+      "fraction_exactly_identical": 0.0
+    },
+    "3/1/protected": {
+      "digit": 0.23828125,
+      "both": 0.0,
+      "fraction_exactly_identical": 1.0
+    },
+    "3/1/background": {
+      "digit": 0.9778645833333334,
+      "both": 0.9583333333333334,
+      "fraction_exactly_identical": 0.0
+    },
+    "3/1/slow": {
+      "digit": 0.56640625,
+      "both": 0.328125,
+      "fraction_exactly_identical": 0.0
+    },
+    "3/-1/hidden": {
+      "digit": 0.5859375,
+      "both": 0.3307291666666667,
+      "fraction_exactly_identical": null
+    },
+    "4/0/fast": {
+      "digit": 0.77734375,
+      "both": 0.6145833333333334,
+      "fraction_exactly_identical": 0.0
+    },
+    "4/0/protected": {
+      "digit": 0.23828125,
+      "both": 0.0,
+      "fraction_exactly_identical": 1.0
+    },
+    "4/0/background": {
+      "digit": 0.9895833333333334,
+      "both": 0.984375,
+      "fraction_exactly_identical": 0.0
+    },
+    "4/0/slow": {
+      "digit": 0.4505208333333333,
+      "both": 0.13802083333333334,
+      "fraction_exactly_identical": 0.0
+    },
+    "4/1/fast": {
+      "digit": 0.9375,
+      "both": 0.8776041666666666,
+      "fraction_exactly_identical": 0.0
+    },
+    "4/1/protected": {
+      "digit": 0.23828125,
+      "both": 0.0,
+      "fraction_exactly_identical": 1.0
+    },
+    "4/1/background": {
+      "digit": 0.97265625,
+      "both": 0.9505208333333334,
+      "fraction_exactly_identical": 0.0
+    },
+    "4/1/slow": {
+      "digit": 0.5546875,
+      "both": 0.3177083333333333,
+      "fraction_exactly_identical": 0.0
+    },
+    "4/-1/hidden": {
+      "digit": 0.7447916666666666,
+      "both": 0.5520833333333334,
+      "fraction_exactly_identical": null
+    },
+    "5/0/fast": {
+      "digit": 0.7825520833333334,
+      "both": 0.6302083333333334,
+      "fraction_exactly_identical": 0.0
+    },
+    "5/0/protected": {
+      "digit": 0.23828125,
+      "both": 0.0,
+      "fraction_exactly_identical": 1.0
+    },
+    "5/0/background": {
+      "digit": 0.9869791666666666,
+      "both": 0.9791666666666666,
+      "fraction_exactly_identical": 0.0
+    },
+    "5/0/slow": {
+      "digit": 0.4388020833333333,
+      "both": 0.140625,
+      "fraction_exactly_identical": 0.0
+    },
+    "5/1/fast": {
+      "digit": 0.89453125,
+      "both": 0.8177083333333334,
+      "fraction_exactly_identical": 0.0
+    },
+    "5/1/protected": {
+      "digit": 0.23828125,
+      "both": 0.0,
+      "fraction_exactly_identical": 1.0
+    },
+    "5/1/background": {
+      "digit": 0.96875,
+      "both": 0.9427083333333334,
+      "fraction_exactly_identical": 0.0
+    },
+    "5/1/slow": {
+      "digit": 0.5494791666666666,
+      "both": 0.3046875,
+      "fraction_exactly_identical": 0.0
+    },
+    "5/-1/hidden": {
+      "digit": 0.6588541666666666,
+      "both": 0.4375,
+      "fraction_exactly_identical": null
+    },
+    "6/0/fast": {
+      "digit": 0.7838541666666666,
+      "both": 0.625,
+      "fraction_exactly_identical": 0.0
+    },
+    "6/0/protected": {
+      "digit": 0.23828125,
+      "both": 0.0,
+      "fraction_exactly_identical": 1.0
+    },
+    "6/0/background": {
+      "digit": 0.9869791666666666,
+      "both": 0.9791666666666666,
+      "fraction_exactly_identical": 0.0
+    },
+    "6/0/slow": {
+      "digit": 0.4375,
+      "both": 0.140625,
+      "fraction_exactly_identical": 0.0
+    },
+    "6/1/fast": {
+      "digit": 0.88671875,
+      "both": 0.7942708333333334,
+      "fraction_exactly_identical": 0.0
+    },
+    "6/1/protected": {
+      "digit": 0.23828125,
+      "both": 0.0,
+      "fraction_exactly_identical": 1.0
+    },
+    "6/1/background": {
+      "digit": 0.96875,
+      "both": 0.9427083333333334,
+      "fraction_exactly_identical": 0.0
+    },
+    "6/1/slow": {
+      "digit": 0.5455729166666666,
+      "both": 0.2994791666666667,
+      "fraction_exactly_identical": 0.0
+    },
+    "6/-1/hidden": {
+      "digit": 0.734375,
+      "both": 0.5416666666666666,
+      "fraction_exactly_identical": null
+    }
+  },
+  "last_byte_role_counts": {
+    "0": [
+      768,
+      0,
+      0,
+      0
+    ],
+    "1": [
+      768,
+      0,
+      0,
+      0
+    ],
+    "2": [
+      768,
+      0,
+      0,
+      0
+    ],
+    "3": [
+      768,
+      0,
+      0,
+      0
+    ],
+    "4": [
+      768,
+      0,
+      0,
+      0
+    ],
+    "5": [
+      768,
+      0,
+      0,
+      0
+    ],
+    "6": [
+      768,
+      0,
+      0,
+      0
+    ]
+  }
+}

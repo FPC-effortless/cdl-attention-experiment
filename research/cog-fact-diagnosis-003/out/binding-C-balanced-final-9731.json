@@ -1,0 +1,29 @@
+{
+  "worlds": 192,
+  "head_correct": 0.2786458333333333,
+  "correct_grids": 0,
+  "answer_changes_on_query": 0.0,
+  "layers": {
+    "0": {
+      "query_identity": 1.0,
+      "keyed_digit": 0.5638020833333334,
+      "pooled_digit": 0.4114583333333333
+    },
+    "1": {
+      "query_identity": 1.0,
+      "keyed_digit": 0.5911458333333334,
+      "pooled_digit": 0.4127604166666667
+    },
+    "final": {
+      "query_identity": 1.0,
+      "keyed_digit": 0.64453125,
+      "pooled_digit": 0.4231770833333333
+    }
+  },
+  "keyed_history": 0.9635416666666666,
+  "shuffled_history_labels": 0.22135416666666666,
+  "checkpoint_sha256": "8522ac12c788e4a65e3e40585686e4e5eeda5174591d493437d57f2ab324e951",
+  "arm": "C",
+  "scale": "1m",
+  "seed": 9731
+}

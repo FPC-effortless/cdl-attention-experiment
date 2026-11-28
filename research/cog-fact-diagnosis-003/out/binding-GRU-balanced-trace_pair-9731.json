@@ -1,0 +1,17 @@
+{
+  "worlds": 192,
+  "head_correct": 0.25,
+  "correct_grids": 0,
+  "answer_changes_on_query": 0.028645833333333332,
+  "layers": {
+    "final": {
+      "query_identity": 1.0,
+      "keyed_digit": 0.7356770833333334,
+      "pooled_digit": 0.44921875
+    }
+  },
+  "checkpoint_sha256": "d81cde36f003e12811f2d6b08486a90283f022c137153459b62308fcda8f3ecf",
+  "arm": "GRU",
+  "scale": "1m",
+  "seed": 9731
+}

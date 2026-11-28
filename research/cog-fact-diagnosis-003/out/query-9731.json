@@ -1,0 +1,110 @@
+{
+  "seed": 9731,
+  "checkpoint_sha256": "4d60ed82289f1b4bea1e8a64649d98b61e6f01130aebb69d75dd21487f49df30",
+  "symbol": {
+    "query_key": {
+      "correct": 0.24739583333333334,
+      "four_digit_correct": 0.24739583333333334,
+      "grid_correct": 0,
+      "answer_changes_on_query": 0.0,
+      "mean_binding_margin": 1.0677923455659766e-05,
+      "positive_binding_margin": 0.5,
+      "role_by_query": [
+        1,
+        1
+      ],
+      "address_by_query": [
+        3,
+        3
+      ],
+      "route_differs_on_query": 0.0
+    },
+    "operation_1": {
+      "correct": 0.24739583333333334,
+      "four_digit_correct": 0.24739583333333334,
+      "grid_correct": 0,
+      "answer_changes_on_query": 0.0,
+      "mean_binding_margin": 5.804623015137622e-06,
+      "positive_binding_margin": 0.5,
+      "role_by_query": [
+        3,
+        3
+      ],
+      "address_by_query": [
+        3,
+        3
+      ],
+      "route_differs_on_query": 0.0
+    },
+    "operation_2": {
+      "correct": 0.24739583333333334,
+      "four_digit_correct": 0.24739583333333334,
+      "grid_correct": 0,
+      "answer_changes_on_query": 0.0,
+      "mean_binding_margin": -5.097438702250656e-07,
+      "positive_binding_margin": 0.5,
+      "role_by_query": [
+        3,
+        3
+      ],
+      "address_by_query": [
+        3,
+        3
+      ],
+      "route_differs_on_query": 0.0
+    },
+    "delimiter": {
+      "correct": 0.24739583333333334,
+      "four_digit_correct": 0.24739583333333334,
+      "grid_correct": 0,
+      "answer_changes_on_query": 0.0,
+      "mean_binding_margin": 3.5570312775234925e-06,
+      "positive_binding_margin": 0.5,
+      "role_by_query": [
+        0,
+        0
+      ],
+      "address_by_query": [
+        3,
+        3
+      ],
+      "route_differs_on_query": 0.0
+    }
+  },
+  "english": {
+    "name_end": {
+      "correct": 0.23958333333333334,
+      "four_digit_correct": 0.23958333333333334,
+      "grid_correct": 0,
+      "answer_changes_on_query": 0.0,
+      "mean_binding_margin": 1.97502481569245e-06,
+      "positive_binding_margin": 0.5,
+      "role_by_query": [
+        0,
+        0
+      ],
+      "address_by_query": [
+        3,
+        3
+      ],
+      "route_differs_on_query": 0.0
+    },
+    "delimiter": {
+      "correct": 0.23958333333333334,
+      "four_digit_correct": 0.23958333333333334,
+      "grid_correct": 0,
+      "answer_changes_on_query": 0.0,
+      "mean_binding_margin": 4.600733518600464e-07,
+      "positive_binding_margin": 0.5,
+      "role_by_query": [
+        0,
+        0
+      ],
+      "address_by_query": [
+        3,
+        3
+      ],
+      "route_differs_on_query": 0.0
+    }
+  }
+}
