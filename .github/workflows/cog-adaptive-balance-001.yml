@@ -1,0 +1,73 @@
+name: COG Adaptive Balance 001
+on:
+  pull_request:
+    branches: [research/cog-unified-trace-007]
+    types: [opened, reopened, synchronize]
+    paths: ['research/cog-balance-001/**', '.github/workflows/cog-adaptive-balance-001.yml']
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: cog-adaptive-balance-001-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+jobs:
+  compare:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'research/cog-adaptive-balance-001'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        arm: [A, B, C, D, E, F, G, H, GQA, GATED_DELTA, GRU, MAMBA2]
+        seed: [9731, 9743, 9769]
+    defaults:
+      run:
+        working-directory: research/cog-balance-001
+    env:
+      ARM: ${{ matrix.arm }}
+      SEED: ${{ matrix.seed }}
+      SOURCE_SHA: ${{ github.event.pull_request.head.sha }}
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned CPU dependencies
+        run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0
+      - uses: actions/download-artifact@v4
+        with:
+          repository: ${{ github.repository }}
+          github-token: ${{ github.token }}
+          run-id: '46171359964'
+          name: trace-007-corpus
+          path: ${{ runner.temp }}/balance-corpus
+      - name: Verify and train 1.08M model
+        run: |
+          python check_recurrence.py "$ARM" --scale 1m
+          python run_balance.py --arm "$ARM" --seed "$SEED" --scale 1m --corpus "$RUNNER_TEMP/balance-corpus" --out "$RUNNER_TEMP/1m"
+          python postfit.py --arm "$ARM" --seed "$SEED" --scale 1m --out "$RUNNER_TEMP/1m"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: balance-1m-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/1m
+          retention-days: 14
+          if-no-files-found: error
+      - name: Verify and train 10M model
+        run: |
+          python check_recurrence.py "$ARM" --scale 10m
+          python run_balance.py --arm "$ARM" --seed "$SEED" --scale 10m --corpus "$RUNNER_TEMP/balance-corpus" --out "$RUNNER_TEMP/10m"
+          python postfit.py --arm "$ARM" --seed "$SEED" --scale 10m --out "$RUNNER_TEMP/10m"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: balance-10m-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/10m
+          retention-days: 14
+          if-no-files-found: error
