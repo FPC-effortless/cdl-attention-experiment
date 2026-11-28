@@ -136,6 +136,7 @@ def schedule(n,seed):
     while total<STEPS*B:
         p=rng.permutation(n);blocks.append(p);total+=len(p)
     return np.concatenate(blocks)[:STEPS*B].reshape(STEPS,B)
+
 def lr(step):
     return .0003*(step+1)/128 if step<128 else .00003+.00027*.5*(1+math.cos(math.pi*(step-128)/(STEPS-1-128)))
 
