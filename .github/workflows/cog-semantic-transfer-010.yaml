@@ -1,0 +1,255 @@
+name: COG SEMANTIC-TRANSFER-001 CPU qualification
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+    paths:
+      - 'research/math-repair-009/qa010.py'
+      - 'research/math-repair-009/TRANSFER_PROTOCOL.md'
+      - 'research/math-repair-009/PARENT_MODELS.json'
+      - 'research/math-repair-009/aggregate010.py'
+      - '.github/workflows/cog-semantic-transfer-010.yaml'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: cog-semantic-transfer-010-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+env:
+  OMP_NUM_THREADS: '4'
+  MKL_NUM_THREADS: '4'
+  OPENBLAS_NUM_THREADS: '4'
+jobs:
+  prepare:
+    if: github.event.pull_request.head.ref == 'research/cog-semantic-transfer-010-cpu' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: corpus
+          path: ${{ runner.temp }}/corpus
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46039004295'
+      - name: Install pinned CPU environment
+        run: |
+          set -euo pipefail
+          python3 -m venv "$RUNNER_TEMP/env"
+          "$RUNNER_TEMP/env/bin/pip" install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          "$RUNNER_TEMP/env/bin/pip" install numpy==2.3.5 safetensors==0.7.0 packaging==25.0 pyarrow==18.1.0
+          "$RUNNER_TEMP/env/bin/python" -c 'import torch, numpy, safetensors.torch; assert not torch.cuda.is_available()'
+      - name: Freeze and validate real QA panels before any fit
+        run: |
+          "$RUNNER_TEMP/env/bin/python" research/math-repair-009/qa010.py prepare --corpus "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/panels" --threads 4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: qa010-training
+          path: ${{ runner.temp }}/panels/training
+          if-no-files-found: error
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: qa010-frozen-held
+          path: ${{ runner.temp }}/panels/held
+          if-no-files-found: error
+          retention-days: 30
+  stage1:
+    needs: [prepare]
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        arm: [gpt, HH, A0, U, UA, AU]
+        seed: [9001, 9011, 9029]
+        init: [pretrained, fresh]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: qa010-training
+          path: ${{ runner.temp }}/qa
+      - uses: actions/download-artifact@v4
+        with:
+          name: corpus
+          path: ${{ runner.temp }}/corpus
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46039004295'
+      - uses: actions/download-artifact@v4
+        if: matrix.init == 'pretrained'
+        with:
+          name: stage4-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/parent
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46044686359'
+      - name: Install pinned CPU environment
+        run: |
+          set -euo pipefail
+          python3 -m venv "$RUNNER_TEMP/env"
+          "$RUNNER_TEMP/env/bin/pip" install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          "$RUNNER_TEMP/env/bin/pip" install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+          "$RUNNER_TEMP/env/bin/python" -c 'import torch, numpy, safetensors.torch; assert not torch.cuda.is_available()'
+      - name: Recover pinned original nanoGPT source
+        run: |
+          mkdir -p research/math-repair-009/vendor/nanogpt
+          git -C research/math-repair-009/vendor/nanogpt init
+          git -C research/math-repair-009/vendor/nanogpt fetch --depth=1 https://github.com/karpathy/nanoGPT.git f08abb45bd2285627d17da16daea14dda7e7253e
+          git -C research/math-repair-009/vendor/nanogpt checkout --detach FETCH_HEAD
+          test "$(git -C research/math-repair-009/vendor/nanogpt rev-parse HEAD)" = f08abb45bd2285627d17da16daea14dda7e7253e
+      - name: Fixed-budget QA transfer stage 1
+        run: |
+          "$RUNNER_TEMP/env/bin/python" research/math-repair-009/qa010.py train --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --init "${{ matrix.init }}" --stage 1 --data "$RUNNER_TEMP/qa" --corpus "$RUNNER_TEMP/corpus" --parent "$RUNNER_TEMP/parent" --out "$RUNNER_TEMP/result" --threads 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qa010-stage1-${{ matrix.arm }}-${{ matrix.seed }}-${{ matrix.init }}
+          path: ${{ runner.temp }}/result
+          if-no-files-found: warn
+          retention-days: 30
+  stage2:
+    needs: [prepare, stage1]
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        arm: [gpt, HH, A0, U, UA, AU]
+        seed: [9001, 9011, 9029]
+        init: [pretrained, fresh]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: qa010-training
+          path: ${{ runner.temp }}/qa
+      - uses: actions/download-artifact@v4
+        with:
+          name: corpus
+          path: ${{ runner.temp }}/corpus
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46039004295'
+      - uses: actions/download-artifact@v4
+        if: matrix.init == 'pretrained'
+        with:
+          name: stage4-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/parent
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46044686359'
+      - uses: actions/download-artifact@v4
+        with:
+          name: qa010-stage1-${{ matrix.arm }}-${{ matrix.seed }}-${{ matrix.init }}
+          path: ${{ runner.temp }}/prior
+      - name: Install pinned CPU environment
+        run: |
+          set -euo pipefail
+          python3 -m venv "$RUNNER_TEMP/env"
+          "$RUNNER_TEMP/env/bin/pip" install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          "$RUNNER_TEMP/env/bin/pip" install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+          "$RUNNER_TEMP/env/bin/python" -c 'import torch, numpy, safetensors.torch; assert not torch.cuda.is_available()'
+      - name: Recover pinned original nanoGPT source
+        run: |
+          mkdir -p research/math-repair-009/vendor/nanogpt
+          git -C research/math-repair-009/vendor/nanogpt init
+          git -C research/math-repair-009/vendor/nanogpt fetch --depth=1 https://github.com/karpathy/nanoGPT.git f08abb45bd2285627d17da16daea14dda7e7253e
+          git -C research/math-repair-009/vendor/nanogpt checkout --detach FETCH_HEAD
+          test "$(git -C research/math-repair-009/vendor/nanogpt rev-parse HEAD)" = f08abb45bd2285627d17da16daea14dda7e7253e
+      - name: Fixed-budget QA transfer stage 2
+        run: |
+          "$RUNNER_TEMP/env/bin/python" research/math-repair-009/qa010.py train --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --init "${{ matrix.init }}" --stage 2 --data "$RUNNER_TEMP/qa" --corpus "$RUNNER_TEMP/corpus" --parent "$RUNNER_TEMP/parent" --out "$RUNNER_TEMP/result" --threads 4 --resume "$RUNNER_TEMP/prior"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qa010-stage2-${{ matrix.arm }}-${{ matrix.seed }}-${{ matrix.init }}
+          path: ${{ runner.temp }}/result
+          if-no-files-found: warn
+          retention-days: 30
+  evaluate:
+    needs: [prepare, stage2]
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        arm: [gpt, HH, A0, U, UA, AU]
+        seed: [9001, 9011, 9029]
+        init: [pretrained, fresh]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: qa010-frozen-held
+          path: ${{ runner.temp }}/held
+      - uses: actions/download-artifact@v4
+        with:
+          name: qa010-stage2-${{ matrix.arm }}-${{ matrix.seed }}-${{ matrix.init }}
+          path: ${{ runner.temp }}/prior
+      - name: Install pinned CPU environment
+        run: |
+          set -euo pipefail
+          python3 -m venv "$RUNNER_TEMP/env"
+          "$RUNNER_TEMP/env/bin/pip" install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          "$RUNNER_TEMP/env/bin/pip" install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+          "$RUNNER_TEMP/env/bin/python" -c 'import torch, numpy, safetensors.torch; assert not torch.cuda.is_available()'
+      - name: Recover pinned original nanoGPT source
+        run: |
+          mkdir -p research/math-repair-009/vendor/nanogpt
+          git -C research/math-repair-009/vendor/nanogpt init
+          git -C research/math-repair-009/vendor/nanogpt fetch --depth=1 https://github.com/karpathy/nanoGPT.git f08abb45bd2285627d17da16daea14dda7e7253e
+          git -C research/math-repair-009/vendor/nanogpt checkout --detach FETCH_HEAD
+          test "$(git -C research/math-repair-009/vendor/nanogpt rev-parse HEAD)" = f08abb45bd2285627d17da16daea14dda7e7253e
+      - name: Unseen real QA and wrong-source evaluation
+        run: |
+          "$RUNNER_TEMP/env/bin/python" research/math-repair-009/qa010.py evaluate --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --init "${{ matrix.init }}" --data "$RUNNER_TEMP/held" --resume "$RUNNER_TEMP/prior" --out "$RUNNER_TEMP/result" --threads 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qa010-evaluation-${{ matrix.arm }}-${{ matrix.seed }}-${{ matrix.init }}
+          path: ${{ runner.temp }}/result
+          if-no-files-found: warn
+          retention-days: 30
+  aggregate:
+    needs: [evaluate]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: qa010-evaluation-*
+          path: ${{ runner.temp }}/evaluations
+          merge-multiple: false
+      - name: All 36 receipt comparison and grouped uncertainty
+        run: |
+          python3 -m venv "$RUNNER_TEMP/env"
+          "$RUNNER_TEMP/env/bin/pip" install numpy==2.3.5
+          "$RUNNER_TEMP/env/bin/python" research/math-repair-009/aggregate010.py --input "$RUNNER_TEMP/evaluations" --out "$RUNNER_TEMP/summary/comparison.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: qa010-terminal-comparison
+          path: ${{ runner.temp }}/summary
+          if-no-files-found: error
+          retention-days: 30
