@@ -1,0 +1,127 @@
+name: COG-OPT-LR-BOUNDARY-001 AdamW extension
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [research/cog-optimizer-discovery-001]
+    paths:
+      - 'research/optimizer-lr-boundary-001/**'
+      - '.github/workflows/cog-optimizer-lr-boundary-001.yaml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: cog-opt-lr-boundary-001-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+env:
+  OMP_NUM_THREADS: '4'
+  MKL_NUM_THREADS: '4'
+  OPENBLAS_NUM_THREADS: '4'
+jobs:
+  prepare:
+    if: (github.event_name == 'workflow_dispatch' && github.ref_name == 'research/cog-optimizer-lr-boundary-001') || (github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'research/cog-optimizer-lr-boundary-001' && github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+      - uses: actions/download-artifact@v4
+        with:
+          name: corpus
+          path: ${{ runner.temp }}/corpus
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46039004295'
+      - name: Verify original corpus and run full-size peak stress
+        run: |
+          python research/math-repair-009/recover009.py corpus --data "$RUNNER_TEMP/corpus"
+          PYTHONPATH=research/algorithm-discovery-001 python research/optimizer-lr-boundary-001/peak_check.py --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/preflight/peak.json" --threads 4
+          python -m py_compile research/optimizer-lr-boundary-001/*.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lr-boundary-preflight
+          path: ${{ runner.temp }}/preflight
+          if-no-files-found: error
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lr-boundary-corpus
+          path: ${{ runner.temp }}/corpus
+          if-no-files-found: error
+          retention-days: 30
+  screen:
+    needs: prepare
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        rate: ['0.002', '0.003']
+        seed: [9101, 9109]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+      - run: python -m pip freeze > "$RUNNER_TEMP/environment.txt"
+      - uses: actions/download-artifact@v4
+        with:
+          name: lr-boundary-corpus
+          path: ${{ runner.temp }}/corpus
+      - name: Matched fixed-budget AdamW extension
+        run: |
+          python research/optimizer-lr-boundary-001/run_boundary.py --rate '${{ matrix.rate }}' --seed '${{ matrix.seed }}' --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/fit" --threads 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lr-boundary-fit-${{ matrix.rate }}-${{ matrix.seed }}
+          path: |
+            ${{ runner.temp }}/fit/
+            ${{ runner.temp }}/environment.txt
+          if-no-files-found: warn
+          retention-days: 30
+  aggregate:
+    needs: screen
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: opt-adamw-*
+          path: ${{ runner.temp }}/historical
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46075420494'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: lr-boundary-fit-*
+          path: ${{ runner.temp }}/new
+      - run: python research/optimizer-lr-boundary-001/aggregate_boundary.py --historical "$RUNNER_TEMP/historical" --new "$RUNNER_TEMP/new" --out "$RUNNER_TEMP/summary/comparison.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lr-boundary-comparison
+          path: ${{ runner.temp }}/summary
+          if-no-files-found: error
+          retention-days: 30
