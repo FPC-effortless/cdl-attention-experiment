@@ -1,0 +1,104 @@
+name: COG Adaptive Repair 002
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [research/cog-adaptive-balance-001]
+    types: [opened, reopened, synchronize, labeled]
+    paths: ['research/cog-adaptive-repair-002/**', '.github/workflows/cog-adaptive-repair-002.yml']
+permissions:
+  contents: read
+  actions: read
+env:
+  OMP_NUM_THREADS: '1'
+  MKL_NUM_THREADS: '1'
+  OPENBLAS_NUM_THREADS: '1'
+  SOURCE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+  PYTHONPATH: ${{ github.workspace }}/research/cog-adaptive-repair-002:${{ github.workspace }}/research/cog-balance-001
+jobs:
+  check:
+    if: (github.event_name == 'workflow_dispatch' && github.ref_name == 'research/cog-adaptive-repair-002') || (github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'research/cog-adaptive-repair-002')
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SOURCE_SHA }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned CPU packages
+        run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0
+      - name: Check causal supervision and training entry point
+        working-directory: research/cog-adaptive-repair-002
+        run: |
+          python check_repair_objective.py --steps 32
+          python run_repair.py --help
+  replay:
+    needs: check
+    if: github.event_name == 'workflow_dispatch' || (github.event.action == 'labeled' && github.event.label.name == 'run-repair-replay')
+    timeout-minutes: 180
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        parent: [C, H, GQA, GRU]
+        seed: [9731, 9743, 9769]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SOURCE_SHA }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned CPU packages
+        run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0
+      - uses: actions/download-artifact@v4
+        with:
+          repository: ${{ github.repository }}
+          github-token: ${{ github.token }}
+          run-id: '46171359964'
+          name: trace-007-corpus
+          path: ${{ runner.temp }}/corpus
+      - name: Reproduce one parent and its matched continuations
+        env:
+          PARENT_ARM: ${{ matrix.parent }}
+          SEED: ${{ matrix.seed }}
+        run: |
+          python research/cog-adaptive-repair-002/repair_replay.py fit --parent-arm "$PARENT_ARM" --seed "$SEED" --corpus "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/fits"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: repair-002-${{ matrix.parent }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/fits
+          retention-days: 14
+          if-no-files-found: warn
+  report:
+    needs: replay
+    if: always() && (needs.replay.result == 'success' || needs.replay.result == 'failure')
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SOURCE_SHA }}
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: repair-002-*
+          path: collected
+      - name: Verify and aggregate terminal readouts
+        shell: bash
+        run: |
+          set -o pipefail
+          python research/cog-adaptive-repair-002/repair_replay.py collect --input collected --out report | tee -a "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: repair-002-verified-report
+          path: report/
+          retention-days: 30
+          if-no-files-found: warn

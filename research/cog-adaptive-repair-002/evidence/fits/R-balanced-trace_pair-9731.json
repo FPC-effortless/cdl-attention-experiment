@@ -1,0 +1,396 @@
+{
+  "arm": "R",
+  "seed": 9731,
+  "data": "balanced",
+  "regime": "trace_pair",
+  "parameters": 1095248,
+  "steps": 256,
+  "question_streams": 2048,
+  "question_bytes": 246592,
+  "real_text_replay_targets": 32768,
+  "training_sha256": "e3532db791707a2507182a3c1b63159490ad2b981c3e07a6f8006d804e2acc04",
+  "parent_sha256": "68a1d2a14a59d2461fd9a5825ad91b952c833426b3c5f377fd0610a3cae10fdc",
+  "trained_weights_sha256": "8018ff769ee91b3f7d617bdd4ce14a287f8b59d878575460f2c49532f0a70063",
+  "training_cpu_seconds": 60.47799014699999,
+  "assessment": {
+    "dev_bpb": 3.835586983025777,
+    "panels": {
+      "retrieval": {
+        "worlds": 64,
+        "sha256": "1648d21a5b08b507508d5e09e515afe3366ec115462c7827e1db838734cc4f3e",
+        "correct": 64,
+        "answers": 128,
+        "both_correct": 16,
+        "answers_changed": 26,
+        "valid_answers": 128,
+        "answer_nll_nats": 1.1510788202285767,
+        "multiclass_brier": 0.6398079991340637
+      },
+      "conflict": {
+        "worlds": 64,
+        "sha256": "60aadefc23e98459cd98dc7a971c8b3ecfcdc212a312de8d0c6f389663700df6",
+        "correct": 64,
+        "answers": 128,
+        "both_correct": 14,
+        "answers_changed": 28,
+        "valid_answers": 128,
+        "answer_nll_nats": 1.108353853225708,
+        "multiclass_brier": 0.6039327383041382
+      },
+      "composition_seen": {
+        "worlds": 64,
+        "sha256": "8f7c630d8449f894b26391226d82c2d891d92a83056c5ee4738a0316fd2722a2",
+        "correct": 32,
+        "answers": 128,
+        "both_correct": 6,
+        "answers_changed": 23,
+        "valid_answers": 128,
+        "answer_nll_nats": 1.6384903192520142,
+        "multiclass_brier": 0.8693474531173706
+      },
+      "composition_held": {
+        "worlds": 64,
+        "sha256": "a795569033cc8d20355562a663ed92bc8a5b048c73c775c861b04a224577813b",
+        "correct": 60,
+        "answers": 128,
+        "both_correct": 15,
+        "answers_changed": 27,
+        "valid_answers": 128,
+        "answer_nll_nats": 1.2162808179855347,
+        "multiclass_brier": 0.6543960571289062
+      },
+      "long_gap": {
+        "worlds": 64,
+        "sha256": "dd93b50cd9d1e0b60206b4222f2efb3bcaec3f6366d3c9f08b73eadaea718093",
+        "correct": 58,
+        "answers": 128,
+        "both_correct": 12,
+        "answers_changed": 22,
+        "valid_answers": 128,
+        "answer_nll_nats": 1.2424077987670898,
+        "multiclass_brier": 0.6482672691345215
+      },
+      "reordered_syntax": {
+        "worlds": 64,
+        "sha256": "3fab585a612cac813eaf72ed9ae48aae242cb641d120fdb2e5d9671a2e3fb212",
+        "correct": 62,
+        "answers": 128,
+        "both_correct": 14,
+        "answers_changed": 33,
+        "valid_answers": 128,
+        "answer_nll_nats": 1.131137728691101,
+        "multiclass_brier": 0.6205992698669434
+      },
+      "english_revision": {
+        "worlds": 64,
+        "sha256": "ce559e80d8ae8e1aaa69941948e91420236888b62e7644c1096bbd5e8f08c722",
+        "correct": 69,
+        "answers": 128,
+        "both_correct": 17,
+        "answers_changed": 30,
+        "valid_answers": 128,
+        "answer_nll_nats": 0.988146960735321,
+        "multiclass_brier": 0.569474458694458
+      },
+      "english_irrelevant_revision": {
+        "worlds": 64,
+        "sha256": "3bede78ec31ecfb8a7391078e1cf3fc4344f1f0e4dcc72fac2e2abc7a62caae0",
+        "correct": 58,
+        "answers": 128,
+        "both_correct": 29,
+        "answers_changed": 0,
+        "valid_answers": 128,
+        "answer_nll_nats": 1.2027368545532227,
+        "multiclass_brier": 0.6948956847190857
+      },
+      "english_held_paraphrase": {
+        "worlds": 64,
+        "sha256": "aa022235b3bebe209eabee149aea8843eaafba65172bcfe12f5aa942c255f745",
+        "correct": 45,
+        "answers": 128,
+        "both_correct": 9,
+        "answers_changed": 16,
+        "valid_answers": 128,
+        "answer_nll_nats": 1.2932864427566528,
+        "multiclass_brier": 0.7039306163787842
+      }
+    },
+    "confirmation": {
+      "balanced_familiar": {
+        "worlds": 64,
+        "correct": 59,
+        "answers": 128,
+        "both_correct": 10,
+        "answers_changed": 24,
+        "target_changed": 64,
+        "sha256": "96016f8f8df30c6bc34341705c71908d45a825176002c5eb8717aeb48237d877"
+      },
+      "balanced_new_names": {
+        "worlds": 64,
+        "correct": 50,
+        "answers": 128,
+        "both_correct": 9,
+        "answers_changed": 15,
+        "target_changed": 64,
+        "sha256": "563e2f629a53b6f60913e9282f1e304b377b22c6525215a08234e5776d9163c6"
+      },
+      "balanced_new_phrasing": {
+        "worlds": 64,
+        "correct": 40,
+        "answers": 128,
+        "both_correct": 3,
+        "answers_changed": 13,
+        "target_changed": 64,
+        "sha256": "a2cc103a5e44361bbf394ae901c09de8bce2ddf6c94ae8f9564b8f0875c08740"
+      },
+      "balanced_new_names_and_phrasing": {
+        "worlds": 64,
+        "correct": 25,
+        "answers": 128,
+        "both_correct": 2,
+        "answers_changed": 7,
+        "target_changed": 64,
+        "sha256": "3ad740b79125719bd5674973d9723ce0215860b495575cae39ce45b64acb9b38"
+      },
+      "balanced_irrelevant_official_edit": {
+        "worlds": 64,
+        "correct": 65,
+        "answers": 128,
+        "both_correct": 20,
+        "answers_changed": 34,
+        "target_changed": 0,
+        "sha256": "5179385b39a1194ddc0cb8878704249c4a9085ec3cbeb9fd4b3eddce726a80c9"
+      },
+      "balanced_irrelevant_rumor_edit": {
+        "worlds": 64,
+        "correct": 61,
+        "answers": 128,
+        "both_correct": 29,
+        "answers_changed": 4,
+        "target_changed": 0,
+        "sha256": "77142e82ff9fda5715e9a72367854b02581ed353d4801d807515279833c78edc"
+      },
+      "balanced_query_swap": {
+        "worlds": 64,
+        "correct": 53,
+        "answers": 128,
+        "both_correct": 0,
+        "answers_changed": 0,
+        "target_changed": 64,
+        "sha256": "f18f98e5b4fc8274a918ff2f5d7c7c85d4b18ef2d803fee6a27783b80bb04bde"
+      },
+      "symbol_value_key_order": {
+        "worlds": 64,
+        "correct": 53,
+        "answers": 128,
+        "both_correct": 12,
+        "answers_changed": 21,
+        "target_changed": 64,
+        "sha256": "781080b404f8cff7c726c730c5305935e294f766e012543946650f6d9c24df19"
+      }
+    },
+    "profile": {
+      "device": "cpu",
+      "torch_threads": 1,
+      "batch": 1,
+      "repeats": 3,
+      "prefill_tokens": 32,
+      "decode_tokens": 16,
+      "prefill_tokens_s": 6218.7108962114635,
+      "decode_tokens_s": 356.64558334010405,
+      "decode_step_median_ms": 2.697908,
+      "decode_step_p95_ms": 3.27711545,
+      "decode_seconds_by_repeat": [
+        0.044862465,
+        0.042788722,
+        0.045332699
+      ],
+      "batch_vs_stream_max_abs_logit_error": 5.7220458984375e-06,
+      "final_carried_tensor_state": {
+        "logical_bytes": 17176,
+        "backing_tensor_bytes": 17176
+      },
+      "process_lifetime_peak_rss_kib_linux": 752132,
+      "package_energy_j_per_decode_token": null,
+      "package_dram_read_plus_write_bytes_per_decode_token": null,
+      "hardware_counter_scope": "host package totals during decode; includes co-tenants and sampling overhead. Null when counters are unavailable."
+    }
+  },
+  "read_disabled": {
+    "panels": {
+      "retrieval": {
+        "worlds": 64,
+        "sha256": "1648d21a5b08b507508d5e09e515afe3366ec115462c7827e1db838734cc4f3e",
+        "correct": 36,
+        "answers": 128,
+        "both_correct": 0,
+        "answers_changed": 0,
+        "valid_answers": 128,
+        "answer_nll_nats": 1.4326084852218628,
+        "multiclass_brier": 0.7647202610969543
+      },
+      "conflict": {
+        "worlds": 64,
+        "sha256": "60aadefc23e98459cd98dc7a971c8b3ecfcdc212a312de8d0c6f389663700df6",
+        "correct": 27,
+        "answers": 128,
+        "both_correct": 0,
+        "answers_changed": 0,
+        "valid_answers": 128,
+        "answer_nll_nats": 1.4519829750061035,
+        "multiclass_brier": 0.7748491764068604
+      },
+      "composition_seen": {
+        "worlds": 64,
+        "sha256": "8f7c630d8449f894b26391226d82c2d891d92a83056c5ee4738a0316fd2722a2",
+        "correct": 29,
+        "answers": 128,
+        "both_correct": 0,
+        "answers_changed": 0,
+        "valid_answers": 128,
+        "answer_nll_nats": 1.4393525123596191,
+        "multiclass_brier": 0.7705713510513306
+      },
+      "composition_held": {
+        "worlds": 64,
+        "sha256": "a795569033cc8d20355562a663ed92bc8a5b048c73c775c861b04a224577813b",
+        "correct": 32,
+        "answers": 128,
+        "both_correct": 0,
+        "answers_changed": 0,
+        "valid_answers": 128,
+        "answer_nll_nats": 1.475849986076355,
+        "multiclass_brier": 0.7866867184638977
+      },
+      "long_gap": {
+        "worlds": 64,
+        "sha256": "dd93b50cd9d1e0b60206b4222f2efb3bcaec3f6366d3c9f08b73eadaea718093",
+        "correct": 30,
+        "answers": 128,
+        "both_correct": 0,
+        "answers_changed": 0,
+        "valid_answers": 122,
+        "answer_nll_nats": 1.557947039604187,
+        "multiclass_brier": 0.7760658860206604
+      },
+      "reordered_syntax": {
+        "worlds": 64,
+        "sha256": "3fab585a612cac813eaf72ed9ae48aae242cb641d120fdb2e5d9671a2e3fb212",
+        "correct": 37,
+        "answers": 128,
+        "both_correct": 0,
+        "answers_changed": 0,
+        "valid_answers": 128,
+        "answer_nll_nats": 1.4017935991287231,
+        "multiclass_brier": 0.7522258758544922
+      },
+      "english_revision": {
+        "worlds": 64,
+        "sha256": "ce559e80d8ae8e1aaa69941948e91420236888b62e7644c1096bbd5e8f08c722",
+        "correct": 39,
+        "answers": 128,
+        "both_correct": 0,
+        "answers_changed": 0,
+        "valid_answers": 128,
+        "answer_nll_nats": 1.4165287017822266,
+        "multiclass_brier": 0.7604876160621643
+      },
+      "english_irrelevant_revision": {
+        "worlds": 64,
+        "sha256": "3bede78ec31ecfb8a7391078e1cf3fc4344f1f0e4dcc72fac2e2abc7a62caae0",
+        "correct": 16,
+        "answers": 128,
+        "both_correct": 8,
+        "answers_changed": 0,
+        "valid_answers": 128,
+        "answer_nll_nats": 1.4438204765319824,
+        "multiclass_brier": 0.7746526002883911
+      },
+      "english_held_paraphrase": {
+        "worlds": 64,
+        "sha256": "aa022235b3bebe209eabee149aea8843eaafba65172bcfe12f5aa942c255f745",
+        "correct": 29,
+        "answers": 128,
+        "both_correct": 0,
+        "answers_changed": 0,
+        "valid_answers": 128,
+        "answer_nll_nats": 1.4885555505752563,
+        "multiclass_brier": 0.7934888601303101
+      }
+    },
+    "confirmation": {
+      "balanced_familiar": {
+        "worlds": 64,
+        "correct": 31,
+        "answers": 128,
+        "both_correct": 0,
+        "answers_changed": 0,
+        "target_changed": 64,
+        "sha256": "96016f8f8df30c6bc34341705c71908d45a825176002c5eb8717aeb48237d877"
+      },
+      "balanced_new_names": {
+        "worlds": 64,
+        "correct": 31,
+        "answers": 128,
+        "both_correct": 0,
+        "answers_changed": 0,
+        "target_changed": 64,
+        "sha256": "563e2f629a53b6f60913e9282f1e304b377b22c6525215a08234e5776d9163c6"
+      },
+      "balanced_new_phrasing": {
+        "worlds": 64,
+        "correct": 31,
+        "answers": 128,
+        "both_correct": 0,
+        "answers_changed": 0,
+        "target_changed": 64,
+        "sha256": "a2cc103a5e44361bbf394ae901c09de8bce2ddf6c94ae8f9564b8f0875c08740"
+      },
+      "balanced_new_names_and_phrasing": {
+        "worlds": 64,
+        "correct": 31,
+        "answers": 128,
+        "both_correct": 0,
+        "answers_changed": 0,
+        "target_changed": 64,
+        "sha256": "3ad740b79125719bd5674973d9723ce0215860b495575cae39ce45b64acb9b38"
+      },
+      "balanced_irrelevant_official_edit": {
+        "worlds": 64,
+        "correct": 28,
+        "answers": 128,
+        "both_correct": 14,
+        "answers_changed": 0,
+        "target_changed": 0,
+        "sha256": "5179385b39a1194ddc0cb8878704249c4a9085ec3cbeb9fd4b3eddce726a80c9"
+      },
+      "balanced_irrelevant_rumor_edit": {
+        "worlds": 64,
+        "correct": 28,
+        "answers": 128,
+        "both_correct": 14,
+        "answers_changed": 0,
+        "target_changed": 0,
+        "sha256": "77142e82ff9fda5715e9a72367854b02581ed353d4801d807515279833c78edc"
+      },
+      "balanced_query_swap": {
+        "worlds": 64,
+        "correct": 33,
+        "answers": 128,
+        "both_correct": 0,
+        "answers_changed": 0,
+        "target_changed": 64,
+        "sha256": "f18f98e5b4fc8274a918ff2f5d7c7c85d4b18ef2d803fee6a27783b80bb04bde"
+      },
+      "symbol_value_key_order": {
+        "worlds": 64,
+        "correct": 31,
+        "answers": 128,
+        "both_correct": 0,
+        "answers_changed": 0,
+        "target_changed": 64,
+        "sha256": "781080b404f8cff7c726c730c5305935e294f766e012543946650f6d9c24df19"
+      }
+    }
+  }
+}
