@@ -1,0 +1,300 @@
+name: COG unified parallel continuation 001
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [research/cog-unified-search-002]
+    paths:
+      - '.github/workflows/cog-unified-parallel-continuation-001.yaml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: cog-unified-parallel-continuation-001
+  cancel-in-progress: false
+env:
+  OMP_NUM_THREADS: '4'
+  MKL_NUM_THREADS: '4'
+  OPENBLAS_NUM_THREADS: '4'
+jobs:
+  prepare:
+    if: (github.event_name == 'workflow_dispatch' && github.ref_name == 'research/cog-unified-balanced-004') || (github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'research/cog-unified-balanced-004' && github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    permissions:
+      contents: read
+      actions: write
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      remaining: ${{ steps.plan.outputs.remaining }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: '5b164bc639fba66aeb450f45ab51dbd712ed88e5'
+          path: src-search
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: 'be1e18bd9348efa4a3fcbfd507fb3ced4b0aa4e8'
+          path: src-balanced
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify terminal artifacts, drain original running fits, cancel only legacy queues
+        id: plan
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import concurrent.futures, hashlib, json, os, pathlib, re, shutil, stat, time, urllib.error, urllib.request, zipfile
+          ROOT=pathlib.Path(os.environ["RUNNER_TEMP"])
+          REPO=os.environ["GITHUB_REPOSITORY"]
+          TOKEN=os.environ["GH_TOKEN"]
+          assert REPO=="FPC-effortless/cdl-attention-experiment"
+          SEARCH=("NN_native_native","SS_presence_factor","BB_presence_factor","GQA","SS_native_native","BB_native_native","NN_native_factor","NN_presence_native","NN_presence_factor","SS_native_factor","SS_presence_native","BB_native_factor","BB_presence_native","SS_native_native_mixed","SS_presence_factor_mixed","SS_native_native_fixed","SS_presence_factor_fixed")
+          SEEDS=(9501,9511,9529)
+          SPECS={
+           "search":(46124093141,"COG-UNIFIED-SEARCH-002 joint whole-model search","unified-joint-fit-",SEARCH,4),
+           "balanced":(46126269378,"COG-UNIFIED-BALANCED-004 paired learning-objective search","balanced-004-fit-",SEARCH[:4],3),
+          }
+          CORPUS="2955e5b6e772cf4539615b0585c1b522f7cf168c3c8e47c95b29dc97dda40c35"
+          BASE_FILES=("model.py","variants.py","integrated.py","knowledge.py","train.py","aggregate.py","PROTOCOL.md","SOURCE_LOCK.json","original014/hold_reset.py","original014/hold_grad.py","original014/hold_repair.py","original014/hierarchical.py","original014/scan.py")
+          BAL_FILES=("space.py","balanced.py","boundary.py","PROTOCOL.md","balanced_preflight.py","verify_balanced.py","audit_objective.py")
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+           def redirect_request(self,*args,**kwargs): return None
+          opener=urllib.request.build_opener(NoRedirect)
+          def request(path,method="GET"):
+           url="https://api.github.com/repos/"+REPO+"/actions/"+path
+           req=urllib.request.Request(url,method=method,headers={"Authorization":"Bearer "+TOKEN,"Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28"})
+           return opener.open(req,timeout=90)
+          def api(path):
+           with request(path) as r:return json.load(r)
+          def sha(p):
+           with p.open("rb") as f:return hashlib.file_digest(f,"sha256").hexdigest()
+          def job_key(j):
+           m=re.fullmatch(r"train \(([^,]+), (\d+)\)",j["name"])
+           return (m[1],int(m[2])) if m else None
+          def jobs(run):
+           d=api(f"runs/{run}/jobs?per_page=100")
+           assert len(d["jobs"])==d["total_count"],"incomplete job listing"
+           return d["jobs"]
+          def artifacts(run):
+           d=api(f"runs/{run}/artifacts?per_page=100")
+           assert len(d["artifacts"])==d["total_count"],"incomplete artifact listing"
+           return {a["name"]:a for a in d["artifacts"] if not a["expired"]}
+          def download(a,dest):
+           assert a["digest"].startswith("sha256:")
+           tmp=dest.with_suffix(".zip")
+           try:
+            with request(f"artifacts/{a['id']}/zip") as r,tmp.open("wb") as f:shutil.copyfileobj(r,f)
+           except urllib.error.HTTPError as e:
+            assert e.code in (301,302,303,307,308),f"artifact HTTP {e.code}"
+            loc=e.headers["Location"];assert loc.startswith("https://")
+            # Do not forward GitHub credentials to artifact storage.
+            with urllib.request.urlopen(loc,timeout=180) as r,tmp.open("wb") as f:shutil.copyfileobj(r,f)
+           assert sha(tmp)==a["digest"].split(":",1)[1],"artifact ZIP digest mismatch"
+           dest.mkdir(parents=True,exist_ok=False)
+           with zipfile.ZipFile(tmp) as z:
+            for i in z.infolist():
+             p=pathlib.PurePosixPath(i.filename)
+             assert not p.is_absolute() and ".." not in p.parts and not stat.S_ISLNK(i.external_attr>>16)
+            z.extractall(dest)
+           tmp.unlink()
+          def source_lock(campaign):
+           root=pathlib.Path(os.environ["GITHUB_WORKSPACE"])/("src-search" if campaign=="search" else "src-balanced")/"research"
+           result={n:sha(root/"unified-search-002"/n) for n in BASE_FILES}
+           if campaign=="balanced":result.update({"balanced004/"+n:sha(root/"unified-balanced-004"/n) for n in BAL_FILES})
+           return result
+          def verify(dest,campaign,run,k):
+           r=json.loads((dest/"result.json").read_text());c=r["config"]
+           assert (c["arm"],c["seed"])==k and str(c["run_id"])==str(run)
+           assert r["status"]=="TERMINAL_DEVELOPMENT_ONLY" and r["terminal"] and r["reload_verified"]
+           assert c["steps"]==1024 and c["targets"]==12582912 and c["examples4"]==c["examples8"]==8192 and c["corpus"]==CORPUS
+           assert c["source"]==source_lock(campaign),"source lock mismatch"
+           for name,key in (("checkpoint.pt","checkpoint_sha256"),("model.safetensors","model_sha256"),("metrics.json","metrics_sha256")):assert sha(dest/name)==r[key]
+           q=json.loads((dest/"receipt.json").read_text());assert q["terminal"] and q["step"]==1024 and q["sha256"]==r["checkpoint_sha256"] and q["config"]==c
+           if campaign=="balanced":assert (dest/"balanced_panel.json").is_file()
+           return r["checkpoint_sha256"]
+          def drain(campaign):
+           run,name,prefix,arms,minimum=SPECS[campaign]
+           expected={(a,s) for a in arms for s in SEEDS}
+           info=api(f"runs/{run}");assert info["name"]==name and info["id"]==run
+           initial=jobs(run);assert {job_key(j) for j in initial if job_key(j)}==expected
+           assert any(j["name"]=="prepare" and j["conclusion"]=="success" for j in initial)
+           root=ROOT/"recovered"/campaign;root.mkdir(parents=True,exist_ok=True)
+           records={}
+           def snapshot():
+            jj=jobs(run);aa=artifacts(run)
+            for j in jj:
+             k=job_key(j)
+             if k is None or j["conclusion"]!="success":continue
+             n=prefix+k[0]+"-"+str(k[1])
+             assert n in aa,"successful training has no available artifact: "+n
+             if k not in records:
+              a=aa[n];dest=root/n;download(a,dest)
+              records[k]={"arm":k[0],"seed":k[1],"artifact_id":a["id"],"artifact_digest":a["digest"],"checkpoint_sha256":verify(dest,campaign,run,k),"source_run_id":run}
+            return jj
+           snapshot();assert len(records)>=minimum,"previously verified completions missing"
+           # Drain jobs that were already executing when migration started. Do not cancel
+           # them mid-fit. The serial matrix may start a successor in the short handoff.
+           active={j["id"] for j in initial if job_key(j) and j["status"]=="in_progress"}
+           deadline=time.monotonic()+3300
+           while active:
+            jj=jobs(run);active={j["id"] for j in jj if j["id"] in active and j["status"]!="completed"}
+            if not active:break
+            assert time.monotonic()<deadline,"drain timed out; legacy queue left intact"
+            time.sleep(15)
+           snapshot()
+           # Every observed successful fit has been verified before retiring the old run.
+           if api(f"runs/{run}")["status"]!="completed":
+            try:
+             with request(f"runs/{run}/cancel","POST") as r:assert r.status==202
+            except urllib.error.HTTPError as e:
+             if e.code!=409:raise
+            until=time.monotonic()+360
+            while api(f"runs/{run}")["status"]!="completed":
+             assert time.monotonic()<until,"old run did not stop; do not launch duplicate fits"
+             time.sleep(10)
+           snapshot()
+           # A job can upload a terminal artifact shortly before cancellation changes its
+           # conclusion. Reuse it only if its full terminal receipt verifies.
+           aa=artifacts(run)
+           for k in sorted(expected-set(records)):
+            n=prefix+k[0]+"-"+str(k[1])
+            if n not in aa:continue
+            dest=root/n
+            try:
+             download(aa[n],dest);ck=verify(dest,campaign,run,k)
+            except Exception as exc:
+             print("Nonterminal or unverified artifact retained in original run:",n,type(exc).__name__,flush=True)
+             shutil.rmtree(dest,ignore_errors=True)
+             dest.with_suffix(".zip").unlink(missing_ok=True)
+             continue
+            records[k]={"arm":k[0],"seed":k[1],"artifact_id":aa[n]["id"],"artifact_digest":aa[n]["digest"],"checkpoint_sha256":ck,"source_run_id":run}
+           assert len(records)>=minimum
+           out={"campaign":campaign,"legacy_run":run,"reused":[records[k] for k in sorted(records)],"missing":[{"campaign":campaign,"arm":a,"seed":s} for a in arms for s in SEEDS if (a,s) not in records]}
+           (root.parent/(campaign+"-handoff.json")).write_text(json.dumps(out,indent=2))
+           print(campaign,"verified reused",len(records),"remaining",len(out["missing"]),flush=True)
+           return out
+          with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
+           outcomes=list(pool.map(drain,("search","balanced")))
+          matrix=[r for o in outcomes for r in o["missing"]]
+          assert sum(len(o["reused"]) for o in outcomes)+len(matrix)==63
+          with open(os.environ["GITHUB_OUTPUT"],"a") as f:
+           f.write("matrix="+json.dumps({"include":matrix},separators=(",",":"))+"\n")
+           f.write("remaining="+str(len(matrix))+"\n")
+           print("Parallel continuation plan",len(matrix),"new fits",flush=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: parallel-continuation-recovered
+          path: ${{ runner.temp }}/recovered
+          retention-days: 30
+          if-no-files-found: error
+          compression-level: 0
+  train:
+    needs: prepare
+    if: needs.prepare.outputs.remaining != '0'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    strategy:
+      fail-fast: false
+      # Intentionally no max-parallel: GitHub allocates available standard runners.
+      matrix: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.campaign == 'search' && '5b164bc639fba66aeb450f45ab51dbd712ed88e5' || 'be1e18bd9348efa4a3fcbfd507fb3ced4b0aa4e8' }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+      - uses: actions/download-artifact@v4
+        with:
+          name: unified-joint-corpus
+          path: ${{ runner.temp }}/corpus
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46124093141'
+      - name: Exact original scientific fit
+        env:
+          CAMPAIGN: ${{ matrix.campaign }}
+          ARM: ${{ matrix.arm }}
+          SEED: ${{ matrix.seed }}
+        run: |
+          if [ "$CAMPAIGN" = search ]; then
+            python research/unified-search-002/train.py --arm "$ARM" --seed "$SEED" --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/fit" --threads 4
+          elif [ "$CAMPAIGN" = balanced ]; then
+            python research/unified-balanced-004/boundary.py train --arm "$ARM" --seed "$SEED" --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/fit" --threads 4
+          else exit 1; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: parallel-${{ matrix.campaign }}-fit-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/fit
+          retention-days: 30
+          if-no-files-found: warn
+  aggregate:
+    needs: [prepare, train]
+    if: always() && needs.prepare.result == 'success' && (needs.train.result == 'success' || needs.train.result == 'skipped')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 'be1e18bd9348efa4a3fcbfd507fb3ced4b0aa4e8'
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+      - uses: actions/download-artifact@v4
+        with:
+          name: parallel-continuation-recovered
+          path: ${{ runner.temp }}/fits
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: parallel-search-fit-*
+          path: ${{ runner.temp }}/fits/search
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: parallel-balanced-fit-*
+          path: ${{ runner.temp }}/fits/balanced
+      - name: Verify and aggregate all 51 original search fits
+        run: python research/unified-search-002/aggregate.py --input "$RUNNER_TEMP/fits/search" --out "$RUNNER_TEMP/summary/search-comparison.json"
+      - name: Replay all 12 paired comparisons across the two authorized run identities
+        run: |
+          python - <<'PY'
+          import json, os, pathlib, sys
+          sys.path.insert(0,"research/unified-balanced-004")
+          import boundary as b
+          original=b.read_fit
+          allowed={str(46124093141),os.environ["GITHUB_RUN_ID"]}
+          def admitted(folder,new):
+           if new:return original(folder,new)
+           r=json.loads((pathlib.Path(folder)/"result.json").read_text())
+           run=str(r["config"]["run_id"]);assert run in allowed,"unexpected original run"
+           old=b.PARENT_RUN
+           try:
+            b.PARENT_RUN=run
+            return original(folder,new)
+           finally:b.PARENT_RUN=old
+          b.read_fit=admitted
+          sys.argv=["boundary.py","compare","--original",os.environ["RUNNER_TEMP"]+"/fits/search","--new",os.environ["RUNNER_TEMP"]+"/fits/balanced","--out",os.environ["RUNNER_TEMP"]+"/summary/balanced-comparison.json","--threads","4"]
+          b.main()
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: parallel-continuation-comparison
+          path: ${{ runner.temp }}/summary
+          retention-days: 30
+          if-no-files-found: error
