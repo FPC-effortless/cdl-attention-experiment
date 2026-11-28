@@ -5,20 +5,19 @@ on:
     branches: [research/cog-unified-search-002]
     paths:
       - '.github/workflows/cog-unified-parallel-continuation-001.yaml'
-  workflow_dispatch:
 permissions:
   contents: read
   actions: read
 concurrency:
   group: cog-unified-parallel-continuation-001
-  cancel-in-progress: false
+  cancel-in-progress: ${{ github.event_name == 'pull_request' && github.event.before == 'ad1ac26c411c21dc73b277aa9f8a5410977234d7' }}
 env:
   OMP_NUM_THREADS: '4'
   MKL_NUM_THREADS: '4'
   OPENBLAS_NUM_THREADS: '4'
 jobs:
   prepare:
-    if: (github.event_name == 'workflow_dispatch' && github.ref_name == 'research/cog-unified-balanced-004') || (github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'research/cog-unified-balanced-004' && github.event.pull_request.head.repo.full_name == github.repository)
+    if: github.event_name == 'pull_request' && github.event.before == 'ad1ac26c411c21dc73b277aa9f8a5410977234d7' && github.event.pull_request.head.ref == 'research/cog-unified-balanced-004' && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-24.04
     timeout-minutes: 90
     permissions:
@@ -177,6 +176,24 @@ jobs:
            (root.parent/(campaign+"-handoff.json")).write_text(json.dumps(out,indent=2))
            print(campaign,"verified reused",len(records),"remaining",len(out["missing"]),flush=True)
            return out
+          # The PR synchronization that added this workflow also queued an unwanted
+          # legacy BALANCED-004 successor. Cancel that exact redundant pending run
+          # before draining the two original campaigns. Never cancel unrelated runs.
+          duplicate=46134111879
+          dup=api(f"runs/{duplicate}")
+          assert dup["name"]==SPECS["balanced"][1] and dup["head_sha"]=="ad1ac26c411c21dc73b277aa9f8a5410977234d7"
+          dupjobs=jobs(duplicate)
+          assert not any(job_key(j) and j["conclusion"]=="success" for j in dupjobs),"unexpected completed duplicate fit; stop for custody reconciliation"
+          if dup["status"]!="completed":
+           try:
+            with request(f"runs/{duplicate}/cancel","POST") as r:assert r.status==202
+           except urllib.error.HTTPError as e:
+            if e.code!=409:raise
+           until=time.monotonic()+360
+           while api(f"runs/{duplicate}")["status"]!="completed":
+            assert time.monotonic()<until,"duplicate successor not stopped"
+            time.sleep(10)
+          print("Redundant queued successor retired:",duplicate,flush=True)
           with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
            outcomes=list(pool.map(drain,("search","balanced")))
           matrix=[r for o in outcomes for r in o["missing"]]
