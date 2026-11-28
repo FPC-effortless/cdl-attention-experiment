@@ -1,0 +1,364 @@
+{
+  "seed": 9731,
+  "checkpoint_sha256": "4d60ed82289f1b4bea1e8a64649d98b61e6f01130aebb69d75dd21487f49df30",
+  "symbol": [
+    {
+      "digit": 0,
+      "windows": [
+        "00!a0",
+        "00!b0",
+        "00!c0",
+        "00!d0"
+      ],
+      "max_controller_logit_change_across_entities": 0.7531225681304932,
+      "roles": [
+        3,
+        3,
+        1,
+        3
+      ],
+      "slots": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "digit": 1,
+      "windows": [
+        "00!a1",
+        "00!b1",
+        "00!c1",
+        "00!d1"
+      ],
+      "max_controller_logit_change_across_entities": 0.8155868649482727,
+      "roles": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "slots": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "digit": 2,
+      "windows": [
+        "00!a2",
+        "00!b2",
+        "00!c2",
+        "00!d2"
+      ],
+      "max_controller_logit_change_across_entities": 0.8154129981994629,
+      "roles": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "slots": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "digit": 3,
+      "windows": [
+        "00!a3",
+        "00!b3",
+        "00!c3",
+        "00!d3"
+      ],
+      "max_controller_logit_change_across_entities": 0.82784104347229,
+      "roles": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "slots": [
+        3,
+        3,
+        3,
+        3
+      ]
+    }
+  ],
+  "log": [
+    {
+      "digit": 0,
+      "windows": [
+        " at 0",
+        " at 0",
+        " at 0",
+        " at 0"
+      ],
+      "max_controller_logit_change_across_entities": 0.0,
+      "roles": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "slots": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "digit": 1,
+      "windows": [
+        " at 1",
+        " at 1",
+        " at 1",
+        " at 1"
+      ],
+      "max_controller_logit_change_across_entities": 0.0,
+      "roles": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "slots": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "digit": 2,
+      "windows": [
+        " at 2",
+        " at 2",
+        " at 2",
+        " at 2"
+      ],
+      "max_controller_logit_change_across_entities": 0.0,
+      "roles": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "slots": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "digit": 3,
+      "windows": [
+        " at 3",
+        " at 3",
+        " at 3",
+        " at 3"
+      ],
+      "max_controller_logit_change_across_entities": 0.0,
+      "roles": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "slots": [
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  ],
+  "rumor": [
+    {
+      "digit": 0,
+      "windows": [
+        " at 0",
+        " at 0",
+        " at 0",
+        " at 0"
+      ],
+      "max_controller_logit_change_across_entities": 0.0,
+      "roles": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "slots": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "digit": 1,
+      "windows": [
+        " at 1",
+        " at 1",
+        " at 1",
+        " at 1"
+      ],
+      "max_controller_logit_change_across_entities": 0.0,
+      "roles": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "slots": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "digit": 2,
+      "windows": [
+        " at 2",
+        " at 2",
+        " at 2",
+        " at 2"
+      ],
+      "max_controller_logit_change_across_entities": 0.0,
+      "roles": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "slots": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "digit": 3,
+      "windows": [
+        " at 3",
+        " at 3",
+        " at 3",
+        " at 3"
+      ],
+      "max_controller_logit_change_across_entities": 0.0,
+      "roles": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "slots": [
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  ],
+  "file": [
+    {
+      "digit": 0,
+      "windows": [
+        "ode 0",
+        "ode 0",
+        "ode 0",
+        "ode 0"
+      ],
+      "max_controller_logit_change_across_entities": 0.0,
+      "roles": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "slots": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "digit": 1,
+      "windows": [
+        "ode 1",
+        "ode 1",
+        "ode 1",
+        "ode 1"
+      ],
+      "max_controller_logit_change_across_entities": 0.0,
+      "roles": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "slots": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "digit": 2,
+      "windows": [
+        "ode 2",
+        "ode 2",
+        "ode 2",
+        "ode 2"
+      ],
+      "max_controller_logit_change_across_entities": 0.0,
+      "roles": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "slots": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "digit": 3,
+      "windows": [
+        "ode 3",
+        "ode 3",
+        "ode 3",
+        "ode 3"
+      ],
+      "max_controller_logit_change_across_entities": 0.0,
+      "roles": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "slots": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

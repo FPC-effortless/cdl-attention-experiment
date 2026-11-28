@@ -1,0 +1,62 @@
+{
+  "checkpoint_sha256": "8018ff769ee91b3f7d617bdd4ce14a287f8b59d878575460f2c49532f0a70063",
+  "arm": "R",
+  "scale": "1m",
+  "seed": 9731,
+  "load": {
+    "immediate": {
+      "pairs_correct": 154,
+      "pairs": 384,
+      "answer_switches": 182,
+      "mean_max_digit_logit_change": 2.5036888010799885
+    },
+    "short_one_identity": {
+      "pairs_correct": 16,
+      "pairs": 384,
+      "answer_switches": 46,
+      "mean_max_digit_logit_change": 0.6189625809590021
+    },
+    "long_one_identity": {
+      "pairs_correct": 20,
+      "pairs": 384,
+      "answer_switches": 52,
+      "mean_max_digit_logit_change": 0.3292556131879489
+    },
+    "long_three_identities": {
+      "pairs_correct": 24,
+      "pairs": 384,
+      "answer_switches": 64,
+      "mean_max_digit_logit_change": 0.3172210802634557
+    },
+    "target_last": {
+      "pairs_correct": 94,
+      "pairs": 384,
+      "answer_switches": 182,
+      "mean_max_digit_logit_change": 0.982356866200765
+    },
+    "gap_64": {
+      "pairs_correct": 23,
+      "pairs": 384,
+      "answer_switches": 84,
+      "mean_max_digit_logit_change": 0.19642134010791779
+    }
+  },
+  "symbol": {
+    "dev_worlds": 192,
+    "train_probe_worlds": 384,
+    "head": {
+      "single": 0.2630208333333333,
+      "fact_pairs": 0.15364583333333334,
+      "query_pairs": 0.010416666666666666,
+      "grid": 0.0
+    },
+    "probe": {
+      "final": {
+        "single": 0.2799479166666667,
+        "fact_pairs": 0.03125,
+        "query_pairs": 0.0234375,
+        "grid": 0.0
+      }
+    }
+  }
+}
