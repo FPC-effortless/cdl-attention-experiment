@@ -1,0 +1,52 @@
+name: COG unified queue handoff guard
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [research/cog-unified-search-002]
+    paths:
+      - '.github/workflows/cog-unified-parallel-queue-guard.yaml'
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: cog-unified-queue-handoff-guard
+  cancel-in-progress: false
+jobs:
+  retire-duplicate-queues:
+    if: github.event.pull_request.head.ref == 'research/cog-unified-balanced-004' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Retire only the two redundant handoff runs while preserving the active continuation
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import json, os, time, urllib.error, urllib.request
+          repo=os.environ['GITHUB_REPOSITORY']
+          assert repo=='FPC-effortless/cdl-attention-experiment'
+          def req(path,method='GET'):
+              q=urllib.request.Request('https://api.github.com/repos/'+repo+'/actions/'+path,method=method,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'})
+              with urllib.request.urlopen(q,timeout=45) as r:
+                  return json.load(r) if method=='GET' else r.status
+          primary=req('runs/46134111909')
+          assert primary['name']=='COG unified parallel continuation 001' and primary['head_sha']=='ad1ac26c411c21dc73b277aa9f8a5410977234d7'
+          assert primary['status']!='completed' or primary['conclusion']=='success','Primary continuation did not succeed; preserve successor for review'
+          for run,name,sha in [(46134111879,'COG-UNIFIED-BALANCED-004 paired learning-objective search','ad1ac26c411c21dc73b277aa9f8a5410977234d7'),(46134170029,'COG unified parallel continuation 001','8106797e4d0e9157d2229a1c9658911749ed8f3b')]:
+              d=req(f'runs/{run}')
+              assert d['name']==name and d['head_sha']==sha
+              if d['status']=='completed':
+                  print('Already terminal:',run,d['conclusion']);continue
+              j=req(f'runs/{run}/jobs?per_page=100')
+              assert j['total_count']==len(j['jobs'])
+              assert not any(x['name'].startswith('train (') and x['conclusion']=='success' for x in j['jobs']),'Unexpected terminal training; reconcile custody before cancellation'
+              try:
+                  assert req(f'runs/{run}/cancel','POST')==202
+              except urllib.error.HTTPError as e:
+                  if e.code!=409:raise
+              deadline=time.monotonic()+180
+              while req(f'runs/{run}')['status']!='completed':
+                  assert time.monotonic()<deadline,'Cancellation not yet confirmed'
+                  time.sleep(5)
+              print('Redundant queue retired:',run,flush=True)
+          PY
