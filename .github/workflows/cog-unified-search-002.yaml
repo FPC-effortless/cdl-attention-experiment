@@ -1,0 +1,119 @@
+name: COG-UNIFIED-SEARCH-002 joint whole-model search
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [research/cog-hh-u-search-001]
+    paths:
+      - 'research/unified-search-002/**'
+      - '.github/workflows/cog-unified-search-002.yaml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: cog-unified-search-002-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+env:
+  OMP_NUM_THREADS: '4'
+  MKL_NUM_THREADS: '4'
+  OPENBLAS_NUM_THREADS: '4'
+jobs:
+  prepare:
+    if: (github.event_name == 'workflow_dispatch' && github.ref_name == 'research/cog-unified-search-002') || (github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'research/cog-unified-search-002' && github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+      - uses: actions/download-artifact@v4
+        with:
+          name: corpus
+          path: ${{ runner.temp }}/corpus
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46039004295'
+      - name: Original corpus integrity and whole-model full-batch preflight
+        run: |
+          python research/math-repair-009/recover009.py corpus --data "$RUNNER_TEMP/corpus"
+          python research/unified-search-002/train.py --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/preflight" --preflight --threads 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: unified-joint-preflight
+          path: ${{ runner.temp }}/preflight
+          if-no-files-found: warn
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: unified-joint-corpus
+          path: ${{ runner.temp }}/corpus
+          if-no-files-found: error
+          retention-days: 30
+  train:
+    needs: prepare
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        arm: [NN_native_native, SS_presence_factor, BB_presence_factor, GQA, SS_native_native, BB_native_native, NN_native_factor, NN_presence_native, NN_presence_factor, SS_native_factor, SS_presence_native, BB_native_factor, BB_presence_native, SS_native_native_mixed, SS_presence_factor_mixed, SS_native_native_fixed, SS_presence_factor_fixed]
+        seed: [9501, 9511, 9529]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+      - uses: actions/download-artifact@v4
+        with:
+          name: unified-joint-corpus
+          path: ${{ runner.temp }}/corpus
+      - name: Joint language and cognition fit
+        run: python research/unified-search-002/train.py --arm '${{ matrix.arm }}' --seed '${{ matrix.seed }}' --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/fit" --threads 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: unified-joint-fit-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/fit
+          retention-days: 30
+          if-no-files-found: warn
+  aggregate:
+    needs: train
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: unified-joint-fit-*
+          path: ${{ runner.temp }}/fits
+      - run: python research/unified-search-002/aggregate.py --input "$RUNNER_TEMP/fits" --out "$RUNNER_TEMP/summary/comparison.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: unified-joint-comparison
+          path: ${{ runner.temp }}/summary
+          retention-days: 30
+          if-no-files-found: error
