@@ -1,0 +1,157 @@
+name: COG-UNIFIED-BALANCED-004 paired learning-objective search
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [research/cog-unified-search-002]
+    paths:
+      - 'research/unified-balanced-004/**'
+      - '.github/workflows/cog-unified-balanced-004.yaml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: cog-unified-balanced-004-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+env:
+  OMP_NUM_THREADS: '4'
+  MKL_NUM_THREADS: '4'
+  OPENBLAS_NUM_THREADS: '4'
+jobs:
+  prepare:
+    if: (github.event_name == 'workflow_dispatch' && github.ref_name == 'research/cog-unified-balanced-004') || (github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'research/cog-unified-balanced-004' && github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+      - uses: actions/download-artifact@v4
+        with:
+          name: corpus
+          path: ${{ runner.temp }}/corpus
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46039004295'
+      - name: Exact corpus, independent interpreter and matched full-batch restart checks
+        run: |
+          python research/math-repair-009/recover009.py corpus --data "$RUNNER_TEMP/corpus"
+          python research/unified-balanced-004/verify_balanced.py
+          python research/unified-balanced-004/balanced_preflight.py --data "$RUNNER_TEMP/corpus" --threads 4
+          python -m py_compile research/unified-balanced-004/*.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: balanced-004-preflight
+          path: |
+            research/unified-balanced-004/balanced_verification.json
+            research/unified-balanced-004/balanced_preflight_0_4.json
+          retention-days: 30
+          if-no-files-found: warn
+      - uses: actions/upload-artifact@v4
+        with:
+          name: balanced-004-corpus
+          path: ${{ runner.temp }}/corpus
+          retention-days: 30
+          if-no-files-found: error
+  train:
+    needs: prepare
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        arm: [NN_native_native, SS_presence_factor, BB_presence_factor, GQA]
+        seed: [9501, 9511, 9529]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+      - uses: actions/download-artifact@v4
+        with:
+          name: balanced-004-corpus
+          path: ${{ runner.temp }}/corpus
+      - name: Matched whole-model balanced objective fit
+        run: python research/unified-balanced-004/boundary.py train --arm '${{ matrix.arm }}' --seed '${{ matrix.seed }}' --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/fit" --threads 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: balanced-004-fit-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/fit
+          retention-days: 30
+          if-no-files-found: warn
+  compare:
+    needs: train
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+          mkdir -p "$RUNNER_TEMP/original"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: balanced-004-fit-*
+          path: ${{ runner.temp }}/new
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: unified-joint-fit-NN_native_native-*
+          path: ${{ runner.temp }}/original
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46124093141'
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: unified-joint-fit-SS_presence_factor-*
+          path: ${{ runner.temp }}/original
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46124093141'
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: unified-joint-fit-BB_presence_factor-*
+          path: ${{ runner.temp }}/original
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46124093141'
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: unified-joint-fit-GQA-*
+          path: ${{ runner.temp }}/original
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46124093141'
+      - name: Compare all new fits with available original anchors without retraining them
+        run: python research/unified-balanced-004/boundary.py compare --original "$RUNNER_TEMP/original" --new "$RUNNER_TEMP/new" --out "$RUNNER_TEMP/summary/comparison.json" --threads 4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: balanced-004-comparison
+          path: ${{ runner.temp }}/summary
+          retention-days: 30
+          if-no-files-found: error
