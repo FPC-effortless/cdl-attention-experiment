@@ -1,0 +1,108 @@
+name: COG-HH-U-KNOWLEDGE-001 expanded cognitive architecture search
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [research/cog-hh-u-search-001]
+    paths:
+      - 'research/hh-u-knowledge-001/**'
+      - '.github/workflows/cog-hh-u-knowledge-001.yaml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: cog-hh-u-knowledge-001-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+env:
+  OMP_NUM_THREADS: '2'
+  MKL_NUM_THREADS: '2'
+  OPENBLAS_NUM_THREADS: '2'
+jobs:
+  prepare:
+    if: (github.event_name == 'workflow_dispatch' && github.ref_name == 'research/cog-hh-u-knowledge-001') || (github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'research/cog-hh-u-knowledge-001' && github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+      - name: Verify all original 014 archives and replay original closure diagnostic
+        run: python research/hh-u-knowledge-001/restore014.py --out "$RUNNER_TEMP/original014" --replay
+      - name: Verify new executable candidate interfaces
+        run: python research/hh-u-knowledge-001/experiment.py --original "$RUNNER_TEMP/original014" --out "$RUNNER_TEMP/preflight" --preflight --threads 2
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cognition-source-recovery-preflight
+          path: |
+            ${{ runner.temp }}/original014/recovery_receipt.json
+            ${{ runner.temp }}/preflight/
+          retention-days: 30
+          if-no-files-found: warn
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cognition-original014
+          path: ${{ runner.temp }}/original014
+          retention-days: 30
+          if-no-files-found: error
+  train:
+    needs: prepare
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        arm: [HH_raw, U_raw, SS_raw, GQA_raw, HH_bank, U_bank, SS_bank, protected_small, protected_matched, SS_factor, SS_pooled, SS_raw_mixed, SS_bank_mixed, SS_raw_fixed, SS_bank_fixed]
+        seed: [9401, 9411, 9429]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+      - uses: actions/download-artifact@v4
+        with:
+          name: cognition-original014
+          path: ${{ runner.temp }}/original014
+      - name: Train new matched cognitive candidate
+        run: python research/hh-u-knowledge-001/experiment.py --original "$RUNNER_TEMP/original014" --arm '${{ matrix.arm }}' --seed '${{ matrix.seed }}' --out "$RUNNER_TEMP/fit" --threads 2
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cognition-fit-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/fit/
+          retention-days: 30
+          if-no-files-found: warn
+  aggregate:
+    needs: train
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: cognition-fit-*
+          path: ${{ runner.temp }}/fits
+      - run: python research/hh-u-knowledge-001/aggregate.py --input "$RUNNER_TEMP/fits" --out "$RUNNER_TEMP/summary/comparison.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cognition-search-comparison
+          path: ${{ runner.temp }}/summary
+          retention-days: 30
+          if-no-files-found: error
