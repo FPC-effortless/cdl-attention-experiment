@@ -1,0 +1,95 @@
+{
+  "arm": "GRU",
+  "seed": 9731,
+  "condition": "mixed",
+  "steps": 256,
+  "pool_sha": "b24414873769e6b5e450b6ba2f7381c9d406b4f6e427acc3dc040dbe12b3c0ad",
+  "replay_sha": "f42c37d5e37d98cd4331d0ae7832ddc2504a93372b36784f46c3e4534ee541e7",
+  "bpb": 4.670989215373993,
+  "symbol": {
+    "grids": 0,
+    "worlds": 192,
+    "mean_margin": -2.0799537499745686e-08,
+    "single": 0.234375
+  },
+  "english": {
+    "grids": 0,
+    "worlds": 192,
+    "mean_margin": -7.140139738718669e-09,
+    "single": 0.23177083333333334
+  },
+  "transfer": {
+    "balanced_familiar": {
+      "worlds": 64,
+      "correct": 32,
+      "answers": 128,
+      "both_correct": 0,
+      "answers_changed": 0,
+      "target_changed": 64,
+      "sha256": "96016f8f8df30c6bc34341705c71908d45a825176002c5eb8717aeb48237d877"
+    },
+    "balanced_new_names": {
+      "worlds": 64,
+      "correct": 16,
+      "answers": 128,
+      "both_correct": 0,
+      "answers_changed": 0,
+      "target_changed": 64,
+      "sha256": "563e2f629a53b6f60913e9282f1e304b377b22c6525215a08234e5776d9163c6"
+    },
+    "balanced_new_phrasing": {
+      "worlds": 64,
+      "correct": 0,
+      "answers": 128,
+      "both_correct": 0,
+      "answers_changed": 0,
+      "target_changed": 64,
+      "sha256": "a2cc103a5e44361bbf394ae901c09de8bce2ddf6c94ae8f9564b8f0875c08740"
+    },
+    "balanced_new_names_and_phrasing": {
+      "worlds": 64,
+      "correct": 0,
+      "answers": 128,
+      "both_correct": 0,
+      "answers_changed": 0,
+      "target_changed": 64,
+      "sha256": "3ad740b79125719bd5674973d9723ce0215860b495575cae39ce45b64acb9b38"
+    },
+    "balanced_irrelevant_official_edit": {
+      "worlds": 64,
+      "correct": 46,
+      "answers": 128,
+      "both_correct": 23,
+      "answers_changed": 0,
+      "target_changed": 0,
+      "sha256": "5179385b39a1194ddc0cb8878704249c4a9085ec3cbeb9fd4b3eddce726a80c9"
+    },
+    "balanced_irrelevant_rumor_edit": {
+      "worlds": 64,
+      "correct": 46,
+      "answers": 128,
+      "both_correct": 23,
+      "answers_changed": 0,
+      "target_changed": 0,
+      "sha256": "77142e82ff9fda5715e9a72367854b02581ed353d4801d807515279833c78edc"
+    },
+    "balanced_query_swap": {
+      "worlds": 64,
+      "correct": 33,
+      "answers": 128,
+      "both_correct": 0,
+      "answers_changed": 0,
+      "target_changed": 64,
+      "sha256": "f18f98e5b4fc8274a918ff2f5d7c7c85d4b18ef2d803fee6a27783b80bb04bde"
+    },
+    "symbol_value_key_order": {
+      "worlds": 64,
+      "correct": 32,
+      "answers": 128,
+      "both_correct": 0,
+      "answers_changed": 0,
+      "target_changed": 64,
+      "sha256": "781080b404f8cff7c726c730c5305935e294f766e012543946650f6d9c24df19"
+    }
+  }
+}
