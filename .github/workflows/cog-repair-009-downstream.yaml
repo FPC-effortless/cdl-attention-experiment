@@ -1,0 +1,374 @@
+name: REPAIR-009 downstream native semantic transfer
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [research/cog-math-repair-009-cpu]
+    paths: ['research/math-repair-009-downstream/**', '.github/workflows/cog-repair-009-downstream.yaml']
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: repair009-downstream-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+env:
+  OMP_NUM_THREADS: '4'
+  MKL_NUM_THREADS: '4'
+  OPENBLAS_NUM_THREADS: '4'
+jobs:
+  prepare:
+    if: github.event.pull_request.head.ref == 'research/cog-repair-009-downstream' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - run: python3 -m py_compile research/math-repair-009-downstream/downstream.py
+      - uses: actions/download-artifact@v4
+        with:
+          name: corpus
+          path: ${{ runner.temp }}/corpus
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46044686359'
+      - name: Verify frozen original training and development corpus
+        run: |
+          python3 -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/pip" install numpy==2.3.5
+          PYTHONPATH=research/math-repair-009 "$RUNNER_TEMP/venv/bin/python" -c 'from data009 import verify,sha; import os; p=os.environ["RUNNER_TEMP"]+"/corpus"; assert verify(p)["split"]=="train"; assert sha(p+"/manifest.json")=="2955e5b6e772cf4539615b0585c1b522f7cf168c3c8e47c95b29dc97dda40c35"'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: verified-corpus
+          path: ${{ runner.temp }}/corpus
+          if-no-files-found: error
+          retention-days: 14
+  preflight:
+    needs: [prepare]
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        arm: [HH, U, A0, HH_ctx, U_ctx]
+        seed: [9001]
+        include:
+          - arm: HH
+            parent: HH
+          - arm: U
+            parent: U
+          - arm: A0
+            parent: A0
+          - arm: HH_ctx
+            parent: HH
+          - arm: U_ctx
+            parent: U
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: verified-corpus
+          path: ${{ runner.temp }}/corpus
+      - uses: actions/download-artifact@v4
+        with:
+          name: stage4-${{ matrix.parent }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/parent
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46044686359'
+      - name: Install pinned CPU environment
+        run: |
+          python3 -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/pip" install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          "$RUNNER_TEMP/venv/bin/pip" install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+          "$RUNNER_TEMP/venv/bin/python" -c 'import torch; assert not torch.cuda.is_available()'
+      - name: Full carried-state backward and checkpoint preflight
+        run: |
+          "$RUNNER_TEMP/venv/bin/python" -u research/math-repair-009-downstream/downstream.py preflight --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --parent "$RUNNER_TEMP/parent" --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/result"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: downstream-preflight-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/result
+          if-no-files-found: warn
+          retention-days: 30
+  stage1:
+    needs: [prepare, preflight]
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        arm: [HH, U, A0, HH_random, U_random, A0_random, HH_ctx, U_ctx]
+        seed: [9001, 9011, 9029]
+        include:
+          - arm: HH
+            parent: HH
+          - arm: U
+            parent: U
+          - arm: A0
+            parent: A0
+          - arm: HH_random
+            parent: HH
+          - arm: U_random
+            parent: U
+          - arm: A0_random
+            parent: A0
+          - arm: HH_ctx
+            parent: HH
+          - arm: U_ctx
+            parent: U
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: verified-corpus
+          path: ${{ runner.temp }}/corpus
+      - uses: actions/download-artifact@v4
+        with:
+          name: stage4-${{ matrix.parent }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/parent
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46044686359'
+      - name: Install pinned CPU environment
+        run: |
+          python3 -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/pip" install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          "$RUNNER_TEMP/venv/bin/pip" install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+          "$RUNNER_TEMP/venv/bin/python" -c 'import torch; assert not torch.cuda.is_available()'
+      - name: Full fixed-budget native semantic transfer stage 1
+        run: |
+          "$RUNNER_TEMP/venv/bin/python" -u research/math-repair-009-downstream/downstream.py train --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --stage 1 --parent "$RUNNER_TEMP/parent" --data "$RUNNER_TEMP/corpus" --out "$RUNNER_TEMP/result"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: downstream-stage1-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/result
+          if-no-files-found: warn
+          retention-days: 30
+  stage2:
+    needs: [prepare, stage1]
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        arm: [HH, U, A0, HH_random, U_random, A0_random, HH_ctx, U_ctx]
+        seed: [9001, 9011, 9029]
+        include:
+          - arm: HH
+            parent: HH
+          - arm: U
+            parent: U
+          - arm: A0
+            parent: A0
+          - arm: HH_random
+            parent: HH
+          - arm: U_random
+            parent: U
+          - arm: A0_random
+            parent: A0
+          - arm: HH_ctx
+            parent: HH
+          - arm: U_ctx
+            parent: U
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: verified-corpus
+          path: ${{ runner.temp }}/corpus
+      - uses: actions/download-artifact@v4
+        with:
+          name: stage4-${{ matrix.parent }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/parent
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46044686359'
+      - uses: actions/download-artifact@v4
+        with:
+          name: downstream-stage1-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/resume
+      - name: Install pinned CPU environment
+        run: |
+          python3 -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/pip" install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          "$RUNNER_TEMP/venv/bin/pip" install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+          "$RUNNER_TEMP/venv/bin/python" -c 'import torch; assert not torch.cuda.is_available()'
+      - name: Full fixed-budget native semantic transfer stage 2
+        run: |
+          "$RUNNER_TEMP/venv/bin/python" -u research/math-repair-009-downstream/downstream.py train --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --stage 2 --parent "$RUNNER_TEMP/parent" --data "$RUNNER_TEMP/corpus" --resume "$RUNNER_TEMP/resume" --out "$RUNNER_TEMP/result"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: downstream-stage2-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/result
+          if-no-files-found: warn
+          retention-days: 30
+  stage3:
+    needs: [prepare, stage2]
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        arm: [HH, U, A0, HH_random, U_random, A0_random, HH_ctx, U_ctx]
+        seed: [9001, 9011, 9029]
+        include:
+          - arm: HH
+            parent: HH
+          - arm: U
+            parent: U
+          - arm: A0
+            parent: A0
+          - arm: HH_random
+            parent: HH
+          - arm: U_random
+            parent: U
+          - arm: A0_random
+            parent: A0
+          - arm: HH_ctx
+            parent: HH
+          - arm: U_ctx
+            parent: U
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: verified-corpus
+          path: ${{ runner.temp }}/corpus
+      - uses: actions/download-artifact@v4
+        with:
+          name: stage4-${{ matrix.parent }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/parent
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46044686359'
+      - uses: actions/download-artifact@v4
+        with:
+          name: downstream-stage2-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/resume
+      - name: Install pinned CPU environment
+        run: |
+          python3 -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/pip" install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          "$RUNNER_TEMP/venv/bin/pip" install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+          "$RUNNER_TEMP/venv/bin/python" -c 'import torch; assert not torch.cuda.is_available()'
+      - name: Full fixed-budget native semantic transfer stage 3
+        run: |
+          "$RUNNER_TEMP/venv/bin/python" -u research/math-repair-009-downstream/downstream.py train --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --stage 3 --parent "$RUNNER_TEMP/parent" --data "$RUNNER_TEMP/corpus" --resume "$RUNNER_TEMP/resume" --out "$RUNNER_TEMP/result"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: downstream-stage3-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/result
+          if-no-files-found: warn
+          retention-days: 30
+  eval:
+    needs: [prepare, stage3]
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        arm: [HH, U, A0, HH_random, U_random, A0_random, HH_ctx, U_ctx]
+        seed: [9001, 9011, 9029]
+        include:
+          - arm: HH
+            parent: HH
+          - arm: U
+            parent: U
+          - arm: A0
+            parent: A0
+          - arm: HH_random
+            parent: HH
+          - arm: U_random
+            parent: U
+          - arm: A0_random
+            parent: A0
+          - arm: HH_ctx
+            parent: HH
+          - arm: U_ctx
+            parent: U
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: verified-corpus
+          path: ${{ runner.temp }}/corpus
+      - uses: actions/download-artifact@v4
+        with:
+          name: stage4-${{ matrix.parent }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/parent
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: '46044686359'
+      - uses: actions/download-artifact@v4
+        with:
+          name: downstream-stage3-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/resume
+      - name: Install pinned CPU environment
+        run: |
+          python3 -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/pip" install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          "$RUNNER_TEMP/venv/bin/pip" install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+          "$RUNNER_TEMP/venv/bin/python" -c 'import torch; assert not torch.cuda.is_available()'
+      - name: Independent counterfactual native qualification
+        run: |
+          "$RUNNER_TEMP/venv/bin/python" -u research/math-repair-009-downstream/downstream.py eval --arm "${{ matrix.arm }}" --seed "${{ matrix.seed }}" --parent "$RUNNER_TEMP/parent" --data "$RUNNER_TEMP/corpus" --resume "$RUNNER_TEMP/resume" --out "$RUNNER_TEMP/result"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: downstream-eval-${{ matrix.arm }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/result
+          if-no-files-found: warn
+          retention-days: 30
+  aggregate:
+    needs: [eval]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: downstream-eval-*
+          path: ${{ runner.temp }}/evaluations
+      - name: Aggregate all three seeds without selecting a favorable checkpoint
+        run: |
+          python3 - <<'PY'
+          import os, json, pathlib
+          root=pathlib.Path(os.environ['RUNNER_TEMP']); rows=[json.loads(p.read_text()) for p in (root/'evaluations').glob('*/qualification.json')]
+          arms=('HH','U','A0','HH_random','U_random','A0_random','HH_ctx','U_ctx')
+          assert len(rows)==24 and {(x['arm'],x['seed']) for x in rows}=={(a,s) for a in arms for s in (9001,9011,9029)}
+          out={}
+          for a in arms:
+              selected=[x for x in rows if x['arm']==a]; panels=[p for x in selected for p in x['panels']]
+              out[a]={'passed_all_seeds':all(x['pass_gate'] for x in selected),'per_seed_gate':{str(x['seed']):x['pass_gate'] for x in selected},'parameters':selected[0]['checkpoint']['parameters'],'held_pairs':sum(p['pairs'] for p in panels if p['held']),'held_both_correct':sum(p['exact_both'] for p in panels if p['held']),'seen_pairs':sum(p['pairs'] for p in panels if not p['held']),'seen_both_correct':sum(p['exact_both'] for p in panels if not p['held']),'false_permissions':sum(p['false_permission'] or 0 for p in panels),'prose_bpb':[x['prose']['bpb'] for x in selected]}
+          path=root/'comparison'; path.mkdir();(path/'comparison.json').write_text(json.dumps(out,indent=2));print(json.dumps(out,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: downstream-terminal-comparison
+          path: ${{ runner.temp }}/comparison
+          if-no-files-found: error
+          retention-days: 30
