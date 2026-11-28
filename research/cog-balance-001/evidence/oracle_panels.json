@@ -1,0 +1,155 @@
+{
+  "seed": 610003,
+  "worlds_per_panel": 64,
+  "checked_learned_panel_hashes": true,
+  "rules": {
+    "grammar": {
+      "retrieval": {
+        "sha256": "1648d21a5b08b507508d5e09e515afe3366ec115462c7827e1db838734cc4f3e",
+        "worlds": 64,
+        "answers": 128,
+        "correct": 128,
+        "both_correct": 64,
+        "answers_changed": 64
+      },
+      "conflict": {
+        "sha256": "60aadefc23e98459cd98dc7a971c8b3ecfcdc212a312de8d0c6f389663700df6",
+        "worlds": 64,
+        "answers": 128,
+        "correct": 128,
+        "both_correct": 64,
+        "answers_changed": 64
+      },
+      "composition_seen": {
+        "sha256": "8f7c630d8449f894b26391226d82c2d891d92a83056c5ee4738a0316fd2722a2",
+        "worlds": 64,
+        "answers": 128,
+        "correct": 128,
+        "both_correct": 64,
+        "answers_changed": 64
+      },
+      "composition_held": {
+        "sha256": "a795569033cc8d20355562a663ed92bc8a5b048c73c775c861b04a224577813b",
+        "worlds": 64,
+        "answers": 128,
+        "correct": 128,
+        "both_correct": 64,
+        "answers_changed": 64
+      },
+      "long_gap": {
+        "sha256": "dd93b50cd9d1e0b60206b4222f2efb3bcaec3f6366d3c9f08b73eadaea718093",
+        "worlds": 64,
+        "answers": 128,
+        "correct": 128,
+        "both_correct": 64,
+        "answers_changed": 64
+      },
+      "reordered_syntax": {
+        "sha256": "3fab585a612cac813eaf72ed9ae48aae242cb641d120fdb2e5d9671a2e3fb212",
+        "worlds": 64,
+        "answers": 128,
+        "correct": 128,
+        "both_correct": 64,
+        "answers_changed": 64
+      },
+      "english_revision": {
+        "sha256": "ce559e80d8ae8e1aaa69941948e91420236888b62e7644c1096bbd5e8f08c722",
+        "worlds": 64,
+        "answers": 128,
+        "correct": 128,
+        "both_correct": 64,
+        "answers_changed": 64
+      },
+      "english_irrelevant_revision": {
+        "sha256": "3bede78ec31ecfb8a7391078e1cf3fc4344f1f0e4dcc72fac2e2abc7a62caae0",
+        "worlds": 64,
+        "answers": 128,
+        "correct": 128,
+        "both_correct": 64,
+        "answers_changed": 0
+      },
+      "english_held_paraphrase": {
+        "sha256": "aa022235b3bebe209eabee149aea8843eaafba65172bcfe12f5aa942c255f745",
+        "worlds": 64,
+        "answers": 128,
+        "correct": 128,
+        "both_correct": 64,
+        "answers_changed": 64
+      }
+    },
+    "constant_0": {
+      "retrieval": {
+        "sha256": "1648d21a5b08b507508d5e09e515afe3366ec115462c7827e1db838734cc4f3e",
+        "worlds": 64,
+        "answers": 128,
+        "correct": 34,
+        "both_correct": 0,
+        "answers_changed": 0
+      },
+      "conflict": {
+        "sha256": "60aadefc23e98459cd98dc7a971c8b3ecfcdc212a312de8d0c6f389663700df6",
+        "worlds": 64,
+        "answers": 128,
+        "correct": 39,
+        "both_correct": 0,
+        "answers_changed": 0
+      },
+      "composition_seen": {
+        "sha256": "8f7c630d8449f894b26391226d82c2d891d92a83056c5ee4738a0316fd2722a2",
+        "worlds": 64,
+        "answers": 128,
+        "correct": 26,
+        "both_correct": 0,
+        "answers_changed": 0
+      },
+      "composition_held": {
+        "sha256": "a795569033cc8d20355562a663ed92bc8a5b048c73c775c861b04a224577813b",
+        "worlds": 64,
+        "answers": 128,
+        "correct": 28,
+        "both_correct": 0,
+        "answers_changed": 0
+      },
+      "long_gap": {
+        "sha256": "dd93b50cd9d1e0b60206b4222f2efb3bcaec3f6366d3c9f08b73eadaea718093",
+        "worlds": 64,
+        "answers": 128,
+        "correct": 35,
+        "both_correct": 0,
+        "answers_changed": 0
+      },
+      "reordered_syntax": {
+        "sha256": "3fab585a612cac813eaf72ed9ae48aae242cb641d120fdb2e5d9671a2e3fb212",
+        "worlds": 64,
+        "answers": 128,
+        "correct": 29,
+        "both_correct": 0,
+        "answers_changed": 0
+      },
+      "english_revision": {
+        "sha256": "ce559e80d8ae8e1aaa69941948e91420236888b62e7644c1096bbd5e8f08c722",
+        "worlds": 64,
+        "answers": 128,
+        "correct": 34,
+        "both_correct": 0,
+        "answers_changed": 0
+      },
+      "english_irrelevant_revision": {
+        "sha256": "3bede78ec31ecfb8a7391078e1cf3fc4344f1f0e4dcc72fac2e2abc7a62caae0",
+        "worlds": 64,
+        "answers": 128,
+        "correct": 34,
+        "both_correct": 17,
+        "answers_changed": 0
+      },
+      "english_held_paraphrase": {
+        "sha256": "aa022235b3bebe209eabee149aea8843eaafba65172bcfe12f5aa942c255f745",
+        "worlds": 64,
+        "answers": 128,
+        "correct": 35,
+        "both_correct": 0,
+        "answers_changed": 0
+      }
+    }
+  }
+}
