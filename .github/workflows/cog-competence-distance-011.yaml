@@ -1,0 +1,103 @@
+name: COG-COMPETENCE-DISTANCE-011 Stage A
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [research/cog-unified-balanced-004]
+    paths:
+      - 'research/competence-distance-011/**'
+      - '.github/workflows/cog-competence-distance-011.yaml'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: cog-competence-distance-011-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+env:
+  OMP_NUM_THREADS: '4'
+  MKL_NUM_THREADS: '4'
+  OPENBLAS_NUM_THREADS: '4'
+jobs:
+  prepare:
+    if: github.event.pull_request.head.ref == 'research/cog-competence-distance-011' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+          python -m py_compile research/competence-distance-011/competence.py
+          python research/competence-distance-011/competence.py preflight --out "$RUNNER_TEMP/preflight" --threads 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: competence-distance-011-preflight
+          path: ${{ runner.temp }}/preflight
+          if-no-files-found: warn
+          retention-days: 30
+  train:
+    needs: prepare
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        arm: [HH, SS, GQA, GRU, GATED_DELTA_REF]
+        regime: [near, far]
+        seed: [9501, 9511, 9529]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+      - name: Matched Stage A diagnostic training
+        env:
+          ARM: ${{ matrix.arm }}
+          REGIME: ${{ matrix.regime }}
+          SEED: ${{ matrix.seed }}
+        run: python research/competence-distance-011/competence.py train --arm "$ARM" --regime "$REGIME" --seed "$SEED" --out "$RUNNER_TEMP/fit" --threads 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: competence-distance-011-fit-${{ matrix.arm }}-${{ matrix.regime }}-${{ matrix.seed }}
+          path: ${{ runner.temp }}/fit
+          retention-days: 30
+          if-no-files-found: warn
+  aggregate:
+    needs: train
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+          python -m pip install numpy==2.3.5 safetensors==0.7.0 packaging==25.0
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: competence-distance-011-fit-*
+          path: ${{ runner.temp }}/fits
+      - run: python research/competence-distance-011/competence.py aggregate --input "$RUNNER_TEMP/fits" --out "$RUNNER_TEMP/summary/comparison.json" --threads 4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: competence-distance-011-comparison
+          path: ${{ runner.temp }}/summary
+          retention-days: 30
+          if-no-files-found: error
