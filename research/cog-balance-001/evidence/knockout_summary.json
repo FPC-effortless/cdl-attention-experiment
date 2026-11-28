@@ -1,0 +1,88 @@
+{
+  "D": {
+    "pair_gained": 1,
+    "pair_lost": 0,
+    "total_panel_worlds": 648,
+    "intact_both_correct": 21,
+    "altered_both_correct": 22,
+    "altered_minus_intact_nll": -0.00027082143006501374,
+    "selection": {
+      "positions": 201312,
+      "slow_selected": 201312,
+      "memory_selected": 201312,
+      "geometric_selected": 0,
+      "slow_updates": 201312,
+      "memory_writes": 201312
+    }
+  },
+  "E": {
+    "pair_gained": 0,
+    "pair_lost": 0,
+    "total_panel_worlds": 648,
+    "intact_both_correct": 21,
+    "altered_both_correct": 21,
+    "altered_minus_intact_nll": -5.2593372486255784e-05,
+    "selection": {
+      "positions": 201312,
+      "slow_selected": 201312,
+      "memory_selected": 201312,
+      "geometric_selected": 0,
+      "slow_updates": 122165,
+      "memory_writes": 107935
+    }
+  },
+  "F": {
+    "pair_gained": 0,
+    "pair_lost": 0,
+    "total_panel_worlds": 648,
+    "intact_both_correct": 21,
+    "altered_both_correct": 21,
+    "altered_minus_intact_nll": 6.172392103407118e-06,
+    "selection": {
+      "positions": 201312,
+      "slow_selected": 0,
+      "memory_selected": 0,
+      "geometric_selected": 0,
+      "slow_updates": 0,
+      "memory_writes": 0
+    }
+  },
+  "G": {
+    "pair_gained": 0,
+    "pair_lost": 0,
+    "total_panel_worlds": 648,
+    "intact_both_correct": 21,
+    "altered_both_correct": 21,
+    "altered_minus_intact_nll": 0.0,
+    "selection": {
+      "positions": 201312,
+      "slow_selected": 0,
+      "memory_selected": 0,
+      "geometric_selected": 0,
+      "slow_updates": 0,
+      "memory_writes": 0
+    },
+    "confidence_mean_brier": 0.253044289847215,
+    "confidence_written_event_layers": 0,
+    "confidence_total_event_layers": 288
+  },
+  "H": {
+    "pair_gained": 0,
+    "pair_lost": 0,
+    "total_panel_worlds": 648,
+    "intact_both_correct": 21,
+    "altered_both_correct": 21,
+    "altered_minus_intact_nll": 2.693246912073206e-07,
+    "selection": {
+      "positions": 201312,
+      "slow_selected": 0,
+      "memory_selected": 0,
+      "geometric_selected": 4,
+      "slow_updates": 0,
+      "memory_writes": 0
+    },
+    "confidence_mean_brier": 0.26588650544484455,
+    "confidence_written_event_layers": 0,
+    "confidence_total_event_layers": 288
+  }
+}
