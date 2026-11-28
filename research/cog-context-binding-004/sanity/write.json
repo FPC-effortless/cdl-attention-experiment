@@ -1,0 +1,9 @@
+{
+  "arm": "write",
+  "seed": 9731,
+  "steps": 119,
+  "training_answers_correct": 4,
+  "consecutive_perfect": 5,
+  "held_grids": 10,
+  "held_total": 64
+}
