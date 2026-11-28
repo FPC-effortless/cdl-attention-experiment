@@ -1,0 +1,21 @@
+{
+  "source_git_blobs": {
+    "model.py": "31c3555521469425d884c700aed01b48c4fab50e",
+    "variants.py": "76ece3b4c83a30e282141db7a29beecb10a5d41e",
+    "original014/hold_reset.py": "efc07e196073b3ba264d5df887c6bb965dfd5049",
+    "original014/hold_grad.py": "170572d776ba039784493979ba6c9c80efe6669a",
+    "original014/hold_repair.py": "00e6e8fa11d2aaedf8211f1c804cb77c7a5ebf23",
+    "original014/hierarchical.py": "c31d5be4087eedbf0e2322d0504f8d0a93bf4a3c",
+    "original014/scan.py": "1cf8699dd0f1e4572ea8b6887a0480fa81c5fd01",
+    "original014/presence.py": "c61f98f44612028f86e0e4b68c1966d213c1798c",
+    "original014/curriculum.py": "e580a292b3042ec040e12ac1ab46baae54d7c035",
+    "original014/custody014.py": "55c0948f824fb95580c1929b04da554acc175664"
+  },
+  "native_commit": "99a97c1b2ff9c669f4e45356b02083d3bc29a621",
+  "structural_search_commit": "832230478f5a2a59ca171ea5985b645e676f353f",
+  "unified014_commit": "5c51d32ebe538818833e368a897984a2c6876524",
+  "unified014_original_archive_blob": "9a49c9594c1263f1f3f47280fc656d017ae2941e",
+  "cognition001_original_manifest_entries_verified": 69,
+  "cognition001_original_evaluation_panels_replayed": 108,
+  "cognition001_original_source_private": "Not copied or published. Four-key format independently remapped; new split and tasks, not replay."
+}
