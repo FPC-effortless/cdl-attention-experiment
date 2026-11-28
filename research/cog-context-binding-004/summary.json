@@ -1,0 +1,488 @@
+{
+  "C": {
+    "symbol_grids": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "english_grids": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "symbol_single": 0.3108723958333333,
+    "english_single": 0.2646484375,
+    "symbol_margin": [
+      -6.504729390144348e-05,
+      -0.0010148131599028905,
+      -0.00010749821861584981,
+      0.0024028395613034568
+    ],
+    "english_margin": [
+      7.547438144683838e-06,
+      0.0001631900668144226,
+      1.453980803489685e-05,
+      -0.0004300133635600408
+    ],
+    "bpb": 4.276523278209061,
+    "state": 3168,
+    "median_step_ms": 2.8750605,
+    "confirmation": {
+      "balanced_familiar": [
+        0,
+        0,
+        0,
+        5
+      ],
+      "balanced_new_names": [
+        0,
+        1,
+        0,
+        3
+      ],
+      "balanced_new_phrasing": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "balanced_new_names_and_phrasing": [
+        0,
+        0,
+        2,
+        3
+      ],
+      "balanced_irrelevant_official_edit": [
+        14,
+        14,
+        13,
+        15
+      ],
+      "balanced_irrelevant_rumor_edit": [
+        14,
+        14,
+        13,
+        16
+      ],
+      "balanced_query_swap": [
+        5,
+        0,
+        0,
+        0
+      ],
+      "symbol_value_key_order": [
+        0,
+        10,
+        4,
+        10
+      ]
+    }
+  },
+  "write": {
+    "symbol_grids": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "english_grids": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "symbol_single": 0.3173828125,
+    "english_single": 0.28548177083333337,
+    "symbol_margin": [
+      -2.2488956650098164e-05,
+      -0.0010144499440987904,
+      -0.00034209589163462323,
+      -0.000571180135011673
+    ],
+    "english_margin": [
+      5.885958671569824e-07,
+      2.4860103925069175e-06,
+      -0.0010701902210712433,
+      7.578947891791661e-05
+    ],
+    "bpb": 4.233345819082482,
+    "state": 3168,
+    "median_step_ms": 2.25001475,
+    "confirmation": {
+      "balanced_familiar": [
+        0,
+        0,
+        9,
+        7
+      ],
+      "balanced_new_names": [
+        0,
+        0,
+        6,
+        9
+      ],
+      "balanced_new_phrasing": [
+        0,
+        0,
+        8,
+        6
+      ],
+      "balanced_new_names_and_phrasing": [
+        0,
+        0,
+        4,
+        5
+      ],
+      "balanced_irrelevant_official_edit": [
+        12,
+        14,
+        25,
+        18
+      ],
+      "balanced_irrelevant_rumor_edit": [
+        12,
+        14,
+        23,
+        22
+      ],
+      "balanced_query_swap": [
+        0,
+        0,
+        4,
+        1
+      ],
+      "symbol_value_key_order": [
+        1,
+        4,
+        0,
+        13
+      ]
+    }
+  },
+  "read": {
+    "symbol_grids": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "english_grids": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "symbol_single": 0.2926432291666667,
+    "english_single": 0.2805989583333333,
+    "symbol_margin": [
+      -1.0988985498746237e-05,
+      -7.438411315282185e-05,
+      -0.0007521628091732661,
+      -0.0021873613198598227
+    ],
+    "english_margin": [
+      -7.869924108187358e-05,
+      0.00031512292722860974,
+      -2.0621344447135925e-05,
+      0.0002882325400908788
+    ],
+    "bpb": 4.298566133336412,
+    "state": 3168,
+    "median_step_ms": 2.001546,
+    "confirmation": {
+      "balanced_familiar": [
+        0,
+        0,
+        1,
+        5
+      ],
+      "balanced_new_names": [
+        0,
+        0,
+        1,
+        3
+      ],
+      "balanced_new_phrasing": [
+        1,
+        1,
+        1,
+        5
+      ],
+      "balanced_new_names_and_phrasing": [
+        0,
+        0,
+        0,
+        4
+      ],
+      "balanced_irrelevant_official_edit": [
+        12,
+        14,
+        23,
+        19
+      ],
+      "balanced_irrelevant_rumor_edit": [
+        13,
+        14,
+        21,
+        19
+      ],
+      "balanced_query_swap": [
+        1,
+        0,
+        2,
+        1
+      ],
+      "symbol_value_key_order": [
+        1,
+        9,
+        4,
+        10
+      ]
+    }
+  },
+  "both": {
+    "symbol_grids": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "english_grids": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "symbol_single": 0.32877604166666663,
+    "english_single": 0.27669270833333337,
+    "symbol_margin": [
+      3.7868196765581765e-05,
+      0.001645755022764206,
+      0.0033077669019500413,
+      -0.0021937722340226173
+    ],
+    "english_margin": [
+      3.2354146242141724e-06,
+      -0.00011194311082363129,
+      -0.0008684756855169932,
+      -7.224579652150472e-06
+    ],
+    "bpb": 4.282055078676232,
+    "state": 3168,
+    "median_step_ms": 2.5233795,
+    "confirmation": {
+      "balanced_familiar": [
+        0,
+        0,
+        7,
+        4
+      ],
+      "balanced_new_names": [
+        0,
+        0,
+        2,
+        3
+      ],
+      "balanced_new_phrasing": [
+        0,
+        0,
+        10,
+        4
+      ],
+      "balanced_new_names_and_phrasing": [
+        0,
+        0,
+        2,
+        4
+      ],
+      "balanced_irrelevant_official_edit": [
+        14,
+        14,
+        24,
+        16
+      ],
+      "balanced_irrelevant_rumor_edit": [
+        14,
+        14,
+        24,
+        17
+      ],
+      "balanced_query_swap": [
+        3,
+        0,
+        2,
+        0
+      ],
+      "symbol_value_key_order": [
+        0,
+        1,
+        3,
+        13
+      ]
+    }
+  },
+  "GQA": {
+    "symbol_grids": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "english_grids": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "symbol_single": 0.3723958333333333,
+    "english_single": 0.30078125,
+    "symbol_margin": [
+      0.0011973998819788296,
+      0.01717420481145382,
+      -0.00015031235913435617,
+      0.002328284395237764
+    ],
+    "english_margin": [
+      0.0021360451355576515,
+      -0.0023694376771648726,
+      0.00014284501473108927,
+      -0.002837853506207466
+    ],
+    "bpb": 4.646119353247704,
+    "state": 49184,
+    "median_step_ms": 0.99704525,
+    "confirmation": {
+      "balanced_familiar": [
+        7,
+        5,
+        1,
+        9
+      ],
+      "balanced_new_names": [
+        2,
+        5,
+        1,
+        5
+      ],
+      "balanced_new_phrasing": [
+        6,
+        5,
+        2,
+        6
+      ],
+      "balanced_new_names_and_phrasing": [
+        1,
+        3,
+        0,
+        0
+      ],
+      "balanced_irrelevant_official_edit": [
+        19,
+        13,
+        16,
+        25
+      ],
+      "balanced_irrelevant_rumor_edit": [
+        18,
+        15,
+        16,
+        23
+      ],
+      "balanced_query_swap": [
+        0,
+        4,
+        0,
+        3
+      ],
+      "symbol_value_key_order": [
+        3,
+        6,
+        2,
+        4
+      ]
+    }
+  },
+  "GRU": {
+    "symbol_grids": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "english_grids": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "symbol_single": 0.36946614583333337,
+    "english_single": 0.2526041666666667,
+    "symbol_margin": [
+      -5.8150539795557656e-05,
+      0.0001361258327960968,
+      6.301328539848328e-06,
+      8.182848493258159e-05
+    ],
+    "english_margin": [
+      -1.7074247201283774e-07,
+      5.835729340712229e-05,
+      2.2804985443751016e-06,
+      4.4641395409901935e-07
+    ],
+    "bpb": 3.9415127960208576,
+    "state": 1056,
+    "median_step_ms": 0.62950175,
+    "confirmation": {
+      "balanced_familiar": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "balanced_new_names": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "balanced_new_phrasing": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "balanced_new_names_and_phrasing": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "balanced_irrelevant_official_edit": [
+        13,
+        14,
+        14,
+        16
+      ],
+      "balanced_irrelevant_rumor_edit": [
+        13,
+        14,
+        14,
+        16
+      ],
+      "balanced_query_swap": [
+        0,
+        0,
+        0,
+        8
+      ],
+      "symbol_value_key_order": [
+        12,
+        2,
+        2,
+        2
+      ]
+    }
+  }
+}

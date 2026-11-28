@@ -1,0 +1,120 @@
+{
+  "arm": "both",
+  "seed": 9731,
+  "steps": 256,
+  "training_sha256": "e3532db791707a2507182a3c1b63159490ad2b981c3e07a6f8006d804e2acc04",
+  "parameters": 1077494,
+  "bpb": 4.460590209417878,
+  "symbol": {
+    "grids": 0,
+    "worlds": 192,
+    "mean_margin": 3.7868196765581765e-05,
+    "single": 0.29296875
+  },
+  "english": {
+    "grids": 0,
+    "worlds": 192,
+    "mean_margin": 3.2354146242141724e-06,
+    "single": 0.2578125
+  },
+  "confirmation": {
+    "balanced_familiar": {
+      "worlds": 64,
+      "correct": 31,
+      "answers": 128,
+      "both_correct": 0,
+      "answers_changed": 0,
+      "target_changed": 64,
+      "sha256": "96016f8f8df30c6bc34341705c71908d45a825176002c5eb8717aeb48237d877"
+    },
+    "balanced_new_names": {
+      "worlds": 64,
+      "correct": 19,
+      "answers": 128,
+      "both_correct": 0,
+      "answers_changed": 0,
+      "target_changed": 64,
+      "sha256": "563e2f629a53b6f60913e9282f1e304b377b22c6525215a08234e5776d9163c6"
+    },
+    "balanced_new_phrasing": {
+      "worlds": 64,
+      "correct": 19,
+      "answers": 128,
+      "both_correct": 0,
+      "answers_changed": 0,
+      "target_changed": 64,
+      "sha256": "a2cc103a5e44361bbf394ae901c09de8bce2ddf6c94ae8f9564b8f0875c08740"
+    },
+    "balanced_new_names_and_phrasing": {
+      "worlds": 64,
+      "correct": 0,
+      "answers": 128,
+      "both_correct": 0,
+      "answers_changed": 0,
+      "target_changed": 64,
+      "sha256": "3ad740b79125719bd5674973d9723ce0215860b495575cae39ce45b64acb9b38"
+    },
+    "balanced_irrelevant_official_edit": {
+      "worlds": 64,
+      "correct": 28,
+      "answers": 128,
+      "both_correct": 14,
+      "answers_changed": 0,
+      "target_changed": 0,
+      "sha256": "5179385b39a1194ddc0cb8878704249c4a9085ec3cbeb9fd4b3eddce726a80c9"
+    },
+    "balanced_irrelevant_rumor_edit": {
+      "worlds": 64,
+      "correct": 28,
+      "answers": 128,
+      "both_correct": 14,
+      "answers_changed": 0,
+      "target_changed": 0,
+      "sha256": "77142e82ff9fda5715e9a72367854b02581ed353d4801d807515279833c78edc"
+    },
+    "balanced_query_swap": {
+      "worlds": 64,
+      "correct": 36,
+      "answers": 128,
+      "both_correct": 3,
+      "answers_changed": 36,
+      "target_changed": 64,
+      "sha256": "f18f98e5b4fc8274a918ff2f5d7c7c85d4b18ef2d803fee6a27783b80bb04bde"
+    },
+    "symbol_value_key_order": {
+      "worlds": 64,
+      "correct": 31,
+      "answers": 128,
+      "both_correct": 0,
+      "answers_changed": 0,
+      "target_changed": 64,
+      "sha256": "781080b404f8cff7c726c730c5305935e294f766e012543946650f6d9c24df19"
+    }
+  },
+  "profile": {
+    "device": "cpu",
+    "torch_threads": 1,
+    "batch": 1,
+    "repeats": 3,
+    "prefill_tokens": 32,
+    "decode_tokens": 16,
+    "prefill_tokens_s": 8357.786388038963,
+    "decode_tokens_s": 555.386683292167,
+    "decode_step_median_ms": 1.7467355,
+    "decode_step_p95_ms": 2.56891965,
+    "decode_seconds_by_repeat": [
+      0.028808757,
+      0.034077864,
+      0.026541648
+    ],
+    "batch_vs_stream_max_abs_logit_error": 4.76837158203125e-06,
+    "final_carried_tensor_state": {
+      "logical_bytes": 3168,
+      "backing_tensor_bytes": 3168
+    },
+    "process_lifetime_peak_rss_kib_linux": 800136,
+    "package_energy_j_per_decode_token": null,
+    "package_dram_read_plus_write_bytes_per_decode_token": null,
+    "hardware_counter_scope": "host package totals during decode; includes co-tenants and sampling overhead. Null when counters are unavailable."
+  }
+}

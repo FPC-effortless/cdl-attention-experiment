@@ -1,0 +1,120 @@
+{
+  "arm": "GRU",
+  "seed": 9743,
+  "steps": 256,
+  "training_sha256": "207836a4c40b520a62e0e8e80e386f718934f9d41d8ec365068f4580c7d4a7c2",
+  "parameters": 1076878,
+  "bpb": 4.0655767807870165,
+  "symbol": {
+    "grids": 0,
+    "worlds": 192,
+    "mean_margin": 0.0001361258327960968,
+    "single": 0.3619791666666667
+  },
+  "english": {
+    "grids": 0,
+    "worlds": 192,
+    "mean_margin": 5.835729340712229e-05,
+    "single": 0.2760416666666667
+  },
+  "confirmation": {
+    "balanced_familiar": {
+      "worlds": 64,
+      "correct": 38,
+      "answers": 128,
+      "both_correct": 0,
+      "answers_changed": 0,
+      "target_changed": 64,
+      "sha256": "96016f8f8df30c6bc34341705c71908d45a825176002c5eb8717aeb48237d877"
+    },
+    "balanced_new_names": {
+      "worlds": 64,
+      "correct": 15,
+      "answers": 128,
+      "both_correct": 1,
+      "answers_changed": 1,
+      "target_changed": 64,
+      "sha256": "563e2f629a53b6f60913e9282f1e304b377b22c6525215a08234e5776d9163c6"
+    },
+    "balanced_new_phrasing": {
+      "worlds": 64,
+      "correct": 39,
+      "answers": 128,
+      "both_correct": 0,
+      "answers_changed": 2,
+      "target_changed": 64,
+      "sha256": "a2cc103a5e44361bbf394ae901c09de8bce2ddf6c94ae8f9564b8f0875c08740"
+    },
+    "balanced_new_names_and_phrasing": {
+      "worlds": 64,
+      "correct": 0,
+      "answers": 128,
+      "both_correct": 0,
+      "answers_changed": 0,
+      "target_changed": 64,
+      "sha256": "3ad740b79125719bd5674973d9723ce0215860b495575cae39ce45b64acb9b38"
+    },
+    "balanced_irrelevant_official_edit": {
+      "worlds": 64,
+      "correct": 28,
+      "answers": 128,
+      "both_correct": 14,
+      "answers_changed": 0,
+      "target_changed": 0,
+      "sha256": "5179385b39a1194ddc0cb8878704249c4a9085ec3cbeb9fd4b3eddce726a80c9"
+    },
+    "balanced_irrelevant_rumor_edit": {
+      "worlds": 64,
+      "correct": 28,
+      "answers": 128,
+      "both_correct": 14,
+      "answers_changed": 0,
+      "target_changed": 0,
+      "sha256": "77142e82ff9fda5715e9a72367854b02581ed353d4801d807515279833c78edc"
+    },
+    "balanced_query_swap": {
+      "worlds": 64,
+      "correct": 30,
+      "answers": 128,
+      "both_correct": 0,
+      "answers_changed": 0,
+      "target_changed": 64,
+      "sha256": "f18f98e5b4fc8274a918ff2f5d7c7c85d4b18ef2d803fee6a27783b80bb04bde"
+    },
+    "symbol_value_key_order": {
+      "worlds": 64,
+      "correct": 33,
+      "answers": 128,
+      "both_correct": 2,
+      "answers_changed": 7,
+      "target_changed": 64,
+      "sha256": "781080b404f8cff7c726c730c5305935e294f766e012543946650f6d9c24df19"
+    }
+  },
+  "profile": {
+    "device": "cpu",
+    "torch_threads": 1,
+    "batch": 1,
+    "repeats": 3,
+    "prefill_tokens": 32,
+    "decode_tokens": 16,
+    "prefill_tokens_s": 11951.786493286085,
+    "decode_tokens_s": 1661.5943038885666,
+    "decode_step_median_ms": 0.5663515,
+    "decode_step_p95_ms": 0.7810007,
+    "decode_seconds_by_repeat": [
+      0.009629306,
+      0.009193175,
+      0.010187798
+    ],
+    "batch_vs_stream_max_abs_logit_error": 3.814697265625e-06,
+    "final_carried_tensor_state": {
+      "logical_bytes": 1056,
+      "backing_tensor_bytes": 1056
+    },
+    "process_lifetime_peak_rss_kib_linux": 741340,
+    "package_energy_j_per_decode_token": null,
+    "package_dram_read_plus_write_bytes_per_decode_token": null,
+    "hardware_counter_scope": "host package totals during decode; includes co-tenants and sampling overhead. Null when counters are unavailable."
+  }
+}
