@@ -31,6 +31,8 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+      - run: python -m pip install numpy==2.3.5
+      - run: python -c 'import torch, numpy as np; assert np.__version__ == "2.3.5"; assert torch.tensor([1, 2]).numpy().tolist() == [1, 2]'
       - name: Verify all original 014 archives and replay original closure diagnostic
         run: python research/hh-u-knowledge-001/restore014.py --out "$RUNNER_TEMP/original014" --replay
       - name: Verify new executable candidate interfaces
@@ -69,6 +71,8 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+      - run: python -m pip install numpy==2.3.5
+      - run: python -c 'import torch, numpy as np; assert np.__version__ == "2.3.5"; assert torch.tensor([1, 2]).numpy().tolist() == [1, 2]'
       - uses: actions/download-artifact@v4
         with:
           name: cognition-original014
@@ -95,6 +99,8 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+      - run: python -m pip install numpy==2.3.5
+      - run: python -c 'import torch, numpy as np; assert np.__version__ == "2.3.5"; assert torch.tensor([1, 2]).numpy().tolist() == [1, 2]'
       - uses: actions/download-artifact@v4
         with:
           pattern: cognition-fit-*
