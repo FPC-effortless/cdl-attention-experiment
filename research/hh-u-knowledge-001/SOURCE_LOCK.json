@@ -1,0 +1,65 @@
+{
+  "unified014": {
+    "commit": "5c51d32ebe538818833e368a897984a2c6876524",
+    "branch": "research/unified-014-evidence-20261126",
+    "pr": 98,
+    "archive_blobs": {
+      "014_source_and_results.zip": "9a49c9594c1263f1f3f47280fc656d017ae2941e",
+      "014_initial_custody.zip": "852d61ed27f494efd2ce9c1644b1a1568afa9270",
+      "014_gru_173.zip": "9676e57616e07a4db58fae71e95c5c61c44db6ec",
+      "014_gru_remaining.zip": "79341e211600875fa9f550806df85a9ad3594b4d",
+      "014_curriculum.zip": "1293b53134749166eca87cd1812a3af52656536e",
+      "014_presence.zip": "934575d52a42e89e34eeb93ef7ed8fe12be1587f",
+      "014_integration_173.zip": "54b769230ac453041c5eb3f92e71680ccb70c44c",
+      "014_integration_271.zip": "17be7101b8dc6071365945aee38dd47cad3a244e",
+      "014_integration_907.zip": "5ffa4e374e04e4541023ef055c2164d2dcf73544",
+      "014_integration_protected.zip": "5f1e29f0e7c6801c44d9a95bbffed6f59a120650"
+    },
+    "checkpoint_count": 42
+  },
+  "hh_u": {
+    "commit": "832230478f5a2a59ca171ea5985b645e676f353f",
+    "pr": 117,
+    "model_blob": "31c3555521469425d884c700aed01b48c4fab50e",
+    "variants_blob": "76ece3b4c83a30e282141db7a29beecb10a5d41e"
+  },
+  "cognition001": {
+    "status": "USER_REPORTED_ORIGINAL_ARTIFACTS_NOT_RECOVERED",
+    "reported_fits": 18,
+    "reported_reproduced_panels": 108,
+    "reported_examples": 92160,
+    "reported_updates": 2880,
+    "reported_held_worlds": 64,
+    "reported_total_worlds": 256,
+    "reported_random_learned_percent": {
+      "HH": 42.25,
+      "U": 44.01,
+      "A0": 43.1
+    },
+    "reported_counterfactual_pair_percent": {
+      "HH": 19.12,
+      "U": 21.63,
+      "A0": 16.41
+    },
+    "reported_oracle_percent": {
+      "HH": 100,
+      "U": 100,
+      "A0": 100
+    },
+    "reported_fixed_percent": {
+      "HH": 23.7,
+      "U": 23.7,
+      "A0": 23.7
+    },
+    "reported_state_bytes": {
+      "HH": 3104,
+      "U": 3232,
+      "A0": 9248
+    },
+    "reported_cached_prediction_agreements": 9216,
+    "reported_cached_prediction_total": 9216,
+    "source_archive_description": "82 KB source/protocol/results/logs/verification; exact file not recovered",
+    "weights_archive_description": "69 MiB, 18 checkpoints; exact file not recovered",
+    "admission": "No original checkpoint/replay credit; new experiment is prospective, not a substitute or reproduction."
+  }
+}
